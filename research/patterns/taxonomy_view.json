@@ -1,0 +1,452 @@
+[
+ {
+  "sub": "K01",
+  "main": "simulated_lookahead_selection",
+  "title": "Simulate each candidate action with a world model, score the imagined outcome, execute the best",
+  "operation": "sample k candidate actions from a policy, predict each candidate's next state with a learned or prompted world model (one step), score the simulated outcome with an LLM/VLM value model, and commit only the argmax action in the real environment"
+ },
+ {
+  "sub": "K02",
+  "main": "simulated_lookahead_selection",
+  "title": "Rerank sampled actions or trajectories with a learned/agentic verifier (no simulation)",
+  "operation": "sample N candidate actions (per step) or N whole trajectories, score each with a separately trained or agentic verifier, and execute/submit the top-scored one"
+ },
+ {
+  "sub": "K03",
+  "main": "learn_and_train_in_gui_world_model",
+  "title": "Learn a text-space web transition model from real interaction logs",
+  "operation": "train an LLM on real (o_t, a_t, o_t+1) web transitions to predict the next state in text (an abstracted natural-language change description, or the full next accessibility tree/HTML), optionally with interaction history and a CoT explanation stage"
+ },
+ {
+  "sub": "K04",
+  "main": "learn_and_train_in_gui_world_model",
+  "title": "Predict the next GUI screen as renderable HTML code",
+  "operation": "represent the next GUI state as HTML (with placeholders/SVG or diffusion-filled image slots), generate it from (screenshot, action, goal) — optionally as a delta from a retrieved HTML of a previously observed screen of the same app — and render it deterministically to a screenshot"
+ },
+ {
+  "sub": "K05",
+  "main": "learn_and_train_in_gui_world_model",
+  "title": "Train or fine-tune the policy on world-model rollouts, anchored with real data",
+  "operation": "roll out the policy inside a learned world model (short horizons), score/filter the imagined trajectories (self-assessed reward, rule filters, rejection sampling), and train on them mixed with real expert or public trajectories"
+ },
+ {
+  "sub": "K06",
+  "main": "learn_and_train_in_gui_world_model",
+  "title": "Pretrain the policy backbone on transition-understanding objectives",
+  "operation": "before agent fine-tuning, train the VLM policy on self-supervised tasks over (s_t, a_t, s_t+1) triples: forward next-state description, action verification, action reversal, or mistake-informed re-grounding"
+ },
+ {
+  "sub": "K07",
+  "main": "learn_and_train_in_gui_world_model",
+  "title": "Harvest a transition corpus by goal-free exploration plus VLM captioning",
+  "operation": "random-walk or structured-walk real web pages/apps without tasks, deduplicate and filter transitions, and have a large VLM caption each before/after pair with the action and resulting change, producing supervision verified by real execution rather than teacher imagination"
+ },
+ {
+  "sub": "K35",
+  "main": "learn_and_train_in_gui_world_model",
+  "title": "Object-centric slot world model for relational dynamics",
+  "operation": "encode frames into object slots and predict next slots with an action-conditioned transformer separating temporal and relational attention"
+ },
+ {
+  "sub": "K08",
+  "main": "calibrate_simulator_to_real",
+  "title": "Learn a residual correction that makes a simulator reproduce logged real trajectories",
+  "operation": "replay logged real state-action segments in the simulator from recorded start states and learn a residual (force or delta-action) model that makes the simulated next states match the real ones, then train/fine-tune the policy in the corrected simulator"
+ },
+ {
+  "sub": "K09",
+  "main": "calibrate_simulator_to_real",
+  "title": "Calibrate a digital twin with sparse real measurements and debias its synthetic data",
+  "operation": "calibrate simulator parameters by gradient through a differentiable twin (EM over latent errors), train on posterior-sampled twins, and debias synthetic training losses with a small real set (prediction-powered inference, context-aware bias terms)"
+ },
+ {
+  "sub": "K10",
+  "main": "calibrate_simulator_to_real",
+  "title": "Build a task-scoped digital twin of the specific target environment",
+  "operation": "reconstruct (scan, re-implement, or synchronise) the specific deployment environment as a resettable simulator restricted to the task-relevant subset, and use it for training/evaluation in place of the real environment"
+ },
+ {
+  "sub": "K11",
+  "main": "calibrate_simulator_to_real",
+  "title": "Use the twin to harvest or target demonstrations, retrain with real data as anchor",
+  "operation": "run the current policy in the twin to collect successful rollouts or find failure states, add targeted (sim) demonstrations there, and retrain/distil while co-training on the original real demonstrations"
+ },
+ {
+  "sub": "K12",
+  "main": "verifiable_execution_reward",
+  "title": "Score episodes with execution-based checkers that read privileged environment state",
+  "operation": "after the episode, read environment internals the agent cannot see (files, configs, backend/localStorage fields, instrumentation flags, logs) and compare them to goal conditions or gold artefacts to produce a binary or partial-credit reward"
+ },
+ {
+  "sub": "K13",
+  "main": "verifiable_execution_reward",
+  "title": "Synthesise tasks from checkers/specs so verifiable reward exists by construction",
+  "operation": "start from a verification condition (composed evaluator functions, or tests derived from a shared spec) and generate the task (and, for generated sites, the implementation) that satisfies it, so every synthetic task ships with a programmatic reward"
+ },
+ {
+  "sub": "K34",
+  "main": "verifiable_execution_reward",
+  "title": "Validate checkers two-sidedly: reject faulty, accept legal alternatives",
+  "operation": "assess a generated test/oracle on independent pools of faulty and legal implementations, and separate setup repair from behavioural-judgment revision in execution-feedback loops"
+ },
+ {
+  "sub": "C22",
+  "main": "verifiable_execution_reward",
+  "title": "Executable benchmark with resettable environments and privileged final-state checkers",
+  "operation": "package apps/sites/OS images as resettable containers or emulators with seeded task initialisation, and score each task by programmatic checks of privileged state (databases, files, settings, page locators) or answer matching, optionally across seeds"
+ },
+ {
+  "sub": "K14",
+  "main": "exploration_driven_task_synthesis",
+  "title": "Relabel exploration trajectories with retroactively inferred instructions",
+  "operation": "explore the environment without a fixed task, then infer an instruction that the observed transitions/trajectory accomplish (hindsight/reverse task synthesis), filter with an LLM ORM, optionally re-execute the instruction, and SFT on the resulting pairs"
+ },
+ {
+  "sub": "K15",
+  "main": "exploration_driven_task_synthesis",
+  "title": "Propose new tasks conditioned on the agent's history, failures or coverage",
+  "operation": "generate the next tasks/intents from stored history — failed instructions, coverage of activities/functionalities, clusters of the UI transition graph, or searched new sites — filter by feasibility/difficulty, and execute them"
+ },
+ {
+  "sub": "K32",
+  "main": "exploration_driven_task_synthesis",
+  "title": "Route exploration intents between cheap traversal and an LLM GUI agent, asynchronously",
+  "operation": "generate intents asynchronously from memory while a DFS explorer runs; route single-step intents to value-guided traversal and multi-step intents to an LLM agent"
+ },
+ {
+  "sub": "K33",
+  "main": "exploration_driven_task_synthesis",
+  "title": "Reach otherwise unreachable app states via static analysis and runtime instrumentation",
+  "operation": "infer activation conditions of unreached activities from decompiled code, generate and refine Frida hooks that fake external results, and expose them to a fuzzer"
+ },
+ {
+  "sub": "K16",
+  "main": "learned_outcome_and_process_judges",
+  "title": "Judge trajectory success with a passive LLM/VLM outcome reward model",
+  "operation": "give an LLM/VLM the task plus final screenshot/HTML, selected key screenshots, or the action history, and have it output a binary or graded success label used as reward, filter or SFT weight"
+ },
+ {
+  "sub": "K17",
+  "main": "learned_outcome_and_process_judges",
+  "title": "Emit a reward only when diverse judges unanimously agree, else abstain",
+  "operation": "query several VLM judges with different models/prompts (chosen for opposite precision/NPV biases) and label only unanimous cases"
+ },
+ {
+  "sub": "K18",
+  "main": "learned_outcome_and_process_judges",
+  "title": "Verify outcomes with a tool-using agent that probes the preserved terminal environment",
+  "operation": "progressively escalate from final screenshot to retrieved intermediate screenshots to read-only shell/Python and GUI probing of the live terminal state, early-stopping when evidence suffices"
+ },
+ {
+  "sub": "K19",
+  "main": "learned_outcome_and_process_judges",
+  "title": "Dense step-level process rewards for multi-turn GUI RL",
+  "operation": "score every step with a PRM trained on human step labels and use the scores as dense rewards (PPO with GAE) or as GRPO accept/reject reward"
+ },
+ {
+  "sub": "C25",
+  "main": "learned_outcome_and_process_judges",
+  "title": "Score agent trajectories with an LLM judge",
+  "operation": "prompt an (M)LLM with the task, the agent's answer and trajectory screenshots or an action/reasoning trace to emit success and safety labels"
+ },
+ {
+  "sub": "K20",
+  "main": "trajectory_level_policy_training",
+  "title": "Online RL on sparse terminal reward with learned value baselines and filtered/replayed data",
+  "operation": "train step- and instruction-level critics with cross-entropy on the terminal (judge) reward, compute mixed TD/MC advantages, and update the actor only on advantageous or perplexity-filtered data (hard-filtered AWR, or KL-regularised off-policy updates with replay of successes)"
+ },
+ {
+  "sub": "K21",
+  "main": "trajectory_level_policy_training",
+  "title": "Semi-online RL: roll out over expert trajectories with own history and patched mismatches",
+  "operation": "step through static expert trajectories conditioning on the policy's own generated history, patch mismatched actions with the expert action up to a budget, and use group-in-group step/episode advantages; evaluate with the same first-mismatch protocol (SOP)"
+ },
+ {
+  "sub": "K25",
+  "main": "trajectory_level_policy_training",
+  "title": "Augment action-only traces with generated reasoning",
+  "operation": "prompt a VLM with the ground-truth action (or bootstrap from an early model and keep thoughts whose sampled action matches) to write per-step thoughts/low-level instructions, then train on mixtures of reasoning detail"
+ },
+ {
+  "sub": "K26",
+  "main": "trajectory_level_policy_training",
+  "title": "Build error-correction and post-error recovery training data at the first mistake",
+  "operation": "locate the first erroneous step of an agent trajectory (human or MLLM), create a corrected action for that step and a reflection/recovery action for the step after the error (or synthesise errors from successful trajectories), and train with SFT and/or DPO"
+ },
+ {
+  "sub": "C21",
+  "main": "trajectory_level_policy_training",
+  "title": "Synthesize reasoning annotations for demonstrations with a strong MLLM, then SFT a screenshot policy",
+  "operation": "have a proprietary model rewrite each demonstration step into plan/thought/reflection + grounded action (with hindsight before/after screenshots), and train on mixtures of reasoning levels"
+ },
+ {
+  "sub": "K22",
+  "main": "planner_grounder_interface",
+  "title": "Split each step into a language planner and a specialised visual grounder",
+  "operation": "a general (M)LLM planner emits the next action and a natural-language description of its target; a separate pure-vision grounding model maps the description to pixel coordinates on the raw screenshot"
+ },
+ {
+  "sub": "K23",
+  "main": "planner_grounder_interface",
+  "title": "Synthesise grounding data from rendered UI structure",
+  "operation": "render web pages, UI-component code or parsed screens, read exact element boxes/attributes from the DOM/element tree, synthesise referring expressions (attributes, MLLM descriptions, positional/contextual phrases) and actions in a unified cross-platform action space, and train a coordinate grounder"
+ },
+ {
+  "sub": "K29",
+  "main": "planner_grounder_interface",
+  "title": "Redesign the action interface between model and computer",
+  "operation": "change the action abstraction the agent emits — restrict actions to tagged accessibility/OCR elements with one bounded primitive per step, or add a library of programmatic tools alongside grounded GUI primitives — and train/prompt the agent to use it"
+ },
+ {
+  "sub": "C04",
+  "main": "planner_grounder_interface",
+  "title": "Continual-pretrain a VLM to emit target coordinates as text from automatically harvested element-box pairs",
+  "operation": "harvest (screenshot, referring text, box/point) triplets from DOM, accessibility trees or a UI detector without human labels, format them as text-to-point/box and box-to-text tasks in the backbone's coordinate tokens, and continual-pretrain the VLM so it grounds from pixels alone at inference"
+ },
+ {
+  "sub": "C10",
+  "main": "planner_grounder_interface",
+  "title": "Split a generalist planner that describes the target from a specialist grounder that localises it",
+  "operation": "have a (prompted) MLLM plan and emit a natural-language target description or semantic argument, then dispatch localisation to a separate grounder (UI grounding VLM, OCR span locator, CLIP icon matcher, app API) that returns coordinates"
+ },
+ {
+  "sub": "C11",
+  "main": "planner_grounder_interface",
+  "title": "Mix GUI actions with code / shell / SDK calls in one action space",
+  "operation": "let the policy (or an orchestrator choosing between a GUI operator and a programmer) invoke scripts, terminal commands or tool/SDK functions alongside clicks and typing, with a shared file system"
+ },
+ {
+  "sub": "C12",
+  "main": "planner_grounder_interface",
+  "title": "Normalise heterogeneous trajectories into one declared action schema for end-to-end screenshot policy SFT",
+  "operation": "rewrite actions from many datasets/platforms (or raw input-event logs) into a small shared schema (click(x,y), type, scroll plus prompt-declared custom actions, JSON with relative positions), and fine-tune a screenshot policy on it"
+ },
+ {
+  "sub": "C14",
+  "main": "planner_grounder_interface",
+  "title": "Simplify the prompted agent's action space toward what the LLM handles well",
+  "operation": "remove rarely useful or embodiment-heavy actions (noop, tabs, hover, press, goto, scroll), collapse dropdown selection into a click, add workflow actions (note, stop, go_home), and replace scrolling with full-page observation"
+ },
+ {
+  "sub": "C37",
+  "main": "planner_grounder_interface",
+  "title": "Compress continuous action chunks with DCT + BPE into autoregressive tokens",
+  "operation": "quantile-normalise action chunks, DCT per dimension, quantise, flatten low-frequency-first and BPE-compress into VLM tokens; optionally a universal tokenizer and replacing a flow-matching action expert with autoregressive decoding"
+ },
+ {
+  "sub": "K27",
+  "main": "experience_memory_retrieval",
+  "title": "Retrieve stored past experience into the agent's context",
+  "operation": "store summaries or raw trajectories of past episodes/subtasks keyed by task/state embeddings and retrieve the nearest ones into the context — as text summaries or compressed continuous embeddings — at planning or action time"
+ },
+ {
+  "sub": "K28",
+  "main": "experience_memory_retrieval",
+  "title": "Manager-worker hierarchical planning fused with web knowledge",
+  "operation": "query web search and narrative memory, fuse into guidance, plan a subtask queue, execute with workers, replan on failure"
+ },
+ {
+  "sub": "C19",
+  "main": "experience_memory_retrieval",
+  "title": "Accumulate reusable app knowledge, tips, shortcuts or tools from the agent's own runs",
+  "operation": "explore apps or solve self-proposed tasks, have an LLM distil what worked into a persistent store (element-function documents, Tips, precondition-guarded Shortcut macros, code tools), and inject the relevant parts into later tasks"
+ },
+ {
+  "sub": "K24",
+  "main": "online_evaluation_methodology",
+  "title": "Probe agent/grounder robustness with controlled environment perturbations",
+  "operation": "re-render or reconfigure the environment under one controlled change at a time (style, zoom, text size, window position/clutter, observation encoding, relational instructions) and measure matched-pair accuracy changes"
+ },
+ {
+  "sub": "K30",
+  "main": "online_evaluation_methodology",
+  "title": "Stratify online success by human reference length and audit failure causes",
+  "operation": "build or reuse tasks with human reference step counts, report success per length stratum and efficiency/budget-exhaustion, and audit failures"
+ },
+ {
+  "sub": "K31",
+  "main": "online_evaluation_methodology",
+  "title": "Evaluate GUI world models in closed loop rather than teacher-forced one-step",
+  "operation": "roll the world model out autoregressively along reference action sequences and with a frozen probing agent, scoring consistency and milestone progress"
+ },
+ {
+  "sub": "C23",
+  "main": "online_evaluation_methodology",
+  "title": "Offline step-level evaluation on recorded trajectories",
+  "operation": "replay cached states of human demonstrations and score each predicted step against annotated (possibly multiple) valid actions, aggregating to step SR"
+ },
+ {
+  "sub": "C24",
+  "main": "online_evaluation_methodology",
+  "title": "Evaluate agents live on real apps/sites with human success judgement",
+  "operation": "run the agent on real live apps, websites or desktops and have humans judge success, rubric satisfaction, step correctness or failure category, sometimes also gating harmful actions"
+ },
+ {
+  "sub": "C26",
+  "main": "online_evaluation_methodology",
+  "title": "Single-step click-in-box grounding benchmarks",
+  "operation": "collect screenshots with instructions and target boxes split by platform and text vs icon, and score whether a predicted point falls inside the box"
+ },
+ {
+  "sub": "C01",
+  "main": "structured_screen_observation",
+  "title": "Element-id actions over interactive elements enumerated from DOM / a11y / view hierarchy / UIA",
+  "operation": "enumerate interactive elements from a structural view (DOM, accessibility tree, Android XML, Windows UI Automation), give each a unique id (text list and/or numbered marks drawn on the screenshot), and restrict the policy to id-indexed actions executed on the element object or its centre"
+ },
+ {
+  "sub": "C02",
+  "main": "structured_screen_observation",
+  "title": "Parse raw pixels into an indexed, text-described element list (detectors, OCR, captions, region marks)",
+  "operation": "run pixel-level detectors (segmenter, interactable-region detector, OCR, icon detector) and optionally a captioner on the screenshot, assign ids/marks to the resulting regions with functional text descriptions, and let the MLLM select an id or coordinate from that list"
+ },
+ {
+  "sub": "C03",
+  "main": "structured_screen_observation",
+  "title": "Generate the next action in text, then ground it by multiple-choice over ranked DOM / a11y candidates",
+  "operation": "prune the page to top-k candidate elements (fine-tuned cross-encoder or a11y filtering), have the model state the intended action (from screenshot or HTML), then pick the matching candidate from a textual multiple-choice list with operation and value"
+ },
+ {
+  "sub": "C13",
+  "main": "structured_screen_observation",
+  "title": "Prune and restructure the text observation (a11y tree / control list) before the policy sees it",
+  "operation": "drop low-relevance nodes or control types and restructure repetitive structure (merge StaticText into elements, tables/lists to Markdown; type-filtered controls and agent-requested re-annotation of a shortlist)"
+ },
+ {
+  "sub": "C27",
+  "main": "structured_screen_observation",
+  "title": "Diagnose whether agents believe pixels or serialized structure when the two disagree",
+  "operation": "pair GUI state probes in which one channel (DOM/a11y text) is edited or naturally stale while pixels define the gold value, measure structure-following, sweep action-output formats, and test recovery after a first-step conflict"
+ },
+ {
+  "sub": "C05",
+  "main": "high_resolution_target_localisation",
+  "title": "Coordinate-free grounding with an attention action head over visual patches",
+  "operation": "replace numeric coordinate tokens with a special <ACTOR> token whose hidden state is matched against contextualised patch features to give an attention map over patches, trained with KL to a box-rasterised patch mask; click at the selected patch"
+ },
+ {
+  "sub": "C06",
+  "main": "high_resolution_target_localisation",
+  "title": "Crop the proposed target and verify it against the goal before acting",
+  "operation": "crop the screenshot around a candidate click target (optionally marking the point), ask a verifier model whether the crop shows the goal, and act on the first verified candidate or re-ground by scanning other element crops"
+ },
+ {
+  "sub": "C07",
+  "main": "high_resolution_target_localisation",
+  "title": "Zoom-and-reground search for targets on high-resolution professional screens",
+  "operation": "ground on the full screenshot, then crop around the prediction (or around planner-proposed areas scored by grounded neighbour votes) and ground again recursively"
+ },
+ {
+  "sub": "C08",
+  "main": "high_resolution_target_localisation",
+  "title": "Supplement a low-resolution global view with a cheap high-resolution detail channel",
+  "operation": "keep the backbone's low-resolution global image and add high-resolution detail through a separate path: a small high-res encoder read by cross-attention (CogAgent) or aspect-ratio grid sub-images encoded separately (Ferret-UI anyres)"
+ },
+ {
+  "sub": "C09",
+  "main": "high_resolution_target_localisation",
+  "title": "Skip redundant visual tokens in uniform UI regions",
+  "operation": "build a graph of same-colour neighbouring patches (union-find) and randomly skip a fixed ratio of tokens inside multi-patch components in alternating layers, keeping position embeddings"
+ },
+ {
+  "sub": "C15",
+  "main": "agent_loop_context_control",
+  "title": "Compress interaction history: recent steps at full fidelity, older steps as model-written text",
+  "operation": "keep only the last few screenshots/steps verbatim and replace older history by text (a running progress summary from a separate LLM, an executor-log summary returned to an orchestrator, episodic summaries, or action-only text)"
+ },
+ {
+  "sub": "C16",
+  "main": "agent_loop_context_control",
+  "title": "Let the agent nominate task-relevant content to retain for later steps",
+  "operation": "while acting, prompt the agent to list pivotal element ids or 'focus content' on the current screen; keep only those (plus tree neighbours) when replaying history or carry them in a memory unit"
+ },
+ {
+  "sub": "C17",
+  "main": "agent_loop_context_control",
+  "title": "Decompose into a manager that plans subgoals and workers that execute them",
+  "operation": "have a manager (host agent, planner LLM, orchestrator) decompose the instruction into subgoals/subtasks (linear, DAG, or planning tree), hand each to a worker that acts on the GUI and reports completion, and re-plan between subgoals"
+ },
+ {
+  "sub": "C18",
+  "main": "agent_loop_context_control",
+  "title": "Verify each action's outcome from before/after observations and feed the verdict back",
+  "operation": "after each action, have a reflector (same or separate model) compare pre/post screenshots or execution outputs, classify the step (as expected / wrong page / no change), and trigger retry, revert, replanning or escalation; optionally a supervisor re-verifies executor claims"
+ },
+ {
+  "sub": "C20",
+  "main": "agent_loop_context_control",
+  "title": "Prompt a fixed observe-think-act schema at every step",
+  "operation": "prompt the frontier model each step to describe the screen, reason about the goal/plan, then emit one action (plus optional history summary), terminating by a self-declared stop; optionally choose when to take screenshots"
+ },
+ {
+  "sub": "C28",
+  "main": "environmental_injection_attacks",
+  "title": "Inject instructions into non-rendered HTML channels read by the grounding stage",
+  "operation": "insert zero-opacity elements or adversarial strings in non-rendered attributes (aria-label, id) next to the expected target, optionally optimised by a black-box-trained prompter, so that HTML-reading grounding follows them while the screenshot is unchanged"
+ },
+ {
+  "sub": "C29",
+  "main": "environmental_injection_attacks",
+  "title": "Render fake UI elements (pop-ups, cookie banners) that direct the agent's click",
+  "operation": "draw attacker-controlled UI on screen (pop-up with attention hook, click instruction and OK banner; fake cookie popup in ad banners) so the agent or its quarantined perception returns the attacker's element"
+ },
+ {
+  "sub": "C30",
+  "main": "environmental_injection_attacks",
+  "title": "Plant natural-language instructions in attacker-writable content of legitimate apps",
+  "operation": "place a hand-written instruction (sometimes faintly visible, or persisted in a URL fragment) in user-editable surfaces such as posts, comments, chat, emails, notifications, documents or listings, and start the agent where it will read it"
+ },
+ {
+  "sub": "C31",
+  "main": "environmental_injection_attacks",
+  "title": "Perturb a trigger image to steer captions or the VLM's reading of it",
+  "operation": "optimise an L-inf-bounded perturbation on an attacker-owned image, white-box against an open captioner or transfer via a CLIP ensemble against a black-box VLM"
+ },
+ {
+  "sub": "C32",
+  "main": "environmental_injection_attacks",
+  "title": "Attribute attack success to components via an agent graph",
+  "operation": "model the compound agent as a graph and weight each edge by the bound on ASR if its value is followed, then compare component in/out weights under attack, including added reflexion / tree-search components"
+ },
+ {
+  "sub": "C33",
+  "main": "environmental_injection_attacks",
+  "title": "Separate hijack attempts from attack completion in security evaluation",
+  "operation": "score attacks both by executable final-state checks of the adversarial goal and by an intermediate measure (LLM-judged attempt / compromise, or task-level any-click rate), optionally starting episodes at the injection point"
+ },
+ {
+  "sub": "C34",
+  "main": "injection_defense_isolation",
+  "title": "Defend against injections inside the same model's context (prompts, delimiters, role hierarchy, paraphrase, detectors)",
+  "operation": "add defensive system prompts or delimiters, place web content at lowest instruction-hierarchy privilege, paraphrase untrusted text, run injection detectors, or self-caption images for consistency checks"
+ },
+ {
+  "sub": "C35",
+  "main": "injection_defense_isolation",
+  "title": "Pause sensitive actions for user confirmation, judged by the policy itself",
+  "operation": "have the policy label actions it deems sensitive or irreversible as PENDING and wait for user confirmation"
+ },
+ {
+  "sub": "C36",
+  "main": "injection_defense_isolation",
+  "title": "Separate trusted planning from untrusted observations with information-flow labels and quarantined LLMs",
+  "operation": "label data by confidentiality/integrity, hide untrusted results behind variables, query them only through a quarantined LLM with constrained typed outputs, and check tool/GUI calls against flow policies; for CUAs, compile a branching plan before any observation"
+ },
+ {
+  "sub": "R01",
+  "main": "rule_reward_single_step_rl",
+  "title": "Offline single-step GRPO with rule-checked action and grounding rewards",
+  "operation": "take static (screenshot or HTML, instruction, history) states with one labelled action from existing grounding/trajectory datasets, filter them by sampling the base model several times (drop all-correct / all-wrong or keep only failed \"hard\" samples), sample a group of responses per state, score each with hand-written rules against the label (format tag; action-type exact match; click point inside the box, distance-to-centre, box-size or IoU term; exact or semantic match of text/element arguments), and update with GRPO (often no or small KL), optionally after an SFT warm-up"
+ },
+ {
+  "sub": "R02",
+  "main": "agent_initiated_user_interaction",
+  "title": "Let the agent decide when to ask, defer to or hand control to the user",
+  "operation": "give the agent an explicit channel to the user — an ASK action that poses a follow-up question, a per-step confidence score that triggers human intervention below a threshold, or a suggest-then-execute loop in which the user can pause, reject, take over and resume — feed the user's answer or actions back into the agent's history, and score both task success and the asking behaviour (timing, precision/false positives, intervention rate, human step share)"
+ },
+ {
+  "sub": "R03",
+  "main": "mine_human_screen_videos",
+  "title": "Mine operational knowledge and trajectories from human screen-recording videos",
+  "operation": "collect human screen recordings (instructional/tutorial videos found via web how-to posts, or a single recorded demonstration), cut them into key frames (similarity/OCR-text change or second-order pixel change), localise UI elements and cursor (detector + OCR, set-of-marks), and either (a) have a strong VLM infer the action between consecutive key frames — using narration and neighbouring frames — to build (screen, action) trajectories for pretraining/SFT, or (b) feed a sliding window of demo key frames into the acting agent's context as operational knowledge, with a reflection agent checking each action against the demo"
+ }
+]

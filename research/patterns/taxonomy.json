@@ -1,0 +1,639 @@
+{
+ "main": [
+  {
+   "id": "simulated_lookahead_selection",
+   "title": "Select Actions by Simulated or Verified Lookahead",
+   "subs": [
+    "K01",
+    "K02"
+   ]
+  },
+  {
+   "id": "learn_and_train_in_gui_world_model",
+   "title": "Learn GUI Dynamics and Train in Them",
+   "subs": [
+    "K03",
+    "K04",
+    "K05",
+    "K06",
+    "K07",
+    "K35"
+   ]
+  },
+  {
+   "id": "calibrate_simulator_to_real",
+   "title": "Calibrate a Simulator or Digital Twin to the Real Target",
+   "subs": [
+    "K08",
+    "K09",
+    "K10",
+    "K11"
+   ]
+  },
+  {
+   "id": "verifiable_execution_reward",
+   "title": "Ground Reward in Executable Checkers",
+   "subs": [
+    "K12",
+    "K13",
+    "K34",
+    "C22"
+   ]
+  },
+  {
+   "id": "exploration_driven_task_synthesis",
+   "title": "Synthesise Tasks from Exploration and History",
+   "subs": [
+    "K14",
+    "K15",
+    "K32",
+    "K33"
+   ]
+  },
+  {
+   "id": "learned_outcome_and_process_judges",
+   "title": "Reward with Learned Outcome and Process Judges",
+   "subs": [
+    "K16",
+    "K17",
+    "K18",
+    "K19",
+    "C25"
+   ]
+  },
+  {
+   "id": "trajectory_level_policy_training",
+   "title": "Train the Policy on Own, Replayed and Corrected Trajectories",
+   "subs": [
+    "K20",
+    "K21",
+    "K25",
+    "K26",
+    "C21"
+   ]
+  },
+  {
+   "id": "planner_grounder_interface",
+   "title": "Decouple Planning from Grounding and Redesign the Action Interface",
+   "subs": [
+    "K22",
+    "K23",
+    "K29",
+    "C04",
+    "C10",
+    "C11",
+    "C12",
+    "C14",
+    "C37"
+   ]
+  },
+  {
+   "id": "experience_memory_retrieval",
+   "title": "Retrieve Past Experience and Knowledge into Context",
+   "subs": [
+    "K27",
+    "K28",
+    "C19"
+   ]
+  },
+  {
+   "id": "online_evaluation_methodology",
+   "title": "Make Online Evaluation Discriminating",
+   "subs": [
+    "K24",
+    "K30",
+    "K31",
+    "C23",
+    "C24",
+    "C26"
+   ]
+  },
+  {
+   "id": "structured_screen_observation",
+   "title": "Expose the Screen as Indexed Elements and Pruned Structure",
+   "subs": [
+    "C01",
+    "C02",
+    "C03",
+    "C13",
+    "C27"
+   ]
+  },
+  {
+   "id": "high_resolution_target_localisation",
+   "title": "Localise Small Targets with Resolution, Zoom, Verification and Pointer Heads",
+   "subs": [
+    "C05",
+    "C06",
+    "C07",
+    "C08",
+    "C09"
+   ]
+  },
+  {
+   "id": "agent_loop_context_control",
+   "title": "Structure the Prompted Agent Loop: Context, Hierarchy and Post-Action Reflection",
+   "subs": [
+    "C15",
+    "C16",
+    "C17",
+    "C18",
+    "C20"
+   ]
+  },
+  {
+   "id": "environmental_injection_attacks",
+   "title": "Hijack Agents Through the Environment and Measure Attempt vs Completion",
+   "subs": [
+    "C28",
+    "C29",
+    "C30",
+    "C31",
+    "C32",
+    "C33"
+   ]
+  },
+  {
+   "id": "injection_defense_isolation",
+   "title": "Defend Agents Against Untrusted Observations: Prompting, Gating and Isolation",
+   "subs": [
+    "C34",
+    "C35",
+    "C36"
+   ]
+  },
+  {
+   "id": "rule_reward_single_step_rl",
+   "title": "Reinforce Single-Step Actions with Rule-Checked Rewards",
+   "subs": [
+    "R01"
+   ]
+  },
+  {
+   "id": "agent_initiated_user_interaction",
+   "title": "Let the Agent Decide When to Involve the User",
+   "subs": [
+    "R02"
+   ]
+  },
+  {
+   "id": "mine_human_screen_videos",
+   "title": "Mine Human Screen Recordings into Action Knowledge",
+   "subs": [
+    "R03"
+   ]
+  }
+ ],
+ "sub": {
+  "K01": {
+   "title": "Simulate each candidate action with a world model, score the imagined outcome, execute the best",
+   "status": "candidate_pattern",
+   "main": "simulated_lookahead_selection",
+   "domain": "cua-agents"
+  },
+  "K02": {
+   "title": "Rerank sampled actions or trajectories with a learned/agentic verifier (no simulation)",
+   "status": "candidate_pattern",
+   "main": "simulated_lookahead_selection",
+   "domain": "cua-agents"
+  },
+  "K03": {
+   "title": "Learn a text-space web transition model from real interaction logs",
+   "status": "candidate_pattern",
+   "main": "learn_and_train_in_gui_world_model",
+   "domain": "cua-agents"
+  },
+  "K04": {
+   "title": "Predict the next GUI screen as renderable HTML code",
+   "status": "candidate_pattern",
+   "main": "learn_and_train_in_gui_world_model",
+   "domain": "cua-agents"
+  },
+  "K05": {
+   "title": "Train or fine-tune the policy on world-model rollouts, anchored with real data",
+   "status": "candidate_pattern",
+   "main": "learn_and_train_in_gui_world_model",
+   "domain": "cua-agents"
+  },
+  "K06": {
+   "title": "Pretrain the policy backbone on transition-understanding objectives",
+   "status": "candidate_pattern",
+   "main": "learn_and_train_in_gui_world_model",
+   "domain": "cua-agents"
+  },
+  "K07": {
+   "title": "Harvest a transition corpus by goal-free exploration plus VLM captioning",
+   "status": "candidate_pattern",
+   "main": "learn_and_train_in_gui_world_model",
+   "domain": "cua-agents"
+  },
+  "K08": {
+   "title": "Learn a residual correction that makes a simulator reproduce logged real trajectories",
+   "status": "candidate_pattern",
+   "main": "calibrate_simulator_to_real",
+   "domain": "cua-agents"
+  },
+  "K09": {
+   "title": "Calibrate a digital twin with sparse real measurements and debias its synthetic data",
+   "status": "case",
+   "main": "calibrate_simulator_to_real",
+   "domain": "cua-agents"
+  },
+  "K10": {
+   "title": "Build a task-scoped digital twin of the specific target environment",
+   "status": "candidate_pattern",
+   "main": "calibrate_simulator_to_real",
+   "domain": "cua-agents"
+  },
+  "K11": {
+   "title": "Use the twin to harvest or target demonstrations, retrain with real data as anchor",
+   "status": "candidate_pattern",
+   "main": "calibrate_simulator_to_real",
+   "domain": "cua-agents"
+  },
+  "K12": {
+   "title": "Score episodes with execution-based checkers that read privileged environment state",
+   "status": "candidate_pattern",
+   "main": "verifiable_execution_reward",
+   "domain": "cua-agents"
+  },
+  "K13": {
+   "title": "Synthesise tasks from checkers/specs so verifiable reward exists by construction",
+   "status": "candidate_pattern",
+   "main": "verifiable_execution_reward",
+   "domain": "cua-agents"
+  },
+  "K14": {
+   "title": "Relabel exploration trajectories with retroactively inferred instructions",
+   "status": "candidate_pattern",
+   "main": "exploration_driven_task_synthesis",
+   "domain": "cua-agents"
+  },
+  "K15": {
+   "title": "Propose new tasks conditioned on the agent's history, failures or coverage",
+   "status": "candidate_pattern",
+   "main": "exploration_driven_task_synthesis",
+   "domain": "cua-agents"
+  },
+  "K16": {
+   "title": "Judge trajectory success with a passive LLM/VLM outcome reward model",
+   "status": "candidate_pattern",
+   "main": "learned_outcome_and_process_judges",
+   "domain": "cua-agents"
+  },
+  "K17": {
+   "title": "Emit a reward only when diverse judges unanimously agree, else abstain",
+   "status": "case",
+   "main": "learned_outcome_and_process_judges",
+   "domain": "cua-agents"
+  },
+  "K18": {
+   "title": "Verify outcomes with a tool-using agent that probes the preserved terminal environment",
+   "status": "case",
+   "main": "learned_outcome_and_process_judges",
+   "domain": "cua-agents"
+  },
+  "K19": {
+   "title": "Dense step-level process rewards for multi-turn GUI RL",
+   "status": "case",
+   "main": "learned_outcome_and_process_judges",
+   "domain": "cua-agents"
+  },
+  "K20": {
+   "title": "Online RL on sparse terminal reward with learned value baselines and filtered/replayed data",
+   "status": "candidate_pattern",
+   "main": "trajectory_level_policy_training",
+   "domain": "cua-agents"
+  },
+  "K21": {
+   "title": "Semi-online RL: roll out over expert trajectories with own history and patched mismatches",
+   "status": "case",
+   "main": "trajectory_level_policy_training",
+   "domain": "cua-agents"
+  },
+  "K22": {
+   "title": "Split each step into a language planner and a specialised visual grounder",
+   "status": "candidate_pattern",
+   "main": "planner_grounder_interface",
+   "domain": "cua-agents"
+  },
+  "K23": {
+   "title": "Synthesise grounding data from rendered UI structure",
+   "status": "candidate_pattern",
+   "main": "planner_grounder_interface",
+   "domain": "cua-agents"
+  },
+  "K24": {
+   "title": "Probe agent/grounder robustness with controlled environment perturbations",
+   "status": "candidate_pattern",
+   "main": "online_evaluation_methodology",
+   "domain": "cua-agents"
+  },
+  "K25": {
+   "title": "Augment action-only traces with generated reasoning",
+   "status": "candidate_pattern",
+   "main": "trajectory_level_policy_training",
+   "domain": "cua-agents"
+  },
+  "K26": {
+   "title": "Build error-correction and post-error recovery training data at the first mistake",
+   "status": "candidate_pattern",
+   "main": "trajectory_level_policy_training",
+   "domain": "cua-agents"
+  },
+  "K27": {
+   "title": "Retrieve stored past experience into the agent's context",
+   "status": "candidate_pattern",
+   "main": "experience_memory_retrieval",
+   "domain": "cua-agents"
+  },
+  "K28": {
+   "title": "Manager-worker hierarchical planning fused with web knowledge",
+   "status": "case",
+   "main": "experience_memory_retrieval",
+   "domain": "cua-agents"
+  },
+  "K29": {
+   "title": "Redesign the action interface between model and computer",
+   "status": "candidate_pattern",
+   "main": "planner_grounder_interface",
+   "domain": "cua-agents"
+  },
+  "K30": {
+   "title": "Stratify online success by human reference length and audit failure causes",
+   "status": "candidate_pattern",
+   "main": "online_evaluation_methodology",
+   "domain": "cua-agents"
+  },
+  "K31": {
+   "title": "Evaluate GUI world models in closed loop rather than teacher-forced one-step",
+   "status": "case",
+   "main": "online_evaluation_methodology",
+   "domain": "cua-agents"
+  },
+  "K32": {
+   "title": "Route exploration intents between cheap traversal and an LLM GUI agent, asynchronously",
+   "status": "case",
+   "main": "exploration_driven_task_synthesis",
+   "domain": "cua-agents"
+  },
+  "K33": {
+   "title": "Reach otherwise unreachable app states via static analysis and runtime instrumentation",
+   "status": "case",
+   "main": "exploration_driven_task_synthesis",
+   "domain": "cua-agents"
+  },
+  "K34": {
+   "title": "Validate checkers two-sidedly: reject faulty, accept legal alternatives",
+   "status": "case",
+   "main": "verifiable_execution_reward",
+   "domain": "cua-agents"
+  },
+  "K35": {
+   "title": "Object-centric slot world model for relational dynamics",
+   "status": "case",
+   "main": "learn_and_train_in_gui_world_model",
+   "domain": "cua-agents"
+  },
+  "C01": {
+   "title": "Element-id actions over interactive elements enumerated from DOM / a11y / view hierarchy / UIA",
+   "status": "candidate_pattern",
+   "main": "structured_screen_observation",
+   "domain": "cua-agents-core"
+  },
+  "C02": {
+   "title": "Parse raw pixels into an indexed, text-described element list (detectors, OCR, captions, region marks)",
+   "status": "candidate_pattern",
+   "main": "structured_screen_observation",
+   "domain": "cua-agents-core"
+  },
+  "C03": {
+   "title": "Generate the next action in text, then ground it by multiple-choice over ranked DOM / a11y candidates",
+   "status": "candidate_pattern",
+   "main": "structured_screen_observation",
+   "domain": "cua-agents-core"
+  },
+  "C04": {
+   "title": "Continual-pretrain a VLM to emit target coordinates as text from automatically harvested element-box pairs",
+   "status": "candidate_pattern",
+   "main": "planner_grounder_interface",
+   "domain": "cua-agents-core"
+  },
+  "C05": {
+   "title": "Coordinate-free grounding with an attention action head over visual patches",
+   "status": "case",
+   "main": "high_resolution_target_localisation",
+   "domain": "cua-agents-core"
+  },
+  "C06": {
+   "title": "Crop the proposed target and verify it against the goal before acting",
+   "status": "candidate_pattern",
+   "main": "high_resolution_target_localisation",
+   "domain": "cua-agents-core"
+  },
+  "C07": {
+   "title": "Zoom-and-reground search for targets on high-resolution professional screens",
+   "status": "case",
+   "main": "high_resolution_target_localisation",
+   "domain": "cua-agents-core"
+  },
+  "C08": {
+   "title": "Supplement a low-resolution global view with a cheap high-resolution detail channel",
+   "status": "candidate_pattern",
+   "main": "high_resolution_target_localisation",
+   "domain": "cua-agents-core"
+  },
+  "C09": {
+   "title": "Skip redundant visual tokens in uniform UI regions",
+   "status": "case",
+   "main": "high_resolution_target_localisation",
+   "domain": "cua-agents-core"
+  },
+  "C10": {
+   "title": "Split a generalist planner that describes the target from a specialist grounder that localises it",
+   "status": "candidate_pattern",
+   "main": "planner_grounder_interface",
+   "domain": "cua-agents-core"
+  },
+  "C11": {
+   "title": "Mix GUI actions with code / shell / SDK calls in one action space",
+   "status": "candidate_pattern",
+   "main": "planner_grounder_interface",
+   "domain": "cua-agents-core"
+  },
+  "C12": {
+   "title": "Normalise heterogeneous trajectories into one declared action schema for end-to-end screenshot policy SFT",
+   "status": "candidate_pattern",
+   "main": "planner_grounder_interface",
+   "domain": "cua-agents-core"
+  },
+  "C13": {
+   "title": "Prune and restructure the text observation (a11y tree / control list) before the policy sees it",
+   "status": "candidate_pattern",
+   "main": "structured_screen_observation",
+   "domain": "cua-agents-core"
+  },
+  "C14": {
+   "title": "Simplify the prompted agent's action space toward what the LLM handles well",
+   "status": "case",
+   "main": "planner_grounder_interface",
+   "domain": "cua-agents-core"
+  },
+  "C15": {
+   "title": "Compress interaction history: recent steps at full fidelity, older steps as model-written text",
+   "status": "candidate_pattern",
+   "main": "agent_loop_context_control",
+   "domain": "cua-agents-core"
+  },
+  "C16": {
+   "title": "Let the agent nominate task-relevant content to retain for later steps",
+   "status": "candidate_pattern",
+   "main": "agent_loop_context_control",
+   "domain": "cua-agents-core"
+  },
+  "C17": {
+   "title": "Decompose into a manager that plans subgoals and workers that execute them",
+   "status": "candidate_pattern",
+   "main": "agent_loop_context_control",
+   "domain": "cua-agents-core"
+  },
+  "C18": {
+   "title": "Verify each action's outcome from before/after observations and feed the verdict back",
+   "status": "candidate_pattern",
+   "main": "agent_loop_context_control",
+   "domain": "cua-agents-core"
+  },
+  "C19": {
+   "title": "Accumulate reusable app knowledge, tips, shortcuts or tools from the agent's own runs",
+   "status": "candidate_pattern",
+   "main": "experience_memory_retrieval",
+   "domain": "cua-agents-core"
+  },
+  "C20": {
+   "title": "Prompt a fixed observe-think-act schema at every step",
+   "status": "candidate_pattern",
+   "main": "agent_loop_context_control",
+   "domain": "cua-agents-core"
+  },
+  "C21": {
+   "title": "Synthesize reasoning annotations for demonstrations with a strong MLLM, then SFT a screenshot policy",
+   "status": "candidate_pattern",
+   "main": "trajectory_level_policy_training",
+   "domain": "cua-agents-core"
+  },
+  "C22": {
+   "title": "Executable benchmark with resettable environments and privileged final-state checkers",
+   "status": "candidate_pattern",
+   "main": "verifiable_execution_reward",
+   "domain": "cua-agents-core"
+  },
+  "C23": {
+   "title": "Offline step-level evaluation on recorded trajectories",
+   "status": "candidate_pattern",
+   "main": "online_evaluation_methodology",
+   "domain": "cua-agents-core"
+  },
+  "C24": {
+   "title": "Evaluate agents live on real apps/sites with human success judgement",
+   "status": "candidate_pattern",
+   "main": "online_evaluation_methodology",
+   "domain": "cua-agents-core"
+  },
+  "C25": {
+   "title": "Score agent trajectories with an LLM judge",
+   "status": "candidate_pattern",
+   "main": "learned_outcome_and_process_judges",
+   "domain": "cua-agents-core"
+  },
+  "C26": {
+   "title": "Single-step click-in-box grounding benchmarks",
+   "status": "candidate_pattern",
+   "main": "online_evaluation_methodology",
+   "domain": "cua-agents-core"
+  },
+  "C27": {
+   "title": "Diagnose whether agents believe pixels or serialized structure when the two disagree",
+   "status": "case",
+   "main": "structured_screen_observation",
+   "domain": "cua-agents-core"
+  },
+  "C28": {
+   "title": "Inject instructions into non-rendered HTML channels read by the grounding stage",
+   "status": "candidate_pattern",
+   "main": "environmental_injection_attacks",
+   "domain": "cua-agents-core"
+  },
+  "C29": {
+   "title": "Render fake UI elements (pop-ups, cookie banners) that direct the agent's click",
+   "status": "candidate_pattern",
+   "main": "environmental_injection_attacks",
+   "domain": "cua-agents-core"
+  },
+  "C30": {
+   "title": "Plant natural-language instructions in attacker-writable content of legitimate apps",
+   "status": "candidate_pattern",
+   "main": "environmental_injection_attacks",
+   "domain": "cua-agents-core"
+  },
+  "C31": {
+   "title": "Perturb a trigger image to steer captions or the VLM's reading of it",
+   "status": "case",
+   "main": "environmental_injection_attacks",
+   "domain": "cua-agents-core"
+  },
+  "C32": {
+   "title": "Attribute attack success to components via an agent graph",
+   "status": "case",
+   "main": "environmental_injection_attacks",
+   "domain": "cua-agents-core"
+  },
+  "C33": {
+   "title": "Separate hijack attempts from attack completion in security evaluation",
+   "status": "candidate_pattern",
+   "main": "environmental_injection_attacks",
+   "domain": "cua-agents-core"
+  },
+  "C34": {
+   "title": "Defend against injections inside the same model's context (prompts, delimiters, role hierarchy, paraphrase, detectors)",
+   "status": "candidate_pattern",
+   "main": "injection_defense_isolation",
+   "domain": "cua-agents-core"
+  },
+  "C35": {
+   "title": "Pause sensitive actions for user confirmation, judged by the policy itself",
+   "status": "case",
+   "main": "injection_defense_isolation",
+   "domain": "cua-agents-core"
+  },
+  "C36": {
+   "title": "Separate trusted planning from untrusted observations with information-flow labels and quarantined LLMs",
+   "status": "candidate_pattern",
+   "main": "injection_defense_isolation",
+   "domain": "cua-agents-core"
+  },
+  "C37": {
+   "title": "Compress continuous action chunks with DCT + BPE into autoregressive tokens",
+   "status": "case",
+   "main": "planner_grounder_interface",
+   "domain": "cua-agents-core"
+  },
+  "R01": {
+   "title": "Offline single-step GRPO with rule-checked action and grounding rewards",
+   "status": "candidate_pattern",
+   "main": "rule_reward_single_step_rl",
+   "domain": "board-induced"
+  },
+  "R02": {
+   "title": "Let the agent decide when to ask, defer to or hand control to the user",
+   "status": "candidate_pattern",
+   "main": "agent_initiated_user_interaction",
+   "domain": "board-induced"
+  },
+  "R03": {
+   "title": "Mine operational knowledge and trajectories from human screen-recording videos",
+   "status": "candidate_pattern",
+   "main": "mine_human_screen_videos",
+   "domain": "board-induced"
+  }
+ }
+}

@@ -1,0 +1,1140 @@
+{
+ "agent_initiated_user_interaction": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Explicit, trained ask decision",
+    "detail": "Asking is an explicit output (ASK action or confidence score) that is trained or fine-tuned and compared with prompt-only asking (HSR 86.87 vs 0.00 prompted; ASK timing precision up to 0.947) (2503.16465#board, 2503.24180#board)."
+   },
+   {
+    "id": "S2",
+    "name": "Over-asking and under-asking both measured",
+    "detail": "Ask/intervention precision or false-positive rate is reported next to recall and task success, not success alone (FPR ≤ 0.005; precision 0.08-0.19 for prompted detectors) (2503.24180#board, 2503.19537#board, 2503.16465#board)."
+   },
+   {
+    "id": "S3",
+    "name": "Human effort reported with success",
+    "detail": "Human step counts, intervention counts/rates or relative efficiency are reported (humans take 1.14 of 7.50 steps; ~19% intervention) (2501.16609#board, 2503.16465#board)."
+   },
+   {
+    "id": "S4",
+    "name": "Autonomous and human-only (or always-ask) baselines",
+    "detail": "The mixed-initiative mode is compared with the same agent fully autonomous and with humans alone or help at every step (0.95 vs 0.48 vs 0.89; 62% TSR with help at each step) (2501.16609#board, 2503.16465#board)."
+   },
+   {
+    "id": "S5",
+    "name": "Sensitivity of the ask threshold swept",
+    "detail": "The decision threshold or interaction sensitivity is varied and success vs intervention rate reported across settings (2503.16465#board)."
+   },
+   {
+    "id": "S6",
+    "name": "Need-to-ask labels validated",
+    "detail": "Labels for when interaction is needed are checked by inter-annotator agreement or human verification (kappa 0.64; 90% pass) (2503.19537#board, 2503.24180#board)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Oracle or simulated user answers",
+    "detail": "Requested help is answered by the ground-truth action or by generated QA pairs instead of real users, so success with help credits the oracle (2503.16465#board, 2503.24180#board)."
+   },
+   {
+    "id": "F2",
+    "name": "Asking cost not counted",
+    "detail": "Success is reported without how often the agent asked or how many asks were unnecessary (prompted detectors over-ask with precision 0.08-0.19) (2503.19537#board)."
+   },
+   {
+    "id": "F3",
+    "name": "Confidence or need labels from an unvalidated proprietary critic",
+    "detail": "Confidence labels come from a strong model whose choice changes the result (HSR 86.87 vs 57.63 for another critic) without validation against humans (2503.16465#board)."
+   },
+   {
+    "id": "F4",
+    "name": "Offline or tiny evaluation of interaction",
+    "detail": "Asking is scored on static single-reference trajectories (early ASKs mis-scored) or on a few tasks with the authors as the humans (27 tasks, three authors) (2503.24180#board, 2501.16609#board)."
+   },
+   {
+    "id": "F5",
+    "name": "Single-interaction scope",
+    "detail": "At most one interaction or one omitted step per episode is modelled, and some kinds of asking are excluded by assumption (2503.19537#board, 2503.24180#board)."
+   }
+  ]
+ },
+ "agent_loop_context_control": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Each role removed with the same backbone",
+    "detail": "The paper ablates the progress-summary/planning agent, memory unit, manager or reflector by removing it and reports the drop (SR 88.6 -> 59.1 without the planning agent; instruction SR 56% -> 12% without the manager hub or the reflection agent; subtask SR 76.0 -> 48.1) (2406.01014#s1, 2502.14282#s2, 2502.14282#s3)."
+   },
+   {
+    "id": "S2",
+    "name": "Recent steps at full fidelity, older steps as text, with the window ablated",
+    "detail": "A few recent screenshots are kept verbatim and older history becomes action text or summaries, with the number of screenshots / history level ablated (three recent screenshots plus L1 action text beats one; L2 text history adds nothing) (2508.09123#s4, 2406.01014#s1)."
+   },
+   {
+    "id": "S3",
+    "name": "Proactive replanning or prunable plan trees",
+    "detail": "The manager replans after every subgoal rather than only on failure (+4.62 / +6.15 points), or the agent maintains a plan tree it can branch and prune (WebArena SR 38.2% -> 43.1%) (2504.00906#s2, 2410.13825#s5)."
+   },
+   {
+    "id": "S4",
+    "name": "Reflection on visible, reversible errors",
+    "detail": "Post-action reflection compares before/after observations in settings where errors show as screen non-change or a recognisably wrong page and are reversible; guidelines plus a post-action success/failure summary lift M3A 19.8% -> 30.6% on AndroidWorld (2401.16158#s3, 2406.01014#s3, 2405.14573#s2)."
+   },
+   {
+    "id": "S5",
+    "name": "Hierarchy benefit shown across backbones",
+    "detail": "Separating planning from action decisions is reported across several backbones (Mobile-Agent-E 75.1 vs 53.0 satisfaction across three backbones) (2501.11733#s1)."
+   },
+   {
+    "id": "S6",
+    "name": "Agent-nominated retained content with step savings",
+    "detail": "The agent lists pivotal element ids or focus content to keep, and the paper reports both success and steps (WebArena SR 37.1% -> 38.2%, steps 12.0 -> 8.6; removing the focus memory: SR 88.6 -> 77.3) (2410.13825#s4, 2406.01014#s2)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Reflector and self-check accuracy unmeasured",
+    "detail": "Reflection accuracy is as low as 78.8%, executor self-checks and the supervising orchestrator hallucinate, and completion is self-declared without a checker (2406.01014#s3, 2508.03923#s3, 2411.10323#s2, 2312.13771#s3)."
+   },
+   {
+    "id": "F2",
+    "name": "Summaries hide errors over long horizons",
+    "detail": "Summaries returning only the final state hide intermediate mistakes from the orchestrator, long-horizon tasks (>30-50 actions) still lose coherent context, and summary error propagation is not measured (2508.03923#s2, 2508.09123#s4, 2406.01014#s1)."
+   },
+   {
+    "id": "F3",
+    "name": "Decomposition degrades weaker backbones",
+    "detail": "With a weaker backbone the full multi-agent framework falls below its single agent (Qwen2.5-VL) (2502.14282#s2)."
+   },
+   {
+    "id": "F4",
+    "name": "No role-removal ablation and unreported per-step cost",
+    "detail": "Several systems give no role-removal ablation, so gains cannot be assigned to the hierarchy alone, while each role adds per-step cost (2501.11733#s1, 2402.07939#s1, 2402.07456#s4)."
+   },
+   {
+    "id": "F5",
+    "name": "Irreversible actions and state-blind replanning",
+    "detail": "Plausible-looking wrong pages and irreversible actions (sending messages) defeat screenshot-diff reflection; plan pruning resets only the agent's context, not the web state (2406.01014#s3, 2401.16158#s3, 2410.13825#s5)."
+   },
+   {
+    "id": "F6",
+    "name": "Loop pathologies on small, baseline-free suites",
+    "detail": "Repeated actions to the step limit, early stopping triggered by an 'unachievable' hint, loops from caching actions but not outcomes, or retained content that hurts dense single-page tasks, evaluated on small benchmarks without baselines (2307.13854#s4, 2405.14573#s3, 2410.13825#s4, 2401.16158#s2)."
+   }
+  ]
+ },
+ "calibrate_simulator_to_real": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Twin of the exact target, scoped to the task",
+    "detail": "The twin reconstructs the specific deployment environment restricted to the task-relevant subset, with pruned regions as explicit placeholders; a twin of the exact target scene beats generic assets (90% vs 10% real success) (2403.03949#s1, 2609.07712#s1)."
+   },
+   {
+    "id": "S2",
+    "name": "Resettable to logged real states",
+    "detail": "The simulator can be reset to recorded real states and real states are measurable, so simulated and real next states can be compared step by step (2502.01143#s1, 2402.01086#s1)."
+   },
+   {
+    "id": "S3",
+    "name": "Twin preserves real ranking",
+    "detail": "Offline twin evaluation is shown to preserve the relative ordering of checkpoints/agents seen in the real environment (reported with 5-8x speedup) (2504.03597#s1)."
+   },
+   {
+    "id": "S4",
+    "name": "Real data kept in the training mixture",
+    "detail": "Distillation or retraining co-trains on real demonstrations (3.5x/2x over sim co-training); targeted twin demos are added where the policy fails (30 targeted sim demos ~= 30 extra real demos) (2403.03949#s3, 2504.03597#s2)."
+   },
+   {
+    "id": "S5",
+    "name": "Correction model is more expressive than a global parameter fit",
+    "detail": "A learned residual beats parameter SysID, which yields implausible parameters and little gain; debiasing uses context features that separate regions where the twin is wrong; RL fine-tuning in the corrected simulator beats training-free use of the correction (2402.01086#s2, 2502.01143#s1, 2507.07067#s3, 2502.01143#s2)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Training without real anchor",
+    "detail": "Policies trained without real demos exploit twin inaccuracies; sim-only demos can include behaviour that breaks synchronisation at deployment (2403.03949#s1, 2504.03597#s2)."
+   },
+   {
+    "id": "F2",
+    "name": "Fidelity measured only indirectly",
+    "detail": "Behavioural fidelity is measured only indirectly (placeholder residual up to 20.6%); dynamic content, network, personalisation and long-tail data are omitted (2609.07712#s1, 2504.03597#s1)."
+   },
+   {
+    "id": "F3",
+    "name": "Single global bias correction",
+    "detail": "Plain PPI with a single global bias underperforms real-only training where the twin is wrong; calibration cannot fully remove the gap of a limited-complexity simulator (2507.07067#s3, 2507.07067#s1)."
+   },
+   {
+    "id": "F4",
+    "name": "Correction evaluated out of its regime",
+    "detail": "Out-of-distribution regimes (1.75x pressure) break the residual and autoregressive error accumulates; at short horizons it is not better than open-loop/SysID (2402.01086#s1, 2502.01143#s1)."
+   },
+   {
+    "id": "F5",
+    "name": "Bootstrap needs the real policy to succeed in the twin",
+    "detail": "Step-function dependence on demo count: 0% when the real policy fails in sim (2403.03949#s2)."
+   },
+   {
+    "id": "F6",
+    "name": "Construction cost unreported or prohibitive",
+    "detail": "~2 days wall-clock per task; full 23-DoF delta model impractical (reduced to 4-DoF); Bayesian twin training costs more compute (2403.03949#s3, 2502.01143#s1, 2507.07067#s2)."
+   }
+  ]
+ },
+ "environmental_injection_attacks": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Channel matched to the attacked stage",
+    "detail": "The injection sits in a channel the attacked stage actually consumes: hidden HTML attributes for HTML-reading grounding (ASR up to 0.70), rendered pop-ups for screenshot-driven agents (62-100% step ASR) (2409.11295#s1, 2410.17401#s1, 2411.02391#s1)."
+   },
+   {
+    "id": "S2",
+    "name": "Placement ablated",
+    "detail": "The injection's position relative to the expected target is varied and reported (adjacent/after the target matters most; distant positions fall to 0.01-0.18) (2409.11295#s1, 2410.17401#s1)."
+   },
+   {
+    "id": "S3",
+    "name": "Attempt and completion both reported",
+    "detail": "Attacks are scored both by an intermediate measure (ASR-intermediate, attempt rate, step-level ASR) and by executable completion of the adversarial goal (ASR-intermediate up to 0.857 vs end-to-end <= 0.167; AR up to 92.45%) (2504.18575#s3, 2505.21936#s2, 2411.02391#s4)."
+   },
+   {
+    "id": "S4",
+    "name": "Weak threat model across agents and vectors",
+    "detail": "Low-effort injections in attacker-writable surfaces are tested across several frontier agents and vectors, with per-vector results (WASP ASR-intermediate 0.167-0.857; RedTeamCUA ASR 7.57-66.19%; notifications and emails most effective) (2504.18575#s1, 2505.21936#s1, 2506.14866#s1)."
+   },
+   {
+    "id": "S5",
+    "name": "Component-level attribution",
+    "detail": "The compound agent is modelled as a graph to localise where adversarial content is filtered or amplified (92% of attacked captions vs 31% end-to-end ASR) (2406.12814#s2, 2406.12814#s5)."
+   },
+   {
+    "id": "S6",
+    "name": "Optimised attack with transfer and retargeting tested",
+    "detail": "An optimised attacker (black-box-trained prompter, 97.5-99.8% ASR) is evaluated for transfer across backends (18%) and retargeting (98.5%) (2410.17401#s1, 2410.17401#s2, 2410.17401#s3)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Exposure overstated by episode start or task filtering",
+    "detail": "Episodes start at the trigger page or are decoupled from the benign task, and tasks are filtered to ones the agent solves, which overstates real-world ASR relative to end-to-end runs (2406.12814#s1, 2505.21936#s1, 2505.21936#s2)."
+   },
+   {
+    "id": "F2",
+    "name": "One pipeline, one backend, offline",
+    "detail": "The attack is tested only on one pipeline offline (SeeAct), does not transfer across backends, or cannot reach screenshot-driven action generation (full-request ASR 0) (2410.17401#s1, 2410.17401#s2, 2409.11295#s1)."
+   },
+   {
+    "id": "F3",
+    "name": "Attempt judged by an unvalidated, susceptible LLM judge",
+    "detail": "The intermediate hijack measure comes from an LLM judge whose reliability is not quantified and which may itself be susceptible (2504.18575#s3, 2505.21936#s2)."
+   },
+   {
+    "id": "F4",
+    "name": "Small, static, non-adaptive injection sets",
+    "detail": "Injections are few, hand-written and non-adaptive; weak open models are not hijacked by faint text, so the set measures only a lower bound (2504.18575#s1, 2409.11295#s2)."
+   },
+   {
+    "id": "F5",
+    "name": "Strong attack needs a white-box component",
+    "detail": "The strong attack depends on a white-box captioner in the pipeline; black-box transfer drops sharply when the image is small in the screenshot (10% ASR) (2406.12814#s3, 2406.12814#s4)."
+   },
+   {
+    "id": "F6",
+    "name": "Unstated success conditions",
+    "detail": "Attacks fail when the agent ends from history, the answer is already on the page or more confident actionable elements exist; delayed attacks are weaker; retargeting is tested only on pre-filtered successes (2411.02391#s1, 2410.17401#s3)."
+   }
+  ]
+ },
+ "experience_memory_retrieval": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Experience from the same environments",
+    "detail": "Memory is built from the same applications/environments (self-supervised exploration on benchmark initial states) (2410.08164#s2)."
+   },
+   {
+    "id": "S2",
+    "name": "Summaries rather than raw trajectories, with ablation",
+    "detail": "Stored experience is summarised by a self-evaluator, and removing the summaries is ablated (26.15 -> 18.46) (2410.08164#s2)."
+   },
+   {
+    "id": "S3",
+    "name": "Memory-size scaling reported",
+    "detail": "Scaling with memory size is reported: continuous (Q-Former) memory scales log-linearly where text memory degrades beyond ~10 items (2510.09038#s1)."
+   },
+   {
+    "id": "S4",
+    "name": "Hierarchical planning with retrieved knowledge",
+    "detail": "A manager fuses web search and narrative memory into a subtask queue executed by workers, with replanning on failure; requires a proprietary MLLM, web search and an accessibility tree (2410.08164#s1)."
+   },
+   {
+    "id": "S5",
+    "name": "Distilled, reusable knowledge from own runs",
+    "detail": "What worked is distilled into element-function documents, tips, precondition-guarded shortcuts or code tools and injected into later tasks, with the gain reported against no library (AppAgent SR 48.9% -> 73.3% with stable element ids; Mobile-Agent-E SS 75.1 -> 86.9; SheetCopilot tasks 0% -> 60%) (2312.13771#s2, 2501.11733#s3, 2402.07456#s3)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Small out-of-distribution gain",
+    "detail": "OOD gains are small (OSWorld 26.40 -> 26.73) and retrieval drifts under UI shifts (2510.09038#s1)."
+   },
+   {
+    "id": "F2",
+    "name": "Self-evaluator / reflector not validated",
+    "detail": "Self-evaluator correctness is unmeasured; reflector labels disagree with humans ~25% (2410.08164#s2, 2311.08649#s2)."
+   },
+   {
+    "id": "F3",
+    "name": "Held-out environment gains not isolated",
+    "detail": "Gains on environments other than those the memory was built from are not isolated (2410.08164#s2)."
+   },
+   {
+    "id": "F4",
+    "name": "Thin ablations and execution-dominated failures",
+    "detail": "Ablations on 65 tasks with a single run; execution errors account for 79.59% of failures (2410.08164#s1)."
+   },
+   {
+    "id": "F5",
+    "name": "Distilled knowledge leaks test queries or propagates errors",
+    "detail": "Reflectors saw future queries or learning explores the same benchmark's dev set; shortcuts are misused on misperceived preconditions and flawed shortcuts propagate errors; the gain is small or absent with another backbone (Gemini-1.5-pro) (2501.11733#s3, 2402.07456#s3, 2312.13771#s2)."
+   }
+  ]
+ },
+ "exploration_driven_task_synthesis": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Interaction-first beats instruction-first at equal budget",
+    "detail": "The paper compares exploration-first (hindsight) synthesis against instruction-first synthesis at equal budget (MiniWoB 0.48 vs 0.28; WebArena 7.2 vs 4.2) (2410.02907#s3)."
+   },
+   {
+    "id": "S2",
+    "name": "Instructions reference explored, site-specific entities",
+    "detail": "Synthesised instructions reference deep, site-specific entities discovered by exploration, relabelled by a strong LLM/VLM (2410.02907#s3, 2412.19723#s1, 2410.02907#s1)."
+   },
+   {
+    "id": "S3",
+    "name": "Feasibility/difficulty filter on proposed tasks",
+    "detail": "Proposed tasks are filtered by a feasibility or difficulty signal (activity lists, critic value band [0.05, 0.75], feasibility rules) (2311.08649#s1, 2411.02337#s1)."
+   },
+   {
+    "id": "S4",
+    "name": "History presented per cluster, intents from memory",
+    "detail": "Proposals are conditioned on history presented per cluster of the UI transition graph rather than the whole graph or recent states only (coverage 36.94 vs 26.09/31.51), with intents generated from stored history rather than the live screen (2609.10031#s1, 2609.10031#s2)."
+   },
+   {
+    "id": "S5",
+    "name": "Failure-conditioned curriculum shown to transfer",
+    "detail": "A self-evolving curriculum built from failed tasks improves online RL and transfers to another RL algorithm (DigiRL) (2411.02337#s1)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Synthesis environments overlap evaluation",
+    "detail": "Synthesis environments overlap the evaluation environments (2412.19723#s1)."
+   },
+   {
+    "id": "F2",
+    "name": "Poor cross-site transfer",
+    "detail": "Synthesised data transfers poorly across sites; mixing live and WebArena data hurts 7 sites (2410.02907#s2)."
+   },
+   {
+    "id": "F3",
+    "name": "Kept-trajectory judge precision unmeasured",
+    "detail": "Judge precision for kept trajectories is not measured, and self-reinforcing loops may overfit easy/popular sites (2510.09038#s2)."
+   },
+   {
+    "id": "F4",
+    "name": "Saturation bounded by the executor",
+    "detail": "Gains saturate with scale, bounded by executor capability (2412.19723#s1)."
+   },
+   {
+    "id": "F5",
+    "name": "Exploration blind spots",
+    "detail": "Widgets without text and single views with sub-regions are poorly explored; live-site exploration cannot log in or submit content; mocked values from instrumentation may not initialise realistic state (2311.08649#s1, 2410.02907#s1, 2601.21253#s2, 2601.21253#s3)."
+   },
+   {
+    "id": "F6",
+    "name": "Hand-written feasibility rules and noisy generation",
+    "detail": "Task-generation randomness raises variance, feasibility rules are hand-written per environment, and residual duplicate or non-existent-functionality intents remain (2411.02337#s1, 2609.10031#s1)."
+   }
+  ]
+ },
+ "high_resolution_target_localisation": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Evaluated on high-resolution professional screens",
+    "detail": "Results are reported on a high-resolution professional benchmark such as ScreenSpot-Pro, where base grounders are weak and the method's gain is large (cropping around the first prediction: OS-Atlas-7B 18.9 -> 40.2) (2504.07981#s1, 2504.07981#s2, 2506.03143#s1)."
+   },
+   {
+    "id": "S2",
+    "name": "Same-data baseline isolates the architecture",
+    "detail": "The new head or encoding is compared with coordinate generation trained on the same data (ScreenSpot-Pro 40.7 vs 15.6 for Aguvis-7B point supervision), or architecture and data gains are ablated separately (2506.03143#s1, 2312.08914#s1)."
+   },
+   {
+    "id": "S3",
+    "name": "Zoom parameters matched to the grounder",
+    "detail": "Crop size is tuned to the grounder's input resolution and the zoom step is applied around the first prediction or around planner-proposed areas scored by grounded neighbour votes (48.1% without training) (2504.07981#s2, 2504.07981#s3)."
+   },
+   {
+    "id": "S4",
+    "name": "Verification over diverse candidates",
+    "detail": "A verifier checks several diverse candidates emitted in one grounding pass and the agent acts on the first verified one (ScreenSpot-Pro +3.5 to +12.9) (2506.03143#s3)."
+   },
+   {
+    "id": "S5",
+    "name": "Efficiency gain measured at held accuracy",
+    "detail": "A high-res channel or token skipping reports compute savings at near-equal accuracy and beats simple alternatives (>10x FLOPs reduction at 1120; 33% tokens removed, 1.4-1.5x speedup, ScreenSpot 70.4 vs 70.8, vs token merging 42.3 and random selection 65.3) (2312.08914#s1, 2411.17465#s1)."
+   },
+   {
+    "id": "S6",
+    "name": "Region-level supervision for the pointer",
+    "detail": "The pointing head is trained against the target region (box-rasterised patch mask) rather than a single point, tolerating spatial ambiguity (2506.03143#s2)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Sub-patch and icon targets remain weak",
+    "detail": "Elements smaller than one patch are under-represented (CAD-like precision tasks) and icon accuracy stays low (ScreenSpot-Pro icon 16.4; zoom search icon 22.4%) (2506.03143#s1, 2504.07981#s3)."
+   },
+   {
+    "id": "F2",
+    "name": "Extra model calls without cost accounting",
+    "detail": "Sequential verifier, planner and grounder calls are added per candidate or per action (3.3-5.5 queries per action) while cost/latency is not reported (2506.03143#s3, 2504.07981#s3, 2607.04334#s4)."
+   },
+   {
+    "id": "F3",
+    "name": "Regressions on easier benchmarks or other platforms",
+    "detail": "The method has small or negative effect on easier benchmarks (ScreenSpot Web-Icon 85.4 -> 80.6 for 2B) or on other platforms (anyres Android advanced tasks 80.5 -> 70.1), or is not tested on desktop/web (2506.03143#s3, 2404.05719#s1)."
+   },
+   {
+    "id": "F4",
+    "name": "Search cannot recover a far-off first guess",
+    "detail": "Zoom-and-reground fails when the first prediction is far off (locked onto a background-window tab); crops too small lose context and too large exceed capacity (2504.07981#s2)."
+   },
+   {
+    "id": "F5",
+    "name": "Training-time trick applied at test time or untested on navigation",
+    "detail": "Applying token selection at test time drops ScreenSpot to 64.9, text-rich screens have few redundant components, and navigation is not ablated (2411.17465#s1)."
+   },
+   {
+    "id": "F6",
+    "name": "Grounding-only evidence for an agent claim",
+    "detail": "Only click grounding is evaluated (agent use requires a separate planner), or the architecture gain on an agent task is small (Mind2Web 40.7 -> 41.4) compared with data gains (2506.03143#s1, 2312.08914#s1)."
+   }
+  ]
+ },
+ "injection_defense_isolation": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Untrusted data isolated and calls policy-checked",
+    "detail": "Untrusted results are hidden behind variables, queried only through a quarantined LLM with constrained typed outputs, and tool/GUI calls are checked against information-flow policies (AgentDojo policy-relevant injections 163 -> 9 / 0) (2505.23643#s1, 2505.23643#s3)."
+   },
+   {
+    "id": "S2",
+    "name": "Benign utility reported under the defense",
+    "detail": "Utility on benign tasks is reported next to attack success (single-shot branching plans: 58.3% pass@3 on 60 OSWorld tasks; selective hiding plus quarantined queries recovers utility, best with reasoning models) (2601.09923#s1, 2505.23643#s2)."
+   },
+   {
+    "id": "S3",
+    "name": "Defense attacked directly",
+    "detail": "The defense itself is attacked adaptively (fake cookie popups or optimised banner pixels steering a fixed plan; CLIP attacks on consistency checks) and the result reported (2601.09923#s3, 2406.12814#s6)."
+   },
+   {
+    "id": "S4",
+    "name": "Compared against standard in-context defenses",
+    "detail": "A new defense is compared with defensive system prompts, instruction hierarchy and injection detectors, which roughly halve ASR for some models (2504.18575#s4, 2505.21936#s3)."
+   },
+   {
+    "id": "S5",
+    "name": "Specific checks with access to raw inputs",
+    "detail": "In-context defenses use specific per-step prompts or let the defender see raw inputs (self-captioning consistency check nearly removes captioner-attack ASR when the defender LM sees raw images) (2411.02391#s3, 2406.12814#s6)."
+   },
+   {
+    "id": "S6",
+    "name": "Confirmation gating measured on benign and attacked runs",
+    "detail": "Confirmation behaviour on sensitive requests is reported (85.7% vs 50-57% for GPT baselines) and gating is also tested under injection (Operator ASR 30.89% -> 7.57% with confirmation checks) (2402.07939#s4, 2505.21936#s3)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Generic defensive prompts",
+    "detail": "Generic defensive prompts give no gain (pop-ups, EIA, captioner attack) and malware scanners flag nothing (2411.02391#s3, 2409.11295#s3, 2406.12814#s6)."
+   },
+   {
+    "id": "F2",
+    "name": "Instruction hierarchy or detectors trusted as sufficient",
+    "detail": "Instruction hierarchy did not prevent hijacking (>50% of cases still influenced) and detectors catch 0-30% of high-risk injections (2504.18575#s4, 2505.21936#s3)."
+   },
+   {
+    "id": "F3",
+    "name": "Utility and token cost of isolation",
+    "detail": "Coarse tainting cuts task completion by up to 40%, data-dependent tasks remain largely unsolved, and isolation costs 2-3x tokens or much more for iterative variants (2505.23643#s1, 2505.23643#s2, 2505.23643#s3, 2601.09923#s2)."
+   },
+   {
+    "id": "F4",
+    "name": "Fixed plans that cannot adapt",
+    "detail": "Underspecified tasks with unknown start states explode branches, plans cannot adapt to observed failures, boolean leakage accumulates and termination is only via caps (2601.09923#s1, 2601.09923#s2)."
+   },
+   {
+    "id": "F5",
+    "name": "Self-judged gating without adversarial content",
+    "detail": "The same policy decides which actions need confirmation (per-app rates as low as 50%), no adversarial content is tested, or an attentive human is assumed (2402.07939#s4, 2505.21936#s3)."
+   },
+   {
+    "id": "F6",
+    "name": "Channels outside the policy",
+    "detail": "Text-to-text injections that affect final responses fall outside tool-call policies (2505.23643#s1)."
+   }
+  ]
+ },
+ "learn_and_train_in_gui_world_model": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Abstracted transition target",
+    "detail": "The world model predicts an abstraction of the change (Hungarian-matched element diff rewritten in natural language, or a delta from a retrieved HTML of the same app) rather than the raw full next state; raw-tree targets drop downstream SR 22.0 -> 14.5, and retrieval-grounded delta generation scores 73.51 vs 67.46 without RAG (2410.13232#s1, 2608.05891#s1)."
+   },
+   {
+    "id": "S2",
+    "name": "Transitions harvested from real execution",
+    "detail": "Training transitions come from executing in real pages/apps (goal-free random or structured walks, deduplicated structurally and visually, e.g. MinHash plus pHash) and are captioned by a VLM, not imagined by a teacher (2604.02345#s1, 2411.06559#s2)."
+   },
+   {
+    "id": "S3",
+    "name": "Short imagination horizon",
+    "detail": "Imagined rollouts used for policy training are kept short (best 4-5 steps), with the horizon ablated (2601.22149#s2)."
+   },
+   {
+    "id": "S4",
+    "name": "Real-data anchor in the training mixture",
+    "detail": "Imagined trajectories are mixed with real expert or public trajectories (~40% real gives most of the gain), and the world model is fine-tuned on the target environment family (2601.22149#s2, 2608.05891#s3, 2602.14721#s2)."
+   },
+   {
+    "id": "S5",
+    "name": "World-model reward is not visual-only",
+    "detail": "When the world model is itself RL-trained, its reward combines visual alignment with an action-consequence (transition validity) judge; either alone is worse and visual-only reward is reward-hacked (2602.09856#s1)."
+   },
+   {
+    "id": "S6",
+    "name": "Transition objective compared under matched data",
+    "detail": "A forward-dynamics pretraining objective is compared against inverse/backward variants with identical post-training data (EM 53.9/54.4 vs 51.0 baseline); explicit auxiliary tasks restore verification/reversal ability eroded by regular GUI pretraining (87.56 verification, 93.81 reversal) (2604.02345#s3, 2604.02345#s2, 2506.08012#s3)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Policy trained on imagination alone",
+    "detail": "Purely imagined training underperforms SFT or lowers ATP below the base model (2601.22149#s2, 2608.05891#s3)."
+   },
+   {
+    "id": "F2",
+    "name": "Long dreams or full-page prediction",
+    "detail": "Long dreams degrade through compounding hallucination and only ~1/10 world-model rollouts pass quality checks; full-page transitions are much harder (~12% completely wrong) (2601.22149#s2, 2608.05891#s3, 2601.22149#s1)."
+   },
+   {
+    "id": "F3",
+    "name": "Next state depends on hidden server state",
+    "detail": "The model has no access to server-side state, real assets or pixels by construction; counterfactual imagination accounts for 42% of sampled errors (invented products) and visual similarity drops OOD (2410.13232#s1, 2601.22149#s1, 2602.09856#s1)."
+   },
+   {
+    "id": "F4",
+    "name": "Optimistic, sycophantic predictions",
+    "detail": "The world model predicts overly optimistic outcomes that cater to the agent's action, with poor detailed content generation (2602.14721#s1)."
+   },
+   {
+    "id": "F5",
+    "name": "Fidelity scored by an LLM judge from the training family",
+    "detail": "Intrinsic metrics are LLM-judged rather than executed, or the same VLM family serves as RL reward and evaluation judge, which may inflate gains (2601.22149#s1, 2602.14721#s1, 2602.09856#s1)."
+   },
+   {
+    "id": "F6",
+    "name": "No real-environment synthesis baseline or scaling ceiling",
+    "detail": "No comparison against equal-size synthesis in the real environment; gains saturate (~20K rollouts) and taper with data scale; filtering stages and caption quality are not ablated (2602.14721#s2, 2608.05891#s3, 2411.06559#s2, 2604.02345#s1)."
+   }
+  ]
+ },
+ "learned_outcome_and_process_judges": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Judge agreement with humans reported",
+    "detail": "The judge is validated against human labels; key-point extraction plus key-screenshot selection keeps agreement over long trajectories (~85-87% with humans); full-trajectory screenshots raise GPT-4V agreement to kappa 0.70, matching inter-annotator agreement (2504.01382#s1, 2401.13919#s3)."
+   },
+   {
+    "id": "S2",
+    "name": "Completion visible in the judged state",
+    "detail": "Tasks are phrased so that completion is visible in a single screenshot or final-state HTML (2406.11896#s2, 2411.02337#s2)."
+   },
+   {
+    "id": "S3",
+    "name": "Graded scores as weights, not hard filters",
+    "detail": "Graded judge scores are used as sampling weights rather than hard filters (2412.19723#s2)."
+   },
+   {
+    "id": "S4",
+    "name": "Judge acquires hidden state actively",
+    "detail": "The verifier escalates from final screenshot to intermediate screenshots to read-only shell/GUI probing of the preserved terminal environment (verifier SR 83.1% vs actor 55.9%) (2602.00575#s1)."
+   },
+   {
+    "id": "S5",
+    "name": "Reliability over coverage via abstention",
+    "detail": "Several judges with different models/prompts, chosen for opposite precision/NPV biases, label only unanimous cases, and their errors are shown to be not fully correlated (2510.18596#s1)."
+   },
+   {
+    "id": "S6",
+    "name": "Human-labelled, in-distribution PRM",
+    "detail": "A process reward model is trained on human step labels from the same environment (94.9% held-out accuracy) (2509.23738#s1)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Judge sees only partial state",
+    "detail": "Judges see only the last screenshots, so mid-trajectory or hidden-state errors are missed (2412.19723#s2, 2510.18596#s2)."
+   },
+   {
+    "id": "F2",
+    "name": "Disagreement with humans on free-form tasks",
+    "detail": "~13-20% disagreement with humans; free-form tasks lower precision (2411.02337#s2, 2504.01382#s1, 2406.11896#s2)."
+   },
+   {
+    "id": "F3",
+    "name": "Systematic bias treated as noise",
+    "detail": "Zero-mean reward noise only adds variance, but systematic judge bias is not removed by more rollouts; judges show self-preference bias, count partial progress as success and are fooled by injection phrasing (2605.06732#s3, 2401.13919#s3, 2506.14866#s2)."
+   },
+   {
+    "id": "F4",
+    "name": "Reward exploitation not analysed",
+    "detail": "Policy exploitation of judge errors / reward hacking and OOD apps are not analysed, often with a single run (2406.11896#s2, 2411.02337#s2, 2509.23738#s1)."
+   },
+   {
+    "id": "F5",
+    "name": "Coverage loss from abstention unvalidated in RL",
+    "detail": "Recall/specificity drop sharply, abstention may bias kept samples, and the ensemble is not validated in an RL loop (2510.18596#s1)."
+   },
+   {
+    "id": "F6",
+    "name": "Generic judge assumed adequate",
+    "detail": "Visual reasoning dominates judge quality; GUI-specialised reward models are no better than base VLMs; a learned PRM stays below oracle reward on offline single-step GRPO (2510.18596#s2, 2509.23738#s3)."
+   }
+  ]
+ },
+ "mine_human_screen_videos": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Extraction validated against human labels",
+    "detail": "Scene segmentation, element detection and inferred actions are scored against human annotation of held-out videos (scene F1 95.04; action accuracy 80.90% / touch 91.84%) (2505.12632#board)."
+   },
+   {
+    "id": "S2",
+    "name": "Transfer to an unseen platform or app",
+    "detail": "Models trained with the mined data are tested on a platform or app absent from it (Windows Mobile 38.54 -> 51.71) (2505.12632#board)."
+   },
+   {
+    "id": "S3",
+    "name": "Compared with written knowledge or existing datasets at counted cost",
+    "detail": "The video source is compared with manually written knowledge or human-annotated data, with authoring/annotation cost reported (86.7 vs 63.3 SR; 0.7 vs 5 min; $0.34 vs $5.76 per video) (2502.17110#board, 2505.12632#board)."
+   },
+   {
+    "id": "S4",
+    "name": "Context used for labelling ablated",
+    "detail": "The contribution of narration, neighbouring frames and multi-step identification is ablated (80.90 vs 78.20 without narration, 70.63 one-step) (2505.12632#board)."
+   },
+   {
+    "id": "S5",
+    "name": "Generalisation beyond the demonstrated task",
+    "detail": "Performance is reported when the video does not match the test task (misaligned videos; one video per scenario for harder tasks: 31.3 vs 18.9) (2502.17110#board)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Demonstration aligned with the evaluated task",
+    "detail": "Each test task comes with its own demo video on an author-built benchmark, so gains measure replay of the shown procedure (2502.17110#board)."
+   },
+   {
+    "id": "F2",
+    "name": "Noisy VLM-inferred labels used unchecked",
+    "detail": "Action labels are produced by a proprietary VLM with residual error (80.90% accuracy) and used for training without filtering or error analysis of downstream effect (2505.12632#board)."
+   },
+   {
+    "id": "F3",
+    "name": "Offline matching or captioning as the only evidence",
+    "detail": "Results are exact action matching on static sets or captioning metrics, with no acting agent evaluated online (2505.12632#board, 2503.20978#board)."
+   },
+   {
+    "id": "F4",
+    "name": "Key-frame loss or context overload",
+    "detail": "Key-frame sampling may omit essential frames and longer frame windows add irrelevant ones, degrading decisions without a reflection or window ablation (2502.17110#board)."
+   },
+   {
+    "id": "F5",
+    "name": "Coverage narrowed by filtering",
+    "detail": "Aggressive filtering (20K of 129K videos; unobstructed phone screens only) restricts the platforms and interaction styles covered (2505.12632#board)."
+   }
+  ]
+ },
+ "online_evaluation_methodology": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Validated, de-shortcut task set",
+    "detail": "Tasks are validated by humans and shortcuts removed (47% of sampled Mind2Web tasks invalid/outdated; a naive search agent scores 51% vs 22%) (2504.01382#s2)."
+   },
+   {
+    "id": "S2",
+    "name": "Fixed step budget in deterministic resettable apps",
+    "detail": "Agents are compared at a fixed step budget in deterministic, resettable apps (2609.07712#s3)."
+   },
+   {
+    "id": "S3",
+    "name": "Success stratified by reference length with failure audit",
+    "detail": "Success is reported per human reference-length stratum together with efficiency/budget exhaustion and a failure audit (2609.07712#s3, 2504.01382#s2)."
+   },
+   {
+    "id": "S4",
+    "name": "Controlled matched-pair perturbations",
+    "detail": "DOM/VM control is used to inject one controlled change at a time and recompute targets, reporting matched-pair accuracy changes (2604.14262#s1, 2404.07972#s2)."
+   },
+   {
+    "id": "S5",
+    "name": "Closed-loop world-model evaluation with filtered references",
+    "detail": "World models are rolled out autoregressively along reference action sequences and with a probing agent, using reference trajectories filtered for plausibility and state dependence (2609.00048#s3)."
+   },
+   {
+    "id": "S6",
+    "name": "Offline and static proxies made multi-reference and checked against online",
+    "detail": "Offline step evaluation scores each step against multiple valid actions and is shown to track online success and preserve rankings (power-law fit to OSWorld 15-step SR), and grounding-benchmark annotations are audited (~11% errors removed, rankings preserved) (2508.09123#s5, 2306.06070#s3, 2410.23218#s4)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Live-site drift and heterogeneous harnesses",
+    "detail": "Live sites drift, and harnesses and step caps differ across compared agents (2504.01382#s2)."
+   },
+   {
+    "id": "F2",
+    "name": "Aggregate success hides length collapse",
+    "detail": "Success falls monotonically with length for every agent (GPT-5 43.6 -> 14.1%), so an unstratified number hides long-horizon failure (2609.07712#s3)."
+   },
+   {
+    "id": "F3",
+    "name": "Perceptual similarity as world-model fidelity",
+    "detail": "Fine-grained element scores are < 20 while SigLIP is 61-77 and best reference-action progress is 16.7, so global similarity overstates fidelity (2609.00048#s1)."
+   },
+   {
+    "id": "F4",
+    "name": "Single probe agent or same-family judge",
+    "detail": "A single probing agent, a judge from the same model family, and an unvalidated VLM filter are used (2609.00048#s2, 2609.00048#s3)."
+   },
+   {
+    "id": "F5",
+    "name": "Narrow probe sets and training-time randomisation as the fix",
+    "detail": "Perturbation sets are small, web-only and from one model lineage; relational instructions collapse accuracy (UI-TARS-1.5 91.0 -> 35.0) and domain-randomised LoRA SFT does not fix the brittleness (2604.14262#s1, 2604.14262#s2)."
+   },
+   {
+    "id": "F6",
+    "name": "Small human-judged live sets or single-reference static proxies",
+    "detail": "Live human-judged evaluation uses small task sets (20-90) without inter-annotator agreement, or claims rest on single-reference offline replay that counts alternative paths as failures (SeeAct 37.8 online vs 3.3 offline) or on single-step click-in-box benchmarks that measure no planning (2401.01614#s4, 2501.11733#s4, 2502.14282#s4, 2306.06070#s3, 2401.10935#s4)."
+   }
+  ]
+ },
+ "planner_grounder_interface": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Grounder value shown with a fixed strong planner",
+    "detail": "Holding a strong planner fixed and adding the grounder is reported (o3 23.0 -> 51.0, GPT-4o 5.0 -> 27.0 on OSWorld with Jedi); replacing GPT-4o's own coordinates with a grounding model's triples OSWorld SR (5.03 -> 14.63 with OS-Atlas-7B) (2505.13227#s2, 2410.23218#s3)."
+   },
+   {
+    "id": "S2",
+    "name": "Screenshot-only grounder at dynamic high resolution",
+    "detail": "The grounder operates on raw screenshots only, trained at dynamic high resolution (2410.05243#s2, 2412.04454#s3)."
+   },
+   {
+    "id": "S3",
+    "name": "Grounding data from rendered structure, mixed and multi-level",
+    "detail": "Exact element boxes are read from rendered DOM/element trees; mixed data types and multiple levels (icon/component/layout) scale without saturation, and web-only data transfers to desktop/mobile; harvested element-box pairs are curated (dropping static text, balanced per-source sampling: 71.2 -> 74.9) rather than only scaled (2505.13227#s1, 2410.05243#s1, 2401.10935#s1, 2411.17465#s4)."
+   },
+   {
+    "id": "S4",
+    "name": "Unified cross-platform action space",
+    "detail": "A unified pyautogui action space is used, packing multiple pairs per screenshot; normalising heterogeneous datasets into one shared schema (17 -> 10 action types) helps zero-shot OOD transfer (2412.04454#s1, 2410.23218#s2, 2508.09123#s1)."
+   },
+   {
+    "id": "S5",
+    "name": "Interface matched to available structure",
+    "detail": "An element-tag interface is used only where a parseable accessibility tree plus OCR exists; an application-specific tool library fits in context (881 tools, 32K) (2410.08164#s3, 2510.17790#s1)."
+   },
+   {
+    "id": "S6",
+    "name": "Hybrid GUI + code action space compared with each alone",
+    "detail": "GUI actions are mixed with code/shell/SDK calls and compared against GUI-only and code-only agents on the same benchmark (OSWorld-Verified 60.76% vs 50.68% / 35.73%, with fewer steps per passed task), or the action space is pruned toward what the LLM handles well with each step ablated (WebArena SR 16.5% -> 25.9% -> 31.7%) (2508.03923#s1, 2509.02544#s1, 2410.13825#s1, 2410.13825#s2)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Planner errors propagate through the NL interface",
+    "detail": "Planning errors (wrong/vague element descriptions) dominate failures and propagate through the natural-language interface; an end-to-end single model is weaker than with a strong external planner; residual failures are dominated by planning in spreadsheet and multi-app tasks (2410.05243#s2, 2505.13227#s2, 2412.04454#s3, 2410.23218#s3, 2504.00906#s3)."
+   },
+   {
+    "id": "F2",
+    "name": "Ambiguity and refusal unhandled",
+    "detail": "Models rarely refuse; ambiguous instructions cause ~40% of errors (2505.13227#s1, 2412.04454#s1)."
+   },
+   {
+    "id": "F3",
+    "name": "Claims on saturated grounding benchmarks only",
+    "detail": "ScreenSpot v1/v2 saturate and there is an offline-online gap (2501.12326#s3)."
+   },
+   {
+    "id": "F4",
+    "name": "Data returns diminish on long-tail icons",
+    "detail": "Diminishing returns after ~100K screenshots; long-tail and idiosyncratic icons cause grounding errors on mobile/desktop (2410.05243#s1, 2410.05243#s2)."
+   },
+   {
+    "id": "F5",
+    "name": "Interface granularity too coarse",
+    "detail": "Element-ID grounding cannot target sub-element positions (grounding errors in 53% of failures); pruned or compressed action spaces drop actions other sites need (hover/press/tabs untested) or lose fine-grained actions (letter-level drag-select) (2410.08164#s3, 2410.13825#s1, 2508.09123#s1)."
+   },
+   {
+    "id": "F6",
+    "name": "Tool interface unused by small models",
+    "detail": "Tool gains are modest at 7B (+1.9); small models rarely call tools and make harmful tool calls before RL; hybrid code actions need a strong reasoning orchestrator (o4-mini drops to 43.43%) and code-only cannot handle apps without scripting access (2510.17790#s1, 2508.03923#s1, 2402.07456#s1)."
+   }
+  ]
+ },
+ "rule_reward_single_step_rl": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Same-data, same-backbone SFT baseline",
+    "detail": "RL is compared with SFT of the same backbone on the same curated samples (3B ScreenSpot 80.08 vs 63.55, ScreenSpot-Pro 25.23 vs 13.80; WorkArena 46.79 vs 30.20), not only with SFT models trained on different, larger data (2504.10458#board, 2505.22942#board, 2503.21620#board)."
+   },
+   {
+    "id": "S2",
+    "name": "Difficulty filtering by base-model sampling, ablated",
+    "detail": "Training states are selected by sampling the base model (drop all-correct / all-wrong, or keep failed hard samples) and the filter is compared with random or unfiltered data (ScreenSpot-Pro 40.0 vs 27.1 unfiltered with sparse reward) (2503.21620#board, 2504.10458#board, 2505.12370#board, 2505.15810#board)."
+   },
+   {
+    "id": "S3",
+    "name": "Reward components ablated and checked for hacking",
+    "detail": "Each reward term (point vs box/IoU, dense vs sparse, box-size constraint, action-type term) is ablated and the paper inspects whether the policy games it (box sizes over training, response lengths, repeated actions) (2505.15810#board, 2505.22942#board, 2503.21620#board, 2505.12370#board)."
+   },
+   {
+    "id": "S4",
+    "name": "Reasoning template matched to the task and ablated",
+    "detail": "Thinking vs direct answering is compared for the target task (grounding: DAST+NOTHINK ScreenSpot-Pro 33.5 vs 17.8 thinking; web navigation: long-reasoning SFT helps) (2503.21620#board, 2505.15810#board, 2505.22942#board)."
+   },
+   {
+    "id": "S5",
+    "name": "Out-of-domain or online evidence beyond the training distribution",
+    "detail": "Gains are shown on platforms or benchmarks outside the training data (mobile-only training tested on desktop/web and ScreenSpot-Pro) or on an online/live benchmark (WorkArena, WebVoyager), not only on in-distribution offline steps (2503.21620#board, 2505.22942#board, 2506.09373#board)."
+   },
+   {
+    "id": "S6",
+    "name": "SFT warm-up and a second backbone for agent tasks",
+    "detail": "For multi-step agent tasks, GRPO starts from an SFT warm-up compared against direct initialisation, and the gain is repeated on another backbone family (Llama-3.1-8B 32.41 vs 20.48 SFT) (2505.22942#board)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Single-reference, single-step evidence for an agent claim",
+    "detail": "Rewards and evaluation use exact match to one reference action on static states, multi-step tasks are cut into independent steps, and no online multi-step success is reported (no \"aha moment\" from single-image non-interactive training) (2505.22942#board, 2504.10458#board, 2503.21620#board)."
+   },
+   {
+    "id": "F2",
+    "name": "Shaped reward gamed by the policy",
+    "detail": "Hit/IoU/text-similarity or piecewise-dense rewards are hacked (boxes shrink or grow, the most common action is repeated, tokens are emitted after the action tag) or GRPO length normalisation favours long wrong answers, and this is not checked or regularised (2505.15810#board, 2505.22942#board)."
+   },
+   {
+    "id": "F3",
+    "name": "RL gain confounded with data or backbone",
+    "detail": "The headline comparison is against SFT models with different backbones and far larger different data (3K vs 13M-14M), so the share due to RL is not isolated (2505.15810#board, 2504.10458#board, 2505.12370#board)."
+   },
+   {
+    "id": "F4",
+    "name": "Aggregate grounding hides icon and professional-screen weakness",
+    "detail": "Only averages are emphasised while icon accuracy on ScreenSpot-Pro stays low (16.8 vs 49.5 text; 21.0 vs 63.5) (2505.15810#board, 2505.12370#board)."
+   },
+   {
+    "id": "F5",
+    "name": "Small gains on high-level tasks or few model sizes",
+    "detail": "On high-level/multi-step offline tasks the gain over the zero-shot base is small (56.13 vs 50.53), or only 3B/7B are tested, so scaling is unknown (2504.10458#board, 2505.12370#board)."
+   }
+  ]
+ },
+ "simulated_lookahead_selection": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "One-step lookahead horizon",
+    "detail": "The simulated lookahead is one step deep, or the horizon is ablated and H=1 is chosen; H=1 is reported most effective (2411.06559#s1, 2602.09856#s2, 2602.14721#s3)."
+   },
+   {
+    "id": "S2",
+    "name": "Trained, specialised simulator",
+    "detail": "The world model used for lookahead is trained or specialised (abstracted next-state description or code-rendered screen) rather than a naive prompted LLM; an untrained simulator gives much smaller gains (+1.2 vs +9.5 SR on AndroidWorld; prompted 17.5% vs trained 22.0%) (2602.09856#s2, 2410.13232#s2)."
+   },
+   {
+    "id": "S3",
+    "name": "Scorer sees the simulated next state",
+    "detail": "The value model's input includes the predicted next state, and an ablation removing it is reported (SR 22.0 -> 18.0 without it) (2410.13232#s2)."
+   },
+   {
+    "id": "S4",
+    "name": "Verifier accuracy measured and well above chance",
+    "detail": "For direct reranking, the verifier's accuracy is reported and is well above 50%, ideally from a verifier trained on human labels rather than GPT-4o-labelled steps (2602.00575#s2, 2509.23738#s2)."
+   },
+   {
+    "id": "S5",
+    "name": "Non-resettable target and cost stated",
+    "detail": "The paper motivates simulation by an environment that cannot be reset/backtracked and reports cost/latency against tree search (~4-5x lower for simulation); trajectory-level selection keeps terminal state per rollout (2411.06559#s1, 2410.13232#s2, 2602.00575#s2)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Multi-step simulated rollouts",
+    "detail": "Lookahead uses horizons of 2 or more; multi-step simulation hallucinates actions unavailable in predicted states and compounds error, and horizons 2-3 lose effectiveness (2411.06559#s1, 2410.13232#s2)."
+   },
+   {
+    "id": "F2",
+    "name": "No real-execution search baseline where reset is possible",
+    "detail": "Absolute success remains below real-execution tree search where reset is possible (16.6 vs 19.2 WebArena; 23.6 vs 26.2 VWA); a paper that omits this comparison overstates the move (2410.13232#s2, 2411.06559#s1)."
+   },
+   {
+    "id": "F3",
+    "name": "Gains measured only on short or offline tasks",
+    "detail": "On short MiniWob tasks gains are small (+0.2 to +3.2) and MCTS/hybrid add little; offline SR gains from simulation are ~1.2-1.3 points (2602.14721#s3, 2602.09856#s2)."
+   },
+   {
+    "id": "F4",
+    "name": "Candidate count scaled without compute accounting",
+    "detail": "Best-of-N gains plateau as N grows while compute grows linearly; near-chance verifier accuracy yields negligible or negative Best-of-N gain (2509.23738#s2, 2602.00575#s2)."
+   },
+   {
+    "id": "F5",
+    "name": "Unstable element identity between search and execution",
+    "detail": "Large result-list state spaces (Shopping) shrink gains; element IDs change on reload, causing search/execution mismatch (2410.13232#s2)."
+   }
+  ]
+ },
+ "structured_screen_observation": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Targets exposed by the structural view",
+    "detail": "The evaluated apps/pages expose their interactive elements structurally (XML view hierarchy, DOM element types, UIA controls), and the paper reports the switch from a raw action API to element-indexed actions (AppAgent SR 2.2% -> 48.9%) (2312.13771#s1, 2402.07939#s2, 2401.13919#s1)."
+   },
+   {
+    "id": "S2",
+    "name": "UI-trained parser, with a pixel/OCR fallback where structure is blind",
+    "detail": "Pixel parsing uses a detector fine-tuned on DOM-derived interactable boxes rather than a generic detector (ScreenSpot 68.7 -> 73.0), or an OCR/text locator supplements the a11y marks for content the tree does not expose (PC-Agent: removing APM drops instruction SR 56% -> 20%) (2408.00203#s1, 2502.14282#s1)."
+   },
+   {
+    "id": "S3",
+    "name": "High-recall ranking, then multiple choice",
+    "detail": "When the page is pruned to top-k candidates, the ranker's recall at the cut-off is reported (Recall@50 ~85-89%) and selection is posed as multiple choice over small candidate groups rather than direct element generation (Flan-T5 B step SR 41.0 vs 17.5) (2306.06070#s1, 2306.06070#s2)."
+   },
+   {
+    "id": "S4",
+    "name": "Observation modalities compared under one backbone",
+    "detail": "Marked or parsed screenshots are compared against a11y-tree-only and screenshot-only inputs with the same backbone (WebVoyager 59.1% vs 40.1% with a11y tree only; OmniParser fusion 12.5% -> 19.5% for GPT-4V-1106) (2401.13919#s1, 2401.13649#s1, 2409.08264#s2)."
+   },
+   {
+    "id": "S5",
+    "name": "Rule-based text-observation refinement with token savings",
+    "detail": "The a11y tree is pruned and restructured by rules (merge StaticText into elements, tables/lists to Markdown) and both success and tokens per step are reported (WebArena SR 31.7% -> 37.1%) (2410.13825#s3)."
+   },
+   {
+    "id": "S6",
+    "name": "Channel reliance probed under conflict",
+    "detail": "The paper edits or uses naturally stale structure (DOM/a11y text, ghost nodes) while pixels define the gold value and measures how often the agent follows structure (PFG 0.30-0.75 despite 0.85-0.93 pixel accuracy) (2607.04334#s1, 2607.04334#s2)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Targets missing from the structure or the proposal pool",
+    "detail": "Elements absent from the structural view (canvas content, UIA-unsupported controls) or outside the detector/ranker proposals are unaddressable (11-15% of targets outside top-50; GT masks raise mIoU 75.6 -> 90.1) (2402.07939#s2, 2502.14282#s1, 2306.06070#s1, 2310.11441#s1)."
+   },
+   {
+    "id": "F2",
+    "name": "Duplicate or text-less elements",
+    "detail": "Repeated identical icons/text or text-less elements make id choice or centre-click land on the wrong element (picks the first 'Schedule' button; text-and-type matching step SR 16.1 vs 39.1) (2408.00203#s1, 2401.01614#s1, 2401.01614#s3)."
+   },
+   {
+    "id": "F3",
+    "name": "Marks drawn on dense text-heavy pages",
+    "detail": "Marking DOM candidates on the screenshot mislinks labels on dense pages (SeeAct step SR 20.3 vs 39.1 for textual choices; 24.8% of WebVoyager failures are visual grounding errors) (2401.01614#s2, 2401.13919#s1)."
+   },
+   {
+    "id": "F4",
+    "name": "Mark reading assumed for any backbone",
+    "detail": "Gains are shown only for frontier models; SoM did not help IDEFICS-80B, CogVLM or Gemini-Pro, and adding UIA to OmniParser lowered GPT-4o (9.4% -> 8.6%) (2401.13649#s1, 2310.11441#s1, 2409.08264#s2)."
+   },
+   {
+    "id": "F5",
+    "name": "Actions bound to structure inherit structure errors",
+    "detail": "Element-id actions follow a swapped structural label 0.64 of the time vs 0.11 for coordinates, stale DOM snapshots and ghost a11y nodes are followed 0.38-0.88, and an early conflict is unrecoverable without reflection (2607.04334#s3, 2607.04334#s2, 2607.04334#s5)."
+   },
+   {
+    "id": "F6",
+    "name": "Parsing cost and per-site pruning losses unreported",
+    "detail": "Parser inference dominates run time (OmniParser runs 37.8-82.2 min vs 6.5-21.4 min), or pruning hurts some site categories (GitLab SR 35.0 -> 26.7) without per-category reporting (2409.08264#s2, 2410.13825#s3)."
+   }
+  ]
+ },
+ "trajectory_level_policy_training": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "SFT/offline initialisation before online RL",
+    "detail": "Online RL starts from an SFT/offline-trained policy; ~1k online trajectories suffice on short AitW tasks (2406.11896#s1, 2411.02337#s3)."
+   },
+   {
+    "id": "S2",
+    "name": "Constrained updates with success replay",
+    "detail": "Updates are KL-constrained to the previous-phase policy and replay successful trajectories within a perplexity band; tasks are curriculum-filtered for informativeness (2411.02337#s3, 2406.11896#s1)."
+   },
+   {
+    "id": "S3",
+    "name": "First-error correction and recovery data",
+    "detail": "Training data corrects the first erroneous step and adds a recovery action after it; reflection data raises level-2 success 14.58% -> 23.61%, online reflection tuning 23.61% -> 34.72%, and DPO on corrected vs erroneous actions improves OSWorld (72B 18.8 -> 22.7) (2506.08012#s1, 2506.08012#s2, 2501.12326#s1)."
+   },
+   {
+    "id": "S4",
+    "name": "Reasoning kept only if action-consistent",
+    "detail": "Generated per-step thoughts are kept only when the sampled action matches ground truth (bootstrapping), avoiding superficial rationalisation (2501.12326#s2, 2412.04454#s2)."
+   },
+   {
+    "id": "S5",
+    "name": "Offline proxy validated against online success",
+    "detail": "A semi-online/offline protocol is shown to correlate with online success (SOP vs AndroidWorld, R^2=0.934) (2509.11543#s3)."
+   },
+   {
+    "id": "S6",
+    "name": "Mixed reasoning levels with the decoding level ablated",
+    "detail": "Reasoning annotations synthesised by a strong MLLM are trained as a mixture of levels and the level used at decoding is ablated (mixing L1/L2/L3 and decoding L2: OSWorld 18.5% vs 13.1% L2-only; reflective long CoT 11.5% -> 15.3%) (2508.09123#s2, 2508.09123#s3, 2312.08914#s3)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Unregularised multi-phase updates",
+    "detail": "Without KL or replay, performance degrades over phases; replaying failures destabilises (2411.02337#s3)."
+   },
+   {
+    "id": "F2",
+    "name": "Exact-match correctness rejects valid alternatives",
+    "detail": "Valid alternative actions are treated as mismatches and non-expert branches never see real next states (2509.11543#s1, 2509.11543#s3)."
+   },
+   {
+    "id": "F3",
+    "name": "Short tasks, subsets, few repeats",
+    "detail": "Evaluated on short tasks only, with few repeats and on subsets (WebArena-Lite) (2406.11896#s1, 2411.02337#s3)."
+   },
+   {
+    "id": "F4",
+    "name": "Gains not shown across model sizes",
+    "detail": "Gains shrink with model size (2509.11543#s1)."
+   },
+   {
+    "id": "F5",
+    "name": "Unvalidated error labels and environment assumptions",
+    "detail": "MLLM verifier/first-error labels are not validated against humans, the method assumes Back restores the previous screen, and covers visual/grounding but not high-level planning errors; reflection tuning is not isolated by ablation (2506.08012#s1, 2506.08012#s2, 2501.12326#s1)."
+   },
+   {
+    "id": "F6",
+    "name": "Reasoning noise from source traces",
+    "detail": "Single-sample system-2 decoding is worse in-domain (irrelevant/hallucinated reasoning); redundant actions in source trajectories yield wrong reasoning (7.8%); an observation-description (L3) level misleads at inference and self-correction is conjectured rather than isolated (2501.12326#s2, 2412.04454#s2, 2508.09123#s3, 2508.09123#s2)."
+   }
+  ]
+ },
+ "verifiable_execution_reward": {
+  "S": [
+   {
+    "id": "S1",
+    "name": "Checker reads privileged state",
+    "detail": "Reward comes from reading environment internals (files, configs, backend/localStorage fields, instrumentation flags, logs) compared to goal conditions or gold artefacts; benchmarks package apps as resettable containers/emulators with seeded, parameterised task initialisation and report variance across seeds (SR 27.6-33.2%) (2404.07972#s1, 2601.04126#s2, 2609.07712#s2, 2307.13854#s1, 2405.14573#s1, 2405.14573#s4)."
+   },
+   {
+    "id": "S2",
+    "name": "Outcome-only checks accept alternative paths",
+    "detail": "Checkers test the final state rather than the action sequence, so alternative correct paths are accepted, e.g. state-locator checkers (2404.07972#s1, 2609.07712#s2, 2307.13854#s3)."
+   },
+   {
+    "id": "S3",
+    "name": "Tasks synthesised checker-first with test-driven repair",
+    "detail": "Tasks (and generated sites) are produced from an evaluator library or shared spec, with a repair loop until task-relevant tests pass (removing it: 85.6 -> 82.6) (2510.17790#s2, 2601.04126#s1)."
+   },
+   {
+    "id": "S4",
+    "name": "Dense partial credit from instrumented checkpoints",
+    "detail": "Instrumented checkpoints give partial credit and more discriminative RL groups (767 vs 174 discriminative GRPO groups, 4.4x) (2601.04126#s2)."
+   },
+   {
+    "id": "S5",
+    "name": "Difficulty-band filtering before RL",
+    "detail": "Synthesised tasks are filtered to a difficulty band before RL training (2510.17790#s2)."
+   },
+   {
+    "id": "S6",
+    "name": "Two-sided checker validation",
+    "detail": "Checkers/oracles are assessed on independent pools of faulty and legal implementations, measuring false rejects of legal alternatives as well as detection of failures (2610.05001#s2)."
+   }
+  ],
+  "F": [
+   {
+    "id": "F1",
+    "name": "Checker error rates unquantified",
+    "detail": "Residual false positives/negatives are not quantified, and checkpoint weights are LLM-chosen and unvalidated (2404.07972#s1, 2601.04126#s2); two-sided validation remains a survey recommendation, not measured; must_include and GPT-4 fuzzy match can accept partially wrong content (2610.05001#s2, 2610.05001#s3, 2307.13854#s3, 2401.13649#s3)."
+   },
+   {
+    "id": "F2",
+    "name": "Manual per-task checkers limit scale",
+    "detail": "Checkers are per-task manual work (~2 man-hours each) and do not exist for unannotated tasks (2404.07972#s1)."
+   },
+   {
+    "id": "F3",
+    "name": "Synthetic environments without real server logic",
+    "detail": "Generated sites have no real server logic and are single-site, single-user in scope; benchmark apps are restricted to ones without login and with inspectable local storage, or clones with sampled data (2601.04126#s1, 2405.14573#s1, 2307.13854#s1)."
+   },
+   {
+    "id": "F4",
+    "name": "Synthesis/test overlap not analysed",
+    "detail": "Overlap between synthesised tasks and the test distribution is not analysed (2510.17790#s2)."
+   },
+   {
+    "id": "F5",
+    "name": "Small downstream RL gain",
+    "detail": "Evaluator-first tasks are harder and fewer, and the RL gain is ~2 points (2510.17790#s2)."
+   },
+   {
+    "id": "F6",
+    "name": "Screenshot-blind state",
+    "detail": "Screenshots alone cannot see some state (e.g. file size), so screenshot judges and scripts are complementary; a design relying on one alone misses cases (2404.07972#s1)."
+   }
+  ]
+ }
+}
