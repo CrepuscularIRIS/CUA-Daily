@@ -1,0 +1,10 @@
+{"arxiv": "2604.08516", "sub_pattern": "C12", "fit": "good", "fit_note": "Normalises AxTree-agent, human and node-traversal trajectories into one pixel action schema and SFTs a screenshot-only web policy."}
+{"arxiv": "2604.09155", "sub_pattern": "C35", "fit": "weak", "fit_note": "Pre-action gating to confirm/reflect/abort, but decided by a separate trained guardian with conformal calibration, not the policy."}
+{"arxiv": "2604.09581", "sub_pattern": "C20", "fit": "weak", "fit_note": "Prompted SoM web agent emitting think-aloud and per-step usability ratings; contribution is UX evaluation, not agent capability."}
+{"arxiv": "2604.09815", "sub_pattern": "C19", "fit": "weak", "fit_note": "Experience bank of LLM-distilled rules from trajectory comparison, alongside gap-driven task synthesis and expert distillation for MCP-GUI agents."}
+{"arxiv": "2604.11259", "sub_pattern": "C21", "fit": "weak", "fit_note": "Step-weighted, padding-gated DPO on persona-paired human trajectories with reasoning text; preference alignment, not reasoning-annotation SFT."}
+{"arxiv": "2604.11784", "sub_pattern": "K19", "fit": "weak", "fit_note": "Infrastructure paper; its trained-agent claim rests on GiGPO plus an off-the-shelf MLLM PRM giving dense step rewards."}
+{"arxiv": "2604.13019", "sub_pattern": "C07", "fit": "weak", "fit_note": "Training-free re-grounding with a red-cross marker on the previous guess, retried only after a ground-truth miss; no zoom."}
+{"arxiv": "2604.13318", "sub_pattern": "C19", "fit": "good", "fit_note": "Distils synthetic-agent trajectories into verified parameterised skills with step guidance, retrieved by URL graph into later tasks."}
+{"arxiv": "2604.13488", "sub_pattern": "K22", "fit": "good", "fit_note": "Lightweight 3B executor trained on role-oriented data, shown with Gemini/GPT-5 planners vs planners alone online."}
+{"arxiv": "2604.13822", "sub_pattern": "C15", "fit": "weak", "fit_note": "Keeps only progress summaries in context with thoughts stored for retrieval, plus RL-trained calls to a copilot tool."}

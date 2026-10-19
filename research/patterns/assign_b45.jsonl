@@ -1,0 +1,10 @@
+{"arxiv": "2607.12625", "sub_pattern": "C19", "fit": "good", "fit_note": "Self-evolving experience memory and state-validated skill library distilled from own GUI runs."}
+{"arxiv": "2607.13027", "sub_pattern": "K29", "fit": "weak", "fit_note": "Replaces GUI actions with schema-checked device tools; tool-only interface, no GUI grounding at all."}
+{"arxiv": "2607.14443", "sub_pattern": "C01", "fit": "good", "fit_note": "Accessibility-first element candidates with OCR and visual fallback, executed via native semantic actions."}
+{"arxiv": "2607.14548", "sub_pattern": "K20", "fit": "weak", "fit_note": "Technical report: data/environment pipelines plus mid-training, SFT and RL; no single trajectory-training move isolated."}
+{"arxiv": "2607.15193", "sub_pattern": "R02", "fit": "weak", "fit_note": "User-initiated plan editing and system-driven replanning, not an agent-decided ask action."}
+{"arxiv": "2607.15550", "sub_pattern": "C35", "fit": "weak", "fit_note": "Separate trained world-model guard refuses risky actions pre-execution; not self-judged user confirmation."}
+{"arxiv": "2607.18046", "sub_pattern": "K14", "fit": "good", "fit_note": "Goal-free structured exploration builds transition graph; instructions inferred afterwards from sampled explored screens."}
+{"arxiv": "2607.22798", "sub_pattern": "C11", "fit": "good", "fit_note": "Code-first main agent on program state with GUI subagent only for irreducibly visual subgoals."}
+{"arxiv": "2607.24112", "sub_pattern": "K06", "fit": "good", "fit_note": "Continual pretraining on forward and inverse dynamics of GUI transitions before trajectory fine-tuning."}
+{"arxiv": "2607.24167", "sub_pattern": "C18", "fit": "good", "fit_note": "Tests each plan commitment before and after actions against confirming/falsifying evidence, then repairs."}

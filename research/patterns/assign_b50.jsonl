@@ -1,0 +1,10 @@
+{"arxiv": "2609.10297", "sub_pattern": "C09", "fit": "good", "fit_note": "Training-free visual token pruning with nested order and KV contraction for multi-frame GUI histories."}
+{"arxiv": "2609.10451", "sub_pattern": "C22", "fit": "good", "fit_note": "Dockerised cross-device benchmark with typed composed tasks scored by final-state programmatic evaluators."}
+{"arxiv": "2609.12394", "sub_pattern": "K20", "fit": "good", "fit_note": "CPT-SFT-online GRPO on real phones with judge reward and routed/repaired failed trajectories."}
+{"arxiv": "2609.13287", "sub_pattern": "C12", "fit": "weak", "fit_note": "Block-diffusion VLM backbone SFT'd as end-to-end screenshot policy; contribution is the decoder paradigm."}
+{"arxiv": "2609.13491", "sub_pattern": "K27", "fit": "weak", "fit_note": "Behavioural event-graph model from demonstrations retrieved by task embedding and replayed with LLM option selection."}
+{"arxiv": "2609.13548", "sub_pattern": "C19", "fit": "good", "fit_note": "Distils crawled trajectories into filtered MCP code tools and reselects them from runtime usage."}
+{"arxiv": "2609.15307", "sub_pattern": "R01", "fit": "weak", "fit_note": "Label-free test-time GRPO for grounding with confidence pseudo-label distance reward instead of labelled actions."}
+{"arxiv": "2609.15364", "sub_pattern": "C19", "fit": "good", "fit_note": "Curriculum/actor/verifier exploration distils frozen environment memory reused at test time."}
+{"arxiv": "2609.15457", "sub_pattern": "C18", "fit": "good", "fit_note": "Per-step expected-vs-observed verdict drives selective screenshot retention and cross-trial distillation."}
+{"arxiv": "2609.16635", "sub_pattern": "C19", "fit": "good", "fit_note": "Validated own trajectories consolidated into precondition-gated replayable callable memories with visual re-aiming."}

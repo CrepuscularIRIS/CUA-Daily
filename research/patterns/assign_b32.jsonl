@@ -1,0 +1,10 @@
+{"arxiv": "2603.12710", "sub_pattern": "K30", "fit": "weak", "fit_note": "Planning taxonomy plus LLM-judged trajectory metrics vs human gold on WebArena; no length stratification."}
+{"arxiv": "2603.12823", "sub_pattern": "K22", "fit": "weak", "fit_note": "Per-action routing between small and large VLM grounders by difficulty and confidence; not a planner-grounder split."}
+{"arxiv": "2603.14448", "sub_pattern": "C07", "fit": "good", "fit_note": "Training-free latent-thought instruction refinement plus attention-guided iterative zoom-in grounding."}
+{"arxiv": "2603.17441", "sub_pattern": "C07", "fit": "good", "fit_note": "GRPO-trained point+box grounder with zoom-in triggered only for small predicted boxes, plus LLM instruction refinement."}
+{"arxiv": "2603.18429", "sub_pattern": "C15", "fit": "good", "fit_note": "Anchored State Memory replaces full replay or summaries with causally linked intermediate-state anchors in history."}
+{"arxiv": "2603.19685", "sub_pattern": "K19", "fit": "good", "fit_note": "Teacher-generated subgoals train a dense potential critic for milestone-shaped online RL on WebArena-Lite."}
+{"arxiv": "2603.20340", "sub_pattern": "C19", "fit": "good", "fit_note": "Model-written skills compiled into contracts and locally repaired with a deterministic verifier, then reused across models."}
+{"arxiv": "2603.20351", "sub_pattern": "K33", "fit": "weak", "fit_note": "Static-analysis ad priors and a coarse UTG steer LLM exploration to expose hidden ads; detection, not task synthesis."}
+{"arxiv": "2603.23559", "sub_pattern": "C21", "fit": "good", "fit_note": "Ground-truth-conditioned expert reasoning traces and self-correction traces from failures, SFT of native CAPTCHA agent."}
+{"arxiv": "2603.24157", "sub_pattern": "C18", "fit": "good", "fit_note": "Actor-critic agent: critic scores each proposed action and issues hierarchical reflection; plus tool grounding and dual memory."}

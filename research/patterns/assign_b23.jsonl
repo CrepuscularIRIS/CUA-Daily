@@ -1,0 +1,10 @@
+{"arxiv": "2512.09396", "sub_pattern": "C10", "fit": "weak", "fit_note": "General MLLM fuses outputs of several GUI grounders and re-queries them; grounding-only evaluation."}
+{"arxiv": "2512.10371", "sub_pattern": "C16", "fit": "weak", "fit_note": "Program-structured context: execution-tree path pruning plus explicit variables retained; belief-state tracking."}
+{"arxiv": "2512.10962", "sub_pattern": "K16", "fit": "weak", "fit_note": "o4-mini step grader (distilled into StepRM) filters teacher-CUA steps for SFT; judge used as filter."}
+{"arxiv": "2512.11611", "sub_pattern": "C26", "fit": "good", "fit_note": "Expert-annotated single-step click-in-box (plus LLM-judged answer) benchmark on professional CAD/EDA software."}
+{"arxiv": "2512.12692", "sub_pattern": "K02", "fit": "weak", "fit_note": "Real-execution best-first tree search with LLM-scored candidates, speculative backtracking and destructive-action handling."}
+{"arxiv": "2512.15431", "sub_pattern": "K25", "fit": "weak", "fit_note": "Self-evolving pipeline: trajectory-level verified rollouts turned into LLM-written CoT/step data; multi-stage training recipe."}
+{"arxiv": "2512.19396", "sub_pattern": "K27", "fit": "good", "fit_note": "Critic-filtered self-exploration trajectories stored as text and retrieved (dense+BM25) into the prompt."}
+{"arxiv": "2512.22009", "sub_pattern": "C08", "fit": "good", "fit_note": "Latent tokens decide when to call a cheap DINO detail channel via cross-attention for precise grounding."}
+{"arxiv": "2512.22047", "sub_pattern": "K20", "fit": "weak", "fit_note": "Foundation-model recipe: self-evolving SFT data, ask_user/MCP actions, large-scale online RL and device-cloud routing."}
+{"arxiv": "2512.22322", "sub_pattern": "K18", "fit": "weak", "fit_note": "The policy itself actively gathers and submits evidence snapshots for an LLM judge reward in GRPO."}

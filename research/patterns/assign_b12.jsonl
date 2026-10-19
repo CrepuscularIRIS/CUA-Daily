@@ -1,0 +1,10 @@
+{"arxiv": "2507.22358", "sub_pattern": "R02", "fit": "good", "fit_note": "Orchestrator delegates clarifying questions and help requests to the user; co-planning, co-tasking and action guards."}
+{"arxiv": "2507.23779", "sub_pattern": "K23", "fit": "good", "fit_note": "Renders CommonCrawl pages, reads element boxes, GPT-4o referring expressions, resampling; trains a coordinate grounder."}
+{"arxiv": "2508.01858", "sub_pattern": "C21", "fit": "weak", "fit_note": "Knowledge-curriculum SFT with knowledge-driven CoT; closest to synthesised reasoning annotations then SFT, but curriculum is central."}
+{"arxiv": "2508.02046", "sub_pattern": "R01", "fit": "good", "fit_note": "R1-Zero GRPO on per-step samples with format, type and distance-aware grounding rewards, mixing GUI and embodied data."}
+{"arxiv": "2508.03700", "sub_pattern": "R01", "fit": "good", "fit_note": "Continue pre-training then offline GRPO with format, accuracy and distance rule rewards on static steps."}
+{"arxiv": "2508.03923", "sub_pattern": "C11", "fit": "good", "fit_note": "Orchestrator delegates subtasks to a GUI operator or a Python/Bash programmer sharing the OS."}
+{"arxiv": "2508.04025", "sub_pattern": "C13", "fit": "good", "fit_note": "Component recommendation prunes the UI element list to top-ranked candidates before the decision agent; interaction agent unevaluated."}
+{"arxiv": "2508.04037", "sub_pattern": "K13", "fit": "weak", "fit_note": "Generates tasks with paired execution/verification programs for verifiable trajectories; task-first, plus step-wise GRPO and model merging."}
+{"arxiv": "2508.04389", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline GRPO for grounding with soft format reward, in-box point reward and an adversarial KL factor."}
+{"arxiv": "2508.04700", "sub_pattern": "K15", "fit": "good", "fit_note": "Curriculum generator proposes harder tasks from a guidebook updated by judged trajectories and state-change captions."}

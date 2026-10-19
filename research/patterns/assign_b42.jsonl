@@ -1,0 +1,10 @@
+{"arxiv": "2606.14832", "sub_pattern": "C11", "fit": "good", "fit_note": "Phone harness routing tasks across device CLI, MCP host tools and delegated GUI subtasks in one loop."}
+{"arxiv": "2606.17321", "sub_pattern": "K15", "fit": "good", "fit_note": "Desktop-grounded task proposal with binary precondition judge, verdict-conditioned retry and rare-app coverage synthesis."}
+{"arxiv": "2606.17645", "sub_pattern": "C19", "fit": "good", "fit_note": "Induced web skills stored with structural page sketches, retrieved by layout similarity and slot-bound on live pages."}
+{"arxiv": "2606.17929", "sub_pattern": "C19", "fit": "good", "fit_note": "Compiles successful runs into predicate-checked state-machine programs replayed without LLM calls, gated by re-run verification."}
+{"arxiv": "2606.18101", "sub_pattern": "R01", "fit": "weak", "fit_note": "On-policy self-distillation for grounding with box-compatibility gating and teacher-probability weighting; no rule reward GRPO."}
+{"arxiv": "2606.18448", "sub_pattern": "C19", "fit": "good", "fit_note": "Per-application multimodal skill files built from manuals and live UI exploration, loaded on demand through an MCP tool."}
+{"arxiv": "2606.18890", "sub_pattern": "K26", "fit": "good", "fit_note": "Recovery data from policy-induced off-trajectory states: skill-guided continuations after k own steps, SFT mixed with experts."}
+{"arxiv": "2606.19926", "sub_pattern": "C16", "fit": "good", "fit_note": "Policy emits memory add/update/delete and history-folding actions alongside UI actions to retain cross-app facts."}
+{"arxiv": "2606.19930", "sub_pattern": "K19", "fit": "good", "fit_note": "VLM critic gives outcome, step-level labels and corrective hints that select steps for hint-conditioned step-level GRPO."}
+{"arxiv": "2606.20363", "sub_pattern": "C19", "fit": "weak", "fit_note": "Mines SKILL.md-style skills by segmenting and clustering logged trajectories, then GRPO on skill composition; not agent's own runs."}

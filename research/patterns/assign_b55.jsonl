@@ -1,0 +1,10 @@
+{"arxiv": "2610.07118", "sub_pattern": "C16", "fit": "good", "fit_note": "Agent writes a free-form memory entry each step; append-only rule retains all entries, trained end-to-end with RL."}
+{"arxiv": "2610.07444", "sub_pattern": "K22", "fit": "weak", "fit_note": "Studies how a small grounder receives the action type from a separate type predictor; no full planner."}
+{"arxiv": "2610.08773", "sub_pattern": "K05", "fit": "good", "fit_note": "Agent, curriculum and injection adversary co-trained inside a frozen web world model; no real-data anchor."}
+{"arxiv": "2610.11707", "sub_pattern": "K27", "fit": "good", "fit_note": "Stored successful trajectories retrieved per task and replayed, re-grounded or discarded step by step."}
+{"arxiv": "2610.12866", "sub_pattern": "C02", "fit": "weak", "fit_note": "Detector-plus-VLM builds an ASCII entity-relation scene representation before acting; also zoom and consistency voting."}
+{"arxiv": "2610.12984", "sub_pattern": "R03", "fit": "good", "fit_note": "Human desktop recordings aligned with events and AX data are turned by an agent into reusable skill files."}
+{"arxiv": "2610.13268", "sub_pattern": "C05", "fit": "weak", "fit_note": "Attention-derived region scores trained contrastively against distractors plus coordinate loss; ReClick zoom revisits."}
+{"arxiv": "2610.13416", "sub_pattern": "C01", "fit": "good", "fit_note": "Compiles live pages into addressable information and action objects executed by id through a shared interface."}
+{"arxiv": "2610.14157", "sub_pattern": "C22", "fit": "good", "fit_note": "Resettable simulated commercial apps with programmatic business-state checkers for SFT/RL data and benchmark."}
+{"arxiv": "2610.14228", "sub_pattern": "K02", "fit": "good", "fit_note": "LoRA LMM rescoring of a frozen agent's candidate actions, with latent next-state prediction as auxiliary objective."}

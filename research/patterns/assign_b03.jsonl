@@ -1,0 +1,5 @@
+{"arxiv": "2503.12532", "sub_pattern": "K19", "fit": "good", "fit_note": "GPT-4o step verifier labels each step from before/after screens; labels train KTO"}
+{"arxiv": "2503.13843", "sub_pattern": "C01", "fit": "good", "fit_note": "Numbered DOM marks via browser extension; controller picks an element id"}
+{"arxiv": "2503.15515", "sub_pattern": "K27", "fit": "weak", "fit_note": "Position paper: agent reads a policy-controlled personal knowledge graph; no retrieval system built"}
+{"arxiv": "2503.15937", "sub_pattern": "K02", "fit": "good", "fit_note": "Trained LLM verifier scores every extracted candidate action; argmax executed"}
+{"arxiv": "2503.17709", "sub_pattern": "C19", "fit": "good", "fit_note": "Pre-recorded app exploration videos distilled into a GUI transition graph injected as context"}

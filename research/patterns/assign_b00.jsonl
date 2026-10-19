@@ -1,0 +1,9 @@
+{"arxiv": "2501.04575", "sub_pattern": "C21", "fit": "good", "fit_note": "Two-stage SFT; stage 2 synthesises hierarchical and expectation-reflection reasoning from trajectories with a stronger MLLM."}
+{"arxiv": "2501.10893", "sub_pattern": "K14", "fit": "good", "fit_note": "Backward construction relabels self-instructed rollouts with instructions summarised from sub-trajectories; used for ICL and SFT."}
+{"arxiv": "2501.11733", "sub_pattern": "C17", "fit": "good", "fit_note": "Manager plans subgoals for Perceptor/Operator/Reflector/Notetaker; self-evolving Tips and Shortcuts are secondary."}
+{"arxiv": "2501.12326", "sub_pattern": "K25", "fit": "weak", "fit_note": "Native agent recipe (perception, unified actions, system-2 reasoning, reflective online traces, DPO); no single sub-pattern covers it."}
+{"arxiv": "2501.13896", "sub_pattern": "K23", "fit": "good", "fit_note": "Explores a target environment, annotates grounding queries from before/after screens and DOM/a11y elements, fine-tunes grounders."}
+{"arxiv": "2502.02955", "sub_pattern": "K14", "fit": "weak", "fit_note": "GPT-4V relabels random-walk GUI flows into navigation/reach/operate tasks; DPO with a 4-level reward is not covered."}
+{"arxiv": "2502.02982", "sub_pattern": "K14", "fit": "weak", "fit_note": "Infers instructions retroactively from users' own trajectories; federated training part has no sub-pattern."}
+{"arxiv": "2502.06395", "sub_pattern": "K20", "fit": "good", "fit_note": "SFT on AndroidControl, then iterative filtered BC on successful AndroidWorld rollouts scored by the environment reward."}
+{"arxiv": "2502.06776", "sub_pattern": "K15", "fit": "good", "fit_note": "Task proposer refines tasks from exploratory trajectories on 150k sites; LLM judge filters rollouts for SFT."}

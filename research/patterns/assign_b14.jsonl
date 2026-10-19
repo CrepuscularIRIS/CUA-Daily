@@ -1,0 +1,10 @@
+{"arxiv": "2508.18689", "sub_pattern": "C17", "fit": "weak", "fit_note": "Proactive need inference plus per-app subtask decomposition; closest to manager-worker hierarchy, but a demo without evaluation."}
+{"arxiv": "2508.19679", "sub_pattern": "R02", "fit": "good", "fit_note": "Trains an explicit call_user inquiry action via SFT then GRPO, scored by inquiry success rate."}
+{"arxiv": "2508.20096", "sub_pattern": "K22", "fit": "good", "fit_note": "Trainable Qwen2.5-VL planner with a fixed UI-TARS-1.5 executor; GRPO on the planner only."}
+{"arxiv": "2508.21456", "sub_pattern": "R02", "fit": "good", "fit_note": "Agent self-verifies ambiguity per step and pauses for user choices; pause precision/recall and BLV user study."}
+{"arxiv": "2508.21767", "sub_pattern": "C12", "fit": "good", "fit_note": "Unifies open-source grounding/trajectory data across mobile and PC into one format for SFT, then curriculum RL."}
+{"arxiv": "2509.00366", "sub_pattern": "C19", "fit": "good", "fit_note": "Explores apps into UTGs, LLM-searches intent-trajectory pairs into a vector store retrieved at run time."}
+{"arxiv": "2509.00531", "sub_pattern": "K22", "fit": "good", "fit_note": "Planner/Decider emits target descriptions, a separate 3B Grounder maps them to boxes; plus record-replay acceleration."}
+{"arxiv": "2509.01720", "sub_pattern": "K20", "fit": "good", "fit_note": "Off-policy actor-critic with conservative negative-advantage updates and successful-transition replay on AndroidWorld."}
+{"arxiv": "2509.02322", "sub_pattern": "C12", "fit": "weak", "fit_note": "Unifies GUI and embodied action spaces in one format; main novelty is a shallow-shared, deep-separated MoE."}
+{"arxiv": "2509.02544", "sub_pattern": "C11", "fit": "good", "fit_note": "GUI actions plus SDK/terminal/MCP calls with shared file system, trained by data flywheel and multi-turn PPO."}

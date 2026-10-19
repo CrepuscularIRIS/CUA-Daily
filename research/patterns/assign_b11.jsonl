@@ -1,0 +1,10 @@
+{"arxiv": "2507.00008", "sub_pattern": "C07", "fit": "good", "fit_note": "Training-free iterative zoom around the first prediction with dynamic halting, run separately for text and icon targets."}
+{"arxiv": "2507.00210", "sub_pattern": "C13", "fit": "good", "fit_note": "A small LLM selects AxTree lines relevant to future steps before the action model sees the observation."}
+{"arxiv": "2507.03730", "sub_pattern": "C15", "fit": "weak", "fit_note": "History screenshots dropped inside the LLM after layer k (action text kept) with consistency KL; plus training-time random masking."}
+{"arxiv": "2507.05673", "sub_pattern": "C07", "fit": "good", "fit_note": "Two-stage grounding: first box as region proposal, zoom scaled to its size, re-ground; plus IoU-weighted cross-entropy."}
+{"arxiv": "2507.05720", "sub_pattern": "K20", "fit": "good", "fit_note": "Online GRPO in parallel Android emulators on a VLM-judged terminal reward, over a filtered self-explored task curriculum."}
+{"arxiv": "2507.05791", "sub_pattern": "K02", "fit": "good", "fit_note": "Per step, K planner proposals are sampled and an MLLM judge (o3) picks one; plus a click-reward GRPO grounder."}
+{"arxiv": "2507.15846", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline GRPO grounding with dense Gaussian point and coverage rewards, size-adaptive variance, against sparse rule rewards."}
+{"arxiv": "2507.16853", "sub_pattern": "C18", "fit": "good", "fit_note": "Action, trajectory and global reflectors compare before/after screens and check completion, invoked on low action confidence."}
+{"arxiv": "2507.21953", "sub_pattern": "C19", "fit": "good", "fit_note": "Explores each app, summarises pages into a per-app vector memory, and retrieves pages to refine a coarse-to-fine plan."}
+{"arxiv": "2507.22025", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline GRPO with continuous centre-distance grounding reward, length-shaped thinking reward and crop-resampling; adds decomposed inference grounding."}

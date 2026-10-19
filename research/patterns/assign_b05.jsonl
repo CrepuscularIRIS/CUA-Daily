@@ -1,0 +1,9 @@
+{"arxiv": "2504.14603", "sub_pattern": "C11", "fit": "good", "fit_note": "Windows AgentOS: HostAgent/AppAgents with unified GUI-API actions and hybrid UIA+vision control detection."}
+{"arxiv": "2504.16073", "sub_pattern": "K02", "fit": "good", "fit_note": "Trained CogVLM2 process reward model scores top-K VLM action candidates per step; executes argmax."}
+{"arxiv": "2504.21024", "sub_pattern": "K05", "fit": "good", "fit_note": "Co-trained a11y-tree world model synthesises trajectories mixed with real self-improvement data; also used for lookahead."}
+{"arxiv": "2505.00416", "sub_pattern": "K06", "fit": "weak", "fit_note": "Back-tracking (predict prior action from current screen) auxiliary planning objective plus merged grounding data; half is data mixing."}
+{"arxiv": "2505.00684", "sub_pattern": "C07", "fit": "good", "fit_note": "Training-free error-triggered zoom into regions around the predicted point, per-region actions, image-as-map aggregation."}
+{"arxiv": "2505.05440", "sub_pattern": "C18", "fit": "good", "fit_note": "On-device observer checks each step's screen against cloud planner's stated expectation, triggering cloud replanning on failure."}
+{"arxiv": "2505.10831", "sub_pattern": "K27", "fit": "weak", "fit_note": "User model of confidence-weighted propositions inferred from screenshots, retrieved into assistants; not a GUI-control architecture move."}
+{"arxiv": "2505.10887", "sub_pattern": "C11", "fit": "good", "fit_note": "Modular agent routing subtasks between tool calls (bash/python/file edit) and a planner plus visual grounder for GUI."}
+{"arxiv": "2505.12299", "sub_pattern": "K25", "fit": "good", "fit_note": "Samples CoaT reasoning trees, scores leaves against ground-truth actions, builds thinking-level DPO pairs; offline mobile training."}

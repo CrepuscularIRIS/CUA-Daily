@@ -1,0 +1,9 @@
+{"arxiv": "2502.07942", "sub_pattern": "K27", "fit": "weak", "fit_note": "RAG over stored trajectories plus large-small LLM distillation loop; no sub-pattern covers the coupling."}
+{"arxiv": "2502.07949", "sub_pattern": "K20", "fit": "good", "fit_note": "Online RL with DigiRL-style AWR and value filtering, adding VLM-generated subgoals to densify sparse terminal reward."}
+{"arxiv": "2502.08226", "sub_pattern": "C02", "fit": "good", "fit_note": "Training-free SAM+OCR hierarchical screen parsing with LLM-written element descriptions and SoM selection."}
+{"arxiv": "2502.11357", "sub_pattern": "K14", "fit": "good", "fit_note": "Live-web exploration with iterative task refinement and hindsight summarisation into instructions, verifier-filtered, then SFT."}
+{"arxiv": "2502.13130", "sub_pattern": "C12", "fit": "good", "fit_note": "Unifies UI, robot and video data into one Set-of-Mark/Trace-of-Mark action interface for foundation-model pretraining."}
+{"arxiv": "2502.14282", "sub_pattern": "C17", "fit": "good", "fit_note": "Manager-progress-decision hierarchy with a reflection agent and a11y+OCR active perception for PC tasks."}
+{"arxiv": "2502.15760", "sub_pattern": "K20", "fit": "good", "fit_note": "Offline TD-learned VLM Q-function on frozen fine-tuned features with Best-of-N policy extraction; offline variant of K20."}
+{"arxiv": "2502.16796", "sub_pattern": "C17", "fit": "good", "fit_note": "Central steward schedules app-specific staff agents via a task DAG, evaluates and replans, with memory self-evolution."}
+{"arxiv": "2502.18906", "sub_pattern": "K19", "fit": "good", "fit_note": "GPT-4o step labels train a frozen state-action value model that scores every step as reward for offline PPO."}

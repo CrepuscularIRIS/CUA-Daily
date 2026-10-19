@@ -1,0 +1,10 @@
+{"arxiv": "2610.15765", "sub_pattern": "K29", "fit": "good", "fit_note": "Synthesises agent-native command interfaces from installed apps' SDK capabilities, replacing native SDK/GUI actions."}
+{"arxiv": "2610.16234", "sub_pattern": "C05", "fit": "good", "fit_note": "Coordinate-free grounding head predicting a box-supervised sub-token action mask; click at mask centroid."}
+{"arxiv": "2610.16319", "sub_pattern": "C11", "fit": "good", "fit_note": "One web agent mixing search/page-reading API tools with browser GUI actions via explicit mode switching."}
+{"arxiv": "2610.16778", "sub_pattern": "C36", "fit": "weak", "fit_note": "PII privacy mediation for cloud GUI planners; hides values behind locally resolved references, not injection defense."}
+{"arxiv": "2610.17710", "sub_pattern": "K19", "fit": "good", "fit_note": "Prompted critic gives adaptive subgoal-group step process rewards shaping GRPO advantage on OSWorld."}
+{"arxiv": "2610.17792", "sub_pattern": "C06", "fit": "good", "fit_note": "Training-free multi-hypothesis zoomed re-localisation with marked-crop Yes/No verification selecting the click."}
+{"arxiv": "2610.17928", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieves past demonstration memory and routes per step between text and image memory representations."}
+{"arxiv": "2610.19100", "sub_pattern": "K23", "fit": "good", "fit_note": "Grounding dataset from a11y/DOM/XML boxes plus tutorial videos, then SFT and distillation-to-RL grounder training."}
+{"arxiv": "2610.19834", "sub_pattern": "K26", "fit": "good", "fit_note": "Black-box teacher localises the student's first mistake and rewrites the suffix in student style for training."}
+{"arxiv": "2610.20100", "sub_pattern": "C18", "fit": "weak", "fit_note": "Task-state contract runtime with independent visual verifier and reversibility-aware recovery; mainly a user-governance interface."}

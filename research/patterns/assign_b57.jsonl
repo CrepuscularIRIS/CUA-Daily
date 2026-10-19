@@ -1,0 +1,8 @@
+{"arxiv": "2610.20107", "sub_pattern": "C05", "fit": "good", "fit_note": "Plug-in pointer/decision heads over box-pooled visual tokens replace generated click strings."}
+{"arxiv": "2610.20390", "sub_pattern": "C09", "fit": "good", "fit_note": "Learned instruction-guided window-level visual token pruning for GUI agent efficiency."}
+{"arxiv": "2610.20584", "sub_pattern": "K13", "fit": "weak", "fit_note": "Hand-built synthetic game environments with programmatic rewards for RL; not checker-first task synthesis."}
+{"arxiv": "2610.22200", "sub_pattern": "C11", "fit": "good", "fit_note": "Prompted agent writing programs over GUI, accessibility, CLI and API interfaces."}
+{"arxiv": "2610.22234", "sub_pattern": "C11", "fit": "good", "fit_note": "Trained native policy unifying GUI actions and code execution in one action space."}
+{"arxiv": "2610.22280", "sub_pattern": "R02", "fit": "weak", "fit_note": "Uncertainty-gated handoff to a stronger model, not to a user; closest is confidence-triggered intervention."}
+{"arxiv": "2610.22539", "sub_pattern": "C19", "fit": "weak", "fit_note": "Scout-written manual routes a mixture over LoRA adapters; adaptation by weight composition, not retrieval."}
+{"arxiv": "2610.23012", "sub_pattern": "K28", "fit": "weak", "fit_note": "Manual retrieval into planner guidance plus manual-derived task GRPO; knowledge is documentation, not experience."}

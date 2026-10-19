@@ -1,0 +1,8 @@
+{"arxiv": "2506.08012", "sub_pattern": "K26", "fit": "good", "fit_note": "Synthesises error/reflection data from successful trajectories and online reflection tuning."}
+{"arxiv": "2506.08972", "sub_pattern": "C17", "fit": "good", "fit_note": "Agent-Nexus scheduler decomposes compositional tasks into atomic subtasks for navigator agents."}
+{"arxiv": "2506.10387", "sub_pattern": "C19", "fit": "good", "fit_note": "Hierarchical skill library distilled from offline trajectories and online MCTS exploration, injected into planning."}
+{"arxiv": "2506.11127", "sub_pattern": "C12", "fit": "weak", "fit_note": "Speech-instructed end-to-end screenshot policy SFT on TTS-converted data; speech input not covered by any sub-pattern."}
+{"arxiv": "2506.14205", "sub_pattern": "K15", "fit": "good", "fit_note": "Follow-up proposer generates next subtasks from history and failures, verified, revised and summarised into long tasks."}
+{"arxiv": "2506.18158", "sub_pattern": "C16", "fit": "good", "fit_note": "Agent extracts task-relevant screen info into long-term memory plus short-term action-result memory."}
+{"arxiv": "2506.20332", "sub_pattern": "K20", "fit": "good", "fit_note": "Staged SFT, action-level GRPO, then multi-turn task-level GRPO on a sparse GPT-4o trajectory reward."}
+{"arxiv": "2506.23491", "sub_pattern": "C04", "fit": "weak", "fit_note": "SFT grounder on curated existing element-box data with two-stage resolution tuning; no harvesting of its own."}

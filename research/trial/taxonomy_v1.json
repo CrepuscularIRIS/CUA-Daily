@@ -1,0 +1,276 @@
+{
+ "main": [
+  {
+   "id": "simulated_lookahead_selection",
+   "title": "Select Actions by Simulated or Verified Lookahead",
+   "subs": [
+    "K01",
+    "K02"
+   ]
+  },
+  {
+   "id": "learn_and_train_in_gui_world_model",
+   "title": "Learn GUI Dynamics and Train in Them",
+   "subs": [
+    "K03",
+    "K04",
+    "K05",
+    "K06",
+    "K07",
+    "K35"
+   ]
+  },
+  {
+   "id": "calibrate_simulator_to_real",
+   "title": "Calibrate a Simulator or Digital Twin to the Real Target",
+   "subs": [
+    "K08",
+    "K09",
+    "K10",
+    "K11"
+   ]
+  },
+  {
+   "id": "verifiable_execution_reward",
+   "title": "Ground Reward in Executable Checkers",
+   "subs": [
+    "K12",
+    "K13",
+    "K34"
+   ]
+  },
+  {
+   "id": "exploration_driven_task_synthesis",
+   "title": "Synthesise Tasks from Exploration and History",
+   "subs": [
+    "K14",
+    "K15",
+    "K32",
+    "K33"
+   ]
+  },
+  {
+   "id": "learned_outcome_and_process_judges",
+   "title": "Reward with Learned Outcome and Process Judges",
+   "subs": [
+    "K16",
+    "K17",
+    "K18",
+    "K19"
+   ]
+  },
+  {
+   "id": "trajectory_level_policy_training",
+   "title": "Train the Policy on Own, Replayed and Corrected Trajectories",
+   "subs": [
+    "K20",
+    "K21",
+    "K25",
+    "K26"
+   ]
+  },
+  {
+   "id": "planner_grounder_interface",
+   "title": "Decouple Planning from Grounding and Redesign the Action Interface",
+   "subs": [
+    "K22",
+    "K23",
+    "K29"
+   ]
+  },
+  {
+   "id": "experience_memory_retrieval",
+   "title": "Retrieve Past Experience and Knowledge into Context",
+   "subs": [
+    "K27",
+    "K28"
+   ]
+  },
+  {
+   "id": "online_evaluation_methodology",
+   "title": "Make Online Evaluation Discriminating",
+   "subs": [
+    "K24",
+    "K30",
+    "K31"
+   ]
+  }
+ ],
+ "sub": {
+  "K01": {
+   "title": "Simulate each candidate action with a world model, score the imagined outcome, execute the best",
+   "status": "candidate_pattern",
+   "main": "simulated_lookahead_selection"
+  },
+  "K02": {
+   "title": "Rerank sampled actions or trajectories with a learned/agentic verifier (no simulation)",
+   "status": "candidate_pattern",
+   "main": "simulated_lookahead_selection"
+  },
+  "K03": {
+   "title": "Learn a text-space web transition model from real interaction logs",
+   "status": "candidate_pattern",
+   "main": "learn_and_train_in_gui_world_model"
+  },
+  "K04": {
+   "title": "Predict the next GUI screen as renderable HTML code",
+   "status": "candidate_pattern",
+   "main": "learn_and_train_in_gui_world_model"
+  },
+  "K05": {
+   "title": "Train or fine-tune the policy on world-model rollouts, anchored with real data",
+   "status": "candidate_pattern",
+   "main": "learn_and_train_in_gui_world_model"
+  },
+  "K06": {
+   "title": "Pretrain the policy backbone on transition-understanding objectives",
+   "status": "candidate_pattern",
+   "main": "learn_and_train_in_gui_world_model"
+  },
+  "K07": {
+   "title": "Harvest a transition corpus by goal-free exploration plus VLM captioning",
+   "status": "candidate_pattern",
+   "main": "learn_and_train_in_gui_world_model"
+  },
+  "K08": {
+   "title": "Learn a residual correction that makes a simulator reproduce logged real trajectories",
+   "status": "candidate_pattern",
+   "main": "calibrate_simulator_to_real"
+  },
+  "K09": {
+   "title": "Calibrate a digital twin with sparse real measurements and debias its synthetic data",
+   "status": "case",
+   "main": "calibrate_simulator_to_real"
+  },
+  "K10": {
+   "title": "Build a task-scoped digital twin of the specific target environment",
+   "status": "candidate_pattern",
+   "main": "calibrate_simulator_to_real"
+  },
+  "K11": {
+   "title": "Use the twin to harvest or target demonstrations, retrain with real data as anchor",
+   "status": "candidate_pattern",
+   "main": "calibrate_simulator_to_real"
+  },
+  "K12": {
+   "title": "Score episodes with execution-based checkers that read privileged environment state",
+   "status": "candidate_pattern",
+   "main": "verifiable_execution_reward"
+  },
+  "K13": {
+   "title": "Synthesise tasks from checkers/specs so verifiable reward exists by construction",
+   "status": "candidate_pattern",
+   "main": "verifiable_execution_reward"
+  },
+  "K14": {
+   "title": "Relabel exploration trajectories with retroactively inferred instructions",
+   "status": "candidate_pattern",
+   "main": "exploration_driven_task_synthesis"
+  },
+  "K15": {
+   "title": "Propose new tasks conditioned on the agent's history, failures or coverage",
+   "status": "candidate_pattern",
+   "main": "exploration_driven_task_synthesis"
+  },
+  "K16": {
+   "title": "Judge trajectory success with a passive LLM/VLM outcome reward model",
+   "status": "candidate_pattern",
+   "main": "learned_outcome_and_process_judges"
+  },
+  "K17": {
+   "title": "Emit a reward only when diverse judges unanimously agree, else abstain",
+   "status": "case",
+   "main": "learned_outcome_and_process_judges"
+  },
+  "K18": {
+   "title": "Verify outcomes with a tool-using agent that probes the preserved terminal environment",
+   "status": "case",
+   "main": "learned_outcome_and_process_judges"
+  },
+  "K19": {
+   "title": "Dense step-level process rewards for multi-turn GUI RL",
+   "status": "case",
+   "main": "learned_outcome_and_process_judges"
+  },
+  "K20": {
+   "title": "Online RL on sparse terminal reward with learned value baselines and filtered/replayed data",
+   "status": "candidate_pattern",
+   "main": "trajectory_level_policy_training"
+  },
+  "K21": {
+   "title": "Semi-online RL: roll out over expert trajectories with own history and patched mismatches",
+   "status": "case",
+   "main": "trajectory_level_policy_training"
+  },
+  "K22": {
+   "title": "Split each step into a language planner and a specialised visual grounder",
+   "status": "candidate_pattern",
+   "main": "planner_grounder_interface"
+  },
+  "K23": {
+   "title": "Synthesise grounding data from rendered UI structure",
+   "status": "candidate_pattern",
+   "main": "planner_grounder_interface"
+  },
+  "K24": {
+   "title": "Probe agent/grounder robustness with controlled environment perturbations",
+   "status": "candidate_pattern",
+   "main": "online_evaluation_methodology"
+  },
+  "K25": {
+   "title": "Augment action-only traces with generated reasoning",
+   "status": "candidate_pattern",
+   "main": "trajectory_level_policy_training"
+  },
+  "K26": {
+   "title": "Build error-correction and post-error recovery training data at the first mistake",
+   "status": "candidate_pattern",
+   "main": "trajectory_level_policy_training"
+  },
+  "K27": {
+   "title": "Retrieve stored past experience into the agent's context",
+   "status": "candidate_pattern",
+   "main": "experience_memory_retrieval"
+  },
+  "K28": {
+   "title": "Manager-worker hierarchical planning fused with web knowledge",
+   "status": "case",
+   "main": "experience_memory_retrieval"
+  },
+  "K29": {
+   "title": "Redesign the action interface between model and computer",
+   "status": "candidate_pattern",
+   "main": "planner_grounder_interface"
+  },
+  "K30": {
+   "title": "Stratify online success by human reference length and audit failure causes",
+   "status": "candidate_pattern",
+   "main": "online_evaluation_methodology"
+  },
+  "K31": {
+   "title": "Evaluate GUI world models in closed loop rather than teacher-forced one-step",
+   "status": "case",
+   "main": "online_evaluation_methodology"
+  },
+  "K32": {
+   "title": "Route exploration intents between cheap traversal and an LLM GUI agent, asynchronously",
+   "status": "case",
+   "main": "exploration_driven_task_synthesis"
+  },
+  "K33": {
+   "title": "Reach otherwise unreachable app states via static analysis and runtime instrumentation",
+   "status": "case",
+   "main": "exploration_driven_task_synthesis"
+  },
+  "K34": {
+   "title": "Validate checkers two-sidedly: reject faulty, accept legal alternatives",
+   "status": "case",
+   "main": "verifiable_execution_reward"
+  },
+  "K35": {
+   "title": "Object-centric slot world model for relational dynamics",
+   "status": "case",
+   "main": "learn_and_train_in_gui_world_model"
+  }
+ }
+}

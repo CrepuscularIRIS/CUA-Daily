@@ -1,0 +1,10 @@
+{"arxiv": "2511.04137", "sub_pattern": "R03", "fit": "good", "fit_note": "Retrieves YouTube tutorials, VLM-labels actions into segmented trajectories, selects one per step as in-context guidance."}
+{"arxiv": "2511.06101", "sub_pattern": "K14", "fit": "good", "fit_note": "Categorized exploration triplets relabelled into tasks by an LLM, conflict-triggered task and trajectory refinement, then SFT."}
+{"arxiv": "2511.06417", "sub_pattern": "C04", "fit": "good", "fit_note": "Explores apps/sites, harvests element boxes via UIA/OCR/template parser, GPT-4o queries, fine-tunes a grounder."}
+{"arxiv": "2511.09127", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO with rule action/coordinate rewards on the warm-up model's offline hard samples, in a teacher-guided reflection prompt."}
+{"arxiv": "2511.10705", "sub_pattern": "K22", "fit": "good", "fit_note": "Planner emits text plan, separate grounder localises; both co-trained iteratively with grounder-ensemble GRPO rewards."}
+{"arxiv": "2511.11332", "sub_pattern": "C17", "fit": "good", "fit_note": "Orchestrator decomposes requests into a mutable DAG of subtasks dispatched to device agents, edited as results stream in."}
+{"arxiv": "2511.12254", "sub_pattern": "K28", "fit": "good", "fit_note": "Manager retrieves human task plans, operator retrieves app-specific guidance, in a manager-operator-reflector hierarchy."}
+{"arxiv": "2511.12997", "sub_pattern": "K27", "fit": "good", "fit_note": "Condenses completed trajectories into embedded summaries, retrieves top-5 and a coach LLM injects advice mid-episode."}
+{"arxiv": "2511.13087", "sub_pattern": "C07", "fit": "good", "fit_note": "Bidirectional zoom-in/zoom-out ROI search, then upscaled crop with rewritten instruction is re-grounded by a specialist VLM."}
+{"arxiv": "2511.19477", "sub_pattern": "C01", "fit": "weak", "fit_note": "Practitioner position paper; hybrid accessibility-tree element references with selective screenshots, plus security arguments."}

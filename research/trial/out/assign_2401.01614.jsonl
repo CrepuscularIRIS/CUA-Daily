@@ -1,0 +1,1 @@
+{"arxiv": "2401.01614", "sub_pattern": "K22", "fit": "good", "fit_note": "GPT-4V planner emits a textual action description, then a separate grounding step maps it to an element; grounding is via HTML candidates/SoM/attributes rather than a trained pure-vision grounder, so the K22 grounder half is prompt-based."}

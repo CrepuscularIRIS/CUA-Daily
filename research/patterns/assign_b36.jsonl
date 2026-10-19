@@ -1,0 +1,10 @@
+{"arxiv": "2605.00551", "sub_pattern": "C13", "fit": "good", "fit_note": "Rule-based modal detection, redundancy reduction and region structuring of the linearised a11y tree before the policy."}
+{"arxiv": "2605.00642", "sub_pattern": "R01", "fit": "weak", "fit_note": "Replaces single-step GRPO grounding with on-policy self-distillation from a visually privileged teacher; no rule reward."}
+{"arxiv": "2605.01208", "sub_pattern": "R01", "fit": "good", "fit_note": "SFT warm-up then offline step-level GRPO with action-match and thought-action consistency rule rewards, plus a new advantage estimator."}
+{"arxiv": "2605.02630", "sub_pattern": "C07", "fit": "good", "fit_note": "Training-free perplexity-driven zoom-and-reground over sampled coordinate hypotheses, with visual aggregation, on ScreenSpot-Pro."}
+{"arxiv": "2605.02729", "sub_pattern": "K24", "fit": "weak", "fit_note": "Matched-pair UI variants with and without agent-oriented usability heuristics; contribution is interface redesign, not an evaluation probe."}
+{"arxiv": "2605.06664", "sub_pattern": "C07", "fit": "good", "fit_note": "Training-free coarse-to-fine crop-and-reground plus masked multi-candidate selection by a correction model on ScreenSpot-Pro."}
+{"arxiv": "2605.07134", "sub_pattern": "C13", "fit": "good", "fit_note": "Learned decomposition of the AXTree into functional regions with summaries, task-relevant region selection and diff tracking."}
+{"arxiv": "2605.07505", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO on logged GUI states with multi-solution rule-matched action reward and judge-scored plan reward, after guided on-policy distillation."}
+{"arxiv": "2605.09317", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieves past trajectories and compresses them, with in-session history, into latent memory tokens for a frozen policy."}
+{"arxiv": "2605.09497", "sub_pattern": "C34", "fit": "weak", "fit_note": "RL-calibrated click evaluator gate plus distilled experience prompt against deceptive UI; a detector-style defense, not prompt-injection specific."}

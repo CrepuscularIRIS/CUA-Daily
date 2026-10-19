@@ -1,0 +1,7 @@
+{"arxiv": "2505.12493", "sub_pattern": "K06", "fit": "good", "fit_note": "Self-supervised inverse-dynamics (k-step transition) RL objective trains the VLM policy backbone."}
+{"arxiv": "2505.13909", "sub_pattern": "C21", "fit": "good", "fit_note": "Claude reconstructs thoughts and synthesises alternative actions for 312 human trajectories, then SFT."}
+{"arxiv": "2505.14141", "sub_pattern": "C17", "fit": "weak", "fit_note": "Planner traverses hand-built per-app EFSMs to write a plan a VLM executor follows; knowledge-driven planning."}
+{"arxiv": "2505.15259", "sub_pattern": "C07", "fit": "good", "fit_note": "RL-trained reasoning grounder plus test-time KDE crop-zoom and re-grounding with coordinate voting."}
+{"arxiv": "2505.16282", "sub_pattern": "K20", "fit": "good", "fit_note": "Online GRPO on OSWorld terminal reward with success replay buffer and solvable-task filtering."}
+{"arxiv": "2505.16421", "sub_pattern": "K20", "fit": "good", "fit_note": "On-policy multi-turn GRPO from a BC-initialised policy on WebArena rule-based binary rewards."}
+{"arxiv": "2505.16422", "sub_pattern": "C17", "fit": "weak", "fit_note": "Prompted agent builds a text-graph app world model, plans as executable code, refines; no learned simulator."}

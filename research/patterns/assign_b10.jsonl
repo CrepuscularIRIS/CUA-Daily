@@ -1,0 +1,15 @@
+{"arxiv": "2501.16609", "sub_pattern": "R02", "fit": "good", "fit_note": "Suggest-then-execute web agent; users pause, reject, take over; human step and intervention counts reported."}
+{"arxiv": "2502.17110", "sub_pattern": "R03", "fit": "good", "fit_note": "Injects key frames of a recorded demo video into the agent's context with sliding window and reflection."}
+{"arxiv": "2503.16465", "sub_pattern": "R02", "fit": "good", "fit_note": "Learned per-step confidence from critic probing triggers human intervention below a swept threshold."}
+{"arxiv": "2503.19537", "sub_pattern": "R02", "fit": "good", "fit_note": "Benchmark for when a phone agent should contact the user and what to ask; prompted baselines."}
+{"arxiv": "2503.20978", "sub_pattern": "R03", "fit": "weak", "fit_note": "Tutorial-video key frames, OCR and cursor into a text schema for action description; no acting agent."}
+{"arxiv": "2503.21620", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO with action-type, point-in-box and format rule rewards on 136 hard single-step mobile samples."}
+{"arxiv": "2503.24180", "sub_pattern": "R02", "fit": "good", "fit_note": "ASK action trained on ambiguous-task variants with generated QA; dual-stream offline evaluation."}
+{"arxiv": "2504.10458", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO on 3K base-model-filtered single-step states with unified-action rule rewards vs same-data SFT."}
+{"arxiv": "2505.12370", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO grounder with dense distance point reward on 3K filtered pairs plus attention-map filtering."}
+{"arxiv": "2505.12632", "sub_pattern": "R03", "fit": "good", "fit_note": "Mines YouTube phone tutorials into trajectories via OCR scene cuts and GPT-4o action inference."}
+{"arxiv": "2505.13887", "sub_pattern": "R03", "fit": "good", "fit_note": "Abstract-only duplicate record of the video-guided knowledge-injection paper 2502.17110."}
+{"arxiv": "2505.15810", "sub_pattern": "R01", "fit": "good", "fit_note": "R1-Zero-style grounding GRPO with box-size reward against hacking and difficulty-weighted objective."}
+{"arxiv": "2505.22942", "sub_pattern": "R01", "fit": "good", "fit_note": "SFT warm-up then single-step GRPO with format, exact-match action and penalty rewards; WorkArena."}
+{"arxiv": "2506.09373", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO with entropy-window and distance location rewards for interaction coordinates; ablated."}
+{"arxiv": "2506.17913", "sub_pattern": "R01", "fit": "weak", "fit_note": "Abstract only: GRPO grounding agent with relative reward plus omni-parser; rule-reward details unseen."}

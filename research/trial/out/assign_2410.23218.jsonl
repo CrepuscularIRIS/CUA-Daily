@@ -1,0 +1,1 @@
+{"arxiv": "2410.23218", "sub_pattern": "K23", "fit": "good", "fit_note": "Core contribution is a multi-platform toolkit reading element boxes from HTML/A11y trees to synthesise grounding data, plus a unified action space; also touches K22 (grounding mode with GPT-4o planner) and K29."}

@@ -1,0 +1,10 @@
+{"arxiv": "2509.03536", "sub_pattern": "K27", "fit": "good", "fit_note": "Page graph built from training episodes; nearest nodes and BFS-gathered action guidelines retrieved into planner context."}
+{"arxiv": "2509.03891", "sub_pattern": "K27", "fit": "good", "fit_note": "MemRAG retrieves stored successful query-step records into context; also local-app and web-search retrieval."}
+{"arxiv": "2509.04243", "sub_pattern": "C07", "fit": "good", "fit_note": "Model predicts a focus crop then re-grounds inside it, iterating multi-step; trained with SFT and region DPO."}
+{"arxiv": "2509.07098", "sub_pattern": "R03", "fit": "good", "fit_note": "A single recorded human demonstration of the task is turned into step instructions in the agent's context, with a verifier."}
+{"arxiv": "2509.07553", "sub_pattern": "R02", "fit": "good", "fit_note": "Trained agent judges scenario type and emits a query to the human before acting; answers fed back."}
+{"arxiv": "2509.11543", "sub_pattern": "K21", "fit": "good", "fit_note": "Source paper of K21: semi-online rollouts over expert traces with patch module and SOP metric."}
+{"arxiv": "2509.11548", "sub_pattern": "C07", "fit": "good", "fit_note": "Mark-Grid Scaffold predicts grid-cell box, crops and magnifies, then re-grounds on a finer grid; training-free."}
+{"arxiv": "2509.13615", "sub_pattern": "K25", "fit": "weak", "fit_note": "Refines reasoning of toggle steps into state-aware chains for SFT; generator of reasoning unstated, benchmark-centred."}
+{"arxiv": "2509.13704", "sub_pattern": "C19", "fit": "good", "fit_note": "Exploration distils icon-caption knowledge base and action-flow trees of successful runs, retrieved for planning."}
+{"arxiv": "2509.14172", "sub_pattern": "K19", "fit": "weak", "fit_note": "Step-level process rewards come from trajectory trees plus VLM checks, not a learned PRM; used for offline DPO."}

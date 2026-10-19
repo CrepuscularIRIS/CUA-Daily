@@ -1,0 +1,568 @@
+{"arxiv": "2501.04575", "sub_pattern": "C21", "fit": "good", "fit_note": "Two-stage SFT; stage 2 synthesises hierarchical and expectation-reflection reasoning from trajectories with a stronger MLLM."}
+{"arxiv": "2501.10893", "sub_pattern": "K14", "fit": "good", "fit_note": "Backward construction relabels self-instructed rollouts with instructions summarised from sub-trajectories; used for ICL and SFT."}
+{"arxiv": "2501.11733", "sub_pattern": "C17", "fit": "good", "fit_note": "Manager plans subgoals for Perceptor/Operator/Reflector/Notetaker; self-evolving Tips and Shortcuts are secondary."}
+{"arxiv": "2501.12326", "sub_pattern": "K25", "fit": "weak", "fit_note": "Native agent recipe (perception, unified actions, system-2 reasoning, reflective online traces, DPO); no single sub-pattern covers it."}
+{"arxiv": "2501.13896", "sub_pattern": "K23", "fit": "good", "fit_note": "Explores a target environment, annotates grounding queries from before/after screens and DOM/a11y elements, fine-tunes grounders."}
+{"arxiv": "2502.02955", "sub_pattern": "K14", "fit": "weak", "fit_note": "GPT-4V relabels random-walk GUI flows into navigation/reach/operate tasks; DPO with a 4-level reward is not covered."}
+{"arxiv": "2502.02982", "sub_pattern": "K14", "fit": "weak", "fit_note": "Infers instructions retroactively from users' own trajectories; federated training part has no sub-pattern."}
+{"arxiv": "2502.06395", "sub_pattern": "K20", "fit": "good", "fit_note": "SFT on AndroidControl, then iterative filtered BC on successful AndroidWorld rollouts scored by the environment reward."}
+{"arxiv": "2502.06776", "sub_pattern": "K15", "fit": "good", "fit_note": "Task proposer refines tasks from exploratory trajectories on 150k sites; LLM judge filters rollouts for SFT."}
+{"arxiv": "2502.07942", "sub_pattern": "K27", "fit": "weak", "fit_note": "RAG over stored trajectories plus large-small LLM distillation loop; no sub-pattern covers the coupling."}
+{"arxiv": "2502.07949", "sub_pattern": "K20", "fit": "good", "fit_note": "Online RL with DigiRL-style AWR and value filtering, adding VLM-generated subgoals to densify sparse terminal reward."}
+{"arxiv": "2502.08226", "sub_pattern": "C02", "fit": "good", "fit_note": "Training-free SAM+OCR hierarchical screen parsing with LLM-written element descriptions and SoM selection."}
+{"arxiv": "2502.11357", "sub_pattern": "K14", "fit": "good", "fit_note": "Live-web exploration with iterative task refinement and hindsight summarisation into instructions, verifier-filtered, then SFT."}
+{"arxiv": "2502.13130", "sub_pattern": "C12", "fit": "good", "fit_note": "Unifies UI, robot and video data into one Set-of-Mark/Trace-of-Mark action interface for foundation-model pretraining."}
+{"arxiv": "2502.14282", "sub_pattern": "C17", "fit": "good", "fit_note": "Manager-progress-decision hierarchy with a reflection agent and a11y+OCR active perception for PC tasks."}
+{"arxiv": "2502.15760", "sub_pattern": "K20", "fit": "good", "fit_note": "Offline TD-learned VLM Q-function on frozen fine-tuned features with Best-of-N policy extraction; offline variant of K20."}
+{"arxiv": "2502.16796", "sub_pattern": "C17", "fit": "good", "fit_note": "Central steward schedules app-specific staff agents via a task DAG, evaluates and replans, with memory self-evolution."}
+{"arxiv": "2502.18906", "sub_pattern": "K19", "fit": "good", "fit_note": "GPT-4o step labels train a frozen state-action value model that scores every step as reward for offline PPO."}
+{"arxiv": "2503.00401", "sub_pattern": "C04", "fit": "good", "fit_note": "Box-to-query pretraining task refined from harvested UIBERT grounding pairs before mobile SFT"}
+{"arxiv": "2503.01861", "sub_pattern": "C17", "fit": "good", "fit_note": "Plan controller decomposes tasks into sub-tasks for browser and API sub-agents"}
+{"arxiv": "2503.02268", "sub_pattern": "C19", "fit": "good", "fit_note": "Evolves shortcut high-level actions from chain-structured execution memory of the agent's own runs"}
+{"arxiv": "2503.02950", "sub_pattern": "C10", "fit": "weak", "fit_note": "Open-source web-agent suite; decoupled NL action generation and prompted grounding, no evaluation"}
+{"arxiv": "2503.03196", "sub_pattern": "C04", "fit": "good", "fit_note": "Continual pretraining on harvested DOM/icon text2bbox, bbox2text and function grounding data plus block-wise coordinates"}
+{"arxiv": "2503.03743", "sub_pattern": "C17", "fit": "good", "fit_note": "Plan agent decomposes tasks into constrained human-derived basis subtasks executed by an action agent"}
+{"arxiv": "2503.04730", "sub_pattern": "C04", "fit": "good", "fit_note": "Continual-pretrains Phi-3-vision on detector-derived, GPT-4o-aligned Windows element-box pairs"}
+{"arxiv": "2503.06470", "sub_pattern": "K25", "fit": "good", "fit_note": "Grounding reasoning chains (summary, focused analysis) synthesised and kept when the prediction hits; fast/slow mixture"}
+{"arxiv": "2503.09263", "sub_pattern": "C17", "fit": "good", "fit_note": "Planner and task scheduler dispatch subtasks to a pool of specialised decision agents with a reviewer"}
+{"arxiv": "2503.09572", "sub_pattern": "C17", "fit": "good", "fit_note": "Planner-executor split with dynamic replanning; planner trained on trajectory-grounded synthetic plans"}
+{"arxiv": "2503.12532", "sub_pattern": "K19", "fit": "good", "fit_note": "GPT-4o step verifier labels each step from before/after screens; labels train KTO"}
+{"arxiv": "2503.13843", "sub_pattern": "C01", "fit": "good", "fit_note": "Numbered DOM marks via browser extension; controller picks an element id"}
+{"arxiv": "2503.15515", "sub_pattern": "K27", "fit": "weak", "fit_note": "Position paper: agent reads a policy-controlled personal knowledge graph; no retrieval system built"}
+{"arxiv": "2503.15937", "sub_pattern": "K02", "fit": "good", "fit_note": "Trained LLM verifier scores every extracted candidate action; argmax executed"}
+{"arxiv": "2503.17709", "sub_pattern": "C19", "fit": "good", "fit_note": "Pre-recorded app exploration videos distilled into a GUI transition graph injected as context"}
+{"arxiv": "2504.00906", "sub_pattern": "C10", "fit": "good", "fit_note": "Generalist manager/worker routes target descriptions to visual, OCR and structural grounding experts."}
+{"arxiv": "2504.06821", "sub_pattern": "C19", "fit": "good", "fit_note": "Induces verified executable program skills from the agent's own episodes and adds them to the action space."}
+{"arxiv": "2504.07079", "sub_pattern": "C19", "fit": "good", "fit_note": "Self-proposed exploration distils practised trajectories into tested Playwright APIs reused by later agents."}
+{"arxiv": "2504.10127", "sub_pattern": "C21", "fit": "weak", "fit_note": "Mid-trains the planner on non-GUI reasoning data before trajectory SFT; no reasoning-annotation synthesis."}
+{"arxiv": "2504.11788", "sub_pattern": "C18", "fit": "good", "fit_note": "Critique module judges each new state and triggers a multi-step rollback to a chosen earlier state."}
+{"arxiv": "2504.12679", "sub_pattern": "C21", "fit": "good", "fit_note": "Converts web tutorials into steps and has UI-TARS write thought plus action for each, then SFTs."}
+{"arxiv": "2504.13805", "sub_pattern": "K27", "fit": "good", "fit_note": "Parses human demonstrations into knowledge, retrieves the most relevant ones into the executor's context."}
+{"arxiv": "2504.13936", "sub_pattern": "K01", "fit": "good", "fit_note": "Visual diffusion world model predicts each candidate's next screen; an LLM selects the best action."}
+{"arxiv": "2504.14239", "sub_pattern": "K25", "fit": "good", "fit_note": "Teacher-generated spatial reasoning kept only if action correct, then RL with sub-goal and error-recovery rewards."}
+{"arxiv": "2504.14603", "sub_pattern": "C11", "fit": "good", "fit_note": "Windows AgentOS: HostAgent/AppAgents with unified GUI-API actions and hybrid UIA+vision control detection."}
+{"arxiv": "2504.16073", "sub_pattern": "K02", "fit": "good", "fit_note": "Trained CogVLM2 process reward model scores top-K VLM action candidates per step; executes argmax."}
+{"arxiv": "2504.21024", "sub_pattern": "K05", "fit": "good", "fit_note": "Co-trained a11y-tree world model synthesises trajectories mixed with real self-improvement data; also used for lookahead."}
+{"arxiv": "2505.00416", "sub_pattern": "K06", "fit": "weak", "fit_note": "Back-tracking (predict prior action from current screen) auxiliary planning objective plus merged grounding data; half is data mixing."}
+{"arxiv": "2505.00684", "sub_pattern": "C07", "fit": "good", "fit_note": "Training-free error-triggered zoom into regions around the predicted point, per-region actions, image-as-map aggregation."}
+{"arxiv": "2505.05440", "sub_pattern": "C18", "fit": "good", "fit_note": "On-device observer checks each step's screen against cloud planner's stated expectation, triggering cloud replanning on failure."}
+{"arxiv": "2505.10831", "sub_pattern": "K27", "fit": "weak", "fit_note": "User model of confidence-weighted propositions inferred from screenshots, retrieved into assistants; not a GUI-control architecture move."}
+{"arxiv": "2505.10887", "sub_pattern": "C11", "fit": "good", "fit_note": "Modular agent routing subtasks between tool calls (bash/python/file edit) and a planner plus visual grounder for GUI."}
+{"arxiv": "2505.12299", "sub_pattern": "K25", "fit": "good", "fit_note": "Samples CoaT reasoning trees, scores leaves against ground-truth actions, builds thinking-level DPO pairs; offline mobile training."}
+{"arxiv": "2505.12493", "sub_pattern": "K06", "fit": "good", "fit_note": "Self-supervised inverse-dynamics (k-step transition) RL objective trains the VLM policy backbone."}
+{"arxiv": "2505.13909", "sub_pattern": "C21", "fit": "good", "fit_note": "Claude reconstructs thoughts and synthesises alternative actions for 312 human trajectories, then SFT."}
+{"arxiv": "2505.14141", "sub_pattern": "C17", "fit": "weak", "fit_note": "Planner traverses hand-built per-app EFSMs to write a plan a VLM executor follows; knowledge-driven planning."}
+{"arxiv": "2505.15259", "sub_pattern": "C07", "fit": "good", "fit_note": "RL-trained reasoning grounder plus test-time KDE crop-zoom and re-grounding with coordinate voting."}
+{"arxiv": "2505.16282", "sub_pattern": "K20", "fit": "good", "fit_note": "Online GRPO on OSWorld terminal reward with success replay buffer and solvable-task filtering."}
+{"arxiv": "2505.16421", "sub_pattern": "K20", "fit": "good", "fit_note": "On-policy multi-turn GRPO from a BC-initialised policy on WebArena rule-based binary rewards."}
+{"arxiv": "2505.16422", "sub_pattern": "C17", "fit": "weak", "fit_note": "Prompted agent builds a text-graph app world model, plans as executable code, refines; no learned simulator."}
+{"arxiv": "2505.16827", "sub_pattern": "C19", "fit": "good", "fit_note": "Explores apps, mines transition-aware element knowledge into a vector store, retrieves it as guidance."}
+{"arxiv": "2505.18121", "sub_pattern": "K19", "fit": "good", "fit_note": "Per-step progress reward model with LCS self-annotated labels gives dense rewards for multi-turn GUI RL."}
+{"arxiv": "2505.18829", "sub_pattern": "K29", "fit": "weak", "fit_note": "Platform exposing the computer as an MCP server with structured context; interface redesign, mostly system description."}
+{"arxiv": "2505.19095", "sub_pattern": "K20", "fit": "weak", "fit_note": "Online GRPO in a live desktop with curiosity/world-model exploration rewards; optimises diversity, not task success."}
+{"arxiv": "2505.20013", "sub_pattern": "K25", "fit": "good", "fit_note": "Rewrites trajectory CoT into reflection/lookahead, branching and rollback rationales, then SFTs the backbone."}
+{"arxiv": "2505.20660", "sub_pattern": "C18", "fit": "good", "fit_note": "Verifier and trained judger check each action's before/after pages; reflector rewrites the action on failure."}
+{"arxiv": "2505.21496", "sub_pattern": "K19", "fit": "good", "fit_note": "Unified step/outcome reward model guides beam-search exploration and verifies outcomes in agent-RM self-improvement."}
+{"arxiv": "2505.21964", "sub_pattern": "C19", "fit": "good", "fit_note": "Retraces executed actions from screenshots and critiques web knowledge to evolve a reusable task knowledge base."}
+{"arxiv": "2505.23596", "sub_pattern": "C18", "fit": "good", "fit_note": "FSM with pre/post-conditions lets a reflection agent check each transition and revert to a verified stable state."}
+{"arxiv": "2505.23762", "sub_pattern": "K16", "fit": "good", "fit_note": "VLM trajectory judge with voting supplies reward for online GRPO on generated tasks."}
+{"arxiv": "2505.24838", "sub_pattern": "C12", "fit": "weak", "fit_note": "CAD video dataset plus behaviour-cloning transformer; closest is end-to-end screenshot policy trained on a structured action schema."}
+{"arxiv": "2506.01391", "sub_pattern": "C12", "fit": "good", "fit_note": "Compact unified JSON action schema; screenshot policy trained by grounding pretraining, SFT on merged datasets, then GRPO."}
+{"arxiv": "2506.02539", "sub_pattern": "C19", "fit": "good", "fit_note": "Distils lessons from own Office runs into persistent memory, human fact-checked and frozen before deployment."}
+{"arxiv": "2506.02865", "sub_pattern": "K22", "fit": "good", "fit_note": "Policy emits element descriptions; separate screenshot-only localizer returns coordinates, plus answer validator."}
+{"arxiv": "2506.03095", "sub_pattern": "K16", "fit": "weak", "fit_note": "GPT-4o scores sampled single-step responses to build DPO pairs; step-level, not trajectory success judging."}
+{"arxiv": "2506.03143", "sub_pattern": "C05", "fit": "good", "fit_note": "Defines the pattern: <ACTOR> token attention head over patches with box-mask supervision and a verifier."}
+{"arxiv": "2506.03533", "sub_pattern": "K15", "fit": "good", "fit_note": "Proposes tasks from a frontier graph of discovered URLs, feasibility-filters them, then samples trajectories."}
+{"arxiv": "2506.07217", "sub_pattern": "C17", "fit": "good", "fit_note": "High-level planner decomposes BIM modelling into element steps for a documentation-RAG low-level planner and supervised executors."}
+{"arxiv": "2506.07976", "sub_pattern": "K20", "fit": "good", "fit_note": "Online filtered-BC RL on judge-labelled successes, with a curriculum that grows the interaction horizon."}
+{"arxiv": "2506.08012", "sub_pattern": "K26", "fit": "good", "fit_note": "Synthesises error/reflection data from successful trajectories and online reflection tuning."}
+{"arxiv": "2506.08972", "sub_pattern": "C17", "fit": "good", "fit_note": "Agent-Nexus scheduler decomposes compositional tasks into atomic subtasks for navigator agents."}
+{"arxiv": "2506.10387", "sub_pattern": "C19", "fit": "good", "fit_note": "Hierarchical skill library distilled from offline trajectories and online MCTS exploration, injected into planning."}
+{"arxiv": "2506.11127", "sub_pattern": "C12", "fit": "weak", "fit_note": "Speech-instructed end-to-end screenshot policy SFT on TTS-converted data; speech input not covered by any sub-pattern."}
+{"arxiv": "2506.14205", "sub_pattern": "K15", "fit": "good", "fit_note": "Follow-up proposer generates next subtasks from history and failures, verified, revised and summarised into long tasks."}
+{"arxiv": "2506.18158", "sub_pattern": "C16", "fit": "good", "fit_note": "Agent extracts task-relevant screen info into long-term memory plus short-term action-result memory."}
+{"arxiv": "2506.20332", "sub_pattern": "K20", "fit": "good", "fit_note": "Staged SFT, action-level GRPO, then multi-turn task-level GRPO on a sparse GPT-4o trajectory reward."}
+{"arxiv": "2506.23491", "sub_pattern": "C04", "fit": "weak", "fit_note": "SFT grounder on curated existing element-box data with two-stage resolution tuning; no harvesting of its own."}
+{"arxiv": "2501.16609", "sub_pattern": "R02", "fit": "good", "fit_note": "Suggest-then-execute web agent; users pause, reject, take over; human step and intervention counts reported."}
+{"arxiv": "2502.17110", "sub_pattern": "R03", "fit": "good", "fit_note": "Injects key frames of a recorded demo video into the agent's context with sliding window and reflection."}
+{"arxiv": "2503.16465", "sub_pattern": "R02", "fit": "good", "fit_note": "Learned per-step confidence from critic probing triggers human intervention below a swept threshold."}
+{"arxiv": "2503.19537", "sub_pattern": "R02", "fit": "good", "fit_note": "Benchmark for when a phone agent should contact the user and what to ask; prompted baselines."}
+{"arxiv": "2503.20978", "sub_pattern": "R03", "fit": "weak", "fit_note": "Tutorial-video key frames, OCR and cursor into a text schema for action description; no acting agent."}
+{"arxiv": "2503.21620", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO with action-type, point-in-box and format rule rewards on 136 hard single-step mobile samples."}
+{"arxiv": "2503.24180", "sub_pattern": "R02", "fit": "good", "fit_note": "ASK action trained on ambiguous-task variants with generated QA; dual-stream offline evaluation."}
+{"arxiv": "2504.10458", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO on 3K base-model-filtered single-step states with unified-action rule rewards vs same-data SFT."}
+{"arxiv": "2505.12370", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO grounder with dense distance point reward on 3K filtered pairs plus attention-map filtering."}
+{"arxiv": "2505.12632", "sub_pattern": "R03", "fit": "good", "fit_note": "Mines YouTube phone tutorials into trajectories via OCR scene cuts and GPT-4o action inference."}
+{"arxiv": "2505.13887", "sub_pattern": "R03", "fit": "good", "fit_note": "Abstract-only duplicate record of the video-guided knowledge-injection paper 2502.17110."}
+{"arxiv": "2505.15810", "sub_pattern": "R01", "fit": "good", "fit_note": "R1-Zero-style grounding GRPO with box-size reward against hacking and difficulty-weighted objective."}
+{"arxiv": "2505.22942", "sub_pattern": "R01", "fit": "good", "fit_note": "SFT warm-up then single-step GRPO with format, exact-match action and penalty rewards; WorkArena."}
+{"arxiv": "2506.09373", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO with entropy-window and distance location rewards for interaction coordinates; ablated."}
+{"arxiv": "2506.17913", "sub_pattern": "R01", "fit": "weak", "fit_note": "Abstract only: GRPO grounding agent with relative reward plus omni-parser; rule-reward details unseen."}
+{"arxiv": "2507.00008", "sub_pattern": "C07", "fit": "good", "fit_note": "Training-free iterative zoom around the first prediction with dynamic halting, run separately for text and icon targets."}
+{"arxiv": "2507.00210", "sub_pattern": "C13", "fit": "good", "fit_note": "A small LLM selects AxTree lines relevant to future steps before the action model sees the observation."}
+{"arxiv": "2507.03730", "sub_pattern": "C15", "fit": "weak", "fit_note": "History screenshots dropped inside the LLM after layer k (action text kept) with consistency KL; plus training-time random masking."}
+{"arxiv": "2507.05673", "sub_pattern": "C07", "fit": "good", "fit_note": "Two-stage grounding: first box as region proposal, zoom scaled to its size, re-ground; plus IoU-weighted cross-entropy."}
+{"arxiv": "2507.05720", "sub_pattern": "K20", "fit": "good", "fit_note": "Online GRPO in parallel Android emulators on a VLM-judged terminal reward, over a filtered self-explored task curriculum."}
+{"arxiv": "2507.05791", "sub_pattern": "K02", "fit": "good", "fit_note": "Per step, K planner proposals are sampled and an MLLM judge (o3) picks one; plus a click-reward GRPO grounder."}
+{"arxiv": "2507.15846", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline GRPO grounding with dense Gaussian point and coverage rewards, size-adaptive variance, against sparse rule rewards."}
+{"arxiv": "2507.16853", "sub_pattern": "C18", "fit": "good", "fit_note": "Action, trajectory and global reflectors compare before/after screens and check completion, invoked on low action confidence."}
+{"arxiv": "2507.21953", "sub_pattern": "C19", "fit": "good", "fit_note": "Explores each app, summarises pages into a per-app vector memory, and retrieves pages to refine a coarse-to-fine plan."}
+{"arxiv": "2507.22025", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline GRPO with continuous centre-distance grounding reward, length-shaped thinking reward and crop-resampling; adds decomposed inference grounding."}
+{"arxiv": "2507.22358", "sub_pattern": "R02", "fit": "good", "fit_note": "Orchestrator delegates clarifying questions and help requests to the user; co-planning, co-tasking and action guards."}
+{"arxiv": "2507.23779", "sub_pattern": "K23", "fit": "good", "fit_note": "Renders CommonCrawl pages, reads element boxes, GPT-4o referring expressions, resampling; trains a coordinate grounder."}
+{"arxiv": "2508.01858", "sub_pattern": "C21", "fit": "weak", "fit_note": "Knowledge-curriculum SFT with knowledge-driven CoT; closest to synthesised reasoning annotations then SFT, but curriculum is central."}
+{"arxiv": "2508.02046", "sub_pattern": "R01", "fit": "good", "fit_note": "R1-Zero GRPO on per-step samples with format, type and distance-aware grounding rewards, mixing GUI and embodied data."}
+{"arxiv": "2508.03700", "sub_pattern": "R01", "fit": "good", "fit_note": "Continue pre-training then offline GRPO with format, accuracy and distance rule rewards on static steps."}
+{"arxiv": "2508.03923", "sub_pattern": "C11", "fit": "good", "fit_note": "Orchestrator delegates subtasks to a GUI operator or a Python/Bash programmer sharing the OS."}
+{"arxiv": "2508.04025", "sub_pattern": "C13", "fit": "good", "fit_note": "Component recommendation prunes the UI element list to top-ranked candidates before the decision agent; interaction agent unevaluated."}
+{"arxiv": "2508.04037", "sub_pattern": "K13", "fit": "weak", "fit_note": "Generates tasks with paired execution/verification programs for verifiable trajectories; task-first, plus step-wise GRPO and model merging."}
+{"arxiv": "2508.04389", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline GRPO for grounding with soft format reward, in-box point reward and an adversarial KL factor."}
+{"arxiv": "2508.04700", "sub_pattern": "K15", "fit": "good", "fit_note": "Curriculum generator proposes harder tasks from a guidebook updated by judged trajectories and state-change captions."}
+{"arxiv": "2508.05081", "sub_pattern": "C17", "fit": "weak", "fit_note": "Fast SFT System-1 and slow GPT-4o System-2 switched per step; closest to planner/worker hierarchy."}
+{"arxiv": "2508.05615", "sub_pattern": "R01", "fit": "weak", "fit_note": "Single-step grounding GRPO, but reward is label-free sample consensus, not a rule check against labels."}
+{"arxiv": "2508.05731", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline single-step RLOO grounding with point-in-box rule reward, extended by multi-answer exploration reward."}
+{"arxiv": "2508.09123", "sub_pattern": "C21", "fit": "good", "fit_note": "Human desktop demos augmented with MLLM-synthesised reflective L1-L3 CoT, then SFT of screenshot policies."}
+{"arxiv": "2508.10833", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO with point-in-box, format and action rewards on cleaned single-step grounding and navigation data."}
+{"arxiv": "2508.11360", "sub_pattern": "R01", "fit": "good", "fit_note": "Single-step GRPO on mobile steps with tool-type and argument rule rewards, ordered by a trajectory-length curriculum."}
+{"arxiv": "2508.13634", "sub_pattern": "C05", "fit": "good", "fit_note": "Extends GUI-Actor's coordinate-free attention action head with background-suppression and Gaussian-centre attention losses."}
+{"arxiv": "2508.14040", "sub_pattern": "K20", "fit": "good", "fit_note": "Large-scale online step-level GRPO on terminal checker reward after BC, alternating RL with SFT (Entropulse)."}
+{"arxiv": "2508.15144", "sub_pattern": "K20", "fit": "good", "fit_note": "Trajectory-level online RL (TRPO) with success replay and online filtering atop self-evolving critic-filtered trajectory data."}
+{"arxiv": "2508.16987", "sub_pattern": "C10", "fit": "good", "fit_note": "GPT-4.1-mini planning/reasoning agents describe the next action; a LoRA-tuned UI-TARS grounder executes it visually."}
+{"arxiv": "2508.18689", "sub_pattern": "C17", "fit": "weak", "fit_note": "Proactive need inference plus per-app subtask decomposition; closest to manager-worker hierarchy, but a demo without evaluation."}
+{"arxiv": "2508.19679", "sub_pattern": "R02", "fit": "good", "fit_note": "Trains an explicit call_user inquiry action via SFT then GRPO, scored by inquiry success rate."}
+{"arxiv": "2508.20096", "sub_pattern": "K22", "fit": "good", "fit_note": "Trainable Qwen2.5-VL planner with a fixed UI-TARS-1.5 executor; GRPO on the planner only."}
+{"arxiv": "2508.21456", "sub_pattern": "R02", "fit": "good", "fit_note": "Agent self-verifies ambiguity per step and pauses for user choices; pause precision/recall and BLV user study."}
+{"arxiv": "2508.21767", "sub_pattern": "C12", "fit": "good", "fit_note": "Unifies open-source grounding/trajectory data across mobile and PC into one format for SFT, then curriculum RL."}
+{"arxiv": "2509.00366", "sub_pattern": "C19", "fit": "good", "fit_note": "Explores apps into UTGs, LLM-searches intent-trajectory pairs into a vector store retrieved at run time."}
+{"arxiv": "2509.00531", "sub_pattern": "K22", "fit": "good", "fit_note": "Planner/Decider emits target descriptions, a separate 3B Grounder maps them to boxes; plus record-replay acceleration."}
+{"arxiv": "2509.01720", "sub_pattern": "K20", "fit": "good", "fit_note": "Off-policy actor-critic with conservative negative-advantage updates and successful-transition replay on AndroidWorld."}
+{"arxiv": "2509.02322", "sub_pattern": "C12", "fit": "weak", "fit_note": "Unifies GUI and embodied action spaces in one format; main novelty is a shallow-shared, deep-separated MoE."}
+{"arxiv": "2509.02544", "sub_pattern": "C11", "fit": "good", "fit_note": "GUI actions plus SDK/terminal/MCP calls with shared file system, trained by data flywheel and multi-turn PPO."}
+{"arxiv": "2509.03536", "sub_pattern": "K27", "fit": "good", "fit_note": "Page graph built from training episodes; nearest nodes and BFS-gathered action guidelines retrieved into planner context."}
+{"arxiv": "2509.03891", "sub_pattern": "K27", "fit": "good", "fit_note": "MemRAG retrieves stored successful query-step records into context; also local-app and web-search retrieval."}
+{"arxiv": "2509.04243", "sub_pattern": "C07", "fit": "good", "fit_note": "Model predicts a focus crop then re-grounds inside it, iterating multi-step; trained with SFT and region DPO."}
+{"arxiv": "2509.07098", "sub_pattern": "R03", "fit": "good", "fit_note": "A single recorded human demonstration of the task is turned into step instructions in the agent's context, with a verifier."}
+{"arxiv": "2509.07553", "sub_pattern": "R02", "fit": "good", "fit_note": "Trained agent judges scenario type and emits a query to the human before acting; answers fed back."}
+{"arxiv": "2509.11543", "sub_pattern": "K21", "fit": "good", "fit_note": "Source paper of K21: semi-online rollouts over expert traces with patch module and SOP metric."}
+{"arxiv": "2509.11548", "sub_pattern": "C07", "fit": "good", "fit_note": "Mark-Grid Scaffold predicts grid-cell box, crops and magnifies, then re-grounds on a finer grid; training-free."}
+{"arxiv": "2509.13615", "sub_pattern": "K25", "fit": "weak", "fit_note": "Refines reasoning of toggle steps into state-aware chains for SFT; generator of reasoning unstated, benchmark-centred."}
+{"arxiv": "2509.13704", "sub_pattern": "C19", "fit": "good", "fit_note": "Exploration distils icon-caption knowledge base and action-flow trees of successful runs, retrieved for planning."}
+{"arxiv": "2509.14172", "sub_pattern": "K19", "fit": "weak", "fit_note": "Step-level process rewards come from trajectory trees plus VLM checks, not a learned PRM; used for offline DPO."}
+{"arxiv": "2509.15221", "sub_pattern": "C12", "fit": "good", "fit_note": "Cross-platform data pipeline with a unified action space; screenshot policies SFT-trained for grounding and task completion."}
+{"arxiv": "2509.15532", "sub_pattern": "C07", "fit": "good", "fit_note": "Attention-derived adaptive crop and re-grounding, with a learned decision whether a second zoom stage is needed."}
+{"arxiv": "2509.15566", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline GRPO on static steps with rule rewards: ROI blink matching plus exact action-type-and-argument link reward."}
+{"arxiv": "2509.15738", "sub_pattern": "K14", "fit": "good", "fit_note": "Random walk then LLM-inferred goals and retrospective step/task annotation of explored trajectories, used for SFT."}
+{"arxiv": "2509.17328", "sub_pattern": "C12", "fit": "good", "fit_note": "Unified action superset merges heterogeneous agent datasets after 20.6M-sample grounding pre-training; screenshot policy SFT."}
+{"arxiv": "2509.17336", "sub_pattern": "K20", "fit": "good", "fit_note": "SFT, offline GRPO, then online sampling in browser/Ubuntu pools with offline filtering; online RL on terminal status."}
+{"arxiv": "2509.17917", "sub_pattern": "K19", "fit": "good", "fit_note": "Stepwise rewards from rule checks plus a generative principle-critique reward model, used in GRPO."}
+{"arxiv": "2509.18119", "sub_pattern": "K20", "fit": "good", "fit_note": "Online multi-turn GRPO on sparse terminal reward with KL, success replay and failure-curriculum filtering."}
+{"arxiv": "2509.20729", "sub_pattern": "R02", "fit": "weak", "fit_note": "Broad SE framework; runtime clarification requests on ambiguous sub-goals is one pillar beside hierarchy and memory."}
+{"arxiv": "2509.21072", "sub_pattern": "C19", "fit": "good", "fit_note": "Contrasts failed and successful trajectories to generate hint/decision tools registered for later tasks."}
+{"arxiv": "2509.21552", "sub_pattern": "C07", "fit": "good", "fit_note": "Iterative cursor re-grounding with crop around the first prediction; RL-trained with trajectory rewards."}
+{"arxiv": "2509.21799", "sub_pattern": "C18", "fit": "good", "fit_note": "Pre-execution thought-action check and correction plus post-action before/after status reflection fed back to the manager."}
+{"arxiv": "2509.21982", "sub_pattern": "R01", "fit": "good", "fit_note": "Single-step GRPO on curated domain states with format and F1 tool-match rewards plus process/difficulty reweighting."}
+{"arxiv": "2509.23866", "sub_pattern": "K20", "fit": "good", "fit_note": "Online step-wise GRPO on OSWorld terminal rewards with success-trajectory replay and difficulty-adaptive rollouts."}
+{"arxiv": "2509.24133", "sub_pattern": "C07", "fit": "good", "fit_note": "Generalist VLM picks grid regions recursively, specialist grounder localises inside; verified zoom-and-reground on ScreenSpot-Pro."}
+{"arxiv": "2509.24183", "sub_pattern": "K27", "fit": "weak", "fit_note": "Retrieves external web tutorials (not own experience) and distils them into guidance via a trained adapter."}
+{"arxiv": "2509.25047", "sub_pattern": "K15", "fit": "good", "fit_note": "Tasks proposed by an MLLM conditioned on memory-guided exploration trajectories and guideline prompts, then executed and verified."}
+{"arxiv": "2509.25140", "sub_pattern": "C19", "fit": "good", "fit_note": "Distils strategy memory items from the agent's own self-judged successes and failures and injects them into later tasks."}
+{"arxiv": "2509.26539", "sub_pattern": "R01", "fit": "weak", "fit_note": "Recipe paper: unified SFT data mixture, CoT synthesis, zoom-in, then step-wise rule-reward RLVR; RL is one part."}
+{"arxiv": "2510.00413", "sub_pattern": "C15", "fit": "good", "fit_note": "Older steps compressed into captioner/validator text summaries, current screen raw, with on-demand retrieval of past screenshots."}
+{"arxiv": "2510.00536", "sub_pattern": "C09", "fit": "weak", "fit_note": "Training-free KV-cache eviction of spatially and temporally redundant screenshot tokens; closest is redundant-token skipping."}
+{"arxiv": "2510.01524", "sub_pattern": "C19", "fit": "good", "fit_note": "Per-site exploration reverse-engineers website functionality into validated callable tools reused by the agent at test time."}
+{"arxiv": "2510.02250", "sub_pattern": "K02", "fit": "good", "fit_note": "Samples N full rollouts, converts each to a behavior narrative, and a VLM judge selects the best trajectory comparatively."}
+{"arxiv": "2510.03204", "sub_pattern": "C13", "fit": "good", "fit_note": "A lightweight LLM retriever keeps goal-relevant AxTree lines each step before the policy sees the observation."}
+{"arxiv": "2510.03230", "sub_pattern": "C05", "fit": "weak", "fit_note": "New positional machinery (RULER coordinate tokens, interleaved MRoPE) for coordinate output; not coordinate-free but a grounding-head redesign."}
+{"arxiv": "2510.04039", "sub_pattern": "C07", "fit": "good", "fit_note": "RL-trained grounder iteratively calls crop/extract/find-color tools to zoom toward the target on high-resolution screens."}
+{"arxiv": "2510.04373", "sub_pattern": "K27", "fit": "good", "fit_note": "Distils offline successful and failed traces into keyed hints retrieved into the agent's context at inference."}
+{"arxiv": "2510.04607", "sub_pattern": "K29", "fit": "good", "fit_note": "Replaces imperative GUI actions with declarative access/state/observation primitives over a modelled UIA navigation forest."}
+{"arxiv": "2510.04673", "sub_pattern": "R03", "fit": "good", "fit_note": "Inverse dynamics model labels YouTube tutorial videos into executable trajectories used for ICL exemplars and SFT."}
+{"arxiv": "2510.07988", "sub_pattern": "R02", "fit": "good", "fit_note": "Information-managing agent clarifies ambiguity and asks the user about missing or conflicting slots during mobile execution."}
+{"arxiv": "2510.09038", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieves past GUI trajectories as continuous embeddings into the agent's context; memory grown by a data flywheel."}
+{"arxiv": "2510.10666", "sub_pattern": "K29", "fit": "weak", "fit_note": "Browser-native action set replacing parse/summarise tools, plus SFT/RFT and conclusion memory; evaluated on Wikipedia QA."}
+{"arxiv": "2510.11221", "sub_pattern": "C17", "fit": "weak", "fit_note": "Per-step cost-aware LLM routing; no sub-pattern covers model routing, closest is loop-level role decomposition."}
+{"arxiv": "2510.11892", "sub_pattern": "K01", "fit": "good", "fit_note": "Tutorial-grounded LLM world model simulates each candidate action; listwise reward picks the executed action."}
+{"arxiv": "2510.14388", "sub_pattern": "K22", "fit": "good", "fit_note": "Trainable high-level subgoal planner plus low-level screenshot action model, jointly optimised with GRPO."}
+{"arxiv": "2510.14969", "sub_pattern": "K05", "fit": "good", "fit_note": "Teacher rollouts inside a prompted LLM UI simulator produce training trajectories for the agent policy."}
+{"arxiv": "2510.15455", "sub_pattern": "C13", "fit": "good", "fit_note": "Prunes the XML observation into ranked blocks so the cloud policy sees only task-relevant elements."}
+{"arxiv": "2510.15863", "sub_pattern": "C19", "fit": "good", "fit_note": "Accumulates reusable polymorphic code skills from the agent's own successful web runs."}
+{"arxiv": "2510.16051", "sub_pattern": "K23", "fit": "good", "fit_note": "Crawls macOS accessibility trees into element-box grounding tasks with generated descriptions."}
+{"arxiv": "2510.17790", "sub_pattern": "K29", "fit": "good", "fit_note": "Hybrid action interface adding programmatic tools to GUI primitives, trained with SFT and online RL."}
+{"arxiv": "2510.19386", "sub_pattern": "R01", "fit": "good", "fit_note": "Stage-I step-wise GRPO with rule rewards on filtered offline steps; plus multi-agent framework and self-evolving data."}
+{"arxiv": "2510.19488", "sub_pattern": "R03", "fit": "good", "fit_note": "Inverse-dynamics labelling of YouTube tutorial videos into trajectories for continued pretraining."}
+{"arxiv": "2510.19949", "sub_pattern": "C17", "fit": "good", "fit_note": "Orchestrator plans and delegates subtasks to a screenshot Navigator, with a Validator and Localizer."}
+{"arxiv": "2510.20286", "sub_pattern": "R01", "fit": "good", "fit_note": "SFT then GRPO on single-step grounding with instruction-perspective reasoning and point-in-box rewards."}
+{"arxiv": "2510.22009", "sub_pattern": "R01", "fit": "weak", "fit_note": "Main move is device-cloud escalation routing; on-device 3B policy trained by SFT then GRPO."}
+{"arxiv": "2510.22732", "sub_pattern": "K01", "fit": "good", "fit_note": "Critic scores actor candidates by look-ahead over an exploration-built cognitive map before acting."}
+{"arxiv": "2510.24168", "sub_pattern": "C15", "fit": "good", "fit_note": "Replaces raw trajectory history with a validated structured memory chain plus task-agnostic observer."}
+{"arxiv": "2510.27210", "sub_pattern": "C15", "fit": "good", "fit_note": "Policy writes a textual history summary each step, trained with a history-aware GRPO reward."}
+{"arxiv": "2510.27266", "sub_pattern": "R01", "fit": "good", "fit_note": "Single-step grounding GRPO with point-in-box and confidence-alignment rule rewards."}
+{"arxiv": "2511.00810", "sub_pattern": "C05", "fit": "good", "fit_note": "Coordinate-free grounding by supervising intrinsic attention of an anchor token over patches, plus zoom."}
+{"arxiv": "2511.04137", "sub_pattern": "R03", "fit": "good", "fit_note": "Retrieves YouTube tutorials, VLM-labels actions into segmented trajectories, selects one per step as in-context guidance."}
+{"arxiv": "2511.06101", "sub_pattern": "K14", "fit": "good", "fit_note": "Categorized exploration triplets relabelled into tasks by an LLM, conflict-triggered task and trajectory refinement, then SFT."}
+{"arxiv": "2511.06417", "sub_pattern": "C04", "fit": "good", "fit_note": "Explores apps/sites, harvests element boxes via UIA/OCR/template parser, GPT-4o queries, fine-tunes a grounder."}
+{"arxiv": "2511.09127", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO with rule action/coordinate rewards on the warm-up model's offline hard samples, in a teacher-guided reflection prompt."}
+{"arxiv": "2511.10705", "sub_pattern": "K22", "fit": "good", "fit_note": "Planner emits text plan, separate grounder localises; both co-trained iteratively with grounder-ensemble GRPO rewards."}
+{"arxiv": "2511.11332", "sub_pattern": "C17", "fit": "good", "fit_note": "Orchestrator decomposes requests into a mutable DAG of subtasks dispatched to device agents, edited as results stream in."}
+{"arxiv": "2511.12254", "sub_pattern": "K28", "fit": "good", "fit_note": "Manager retrieves human task plans, operator retrieves app-specific guidance, in a manager-operator-reflector hierarchy."}
+{"arxiv": "2511.12997", "sub_pattern": "K27", "fit": "good", "fit_note": "Condenses completed trajectories into embedded summaries, retrieves top-5 and a coach LLM injects advice mid-episode."}
+{"arxiv": "2511.13087", "sub_pattern": "C07", "fit": "good", "fit_note": "Bidirectional zoom-in/zoom-out ROI search, then upscaled crop with rewritten instruction is re-grounded by a specialist VLM."}
+{"arxiv": "2511.19477", "sub_pattern": "C01", "fit": "weak", "fit_note": "Practitioner position paper; hybrid accessibility-tree element references with selective screenshots, plus security arguments."}
+{"arxiv": "2511.19663", "sub_pattern": "K14", "fit": "weak", "fit_note": "Data engine mixes URL-seeded task proposal, exploration-refined tasks, multi-agent solving and LLM-verifier filtering for SFT."}
+{"arxiv": "2511.21398", "sub_pattern": "C03", "fit": "good", "fit_note": "Planner writes sub-task, LLM-generated scoring program ranks DOM elements, grounder picks from top-20 shortlist."}
+{"arxiv": "2511.22235", "sub_pattern": "C17", "fit": "good", "fit_note": "RL-trained Coordinator plans atomic instructions and State Tracker summarises progress for a frozen Executor."}
+{"arxiv": "2512.00846", "sub_pattern": "C08", "fit": "good", "fit_note": "Fuses high-resolution crop features into low-res Q-Former tokens via affine renormalisation instead of extra LLM tokens."}
+{"arxiv": "2512.01763", "sub_pattern": "C15", "fit": "weak", "fit_note": "Training-time history compression in offline GRPO: drop past screenshots, keep action anchors, align with full-history branch."}
+{"arxiv": "2512.01979", "sub_pattern": "C07", "fit": "weak", "fit_note": "Iterative full-screen regrounding with the previous guess drawn as a marker, chaining different MLLMs; no zoom."}
+{"arxiv": "2512.02423", "sub_pattern": "K20", "fit": "weak", "fit_note": "Synthetic screen-graph simulator used to compare SFT, single-turn RL and sparse-reward multi-turn RL for navigation."}
+{"arxiv": "2512.04105", "sub_pattern": "C01", "fit": "weak", "fit_note": "Application wrapper on Browser-Use with DOM-marked element actions; contribution is a legal-domain use case."}
+{"arxiv": "2512.05941", "sub_pattern": "C07", "fit": "good", "fit_note": "Training-free pre-zoom agreement test then multi-step shrink-and-reground with minimum crop size stopping."}
+{"arxiv": "2512.08529", "sub_pattern": "C07", "fit": "good", "fit_note": "Attention-guided enlarged crops are each re-grounded and the densest coordinate cluster is chosen."}
+{"arxiv": "2512.09396", "sub_pattern": "C10", "fit": "weak", "fit_note": "General MLLM fuses outputs of several GUI grounders and re-queries them; grounding-only evaluation."}
+{"arxiv": "2512.10371", "sub_pattern": "C16", "fit": "weak", "fit_note": "Program-structured context: execution-tree path pruning plus explicit variables retained; belief-state tracking."}
+{"arxiv": "2512.10962", "sub_pattern": "K16", "fit": "weak", "fit_note": "o4-mini step grader (distilled into StepRM) filters teacher-CUA steps for SFT; judge used as filter."}
+{"arxiv": "2512.11611", "sub_pattern": "C26", "fit": "good", "fit_note": "Expert-annotated single-step click-in-box (plus LLM-judged answer) benchmark on professional CAD/EDA software."}
+{"arxiv": "2512.12692", "sub_pattern": "K02", "fit": "weak", "fit_note": "Real-execution best-first tree search with LLM-scored candidates, speculative backtracking and destructive-action handling."}
+{"arxiv": "2512.15431", "sub_pattern": "K25", "fit": "weak", "fit_note": "Self-evolving pipeline: trajectory-level verified rollouts turned into LLM-written CoT/step data; multi-stage training recipe."}
+{"arxiv": "2512.19396", "sub_pattern": "K27", "fit": "good", "fit_note": "Critic-filtered self-exploration trajectories stored as text and retrieved (dense+BM25) into the prompt."}
+{"arxiv": "2512.22009", "sub_pattern": "C08", "fit": "good", "fit_note": "Latent tokens decide when to call a cheap DINO detail channel via cross-attention for precise grounding."}
+{"arxiv": "2512.22047", "sub_pattern": "K20", "fit": "weak", "fit_note": "Foundation-model recipe: self-evolving SFT data, ask_user/MCP actions, large-scale online RL and device-cloud routing."}
+{"arxiv": "2512.22322", "sub_pattern": "K18", "fit": "weak", "fit_note": "The policy itself actively gathers and submits evidence snapshots for an LLM judge reward in GRPO."}
+{"arxiv": "2512.23647", "sub_pattern": "C14", "fit": "good", "fit_note": "Minimal four-action browser toolkit plus nested goal-driven page extraction for text browsing agents."}
+{"arxiv": "2512.24965", "sub_pattern": "K29", "fit": "good", "fit_note": "Replaces tokenised click/drag with unified (x,y,mouse-state) streams from a flow-matching action expert."}
+{"arxiv": "2601.03928", "sub_pattern": "C09", "fit": "good", "fit_note": "Instruction-conditioned visual token selection with UI-graph prior and position-preserving padding for grounding."}
+{"arxiv": "2601.04035", "sub_pattern": "K01", "fit": "good", "fit_note": "Trained textual-sketch world model predicts candidates' next states; depth-2 tree-of-prediction feeds agent's action choice."}
+{"arxiv": "2601.04126", "sub_pattern": "K13", "fit": "good", "fit_note": "Tasks-first unified spec, test-driven repair and instrumented evaluators generate verifiable synthetic websites for RL."}
+{"arxiv": "2601.04500", "sub_pattern": "C18", "fit": "weak", "fit_note": "Monitor compares pre/post screens, reflector attributes anomalies; task is defect discovery rather than completion."}
+{"arxiv": "2601.05787", "sub_pattern": "K20", "fit": "good", "fit_note": "Online GRPO with a per-task cache of self-rolled/own successful trajectories injected on group failure."}
+{"arxiv": "2601.06031", "sub_pattern": "K23", "fit": "good", "fit_note": "Synthesises text-drag grounding data from OCR boxes and LLM instructions; continual-trains a coordinate grounder."}
+{"arxiv": "2601.06328", "sub_pattern": "K10", "fit": "weak", "fit_note": "Tool-use (MCP) environment creator; World Engine simulates tools, checked by ranking correlation; not a GUI twin."}
+{"arxiv": "2601.06899", "sub_pattern": "C05", "fit": "good", "fit_note": "Abstract only: attention-based grounding with background suppression and Gaussian center-peaked targets."}
+{"arxiv": "2601.07181", "sub_pattern": "R03", "fit": "good", "fit_note": "Records human desktop demos, VLM-captions them into traces, and feeds the trace to a planner as in-context guidance."}
+{"arxiv": "2601.07262", "sub_pattern": "C19", "fit": "good", "fit_note": "Human-distilled site tips from failed runs stored in a knowledge base and retrieved at runtime, plus progressive summarization."}
+{"arxiv": "2601.07779", "sub_pattern": "C18", "fit": "good", "fit_note": "Reflection-Memory Agent verifies steps and audits milestone screenshots for trajectory-level reflection; adds a multimodal tutorial searcher."}
+{"arxiv": "2601.08605", "sub_pattern": "K27", "fit": "weak", "fit_note": "Step-level experience retrieval for a search/visit web QA agent; main novelty is entropy-triggered timing, not GUI."}
+{"arxiv": "2601.09636", "sub_pattern": "K27", "fit": "weak", "fit_note": "Benchmark plus hierarchical memory over long-term user records for personalization; closest to retrieving past episodes into context."}
+{"arxiv": "2601.09770", "sub_pattern": "C07", "fit": "good", "fit_note": "RL-learned crop/zoom tool call around an initial guess, then re-grounding on the focused view."}
+{"arxiv": "2601.09923", "sub_pattern": "C36", "fit": "good", "fit_note": "Dual-LLM CaMeL adapted to CUAs: trusted planner emits a branching Observe-Verify-Act plan before any observation."}
+{"arxiv": "2601.11631", "sub_pattern": "R01", "fit": "weak", "fit_note": "Main move is coordinate-guided cropping of history screenshots inside semi-online RL; reward is a rule distance term vs labels."}
+{"arxiv": "2601.12822", "sub_pattern": "C34", "fit": "weak", "fit_note": "Separate fine-tuned corrector rewrites unsafe reasoning before action; trained in text simulation, closest to in-context defenses/detectors."}
+{"arxiv": "2601.15876", "sub_pattern": "K13", "fit": "good", "fit_note": "Synthesis engine co-generates tasks and executable validators, repaired in sandbox, feeding RFT/DPO training."}
+{"arxiv": "2601.17418", "sub_pattern": "C19", "fit": "good", "fit_note": "Offline exploration of target apps distilled by an LLM into a per-app knowledge graph injected into planning."}
+{"arxiv": "2601.18305", "sub_pattern": "K14", "fit": "good", "fit_note": "Goal-free DFS exploration, execute-and-verify swipes, VLM reverse-describes each swipe; then RLVR on the synthesised pairs."}
+{"arxiv": "2601.19199", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieves stored workflows and UI-element patches into planner/actor context, with usage-based memory ranking and updates."}
+{"arxiv": "2601.20162", "sub_pattern": "C19", "fit": "good", "fit_note": "Training-free: VLM-rewarded rollouts distilled into an experience pool and app-level preference/workflow memory reused later."}
+{"arxiv": "2601.20380", "sub_pattern": "R01", "fit": "good", "fit_note": "SFT then offline GRPO with format and inside-box rule rewards on curated grounding/navigation steps; plus data synthesis."}
+{"arxiv": "2601.20732", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline single-step GRPO grounding with rule rewards plus diversity rewards, trained sequentially across domains/resolutions."}
+{"arxiv": "2601.21123", "sub_pattern": "K29", "fit": "good", "fit_note": "Replaces flat primitives with a retrieved library of parameterised GUI/script skills the LLM planner selects and configures."}
+{"arxiv": "2601.21253", "sub_pattern": "K33", "fit": "good", "fit_note": "Infers activation conditions of unreached activities from decompiled code and generates validated Frida hooks for a fuzzer."}
+{"arxiv": "2601.21352", "sub_pattern": "C18", "fit": "good", "fit_note": "Tracker checks each step's outcome and triggers multi-step state backtracking and replanning (DFS over states)."}
+{"arxiv": "2601.22149", "sub_pattern": "K05", "fit": "good", "fit_note": "Online RL of the policy inside a learned web world model, short dreams interleaved with real expert trajectories."}
+{"arxiv": "2601.22528", "sub_pattern": "C19", "fit": "good", "fit_note": "Training-free memory of precondition-goal subtask macros from own runs, replayed and pruned by survival value."}
+{"arxiv": "2601.22781", "sub_pattern": "K15", "fit": "good", "fit_note": "Generates training tasks/trajectories at a difficulty sampled from the agent's profiled capability frontier."}
+{"arxiv": "2602.01443", "sub_pattern": "K10", "fit": "weak", "fit_note": "Shop-specific simulated buyer population (LLM browser agents) validated against real A/B outcomes; no environment twin."}
+{"arxiv": "2602.01576", "sub_pattern": "K04", "fit": "good", "fit_note": "VLM world model predicts the next mobile screen as renderable web code, trained on relabelled offline trajectories."}
+{"arxiv": "2602.01725", "sub_pattern": "K01", "fit": "good", "fit_note": "LLM world model predicts short/long-term consequences of each candidate action, scores policy violations, prunes risky actions."}
+{"arxiv": "2602.02468", "sub_pattern": "K28", "fit": "good", "fit_note": "Planner retrieves human-authored online site guides into a high-level plan, plus checklist, recursive memory and hybrid grounding."}
+{"arxiv": "2602.02548", "sub_pattern": "K29", "fit": "good", "fit_note": "Replaces coordinate output with discrete learnable cursor-movement/click tool tokens and multi-step pathfinding."}
+{"arxiv": "2602.02995", "sub_pattern": "K02", "fit": "weak", "fit_note": "Step-level MCTS with real execution and an MLLM comparative judge over sibling actions; no sub-pattern for real tree search."}
+{"arxiv": "2602.05429", "sub_pattern": "K14", "fit": "good", "fit_note": "MCTS mining of intent trajectories with judge rewards; intent recycling relabels non-primary tree paths with new intents."}
+{"arxiv": "2602.05832", "sub_pattern": "C19", "fit": "good", "fit_note": "Hierarchical memory of workflows, skills and failure patterns distilled from own rollouts, injected into GRPO rollouts and inference."}
+{"arxiv": "2602.06351", "sub_pattern": "C05", "fit": "weak", "fit_note": "Training-free patch-attention grounding fused with OCR and icon-caption heatmaps plus one zoom; no trained pointer head."}
+{"arxiv": "2602.06391", "sub_pattern": "R01", "fit": "good", "fit_note": "Grounding recipe ending in GRPO with binary point-in-box reward on pass-rate-filtered (0-75%) samples, after data curation and SFT."}
+{"arxiv": "2602.07153", "sub_pattern": "K15", "fit": "good", "fit_note": "Proposes new state-grounded tasks at branch points of verified seed trajectories, executes them with an agent, verifies and filters."}
+{"arxiv": "2602.07787", "sub_pattern": "C17", "fit": "good", "fit_note": "Planner/orchestrator decompose into subgoals executed by Cortex/Executor agents with replanning; plus text-input post-validation and loop detection."}
+{"arxiv": "2602.08995", "sub_pattern": "C34", "fit": "weak", "fit_note": "Separate LLM output guardrail checks each proposed action for misalignment/injection before execution and feeds corrections back."}
+{"arxiv": "2602.09082", "sub_pattern": "K20", "fit": "weak", "fit_note": "Mid-training, offline GRPO, full-trajectory online RL and model merging; online RL fits K20 only loosely (no critics/replay)."}
+{"arxiv": "2602.09662", "sub_pattern": "K14", "fit": "good", "fit_note": "Goal-free tree exploration with step verification, then hindsight hierarchical task summarisation and quality filtering for SFT/DPO."}
+{"arxiv": "2602.09856", "sub_pattern": "K04", "fit": "good", "fit_note": "Predicts next GUI screen as renderable HTML, trained with SFT then render-aware RL, used as one-step lookahead simulator."}
+{"arxiv": "2602.10139", "sub_pattern": "C36", "fit": "weak", "fit_note": "Privacy, not injection: hides PII behind deterministic placeholders and a local proxy/gatekeeper so the cloud agent never sees raw values."}
+{"arxiv": "2602.10356", "sub_pattern": "K15", "fit": "good", "fit_note": "Curriculum generator proposes next tasks from exploration/context experience and per-task success of the previous iteration, for RL."}
+{"arxiv": "2602.11524", "sub_pattern": "K19", "fit": "weak", "fit_note": "Dense step reward from LLM-distilled adaptive milestones matched by SBERT, not a human-labelled PRM."}
+{"arxiv": "2602.11724", "sub_pattern": "C18", "fit": "weak", "fit_note": "Web-testing agent checks inferred pre/post-condition assertions each step and retries; contribution is oracle inference."}
+{"arxiv": "2602.12276", "sub_pattern": "K02", "fit": "good", "fit_note": "Samples N candidate actions per step, selects by vote or LLM arbiter gated by vote uncertainty."}
+{"arxiv": "2602.12544", "sub_pattern": "K16", "fit": "good", "fit_note": "LLM/VLM judge scores per-constraint satisfaction to filter and prefix teacher trajectories for distillation."}
+{"arxiv": "2602.13559", "sub_pattern": "K20", "fit": "weak", "fit_note": "Online GRPO on live sites with WebJudge plus rule-tree process reward, then a modular planner/grounder/reflector agent."}
+{"arxiv": "2602.13653", "sub_pattern": "K20", "fit": "good", "fit_note": "Learned step-level Q critic trained by cross-entropy on terminal outcome, then filtered step-wise critic-free RL."}
+{"arxiv": "2602.14093", "sub_pattern": "K10", "fit": "good", "fit_note": "Rebuilds each real mini-app task as a task-scoped synthetic web app with code rewards for sim-to-real RL."}
+{"arxiv": "2602.14296", "sub_pattern": "K13", "fit": "good", "fit_note": "FSM spec defines goal states first; coding agents build sites from it, so trajectories are verifiable by construction."}
+{"arxiv": "2602.14721", "sub_pattern": "K03", "fit": "good", "fit_note": "LLM trained on 1M+ real open-web a11y transitions to predict next state in text, with CoT."}
+{"arxiv": "2602.14865", "sub_pattern": "K29", "fit": "good", "fit_note": "Replaces pixel/DOM actions with curated ARIA observations and a per-page function registry of mixed-granularity actions."}
+{"arxiv": "2602.15384", "sub_pattern": "K01", "fit": "good", "fit_note": "Action model proposes candidates, one-step world-model simulation scored by judge, with corrective feedback loop before execution."}
+{"arxiv": "2602.16855", "sub_pattern": "K20", "fit": "weak", "fit_note": "Native multi-platform foundation model; data flywheel, thought synthesis and multi-platform environment RL (MRPO) bundled together."}
+{"arxiv": "2602.17049", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieves intent-clustered skills and stored plans from user interaction traces into planner context."}
+{"arxiv": "2602.17365", "sub_pattern": "K03", "fit": "weak", "fit_note": "Desktop Office world model: textual transition prediction plus diffusion screenshot realisation, used for one-step action search."}
+{"arxiv": "2602.20502", "sub_pattern": "C19", "fit": "good", "fit_note": "Offline crawl distils app state-machine memory of states and operations, patched from runs, reused for one-shot programs."}
+{"arxiv": "2602.22190", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline step-wise GRPO on labelled actions with KL trust region, after action-aware SFT on curated reasoning data."}
+{"arxiv": "2602.23235", "sub_pattern": "C09", "fit": "good", "fit_note": "Training-free visual token pruning: decayed history resolution and structure-aware pruning of current-frame tokens."}
+{"arxiv": "2602.24142", "sub_pattern": "C21", "fit": "weak", "fit_note": "Stage-specific expert channels trained on synthesized hybrid reasoning traces, plus information-gain DPO; offline mobile datasets."}
+{"arxiv": "2603.00188", "sub_pattern": "C09", "fit": "weak", "fit_note": "Training-free KV-cache compression keeping UI-boundary tokens and non-redundant history; cache rather than input token skipping."}
+{"arxiv": "2603.00503", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieves distilled insights from an offline bank of successful trajectories, plus self-summarised history."}
+{"arxiv": "2603.00676", "sub_pattern": "C19", "fit": "weak", "fit_note": "Planner distils task knowledge from demos and own failures; also curriculum GRPO executor and planner-executor hierarchy"}
+{"arxiv": "2603.02951", "sub_pattern": "R01", "fit": "weak", "fit_note": "Offline GRPO with SFT routing and gradient surgery, aimed at continual learning across app groups"}
+{"arxiv": "2603.04364", "sub_pattern": "C34", "fit": "weak", "fit_note": "Defense by adversarial self-play training of the policy, not in-context prompting or detectors"}
+{"arxiv": "2603.05044", "sub_pattern": "K13", "fit": "good", "fit_note": "LLM-synthesised offline sites expose data layer so generated tasks have ground-truth answers and rule rewards"}
+{"arxiv": "2603.07024", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieves past trajectories abstracted into intent-stage-action tree with pre/post-conditions"}
+{"arxiv": "2603.07978", "sub_pattern": "C19", "fit": "good", "fit_note": "GUI-DFS exploration distils verified unit and composite skills into a reusable skill set"}
+{"arxiv": "2603.08533", "sub_pattern": "C15", "fit": "good", "fit_note": "Replaces older screenshots with an agent-written semantic context summary; also a Chinese mobile dataset"}
+{"arxiv": "2603.10291", "sub_pattern": "K27", "fit": "good", "fit_note": "Graph memory of trajectories with symbolic strategy nodes and continuous embeddings, retrieved into context"}
+{"arxiv": "2603.10505", "sub_pattern": "K13", "fit": "good", "fit_note": "Coding agent clones sites with SDK; tasks come with executable validation programs for verifiable reward"}
+{"arxiv": "2603.12138", "sub_pattern": "K14", "fit": "good", "fit_note": "Reverse task synthesis from exploration, steered by hardness-driven MCTS and replay-verified instruction refinement"}
+{"arxiv": "2603.12710", "sub_pattern": "K30", "fit": "weak", "fit_note": "Planning taxonomy plus LLM-judged trajectory metrics vs human gold on WebArena; no length stratification."}
+{"arxiv": "2603.12823", "sub_pattern": "K22", "fit": "weak", "fit_note": "Per-action routing between small and large VLM grounders by difficulty and confidence; not a planner-grounder split."}
+{"arxiv": "2603.14448", "sub_pattern": "C07", "fit": "good", "fit_note": "Training-free latent-thought instruction refinement plus attention-guided iterative zoom-in grounding."}
+{"arxiv": "2603.17441", "sub_pattern": "C07", "fit": "good", "fit_note": "GRPO-trained point+box grounder with zoom-in triggered only for small predicted boxes, plus LLM instruction refinement."}
+{"arxiv": "2603.18429", "sub_pattern": "C15", "fit": "good", "fit_note": "Anchored State Memory replaces full replay or summaries with causally linked intermediate-state anchors in history."}
+{"arxiv": "2603.19685", "sub_pattern": "K19", "fit": "good", "fit_note": "Teacher-generated subgoals train a dense potential critic for milestone-shaped online RL on WebArena-Lite."}
+{"arxiv": "2603.20340", "sub_pattern": "C19", "fit": "good", "fit_note": "Model-written skills compiled into contracts and locally repaired with a deterministic verifier, then reused across models."}
+{"arxiv": "2603.20351", "sub_pattern": "K33", "fit": "weak", "fit_note": "Static-analysis ad priors and a coarse UTG steer LLM exploration to expose hidden ads; detection, not task synthesis."}
+{"arxiv": "2603.23559", "sub_pattern": "C21", "fit": "good", "fit_note": "Ground-truth-conditioned expert reasoning traces and self-correction traces from failures, SFT of native CAPTCHA agent."}
+{"arxiv": "2603.24157", "sub_pattern": "C18", "fit": "good", "fit_note": "Actor-critic agent: critic scores each proposed action and issues hierarchical reflection; plus tool grounding and dual memory."}
+{"arxiv": "2603.24533", "sub_pattern": "K26", "fit": "good", "fit_note": "Fork-point self-distillation: correct actions from successful group rollouts supervise failed ones; RFT warm start."}
+{"arxiv": "2603.26211", "sub_pattern": "C04", "fit": "weak", "fit_note": "Fine-tunes a diffusion VLM to emit action and box text; main move is diffusion decoding/masking, not data."}
+{"arxiv": "2603.26266", "sub_pattern": "R03", "fit": "good", "fit_note": "Retrieves YouTube tutorials, VLM-annotates keyframe pairs into planning/grounding knowledge injected into agents."}
+{"arxiv": "2604.01676", "sub_pattern": "C02", "fit": "weak", "fit_note": "Single-demo record-and-replay; detector+OCR UI graph with SMC localisation; no closer sub-pattern."}
+{"arxiv": "2604.02345", "sub_pattern": "K06", "fit": "good", "fit_note": "Continual pretraining on forward-dynamics descriptions of explored real transitions before agent post-training."}
+{"arxiv": "2604.05477", "sub_pattern": "K26", "fit": "good", "fit_note": "Synthetic no-change failure steps with diagnosis and corrective action; SFT then offline GRPO with verification reward."}
+{"arxiv": "2604.06134", "sub_pattern": "R02", "fit": "weak", "fit_note": "HCI conversational GUI agent with preference memory, GUI adaptation and backtracking suggestions; user study."}
+{"arxiv": "2604.06995", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline GRPO with rule rewards for key-element location, description similarity and action match."}
+{"arxiv": "2604.07277", "sub_pattern": "K20", "fit": "good", "fit_note": "Online actor-critic RL with PRM-informed Q critic scoring multiple sampled actions per emulator state."}
+{"arxiv": "2604.07776", "sub_pattern": "K15", "fit": "weak", "fit_note": "Persona-driven explore-then-propose grounded tasks with hints, teacher trajectories, judge filtering, SFT."}
+{"arxiv": "2604.08516", "sub_pattern": "C12", "fit": "good", "fit_note": "Normalises AxTree-agent, human and node-traversal trajectories into one pixel action schema and SFTs a screenshot-only web policy."}
+{"arxiv": "2604.09155", "sub_pattern": "C35", "fit": "weak", "fit_note": "Pre-action gating to confirm/reflect/abort, but decided by a separate trained guardian with conformal calibration, not the policy."}
+{"arxiv": "2604.09581", "sub_pattern": "C20", "fit": "weak", "fit_note": "Prompted SoM web agent emitting think-aloud and per-step usability ratings; contribution is UX evaluation, not agent capability."}
+{"arxiv": "2604.09815", "sub_pattern": "C19", "fit": "weak", "fit_note": "Experience bank of LLM-distilled rules from trajectory comparison, alongside gap-driven task synthesis and expert distillation for MCP-GUI agents."}
+{"arxiv": "2604.11259", "sub_pattern": "C21", "fit": "weak", "fit_note": "Step-weighted, padding-gated DPO on persona-paired human trajectories with reasoning text; preference alignment, not reasoning-annotation SFT."}
+{"arxiv": "2604.11784", "sub_pattern": "K19", "fit": "weak", "fit_note": "Infrastructure paper; its trained-agent claim rests on GiGPO plus an off-the-shelf MLLM PRM giving dense step rewards."}
+{"arxiv": "2604.13019", "sub_pattern": "C07", "fit": "weak", "fit_note": "Training-free re-grounding with a red-cross marker on the previous guess, retried only after a ground-truth miss; no zoom."}
+{"arxiv": "2604.13318", "sub_pattern": "C19", "fit": "good", "fit_note": "Distils synthetic-agent trajectories into verified parameterised skills with step guidance, retrieved by URL graph into later tasks."}
+{"arxiv": "2604.13488", "sub_pattern": "K22", "fit": "good", "fit_note": "Lightweight 3B executor trained on role-oriented data, shown with Gemini/GPT-5 planners vs planners alone online."}
+{"arxiv": "2604.13822", "sub_pattern": "C15", "fit": "weak", "fit_note": "Keeps only progress summaries in context with thoughts stored for retrieval, plus RL-trained calls to a copilot tool."}
+{"arxiv": "2604.14113", "sub_pattern": "C07", "fit": "good", "fit_note": "Training-free uncertainty-gated zoom: sample candidates, crop sized by prediction variance, re-ground once."}
+{"arxiv": "2604.14668", "sub_pattern": "R02", "fit": "weak", "fit_note": "Human-assist system rewriting live DOM on user request; closest to mixed-initiative user involvement, not agent-decided asking."}
+{"arxiv": "2604.15093", "sub_pattern": "K15", "fit": "good", "fit_note": "Builds global environment memory from random-walk exploration, composes tasks from neighbouring/related functionalities; plus learner-expert policy switching."}
+{"arxiv": "2604.17821", "sub_pattern": "K02", "fit": "weak", "fit_note": "Uncertainty-driven planning-mode switch plus MCTS over candidate actions scored by an LLM evaluation agent; real-search, not simulation."}
+{"arxiv": "2604.21268", "sub_pattern": "C06", "fit": "good", "fit_note": "One model proposes several click candidates, renders them on the screenshot and critiques/ranks them; both roles co-trained with GRPO."}
+{"arxiv": "2604.21375", "sub_pattern": "C18", "fit": "good", "fit_note": "Completion gate plus separate MLLM judge rejects unsupported done claims; tiered loop breaker forces strategy change; search agent."}
+{"arxiv": "2604.25380", "sub_pattern": "C15", "fit": "weak", "fit_note": "Benchmark of interstitial GUI dynamics plus agent that clusters screen-recording frames into captioned key frames as history; also C22-like benchmark."}
+{"arxiv": "2604.26020", "sub_pattern": "K18", "fit": "weak", "fit_note": "Trains a CUA that explores a UI and outputs a usability score; agentic judge of interfaces, not trajectories."}
+{"arxiv": "2604.27151", "sub_pattern": "C18", "fit": "weak", "fit_note": "Step-level small-to-large model cascade; learned stuck monitor plus milestone-triggered verification by a stronger model. Compute routing is main idea."}
+{"arxiv": "2604.27253", "sub_pattern": "K14", "fit": "good", "fit_note": "Breadth-first site exploration; complex tasks synthesised from executed action chains, then refined with trace hints; SFT."}
+{"arxiv": "2605.00551", "sub_pattern": "C13", "fit": "good", "fit_note": "Rule-based modal detection, redundancy reduction and region structuring of the linearised a11y tree before the policy."}
+{"arxiv": "2605.00642", "sub_pattern": "R01", "fit": "weak", "fit_note": "Replaces single-step GRPO grounding with on-policy self-distillation from a visually privileged teacher; no rule reward."}
+{"arxiv": "2605.01208", "sub_pattern": "R01", "fit": "good", "fit_note": "SFT warm-up then offline step-level GRPO with action-match and thought-action consistency rule rewards, plus a new advantage estimator."}
+{"arxiv": "2605.02630", "sub_pattern": "C07", "fit": "good", "fit_note": "Training-free perplexity-driven zoom-and-reground over sampled coordinate hypotheses, with visual aggregation, on ScreenSpot-Pro."}
+{"arxiv": "2605.02729", "sub_pattern": "K24", "fit": "weak", "fit_note": "Matched-pair UI variants with and without agent-oriented usability heuristics; contribution is interface redesign, not an evaluation probe."}
+{"arxiv": "2605.06664", "sub_pattern": "C07", "fit": "good", "fit_note": "Training-free coarse-to-fine crop-and-reground plus masked multi-candidate selection by a correction model on ScreenSpot-Pro."}
+{"arxiv": "2605.07134", "sub_pattern": "C13", "fit": "good", "fit_note": "Learned decomposition of the AXTree into functional regions with summaries, task-relevant region selection and diff tracking."}
+{"arxiv": "2605.07505", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO on logged GUI states with multi-solution rule-matched action reward and judge-scored plan reward, after guided on-policy distillation."}
+{"arxiv": "2605.09317", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieves past trajectories and compresses them, with in-session history, into latent memory tokens for a frozen policy."}
+{"arxiv": "2605.09497", "sub_pattern": "C34", "fit": "weak", "fit_note": "RL-calibrated click evaluator gate plus distilled experience prompt against deceptive UI; a detector-style defense, not prompt-injection specific."}
+{"arxiv": "2605.10347", "sub_pattern": "K04", "fit": "weak", "fit_note": "Comparative study of four world-model output modalities (delta/full text, code, diffusion) and their downstream uses"}
+{"arxiv": "2605.11212", "sub_pattern": "C15", "fit": "weak", "fit_note": "Compresses screenshot history by dropping temporally redundant patches, not by converting old steps to text"}
+{"arxiv": "2605.12294", "sub_pattern": "C19", "fit": "good", "fit_note": "Explores target apps into an executable knowledge graph with mined action groups, retrieved via Q-guided MCTS"}
+{"arxiv": "2605.12481", "sub_pattern": "C11", "fit": "good", "fit_note": "Trains a native policy to orchestrate GUI actions and tool calls in one hybrid action space"}
+{"arxiv": "2605.12501", "sub_pattern": "K23", "fit": "good", "fit_note": "Renderer-based multi-modality grounding data (GUI/text/table/canvas/image) for click/drag/draw, plus a benchmark"}
+{"arxiv": "2605.12549", "sub_pattern": "C07", "fit": "weak", "fit_note": "Training-free attention-guided second prefill refines target selection; inference-time grounding refinement, not zoom search"}
+{"arxiv": "2605.14290", "sub_pattern": "C36", "fit": "good", "fit_note": "Position paper: commit to a program over typed site APIs before reading untrusted content; quarantined typed LLM subroutines"}
+{"arxiv": "2605.14747", "sub_pattern": "R03", "fit": "good", "fit_note": "Filters YouTube tutorials and extracts grounded trajectories with a VLM into a 12M-trajectory pretraining corpus"}
+{"arxiv": "2605.15542", "sub_pattern": "C07", "fit": "good", "fit_note": "MCTS over Focus/Shift/Scatter crops scored by parser-based region reward, then the base model grounds in the best crop"}
+{"arxiv": "2605.16024", "sub_pattern": "K07", "fit": "weak", "fit_note": "Goal-free desktop exploration into a deduplicated state graph with ambiguity-aware PUCT; corpus not captioned nor used for a world model"}
+{"arxiv": "2605.16565", "sub_pattern": "C19", "fit": "weak", "fit_note": "Offline per-site profiles of URL templates and schemas drive a verified fast path; main move is speculative execution."}
+{"arxiv": "2605.16883", "sub_pattern": "K27", "fit": "good", "fit_note": "Hierarchical episodic/semantic/experiential memory retrieved into context, plus GRPO training on memory-collected data."}
+{"arxiv": "2605.18048", "sub_pattern": "C22", "fit": "weak", "fit_note": "Executable Docker desktop benchmark with final-state verifier; defining move is document-retrieval-then-execute tasks, not checker design."}
+{"arxiv": "2605.18652", "sub_pattern": "C16", "fit": "good", "fit_note": "Learned controller writes salient events with ROI crops into working memory, compresses older entries, retrieves episodes."}
+{"arxiv": "2605.19260", "sub_pattern": "C09", "fit": "good", "fit_note": "Training-free adaptive-quadtree visual token reduction keeping one token per homogeneous leaf, conditioned on previous screenshots."}
+{"arxiv": "2605.20291", "sub_pattern": "K25", "fit": "weak", "fit_note": "Main move is importance-diversity step selection for offline SFT; self-generated rationales are a secondary component."}
+{"arxiv": "2605.21470", "sub_pattern": "K29", "fit": "good", "fit_note": "Replaces per-step primitive GUI actions with compiled code plans over cached app tools with pre/postcondition invariants."}
+{"arxiv": "2605.22642", "sub_pattern": "K12", "fit": "good", "fit_note": "Outcome reward from recalculated Excel workbook cells compared with oracle workbooks, driving multi-turn GRPO."}
+{"arxiv": "2605.23939", "sub_pattern": "C19", "fit": "good", "fit_note": "Distils trajectories into natural-language reasoning skills and programmatic interaction skills, retrieved per task-page scene and refined."}
+{"arxiv": "2605.24785", "sub_pattern": "C19", "fit": "good", "fit_note": "Online skill library of rules and parameterised routines distilled from its own test-stream runs, with demotion and routing."}
+{"arxiv": "2605.26546", "sub_pattern": "C19", "fit": "weak", "fit_note": "Per-step online probing of UI elements during VLM inference, summarised into prompt hints; not a persistent library."}
+{"arxiv": "2605.27134", "sub_pattern": "C23", "fit": "good", "fit_note": "Offline and semi-online step-level evaluation toolkit plus a large Chinese mobile trajectory dataset."}
+{"arxiv": "2605.28258", "sub_pattern": "K18", "fit": "weak", "fit_note": "GUI agent judge plays generated games to adjudicate rubrics; also a playtester feeding code refinement, outside CUA tasks."}
+{"arxiv": "2605.28534", "sub_pattern": "K06", "fit": "good", "fit_note": "Mid-trains the VLM on LLM-distilled textual planning and causal transition knowledge before post-training."}
+{"arxiv": "2605.28775", "sub_pattern": "K15", "fit": "good", "fit_note": "New tasks synthesised from weakness reports of tasks the teacher solves but the student fails; plus masked DPO."}
+{"arxiv": "2605.29119", "sub_pattern": "K19", "fit": "good", "fit_note": "Binary step-level PRM rewards on sampled candidate actions at on-policy states drive step-level GRPO."}
+{"arxiv": "2605.29324", "sub_pattern": "C16", "fit": "good", "fit_note": "Agent trained to emit an explicit memory field retaining transient screen information, via virtual-environment SFT and RL."}
+{"arxiv": "2605.29447", "sub_pattern": "K26", "fit": "good", "fit_note": "Tree synthesis localises policy-induced error states and synthesises long-horizon recovery trajectories for SFT."}
+{"arxiv": "2605.29534", "sub_pattern": "C19", "fit": "good", "fit_note": "Autonomous app exploration builds a reusable UI-state knowledge graph that guides a small runtime agent."}
+{"arxiv": "2605.30884", "sub_pattern": "C07", "fit": "good", "fit_note": "Predicted-box area gates up to two crop-and-reground stages around the click; trained with difficulty-weighted GRPO."}
+{"arxiv": "2605.31365", "sub_pattern": "K07", "fit": "good", "fit_note": "Goal-free self-adversarial exploration of real sites; Judger captions mispredicted real transitions used for SFT; graph-structured walk."}
+{"arxiv": "2606.01790", "sub_pattern": "C09", "fit": "weak", "fit_note": "Training-free KV-cache eviction of visual history tokens for efficiency; closest is visual-token skipping, not localisation."}
+{"arxiv": "2606.02031", "sub_pattern": "K20", "fit": "good", "fit_note": "Online multi-turn GRPO on live websites with trajectory-level VLM judge reward after a small SFT warm start."}
+{"arxiv": "2606.03236", "sub_pattern": "R02", "fit": "weak", "fit_note": "Proactive agent decides via a trained gate when to intervene for the user; not asking for help."}
+{"arxiv": "2606.03854", "sub_pattern": "K29", "fit": "good", "fit_note": "Replaces GUI control with generated stateful CLI harnesses over real application backends as the agent's action interface."}
+{"arxiv": "2606.04391", "sub_pattern": "C19", "fit": "good", "fit_note": "Induces verified text-code skills from own successful runs and retrieves them per step by task and page state."}
+{"arxiv": "2606.04627", "sub_pattern": "K06", "fit": "weak", "fit_note": "Main move is latent chain-of-thought; a next-screenshot feature-alignment auxiliary objective is the transition-objective part."}
+{"arxiv": "2606.05597", "sub_pattern": "K20", "fit": "good", "fit_note": "Asynchronous multi-step GRPO on live websites with judge reward, decoupled off-policy correction and constant length normaliser."}
+{"arxiv": "2606.06708", "sub_pattern": "C13", "fit": "good", "fit_note": "Task-conditioned sub-call filters the DOM to relevant elements, re-invoked only on browser-event signals; position paper."}
+{"arxiv": "2606.07027", "sub_pattern": "K19", "fit": "good", "fit_note": "Step-level process reward from VLM entity-stain tracking and key-node verification, used as dense GRPO advantage on AndroidWorld."}
+{"arxiv": "2606.07594", "sub_pattern": "C11", "fit": "good", "fit_note": "Harness routing each step across MCP/API tools, CLI and visual GUI control, plus demonstration-compiled skills."}
+{"arxiv": "2606.09399", "sub_pattern": "C15", "fit": "good", "fit_note": "Bounded structured ledger with six-phase eviction of old screenshots and traces, plus orchestrator/planner/worker roles."}
+{"arxiv": "2606.09447", "sub_pattern": "K12", "fit": "good", "fit_note": "Rewards and evaluates cloud-console episodes by task rules over backend ActionTrail audit logs, in provisioned resettable accounts."}
+{"arxiv": "2606.10423", "sub_pattern": "C13", "fit": "good", "fit_note": "DOM restructured into summarised semantic sections that the agent skims and selectively extracts; plus exploration memory and compound actions."}
+{"arxiv": "2606.10522", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO grounding RFT with certainty-scaled advantages and widened clipping under sequential domain/resolution shifts; offline single-step."}
+{"arxiv": "2606.11078", "sub_pattern": "C18", "fit": "good", "fit_note": "Trained critic verifies each proposed action on a marked screenshot pre-execution and feeds verdicts back, plus macro-action history summaries."}
+{"arxiv": "2606.11520", "sub_pattern": "K15", "fit": "weak", "fit_note": "Shell-only OS agent data: sampled 4D intents, role-locked user simulator and live execution; not exploration- or history-conditioned, no GUI."}
+{"arxiv": "2606.12485", "sub_pattern": "K26", "fit": "good", "fit_note": "Teacher reviews short student branches, rolls back to the first harmful action and labels a correction; corrections plus verified trajectories are SFT data."}
+{"arxiv": "2606.13239", "sub_pattern": "K29", "fit": "good", "fit_note": "Replaces GUI clicks with generated COM programs as the action interface for CAD software, then SFT, multi-turn SFT and GRPO."}
+{"arxiv": "2606.14579", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO grounding with point-in-box reward, groups built from target-preserving crops plus a gated oracle anchor; offline single-step."}
+{"arxiv": "2606.14832", "sub_pattern": "C11", "fit": "good", "fit_note": "Phone harness routing tasks across device CLI, MCP host tools and delegated GUI subtasks in one loop."}
+{"arxiv": "2606.17321", "sub_pattern": "K15", "fit": "good", "fit_note": "Desktop-grounded task proposal with binary precondition judge, verdict-conditioned retry and rare-app coverage synthesis."}
+{"arxiv": "2606.17645", "sub_pattern": "C19", "fit": "good", "fit_note": "Induced web skills stored with structural page sketches, retrieved by layout similarity and slot-bound on live pages."}
+{"arxiv": "2606.17929", "sub_pattern": "C19", "fit": "good", "fit_note": "Compiles successful runs into predicate-checked state-machine programs replayed without LLM calls, gated by re-run verification."}
+{"arxiv": "2606.18101", "sub_pattern": "R01", "fit": "weak", "fit_note": "On-policy self-distillation for grounding with box-compatibility gating and teacher-probability weighting; no rule reward GRPO."}
+{"arxiv": "2606.18448", "sub_pattern": "C19", "fit": "good", "fit_note": "Per-application multimodal skill files built from manuals and live UI exploration, loaded on demand through an MCP tool."}
+{"arxiv": "2606.18890", "sub_pattern": "K26", "fit": "good", "fit_note": "Recovery data from policy-induced off-trajectory states: skill-guided continuations after k own steps, SFT mixed with experts."}
+{"arxiv": "2606.19926", "sub_pattern": "C16", "fit": "good", "fit_note": "Policy emits memory add/update/delete and history-folding actions alongside UI actions to retain cross-app facts."}
+{"arxiv": "2606.19930", "sub_pattern": "K19", "fit": "good", "fit_note": "VLM critic gives outcome, step-level labels and corrective hints that select steps for hint-conditioned step-level GRPO."}
+{"arxiv": "2606.20363", "sub_pattern": "C19", "fit": "weak", "fit_note": "Mines SKILL.md-style skills by segmenting and clustering logged trajectories, then GRPO on skill composition; not agent's own runs."}
+{"arxiv": "2606.20636", "sub_pattern": "C19", "fit": "good", "fit_note": "Learns macro/micro skills with success patterns, failure lessons and risk guards from self-proposed exploration, reused selectively."}
+{"arxiv": "2606.20785", "sub_pattern": "K10", "fit": "weak", "fit_note": "Data engine mixing live web with sandboxed replicas of target sites plus verifiers; distilled SFT agents; replica-to-live transfer measured."}
+{"arxiv": "2606.22948", "sub_pattern": "K20", "fit": "weak", "fit_note": "Offline search over live OSWorld VMs, oracle-verified leaves, balanced SFT; filtered behaviour cloning compared to online RL, no online updates."}
+{"arxiv": "2606.23449", "sub_pattern": "K29", "fit": "good", "fit_note": "OS-level Android harness exposing API, CLI, structured UI, event streams and taint-tracked data to agents instead of GUI only."}
+{"arxiv": "2606.24515", "sub_pattern": "K16", "fit": "good", "fit_note": "Final-screenshot VLM judge as PPO terminal reward, with class-conditional noise correction calibrated on a held-out labelled split."}
+{"arxiv": "2606.25705", "sub_pattern": "K15", "fit": "weak", "fit_note": "Explorer LM proposes novel queries from one demo, rewarded by novelty against a memory bank, to find user-sensitive screens."}
+{"arxiv": "2606.25964", "sub_pattern": "K23", "fit": "good", "fit_note": "Grounding corpus with boxes read from DOM of a Windows-11 web clone, then distillation cold-start and GRPO."}
+{"arxiv": "2606.27330", "sub_pattern": "K14", "fit": "good", "fit_note": "GPT-4o explores sites, then hindsight experience rewrites tasks to match trajectories; SFT/GRPO small MLLMs."}
+{"arxiv": "2606.29472", "sub_pattern": "C15", "fit": "weak", "fit_note": "Observation layer turning inter-step keyframes and audio into persistent text narration; no sub-pattern covers continuous perception."}
+{"arxiv": "2606.29705", "sub_pattern": "R01", "fit": "good", "fit_note": "Single-step GRPO with Gaussian point and action-type rule rewards on DOM/a11y-harvested meta-tasks, then small annotated RL stage."}
+{"arxiv": "2606.30084", "sub_pattern": "C08", "fit": "good", "fit_note": "Reinjects unmerged high-res vision features of a self-selected target region into later decoder layers, single forward pass."}
+{"arxiv": "2606.30697", "sub_pattern": "C01", "fit": "good", "fit_note": "Element-id actions over Windows UIA / browser DOM blueprints with stable ids; prompted LLM picks one action."}
+{"arxiv": "2606.31270", "sub_pattern": "C19", "fit": "good", "fit_note": "LLM mines the agent's own failed OSWorld runs into reusable inference-time patches: visual search, terminal, manuals, repetition warnings."}
+{"arxiv": "2606.31410", "sub_pattern": "K20", "fit": "weak", "fit_note": "Full real-device recipe: data tiers, error-driven flywheel, SFT then step-level and agentic RL; no single sub-pattern."}
+{"arxiv": "2606.31612", "sub_pattern": "C16", "fit": "good", "fit_note": "Agent writes and updates a structured task-state memory (items, constraints, status) each step; RL teaches when to use it."}
+{"arxiv": "2607.00502", "sub_pattern": "C15", "fit": "good", "fit_note": "Externally maintained structured task state (summary, progress tracker, transition check) injected into a fixed actor's prompt."}
+{"arxiv": "2607.04425", "sub_pattern": "R01", "fit": "weak", "fit_note": "Rule-rewarded single-action GRPO plus platform-routed multi-teacher on-policy KL distillation; the distillation is the contribution."}
+{"arxiv": "2607.09773", "sub_pattern": "K20", "fit": "good", "fit_note": "Online RL on sparse executable terminal reward with step-level advantage redistribution, pass-rate filtering, curriculum and positive replay."}
+{"arxiv": "2607.11185", "sub_pattern": "K13", "fit": "good", "fit_note": "Multi-agent loop synthesises tasks with executable judges dry-run in live containers, then online RL with frontier sampling."}
+{"arxiv": "2607.11388", "sub_pattern": "C18", "fit": "good", "fit_note": "Planner-actor-verifier loop where only verifier-backed evidence commits subgoal progress into a unified typed state."}
+{"arxiv": "2607.12625", "sub_pattern": "C19", "fit": "good", "fit_note": "Self-evolving experience memory and state-validated skill library distilled from own GUI runs."}
+{"arxiv": "2607.13027", "sub_pattern": "K29", "fit": "weak", "fit_note": "Replaces GUI actions with schema-checked device tools; tool-only interface, no GUI grounding at all."}
+{"arxiv": "2607.14443", "sub_pattern": "C01", "fit": "good", "fit_note": "Accessibility-first element candidates with OCR and visual fallback, executed via native semantic actions."}
+{"arxiv": "2607.14548", "sub_pattern": "K20", "fit": "weak", "fit_note": "Technical report: data/environment pipelines plus mid-training, SFT and RL; no single trajectory-training move isolated."}
+{"arxiv": "2607.15193", "sub_pattern": "R02", "fit": "weak", "fit_note": "User-initiated plan editing and system-driven replanning, not an agent-decided ask action."}
+{"arxiv": "2607.15550", "sub_pattern": "C35", "fit": "weak", "fit_note": "Separate trained world-model guard refuses risky actions pre-execution; not self-judged user confirmation."}
+{"arxiv": "2607.18046", "sub_pattern": "K14", "fit": "good", "fit_note": "Goal-free structured exploration builds transition graph; instructions inferred afterwards from sampled explored screens."}
+{"arxiv": "2607.22798", "sub_pattern": "C11", "fit": "good", "fit_note": "Code-first main agent on program state with GUI subagent only for irreducibly visual subgoals."}
+{"arxiv": "2607.24112", "sub_pattern": "K06", "fit": "good", "fit_note": "Continual pretraining on forward and inverse dynamics of GUI transitions before trajectory fine-tuning."}
+{"arxiv": "2607.24167", "sub_pattern": "C18", "fit": "good", "fit_note": "Tests each plan commitment before and after actions against confirming/falsifying evidence, then repairs."}
+{"arxiv": "2607.28227", "sub_pattern": "K20", "fit": "weak", "fit_note": "Foundation-agent report: real-device runtime, GUI+CLI batched actions, agent-driven data flywheel and long-horizon online RL bundled."}
+{"arxiv": "2607.28399", "sub_pattern": "C17", "fit": "weak", "fit_note": "Slow planner precompiles a flat conditional policy tree; a fast observer routes branches to remove decode latency."}
+{"arxiv": "2607.29320", "sub_pattern": "R01", "fit": "weak", "fit_note": "Single-step on-policy distillation from domain teachers, token-weighted by rule-checked action correctness; not GRPO but same shape."}
+{"arxiv": "2608.00335", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline step-level GRPO on mined failure-critical states with a polarized rule reward against verified target actions."}
+{"arxiv": "2608.02352", "sub_pattern": "K20", "fit": "weak", "fit_note": "Foundation CUA report: verifiable-task synthesis, rollout fleet, SFT with filtered reasoning and trajectory-sliced outcome RL bundled."}
+{"arxiv": "2608.02643", "sub_pattern": "C18", "fit": "weak", "fit_note": "Post-hoc debugger inspects before/after screenshots to localise the root-cause step and feeds the diagnosis to re-execution."}
+{"arxiv": "2608.03270", "sub_pattern": "C07", "fit": "good", "fit_note": "VLM-selected coarse-to-fine crops with coordinate references and verification; training-free zoom-and-reground for high-res grounding."}
+{"arxiv": "2608.04530", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieved episodic trajectories and working-memory chunks compressed into gated, state-conditioned latent tokens for a frozen policy."}
+{"arxiv": "2608.05587", "sub_pattern": "C18", "fit": "good", "fit_note": "Trained standalone reflector checks before/after screenshots against generated conditions and feeds negative verdicts back."}
+{"arxiv": "2608.05784", "sub_pattern": "R03", "fit": "weak", "fit_note": "Deterministically compiles passive human screen-activity capture into agent memory and replayable routines; no video mining or agent training."}
+{"arxiv": "2608.05891", "sub_pattern": "K04", "fit": "good", "fit_note": "Delta HTML world model retrieved from app-specific transition memory, rendered to screenshots; rollouts feed SFT."}
+{"arxiv": "2608.06065", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline step-level GRPO with rule rewards on hard demo states, plus next-screenshot privileged self-distillation."}
+{"arxiv": "2608.09654", "sub_pattern": "C10", "fit": "good", "fit_note": "Frozen MLLM writes target description; Text/Icon detector plus frozen CLIP matcher selects the box."}
+{"arxiv": "2608.09723", "sub_pattern": "C06", "fit": "good", "fit_note": "Grounder crops a marked patch around its own prediction and confirms, refines or refuses before committing."}
+{"arxiv": "2608.11588", "sub_pattern": "C19", "fit": "good", "fit_note": "Distils transferable workflow entries from own target-app rollouts into context, jointly with LoRA policy TTA."}
+{"arxiv": "2608.12429", "sub_pattern": "K14", "fit": "good", "fit_note": "DFS website map, transitions relabelled into tasks by a site-prior model, teacher co-refines task and trajectory."}
+{"arxiv": "2608.15930", "sub_pattern": "K20", "fit": "weak", "fit_note": "Foundation-agent report: verifier-bundled data engine, SFT plus online RL, and in-context demonstration workflows bundled."}
+{"arxiv": "2608.17319", "sub_pattern": "K20", "fit": "weak", "fit_note": "Browser-agent report bundling harness, recovery/UI curriculum SFT, shaped divergence-weighted online GRPO and a benchmark."}
+{"arxiv": "2608.20319", "sub_pattern": "R03", "fit": "good", "fit_note": "Induces hierarchical task models from recorded human screenshot/event traces, reused as agent skills."}
+{"arxiv": "2608.21830", "sub_pattern": "K20", "fit": "good", "fit_note": "Online RL on OSWorld terminal reward with success buffer and filtered groups; adds length/divergence-aware contrastive weighting."}
+{"arxiv": "2608.22077", "sub_pattern": "C17", "fit": "good", "fit_note": "Manager plans a spine-branch subtask DAG over parallel VMs; workers execute, manager aggregates."}
+{"arxiv": "2608.22533", "sub_pattern": "C19", "fit": "good", "fit_note": "Distils contrasting multi-model runs into curated Function/Skill Cards injected into later API-agent tasks."}
+{"arxiv": "2608.22577", "sub_pattern": "C15", "fit": "good", "fit_note": "All history kept as text; learned selector decides which past events regain screenshots under a fixed budget."}
+{"arxiv": "2608.22847", "sub_pattern": "K16", "fit": "good", "fit_note": "VLM outcome judge given an anchored goal-state reference screenshot and action history, used as RL reward."}
+{"arxiv": "2608.24015", "sub_pattern": "C18", "fit": "good", "fit_note": "Two-stage reflector: SoM-marked pixel diffs described and filtered, then action outcome judged and fed back."}
+{"arxiv": "2608.24913", "sub_pattern": "C18", "fit": "weak", "fit_note": "Browser CSS-repair agent with an audit-inject-verify loop; not a GUI task agent, closest to post-action verification."}
+{"arxiv": "2608.25777", "sub_pattern": "C15", "fit": "good", "fit_note": "Persistent subgoal/evidence/feedback state replaces raw trajectory history; step abstraction and refinement compress context."}
+{"arxiv": "2608.26991", "sub_pattern": "K29", "fit": "good", "fit_note": "Replaces screenshot-and-click with structured JSON state and code-executable semantic actions per application."}
+{"arxiv": "2608.27508", "sub_pattern": "K05", "fit": "good", "fit_note": "GRPO policy training with all rollouts inside a frozen HTML world model, plus in-thought world-model calls; no real anchor."}
+{"arxiv": "2608.27866", "sub_pattern": "K14", "fit": "good", "fit_note": "Hindsight reproduction relabels failed MCTS trajectories with inferred intents; SCC cycle-consistency reward guides search."}
+{"arxiv": "2608.29305", "sub_pattern": "C13", "fit": "weak", "fit_note": "Agent decomposes each observation into sub-goal and pruned sub-observation, learned by label-free test-time RL."}
+{"arxiv": "2609.00028", "sub_pattern": "K20", "fit": "weak", "fit_note": "Multi-platform foundation agent; scaled environments, task synthesis, voting verifiers, offline RL and on-policy distillation bundled."}
+{"arxiv": "2609.02149", "sub_pattern": "R03", "fit": "good", "fit_note": "Records expert GUI demonstrations, abstracts them into semantic step instructions, executes them as SOP skills."}
+{"arxiv": "2609.02885", "sub_pattern": "K01", "fit": "good", "fit_note": "Trains a world model whose predicted next states discriminate candidate outcomes, used for Best-of-5 action selection."}
+{"arxiv": "2609.03438", "sub_pattern": "R02", "fit": "weak", "fit_note": "Agent decides when not to act: conflict-aware termination via feasibility prompt and conditional activation steering."}
+{"arxiv": "2609.04869", "sub_pattern": "C19", "fit": "good", "fit_note": "Converts trajectories and evaluator feedback into a persistent versioned skill library reused by a fixed agent."}
+{"arxiv": "2609.05511", "sub_pattern": "C19", "fit": "good", "fit_note": "Induces recursive parametric executable skills from own successful runs, compacts the library, distils into weights."}
+{"arxiv": "2609.05513", "sub_pattern": "K20", "fit": "weak", "fit_note": "Online teacher-student preference updates on own failures with a solvability gate and turn trimming; not critic-based RL."}
+{"arxiv": "2609.06530", "sub_pattern": "K20", "fit": "weak", "fit_note": "Continual GRPO over an OSWorld application stream with neuron-level gradient surgery against forgetting."}
+{"arxiv": "2609.06792", "sub_pattern": "C11", "fit": "good", "fit_note": "Adds self-generated, relation-tested Python tools over app state to the GUI action space of Android agents."}
+{"arxiv": "2609.10297", "sub_pattern": "C09", "fit": "good", "fit_note": "Training-free visual token pruning with nested order and KV contraction for multi-frame GUI histories."}
+{"arxiv": "2609.10451", "sub_pattern": "C22", "fit": "good", "fit_note": "Dockerised cross-device benchmark with typed composed tasks scored by final-state programmatic evaluators."}
+{"arxiv": "2609.12394", "sub_pattern": "K20", "fit": "good", "fit_note": "CPT-SFT-online GRPO on real phones with judge reward and routed/repaired failed trajectories."}
+{"arxiv": "2609.13287", "sub_pattern": "C12", "fit": "weak", "fit_note": "Block-diffusion VLM backbone SFT'd as end-to-end screenshot policy; contribution is the decoder paradigm."}
+{"arxiv": "2609.13491", "sub_pattern": "K27", "fit": "weak", "fit_note": "Behavioural event-graph model from demonstrations retrieved by task embedding and replayed with LLM option selection."}
+{"arxiv": "2609.13548", "sub_pattern": "C19", "fit": "good", "fit_note": "Distils crawled trajectories into filtered MCP code tools and reselects them from runtime usage."}
+{"arxiv": "2609.15307", "sub_pattern": "R01", "fit": "weak", "fit_note": "Label-free test-time GRPO for grounding with confidence pseudo-label distance reward instead of labelled actions."}
+{"arxiv": "2609.15364", "sub_pattern": "C19", "fit": "good", "fit_note": "Curriculum/actor/verifier exploration distils frozen environment memory reused at test time."}
+{"arxiv": "2609.15457", "sub_pattern": "C18", "fit": "good", "fit_note": "Per-step expected-vs-observed verdict drives selective screenshot retention and cross-trial distillation."}
+{"arxiv": "2609.16635", "sub_pattern": "C19", "fit": "good", "fit_note": "Validated own trajectories consolidated into precondition-gated replayable callable memories with visual re-aiming."}
+{"arxiv": "2609.17653", "sub_pattern": "C19", "fit": "good", "fit_note": "Training-free reflect-revise-reuse loop distils execution feedback into editable multi-file skill packages reused on later tasks."}
+{"arxiv": "2609.18690", "sub_pattern": "C07", "fit": "good", "fit_note": "Lightweight reranker picks the best high-resolution crop, then one grounder call localises inside it."}
+{"arxiv": "2609.19523", "sub_pattern": "K27", "fit": "good", "fit_note": "Distils verified trajectories into parameterised SOP skills and retrieves them into the web agent's prompt."}
+{"arxiv": "2609.22083", "sub_pattern": "K20", "fit": "good", "fit_note": "Multi-stage SFT, per-domain RL distillation and joint asynchronous online RL with difficulty-filtered tasks across GUI domains."}
+{"arxiv": "2609.22178", "sub_pattern": "C34", "fit": "weak", "fit_note": "Safety is trained into the policy via paired risk/refusal trajectories; no in-context or isolation defense card fits exactly."}
+{"arxiv": "2609.24277", "sub_pattern": "C06", "fit": "weak", "fit_note": "Per-click confidence from place-weighted digit entropy to abstain before acting; no crop verifier, closest is verify-before-act."}
+{"arxiv": "2609.25769", "sub_pattern": "C12", "fit": "weak", "fit_note": "Unifies heterogeneous navigation corpora via masked trajectory prediction and role-aware adapters; schema unification is secondary."}
+{"arxiv": "2609.27307", "sub_pattern": "K25", "fit": "weak", "fit_note": "On-policy self-distillation from teacher-written step reasoning and memory privileges; also first-error corrections, no single card fits."}
+{"arxiv": "2609.27770", "sub_pattern": "C13", "fit": "good", "fit_note": "Learned DeBERTa ranker prunes the accessibility tree to the top half of elements before the LLM agent acts."}
+{"arxiv": "2609.29892", "sub_pattern": "K20", "fit": "weak", "fit_note": "Tool-calling mobile planner trained by cold-start SFT plus hybrid-environment online RL with CARE; also data flywheel and harness co-evolution."}
+{"arxiv": "2609.30186", "sub_pattern": "C17", "fit": "good", "fit_note": "VLM manager sets local goals; typed Jev worker executes several a11y-candidate actions and returns DONE/BLOCKED."}
+{"arxiv": "2609.30887", "sub_pattern": "C11", "fit": "good", "fit_note": "Adds verified app deeplink tool calls alongside GUI actions in one hybrid action space, trained with SFT+RL."}
+{"arxiv": "2609.32130", "sub_pattern": "C19", "fit": "weak", "fit_note": "Repairs stored action-path experience after app updates via device-cloud protocol; not accumulation itself."}
+{"arxiv": "2609.32166", "sub_pattern": "K27", "fit": "weak", "fit_note": "Reuses past token sequences and transitions for speculative decoding/early inference; latency, not context retrieval."}
+{"arxiv": "2609.32679", "sub_pattern": "K04", "fit": "weak", "fit_note": "Diagnoses state aliasing in GUI world models and adds recovered hidden-state conditioning to frozen WMs."}
+{"arxiv": "2609.32750", "sub_pattern": "C22", "fit": "weak", "fit_note": "Shared-runtime state capsules for resettable/forkable CUA environments; infrastructure, keeps original checkers."}
+{"arxiv": "2609.33304", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieves personal history and re-matches each screen to a past state, injecting its action as reference."}
+{"arxiv": "2609.33646", "sub_pattern": "C01", "fit": "good", "fit_note": "Replaces static DOM SoM with on-demand probes aligning DOM element ids and pixels, plus evidence memory."}
+{"arxiv": "2609.34321", "sub_pattern": "K20", "fit": "weak", "fit_note": "Test-time adapter updates on judge-filtered and hindsight-relabeled own episodes; self-distillation, not RL critics."}
+{"arxiv": "2609.34974", "sub_pattern": "C34", "fit": "weak", "fit_note": "Runtime defense against dark patterns that intervenes on web state; separate module, not in-context prompting."}
+{"arxiv": "2609.35671", "sub_pattern": "C19", "fit": "good", "fit_note": "Explores apps offline and compiles navigation into deterministic replayable commands reused by the VLM agent."}
+{"arxiv": "2609.35775", "sub_pattern": "C06", "fit": "weak", "fit_note": "Decides edge-vs-cloud offloading of grounding via perturbed hidden-state divergence; closest to verifying a target before acting."}
+{"arxiv": "2609.35904", "sub_pattern": "C15", "fit": "weak", "fit_note": "Competition web-agent system: a11y-first actions, grid visual fallback, history summarisation, fault recovery; no single sub-pattern."}
+{"arxiv": "2609.36923", "sub_pattern": "K01", "fit": "good", "fit_note": "Diffusion model forecasts next symbolic layout per candidate action; rules score anomaly risk to rank actions, plus memory."}
+{"arxiv": "2609.36927", "sub_pattern": "C19", "fit": "good", "fit_note": "Distils an agent trajectory into a judge-refined neuro-symbolic code policy reused across runs of recurring workflows."}
+{"arxiv": "2609.36939", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline single-step GRPO on grounding/action states with spatially refined credit for rule-checked click rewards."}
+{"arxiv": "2609.38008", "sub_pattern": "C11", "fit": "good", "fit_note": "Trains a CUA to interleave GUI actions with shell commands via SFT plus CLI-aware RL rewards."}
+{"arxiv": "2609.38778", "sub_pattern": "K27", "fit": "good", "fit_note": "Replaces the state-merge rule of an outcome-value episodic memory with action-conditioned bisimulation for retrieval."}
+{"arxiv": "2609.39547", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieves self-explored trajectory priors and trains the agent to follow, partially use or ignore them under drift."}
+{"arxiv": "2609.40253", "sub_pattern": "K19", "fit": "good", "fit_note": "Fine-tuned GUI analyzer scores each executed step; its value gates token-level self-distillation alongside outcome GRPO."}
+{"arxiv": "2610.00948", "sub_pattern": "C19", "fit": "weak", "fit_note": "Distils repeated-run evidence into validated harness code edits around a frozen backbone, not app knowledge or tools."}
+{"arxiv": "2610.01215", "sub_pattern": "K05", "fit": "good", "fit_note": "Image generator acts as visual world model rolling out planner-specified trajectories; policy SFT on the synthetic rollouts."}
+{"arxiv": "2610.01787", "sub_pattern": "K27", "fit": "weak", "fit_note": "Splits own experience into components and routes each to prompt retrieval or fine-tuning; a routing study, not retrieval alone."}
+{"arxiv": "2610.02932", "sub_pattern": "C19", "fit": "good", "fit_note": "Compiles repeated agent traces into reusable programs, with an online payback-aware rule for when to compile."}
+{"arxiv": "2610.03036", "sub_pattern": "K29", "fit": "good", "fit_note": "Hardens the model-to-browser action interface: coordinate mapping, DOM-backed select/fill, iframe fallback, feedback and executor budgets."}
+{"arxiv": "2610.04116", "sub_pattern": "C11", "fit": "good", "fit_note": "Bash as sole action interface, covering code/CLI control and xdotool GUI input, with a file-system workspace for tools."}
+{"arxiv": "2610.05185", "sub_pattern": "C05", "fit": "good", "fit_note": "Coordinate-free patch-attention search head applied recurrently, coarse-to-fine, inside one forward interaction."}
+{"arxiv": "2610.05437", "sub_pattern": "C19", "fit": "good", "fit_note": "Distils a validated workflow/skill library from goal-free logged trajectories and injects it with retrieved demos at test time."}
+{"arxiv": "2610.05861", "sub_pattern": "K05", "fit": "good", "fit_note": "Fine-tuned image-editing world model imagines multi-step mobile trajectories; policy SFT on them, real-data mixing ablated."}
+{"arxiv": "2610.06829", "sub_pattern": "K19", "fit": "weak", "fit_note": "Dense per-step reward from a judge-certified self-verification question bank, plus verifier-based trajectory selection; not a human-labelled PRM."}
+{"arxiv": "2610.07118", "sub_pattern": "C16", "fit": "good", "fit_note": "Agent writes a free-form memory entry each step; append-only rule retains all entries, trained end-to-end with RL."}
+{"arxiv": "2610.07444", "sub_pattern": "K22", "fit": "weak", "fit_note": "Studies how a small grounder receives the action type from a separate type predictor; no full planner."}
+{"arxiv": "2610.08773", "sub_pattern": "K05", "fit": "good", "fit_note": "Agent, curriculum and injection adversary co-trained inside a frozen web world model; no real-data anchor."}
+{"arxiv": "2610.11707", "sub_pattern": "K27", "fit": "good", "fit_note": "Stored successful trajectories retrieved per task and replayed, re-grounded or discarded step by step."}
+{"arxiv": "2610.12866", "sub_pattern": "C02", "fit": "weak", "fit_note": "Detector-plus-VLM builds an ASCII entity-relation scene representation before acting; also zoom and consistency voting."}
+{"arxiv": "2610.12984", "sub_pattern": "R03", "fit": "good", "fit_note": "Human desktop recordings aligned with events and AX data are turned by an agent into reusable skill files."}
+{"arxiv": "2610.13268", "sub_pattern": "C05", "fit": "weak", "fit_note": "Attention-derived region scores trained contrastively against distractors plus coordinate loss; ReClick zoom revisits."}
+{"arxiv": "2610.13416", "sub_pattern": "C01", "fit": "good", "fit_note": "Compiles live pages into addressable information and action objects executed by id through a shared interface."}
+{"arxiv": "2610.14157", "sub_pattern": "C22", "fit": "good", "fit_note": "Resettable simulated commercial apps with programmatic business-state checkers for SFT/RL data and benchmark."}
+{"arxiv": "2610.14228", "sub_pattern": "K02", "fit": "good", "fit_note": "LoRA LMM rescoring of a frozen agent's candidate actions, with latent next-state prediction as auxiliary objective."}
+{"arxiv": "2610.15765", "sub_pattern": "K29", "fit": "good", "fit_note": "Synthesises agent-native command interfaces from installed apps' SDK capabilities, replacing native SDK/GUI actions."}
+{"arxiv": "2610.16234", "sub_pattern": "C05", "fit": "good", "fit_note": "Coordinate-free grounding head predicting a box-supervised sub-token action mask; click at mask centroid."}
+{"arxiv": "2610.16319", "sub_pattern": "C11", "fit": "good", "fit_note": "One web agent mixing search/page-reading API tools with browser GUI actions via explicit mode switching."}
+{"arxiv": "2610.16778", "sub_pattern": "C36", "fit": "weak", "fit_note": "PII privacy mediation for cloud GUI planners; hides values behind locally resolved references, not injection defense."}
+{"arxiv": "2610.17710", "sub_pattern": "K19", "fit": "good", "fit_note": "Prompted critic gives adaptive subgoal-group step process rewards shaping GRPO advantage on OSWorld."}
+{"arxiv": "2610.17792", "sub_pattern": "C06", "fit": "good", "fit_note": "Training-free multi-hypothesis zoomed re-localisation with marked-crop Yes/No verification selecting the click."}
+{"arxiv": "2610.17928", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieves past demonstration memory and routes per step between text and image memory representations."}
+{"arxiv": "2610.19100", "sub_pattern": "K23", "fit": "good", "fit_note": "Grounding dataset from a11y/DOM/XML boxes plus tutorial videos, then SFT and distillation-to-RL grounder training."}
+{"arxiv": "2610.19834", "sub_pattern": "K26", "fit": "good", "fit_note": "Black-box teacher localises the student's first mistake and rewrites the suffix in student style for training."}
+{"arxiv": "2610.20100", "sub_pattern": "C18", "fit": "weak", "fit_note": "Task-state contract runtime with independent visual verifier and reversibility-aware recovery; mainly a user-governance interface."}
+{"arxiv": "2610.20107", "sub_pattern": "C05", "fit": "good", "fit_note": "Plug-in pointer/decision heads over box-pooled visual tokens replace generated click strings."}
+{"arxiv": "2610.20390", "sub_pattern": "C09", "fit": "good", "fit_note": "Learned instruction-guided window-level visual token pruning for GUI agent efficiency."}
+{"arxiv": "2610.20584", "sub_pattern": "K13", "fit": "weak", "fit_note": "Hand-built synthetic game environments with programmatic rewards for RL; not checker-first task synthesis."}
+{"arxiv": "2610.22200", "sub_pattern": "C11", "fit": "good", "fit_note": "Prompted agent writing programs over GUI, accessibility, CLI and API interfaces."}
+{"arxiv": "2610.22234", "sub_pattern": "C11", "fit": "good", "fit_note": "Trained native policy unifying GUI actions and code execution in one action space."}
+{"arxiv": "2610.22280", "sub_pattern": "R02", "fit": "weak", "fit_note": "Uncertainty-gated handoff to a stronger model, not to a user; closest is confidence-triggered intervention."}
+{"arxiv": "2610.22539", "sub_pattern": "C19", "fit": "weak", "fit_note": "Scout-written manual routes a mixture over LoRA adapters; adaptation by weight composition, not retrieval."}
+{"arxiv": "2610.23012", "sub_pattern": "K28", "fit": "weak", "fit_note": "Manual retrieval into planner guidance plus manual-derived task GRPO; knowledge is documentation, not experience."}

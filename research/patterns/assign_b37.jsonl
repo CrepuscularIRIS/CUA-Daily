@@ -1,0 +1,10 @@
+{"arxiv": "2605.10347", "sub_pattern": "K04", "fit": "weak", "fit_note": "Comparative study of four world-model output modalities (delta/full text, code, diffusion) and their downstream uses"}
+{"arxiv": "2605.11212", "sub_pattern": "C15", "fit": "weak", "fit_note": "Compresses screenshot history by dropping temporally redundant patches, not by converting old steps to text"}
+{"arxiv": "2605.12294", "sub_pattern": "C19", "fit": "good", "fit_note": "Explores target apps into an executable knowledge graph with mined action groups, retrieved via Q-guided MCTS"}
+{"arxiv": "2605.12481", "sub_pattern": "C11", "fit": "good", "fit_note": "Trains a native policy to orchestrate GUI actions and tool calls in one hybrid action space"}
+{"arxiv": "2605.12501", "sub_pattern": "K23", "fit": "good", "fit_note": "Renderer-based multi-modality grounding data (GUI/text/table/canvas/image) for click/drag/draw, plus a benchmark"}
+{"arxiv": "2605.12549", "sub_pattern": "C07", "fit": "weak", "fit_note": "Training-free attention-guided second prefill refines target selection; inference-time grounding refinement, not zoom search"}
+{"arxiv": "2605.14290", "sub_pattern": "C36", "fit": "good", "fit_note": "Position paper: commit to a program over typed site APIs before reading untrusted content; quarantined typed LLM subroutines"}
+{"arxiv": "2605.14747", "sub_pattern": "R03", "fit": "good", "fit_note": "Filters YouTube tutorials and extracts grounded trajectories with a VLM into a 12M-trajectory pretraining corpus"}
+{"arxiv": "2605.15542", "sub_pattern": "C07", "fit": "good", "fit_note": "MCTS over Focus/Shift/Scatter crops scored by parser-based region reward, then the base model grounds in the best crop"}
+{"arxiv": "2605.16024", "sub_pattern": "K07", "fit": "weak", "fit_note": "Goal-free desktop exploration into a deduplicated state graph with ambiguity-aware PUCT; corpus not captioned nor used for a world model"}

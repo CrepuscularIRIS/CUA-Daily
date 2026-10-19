@@ -1,0 +1,10 @@
+{"arxiv": "2510.09038", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieves past GUI trajectories as continuous embeddings into the agent's context; memory grown by a data flywheel."}
+{"arxiv": "2510.10666", "sub_pattern": "K29", "fit": "weak", "fit_note": "Browser-native action set replacing parse/summarise tools, plus SFT/RFT and conclusion memory; evaluated on Wikipedia QA."}
+{"arxiv": "2510.11221", "sub_pattern": "C17", "fit": "weak", "fit_note": "Per-step cost-aware LLM routing; no sub-pattern covers model routing, closest is loop-level role decomposition."}
+{"arxiv": "2510.11892", "sub_pattern": "K01", "fit": "good", "fit_note": "Tutorial-grounded LLM world model simulates each candidate action; listwise reward picks the executed action."}
+{"arxiv": "2510.14388", "sub_pattern": "K22", "fit": "good", "fit_note": "Trainable high-level subgoal planner plus low-level screenshot action model, jointly optimised with GRPO."}
+{"arxiv": "2510.14969", "sub_pattern": "K05", "fit": "good", "fit_note": "Teacher rollouts inside a prompted LLM UI simulator produce training trajectories for the agent policy."}
+{"arxiv": "2510.15455", "sub_pattern": "C13", "fit": "good", "fit_note": "Prunes the XML observation into ranked blocks so the cloud policy sees only task-relevant elements."}
+{"arxiv": "2510.15863", "sub_pattern": "C19", "fit": "good", "fit_note": "Accumulates reusable polymorphic code skills from the agent's own successful web runs."}
+{"arxiv": "2510.16051", "sub_pattern": "K23", "fit": "good", "fit_note": "Crawls macOS accessibility trees into element-box grounding tasks with generated descriptions."}
+{"arxiv": "2510.17790", "sub_pattern": "K29", "fit": "good", "fit_note": "Hybrid action interface adding programmatic tools to GUI primitives, trained with SFT and online RL."}

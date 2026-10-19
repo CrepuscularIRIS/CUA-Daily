@@ -1,0 +1,10 @@
+{"arxiv": "2609.35671", "sub_pattern": "C19", "fit": "good", "fit_note": "Explores apps offline and compiles navigation into deterministic replayable commands reused by the VLM agent."}
+{"arxiv": "2609.35775", "sub_pattern": "C06", "fit": "weak", "fit_note": "Decides edge-vs-cloud offloading of grounding via perturbed hidden-state divergence; closest to verifying a target before acting."}
+{"arxiv": "2609.35904", "sub_pattern": "C15", "fit": "weak", "fit_note": "Competition web-agent system: a11y-first actions, grid visual fallback, history summarisation, fault recovery; no single sub-pattern."}
+{"arxiv": "2609.36923", "sub_pattern": "K01", "fit": "good", "fit_note": "Diffusion model forecasts next symbolic layout per candidate action; rules score anomaly risk to rank actions, plus memory."}
+{"arxiv": "2609.36927", "sub_pattern": "C19", "fit": "good", "fit_note": "Distils an agent trajectory into a judge-refined neuro-symbolic code policy reused across runs of recurring workflows."}
+{"arxiv": "2609.36939", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline single-step GRPO on grounding/action states with spatially refined credit for rule-checked click rewards."}
+{"arxiv": "2609.38008", "sub_pattern": "C11", "fit": "good", "fit_note": "Trains a CUA to interleave GUI actions with shell commands via SFT plus CLI-aware RL rewards."}
+{"arxiv": "2609.38778", "sub_pattern": "K27", "fit": "good", "fit_note": "Replaces the state-merge rule of an outcome-value episodic memory with action-conditioned bisimulation for retrieval."}
+{"arxiv": "2609.39547", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieves self-explored trajectory priors and trains the agent to follow, partially use or ignore them under drift."}
+{"arxiv": "2609.40253", "sub_pattern": "K19", "fit": "good", "fit_note": "Fine-tuned GUI analyzer scores each executed step; its value gates token-level self-distillation alongside outcome GRPO."}

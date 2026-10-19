@@ -1,0 +1,10 @@
+{"arxiv": "2603.24533", "sub_pattern": "K26", "fit": "good", "fit_note": "Fork-point self-distillation: correct actions from successful group rollouts supervise failed ones; RFT warm start."}
+{"arxiv": "2603.26211", "sub_pattern": "C04", "fit": "weak", "fit_note": "Fine-tunes a diffusion VLM to emit action and box text; main move is diffusion decoding/masking, not data."}
+{"arxiv": "2603.26266", "sub_pattern": "R03", "fit": "good", "fit_note": "Retrieves YouTube tutorials, VLM-annotates keyframe pairs into planning/grounding knowledge injected into agents."}
+{"arxiv": "2604.01676", "sub_pattern": "C02", "fit": "weak", "fit_note": "Single-demo record-and-replay; detector+OCR UI graph with SMC localisation; no closer sub-pattern."}
+{"arxiv": "2604.02345", "sub_pattern": "K06", "fit": "good", "fit_note": "Continual pretraining on forward-dynamics descriptions of explored real transitions before agent post-training."}
+{"arxiv": "2604.05477", "sub_pattern": "K26", "fit": "good", "fit_note": "Synthetic no-change failure steps with diagnosis and corrective action; SFT then offline GRPO with verification reward."}
+{"arxiv": "2604.06134", "sub_pattern": "R02", "fit": "weak", "fit_note": "HCI conversational GUI agent with preference memory, GUI adaptation and backtracking suggestions; user study."}
+{"arxiv": "2604.06995", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline GRPO with rule rewards for key-element location, description similarity and action match."}
+{"arxiv": "2604.07277", "sub_pattern": "K20", "fit": "good", "fit_note": "Online actor-critic RL with PRM-informed Q critic scoring multiple sampled actions per emulator state."}
+{"arxiv": "2604.07776", "sub_pattern": "K15", "fit": "weak", "fit_note": "Persona-driven explore-then-propose grounded tasks with hints, teacher trajectories, judge filtering, SFT."}

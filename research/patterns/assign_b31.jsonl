@@ -1,0 +1,10 @@
+{"arxiv": "2603.00676", "sub_pattern": "C19", "fit": "weak", "fit_note": "Planner distils task knowledge from demos and own failures; also curriculum GRPO executor and planner-executor hierarchy"}
+{"arxiv": "2603.02951", "sub_pattern": "R01", "fit": "weak", "fit_note": "Offline GRPO with SFT routing and gradient surgery, aimed at continual learning across app groups"}
+{"arxiv": "2603.04364", "sub_pattern": "C34", "fit": "weak", "fit_note": "Defense by adversarial self-play training of the policy, not in-context prompting or detectors"}
+{"arxiv": "2603.05044", "sub_pattern": "K13", "fit": "good", "fit_note": "LLM-synthesised offline sites expose data layer so generated tasks have ground-truth answers and rule rewards"}
+{"arxiv": "2603.07024", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieves past trajectories abstracted into intent-stage-action tree with pre/post-conditions"}
+{"arxiv": "2603.07978", "sub_pattern": "C19", "fit": "good", "fit_note": "GUI-DFS exploration distils verified unit and composite skills into a reusable skill set"}
+{"arxiv": "2603.08533", "sub_pattern": "C15", "fit": "good", "fit_note": "Replaces older screenshots with an agent-written semantic context summary; also a Chinese mobile dataset"}
+{"arxiv": "2603.10291", "sub_pattern": "K27", "fit": "good", "fit_note": "Graph memory of trajectories with symbolic strategy nodes and continuous embeddings, retrieved into context"}
+{"arxiv": "2603.10505", "sub_pattern": "K13", "fit": "good", "fit_note": "Coding agent clones sites with SDK; tasks come with executable validation programs for verifiable reward"}
+{"arxiv": "2603.12138", "sub_pattern": "K14", "fit": "good", "fit_note": "Reverse task synthesis from exploration, steered by hardness-driven MCTS and replay-verified instruction refinement"}

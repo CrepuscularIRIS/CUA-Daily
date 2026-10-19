@@ -1,0 +1,1 @@
+{"arxiv": "2405.14573", "sub_pattern": "K12", "fit": "good", "fit_note": "Benchmark whose core contribution is durable reward from privileged Android state (adb: databases, files, settings) with parameterized tasks; K13 rejected because checkers are hand-written per task, not task-synthesis-from-checkers."}

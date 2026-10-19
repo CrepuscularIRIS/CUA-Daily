@@ -1,0 +1,10 @@
+{"arxiv": "2609.30186", "sub_pattern": "C17", "fit": "good", "fit_note": "VLM manager sets local goals; typed Jev worker executes several a11y-candidate actions and returns DONE/BLOCKED."}
+{"arxiv": "2609.30887", "sub_pattern": "C11", "fit": "good", "fit_note": "Adds verified app deeplink tool calls alongside GUI actions in one hybrid action space, trained with SFT+RL."}
+{"arxiv": "2609.32130", "sub_pattern": "C19", "fit": "weak", "fit_note": "Repairs stored action-path experience after app updates via device-cloud protocol; not accumulation itself."}
+{"arxiv": "2609.32166", "sub_pattern": "K27", "fit": "weak", "fit_note": "Reuses past token sequences and transitions for speculative decoding/early inference; latency, not context retrieval."}
+{"arxiv": "2609.32679", "sub_pattern": "K04", "fit": "weak", "fit_note": "Diagnoses state aliasing in GUI world models and adds recovered hidden-state conditioning to frozen WMs."}
+{"arxiv": "2609.32750", "sub_pattern": "C22", "fit": "weak", "fit_note": "Shared-runtime state capsules for resettable/forkable CUA environments; infrastructure, keeps original checkers."}
+{"arxiv": "2609.33304", "sub_pattern": "K27", "fit": "good", "fit_note": "Retrieves personal history and re-matches each screen to a past state, injecting its action as reference."}
+{"arxiv": "2609.33646", "sub_pattern": "C01", "fit": "good", "fit_note": "Replaces static DOM SoM with on-demand probes aligning DOM element ids and pixels, plus evidence memory."}
+{"arxiv": "2609.34321", "sub_pattern": "K20", "fit": "weak", "fit_note": "Test-time adapter updates on judge-filtered and hindsight-relabeled own episodes; self-distillation, not RL critics."}
+{"arxiv": "2609.34974", "sub_pattern": "C34", "fit": "weak", "fit_note": "Runtime defense against dark patterns that intervenes on web state; separate module, not in-context prompting."}

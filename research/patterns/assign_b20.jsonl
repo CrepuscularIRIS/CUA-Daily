@@ -1,0 +1,10 @@
+{"arxiv": "2510.19386", "sub_pattern": "R01", "fit": "good", "fit_note": "Stage-I step-wise GRPO with rule rewards on filtered offline steps; plus multi-agent framework and self-evolving data."}
+{"arxiv": "2510.19488", "sub_pattern": "R03", "fit": "good", "fit_note": "Inverse-dynamics labelling of YouTube tutorial videos into trajectories for continued pretraining."}
+{"arxiv": "2510.19949", "sub_pattern": "C17", "fit": "good", "fit_note": "Orchestrator plans and delegates subtasks to a screenshot Navigator, with a Validator and Localizer."}
+{"arxiv": "2510.20286", "sub_pattern": "R01", "fit": "good", "fit_note": "SFT then GRPO on single-step grounding with instruction-perspective reasoning and point-in-box rewards."}
+{"arxiv": "2510.22009", "sub_pattern": "R01", "fit": "weak", "fit_note": "Main move is device-cloud escalation routing; on-device 3B policy trained by SFT then GRPO."}
+{"arxiv": "2510.22732", "sub_pattern": "K01", "fit": "good", "fit_note": "Critic scores actor candidates by look-ahead over an exploration-built cognitive map before acting."}
+{"arxiv": "2510.24168", "sub_pattern": "C15", "fit": "good", "fit_note": "Replaces raw trajectory history with a validated structured memory chain plus task-agnostic observer."}
+{"arxiv": "2510.27210", "sub_pattern": "C15", "fit": "good", "fit_note": "Policy writes a textual history summary each step, trained with a history-aware GRPO reward."}
+{"arxiv": "2510.27266", "sub_pattern": "R01", "fit": "good", "fit_note": "Single-step grounding GRPO with point-in-box and confidence-alignment rule rewards."}
+{"arxiv": "2511.00810", "sub_pattern": "C05", "fit": "good", "fit_note": "Coordinate-free grounding by supervising intrinsic attention of an anchor token over patches, plus zoom."}

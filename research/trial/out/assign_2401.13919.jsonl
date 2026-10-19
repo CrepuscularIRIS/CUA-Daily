@@ -1,0 +1,1 @@
+{"arxiv": "2401.13919", "sub_pattern": "K29", "fit": "weak", "fit_note": "Prompted GPT-4V web agent whose action interface is Set-of-Mark numeric labels on rule-extracted interactive elements (element-tag ACI, K29); but the interface is borrowed rather than redesigned, and the paper's other contributions (live-web benchmark, GPT-4V auto-evaluator ~K16) are not covered by K29."}

@@ -1,0 +1,10 @@
+{"arxiv": "2509.21552", "sub_pattern": "C07", "fit": "good", "fit_note": "Iterative cursor re-grounding with crop around the first prediction; RL-trained with trajectory rewards."}
+{"arxiv": "2509.21799", "sub_pattern": "C18", "fit": "good", "fit_note": "Pre-execution thought-action check and correction plus post-action before/after status reflection fed back to the manager."}
+{"arxiv": "2509.21982", "sub_pattern": "R01", "fit": "good", "fit_note": "Single-step GRPO on curated domain states with format and F1 tool-match rewards plus process/difficulty reweighting."}
+{"arxiv": "2509.23866", "sub_pattern": "K20", "fit": "good", "fit_note": "Online step-wise GRPO on OSWorld terminal rewards with success-trajectory replay and difficulty-adaptive rollouts."}
+{"arxiv": "2509.24133", "sub_pattern": "C07", "fit": "good", "fit_note": "Generalist VLM picks grid regions recursively, specialist grounder localises inside; verified zoom-and-reground on ScreenSpot-Pro."}
+{"arxiv": "2509.24183", "sub_pattern": "K27", "fit": "weak", "fit_note": "Retrieves external web tutorials (not own experience) and distils them into guidance via a trained adapter."}
+{"arxiv": "2509.25047", "sub_pattern": "K15", "fit": "good", "fit_note": "Tasks proposed by an MLLM conditioned on memory-guided exploration trajectories and guideline prompts, then executed and verified."}
+{"arxiv": "2509.25140", "sub_pattern": "C19", "fit": "good", "fit_note": "Distils strategy memory items from the agent's own self-judged successes and failures and injects them into later tasks."}
+{"arxiv": "2509.26539", "sub_pattern": "R01", "fit": "weak", "fit_note": "Recipe paper: unified SFT data mixture, CoT synthesis, zoom-in, then step-wise rule-reward RLVR; RL is one part."}
+{"arxiv": "2510.00413", "sub_pattern": "C15", "fit": "good", "fit_note": "Older steps compressed into captioner/validator text summaries, current screen raw, with on-demand retrieval of past screenshots."}

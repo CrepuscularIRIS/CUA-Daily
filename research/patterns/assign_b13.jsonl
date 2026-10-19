@@ -1,0 +1,10 @@
+{"arxiv": "2508.05081", "sub_pattern": "C17", "fit": "weak", "fit_note": "Fast SFT System-1 and slow GPT-4o System-2 switched per step; closest to planner/worker hierarchy."}
+{"arxiv": "2508.05615", "sub_pattern": "R01", "fit": "weak", "fit_note": "Single-step grounding GRPO, but reward is label-free sample consensus, not a rule check against labels."}
+{"arxiv": "2508.05731", "sub_pattern": "R01", "fit": "good", "fit_note": "Offline single-step RLOO grounding with point-in-box rule reward, extended by multi-answer exploration reward."}
+{"arxiv": "2508.09123", "sub_pattern": "C21", "fit": "good", "fit_note": "Human desktop demos augmented with MLLM-synthesised reflective L1-L3 CoT, then SFT of screenshot policies."}
+{"arxiv": "2508.10833", "sub_pattern": "R01", "fit": "good", "fit_note": "GRPO with point-in-box, format and action rewards on cleaned single-step grounding and navigation data."}
+{"arxiv": "2508.11360", "sub_pattern": "R01", "fit": "good", "fit_note": "Single-step GRPO on mobile steps with tool-type and argument rule rewards, ordered by a trajectory-length curriculum."}
+{"arxiv": "2508.13634", "sub_pattern": "C05", "fit": "good", "fit_note": "Extends GUI-Actor's coordinate-free attention action head with background-suppression and Gaussian-centre attention losses."}
+{"arxiv": "2508.14040", "sub_pattern": "K20", "fit": "good", "fit_note": "Large-scale online step-level GRPO on terminal checker reward after BC, alternating RL with SFT (Entropulse)."}
+{"arxiv": "2508.15144", "sub_pattern": "K20", "fit": "good", "fit_note": "Trajectory-level online RL (TRPO) with success replay and online filtering atop self-evolving critic-filtered trajectory data."}
+{"arxiv": "2508.16987", "sub_pattern": "C10", "fit": "good", "fit_note": "GPT-4.1-mini planning/reasoning agents describe the next action; a LoRA-tuned UI-TARS grounder executes it visually."}

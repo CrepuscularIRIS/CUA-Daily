@@ -1,0 +1,10 @@
+{"arxiv": "2511.19663", "sub_pattern": "K14", "fit": "weak", "fit_note": "Data engine mixes URL-seeded task proposal, exploration-refined tasks, multi-agent solving and LLM-verifier filtering for SFT."}
+{"arxiv": "2511.21398", "sub_pattern": "C03", "fit": "good", "fit_note": "Planner writes sub-task, LLM-generated scoring program ranks DOM elements, grounder picks from top-20 shortlist."}
+{"arxiv": "2511.22235", "sub_pattern": "C17", "fit": "good", "fit_note": "RL-trained Coordinator plans atomic instructions and State Tracker summarises progress for a frozen Executor."}
+{"arxiv": "2512.00846", "sub_pattern": "C08", "fit": "good", "fit_note": "Fuses high-resolution crop features into low-res Q-Former tokens via affine renormalisation instead of extra LLM tokens."}
+{"arxiv": "2512.01763", "sub_pattern": "C15", "fit": "weak", "fit_note": "Training-time history compression in offline GRPO: drop past screenshots, keep action anchors, align with full-history branch."}
+{"arxiv": "2512.01979", "sub_pattern": "C07", "fit": "weak", "fit_note": "Iterative full-screen regrounding with the previous guess drawn as a marker, chaining different MLLMs; no zoom."}
+{"arxiv": "2512.02423", "sub_pattern": "K20", "fit": "weak", "fit_note": "Synthetic screen-graph simulator used to compare SFT, single-turn RL and sparse-reward multi-turn RL for navigation."}
+{"arxiv": "2512.04105", "sub_pattern": "C01", "fit": "weak", "fit_note": "Application wrapper on Browser-Use with DOM-marked element actions; contribution is a legal-domain use case."}
+{"arxiv": "2512.05941", "sub_pattern": "C07", "fit": "good", "fit_note": "Training-free pre-zoom agreement test then multi-step shrink-and-reground with minimum crop size stopping."}
+{"arxiv": "2512.08529", "sub_pattern": "C07", "fit": "good", "fit_note": "Attention-guided enlarged crops are each re-grounded and the densest coordinate cluster is chosen."}
