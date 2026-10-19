@@ -1,0 +1,100 @@
+{"arxiv": "0906.3282", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1005.1560", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1104.2566", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1105.3232", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1105.4971", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1206.0419", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1301.3855", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1307.3088", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1311.1907", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1401.4790", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1401.7411", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1403.2043", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1405.0527", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1406.4681", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1410.5010", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1410.5016", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1412.2497", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1501.02724", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1503.05464", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1503.07919", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1506.01406", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1507.06222", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1508.06181", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1509.01226", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1510.05182", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1511.03745", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1512.05974", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1602.02261", "tier": "B", "kind": "benchmark", "platforms": ["web"], "components": ["evaluation"], "confidence": "high", "reason": "WebNav: goal-driven web navigation benchmark for evaluating agents that read natural-language goals and navigate websites."}
+{"arxiv": "1603.04394", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1607.01477", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1609.04493", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1609.05178", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1610.08401", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1612.00291", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1702.07140", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1704.06856", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1705.01977", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1705.10272", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1709.07229", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1710.08679", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1712.05233", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1801.10323", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1802.02640", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1802.04766", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1802.08802", "tier": "A", "kind": "method", "platforms": ["web"], "components": ["rl", "planning"], "confidence": "high", "reason": "Workflow-guided exploration for RL web-interface agents with sparse reward; evaluated on MiniWoB and web tasks."}
+{"arxiv": "1802.08984", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1803.03422", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1805.06046", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1805.06652", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1805.11877", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1807.10458", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1808.04222", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1808.09132", "tier": "B", "kind": "dataset", "platforms": ["web"], "components": ["grounding"], "confidence": "high", "reason": "Task and dataset for grounding natural-language commands to web page elements."}
+{"arxiv": "1809.04860", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1811.05407", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1811.06521", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1811.07871", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1812.03426", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1901.05708", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1901.11528", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1902.05971", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1903.02294", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1904.03343", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1904.04782", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1904.11402", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1908.07915", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1909.00031", "tier": "A", "kind": "method", "platforms": ["mobile"], "components": ["planning", "training_data"], "confidence": "high", "reason": "Learns tasks and concepts from natural-language instructions plus GUI demonstrations on phone apps; user-studied."}
+{"arxiv": "1910.02500", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1910.11100", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "1912.03098", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2003.00431", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2004.08495", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2004.14973", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2005.03776", "tier": "A", "kind": "method", "platforms": ["mobile"], "components": ["grounding", "action_space"], "confidence": "high", "reason": "Grounds instructions to mobile UI action sequences with new datasets (PixelHelp); two-step model evaluated on them."}
+{"arxiv": "2005.03823", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2005.06118", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2005.07648", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2005.09161", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2006.05846", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2006.16241", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2007.04428", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2007.08745", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2008.05132", "tier": "B", "kind": "empirical", "platforms": ["general"], "components": ["perception"], "confidence": "high", "reason": "Empirical study of GUI element detection: old-fashioned vs deep learning approaches."}
+{"arxiv": "2009.08123", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2009.11443", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2009.11901", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2010.04295", "tier": "B", "kind": "dataset", "platforms": ["mobile"], "components": ["perception"], "confidence": "high", "reason": "Widget captioning dataset and model for mobile UI elements, supporting screen understanding."}
+{"arxiv": "2010.09670", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2010.12083", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2011.06191", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2012.12350", "tier": "B", "kind": "method", "platforms": ["mobile"], "components": ["perception"], "confidence": "low", "reason": "Pretrained UI representation model from user actions; aids semantic understanding of mobile UIs, not an agent itself."}
+{"arxiv": "2101.02360", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2101.04893", "tier": "B", "kind": "method", "platforms": ["mobile"], "components": ["perception"], "confidence": "high", "reason": "Screen recognition model that infers UI element metadata from pixels; used for accessibility and screen parsing."}
+{"arxiv": "2101.09465", "tier": "C", "kind": "dataset", "platforms": [], "components": [], "confidence": "low", "reason": "Web page structural reading comprehension QA dataset; no GUI acting."}
+{"arxiv": "2102.06607", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2102.09049", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2103.01597", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2103.07811", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2103.16057", "tier": "A", "kind": "method", "platforms": ["web"], "components": ["grounding", "planning"], "confidence": "high", "reason": "Grounds open-domain instructions to automate unseen web support tasks; evaluated on web tasks."}
+{"arxiv": "2104.08244", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}

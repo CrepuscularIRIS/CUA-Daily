@@ -1,0 +1,100 @@
+{"arxiv": "2510.15455", "tier": "A", "kind": "method", "platforms": ["mobile"], "components": ["efficiency", "safety"], "confidence": "high", "reason": "Cloud-local LLM collaboration reducing UI exposure for mobile agents while keeping accuracy."}
+{"arxiv": "2510.15863", "tier": "A", "kind": "method", "platforms": ["web"], "components": ["memory", "action_space"], "confidence": "high", "reason": "Polymorphic skill abstraction for reusable skills in web agents."}
+{"arxiv": "2510.16051", "tier": "A", "kind": "dataset", "platforms": ["desktop"], "components": ["training_data"], "confidence": "high", "reason": "Automated desktop UI exploration framework producing large-scale GUI training data."}
+{"arxiv": "2510.16156", "tier": "C", "kind": "system", "platforms": [], "components": [], "confidence": "high", "reason": "Real-time voice explanation of LLM planning; not GUI agent."}
+{"arxiv": "2510.16252", "tier": "B", "kind": "benchmark", "platforms": ["web"], "components": ["simulator", "rl"], "confidence": "high", "reason": "Full-stack RL-ready web environment for training web agents at scale."}
+{"arxiv": "2510.17017", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Safety of search agents; API retrieval not GUI."}
+{"arxiv": "2510.17790", "tier": "A", "kind": "method", "platforms": ["desktop"], "components": ["action_space", "policy"], "confidence": "high", "reason": "UltraCUA foundation model with hybrid GUI actions and programmatic tool calls."}
+{"arxiv": "2510.17800", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Visual-text compression for long-context LLMs."}
+{"arxiv": "2510.18113", "tier": "B", "kind": "empirical", "platforms": ["web"], "components": ["safety", "evaluation"], "confidence": "high", "reason": "Empirical study of dark pattern impact on LLM web agents."}
+{"arxiv": "2510.18314", "tier": "B", "kind": "method", "platforms": ["web"], "components": ["safety"], "confidence": "high", "reason": "Evolving attack strategies for red-teaming LLM web agents."}
+{"arxiv": "2510.18488", "tier": "B", "kind": "benchmark", "platforms": ["mobile"], "components": ["evaluation"], "confidence": "high", "reason": "Purified AndroidControl benchmark for GUI agent evaluation."}
+{"arxiv": "2510.18596", "tier": "B", "kind": "benchmark", "platforms": ["desktop"], "components": ["reward_judge", "evaluation"], "confidence": "high", "reason": "CUARewardBench for evaluating reward models on computer-using agents."}
+{"arxiv": "2510.19205", "tier": "B", "kind": "method", "platforms": ["web"], "components": ["evaluation"], "confidence": "high", "reason": "Graph-based multi-turn trajectory evaluation for web agents."}
+{"arxiv": "2510.19207", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Prompt injection defense filter for LLM agents; not GUI specific."}
+{"arxiv": "2510.19247", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Spreadsheet reasoning agent over table data; no GUI actions."}
+{"arxiv": "2510.19386", "tier": "A", "kind": "system", "platforms": ["mobile", "desktop"], "components": ["policy", "multi_agent"], "confidence": "high", "reason": "ColorAgent OS agent with RL and multi-agent framework."}
+{"arxiv": "2510.19488", "tier": "A", "kind": "method", "platforms": ["desktop"], "components": ["training_data"], "confidence": "high", "reason": "Pretraining computer-use agents from unlabeled screen videos with inferred actions."}
+{"arxiv": "2510.19864", "tier": "C", "kind": "benchmark", "platforms": [], "components": [], "confidence": "high", "reason": "Spreadsheet operation documentation with LLMs; not agent acting."}
+{"arxiv": "2510.19949", "tier": "A", "kind": "system", "platforms": ["general"], "components": ["policy", "planning"], "confidence": "high", "reason": "Surfer 2 cross-platform web, desktop and mobile computer use agent."}
+{"arxiv": "2510.20286", "tier": "A", "kind": "method", "platforms": ["general"], "components": ["grounding", "rl"], "confidence": "high", "reason": "Multi-perspective instruction-as-reasoning for GUI grounding."}
+{"arxiv": "2510.20333", "tier": "B", "kind": "benchmark", "platforms": ["mobile"], "components": ["safety", "evaluation"], "confidence": "high", "reason": "GhostEI-Bench environmental injection benchmark for mobile agents."}
+{"arxiv": "2510.21652", "tier": "C", "kind": "benchmark", "platforms": [], "components": [], "confidence": "high", "reason": "Scientific research agent benchmark; not GUI."}
+{"arxiv": "2510.22009", "tier": "A", "kind": "method", "platforms": ["mobile"], "components": ["policy", "training_data"], "confidence": "high", "reason": "OpenPhone mobile agentic foundation models for on-device GUI agents."}
+{"arxiv": "2510.22443", "tier": "C", "kind": "benchmark", "platforms": [], "components": [], "confidence": "high", "reason": "Egocentric wearable goal inference; no screen GUI."}
+{"arxiv": "2510.22732", "tier": "A", "kind": "method", "platforms": ["web"], "components": ["memory", "world_model"], "confidence": "high", "reason": "Web agent with experience-driven memory and action simulation."}
+{"arxiv": "2510.22936", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "MLLM visual token compression, general."}
+{"arxiv": "2510.23458", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "low", "reason": "Confidence-guided test-time scaling for information-seeking web agents."}
+{"arxiv": "2510.23730", "tier": "C", "kind": "benchmark", "platforms": [], "components": [], "confidence": "high", "reason": "Long-term memory for conversational QA."}
+{"arxiv": "2510.23883", "tier": "C", "kind": "survey", "platforms": [], "components": [], "confidence": "high", "reason": "General agentic AI security survey."}
+{"arxiv": "2510.24168", "tier": "A", "kind": "method", "platforms": ["general"], "components": ["memory", "perception"], "confidence": "high", "reason": "Memory-driven GUI agent with observation-centric interaction."}
+{"arxiv": "2510.24411", "tier": "B", "kind": "method", "platforms": ["mobile"], "components": ["safety", "reward_judge"], "confidence": "high", "reason": "OS-Sentinel hybrid validation for mobile GUI agent safety."}
+{"arxiv": "2510.24563", "tier": "B", "kind": "benchmark", "platforms": ["desktop"], "components": ["evaluation", "action_space"], "confidence": "high", "reason": "OSWorld-MCP benchmark for MCP tool invocation in computer-use agents."}
+{"arxiv": "2510.24699", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "low", "reason": "Context folding for long-horizon information-seeking web agents."}
+{"arxiv": "2510.24702", "tier": "C", "kind": "dataset", "platforms": [], "components": [], "confidence": "low", "reason": "General agent SFT data protocol unifying coding, browsing and tool datasets."}
+{"arxiv": "2510.25726", "tier": "C", "kind": "benchmark", "platforms": [], "components": [], "confidence": "high", "reason": "Tool-calling language agent benchmark across apps via APIs."}
+{"arxiv": "2510.26328", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Prompt injection through Agent Skills; not GUI."}
+{"arxiv": "2510.27135", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Image diffusion transformer design."}
+{"arxiv": "2510.27140", "tier": "B", "kind": "empirical", "platforms": ["mobile"], "components": ["safety"], "confidence": "high", "reason": "Security measurement of mobile LLM agents under adversarial prompts."}
+{"arxiv": "2510.27210", "tier": "A", "kind": "method", "platforms": ["general"], "components": ["policy", "memory"], "confidence": "high", "reason": "Structured reasoning and history summarization for GUI navigation."}
+{"arxiv": "2510.27266", "tier": "A", "kind": "method", "platforms": ["general"], "components": ["grounding", "rl"], "confidence": "high", "reason": "Self-critiqued RL for trustworthy GUI grounding."}
+{"arxiv": "2510.27410", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Socratic questioning for human-LLM instructions; not GUI."}
+{"arxiv": "2511.00153", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Robot manipulation from egocentric demonstrations."}
+{"arxiv": "2511.00810", "tier": "A", "kind": "method", "platforms": ["general"], "components": ["grounding"], "confidence": "high", "reason": "GUI grounding using intrinsic MLLM attention with context anchor."}
+{"arxiv": "2511.02650", "tier": "C", "kind": "benchmark", "platforms": [], "components": [], "confidence": "high", "reason": "Visual token compression benchmark for LMMs."}
+{"arxiv": "2511.02687", "tier": "C", "kind": "benchmark", "platforms": [], "components": [], "confidence": "high", "reason": "Agent cooperation benchmark; not GUI."}
+{"arxiv": "2511.03690", "tier": "C", "kind": "system", "platforms": [], "components": [], "confidence": "high", "reason": "Software engineering agent SDK; not GUI."}
+{"arxiv": "2511.04137", "tier": "A", "kind": "method", "platforms": ["desktop"], "components": ["memory", "training_data"], "confidence": "high", "reason": "Learning from online tutorial videos at inference time for computer-use agents."}
+{"arxiv": "2511.04220", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Generic workflow evaluation framework."}
+{"arxiv": "2511.04307", "tier": "B", "kind": "dataset", "platforms": ["desktop"], "components": ["evaluation", "training_data"], "confidence": "high", "reason": "GUI-360 dataset and benchmark for computer-using agents."}
+{"arxiv": "2511.04481", "tier": "B", "kind": "empirical", "platforms": ["web"], "components": ["evaluation", "efficiency"], "confidence": "high", "reason": "Energy consumption benchmarking of web agents."}
+{"arxiv": "2511.05797", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Prompt injection in chatbot plugins; not agents acting on GUI."}
+{"arxiv": "2511.06101", "tier": "A", "kind": "method", "platforms": ["web"], "components": ["training_data"], "confidence": "high", "reason": "SynthAgent synthetic supervision to adapt web agents to new websites."}
+{"arxiv": "2511.06251", "tier": "C", "kind": "system", "platforms": ["web"], "components": [], "confidence": "low", "reason": "UI-to-code generation agent; does not primarily act as GUI agent."}
+{"arxiv": "2511.06417", "tier": "A", "kind": "method", "platforms": ["general"], "components": ["training_data"], "confidence": "high", "reason": "Automated GUI data collection pipeline for GUI agents."}
+{"arxiv": "2511.07332", "tier": "B", "kind": "dataset", "platforms": ["desktop"], "components": ["grounding", "training_data"], "confidence": "high", "reason": "Human-demonstration grounding dataset for desktop computer-use agents."}
+{"arxiv": "2511.08319", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Conversational response refinement."}
+{"arxiv": "2511.08487", "tier": "C", "kind": "benchmark", "platforms": [], "components": [], "confidence": "low", "reason": "General agent safety under concealed intent; not GUI."}
+{"arxiv": "2511.09127", "tier": "A", "kind": "method", "platforms": ["general"], "components": ["memory", "reflection"], "confidence": "high", "reason": "History-aware reasoning for GUI agents."}
+{"arxiv": "2511.09157", "tier": "B", "kind": "benchmark", "platforms": ["general"], "components": ["evaluation"], "confidence": "high", "reason": "ProBench GUI agent benchmark with process information."}
+{"arxiv": "2511.10110", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Robot imitation learning."}
+{"arxiv": "2511.10705", "tier": "A", "kind": "method", "platforms": ["general"], "components": ["planning", "grounding"], "confidence": "high", "reason": "Co-evolution of planning and grounding in GUI agents."}
+{"arxiv": "2511.11332", "tier": "A", "kind": "system", "platforms": ["desktop"], "components": ["multi_agent", "planning"], "confidence": "high", "reason": "UFO3 cross-device multi-agent orchestration framework for OS agents."}
+{"arxiv": "2511.11672", "tier": "B", "kind": "benchmark", "platforms": ["desktop"], "components": ["simulator", "rl"], "confidence": "high", "reason": "OSGym scalable OS sandbox infrastructure for training computer use agents."}
+{"arxiv": "2511.12254", "tier": "A", "kind": "method", "platforms": ["mobile"], "components": ["memory", "multi_agent"], "confidence": "high", "reason": "Retrieval-augmented multi-agent coordination for long-horizon mobile automation."}
+{"arxiv": "2511.12997", "tier": "A", "kind": "method", "platforms": ["web"], "components": ["memory", "reflection"], "confidence": "high", "reason": "Cross-session memory guidance for self-evolving web agents."}
+{"arxiv": "2511.13087", "tier": "A", "kind": "method", "platforms": ["general"], "components": ["grounding"], "confidence": "high", "reason": "Multi-stage grounding agents for GUI elements."}
+{"arxiv": "2511.13091", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "low", "reason": "Generic multi-turn RL policy optimization; GUI not the focus."}
+{"arxiv": "2511.13248", "tier": "B", "kind": "method", "platforms": ["mobile"], "components": ["safety"], "confidence": "high", "reason": "Adversarial protector against PII leakage in mobile GUI agent screenshots."}
+{"arxiv": "2511.13725", "tier": "C", "kind": "benchmark", "platforms": [], "components": [], "confidence": "high", "reason": "AI kill switch benchmark; not GUI."}
+{"arxiv": "2511.14210", "tier": "C", "kind": "system", "platforms": [], "components": [], "confidence": "high", "reason": "Visual agent for images and documents; not GUI."}
+{"arxiv": "2511.14945", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Periodic human activity workflow discovery."}
+{"arxiv": "2511.15567", "tier": "B", "kind": "empirical", "platforms": ["web"], "components": ["evaluation"], "confidence": "low", "reason": "Using computer-use agents as judges for generative user interface design."}
+{"arxiv": "2511.15705", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Geolocalization with web tools; not GUI."}
+{"arxiv": "2511.16590", "tier": "B", "kind": "benchmark", "platforms": ["mobile"], "components": ["evaluation", "safety"], "confidence": "high", "reason": "D-GARA benchmark for GUI agent robustness to real-world anomalies."}
+{"arxiv": "2511.16842", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Benchmark question validation, general."}
+{"arxiv": "2511.17131", "tier": "B", "kind": "benchmark", "platforms": ["desktop"], "components": ["evaluation"], "confidence": "high", "reason": "UI-CUBE enterprise CUA benchmark for operational reliability."}
+{"arxiv": "2511.17649", "tier": "C", "kind": "benchmark", "platforms": [], "components": [], "confidence": "high", "reason": "Embodied tangible interface benchmark; physical robots."}
+{"arxiv": "2511.17775", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Episodic memory for scientific workflow suggestions."}
+{"arxiv": "2511.18423", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "General agent memory via deep research."}
+{"arxiv": "2511.19477", "tier": "A", "kind": "system", "platforms": ["web"], "components": ["safety", "planning"], "confidence": "high", "reason": "Architecture and security of a production browser agent."}
+{"arxiv": "2511.19496", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Small reasoning language model."}
+{"arxiv": "2511.19516", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "General visual grounding on natural images."}
+{"arxiv": "2511.19663", "tier": "A", "kind": "method", "platforms": ["web"], "components": ["policy", "training_data"], "confidence": "high", "reason": "Fara-7B small computer-use model trained on synthetic web trajectories."}
+{"arxiv": "2511.20067", "tier": "B", "kind": "method", "platforms": ["desktop"], "components": ["reward_judge"], "confidence": "high", "reason": "Vision-based judge for task completion of computer use agents."}
+{"arxiv": "2511.20597", "tier": "B", "kind": "benchmark", "platforms": ["web"], "components": ["safety"], "confidence": "high", "reason": "BrowseSafe prompt injection benchmark and defense for browser agents."}
+{"arxiv": "2511.20636", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "Image-to-G-code generation for manufacturing."}
+{"arxiv": "2511.20766", "tier": "B", "kind": "benchmark", "platforms": ["general"], "components": ["simulator", "evaluation"], "confidence": "high", "reason": "OpenApps simulated apps for measuring UI-agent reliability."}
+{"arxiv": "2511.21398", "tier": "A", "kind": "method", "platforms": ["web"], "components": ["perception", "efficiency"], "confidence": "high", "reason": "DOM tree pruning programming for web agents."}
+{"arxiv": "2511.21990", "tier": "C", "kind": "position", "platforms": [], "components": [], "confidence": "high", "reason": "General agentic safety framework for enterprises."}
+{"arxiv": "2511.22074", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "low", "reason": "Procedural learning from experience for agents; GUI unclear."}
+{"arxiv": "2511.22235", "tier": "A", "kind": "method", "platforms": ["general"], "components": ["planning", "rl"], "confidence": "high", "reason": "Execution-feedback RL high-level scheduler for long-horizon GUI automation."}
+{"arxiv": "2512.00756", "tier": "B", "kind": "benchmark", "platforms": ["general"], "components": ["evaluation", "perception"], "confidence": "high", "reason": "MPR-GUI multilingual benchmark and enhancement for GUI agents."}
+{"arxiv": "2512.00846", "tier": "A", "kind": "method", "platforms": ["mobile"], "components": ["perception", "policy"], "confidence": "high", "reason": "High-resolution aware feature renormalization GUI agent."}
+{"arxiv": "2512.01174", "tier": "B", "kind": "benchmark", "platforms": ["general"], "components": ["evaluation"], "confidence": "high", "reason": "DrawingBench mouse-based drawing tasks for UI interaction evaluation."}
+{"arxiv": "2512.01763", "tier": "A", "kind": "method", "platforms": ["general"], "components": ["rl", "efficiency"], "confidence": "high", "reason": "History context-aware policy optimization for GUI agents."}
+{"arxiv": "2512.01979", "tier": "A", "kind": "method", "platforms": ["general"], "components": ["grounding"], "confidence": "high", "reason": "Iterative reasoning with reference feedback for GUI grounding."}
+{"arxiv": "2512.02423", "tier": "A", "kind": "method", "platforms": ["general"], "components": ["rl", "training_data"], "confidence": "high", "reason": "GUI Exploration Lab environment and multi-turn RL for screen navigation."}
+{"arxiv": "2512.04105", "tier": "A", "kind": "system", "platforms": ["web"], "components": ["planning"], "confidence": "high", "reason": "LLM-based web agent for legal assistance on real websites."}
+{"arxiv": "2512.04302", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "high", "reason": "General dense reward RL."}
+{"arxiv": "2512.04529", "tier": "C", "kind": "system", "platforms": [], "components": [], "confidence": "high", "reason": "Scientific slide generation; not GUI acting."}

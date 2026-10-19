@@ -1,0 +1,54 @@
+{
+  "scope": "Computer-use agents: systems that perceive and act on graphical or browser interfaces (desktop, mobile, web) to complete tasks — their architecture (perception/grounding, planning, action space, memory, reflection/feedback), training (data synthesis, SFT, RL), environment models (world models, simulators, digital twins), and evaluation (benchmarks, verifiers). Pure API/tool-calling agents with no GUI or browser surface are out of scope.",
+
+  "arxiv_subjects": ["cs.AI", "cs.CL", "cs.LG", "cs.CV", "cs.HC", "cs.SE", "cs.MA"],
+
+  "core_phrases": [
+    "computer use agent", "computer-use agent", "GUI agent", "graphical user interface agent",
+    "web agent", "browser agent", "browser use", "web navigation agent",
+    "mobile agent", "smartphone agent", "Android agent", "desktop agent", "OS agent",
+    "multimodal web agent", "vision-language-action model for GUI", "native GUI agent",
+    "screen understanding agent", "UI automation with LLM", "digital agent"
+  ],
+
+  "component_phrases": [
+    "GUI grounding", "visual grounding for GUI", "UI element grounding", "screenshot parsing",
+    "set-of-mark prompting", "accessibility tree", "DOM-based agent",
+    "action space design", "pixel-level action", "GUI action model",
+    "GUI trajectory synthesis", "GUI data synthesis", "GUI reinforcement learning", "online RL for GUI agents",
+    "web world model", "GUI world model", "environment simulator for agents", "model-based planning for web agents",
+    "digital twin calibration", "app simulation", "reflection for GUI agents", "agent memory for GUI",
+    "GUI agent benchmark", "trajectory verifier", "process reward model for GUI", "GUI agent safety", "prompt injection web agent"
+  ],
+
+  "exclude_signals": [
+    "embodied robot manipulation without screen interface",
+    "pure function-calling / API tool use with no GUI or browser",
+    "UI code generation (design-to-code) without acting on the interface",
+    "general VLM benchmark not involving interaction"
+  ],
+
+  "anchor_works": [
+    {"name": "UI-TARS", "arxiv": "2501.12326", "code": "https://github.com/bytedance/UI-TARS"},
+    {"name": "SeeAct", "arxiv": "2401.01614", "code": "https://github.com/OSU-NLP-Group/SeeAct"},
+    {"name": "OSWorld", "arxiv": "2404.07972", "code": "https://github.com/xlang-ai/OSWorld"},
+    {"name": "WebArena", "arxiv": "2307.13854", "code": "https://github.com/web-arena-x/webarena"},
+    {"name": "Mind2Web", "arxiv": "2306.06070", "code": "https://github.com/OSU-NLP-Group/Mind2Web"},
+    {"name": "CogAgent", "arxiv": "2312.08914", "code": "https://github.com/THUDM/CogAgent"},
+    {"name": "ShowUI", "arxiv": "2411.17465", "code": "https://github.com/showlab/ShowUI"},
+    {"name": "OS-Atlas", "arxiv": "2410.23218", "code": "https://github.com/OS-Copilot/OS-Atlas"},
+    {"name": "UGround", "arxiv": "2410.05243", "code": "https://github.com/OSU-NLP-Group/UGround"},
+    {"name": "Agent S", "arxiv": "2410.08164", "code": "https://github.com/simular-ai/Agent-S"},
+    {"name": "AndroidWorld", "arxiv": "2405.14573", "code": "https://github.com/google-research/android_world"},
+    {"name": "WebDreamer", "arxiv": "2411.06559", "code": "https://github.com/OSU-NLP-Group/WebDreamer"},
+    {"name": "SeeClick", "arxiv": "2401.10935", "code": "https://github.com/njucckevin/SeeClick"},
+    {"name": "Aguvis", "arxiv": "2412.04454", "code": "https://github.com/xlang-ai/aguvis"},
+    {"name": "WebVoyager", "arxiv": "2401.13919", "code": "https://github.com/MinorJerry/WebVoyager"},
+    {"name": "browser-use", "arxiv": null, "code": "https://github.com/browser-use/browser-use"}
+  ],
+
+  "precursor_names": [
+    "MiniWoB++", "World of Bits", "WebShop", "Pix2Act", "AppAgent", "Mobile-Agent",
+    "OmniParser", "Claude Computer Use", "OpenAI Operator / CUA", "Set-of-Mark", "WebGUM"
+  ]
+}

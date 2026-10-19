@@ -1,0 +1,100 @@
+{"arxiv": "2104.08560", "tier": "B", "kind": "benchmark", "platforms": ["mobile"], "components": ["evaluation"], "confidence": "high", "reason": "MoTIF dataset for mobile app tasks with task feasibility and iterative feedback."}
+{"arxiv": "2105.01762", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2105.06676", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2105.11941", "tier": "B", "kind": "method", "platforms": ["mobile"], "components": ["perception"], "confidence": "low", "reason": "Mobile screen understanding model grouping pixel-words into screen-sentences; parsing component rather than agent."}
+{"arxiv": "2105.13231", "tier": "B", "kind": "benchmark", "platforms": ["mobile"], "components": ["simulator", "rl"], "confidence": "high", "reason": "AndroidEnv: open-source RL platform over Android with touchscreen action interface and tasks."}
+{"arxiv": "2106.09422", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2106.13500", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2106.16173", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2107.03374", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2107.05911", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2107.13731", "tier": "B", "kind": "method", "platforms": ["mobile"], "components": ["perception"], "confidence": "high", "reason": "UIBert multimodal pretraining for UI understanding, evaluated on downstream UI tasks."}
+{"arxiv": "2107.14604", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2108.00591", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2108.03298", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2108.03353", "tier": "B", "kind": "dataset", "platforms": ["mobile"], "components": ["perception"], "confidence": "high", "reason": "Screen2Words dataset and model for summarizing mobile screens in language."}
+{"arxiv": "2108.05308", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2109.01239", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2109.12470", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2110.04865", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2110.10661", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2112.05558", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2112.05692", "tier": "B", "kind": "method", "platforms": ["mobile"], "components": ["perception"], "confidence": "low", "reason": "Versatile UI Transformer for multi-task UI modeling including grounding; model for UI understanding."}
+{"arxiv": "2112.08086", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2112.08998", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2112.09332", "tier": "A", "kind": "method", "platforms": ["web"], "components": ["policy", "rl"], "confidence": "high", "reason": "WebGPT fine-tunes GPT-3 to browse a text-based web environment with human feedback for QA."}
+{"arxiv": "2112.12411", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2112.14216", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2201.04100", "tier": "B", "kind": "dataset", "platforms": ["mobile"], "components": ["perception", "training_data"], "confidence": "low", "reason": "Learns to denoise raw mobile UI layouts to improve UI datasets for screen understanding."}
+{"arxiv": "2201.09242", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2201.11676", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2202.02312", "tier": "B", "kind": "dataset", "platforms": ["mobile"], "components": ["evaluation"], "confidence": "high", "reason": "MoTIF dataset for interactive vision-language navigation on mobile apps with unknown command feasibility."}
+{"arxiv": "2202.06625", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2202.08137", "tier": "A", "kind": "method", "platforms": ["web"], "components": ["policy", "training_data"], "confidence": "high", "reason": "Data-driven agent controlling computers via keyboard and mouse from pixels, trained on human demonstrations; evaluated on MiniWoB."}
+{"arxiv": "2203.02547", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2203.10897", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2203.15807", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2204.01691", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2204.02942", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2204.05239", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2204.13260", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2205.00445", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2205.03322", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2205.10816", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2205.11029", "tier": "B", "kind": "dataset", "platforms": ["mobile"], "components": ["training_data", "policy"], "confidence": "low", "reason": "META-GUI dataset and agent for GUI-based conversational task completion on mobile phones."}
+{"arxiv": "2205.11622", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2205.12255", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2205.12700", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2206.04615", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2206.05751", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2206.08853", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2206.12839", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2206.15407", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2207.01206", "tier": "B", "kind": "benchmark", "platforms": ["web"], "components": ["evaluation"], "confidence": "high", "reason": "WebShop simulated e-commerce web environment benchmark for grounded language agents."}
+{"arxiv": "2207.05214", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2208.06032", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2208.07468", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2208.08080", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2209.08199", "tier": "B", "kind": "dataset", "platforms": ["mobile"], "components": ["perception"], "confidence": "high", "reason": "ScreenQA question-answer dataset over mobile screenshots for screen content understanding."}
+{"arxiv": "2209.08655", "tier": "A", "kind": "method", "platforms": ["mobile"], "components": ["planning", "action_space"], "confidence": "low", "reason": "Prompts LLMs to enable conversational interaction with mobile UIs; evaluated on UI tasks, agent status unclear."}
+{"arxiv": "2209.14927", "tier": "B", "kind": "method", "platforms": ["mobile"], "components": ["perception"], "confidence": "high", "reason": "Spotlight vision-language model for mobile UI understanding focused on regions; multiple UI tasks."}
+{"arxiv": "2209.14981", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2209.15099", "tier": "B", "kind": "benchmark", "platforms": ["general"], "components": ["grounding"], "confidence": "high", "reason": "MUG interactive multimodal grounding task on user interfaces with user-agent collaboration."}
+{"arxiv": "2210.01379", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2210.02663", "tier": "B", "kind": "dataset", "platforms": ["mobile"], "components": ["perception"], "confidence": "high", "reason": "Improves semantic understanding of mobile interfaces with new datasets and models for UI tasks."}
+{"arxiv": "2210.03347", "tier": "B", "kind": "method", "platforms": ["general"], "components": ["perception"], "confidence": "low", "reason": "Screenshot-parsing pretraining for visually situated language incl. UIs; general VLM with GUI benchmarks."}
+{"arxiv": "2210.03629", "tier": "C", "kind": "method", "platforms": [], "components": [], "confidence": "low", "reason": "General reasoning-and-acting prompting for LLMs; web environments are only some evaluations."}
+{"arxiv": "2210.03735", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2210.03945", "tier": "B", "kind": "empirical", "platforms": ["web"], "components": ["perception"], "confidence": "low", "reason": "Studies LLMs for HTML understanding incl. semantic classification and navigation; partly agent-related."}
+{"arxiv": "2210.08073", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2210.10275", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2210.11435", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2211.07615", "tier": "B", "kind": "benchmark", "platforms": ["mobile"], "components": ["evaluation"], "confidence": "high", "reason": "UGIF benchmark for following multilingual instructions grounded in smartphone UI."}
+{"arxiv": "2211.07912", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2211.09527", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2211.17095", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2212.01302", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2212.04288", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2212.11141", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2212.13326", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2301.10165", "tier": "B", "kind": "method", "platforms": ["mobile"], "components": ["perception"], "confidence": "high", "reason": "Lexi self-supervised pretraining of UI language from screenshots and text for UI understanding."}
+{"arxiv": "2301.10677", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2301.13280", "tier": "B", "kind": "dataset", "platforms": ["web"], "components": ["perception"], "confidence": "high", "reason": "WebUI dataset of web screenshots with DOM semantics for visual UI understanding."}
+{"arxiv": "2301.13779", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2302.01560", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2302.03668", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2302.04761", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2302.12150", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2302.12173", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2303.00001", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2303.00708", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2303.07280", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2303.08774", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2303.11366", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2303.12027", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2303.16563", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2303.17100", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2303.17491", "tier": "A", "kind": "method", "platforms": ["web"], "components": ["planning", "reflection"], "confidence": "high", "reason": "Recursive criticism and improvement prompting lets LLMs execute computer tasks; evaluated on MiniWoB++."}
+{"arxiv": "2303.17580", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2303.17760", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
+{"arxiv": "2304.03442", "tier": "C", "kind": "empirical", "platforms": [], "components": [], "confidence": "high", "reason": "Unrelated to computer-use or GUI agents based on abstract."}
