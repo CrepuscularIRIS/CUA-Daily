@@ -1,0 +1,13 @@
+[project]
+name = "cua-radar"
+version = "0.1.0"
+description = "CUA Radar: a research radar for computer-use / GUI / browser agents with quote-backed per-paper scoring against architecture pattern cards"
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.13.3",
+    "feedparser>=6.0.11",
+    "openai>=1.67.0",
+    "pandas>=2.2.3",
+    "pydantic>=2.11.4",
+    "python-dotenv>=1.2.2",
+]

@@ -1,0 +1,22 @@
+{
+    "arxiv_rss_base_url": "http://arxiv.org/rss/",
+    "arxiv_subjects": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG",
+        "cs.CV",
+        "cs.HC",
+        "cs.SE",
+        "cs.MA"
+    ],
+    "topics": [
+        "A-core: A computer-use agent method or system that perceives and acts on a graphical or browser interface (desktop, mobile, web): an architecture, policy or VLA model, planner or grounder; training data, SFT or RL for such an agent; a world model, simulator or digital twin used by or for it; or its memory and reflection. Pure API/function-calling agents with no GUI or browser surface are NOT this topic.",
+        "B-component: A direct contribution to computer-use agents that is not itself an agent method: a benchmark or interactive environment; a GUI grounding or screen-parsing dataset or model; a judge, reward model or verifier for GUI trajectories; or an evaluation-methodology, safety / prompt-injection or empirical study of such agents. UI code generation that never acts on the interface and general VLM benchmarks without interaction are NOT this topic."
+    ],
+    "llm_provider": "openai",
+    "llm_model": "gpt-5-mini",
+    "number_of_concurrent_tasks": 20,
+    "timeout_seconds": 40,
+    "relevance_threshold": 0.8,
+    "output_dir": "digests"
+}

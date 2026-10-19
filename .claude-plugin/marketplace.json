@@ -1,0 +1,15 @@
+{
+    "name": "cua-radar",
+    "description": "Agent skills shipped with CUA Radar (Computer Use Architecture Radar), inherited from daily_arxiv_digest: fetch the latest arXiv papers and generate on-demand digests.",
+    "owner": {
+        "name": "Kaicheng Yang",
+        "url": "https://github.com/yang3kc"
+    },
+    "plugins": [
+        {
+            "name": "arxiv-fetch",
+            "source": "./",
+            "description": "Fetch the latest arXiv papers and generate an on-demand digest. The agent judges relevance itself — no API keys needed. Inherited unchanged from yang3kc/daily_arxiv_digest."
+        }
+    ]
+}
