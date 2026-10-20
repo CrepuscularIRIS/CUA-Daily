@@ -40,7 +40,8 @@ issue `calibration FLAG <date>` with the output and stop.
   Catch-up ends when `research/queue/` holds no files.
 - **Steady** (after that): run once a day after the collector's ingest; stages A–B for the day's queue file(s).
 
-A large file may be processed over several runs in chunks: name each chunk's files `<queue-stem>-a`, `-b`, … and move
+Queue files (`research/queue/*.txt`, not `done/`) are written once by the collector and never change; take them
+oldest first. A large file may be processed over several runs in chunks: name each chunk's files `<queue-stem>-a`, `-b`, … and move
 the queue file to `research/queue/done/` only when every id in it has been screened (and, for A/B, judged).
 
 ## Each run
