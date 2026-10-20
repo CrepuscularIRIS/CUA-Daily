@@ -22,12 +22,13 @@ quote from the paper, and a script, not the model, computes the number.
 
 
 <!-- REEL:START -->
-## Poster gallery (1)
+## Poster gallery (6)
 
 Posters and interpretations of top-scoring papers ([how they are made](reel/README.md)).
 
 <table>
-<tr><td align="center" width="33%"><a href="reel/2609.05511/poster.pdf"><img src="reel/2609.05511/poster.png" width="100%"></a><br><sub><b>SCAFFOLD</b> · 86 ★★★<br><a href="reel/2609.05511/blog_zh.md">中文解读</a> · <a href="reel/2609.05511/blog_en.md">English</a> · <a href="https://arxiv.org/abs/2609.05511v1">paper</a></sub></td></tr>
+<tr><td align="center" width="33%"><a href="reel/2609.05511/poster.pdf"><img src="reel/2609.05511/poster.png" width="100%"></a><br><sub><b>SCAFFOLD</b> · 86 ★★★<br><a href="reel/2609.05511/blog_zh.md">中文解读</a> · <a href="reel/2609.05511/blog_en.md">English</a> · <a href="https://arxiv.org/abs/2609.05511v1">paper</a></sub></td><td align="center" width="33%"><a href="reel/2604.13318/poster.pdf"><img src="reel/2604.13318/poster.png" width="100%"></a><br><sub><b>WebXSkill</b> · 81 ★★★<br><a href="reel/2604.13318/blog_zh.md">中文解读</a> · <a href="reel/2604.13318/blog_en.md">English</a> · <a href="https://arxiv.org/abs/2604.13318v2">paper</a></sub></td><td align="center" width="33%"><a href="reel/2608.05587/poster.pdf"><img src="reel/2608.05587/poster.png" width="100%"></a><br><sub><b>Q-Reflector</b> · 81 ★★★<br><a href="reel/2608.05587/blog_zh.md">中文解读</a> · <a href="reel/2608.05587/blog_en.md">English</a> · <a href="https://arxiv.org/abs/2608.05587v2">paper</a></sub></td></tr>
+<tr><td align="center" width="33%"><a href="reel/2608.11588/poster.pdf"><img src="reel/2608.11588/poster.png" width="100%"></a><br><sub><b>CoAdapt-GUI</b> · 80 ★★★<br><a href="reel/2608.11588/blog_zh.md">中文解读</a> · <a href="reel/2608.11588/blog_en.md">English</a> · <a href="https://arxiv.org/abs/2608.11588v1">paper</a></sub></td><td align="center" width="33%"><a href="reel/2601.12822/poster.pdf"><img src="reel/2601.12822/poster.png" width="100%"></a><br><sub><b>MirrorGuard</b> · 79 ★★★<br><a href="reel/2601.12822/blog_zh.md">中文解读</a> · <a href="reel/2601.12822/blog_en.md">English</a> · <a href="https://arxiv.org/abs/2601.12822v1">paper</a></sub></td><td align="center" width="33%"><a href="reel/2607.11185/poster.pdf"><img src="reel/2607.11185/poster.png" width="100%"></a><br><sub><b>SCALECUA</b> · 76 ★★★<br><a href="reel/2607.11185/blog_zh.md">中文解读</a> · <a href="reel/2607.11185/blog_en.md">English</a> · <a href="https://arxiv.org/abs/2607.11185v1">paper</a></sub></td></tr>
 </table>
 <!-- REEL:END -->
 
