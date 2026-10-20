@@ -9,18 +9,18 @@ Usage: python research/reel_candidates.py [--min-score 60]
 import argparse
 import json
 import re
-import time
-import urllib.request
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from net import get  # noqa: E402  (≥3 s pacing, 429 → Retry-After once, then stop)
 
 OAI = "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:{id}&metadataPrefix=arXivRaw"
 REUSE_OK = re.compile(r"creativecommons\.org/(licenses/by/|licenses/by-sa/|publicdomain/zero/)")
 
 
 def license_of(aid: str) -> str:
-    req = urllib.request.Request(OAI.format(id=aid), headers={"User-Agent": "cua-radar/0.1"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        m = re.search(r"<license>([^<]+)</license>", r.read().decode("utf-8", "ignore"))
+    m = re.search(r"<license>([^<]+)</license>", get(OAI.format(id=aid)).decode("utf-8", "ignore"))
     return m.group(1).strip() if m else "arxiv-default"
 
 
@@ -30,7 +30,7 @@ def main() -> None:
     args = ap.parse_args()
     meta = {r["arxiv"]: r for r in map(json.loads, Path("research/corpus.jsonl").read_text().splitlines())}
     scores = [json.loads(l) for l in Path("research/scores.jsonl").read_text().splitlines()]
-    picked = sorted((s for s in scores if s["total"] >= args.min_score), key=lambda s: (-s["total"], s["arxiv"]))
+    picked = sorted((s for s in scores if s["total"] >= args.min_score and not s.get("abstract_only")), key=lambda s: (-s["total"], s["arxiv"]))
     out = Path("reel")
     out.mkdir(exist_ok=True)
     cache = {r["arxiv"]: r for r in map(json.loads, (out / "candidates.jsonl").read_text().splitlines())} if (out / "candidates.jsonl").exists() else {}
@@ -39,7 +39,6 @@ def main() -> None:
         lic = cache.get(s["arxiv"], {}).get("license")
         if lic is None:
             lic = license_of(s["arxiv"])
-            time.sleep(3)  # arXiv API etiquette
         rows.append({"arxiv": s["arxiv"], "version": meta[s["arxiv"]]["latest_version"], "title": meta[s["arxiv"]]["title"],
                      "score": s["total"], "band": s["band"], "sub_pattern": s["sub_pattern"], "code_url": s.get("code_url"),
                      "license": lic, "figure_reuse": bool(REUSE_OK.search(lic)), "status": cache.get(s["arxiv"], {}).get("status", "todo")})

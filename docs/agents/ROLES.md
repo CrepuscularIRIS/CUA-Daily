@@ -4,7 +4,7 @@
 |---|---|---|---|---|
 | **Grok bot（找论文 + 仓库维护）** | 每天扫 arXiv、HF Daily/Trending、GitHub、X、实验室博客，召回 computer-use / GUI / browser agent 候选；运行入库脚本，把待处理的 id 写进 `research/queue/`；每周补代码链接、跑例行检查、发现异常开 Issue | 不判断质量、不打分、不改 Dots 的文件和评判标准 | `inbox/`、`research/corpus.jsonl`、`research/hf_meta.jsonl`、`research/queue/*.txt`；commit：`collect:` / `ingest:` / `maintenance:` | [GROK_PROMPT.md](GROK_PROMPT.md) |
 | **Dots（判定 + 打分）** | 消化 `research/queue/`：分档 → 抓全文 → 归模式并逐项判定（[JUDGE_BATCH.md](JUDGE_BATCH.md)）→ 算分 → 生成榜单 → 自检；每周给高分 A 类论文写诊断卡 | 不收集、不改 Grok 的文件、不改评判标准、不跑被收录仓库的代码 | `research/screen.jsonl`、`research/patterns/assign_*.jsonl`、`research/judgments/`、`research/scores.jsonl`、`papers/`、README 榜单、`cards/`；commit：`triage:` / `score:` / `cards:` | [DOTS_PROMPT.md](DOTS_PROMPT.md) |
-| **人** | 每周抽查；审批模式卡修订（如新增 R 类子模式）；对外沟通 | — | — | — |
+| **本地（人 + Opus）** | 给 ≥60 分的论文做 Reel 海报与中英文解读（过 `check_reel.py`），更新 README 海报墙；读全文发现判定有误就开 `judgment:` Issue 交给 Dots 重判；每周抽查；审批模式卡修订（如新增 R 类子模式）；对外沟通 | 不改判定记录和分数 | `reel/`、README 海报墙；commit：`reel:` | [REEL_PROMPT.md](REEL_PROMPT.md) |
 
 ## 节奏
 

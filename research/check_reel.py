@@ -18,13 +18,14 @@ import shutil
 import subprocess
 import sys
 import tempfile
-import urllib.request
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from net import RateLimited, get  # noqa: E402
 
 CACHE = Path("research/paper_text")
 REQUIRED = ["poster.png", "poster.pdf", "blog_zh.md", "blog_en.md", "SOURCE.md"]
 DECIMAL = re.compile(r"(?<![\w./-])(\d{1,4}\.\d{1,3})(‡?)(?![\w/])")
-UA = {"User-Agent": "cua-radar/0.1"}
 
 
 def paper_text(version: str) -> str:
@@ -34,13 +35,13 @@ def paper_text(version: str) -> str:
         return cached.read_text(encoding="utf-8")
     text = ""
     try:
-        with urllib.request.urlopen(urllib.request.Request(f"https://arxiv.org/html/{version}", headers=UA), timeout=90) as r:
-            text = html.unescape(re.sub(r"<[^>]+>", " ", r.read().decode("utf-8", "ignore")))
+        text = html.unescape(re.sub(r"<[^>]+>", " ", get(f"https://arxiv.org/html/{version}", timeout=90).decode("utf-8", "ignore")))
+    except RateLimited:
+        raise
     except Exception:
         if shutil.which("pdftotext"):
-            with urllib.request.urlopen(urllib.request.Request(f"https://arxiv.org/pdf/{version}", headers=UA), timeout=120) as r, \
-                    tempfile.NamedTemporaryFile(suffix=".pdf") as f:
-                f.write(r.read())
+            with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
+                f.write(get(f"https://arxiv.org/pdf/{version}", timeout=120))
                 f.flush()
                 text = subprocess.run(["pdftotext", "-q", f.name, "-"], capture_output=True, text=True).stdout
     text = re.sub(r"\s+", " ", text)

@@ -188,3 +188,11 @@ refs/lists/
 .forge/
 research/trial/fulltext*/
 !research/calibration/*.json*
+
+# Reel intermediates (never committed; see reel/README.md)
+reel/*/poster.html
+reel/**/*.pptx
+reel/**/*.mp3
+reel/**/*.mp4
+reel/**/*.docx
+reel/*/assets/

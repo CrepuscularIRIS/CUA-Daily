@@ -6,7 +6,7 @@
 set -euo pipefail
 
 RS_DIR="${RS_DIR:-../ResearchStudio}"
-RS_COMMIT="${RS_COMMIT:-063f100}"   # pinned: the version the first GRASP poster was made with
+RS_COMMIT="${RS_COMMIT:-063f100}"   # pinned: the ResearchStudio version the HarnessRSI Daily posters were made with
 
 if [ ! -d "$RS_DIR/.git" ]; then
   git clone --quiet https://github.com/microsoft/ResearchStudio.git "$RS_DIR"
