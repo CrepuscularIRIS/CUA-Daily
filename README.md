@@ -22,6 +22,13 @@ quote from the paper, and a script, not the model, computes the number.
 
 
 <!-- REEL:START -->
+## Poster gallery (1)
+
+Posters and interpretations of top-scoring papers ([how they are made](reel/README.md)).
+
+<table>
+<tr><td align="center" width="33%"><a href="reel/2609.05511/poster.pdf"><img src="reel/2609.05511/poster.png" width="100%"></a><br><sub><b>SCAFFOLD</b> · 86 ★★★<br><a href="reel/2609.05511/blog_zh.md">中文解读</a> · <a href="reel/2609.05511/blog_en.md">English</a> · <a href="https://arxiv.org/abs/2609.05511v1">paper</a></sub></td></tr>
+</table>
 <!-- REEL:END -->
 
 <!-- BOARD:START -->
