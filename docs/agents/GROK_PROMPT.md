@@ -51,6 +51,8 @@ This deduplicates, appends arXiv metadata to `research/corpus.jsonl`, fetches fu
 into `research/hf_meta.jsonl`, and writes the new ids to a new file `research/queue/YYYY-MM-DD-HHMM.txt`: the hand-off
 to the scorer. Queue files are write-once: never edit or append to an existing one. Then move the inbox file to
 `inbox/processed/`. Items without an arXiv id (reports, blogs, bare repos) are not ingested: list them in the commit body.
+If `ingest.py` exits non-zero (75 = HTTP 429 after one `Retry-After` wait), it has written neither corpus rows nor a
+queue file: leave the inbox file where it is, commit nothing for this stage, and rerun the same command next run.
 **Commit:** `ingest: YYYY-MM-DD (+k queued)`: corpus, hf_meta, queue file, inbox move.
 
 ## Stage 3 — maintenance (weekly, one day; separate commit)
@@ -71,7 +73,8 @@ to the scorer. Queue files are write-once: never edit or append to an existing o
 4. Never post, comment, star, fork or open issues on other repositories; issues only in this repository.
 5. Before every push: `git pull --rebase`, then push. Never force-push or rewrite pushed history.
 6. Never commit `research/fulltext/`, credentials or tokens.
-7. Respect rate limits: arXiv API ≥ 3 s between calls; on HTTP 429 wait `Retry-After`; never loop retries.
+7. Respect rate limits: ≥ 3 s between arxiv.org requests (API and HTML); on HTTP 429 wait `Retry-After` once, then
+   stop. The repo scripts do this through `research/net.py`; any other request you make follows the same policy.
 
 ## Report after each run (≤8 lines)
 Date · candidates found (by source) · ingested · queued · not ingested · maintenance findings · issues opened.

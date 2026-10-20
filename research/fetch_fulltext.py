@@ -2,7 +2,9 @@
 
 Writes research/fulltext/<id>.txt (abstract + capped intro/method/experiments/limitations).
 Papers without an HTML rendering get abstract-only files marked `FULLTEXT: none`, so
-extractors know their evidence fields must stay `unclear`. Re-run safely: existing files are skipped.
+extractors know their evidence fields must stay `unclear`. Only HTTP 404 (no HTML rendering) is cached that way:
+a transient error writes nothing (a rerun retries it), and HTTP 429 stops the run with exit code 75 after one
+Retry-After wait (research/net.py). Re-run safely: existing files are skipped.
 
 Usage: python research/fetch_fulltext.py --ids research/ab_ids.txt
 """
@@ -10,11 +12,16 @@ Usage: python research/fetch_fulltext.py --ids research/ab_ids.txt
 import argparse
 import json
 import re
-import time
-import urllib.request
+import sys
+import urllib.error
 from pathlib import Path
 
 from bs4 import BeautifulSoup
+
+sys.path.insert(0, str(Path(__file__).parent))
+from net import RateLimited, get  # noqa: E402
+
+EXIT_RATE_LIMITED = 75  # EX_TEMPFAIL
 
 URL = "https://arxiv.org/html/{id}"
 # section class -> cumulative char cap. Related-work sections are dropped; any section that is not
@@ -70,21 +77,31 @@ def main() -> None:
     args.out.mkdir(exist_ok=True)
     meta = {r["arxiv"]: r for r in map(json.loads, args.corpus.read_text().splitlines())}
     ids = [i for i in args.ids.read_text().split() if not (args.out / f"{i}.txt").exists()]
+    skipped = []
     for k, aid in enumerate(ids, 1):
         m = meta[aid]
         head = f"# {m['title']}\narXiv {m['latest_version']} | {m['published']}\n\n## Abstract\n{m['abstract']}\n\n"
         try:
-            req = urllib.request.Request(URL.format(id=m["latest_version"]), headers={"User-Agent": "cua-radar/0.1"})
-            with urllib.request.urlopen(req, timeout=60) as r:
-                body = condense(sections(r.read().decode("utf-8", "ignore")))
-        except Exception as e:  # 404 = no HTML rendering; anything else is logged and treated the same
-            print(f"{aid}: {e!r}")
-            body = ""
+            body = condense(sections(get(URL.format(id=m["latest_version"])).decode("utf-8", "ignore")))
+        except RateLimited as e:
+            print(f"{aid}: {e}; stopping — {len(ids) - k + 1} ids left, rerun later", flush=True)
+            sys.exit(EXIT_RATE_LIMITED)
+        except urllib.error.HTTPError as e:
+            if e.code != 404:
+                print(f"{aid}: {e!r}; not cached, rerun retries it")
+                skipped.append(aid)
+                continue
+            body = ""  # 404 = arXiv has no HTML rendering of this version
+        except Exception as e:  # timeout, connection reset, parse error: transient, not cached
+            print(f"{aid}: {e!r}; not cached, rerun retries it")
+            skipped.append(aid)
+            continue
         tag = "FULLTEXT: html" if body else "FULLTEXT: none (abstract only; keep evidence fields unclear)"
         (args.out / f"{aid}.txt").write_text(f"{tag}\n{head}{body}\n", encoding="utf-8")
-        time.sleep(1.5)
         if k % 50 == 0:
             print(f"{k}/{len(ids)}", flush=True)
+    if skipped:
+        print(f"{len(skipped)} ids not fetched (transient errors): {' '.join(skipped)}")
     print("done")
 
 

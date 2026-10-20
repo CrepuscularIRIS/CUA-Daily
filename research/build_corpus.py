@@ -11,9 +11,12 @@ import argparse
 import json
 import re
 import time
-import urllib.request
+import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+from net import RateLimited, get  # noqa: E402
 
 ARXIV_ID = re.compile(r"arxiv\.org/(?:abs|pdf|html)/(\d{4}\.\d{4,5})")
 HEADING = re.compile(r"^(#{1,6})\s+(.*)$")
@@ -49,9 +52,7 @@ def harvest(lists_dir: Path) -> dict[str, list[dict]]:
 
 def fetch_metadata(ids: list[str]) -> dict[str, dict]:
     url = API.format(n=len(ids), ids=",".join(ids))
-    req = urllib.request.Request(url, headers={"User-Agent": "cua-radar/0.1"})  # plain http times out from cloud boxes
-    with urllib.request.urlopen(req, timeout=60) as r:
-        root = ET.fromstring(r.read())
+    root = ET.fromstring(get(url))  # https: plain http times out from cloud boxes; 429 raises net.RateLimited
     out = {}
     for e in root.findall("a:entry", NS):
         full = e.findtext("a:id", "", NS).rsplit("/", 1)[-1]  # e.g. 2507.19457v2
@@ -91,10 +92,11 @@ def main() -> None:
             try:
                 meta.update(fetch_metadata(chunk))
                 break
+            except RateLimited:  # already waited Retry-After once inside net.get: stop, never loop on 429
+                raise
             except Exception as e:  # network/API hiccup: back off, then give up on this chunk
                 print(f"batch {i}: {e!r}, retry {attempt + 1}/3")
                 time.sleep(10 * (attempt + 1))
-        time.sleep(3)  # arXiv API etiquette
         print(f"fetched {min(i + BATCH, len(todo))}/{len(todo)}")
 
     records = []
