@@ -26,25 +26,31 @@ and moving queue files to `research/queue/done/`.
 Never edit `research/corpus.jsonl`, `research/hf_meta.jsonl`, `inbox/` (the collector's), or any judging standard.
 
 ## Step 0 — calibration (first run, monthly, and whenever your underlying model changes)
-Pick 3 ids from `research/calibration/gold.jsonl` (reference judgments spanning several patterns and bands). Fetch
-their full texts (`python3 research/fetch_fulltext.py --ids <file>`), judge them from scratch into `/tmp/cal.jsonl`
-**without reading the gold records**, then run
-`PYTHONPATH=research python3 research/calibrate.py /tmp/cal.jsonl`. PASS → continue. FLAG → publish nothing; open an
-issue `calibration FLAG <date>` with the output and stop.
+"First run" is decided from the repository, not your memory: run calibration if `git log --grep '^calibration:'` shows
+no commit in the last 30 days (or none since your model changed). Pick 3 ids from `research/calibration/gold.jsonl`
+(reference judgments spanning several patterns and bands). Fetch their full texts
+(`python3 research/fetch_fulltext.py --ids <file>`), judge them from scratch into `/tmp/cal.jsonl` **without reading
+the gold records**, then run `PYTHONPATH=research python3 research/calibrate.py /tmp/cal.jsonl`.
+- PASS → record it with an empty commit `git commit --allow-empty -m "calibration: YYYY-MM-DD PASS <model>"` (body:
+  the calibrate.py output), push, continue.
+- FLAG → publish nothing; open an issue `calibration FLAG <date>` with the output and stop.
 
 ## Two phases
-- **Catch-up** (now, until the backlog is gone): run several times a day. Order: (1) any id of
-  `research/board1_ids.txt` not yet in `research/scores.jsonl`; (2) `research/queue/2026-10-19-backlog.txt` (737 A/B
-  papers already screened: tier B, and tier A before 2025), in chunks of 10 named `backlog-a`, `backlog-b`, …;
-  (3) new queue files, oldest first. Backlog papers have no local full text yet: run stage A step 2 for each chunk.
+- **Catch-up** (now, until the backlog is gone): run several times a day. Every run does, in this order:
+  1. **new queue files first** (`research/queue/YYYY-MM-DD-HHMM.txt`, oldest first): the collector's daily papers
+     must not wait behind the backlog;
+  2. **then the backlog** `research/queue/2026-10-19-backlog.txt` (737 A/B papers already screened: tier B, and tier
+     A before 2025), continuing from the first id not yet in `research/scores.jsonl`;
+  until the run has scored **up to 50 papers**. Judge in batches of **at most 10** ids (one `JUDGE_BATCH.md` pass
+  each) and push each batch as its own `score:` commit as soon as its check passes. A run that ends with nothing
+  committed is wasted; a batch cut off mid-way is simply redone next run.
   Catch-up ends when `research/queue/` holds no files.
 - **Steady** (after that): run once a day after the collector's ingest; stages A–B for the day's queue file(s).
 
-Queue files (`research/queue/*.txt`, not `done/`) are written once by the collector and never change; take them
-oldest first. A large file may be processed over several runs in chunks: name each chunk's files `<queue-stem>-a`, `-b`, … and move
-the queue file to `research/queue/done/` only when every id in it has been screened (and, for A/B, judged).
-
 ## Each run
+Your environment may be reset between runs: start from a fresh `git pull` and treat the repository as the only state.
+Never spend a run restoring files from an earlier session — anything not pushed is redone. Local full texts
+(`research/fulltext/`) are not in git: fetch them for each batch you judge (stage A step 2).
 `git pull`, then `pip install beautifulsoup4` (once).
 
 **Stage A — triage**

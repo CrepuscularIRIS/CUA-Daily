@@ -12,7 +12,7 @@ Read once, before the first paper:
 - `research/patterns/taxonomy_view.json`
 
 For each paper:
-1. **Assign** it to the single best-fitting sub-pattern (`Kxx` or `Cxx`) from `taxonomy_view.json`. Open
+1. **Assign** it to the single best-fitting sub-pattern (`Kxx`, `Cxx` or `Rxx`) from `taxonomy_view.json`. Open
    `patterns/sub/<id>.md` for the 1–3 closest candidates before choosing.
    - Append one line to `research/patterns/assign_<B>.jsonl`:
      `{"arxiv": id, "sub_pattern": "...", "fit": "good|weak", "fit_note": "≤20 words"}`.
