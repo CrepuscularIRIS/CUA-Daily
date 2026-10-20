@@ -1,10 +1,9 @@
-"""Hourly health check of the agent-maintained repo. Read-only: reports, never commits.
+"""Health check (cron, every 6 h) of the agent-maintained repo. Read-only: reports, never commits.
 
 Checks every commit since the last run (state in .git/monitor_last):
-  - file ownership by commit prefix (collect/ingest/maintenance = Grok, triage/score/cards = Dots, reel = Reel);
-  - no agent touches the judging standards; nobody commits full texts, reviews, bundles or .env;
-  - Dots edits README.md only inside the board and poster-gallery blocks;
-  - new reel/<id>/ directories pass research/check_reel.py;
+  - file ownership by commit prefix (collect/ingest/maintenance = Grok, triage/score/cards = Dots);
+  - no agent touches the judging standards; nobody commits full texts or .env;
+  - Dots edits README.md only inside the board block;
   - new judgment files re-verified here (quotes checked against freshly fetched full text) and scores.jsonl reproducible;
   - card checks, latest CI run, open issues, queue backlog.
 Prints a report ending in "STATUS OK" or "STATUS ATTENTION".
@@ -21,23 +20,21 @@ import sys
 from pathlib import Path
 
 STATE = Path(".git/monitor_last")
-REPO = "CrepuscularIRIS/cua-architecture-radar"  # assumed name; confirm when the repo is published
+REPO = "CrepuscularIRIS/cua-architecture-radar"
 OWN = {
-    "grok": ["inbox/*", "research/corpus.jsonl", "research/hf_meta.jsonl", "research/queue/*.txt",
-             "research/patterns/contrast.json", "research/patterns/contrast.md"],
-    "dots": ["research/screen.jsonl", "research/signatures.jsonl", "research/patterns/assignments.jsonl",
+    "grok": ["inbox/*", "research/corpus.jsonl", "research/hf_meta.jsonl", "research/queue/*.txt"],
+    "dots": ["research/screen.jsonl", "research/patterns/assign_*.jsonl", "research/patterns/assignments.jsonl",
              "research/judgments/*", "research/scores.jsonl", "papers/README.md", "README.md", "cards/*",
-             "research/queue/*.txt", "research/queue/done/*", "reel/*"],
+             "research/queue/*.txt", "research/queue/done/*"],
 }
 # Human commits must not use these prefixes (use feat:/fix:/docs:/chore:), or they are checked as agent commits.
-ROLE = {"collect": "grok", "ingest": "grok", "maintenance": "grok", "triage": "dots", "score": "dots", "cards": "dots", "reel": "dots"}
+ROLE = {"collect": "grok", "ingest": "grok", "maintenance": "grok", "triage": "dots", "score": "dots", "cards": "dots"}
 PROTECTED = ["docs/EVIDENCE.md", "cards/_TEMPLATE.md", "check_cards.py", ".github/*", "research/*_SPEC.md",
              "research/*_SCHEMA.md", "research/SCREEN_RUBRIC.md", "research/score.py", "research/check_*.py",
-             "research/calibrate.py", "research/patterns/taxonomy*.json", "research/patterns/conditions.json", "patterns/*",
-             "research/setup_reel.sh"]
-FORBIDDEN = ["research/fulltext/*", "research/reviews/*", "research/patterns/bundles/*", "research/paper_text/*", "*.env", ".env",
-             "*.pptx", "*.mp3", "*.docx", "*/poster.html"]
-BOARD = re.compile(r"<!-- (BOARD|REEL):START -->.*?<!-- \1:END -->", re.S)
+             "research/calibrate.py", "research/calibration/*", "research/patterns/taxonomy*.json",
+             "research/patterns/conditions.json", "patterns/*", "research/net.py"]
+FORBIDDEN = ["research/fulltext/*", "research/trial/fulltext*", "*.env", ".env", "*.pem", "*.key", "settings.json"]
+BOARD = re.compile(r"<!-- (BOARD):START -->.*?<!-- \1:END -->", re.S)
 
 
 def sh(*cmd: str, check: bool = True) -> str:
@@ -65,7 +62,7 @@ def commit_issues(sha: str, subject: str) -> list[str]:
             before = sh("git", "show", f"{sha}^:README.md", check=False)
             after = sh("git", "show", f"{sha}:README.md")
             if BOARD.sub("", before) != BOARD.sub("", after):
-                out.append(f"{sha[:7]} (dots) edits README.md outside the board/gallery blocks")
+                out.append(f"{sha[:7]} (dots) edits README.md outside the board block")
     return out
 
 
@@ -107,12 +104,6 @@ def main(argv: list[str]) -> int:
             problems.append("research/scores.jsonl is not reproducible from the committed judgments")
         sh("git", "checkout", "-q", "research/scores.jsonl")
 
-    reel_dirs = sorted({str(Path(f).parent) for f in changed if re.fullmatch(r"reel/\d{4}\.\d{4,5}/[^/]+", f) and Path(f).parent.exists()})
-    if reel_dirs:
-        r = subprocess.run([sys.executable, "research/check_reel.py", *reel_dirs], capture_output=True, text=True)
-        report.append("reel check: " + (r.stdout.strip().splitlines() or ["?"])[-1])
-        if r.returncode:
-            problems.append("new posters fail research/check_reel.py: " + "; ".join(l.strip() for l in r.stdout.splitlines() if l.strip().startswith("-"))[:400])
     for cmd in (["python3", "test_check_cards.py"], ["python3", "check_cards.py"]):
         if subprocess.run(cmd, capture_output=True).returncode:
             problems.append(f"{' '.join(cmd)} fails")
@@ -131,14 +122,12 @@ def main(argv: list[str]) -> int:
         n = len(q.read_text().split())
         age = (today - dt.date.fromisoformat(q.stem[:10])).days if re.match(r"\d{4}-\d{2}-\d{2}", q.stem) else 0
         report.append(f"queue {q.name}: {n} ids, {age} days old")
-        if age >= 2 and n:
+        if age >= 2 and n and "backlog" not in q.stem:  # the catch-up backlog drains over many runs
             problems.append(f"queue {q.name} unprocessed for {age} days")
 
     scored = sum(1 for _ in Path("research/scores.jsonl").open()) if Path("research/scores.jsonl").exists() else 0
-    cand = [json.loads(l) for l in Path("reel/candidates.jsonl").open()] if Path("reel/candidates.jsonl").exists() else []
-    done = sum(c.get("status") == "done" for c in cand)
     queued = sum(len(q.read_text().split()) for q in Path("research/queue").glob("*.txt"))
-    report.append(f"progress: {scored} papers on the board · {queued} ids waiting in queue · posters {done}/{len(cand)}")
+    report.append(f"progress: {scored} papers on the board · {queued} ids waiting in queue")
     STATE.write_text(head)
     print("\n".join(report))
     print("\n".join(f"! {p}" for p in problems))
