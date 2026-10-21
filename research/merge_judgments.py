@@ -17,6 +17,11 @@ score-equivalent ones are settled deterministically without arbitration):
   - anti: value yes|no only -> placeholder on conflict is `no` (no penalty without agreement), FLAG;
     mitigated conflict FLAGs only when the agreed value is `yes` (otherwise mitigated never affects the
     score; seat 1's value is kept silently).
+  - assignment: a paper already in research/patterns/assignments.jsonl (a re-judged board paper) keeps its
+    published sub_pattern — changing it would invalidate the old batch structurally in score.py build. The
+    seats' own sub-patterns are recorded as proposals in research/patterns/reassign_proposals.jsonl for a
+    human-review pass (applied the way wave-1 was). A paper with no published row (new papers) uses the
+    dual-seat merge: same sub_pattern -> keep, differ -> FLAG for the arbitrator.
   - version_read conflict -> FLAG (placeholder seat 1). title_zh / one_line / one_line_zh: seat 1, no FLAG.
   - assignment: same sub_pattern -> keep (fit = weak if either seat says weak); differ -> FLAG. If the
     arbitrator switches a paper to seat 2's sub_pattern, that paper's record is re-based on seat 2's pass
@@ -71,7 +76,9 @@ def fulltext_of(root: Path, aid: str) -> str:
 
 def merge(root: Path, B: str) -> None:
     passes, assigns = load(root, B)
-    out, conflicts, assign_out = [], [], []
+    pub = {r["arxiv"]: r for r in jl(root / "patterns" / "assignments.jsonl")} \
+        if (root / "patterns" / "assignments.jsonl").exists() else {}
+    out, conflicts, assign_out, proposals = [], [], [], []
     for aid in sorted(passes["sol"]):
         a, b, text = passes["sol"][aid], passes["son55"][aid], fulltext_of(root, aid)
         rec = {k: a[k] for k in TEXT_FIELDS}  # text fields: seat 1, deterministic
@@ -88,15 +95,28 @@ def merge(root: Path, B: str) -> None:
                                             b.get("evidence_level"), text, conflicts)
         rec = {"arxiv": aid, **rec}
         out.append(rec)
-        assign_out.append(_merge_assign(aid, assigns, conflicts))
+        if aid in pub:  # re-judged paper: published assignment stands, seats file proposals
+            assign_out.append({k: pub[aid].get(k) for k in ("arxiv", "sub_pattern", "fit", "fit_note")})
+            for s in SEATS:
+                row = assigns[s].get(aid)
+                if row and row.get("sub_pattern") and row["sub_pattern"] != pub[aid]["sub_pattern"]:
+                    proposals.append({"arxiv": aid, "sub_pattern": row["sub_pattern"], "fit": row.get("fit"),
+                                      "fit_note": row.get("fit_note", ""), "batch": B, "seat": s})
+        else:
+            assign_out.append(_merge_assign(aid, assigns, conflicts))
     (root / "judgments" / f"{B}.jsonl").write_text(
         "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in out), encoding="utf-8")
     (root / "patterns" / f"assign_{B}.jsonl").write_text(
         "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in assign_out), encoding="utf-8")
+    prop_path = root / "patterns" / "reassign_proposals.jsonl"
+    kept = [l for l in prop_path.read_text(encoding="utf-8").splitlines()
+            if l.strip() and json.loads(l).get("batch") != B] if prop_path.exists() else []
+    prop_path.write_text("".join(l + "\n" for l in kept)
+                         + "".join(json.dumps(r, ensure_ascii=False) + "\n" for r in proposals), encoding="utf-8")
     _write_conflicts(root, B, conflicts)
     n = len(out)
     print(f"merged {n} papers: {n * (len(out[0]['evidence']) + len(out[0]['success']) + len(out[0]['failure']) + len(out[0]['anti']) + 2) if out else 0}"
-          f" items across both seats -> {len(conflicts)} FLAGs")
+          f" items across both seats -> {len(conflicts)} FLAGs, {len(proposals)} reassign proposals")
 
 
 def _merge_item(aid: str, label: str, ia: dict | None, ib: dict | None, text: str, conflicts: list) -> dict:
@@ -158,11 +178,16 @@ def apply_arb(root: Path, B: str) -> None:
     conflicts = json.loads((root / "judgments" / "passes" / f"{B}.conflicts.json").read_text(encoding="utf-8"))["conflicts"]
     recs = {r["arxiv"]: r for r in jl(root / "judgments" / f"{B}.jsonl")}
     assign = {r["arxiv"]: r for r in jl(root / "patterns" / f"assign_{B}.jsonl")}
+    pub = {r["arxiv"] for r in jl(root / "patterns" / "assignments.jsonl")} \
+        if (root / "patterns" / "assignments.jsonl").exists() else set()
     done, skipped = set(), []
     base_switch = {}
     for d in decisions:  # pass 1: assignment switches re-base the record first
         if d["field"] == "assign.sub_pattern":
             aid, v = d["arxiv"], d["value"]
+            if aid in pub:
+                skipped.append((aid, d["field"], "paper has a published assignment; use the proposal process"))
+                continue
             seat = "son55" if v == assigns["son55"][aid]["sub_pattern"] else ("sol" if v == assigns["sol"][aid]["sub_pattern"] else None)
             if seat is None:
                 skipped.append((aid, d["field"], "value matches neither seat"))
