@@ -94,10 +94,19 @@ If there is nothing to do, make no commit.
 
 ## Calibration (first run, monthly, and whenever the seat composition changes)
 Decide from the repository, not memory: calibrate if `git log --grep '^calibration:'` shows no commit in the
-last 30 days or none since the seats changed. Run the full dual-seat flow (stages B1–B5, batch name `cal`) on
-the 3 ids in `research/calibration/gold.jsonl` **without reading the gold records**, then run
-`PYTHONPATH=research python3 research/calibrate.py research/judgments/cal.jsonl`.
-- PASS → empty commit `calibration: YYYY-MM-DD PASS dual(sol+son55, arb opus-5-5)` (body: calibrate.py output).
+last 30 days or none since the seats changed. Re-judge the 3 ids in `research/calibration/run1_ids.txt` blind
+(**never read `gold.jsonl` or `run1_*.jsonl` first**), with the assignment **fixed** to the published rows in
+`research/patterns/assignments.jsonl` (calibration measures judgment drift, not assignment drift — the seats
+write no assign files; `merge_judgments.py` falls back to the published assignment automatically):
+1. seats: same prompts as stage B2 with batch `cal`, minus the assign-file sentence, plus "use the paper's
+   sub-pattern from `research/patterns/assignments.jsonl`";
+2. `python3 research/merge_judgments.py cal` (+ arbitrator on FLAGs, `--apply-arb`);
+3. `PYTHONPATH=research python3 research/score.py check research/judgments/cal.jsonl` must be clean, then move
+   it out of `judgments/`: `mv research/judgments/cal.jsonl research/calibration/run<N>_<date>.jsonl` and
+   `rm research/patterns/assign_cal.jsonl research/judgments/ids_cal.txt`;
+4. `PYTHONPATH=research python3 research/calibrate.py research/calibration/run<N>_<date>.jsonl`.
+- PASS → commit the run file + `research/calibration/README.md` row and an empty commit
+  `calibration: YYYY-MM-DD PASS dual(sol+son55, arb opus-5-5)` (body: calibrate.py output).
 - FLAG → publish nothing; report to the maintainer and stop.
 
 ## Weekly (separate commit `cards: YYYY-Www`)

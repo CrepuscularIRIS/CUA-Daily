@@ -47,7 +47,12 @@ def load(root: Path, B: str):
     jp = root / "judgments" / "passes"
     ap = root / "patterns" / "assign_passes"
     passes = {s: {r["arxiv"]: r for r in jl(jp / f"{B}.{s}.jsonl")} for s in SEATS}
-    assigns = {s: {r["arxiv"]: r for r in jl(ap / f"assign_{B}.{s}.jsonl")} for s in SEATS}
+    pub = {r["arxiv"]: r for r in jl(root / "patterns" / "assignments.jsonl")} \
+        if (root / "patterns" / "assignments.jsonl").exists() else {}
+    assigns = {}
+    for s in SEATS:  # a missing assign pass (calibration: assignment fixed) falls back to the published rows
+        p = ap / f"assign_{B}.{s}.jsonl"
+        assigns[s] = {r["arxiv"]: r for r in jl(p)} if p.exists() else pub
     for s in SEATS:
         if set(passes[s]) != set(passes["sol"]) and s != "sol":
             sys.exit(f"paper sets differ between seats: {sorted(set(passes[s]) ^ set(passes['sol']))}")

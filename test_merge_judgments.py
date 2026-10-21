@@ -88,6 +88,18 @@ def main() -> None:
         jp.joinpath("bT.son55.jsonl").write_text(
             json.dumps({**SON_REC, "arxiv": "2501.00002"}) + "\n", encoding="utf-8")
         assert run(root).returncode != 0
+        # calibration mode: no assign passes -> fall back to published assignments, no assign FLAG
+        root.joinpath("patterns/assign_bT.jsonl").unlink()
+        for f in (root / "patterns/assign_passes").iterdir():
+            f.unlink()
+        jp.joinpath("bT.son55.jsonl").write_text(json.dumps(SON_REC) + "\n", encoding="utf-8")
+        root.joinpath("patterns/assignments.jsonl").write_text(json.dumps(SOL_ASG) + "\n", encoding="utf-8")
+        r = run(root)
+        assert r.returncode == 0, r.stderr
+        con = json.loads((root / "judgments/passes/bT.conflicts.json").read_text(encoding="utf-8"))["conflicts"]
+        assert "assign.sub_pattern" not in {c["field"] for c in con}
+        asg = json.loads((root / "patterns/assign_bT.jsonl").read_text(encoding="utf-8"))
+        assert asg["sub_pattern"] == "K01"
     print("test_merge_judgments: all assertions passed")
 
 
