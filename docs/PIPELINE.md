@@ -8,12 +8,15 @@ steps are LLM work, and a script validates their output before anything is publi
 Grok bot ──▶ inbox/YYYY-MM-DD.jsonl
                  │
                  ▼  (D) research/ingest.py         dedup, arXiv metadata → corpus.jsonl, full text, HF code links
-            research/queue/YYYY-MM-DD-HHMM.txt  ──▶ Dots
+            research/queue/YYYY-MM-DD-HHMM.txt  ──▶ local judge (dual blind seats)
                  │
                  ▼  (L) 1 screen        research/SCREEN_RUBRIC.md            → research/screen.jsonl         tier A/B/C
                  ▼  (D) 2 full text     research/fetch_fulltext.py           → research/fulltext/<id>.txt    (A/B, local only)
-                 ▼  (L) 3 assign+judge  docs/agents/JUDGE_BATCH.md           → research/patterns/assign_<B>.jsonl,
-                 │                                                             research/judgments/<B>.jsonl
+                 ▼  (L) 3 assign+judge  docs/agents/JUDGE_BATCH.md ×2 blind  → research/patterns/assign_passes/,
+                 │                       (seat1 gpt-6.1-sol, seat2 claude-     research/judgments/passes/
+                 │                        sonnet-5-5; per docs/agents/JUDGE_LOCAL.md)
+                 ▼  (D) 3b merge+arb    research/merge_judgments.py          → research/patterns/assign_<B>.jsonl,
+                 │                       (FLAGs → one opus-5-5 arbitrator)     research/judgments/<B>.jsonl
                  ▼  (D) 4 merge         research/merge_assign.py             → research/patterns/assignments.jsonl
                  ▼  (D) 5 score         research/score.py check / build      → research/scores.jsonl
                  ▼  (D) 6 board         research/build_board.py              → papers/README.md, README top block
@@ -26,13 +29,13 @@ Grok bot ──▶ inbox/YYYY-MM-DD.jsonl
 | # | Step | Who | Input → output | Validation (must pass) |
 |---|---|---|---|---|
 | 0 | Collect candidates | Grok bot | arXiv / HF Papers / GitHub / X / lab blogs → `inbox/YYYY-MM-DD.jsonl` | `inbox/README.md` format |
-| 1 | Ingest + queue | Grok bot (script) | inbox → `corpus.jsonl`, `fulltext/<id>.txt`, `hf_meta.jsonl`, `queue/<stamp>.txt` | prints the remaining LLM steps |
-| 2 | Screen | Dots | title + abstract → `screen.jsonl` row (tier, kind, platforms, components, confidence) | `python3 research/check_screen.py <file> <ids>` |
-| 3 | Assign | Dots | full text + `research/patterns/taxonomy_view.json` + 1–3 closest `patterns/sub/*.md` → `assign_<B>.jsonl` (`sub_pattern`, `fit: good\|weak`) | sub id exists; `merge_assign.py` |
-| 4 | Judge | Dots | full text + `conditions.json[<main>]` + main/sub cards + `EVIDENCE_SCHEMA.md` + `anti-patterns.md` → `judgments/<B>.jsonl` | `PYTHONPATH=research python3 research/score.py check <file> <ids>` (quotes verified against the full text) |
-| 5 | Score | Dots (script) | judgments → `scores.jsonl` | `score.py build` reports 0 skipped |
-| 6 | Board | Dots (script) | scores → `papers/README.md`, README block | — |
-| 7 | Diagnosis card (optional, top new A papers) | Dots | `cards/_TEMPLATE.md` | `python3 check_cards.py` |
+| 1 | Ingest + queue | local (script) | inbox → `corpus.jsonl`, `fulltext/<id>.txt`, `hf_meta.jsonl`, `queue/<stamp>.txt` | prints the remaining LLM steps |
+| 2 | Screen | local, one seat | title + abstract → `screen.jsonl` row (tier, kind, platforms, components, confidence) | `python3 research/check_screen.py <file> <ids>` |
+| 3 | Assign + judge (×2 blind) | local seats sol + son55 | full text + `research/patterns/taxonomy_view.json` + 1–3 closest `patterns/sub/*.md` → `assign_passes/assign_<B>.<seat>.jsonl`, `judgments/passes/<B>.<seat>.jsonl` | `merge_judgments.py <B>` |
+| 4 | Merge + arbitrate | script + opus-5-5 | two passes → `assign_<B>.jsonl`, `judgments/<B>.jsonl`; disagreements FLAGged, resolved by the arbitrator with verbatim quotes | `PYTHONPATH=research python3 research/score.py check <file> <ids>` (quotes verified against the full text) |
+| 5 | Score | local (script) | judgments → `scores.jsonl` | `score.py build` reports 0 skipped |
+| 6 | Board | local (script) | scores → `papers/README.md`, README block | — |
+| 7 | Diagnosis card (optional, top new A papers) | local | `cards/_TEMPLATE.md` | `python3 check_cards.py` |
 
 Tier C stops after step 2. A paper whose full text has no HTML rendering gets `FULLTEXT: none`: every evidence
 value, S and F is `unclear` and every anti-pattern `no` (see `JUDGE_BATCH.md`).

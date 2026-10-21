@@ -1,7 +1,7 @@
 # 维护规范（给维护 Agent 和人）
 
-> 操作流程见 [PIPELINE.md](PIPELINE.md)；分工与提示词见 [agents/](agents/ROLES.md)（收集：Grok，判定与打分：Dots）；
-> 批量判定的步骤见 [agents/JUDGE_BATCH.md](agents/JUDGE_BATCH.md)。本页只放硬规则。
+> 操作流程见 [PIPELINE.md](PIPELINE.md)；分工与提示词见 [agents/](agents/ROLES.md)（收集：Grok，入库/判定/打分：本地多模型盲评）；
+> 批量判定的步骤见 [agents/JUDGE_BATCH.md](agents/JUDGE_BATCH.md)，本地双席流程见 [agents/JUDGE_LOCAL.md](agents/JUDGE_LOCAL.md)。本页只放硬规则。
 
 本仓库（CUA Radar）计划公开。**一个看起来很自信的错误，比漏收一篇论文的代价大。**
 
@@ -10,8 +10,8 @@
 | 角色 | 负责 | 不负责 |
 |---|---|---|
 | **CI**（GitHub Actions，确定性） | 跑 `test_check_cards.py`、`check_cards.py`，编译检查 `research/*.py` | 任何判断 |
-| **收集 Agent**（Grok） | 找候选论文、写 `inbox/`、跑入库脚本、写 `research/queue/` | 分档、打分、改评判标准 |
-| **打分 Agent**（Dots） | 按 [EVIDENCE.md](EVIDENCE.md) 分 A/B/C 档；归模式并逐项判定；算分、生成榜单；写诊断卡 | 公开发言；运行被收录仓库的代码；改评判标准 |
+| **收集 Agent**（Grok） | 找候选论文、写 `inbox/`，仅此而已 | 入库、分档、打分、跑仓库脚本、改 `inbox/` 以外的文件 |
+| **本地判定**（人 + 双席盲评：`gpt-6.1-sol` + `claude-sonnet-5-5`，分歧仲裁 `claude-opus-5-5`） | 入库、按 [EVIDENCE.md](EVIDENCE.md) 分 A/B/C 档；归模式并双席逐项判定、分歧仲裁；算分、生成榜单；写诊断卡；Reel 海报 | 公开发言；运行被收录仓库的代码；改评判标准 |
 | **人** | 每周抽查 commit；抽查判定的引用；审批模式卡修订；对外沟通 | — |
 
 ## 每次处理队列
@@ -19,12 +19,14 @@
 1. 读取 `research/queue/` 里最早的队列文件。按 [`research/SCREEN_RUBRIC.md`](../research/SCREEN_RUBRIC.md) 分档：
    - **A / B**：进入下一步。
    - **C**：只写进 `research/screen.jsonl`，在 commit 正文里列出 id 和一句排除理由。
-2. 对 A/B 论文抓全文（`research/fetch_fulltext.py`），按 [JUDGE_BATCH.md](agents/JUDGE_BATCH.md) 归模式、写判定记录。
+2. 对 A/B 论文抓全文（`research/fetch_fulltext.py`），按 [JUDGE_LOCAL.md](agents/JUDGE_LOCAL.md) 派两个盲评席位各按
+   [JUDGE_BATCH.md](agents/JUDGE_BATCH.md) 归模式、写判定记录，`merge_judgments.py` 合并；分歧 FLAG 由仲裁席裁决。
 3. `research/score.py check` 必须报告 0 个问题；然后 `score.py build` 和 `build_board.py`。
 4. 运行 `python3 test_check_cards.py && python3 check_cards.py`，全部通过后才能提交。
 5. 如果一篇已收录的论文出了新的 arXiv 版本：重新判定写进新的批次文件（后写的批次生效），不改已发布的批次。
    **改名的同一篇论文不能重复收录。**
-6. commit 正文里必须写：新增了什么、排除了什么、哪些内容没能核实（`unclear` 的来源，如全文缺失）。
+6. commit 正文里必须写：新增了什么、排除了什么、哪些内容没能核实（`unclear` 的来源，如全文缺失）、
+   双席分歧数与仲裁结果。
 7. **没有新的 A/B 类内容时，不要拿旧论文凑数。**
 
 ## 硬规则

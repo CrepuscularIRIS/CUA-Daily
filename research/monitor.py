@@ -1,9 +1,9 @@
 """Health check (cron, every 6 h) of the agent-maintained repo. Read-only: reports, never commits.
 
 Checks every commit since the last run (state in .git/monitor_last):
-  - file ownership by commit prefix (collect/ingest/maintenance = Grok, triage/score/cards/calibration = Dots, reel = local Opus);
+  - file ownership by commit prefix (collect = Grok, ingest/triage/score/cards/calibration/reel = local multi-model judge);
   - no agent touches the judging standards; nobody commits full texts or .env;
-  - Dots edits README.md only inside the board and poster-gallery blocks;
+  - the judge edits README.md only inside the board and poster-gallery blocks;
   - new reel/<id>/ directories pass research/check_reel.py;
   - new judgment files re-verified here (quotes checked against freshly fetched full text) and scores.jsonl reproducible;
   - card checks, latest CI run, open issues, queue backlog.
@@ -23,14 +23,15 @@ from pathlib import Path
 STATE = Path(".git/monitor_last")
 REPO = "CrepuscularIRIS/cua-architecture-radar"
 OWN = {
-    "grok": ["inbox/*", "research/corpus.jsonl", "research/hf_meta.jsonl", "research/queue/*.txt"],
-    "dots": ["research/screen.jsonl", "research/patterns/assign_*.jsonl", "research/patterns/assignments.jsonl",
-             "research/judgments/*", "research/scores.jsonl", "papers/README.md", "README.md", "cards/*",
-             "research/queue/*.txt", "research/queue/done/*"],
-    "local": ["reel/*", "README.md", "papers/README.md"],
+    "grok": ["inbox/*", "inbox/processed/*"],
+    "local": ["inbox/*", "research/corpus.jsonl", "research/hf_meta.jsonl", "research/queue/*.txt",
+              "research/queue/done/*", "research/screen.jsonl", "research/patterns/assign_*.jsonl",
+              "research/patterns/assignments.jsonl", "research/judgments/*", "research/scores.jsonl",
+              "papers/README.md", "README.md", "cards/*", "reel/*"],
 }
 # Human commits must not use these prefixes (use feat:/fix:/docs:/chore:), or they are checked as agent commits.
-ROLE = {"collect": "grok", "ingest": "grok", "maintenance": "grok", "triage": "dots", "score": "dots", "cards": "dots", "calibration": "dots", "reel": "local"}
+ROLE = {"collect": "grok", "ingest": "local", "maintenance": "local", "triage": "local", "score": "local",
+        "cards": "local", "calibration": "local", "reel": "local"}
 PROTECTED = ["docs/EVIDENCE.md", "cards/_TEMPLATE.md", "check_cards.py", ".github/*", "research/*_SPEC.md",
              "research/*_SCHEMA.md", "research/SCREEN_RUBRIC.md", "research/score.py", "research/check_*.py",
              "research/calibrate.py", "research/calibration/*", "research/patterns/taxonomy*.json",
@@ -61,11 +62,11 @@ def commit_issues(sha: str, subject: str) -> list[str]:
     if role:
         out += [f"{sha[:7]} ({role}) touches protected {f}" for f in files if match(f, PROTECTED)]
         out += [f"{sha[:7]} ({role}) outside its files: {f}" for f in files if not match(f, OWN[role]) and not match(f, PROTECTED)]
-        if role == "dots" and "README.md" in files:
+        if role == "local" and "README.md" in files:
             before = sh("git", "show", f"{sha}^:README.md", check=False)
             after = sh("git", "show", f"{sha}:README.md")
             if BOARD.sub("", before) != BOARD.sub("", after):
-                out.append(f"{sha[:7]} (dots) edits README.md outside the board/gallery blocks")
+                out.append(f"{sha[:7]} (local) edits README.md outside the board/gallery blocks")
     return out
 
 

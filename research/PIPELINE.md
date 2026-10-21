@@ -40,9 +40,16 @@ Never re-launch work that is still running.
 - [x] 10 **HF code metadata**: `research/hf_meta.jsonl` (GitHub links for 157 board papers); 231 papers get the Code
   part from some source.
 - [x] Calibration run 1 (blind re-judge of 3 gold papers): PASS — see `research/calibration/README.md`.
-- [x] Bot prompts: `docs/agents/GROK_PROMPT.md` (collect → ingest → maintenance) and `docs/agents/DOTS_PROMPT.md`
-  (Step 0 calibration, catch-up / steady phases, triage → assign + judge → score → board).
+- [x] Bot prompts: `docs/agents/GROK_PROMPT.md` and `docs/agents/DOTS_PROMPT.md` (superseded 2026-10-21, see below).
 - [x] 11 **Publish**: public repo `CrepuscularIRIS/cua-architecture-radar`.
+
+## Done (2026-10-21)
+- [x] 12 **Architecture change: scoring went local, multi-model.** Dots (cloud scorer) never started (0 commits);
+  Grok is collect-only now (`GROK_PROMPT.md` shrunk, ingest/maintenance moved local). Judging is two blind seats
+  (`gpt-6.1-sol` + `claude-sonnet-5-5`, each following `docs/agents/JUDGE_BATCH.md`) merged deterministically by
+  `research/merge_judgments.py` (agreement kept, disagreement FLAGged), with one `claude-opus-5-5` arbitrator per
+  batch resolving FLAGs with verbatim quotes. Procedure: `docs/agents/JUDGE_LOCAL.md`; roles/monitor updated.
+  Motivation: the 568-paper board was single-model judged; board-1 will be re-judged dual-seat (later batch wins).
 
 ## Known issues (open)
 - **Taxonomy ageing.** Weak fits run ~15–20% for 2025 papers but 30–60% for some 2026 batches (bundled multi-stage

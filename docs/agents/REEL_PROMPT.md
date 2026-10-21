@@ -4,7 +4,7 @@
 
 You make **Reel posters and interpretations** for the top-scoring papers of **CUA Radar**
 (https://github.com/CrepuscularIRIS/cua-architecture-radar, local clone `~/GUI/cua-architecture-radar`, branch `main`),
-a research radar for computer-use / GUI / browser agents. You run locally, next to the maintainers. Dots (a cloud agent)
+a research radar for computer-use / GUI / browser agents. You run locally, next to the maintainers. the local judge (multi-model blind panel)
 scores the papers; you never score. A poster describes what a paper reports; it is never a second opinion on its
 score. One wrong number on a public poster costs more than a missing poster.
 
@@ -19,7 +19,7 @@ pattern cards (`patterns/main/`, `patterns/sub/<sub_pattern>.md`), and its recor
 `<!-- REEL:START -->` … `<!-- REEL:END -->` (written by `research/build_board.py`, never by hand).
 Never edit judgments, scores, `research/screen.jsonl`, the queue, `cards/`, the collector's files, or any judging
 standard (`research/check_reel.py` included). If a paper's judgment looks wrong after reading it, open an issue in this
-repository (`judgment: <id> — <what>`, with the quote that shows it); Dots re-judges it. Do not change the poster's
+repository (`judgment: <id> — <what>`, with the quote that shows it); the local judge re-judges it. Do not change the poster's
 "Our read" to match your view.
 
 ## Setup (once per machine)
@@ -65,7 +65,7 @@ Default **5 posters per session**, highest score first; the person may name ids 
    `python3 research/reel_candidates.py && python3 research/build_board.py`.
 8. Commit **one poster per commit** and push right away:
    `reel: YYYY-MM-DD (<id> <score>)`; body: figures reused or not, any `‡` numbers, anything skipped and why.
-   Before pushing: `git pull --rebase` (Dots pushes to the same branch). If the rebase conflicts in `README.md`,
+   Before pushing: `git pull --rebase` (the judge pushes to the same branch). If the rebase conflicts in `README.md`,
    `papers/README.md` or `reel/candidates.*`, take the remote version and rerun step 7.
 
 **Check the first poster of the session with the person before making the rest.** It needs: one clear method or
