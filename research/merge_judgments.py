@@ -9,11 +9,14 @@ Inputs per batch <B>:
   research/judgments/passes/<B>.son55.jsonl    seat 2 (claude-sonnet-5-5)
   research/patterns/assign_passes/assign_<B>.{sol,son55}.jsonl
 
-Merge rules (deterministic; disagreements become FLAGs for the opus-5-5 arbitrator):
+Merge rules (deterministic; disagreements that change the score become FLAGs for the opus-5-5 arbitrator,
+score-equivalent ones are settled deterministically without arbitration):
   - evidence / evidence_level / success / failure: equal values -> keep (quote from seat 1 if it is in the
-    full text, else seat 2); differ -> placeholder `unclear`, FLAG.
+    full text, else seat 2); `no`-vs-`unclear` -> `unclear` (both score 0, no claim made); any other
+    disagreement -> placeholder `unclear`, FLAG.
   - anti: value yes|no only -> placeholder on conflict is `no` (no penalty without agreement), FLAG;
-    mitigated conflict -> `unclear`, FLAG.
+    mitigated conflict FLAGs only when the agreed value is `yes` (otherwise mitigated never affects the
+    score; seat 1's value is kept silently).
   - version_read conflict -> FLAG (placeholder seat 1). title_zh / one_line / one_line_zh: seat 1, no FLAG.
   - assignment: same sub_pattern -> keep (fit = weak if either seat says weak); differ -> FLAG. If the
     arbitrator switches a paper to seat 2's sub_pattern, that paper's record is re-based on seat 2's pass
@@ -56,8 +59,8 @@ def load(root: Path, B: str):
     for s in SEATS:
         if set(passes[s]) != set(passes["sol"]) and s != "sol":
             sys.exit(f"paper sets differ between seats: {sorted(set(passes[s]) ^ set(passes['sol']))}")
-        if set(assigns[s]) != set(passes["sol"]):
-            sys.exit(f"assign pass {s} does not cover the same papers as the judgments")
+        if not set(passes["sol"]) <= set(assigns[s]):
+            sys.exit(f"assign pass {s} misses papers: {sorted(set(passes['sol']) - set(assigns[s]))}")
     return passes, assigns
 
 
@@ -107,15 +110,18 @@ def _merge_item(aid: str, label: str, ia: dict | None, ib: dict | None, text: st
                               "sol": {"value": ia.get("value"), "quote": ia.get("quote")},
                               "son55": {"value": ib.get("value"), "quote": ib.get("quote")}})
         elif ia.get("mitigated") != ib.get("mitigated"):
-            item["mitigated"] = "unclear"
-            conflicts.append({"arxiv": aid, "field": f"{label}.mitigated",
-                              "sol": {"value": ia.get("mitigated")}, "son55": {"value": ib.get("mitigated")}})
+            if ia.get("value") == "yes":  # only then does mitigated change the score
+                item["mitigated"] = "unclear"
+                conflicts.append({"arxiv": aid, "field": f"{label}.mitigated",
+                                  "sol": {"value": ia.get("mitigated")}, "son55": {"value": ib.get("mitigated")}})
         return item
     va, vb = ia.get("value"), ib.get("value")
     item = {"value": va, "quote": ia.get("quote", "")}
     if va == vb:
         if text and item["quote"] and squash(item["quote"]) not in squash(text):
             item["quote"] = ib.get("quote", "")  # seat 1's quote is not verbatim; try seat 2's
+    elif {va, vb} <= {"no", "unclear"}:  # score-equivalent: make no claim
+        item = {"value": "unclear", "quote": ""}
     else:
         item = {"value": "unclear", "quote": ""}
         conflicts.append({"arxiv": aid, "field": label,

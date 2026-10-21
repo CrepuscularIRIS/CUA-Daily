@@ -58,11 +58,11 @@ def main() -> None:
         # conflict -> unclear placeholder; text fields from seat 1
         assert rec["success"]["S1"]["value"] == "unclear"
         assert rec["one_line"] == "a paper" and rec["version_read"] == "v1"
-        # anti value conflict -> 'no'; mitigated conflict -> 'unclear'
+        # anti value conflict -> 'no'; mitigated conflict on a non-present anti is silent (seat 1's value)
         assert rec["anti"]["AP2"]["value"] == "no" and rec["anti"]["AP1"]["mitigated"] == "unclear"
         con = json.loads((root / "judgments/passes/bT.conflicts.json").read_text(encoding="utf-8"))["conflicts"]
         fields = {c["field"] for c in con}
-        assert fields == {"success.S1", "anti.AP1.mitigated", "anti.AP2.value", "version_read", "assign.sub_pattern"}, fields
+        assert fields == {"success.S1", "anti.AP2.value", "version_read", "assign.sub_pattern"}, fields
         # assignment merge kept sol's sub_pattern
         asg = json.loads((root / "patterns/assign_bT.jsonl").read_text(encoding="utf-8"))
         assert asg["sub_pattern"] == "K01"
