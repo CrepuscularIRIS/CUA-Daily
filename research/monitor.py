@@ -26,6 +26,7 @@ OWN = {
     "grok": ["inbox/*", "inbox/processed/*"],
     "local": ["inbox/*", "research/corpus.jsonl", "research/hf_meta.jsonl", "research/queue/*.txt",
               "research/queue/done/*", "research/screen.jsonl", "research/patterns/assign_*.jsonl",
+              "research/patterns/assign_passes/*", "research/patterns/reassign_proposals.jsonl",
               "research/patterns/assignments.jsonl", "research/judgments/*", "research/scores.jsonl",
               "papers/README.md", "README.md", "cards/*", "reel/*"],
 }

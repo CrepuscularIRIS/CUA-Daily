@@ -212,6 +212,10 @@ def apply_arb(root: Path, B: str) -> None:
         if q and text and squash(q) not in squash(text):
             skipped.append((aid, field, "quote not in fulltext")); continue
         parts = field.split(".")
+        if field == "version_read":
+            rec["version_read"] = v
+            done.add((aid, field))
+            continue
         if parts[0] == "evidence_level":
             item = rec["evidence_level"]
         elif len(parts) == 2 and parts[0] in DICT_SECTIONS:

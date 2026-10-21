@@ -1,0 +1,10 @@
+{"arxiv": "2501.04575", "sub_pattern": "C21", "fit": "good", "fit_note": "Stage-2 SFT on MLLM-synthesised hierarchical and expectation-reflection reasoning for a screenshot policy; matches C21."}
+{"arxiv": "2501.10893", "sub_pattern": "K14", "fit": "good", "fit_note": "Backward construction relabels sub-trajectories with summarised instructions; used for ICL retrieval and SFT."}
+{"arxiv": "2501.11733", "sub_pattern": "C17", "fit": "good", "fit_note": "Manager plans subgoals for four worker agents; Tips/Shortcuts memory (C19) is secondary."}
+{"arxiv": "2501.12326", "sub_pattern": "K25", "fit": "weak", "fit_note": "Native-agent recipe: unified actions, system-2 reasoning, reflective online traces, DPO; no single sub-pattern covers it."}
+{"arxiv": "2501.13896", "sub_pattern": "K23", "fit": "weak", "fit_note": "Novelty is the Q-ICRL exploration policy; K23 only covers the grounding-data annotation and fine-tuning half."}
+{"arxiv": "2501.16609", "sub_pattern": "R02", "fit": "weak", "fit_note": "Human decides when to pause or take over; agent does not decide when to ask. R02 is the closest card."}
+{"arxiv": "2502.02955", "sub_pattern": "K14", "fit": "weak", "fit_note": "GPT-4V relabels random-walk GUI flows into reach/operate tasks; DPO with 4-level reward is not covered."}
+{"arxiv": "2502.02982", "sub_pattern": "K14", "fit": "weak", "fit_note": "Infers instructions retroactively from user trajectories; federated aggregation has no sub-pattern."}
+{"arxiv": "2502.06395", "sub_pattern": "K20", "fit": "good", "fit_note": "SFT then iterative filtered BC on environment-rewarded AndroidWorld rollouts."}
+{"arxiv": "2502.06776", "sub_pattern": "K15", "fit": "good", "fit_note": "Task proposer refines harder tasks from exploratory trajectories; LLM judge filters rollouts."}

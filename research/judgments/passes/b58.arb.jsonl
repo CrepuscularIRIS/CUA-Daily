@@ -1,0 +1,56 @@
+{"arxiv": "2501.04575", "field": "evidence.cost_reported", "value": "partial", "quote": "In stage 1, we sample 1M samples in total as illustrated in Table 1 . In stage 2, we synthesized 45K samples based on trajectories from datasets shown in Table 2 ."}
+{"arxiv": "2501.04575", "field": "evidence.validator_check", "value": "na", "quote": null}
+{"arxiv": "2501.04575", "field": "failure.F4", "value": "yes", "quote": "We continual supervised fine-tune Qwen2-VL-2B ( Bai et al., 2023c ) ."}
+{"arxiv": "2501.04575", "field": "anti.AP10.value", "value": "yes", "quote": "we leverage more capable MLLMs (e.g. Qwen2-VL-72B) to generate structured reasoning processes based on existing interaction trajectories."}
+{"arxiv": "2501.04575", "field": "anti.AP7.value", "value": "no", "quote": null}
+{"arxiv": "2501.04575", "field": "anti.AP8.value", "value": "yes", "quote": "InfiGUIAgent-2B achieves an overall success rate of 0.09, outperforming open-source models of similar size, such as ShowUI-2B ( Lin et al., 2024 ) (0.07)"}
+{"arxiv": "2501.04575", "field": "anti.AP9.value", "value": "yes", "quote": "achieves competitive performance on several GUI benchmarks, highlighting the impact of native reasoning skills in enhancing GUI interaction for automation tasks."}
+{"arxiv": "2501.10893", "field": "evidence.held_out_env", "value": "partial", "quote": "We synthesize one separate set of environment-specific data for each evaluated benchmark."}
+{"arxiv": "2501.10893", "field": "evidence.strong_baselines", "value": "yes", "quote": "Data distill: We follow the same pipeline to synthesize data in Algorithm 1 except backward construction (replace lines 15-22 with D.append(I,T) ), and follow Algorithm 2 during the evaluation."}
+{"arxiv": "2501.10893", "field": "success.S1", "value": "yes", "quote": "The results presented in Table 3 reveal that Learn-by-interact substantially surpasses both the baseline and data distillation, suggesting its capacity to generate high-quality training data that enables language models to learn and adapt efficiently."}
+{"arxiv": "2501.10893", "field": "success.S3", "value": "no", "quote": null}
+{"arxiv": "2501.11733", "field": "version_read", "value": "v2", "quote": null}
+{"arxiv": "2501.11733", "field": "evidence.online_eval", "value": "yes", "quote": "We perform a dynamic evaluation, evaluating the models in real-time and on actual devices—following previous work"}
+{"arxiv": "2501.11733", "field": "success.S3", "value": "yes", "quote": "At each step, the Manager checks the input query I , the current screenshot s_{t} , the previous overall plan W_{P}^{t-1} , the previous subgoal W_{S}^{t-1} , the progress status W_{G}^{t-1}"}
+{"arxiv": "2501.11733", "field": "failure.F4", "value": "yes", "quote": "This comparison particularly highlights the effectiveness of the hierarchy in our multi-agent framework."}
+{"arxiv": "2501.11733", "field": "anti.AP17.value", "value": "no", "quote": null}
+{"arxiv": "2501.11733", "field": "anti.AP9.value", "value": "yes", "quote": "Mobile-Agent-E outperforms the previous multi-agent state-of-the-art (SOTA) model ( Wang et al., 2024a ) by 22.1% in the Satisfaction Score. This comparison particularly highlights the effectiveness of the hierarchy in our multi-agent framework."}
+{"arxiv": "2501.12326", "field": "evidence.budget_matched", "value": "yes", "quote": "Notably, in the OSWorld benchmark, UI-TARS achieves scores of 24.6 with 50 steps and 22.7 with 15 steps, outperforming Claude (22.0 and 14.9 respectively)."}
+{"arxiv": "2501.12326", "field": "success.S1", "value": "yes", "quote": "We evaluate both UI-TARS-SFT and UI-TARS-DPO for OSWorld in § 5.4 , as this benchmark benefits most from the iterative improvement from the DPO phase."}
+{"arxiv": "2501.12326", "field": "success.S3", "value": "yes", "quote": "Through iterative training and reflection tuning, UI-TARS continuously learns from its mistakes and adapts to unforeseen situations with minimal human intervention."}
+{"arxiv": "2501.13896", "field": "version_read", "value": "v2", "quote": null}
+{"arxiv": "2501.13896", "field": "evidence.cost_reported", "value": "partial", "quote": "We employ the GUI-Bee agent to explore the five environments in NovelScreenSpot, conducting up to 400 exploration steps per environment with three candidate actions sampled at each step."}
+{"arxiv": "2501.13896", "field": "evidence.held_out_env", "value": "partial", "quote": "We employ the GUI-Bee agent to explore the five environments in NovelScreenSpot, conducting up to 400 exploration steps per environment with three candidate actions sampled at each step."}
+{"arxiv": "2501.13896", "field": "evidence.online_eval", "value": "partial", "quote": "The predicted point is considered correct if it is inside the ground truth-bounding box of the target element, and the model performance is evaluated using the accuracy of predicted points."}
+{"arxiv": "2501.13896", "field": "evidence.strong_baselines", "value": "partial", "quote": "The models are either continuously fine-tuned using exploration data collected by the GUI-Bee agent or, as a baseline, training data from Multimodal-Mind2Web Zheng et al. (2024b) ."}
+{"arxiv": "2501.13896", "field": "success.S3", "value": "unclear", "quote": null}
+{"arxiv": "2501.13896", "field": "success.S5", "value": "no", "quote": null}
+{"arxiv": "2501.13896", "field": "failure.F4", "value": "unclear", "quote": null}
+{"arxiv": "2501.13896", "field": "anti.AP8.value", "value": "yes", "quote": "Additionally, we introduce NovelScreenSpot, a benchmark for testing how well the data can help align GUI action grounding models to novel environments"}
+{"arxiv": "2501.16609", "field": "version_read", "value": "v4", "quote": null}
+{"arxiv": "2501.16609", "field": "evidence.component_ablation", "value": "yes", "quote": "We show CowPilot in collaborative mode achieves higher success rates over autonomous agents by 47\\% , and even human-only settings by 6\\% ."}
+{"arxiv": "2501.16609", "field": "evidence.strong_baselines", "value": "partial", "quote": "We evaluate under two settings: fully autonomous and copilot mode, using gpt-4o-2024-08-06 and Llama-3.1-8B-Instruct as backbones for the LLM agent"}
+{"arxiv": "2501.16609", "field": "anti.AP22.value", "value": "no", "quote": null}
+{"arxiv": "2502.02955", "field": "evidence.cost_reported", "value": "partial", "quote": "After the above steps, we have a total of 53,832 GUI flows and 259,742 action steps, approximately 4.8 steps per task."}
+{"arxiv": "2502.02955", "field": "evidence.online_eval", "value": "partial", "quote": "We use two objective metrics to evaluate the position and text of the generated action. IoU Acc evaluates the bounding box accuracy. Text Acc evaluates the text accuracy."}
+{"arxiv": "2502.02955", "field": "evidence.strong_baselines", "value": "yes", "quote": "ReachAgent improves the IoU Accuracy, and Text Accuracy by +7.12% , +7.69% on step-level and +4.72% and +4.63% on task-level compared to fine-tuned MobileVLM."}
+{"arxiv": "2502.02955", "field": "success.S3", "value": "no", "quote": null}
+{"arxiv": "2502.02955", "field": "anti.AP14.value", "value": "yes", "quote": "With the action alignment mechanism, we can extract all the candidate actions in the GUI page as the candidate action space"}
+{"arxiv": "2502.02982", "field": "version_read", "value": "v2", "quote": null}
+{"arxiv": "2502.02982", "field": "evidence.held_out_env", "value": "yes", "quote": "Despite being trained solely on the AndroidControl dataset, the models are able to successfully complete online tasks in a previously unseen environment."}
+{"arxiv": "2502.02982", "field": "evidence.validator_check", "value": "na", "quote": null}
+{"arxiv": "2502.02982", "field": "success.S2", "value": "no", "quote": null}
+{"arxiv": "2502.02982", "field": "failure.F1", "value": "yes", "quote": "We select totally three offline agent benchmarks: AndroidControl [ 9 ] , Android in the Wild (AitW) [ 27 ] and GUI Odyssey [ 7 ] . These datasets are collected by crowdsourcing and serve well as a simulation of real-world mobile data."}
+{"arxiv": "2502.02982", "field": "anti.AP5.value", "value": "yes", "quote": "We select totally three offline agent benchmarks: AndroidControl [ 9 ] , Android in the Wild (AitW) [ 27 ] and GUI Odyssey [ 7 ] . These datasets are collected by crowdsourcing and serve well as a simulation of real-world mobile data."}
+{"arxiv": "2502.02982", "field": "anti.AP7.mitigated", "value": "yes", "quote": "Online Benchmark. We further evaluate our approach on the online benchmark AndroidWorld."}
+{"arxiv": "2502.02982", "field": "evidence_level", "value": "transfer", "quote": "Despite being trained solely on the AndroidControl dataset, the models are able to successfully complete online tasks in a previously unseen environment."}
+{"arxiv": "2502.06395", "field": "evidence.strong_baselines", "value": "yes", "quote": "InfiGUIAgent* 2B - 25.0 0.0 0.0 9.0 AppVLM-base 3B 0.91 21.9 2.4 2.1 11.4 AppVLM 3B 0.91 57.9 27.4 8.3 37.8"}
+{"arxiv": "2502.06395", "field": "failure.F4", "value": "yes", "quote": "We use the Paligemma-3B-896 ( Beyer et al., 2024 ) as our base model for several reasons."}
+{"arxiv": "2502.06776", "field": "version_read", "value": "v2", "quote": null}
+{"arxiv": "2502.06776", "field": "evidence.held_out_env", "value": "unclear", "quote": null}
+{"arxiv": "2502.06776", "field": "evidence.online_eval", "value": "yes", "quote": "Our top agent reaches a success rate of 56.9%, outperforming the data collection policy Qwen 3 235B, a 235 times larger Llama 4 Maverick, and reaching 94.7% of the performance of Gemini 2.5 Flash."}
+{"arxiv": "2502.06776", "field": "success.S3", "value": "no", "quote": null}
+{"arxiv": "2502.06776", "field": "failure.F6", "value": "yes", "quote": "Up to 89% of tasks are achievable, and verifiable according to the study, which suggests the pipeline is producing reliable tasks."}
+{"arxiv": "2502.06776", "field": "anti.AP4.value", "value": "yes", "quote": "Driven by necessity, this environment must be evaluated by a model that judges whether an agent’s solution is correct, in the latest context."}
+{"arxiv": "2502.06776", "field": "anti.AP8.value", "value": "yes", "quote": "Our top checkpoint for Qwen 3 1.7B has a success rate of 56.9% on our test environment"}
+{"arxiv": "2502.06776", "field": "evidence_level", "value": "online", "quote": "Our top agent reaches a success rate of 56.9%, outperforming the data collection policy Qwen 3 235B, a 235 times larger Llama 4 Maverick, and reaching 94.7% of the performance of Gemini 2.5 Flash."}

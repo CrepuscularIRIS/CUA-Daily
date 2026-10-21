@@ -1,0 +1,10 @@
+{"arxiv": "2501.04575", "sub_pattern": "C21", "fit": "good", "fit_note": "Synthesized hierarchical and reflection rationales are the central second-stage supervision."}
+{"arxiv": "2501.10893", "sub_pattern": "K14", "fit": "good", "fit_note": "Backward construction relabels executed subtrajectories for environment-specific training and retrieval."}
+{"arxiv": "2501.11733", "sub_pattern": "C17", "fit": "good", "fit_note": "An explicit manager separates high-level subgoals from perception and action execution."}
+{"arxiv": "2501.12326", "sub_pattern": "K25", "fit": "weak", "fit_note": "Reasoning is one part of a broader perception, action-modeling, and iterative-training recipe."}
+{"arxiv": "2501.13896", "sub_pattern": "K23", "fit": "good", "fit_note": "Exploration yields structured element-grounding pairs for environment-specific grounder alignment."}
+{"arxiv": "2501.16609", "sub_pattern": "R02", "fit": "good", "fit_note": "Suggest-then-execute actions support repeated human override and resumption with effort metrics."}
+{"arxiv": "2502.02955", "sub_pattern": "K14", "fit": "weak", "fit_note": "Hindsight flow labeling fits, but reaching-operation decomposition and preference training are equally central."}
+{"arxiv": "2502.02982", "sub_pattern": "K14", "fit": "weak", "fit_note": "Hindsight annotations fit partially; human-sourced data and federated aggregation dominate rather than autonomous exploration."}
+{"arxiv": "2502.06395", "sub_pattern": "K20", "fit": "good", "fit_note": "Offline initialization followed by iterative successful-rollout rejection-sampling training is the core adaptation loop."}
+{"arxiv": "2502.06776", "sub_pattern": "K15", "fit": "good", "fit_note": "A feedback-conditioned task proposer refines internet-scale exploratory tasks before judge-filtered training."}
