@@ -34,7 +34,7 @@ ROLE = {"collect": "grok", "ingest": "local", "maintenance": "local", "triage": 
         "cards": "local", "calibration": "local", "reel": "local"}
 PROTECTED = ["docs/EVIDENCE.md", "cards/_TEMPLATE.md", "check_cards.py", ".github/*", "research/*_SPEC.md",
              "research/*_SCHEMA.md", "research/SCREEN_RUBRIC.md", "research/score.py", "research/check_*.py",
-             "research/calibrate.py", "research/calibration/*", "research/patterns/taxonomy*.json",
+             "research/calibrate.py", "research/calibration/gold.jsonl", "research/patterns/taxonomy*.json",
              "research/patterns/conditions.json", "patterns/*", "research/net.py"]
 FORBIDDEN = ["research/fulltext/*", "research/trial/fulltext*", "research/paper_text/*", "*.env", ".env", "*.pem", "*.key",
              "settings.json", "*.pptx", "*.mp3", "*.mp4", "*.docx", "*/poster.html"]

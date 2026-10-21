@@ -1,0 +1,11 @@
+{"arxiv": "2509.01720", "field": "evidence.budget_matched", "value": "unclear", "quote": ""}
+{"arxiv": "2509.01720", "field": "success.S2", "value": "yes", "quote": "The core innovation is enabling aggressive learning from successful experiences while applying conservative regularisation to unsuccessful ones. Combined with Successful Transition Replay (STR), SoLS achieves a 51.3% overall success rate on AndroidWorld"}
+{"arxiv": "2509.01720", "field": "anti.AP14.value", "value": "no", "quote": ""}
+{"arxiv": "2509.01720", "field": "anti.AP18.value", "value": "no", "quote": ""}
+{"arxiv": "2509.01720", "field": "anti.AP5.value", "value": "yes", "quote": "In other categories, particularly Files, Maps, and Markor, the increase in success rate is very large, as the agent learns to solve tasks from these categories during exploration and reinforces them throughout training, especially with the help of STR."}
+{"arxiv": "2604.13318", "field": "evidence.budget_matched", "value": "yes", "quote": "All methods use a 30 interaction step budget."}
+{"arxiv": "2604.13318", "field": "evidence.cost_reported", "value": "yes", "quote": "For step efficiency, Grounded mode achieves 9.3 average steps with higher success rate, fewer steps than Vanilla."}
+{"arxiv": "2604.13318", "field": "evidence.held_out_env", "value": "yes", "quote": "We test it with only WebArena skills (Guided + WA) and it reaches 85.1% without target-site programs, a 10.7 point gain over MAP on WebVoyager"}
+{"arxiv": "2604.13318", "field": "anti.AP4.value", "value": "no", "quote": ""}
+{"arxiv": "2609.02149", "field": "evidence.strong_baselines", "value": "no", "quote": "a baseline setting, where the GUI agent directly performs each task based only on the user instruction"}
+{"arxiv": "2609.02149", "field": "failure.F2", "value": "no", "quote": "For coordinate actions, such as left click, double click, and right click, the performed action and its screen coordinate are already known from observation."}
