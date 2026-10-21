@@ -1,0 +1,10 @@
+{"arxiv": "2503.00401", "sub_pattern": "C04", "fit": "good", "fit_note": "Box-to-query pretraining task refined from harvested UIBERT grounding pairs before mobile SFT"}
+{"arxiv": "2503.01861", "sub_pattern": "C17", "fit": "good", "fit_note": "Plan controller decomposes tasks into sub-tasks for browser and API sub-agents"}
+{"arxiv": "2503.02268", "sub_pattern": "C19", "fit": "good", "fit_note": "Evolves shortcut high-level actions from chain-structured execution memory of the agent's own runs"}
+{"arxiv": "2503.02950", "sub_pattern": "C10", "fit": "weak", "fit_note": "Open-source web-agent suite; decoupled NL action generation and prompted grounding, no evaluation"}
+{"arxiv": "2503.03196", "sub_pattern": "C04", "fit": "good", "fit_note": "Continual pretraining on harvested DOM/icon text2bbox, bbox2text and function grounding data plus block-wise coordinates"}
+{"arxiv": "2503.03743", "sub_pattern": "C17", "fit": "good", "fit_note": "Plan agent decomposes tasks into constrained human-derived basis subtasks executed by an action agent"}
+{"arxiv": "2503.04730", "sub_pattern": "C04", "fit": "good", "fit_note": "Continual-pretrains Phi-3-vision on detector-derived, GPT-4o-aligned Windows element-box pairs"}
+{"arxiv": "2503.06470", "sub_pattern": "K25", "fit": "good", "fit_note": "Grounding reasoning chains (summary, focused analysis) synthesised and kept when the prediction hits; fast/slow mixture"}
+{"arxiv": "2503.09263", "sub_pattern": "C17", "fit": "good", "fit_note": "Planner and task scheduler dispatch subtasks to a pool of specialised decision agents with a reviewer"}
+{"arxiv": "2503.09572", "sub_pattern": "C17", "fit": "good", "fit_note": "Planner-executor split with dynamic replanning; planner trained on trajectory-grounded synthetic plans"}

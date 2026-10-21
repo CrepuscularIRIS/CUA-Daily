@@ -1,0 +1,10 @@
+{"arxiv": "2503.00401", "sub_pattern": "C04", "fit": "good", "fit_note": "Box-to-intended-query pretraining task refined from harvested grounding pairs; fits harvested-pair continual pretraining"}
+{"arxiv": "2503.01861", "sub_pattern": "C17", "fit": "good", "fit_note": "Plan controller decomposes tasks into sub-tasks run by browser and API sub-agents"}
+{"arxiv": "2503.02268", "sub_pattern": "C19", "fit": "good", "fit_note": "Shortcut high-level actions evolved from chain-structured memory of own execution history"}
+{"arxiv": "2503.02950", "sub_pattern": "C10", "fit": "weak", "fit_note": "Toolkit with decoupled action generation and prompted grounding; no evaluation, planning/memory/tree search also included"}
+{"arxiv": "2503.03196", "sub_pattern": "C04", "fit": "good", "fit_note": "Continual pretraining on harvested DOM text2bbox/bbox2text data with block-wise coordinates"}
+{"arxiv": "2503.03743", "sub_pattern": "C17", "fit": "good", "fit_note": "Plan agent decomposes into constrained human-derived basis subtasks for action agent"}
+{"arxiv": "2503.04730", "sub_pattern": "C04", "fit": "good", "fit_note": "Continual pretraining on detector boxes aligned with GPT-4o descriptions for Windows grounding"}
+{"arxiv": "2503.06470", "sub_pattern": "K25", "fit": "good", "fit_note": "Grounding reasoning chains synthesised and kept only when prediction hits; fast/slow mixture"}
+{"arxiv": "2503.09263", "sub_pattern": "C17", "fit": "good", "fit_note": "Planner and scheduler dispatch subtasks to a pool of specialised decision agents with reviewer"}
+{"arxiv": "2503.09572", "sub_pattern": "C17", "fit": "good", "fit_note": "Planner-executor split with per-step replanning; planner trained on trajectory-grounded plans"}
