@@ -64,7 +64,11 @@ campaign takes `research/board1_ids.txt` until every board paper has a dual-seat
    > research/judgments/ids_<B>.txt). Write judgment lines to research/judgments/passes/<B>.<seat>.jsonl and
    > assignment lines to research/patterns/assign_passes/assign_<B>.<seat>.jsonl. Do not read any other file
    > under research/judgments/passes/ or research/patterns/assign_passes/. Never touch git or files of other
-   > batches. Final report ≤4 lines (papers judged · weak fits · problems).
+   > batches. For a re-judged paper do not read its published record (b00–b57, scores.jsonl, papers/README.md).
+   > **Do not run merge_assign.py or score.py check** — they validate against the published assignments, and
+   > your blind assignment may legitimately differ; the orchestrator checks after merging both seats. Self-verify
+   > only: valid JSONL, one line per paper, every quote a verbatim contiguous substring of the full text, quotes
+   > ≤45 words, one_line ≤25 English words. Final report ≤4 lines (papers judged · weak fits · problems).
 3. `python3 research/merge_judgments.py <B>` → merged `research/judgments/<B>.jsonl`,
    `research/patterns/assign_<B>.jsonl`, and `research/judgments/passes/<B>.conflicts.json` (the FLAGs).
 4. If the conflicts file is non-empty: dispatch **one arbitrator** (`model=fable`) with this prompt:
