@@ -15,3 +15,22 @@
 | 2503.19537 | P3 | capability / F2,F4 | agent_initiated_user_interaction | 负结果:12 种 prompting 配置问人 precision 仅 0.08–0.19 | 失误矩阵+低精确率散点 | ready |
 
 *2307.13854 修订记录见 batches/l19-correction.jsonl;其余修订:l20(2404.06474 单位)、l21(2505.15810 边界)、l22(2409.07429 口径)、l23(2503.19537 范围)。选择过程与 43 篇排除理由见 research/scoring/runs/gui-pc11-20261022-01/selection.md;分数体系为问题档位(P0–P3),非审稿分。
+
+---
+
+# 第二期 — gui-pc11-20261022-01 全量(2026-10-22 · 8 篇)
+
+基于全量 L2(1279/1331 篇过 L2)后的 584 篇候选池选题。本期补强 F0/F3/F4/F5,未入 F2(首期已覆盖 5 篇)。版式骨架与首期及互相均不相同。
+
+| paper | 档位 | q3 / 族 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|
+| 2606.12666 CAPED | P3 | capability / F4,F0 | 截图上传前遮蔽隐私内容,泄漏率降 3 倍效用不降 | 泄漏-效用对照柱 | ready |
+| 2504.13936 ViMo | P3 | capability / F0,F2 | 生成的未来屏幕能实际用于选动作,在线 +7.76pp | 生成-选择闭环 | ready |
+| 2602.12276 CATTS | P3 | judgment / F5,F2 | 统一加候选采样不保证更好(22.6%→15.1%) | 成本-收益反单调曲线 | ready |
+| 2310.03720 SteP | P3 | judgment / F5,F0 | 同示例数下策略栈(33%)胜扁平 prompt(20-23%) | 栈式分层结构 | ready |
+| 2601.22781 | P3 | judgment / F5 | 合成数据不是越难越好,α=0.5 最优(+4.3pp) | α 参数倒 U 曲线 | ready |
+| 2311.18751 | P3 | judgment / F3 | 基本任务成功≠组合完成(54.8%→31%) | 组合断裂链 | ready |
+| 2312.08914 CogAgent | P3 | judgment / F0,F1 | 同数据、计 FLOPs,架构净贡献约 4.5% | 双因子归因天平 | ready |
+| 2609.02154 MFA | P3 | judgment / F0,F4 | MFA 完成不再能证明人在场(10/10) | 认证链攻破路径 | ready |
+
+选择过程与 28 篇排除理由见 [selection2.md](../research/scoring/runs/gui-pc11-20261022-01/selection2.md)。两期合计 17 篇,版式 17 种互不相同。

@@ -1,0 +1,37 @@
+paper_id	tier	q3	families	card	title
+2606.12666	P3	capability	F4,F0		CAPED: Context-Aware Privacy Exposure Defense for Mobile GUI Agents
+2609.02154	P3	judgment	F0,F4		WiP: Characterizing and Defending Against Mobile-Agent-Driven MFA Automation
+2404.02475	P3	capability	F3,F4	main/agent_initiated_user_interaction	Prompt2Task: Automating UI Tasks on Smartphones from Textual Prompts
+2602.11750	P3	judgment	F4,F0	main/agent_initiated_user_interaction	AmbiBench: Benchmarking Mobile GUI Agents Beyond One-Shot Instructions in the Wild
+2303.17491	P3	capability	F0,F1	main/agent_loop_context_control	Language Models can Solve Computer Tasks
+2310.03720	P3	judgment	F5,F0	main/agent_loop_context_control	SteP: Stacked LLM Policies for Web Actions
+2605.06761	P3	capability	F0,F4	main/calibrate_simulator_to_real	Weblica: Scalable and Reproducible Training Environments for Visual Web Agents
+2407.09295	P3	capability	F4,F0	main/environmental_injection_attacks	Systematic Categorization, Construction and Evaluation of New Attacks against Multi-modal Mobile GUI Agents
+2408.02544	P3	judgment	F4,F0	main/environmental_injection_attacks	Caution for the Environment: Multimodal LLM Agents are Susceptible to Environmental Distractions
+2306.07863	P3	capability	F3,F5	main/experience_memory_retrieval	Synapse: Trajectory-as-Exemplar Prompting with Memory for Computer Control
+2509.25140	P3	judgment	F3,F2	main/experience_memory_retrieval	ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory
+2409.14337	P3	capability	F0	main/exploration_driven_task_synthesis	MobileViews: A Million-scale and Diverse Mobile GUI Dataset
+2601.22781	P3	judgment	F5	main/exploration_driven_task_synthesis	Learning with Challenges: Adaptive Difficulty-Aware Data Generation for Mobile GUI Agent Training
+2312.08914	P3	judgment	F0,F1	main/high_resolution_target_localisation	CogAgent: A Visual Language Model for GUI Agents
+2401.10935	P3	capability	F4,F0	main/high_resolution_target_localisation	SeeClick: Harnessing GUI Grounding for Advanced Visual GUI Agents
+2410.09006	P3	judgment	F2	main/injection_defense_isolation	From Interaction to Impact: Towards Safer AI Agents Through Understanding and Evaluating Mobile UI Operation Impacts
+2503.09241	P3	capability	F4	main/injection_defense_isolation	In-Context Defense in Computer Agents: An Empirical Study
+2412.09362	P3	judgment	F1,F3	main/learn_and_train_in_gui_world_model	Falcon-UI: Understanding GUI Before Following User Instructions
+2504.13936	P3	capability	F0,F2	main/learn_and_train_in_gui_world_model	ViMo: A Generative Visual GUI World Model for App Agents
+2406.13264	P3	judgment	F2	main/learned_outcome_and_process_judges	WONDERBREAD: A Benchmark for Evaluating Multimodal Foundation Models on Business Process Management Tasks
+2505.21496	P3	capability	F2,F5	main/learned_outcome_and_process_judges	UI-Genie: A Self-Improving Approach for Iteratively Boosting MLLM-based Mobile GUI Agents
+2406.13719	P3	capability	F0	main/mine_human_screen_videos	GUI Action Narrator: Where and When Did That Action Take Place?
+2105.13231	P3	capability	F0,F3	main/online_evaluation_methodology	AndroidEnv: A Reinforcement Learning Platform for Android
+2311.18751	P3	judgment	F3	main/online_evaluation_methodology	Exposing Limitations of Language Model Agents in Sequential-Task Compositions on the Web
+1808.09132	P3	capability	F0	main/planner_grounder_interface	Mapping Natural Language Commands to Web Elements
+2202.02312	P3	judgment	F2,F3	main/planner_grounder_interface	A Dataset for Interactive Vision-Language Navigation with Unknown Command Feasibility
+2508.05615	P3	capability	F2,F4	main/rule_reward_single_step_rl	Test-Time Reinforcement Learning for GUI Grounding via Region Consistency
+2606.05597	P3	judgment	F1,F5	main/rule_reward_single_step_rl	AsyncWebRL: Efficient Asynchronous Reinforcement Learning for Multi-Step Visual Web Agents
+2502.15760	P3	capability	F0	main/simulated_lookahead_selection	Digi-Q: Learning Q-Value Functions for Training Device-Control Agents
+2602.12276	P3	judgment	F5,F2	main/simulated_lookahead_selection	Agentic Test-Time Scaling for WebAgents
+2010.04295	P3	capability	F0	main/structured_screen_observation	Widget Captioning: Generating Natural Language Description for Mobile User Interface Elements
+2201.04100	P3	judgment	F2	main/structured_screen_observation	Learning to Denoise Raw Mobile UI Layouts for Improving Datasets at Scale
+1802.08802	P3	capability	F0,F3	main/trajectory_level_policy_training	Reinforcement Learning on Web Interfaces Using Workflow-Guided Exploration
+2406.03679	P3	judgment	F5,F3	main/trajectory_level_policy_training	On the Effects of Data Scale on UI Control Agents
+2207.01206	P3	capability	F0,F2	main/verifiable_execution_reward	WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents
+2605.19769	P3	judgment	F2	main/verifiable_execution_reward	OpenComputer: Verifiable Software Worlds for Computer-Use Agents
