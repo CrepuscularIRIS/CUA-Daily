@@ -1,0 +1,892 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p3",
+  "attempt_id": "a1",
+  "seat": "sol",
+  "paper": {
+    "paper_key": "2306.07863",
+    "paper_id": "2306.07863",
+    "title": "Synapse: Trajectory-as-Exemplar Prompting with Memory for Computer Control",
+    "version": "2306.07863v3",
+    "claim_type": "system_method",
+    "central_claim": "State abstraction enables complete trajectory-as-exemplar prompting; similarity-based exemplar memory improves generalization, reaching99.2% success on64 MiniWoB++ tasks with examples from48 tasks and56% relative average StepSR improvement on Mind2Web."
+  },
+  "provenance": {
+    "input_hash": "37cac126a6041a3d720b9b855d9bac88b70aa47dcfd33a2f89604ee5e3ad0671",
+    "rubric_version": "v2.2 draft_uncalibrated",
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+    "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+    "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+    "model_type": "sonnet",
+    "actual_model": "gpt-6.1-sol",
+    "session_id": null,
+    "receipt_ref": null,
+    "unavailable_reason": "Session ID / model receipt not exposed to this worker; model name supplied in system context. No probing performed.",
+    "timestamp": "2026-10-22T02:06:36.331933+00:00",
+    "rubric_freeze_note": "Supplied rubric draft_uncalibrated: provisional independent seat judgment, not a calibrated final ranking."
+  },
+  "materials": [
+    {
+      "material_id": "paper",
+      "url": "https://arxiv.org/html/2306.07863v3",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2306.07863.txt",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "sections_read": [
+        "Entire unique serialized text lines1–1998: methods, experiments, all tables, references, AppendixA results, AppendixB environments, AppendixC.1 terminal/C.2 flight/C.3 text-transform/C.4 Mind2Web prompts and parser listings"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "read_method": "Whitespace-normalized substring dedup retains all novel text. Entire155235-character stream read in consecutive0:24000,24000:48000,48000:72000,72000:96000,96000:120000,120000:144000,144000:end slices. Original prompt ellipses are author excerpts, not omitted worker reading; no figure-only numeric values invented."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E01",
+      "material_id": "paper",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "locator": "§3.2; line346",
+      "quote": "we iteratively append states filtered by the element-ranking model and target actions to the prompt since it is a static dataset.",
+      "support_explanation": "Mind2Web history is target/teacher history, not on-policy interaction.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E02",
+      "material_id": "paper",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "locator": "§3.3; line356",
+      "quote": "We retrieve the top three exemplars from memory and use the most common one to retrieve its exemplars",
+      "support_explanation": "MiniWoB top3 task-majority chooses a curated exemplar package, not autonomous memory growth.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E03",
+      "material_id": "paper",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "locator": "§4.1; line372",
+      "quote": "We only store the training set in the exemplar memory.",
+      "support_explanation": "Mind2Web explicit train-only retrieval boundary.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E04",
+      "material_id": "paper",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "locator": "§4.1; line368",
+      "quote": "run 50 episodes to produce the results for each task.",
+      "support_explanation": "MiniWoB sampling denominator, GPT3.5-0301 and temperature0 specified nearby.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E05",
+      "material_id": "paper",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "locator": "§4.2; line386",
+      "quote": "With a mean success rate of 99.2%, Synapse achieves human-level performance and outperforms all baselines on MiniWoB",
+      "support_explanation": "Reported headline on64 supported tasks; heterogeneous baseline coverage qualifies comparative claim.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E06",
+      "material_id": "paper",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "locator": "AppendixB.1; line829",
+      "quote": "The average number of exemplars per task for RCI and Synapse is 1.32 and 3.45, respectively.",
+      "support_explanation": "Example-budget difference and task-specific demonstration design remain competing explanations.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E07",
+      "material_id": "paper",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "locator": "§4.4; line443",
+      "quote": "although reducing k k leads to a drop in recall from 86% to 53%.",
+      "support_explanation": "Top5 action candidate recall ceiling despite better average step prediction.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E08",
+      "material_id": "paper",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "locator": "Table2; line456",
+      "quote": "Cross-Task | 17.0 | 1.4 | 1.9",
+      "support_explanation": "Table2 distance/gain association, not independently identified causal law. Domain gain0.2/-0.2.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E09",
+      "material_id": "paper",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "locator": "Table1; line433",
+      "quote": "Synapse w/ state abstraction + TaE + memory | 34.0 34.0 | 30.6 30.6 | 2.4 2.4 | 29.1 29.1 | 24.2 24.2 | 0.6 0.6 | 29.6 29.6 | 26.4 26.4 | 1.5 1.5",
+      "support_explanation": "GPT3.5 offline Ele.Acc/StepSR/taskSR by split.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E10",
+      "material_id": "paper",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "locator": "AppendixA Table3; line787",
+      "quote": "tic-tac-toe | 0.70 | 0.71 | 0.56 | 0.48 | 0.83",
+      "support_explanation": "Counterexample to literal better-on-all-tasks rhetoric.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E11",
+      "material_id": "paper",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "locator": "AppendixB.1; line868",
+      "quote": "The code is tested by executing it with states derived from the environment and having its results reviewed by humans.",
+      "support_explanation": "Author-developed GPT4 parser examples have human verification; worker did not execute code.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E12",
+      "material_id": "paper",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "locator": "§5; line470",
+      "quote": "High inference latency is a major concern due to the use of LLMs.",
+      "support_explanation": "Author acknowledges deployment cost; no numeric latency or dollars supplied.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E13",
+      "material_id": "paper",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "locator": "AppendixC.4; line1874",
+      "quote": "We set k k to 3 for the trajectories in memory and previous observations in current history and k = 5 k=5 for the current observation.",
+      "support_explanation": "Concrete candidate/history interface.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E14",
+      "material_id": "paper",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "locator": "§4.4; line460",
+      "quote": "For the 16 unseen tasks, the average success rate is almost 100%.",
+      "support_explanation": "Task holdout within MiniWoB family, not online unseen-site transfer.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E15",
+      "material_id": "paper",
+      "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+      "locator": "§4.3; line420",
+      "quote": "we use static few-shot exemplars.",
+      "support_explanation": "Ablation baseline uses static exemplars before training-set retrieval.",
+      "kind": "author_report"
+    }
+  ],
+  "signatures": [
+    {
+      "sig_id": "S1",
+      "object": "raw HTML observation and long history",
+      "information": "DOM/HTML and task text, not pixels; human curated observation exemplars and GPT4-generated/human-reviewed parser-code exemplars; Mind2Web pretrained candidate ranker",
+      "operation": "Explicit few-shot HTML-to-observation abstraction, or implicit prompt-to-parser-code abstraction on long pages; fall back to zero-shot LLM abstraction on parser failure.",
+      "output": "Compact task-relevant text/DOM candidates",
+      "conditions": "HTML exposes required state; curated abstraction demonstrates required semantics; book-flight parser prompt includes price/duration optimization instructions.",
+      "feedback": "Author parser testing/human inspection; no runtime soundness guarantee",
+      "selection_rule": "Human-curated prompt/parser exemplars",
+      "selection_data": "MiniWoB task examples; Mind2Web train trajectories",
+      "persistence": "Static abstraction prompt/code examples stored with exemplar packages",
+      "later_use": "Retrieved before later task actions",
+      "claimed_effect": "Permit full trajectories in context and reduce irrelevant detail",
+      "failure_boundary": "Discarded target cannot be recovered in candidate-only action space; current top5 recall53%; hidden divs/text available, not visual reasoning.",
+      "evidence_ids": [
+        "E07",
+        "E11",
+        "E13"
+      ]
+    },
+    {
+      "sig_id": "S2",
+      "object": "action prompting and observation cadence",
+      "information": "Complete successful trajectories and current history; MiniWoB actual actions/observations; Mind2Web supplied target-action history",
+      "operation": "Interleave task/observation/action exemplars; generate one or multiple API actions until a new observation is needed.",
+      "output": "MiniWoB type/click_xpath/press/click_option/movemouse calls; Mind2Web CLICK/TYPE/SELECT element IDs",
+      "conditions": "Stable executable XPaths/IDs; full demonstrations fit context",
+      "feedback": "MiniWoB environment outcomes; no self-correction in primary recipe",
+      "selection_rule": "Generated action sequence executed, first matching XPath selected; maximum steps stated but numeric cap not found.",
+      "selection_data": "Current HTML and fixed demonstrations",
+      "persistence": "Episode-local action/observation history; model weights remain frozen",
+      "later_use": "Subsequent steps in current episode",
+      "claimed_effect": "Temporal abstraction and better multistep decisions",
+      "failure_boundary": "Wrong valid action chunks need not be checked between actions; absence of rollback or explicit correctness verification.",
+      "evidence_ids": [
+        "E01",
+        "E06",
+        "E13"
+      ]
+    },
+    {
+      "sig_id": "S3",
+      "object": "fixed exemplar memory",
+      "information": "MiniWoB metadata task+initialHTML from5seeds of48tasks; Mind2Web train website/domain/task metadata only",
+      "operation": "Embed using text-embedding-ada-002; Faiss Euclidean nearest retrieval; MiniWoB top3 majority task then all examples of chosen task.",
+      "output": "Abstraction prompts and successful trajectories inserted into context",
+      "conditions": "Similarity captures task relevance; examples cover transferable behavior",
+      "feedback": "No autonomous test-trajectory acceptance or memory update loop reported",
+      "selection_rule": "Nearest metadata; task-majority package in MiniWoB",
+      "selection_data": "Curated48task packages or Mind2Web training trajectories",
+      "persistence": "Static D=(K,V), embeddings and corresponding prompt/trajectory bank",
+      "later_use": "Later evaluation tasks retrieve from fixed bank",
+      "claimed_effect": "Novel task and heldout-site/domain generalization",
+      "failure_boundary": "Distant-domain examples can hurt; memory not synonymous with retained self-improvement.",
+      "evidence_ids": [
+        "E02",
+        "E03",
+        "E08",
+        "E14",
+        "E15"
+      ]
+    }
+  ],
+  "retained_chain": {
+    "applicable": false,
+    "reason": "Static curated demonstration retrieval, not a claim of autonomous iterative self-improvement. Reuse of a persistent bank is real; accepting new test experiences, updating memory and independently evaluating improved improver are not reported.",
+    "before": "Static few-shot TaE prompts",
+    "proposed_change": "Retrieve train-bank exemplars by metadata distance",
+    "selection": "Nearest/majority retrieval, no success-based autonomous write rule",
+    "persisted_change": "Curated static bank, not accepted online changes",
+    "later_tasks": "Heldout MiniWoB task types; static Mind2Web splits",
+    "measured_gain": "Mind2Web memory StepSR+1.4/+1.5/+0.2pp GPT; +1.9/+1.0/-0.2pp CodeLlama; whole-task gains not monotone",
+    "evidence_ids": [
+      "E02",
+      "E03",
+      "E08",
+      "E15"
+    ]
+  },
+  "gap": {
+    "author_gap": "Noisy long states and single-step exemplars hinder ICL control; fixed task exemplars do not generalize to unseen tasks.",
+    "checked_gap": "Concrete context/candidate bottleneck and trajectory-format hypothesis. Complete examples and metadata retrieval are reconstructable; generic memory novelty is not established by an exhaustive primary-source search.",
+    "lineage": [
+      {
+        "method": "RCI/ReAct",
+        "source": "Assigned Synapsev3 §2 and AppendixB.1, author account only",
+        "relation": "Interleaved action/state prompting and self-correction precede Synapse; Synapse instead emphasizes concise complete trajectories."
+      },
+      {
+        "method": "MindAct/Mind2Web",
+        "source": "Assigned Synapsev3 §4.1/Table1/AppendixC.4; independent original not additionally read",
+        "relation": "Reuses ranker and cached benchmark; replaces MCQ top50 with direct generation on top5 and trajectory retrieval."
+      },
+      {
+        "method": "Pix2Act",
+        "source": "2306.00245v2, assigned fulltext and all12figures independently read",
+        "relation": "Concurrent parameter-trained pixel agent, materially different information/training regime; no matched aggregate comparison."
+      }
+    ],
+    "closest_adjacent": "State filtering, few-shot retrieval and code-as-policy are prior ingredients; distinctive operational composition is abstraction enabling full-trajectory conditioning plus metadata bank.",
+    "residue": "Finite context and demonstration coverage; semantic filtering can remove target; off-policy step gains do not close live web execution.",
+    "stakes": "Multistep agent failures and LLM context/inference costs",
+    "method_response": "Compress state then supply complete temporal exemplars; retrieve relevant packages without per-task weight updates.",
+    "remaining_gap": "Manual task-specific abstraction examples, exemplar-budget confounding, no calibrated similarity threshold or robust distant-domain gain, no measured live real-web success/cost.",
+    "evidence_ids": [
+      "E01",
+      "E06",
+      "E07",
+      "E08",
+      "E11",
+      "E12"
+    ],
+    "unresolved": [
+      "External nearest-neighbor novelty independently primary-checked only for assigned Pix2Act; no global novelty claim."
+    ]
+  },
+  "rs_pattern": {
+    "primary": "adapt_via_conditioning",
+    "supporting": [],
+    "matches": [
+      {
+        "main_id": "adapt_via_conditioning",
+        "sub_id": "C03",
+        "role": "primary",
+        "fit": "strong operation, qualified execution quality",
+        "tactic_steps_checked": [
+          "Canonical task/observation/action trajectory schema:met",
+          "Broad retrievable reference bank:met",
+          "Skip upstream tuning and retrieve shared-space neighbors:met",
+          "Holdout entire categories/distributions:partial (16MiniWoB types and static unseen-site/domain splits; proprietary pretraining contamination unaudited)",
+          "Equal-budget simpler conditioning comparator:partial (sequential ablations; unequal demonstration counts)"
+        ],
+        "success_checks": [
+          {
+            "condition": "Structural holdout",
+            "status": "partial",
+            "reason": "Task-type exclusions exist; real website/domain test only offline.",
+            "evidence_ids": [
+              "E03",
+              "E14"
+            ]
+          },
+          {
+            "condition": "Distance predicts transfer",
+            "status": "partial",
+            "reason": "3split-level mean-distance/gain association, not a causal test or per-task calibration.",
+            "evidence_ids": [
+              "E08"
+            ]
+          },
+          {
+            "condition": "Mechanism-isolating ablations",
+            "status": "partial",
+            "reason": "State/TaE/memory sequential additions; example count and raw-vs-candidate generation not fully crossed.",
+            "evidence_ids": [
+              "E06",
+              "E15"
+            ]
+          }
+        ],
+        "failure_checks": [
+          {
+            "condition": "Manual auxiliary format",
+            "status": "partial",
+            "reason": "48task packages and task-specific flight parser guidance; not merely a single-task demonstration.",
+            "evidence_ids": [
+              "E06",
+              "E11"
+            ]
+          },
+          {
+            "condition": "Distant conditioning failure",
+            "status": "met",
+            "reason": "Cross-domain CodeLlama memory StepSR decreases0.2pp.",
+            "evidence_ids": [
+              "E08"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E02",
+          "E03",
+          "E06",
+          "E08",
+          "E14",
+          "E15"
+        ],
+        "reason": "Frozen model composes actions from retrieved whole trajectories; exactly conditioning rather than parameter adaptation. Training-first submove is not required because card explicitly permits substrate retrieval."
+      }
+    ],
+    "outside_taxonomy": false,
+    "reason": "Operational match to original conditioning family; compression itself lacks preservation proof for operator-substitution and curated examples do not establish manufactured training signals.",
+    "executes_pattern": true,
+    "resolves_problem": false
+  },
+  "domain_pattern": {
+    "namespace": "gui",
+    "matches": [
+      {
+        "main": "experience_memory_retrieval",
+        "sub": "K27",
+        "version": "frozen cua-agents/v1 source card",
+        "fit": "strong",
+        "condition_checks": [
+          {
+            "condition": "Keyed trajectory retrieval",
+            "status": "met",
+            "evidence_ids": [
+              "E02",
+              "E03"
+            ]
+          },
+          {
+            "condition": "OOD online improvement",
+            "status": "unmet",
+            "reason": "MiniWoB unseen types same suite; Mind2Web heldout websites static only; distant-domain gains weak.",
+            "evidence_ids": [
+              "E01",
+              "E08",
+              "E14"
+            ]
+          },
+          {
+            "condition": "Summary-vs-raw and memory-size scaling",
+            "status": "unmet",
+            "reason": "Curated abstractions are not autonomous summary evaluation; memory scaling unreported after full text/appendix search.",
+            "evidence_ids": [
+              "E11"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E02",
+          "E03",
+          "E08"
+        ]
+      },
+      {
+        "main": "structured_screen_observation",
+        "sub": "C13",
+        "version": "frozen cua-agents-core/v1 source card K13",
+        "fit": "partial-to-strong operation; LLM/code abstraction rather than only rules",
+        "condition_checks": [
+          {
+            "condition": "Pruning and restructuring before action",
+            "status": "met",
+            "evidence_ids": [
+              "E07",
+              "E11",
+              "E13"
+            ]
+          },
+          {
+            "condition": "Target retention measured",
+            "status": "met",
+            "reason": "Reports recall loss86→53%, exposing the tradeoff.",
+            "evidence_ids": [
+              "E07"
+            ]
+          },
+          {
+            "condition": "Tokens/runtime and per-site losses",
+            "status": "unmet",
+            "reason": "No numeric full cost; primary ablation combines ranking cutoff and output format.",
+            "evidence_ids": [
+              "E07",
+              "E12"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E07",
+          "E11",
+          "E13"
+        ]
+      }
+    ],
+    "unassigned": false,
+    "revision_proposals": [
+      "Keep static curated exemplar retrieval distinct from gui:C19 own-run knowledge accumulation; Synapse does not execute the latter."
+    ]
+  },
+  "pattern_mapping": [
+    {
+      "rs_main": "adapt_via_conditioning",
+      "rs_sub": "C03",
+      "domain": {
+        "namespace": "gui",
+        "main": "experience_memory_retrieval",
+        "sub": "K27"
+      },
+      "operation_correspondence": "Retrieved reference trajectories condition one frozen LLM at inference.",
+      "necessary_conditions_and_differences": "Retrieval requires relevant examples; static bank meets K27 but not own-run distilled C19 and not online self-improvement.",
+      "evidence_ids": [
+        "E02",
+        "E03",
+        "E08"
+      ]
+    },
+    {
+      "rs_main": "adapt_via_conditioning",
+      "rs_sub": "C03",
+      "domain": {
+        "namespace": "gui",
+        "main": "structured_screen_observation",
+        "sub": "C13"
+      },
+      "operation_correspondence": "State abstraction makes canonical temporal conditioning fit context.",
+      "necessary_conditions_and_differences": "Domain card concerns observation pruning, an enabling part rather than original-card identity; retaining correct targets is essential.",
+      "evidence_ids": [
+        "E07",
+        "E13"
+      ]
+    }
+  ],
+  "expectations": [
+    {
+      "id": "E35",
+      "version": "fixed source cards/expectations",
+      "source_strength": "single_source",
+      "source_refs": [
+        "experience_memory_retrieval E35"
+      ],
+      "applies_when": "Experience retrieval improves GUI agents",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Unseen MiniWoB types and offline heldout websites measured; no unseen live website memory test.",
+      "evidence_ids": [
+        "E01",
+        "E08",
+        "E14"
+      ],
+      "score_item": [
+        "E.holdout"
+      ]
+    },
+    {
+      "id": "E28",
+      "version": "fixed source cards/expectations",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "experience_memory_retrieval E28"
+      ],
+      "applies_when": "Experience/memory improves benchmark outcomes",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Mind2Web train-only bank and16heldoutMiniWoBtypes; base pretraining overlap and prompt-development contamination unaudited.",
+      "evidence_ids": [
+        "E03",
+        "E14"
+      ],
+      "score_item": [
+        "E.holdout"
+      ]
+    },
+    {
+      "id": "E16",
+      "version": "fixed source cards/expectations",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "experience_memory_retrieval E16"
+      ],
+      "applies_when": "Online empirical benchmark comparison",
+      "applicable": true,
+      "status": "partial",
+      "reason": "50episodes per task and per-task rates; no repeated complete batches, CIs or training/api variability evaluation.",
+      "evidence_ids": [
+        "E04",
+        "E10"
+      ],
+      "score_item": [
+        "E.statistics"
+      ]
+    },
+    {
+      "id": "core-E05",
+      "version": "fixed source cards/expectations",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "structured_screen_observation core-E05"
+      ],
+      "applies_when": "Cached Mind2Web next-action claim",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Ele.Acc/StepSR/taskSR all3splits and MindAct; operationF1 absent. SeeAct is later than initialJune2023 and not imposed retroactively.",
+      "evidence_ids": [
+        "E09"
+      ],
+      "score_item": [
+        "E.measurement"
+      ]
+    },
+    {
+      "id": "core-E14",
+      "version": "fixed source cards/expectations",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "structured_screen_observation core-E14"
+      ],
+      "applies_when": "Grounding dense screens",
+      "applicable": true,
+      "status": "partial",
+      "reason": "First matching XPath rule stated; no systematic duplicate-element robustness test.",
+      "evidence_ids": [
+        "E13"
+      ],
+      "score_item": [
+        "X"
+      ]
+    },
+    {
+      "id": "RS:C03-equal-budget",
+      "version": "fixed source cards/expectations",
+      "source_strength": "induced_original_card",
+      "source_refs": [
+        "original adapt_via_conditioning reviewer expectations45–50"
+      ],
+      "applies_when": "Retrieved canonical conditioning claimed useful",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Sequential ablations useful but more examples3.45vs1.32; no full matched-example/token ablation.",
+      "evidence_ids": [
+        "E06",
+        "E15"
+      ],
+      "score_item": [
+        "M",
+        "E.causality",
+        "E.cost"
+      ]
+    },
+    {
+      "id": "RS:C03-distance",
+      "version": "fixed source cards/expectations",
+      "source_strength": "induced_original_card",
+      "source_refs": [
+        "original C03 steps4–5"
+      ],
+      "applies_when": "Similarity supports generalization",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Distance-vs-gain table helps diagnose boundary, but only3aggregate split points.",
+      "evidence_ids": [
+        "E08"
+      ],
+      "score_item": [
+        "X",
+        "E.holdout"
+      ]
+    },
+    {
+      "id": "E10",
+      "version": "fixed domain card",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "experience_memory_retrieval E10"
+      ],
+      "applies_when": "LLM success judge labels evaluation/filter/reward",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "MiniWoB native task outcome and static annotated Mind2Web targets, not a learned success judge; human parser checking is not the evaluation oracle.",
+      "evidence_ids": [
+        "E01",
+        "E04",
+        "E11"
+      ],
+      "score_item": [
+        "E.measurement"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "text": "99.2% and human-level/all-baseline MiniWoB control",
+      "setting": "GPT3.5turbo0301,temp0,legacyMiniWoB64tasks,50episodes/task",
+      "baseline_control": "Published human/RCI/AdaPlanner/Pix2Act/CCNet/WebGUM results; task coverage64/104/54/53/59/104/56 differs",
+      "selection_vs_test": "48task exemplar packages with5metadata seeds;16task types without dedicated demos; no independent prompt-development holdout audit",
+      "result_denominator": "Mean task SR99.2%,64×50episodes; tic-tac-toe70%,count-shape90%; Table3has all per-task outcomes",
+      "evidence_ids": [
+        "E04",
+        "E05",
+        "E06",
+        "E10",
+        "E14"
+      ],
+      "counterevidence": [
+        "E10:70vsPix2Act83 on tic-tac-toe; literal better-all-tasks false.",
+        "Unequal task subsets and example budgets; not a matched aggregate human or trained-agent superiority test."
+      ],
+      "allowed_conclusion": "High author-reported online success in supported DOM-based MiniWoB tasks; not general pixel GUI mastery."
+    },
+    {
+      "claim_id": "C2",
+      "text": "56% relative average StepSR gain on Mind2Web",
+      "setting": "GPT3.5turbo16k0613 andCodeLlama7B; train1009tasks73sites; cross-task252/69sites,cross-website177/10newsites,cross-domain912/73sites",
+      "baseline_control": "MindAct same-backbone prompting; sequential abstraction/TaE/memory additions",
+      "selection_vs_test": "Memory training set only; static evaluation target-history prompts",
+      "result_denominator": "GPT StepSR17.4/16.2/18.6→30.6/24.2/26.4%; taskSR0.8/0.6/1.0→2.4/0.6/1.5%; 56% relative averaged step improvement, not56pp or live task completion.",
+      "evidence_ids": [
+        "E01",
+        "E03",
+        "E07",
+        "E09",
+        "E13",
+        "E15"
+      ],
+      "counterevidence": [
+        "Currenttop5 recall53%; candidate pruning and MCQ→direct-generation jointly changed.",
+        "Whole-task success remains0.6–2.4%GPT; rollout cannot be inferred from teacher histories."
+      ],
+      "allowed_conclusion": "Better annotated next-step prediction on fixed cached splits, not real-world online transfer."
+    },
+    {
+      "claim_id": "C3",
+      "text": "Memory improves generalization",
+      "setting": "MiniWoB16unseen task types; static Mind2Web3splits",
+      "baseline_control": "Samebackbone abstraction+TaE static exemplars without retrieval",
+      "selection_vs_test": "Bank built before test, no autonomous write",
+      "result_denominator": "GPT StepSR memory+1.4/+1.5/+0.2pp;Code+1.9/+1.0/−0.2pp; GPTdomain taskSR1.8→1.5,Code0.7→0.3",
+      "evidence_ids": [
+        "E02",
+        "E03",
+        "E08",
+        "E14",
+        "E15"
+      ],
+      "counterevidence": [
+        "Cross-domain negative/nearzero gains; aggregate distance association not causal."
+      ],
+      "allowed_conclusion": "Relevant static retrieval can help within/near-domain conditioning, with a documented distance boundary."
+    },
+    {
+      "claim_id": "C4",
+      "text": "Temporal abstraction reduces latency and improves efficiency",
+      "setting": "Appendixterminal andflight full prompts; multiple actions per state",
+      "baseline_control": "No measured matched-calls/runtime study",
+      "selection_vs_test": "Handdesigned successful exemplars",
+      "result_denominator": "Qualitative query-cadence rationale, no quantitative latency/dollar/token total",
+      "evidence_ids": [
+        "E06",
+        "E11",
+        "E12"
+      ],
+      "counterevidence": [
+        "Author explicitly acknowledges high inference latency; more demonstrations consume context."
+      ],
+      "allowed_conclusion": "Runnable-style action grouping illustrated, efficiency gain not empirically closed."
+    }
+  ],
+  "assessment": {
+    "evidence_level": "online",
+    "evidence_by_setting": {
+      "MiniWoB++": "online native interactive outcome",
+      "Mind2Web": "offline cached next-action prediction with target-action history; not transfer"
+    },
+    "claim_support": "scoped",
+    "strongest_supported_claim": "Author reports99.2% mean online MiniWoB success on64supported tasks with curated demonstrations from48. On cached Mind2Web, same-backbone step predictions improve with abstraction+TaE, and relevant train-bank retrieval adds small further gains. Whole-task web execution, universal memory transfer and measured cost benefit remain unsupported.",
+    "unresolved": [
+      "Proprietary pretraining overlap",
+      "Prompt/demo selection-development audit",
+      "Matched-example/token comparison",
+      "Online unseen real-site outcomes",
+      "Complete numeric step limit and end-to-end costs",
+      "No worker reproduction; all empirical outcomes author reports."
+    ]
+  },
+  "ratings": {
+    "G": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Targets concrete context/history bottlenecks and distinguishes state/trajectory/retrieval contributions; independent lineage coverage and general real-web residue incompletely established.",
+      "evidence_ids": [
+        "E01",
+        "E07",
+        "E15"
+      ],
+      "counterevidence_ids": [
+        "E06"
+      ],
+      "search_scope": [
+        "Full methods/experiments/tables and AppendicesA/B/C including all code/prompts; references; no supplied numeric end-to-end cost or repeated-run interval found."
+      ]
+    },
+    "M": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Interfaces and conditional prediction are reconstructable and falsifiable; task-specific parser guidance and example allocation weaken generic abstraction attribution.",
+      "evidence_ids": [
+        "E02",
+        "E11",
+        "E13",
+        "E15"
+      ],
+      "counterevidence_ids": [
+        "E06",
+        "E07"
+      ],
+      "search_scope": [
+        "Full methods/experiments/tables and AppendicesA/B/C including all code/prompts; references; no supplied numeric end-to-end cost or repeated-run interval found."
+      ]
+    },
+    "X": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Memory metadata, retrieval rule, prompt exemplars and action cadence explicit; no autonomous memory claims fabricated. Recovery for valid wrong chunks, maxstep value and distant retrieval robustness remain limited.",
+      "evidence_ids": [
+        "E02",
+        "E03",
+        "E11",
+        "E13"
+      ],
+      "counterevidence_ids": [
+        "E07",
+        "E08",
+        "E12"
+      ],
+      "search_scope": [
+        "Full methods/experiments/tables and AppendicesA/B/C including all code/prompts; references; no supplied numeric end-to-end cost or repeated-run interval found."
+      ]
+    },
+    "E.measurement": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Native online task outcomes plus split-resolved offline metrics and full task table; Mind2Web not passed off as live. Aggregate human/sota rhetoric and low cached taskSR qualify support.",
+      "evidence_ids": [
+        "E04",
+        "E09",
+        "E10"
+      ],
+      "counterevidence_ids": [
+        "E01",
+        "E07"
+      ],
+      "search_scope": [
+        "Full methods/experiments/tables and AppendicesA/B/C including all code/prompts; references; no supplied numeric end-to-end cost or repeated-run interval found."
+      ]
+    },
+    "E.causality": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "Same-backbone sequential additions show plausible marginal mechanism gains; candidate cutoff/action-generation and demonstration count not jointly controlled.",
+      "evidence_ids": [
+        "E08",
+        "E09",
+        "E15"
+      ],
+      "counterevidence_ids": [
+        "E06",
+        "E07"
+      ],
+      "search_scope": [
+        "Full methods/experiments/tables and AppendicesA/B/C including all code/prompts; references; no supplied numeric end-to-end cost or repeated-run interval found."
+      ]
+    },
+    "E.holdout": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "Train-only bank,16unseen task types and cached unseen-site/domain splits real; no online heldoutsite transfer/pretraining contamination audit.",
+      "evidence_ids": [
+        "E03",
+        "E14"
+      ],
+      "counterevidence_ids": [
+        "E01",
+        "E08"
+      ],
+      "search_scope": [
+        "Full methods/experiments/tables and AppendicesA/B/C including all code/prompts; references; no supplied numeric end-to-end cost or repeated-run interval found."
+      ]
+    },
+    "E.statistics": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "50episodes/task and per-task failures supplied; no intervals or independent repeated full runs/API variance.",
+      "evidence_ids": [
+        "E04",
+        "E10"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Full methods/experiments/tables and AppendicesA/B/C including all code/prompts; references; no supplied numeric end-to-end cost or repeated-run interval found."
+      ]
+    },
+    "E.cost": {
+      "status": "resolved",
+      "rating": 1,
+      "reason": "Backbones/temp/demonstration counts disclosed, latency limitation candid; no numeric cost or matched context/call budget.",
+      "evidence_ids": [
+        "E04",
+        "E06",
+        "E12"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Full methods/experiments/tables and AppendicesA/B/C including all code/prompts; references; no supplied numeric end-to-end cost or repeated-run interval found."
+      ]
+    }
+  },
+  "score": {
+    "raw": 66.25,
+    "display": 66.2,
+    "lower": 66.25,
+    "upper": 66.25,
+    "coverage": 1.0,
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+  },
+  "status": "reviewed",
+  "reason": "All supplied text including appendix prompts/listings read; scoped online synthetic-control and offline web-prediction evidence, provisional under supplied draft rubric."
+}

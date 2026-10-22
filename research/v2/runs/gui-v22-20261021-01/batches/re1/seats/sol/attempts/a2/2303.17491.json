@@ -1,0 +1,1132 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "re1",
+  "attempt_id": "a2",
+  "seat": "sol",
+  "supersedes_note": "re1 reassesses the a1 material-upgrade scope; a2 is the capacity-split continuation for these two assigned papers only. No a1 review, other seat, old score, aggregate, or archive was read or inherited.",
+  "paper": {
+    "paper_key": "2303.17491",
+    "paper_id": "2303.17491",
+    "title": "Language Models can Solve Computer Tasks",
+    "version": "2303.17491v3",
+    "claim_type": "system_method",
+    "central_claim": "A pretrained LLM with Recursive Criticism and Improvement (RCI), few task demonstrations and no task-specific training reward executes computer tasks and surpasses prior LLM, supervised and reinforcement-learning approaches on MiniWoB++; RCI also improves reasoning with external feedback. The broad author claim is retained, not replaced by the narrower conclusion below."
+  },
+  "provenance": {
+    "input_hash": "0c53f80620262543975e422d5296c86482ed960182744018b026378068fb68ec",
+    "rubric_version": "v2.2 draft_uncalibrated; evaluated as assigned without changing rubric",
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+    "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+    "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+    "model_type": "sonnet",
+    "actual_model": "gpt-6.1-sol",
+    "session_id": null,
+    "receipt_ref": null,
+    "unavailable_reason": "No independently exposed runtime session ID or invocation receipt; actual model is explicitly identified by this invocation.",
+    "timestamp": "2026-10-22T02:15:22.007225+00:00",
+    "blind_boundary": "No a1, other batch/seat, aggregate, old scores or archive read; no paper code run; no external fetch; no git operations."
+  },
+  "materials": [
+    {
+      "material_id": "2303.17491",
+      "url": "https://arxiv.org/html/2303.17491v3",
+      "version": "2303.17491v3",
+      "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2303.17491.txt",
+      "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "sections_read": [
+        "Complete first textual rendering: abstract, introduction, methods, experiments, related work, limitations, all appendices; structured duplicate checked for recovered listings and final tables"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "unavailable_content": [
+        "Image-only plot bars/curves, screenshots and color-only row highlighting; captions and available textual values read, image contents not inferred."
+      ]
+    },
+    {
+      "material_id": "2307.13854",
+      "url": "https://arxiv.org/html/2307.13854v4",
+      "version": "2307.13854v4",
+      "sha256": "896882a2c125ec2595dc2ed78f638950bc0b0a7c04c187bafa82c8174d7ecc62",
+      "sections_read": [
+        "Sec 4 baseline prompts",
+        "Sec 5 and 5.1 results/error analysis",
+        "Sec 6 benchmark comparison"
+      ],
+      "complete": false,
+      "missing_sections": [],
+      "role": "fixed adjacent reference excerpts, not full independent review or historical ancestor"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "R01",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L106",
+      "quote": "The RCI approach significantly outperforms existing LLM methods for automating computer tasks and surpasses supervised learning (SL) and reinforcement learning (RL) approaches on the MiniWoB++ benchmark.",
+      "support_explanation": "Original central comparative claim.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R02",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L125",
+      "quote": "Task grounding improves actions to be more effective in solving the given task, state grounding ensures the feasibility of actions in the current state, and agent grounding considers the executability of actions given the specification of the computer agent.",
+      "support_explanation": "Three distinct failure types and interventions, not three independent models.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R03",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L135",
+      "quote": "Although the number of explicit RCI loops can be arbitrary, we observe that a single pass of explicit RCI suffices for most of MiniWoB++ tasks.",
+      "support_explanation": "Plan critique ordinarily once; no cross-task parameter improvement.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R04",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L146",
+      "quote": "Empirical analysis on MiniWoB++ tasks suggests that setting the loop count to 3 yields optimal performance.",
+      "support_explanation": "Formatting retry cap, Sec 2.2.2; not a global action-step cap.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R05",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L182",
+      "quote": "This rate is calculated as the proportion of successful episodes, which are defined as those in which the agent receives a positive reward.",
+      "support_explanation": "Online execution success, not textual self-declaration.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R06",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L187",
+      "quote": "Specifically, we observe a 41% higher score than the WebN-T5-3B , which employs a finetuned large language model with 12K expert demonstration data.",
+      "support_explanation": "Author-reported comparison; no independent predecessor original in fixed reference pack.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R07",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L191",
+      "quote": "However, a direct comparison with CC-Net is not possible since it uses dictionary-based typing actions.",
+      "support_explanation": "Action-information asymmetry acknowledged; do not call raw CC-Net comparison matched.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R08",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L206",
+      "quote": "Rather than directly updating model parameters with demonstration data, our approach involves integrating two to three demonstrations into the prompt for in-context learning, which biases the model output without any parameter updates.",
+      "support_explanation": "Conditioning without retraining; prompt examples are task exposure.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R09",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L212",
+      "quote": "We conducted a task grounding ablation by eliminating the plan sampling stage.",
+      "support_explanation": "Ablates planning plus criticism, not isolated critique at matched inference budget.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R10",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L440",
+      "quote": "The performance of baseline models has been sourced from prior studies [ 30 , 24 ] .",
+      "support_explanation": "Historical baseline reuse, Appendix G Table 18.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R11",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L419",
+      "quote": "However, certain tasks such as book-flight, choose-date-easy, choose-date-medium, choose-date, and click-pie have been excluded from our evaluation due to their HTML code exceeding the maximum context length of language models.",
+      "support_explanation": "Selection excludes a known failure regime.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R12",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L424",
+      "quote": "The quantity of randomly generated emails has been restricted to a range of three to six.",
+      "support_explanation": "Harness simplification, Appendix C.5.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R13",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L426",
+      "quote": "Consequently, we opt to exclude the state grounding step for this particular task.",
+      "support_explanation": "Task-specific exception for click-dialog-2 in Appendix F.1; state conditioning can damage task alignment.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R14",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L429",
+      "quote": "Unfortunately, our agent encounters difficulties in tackling such tasks which entail the need for perceiving visual representations, as it solely depends on HTML observation.",
+      "support_explanation": "Canvas/visual failure boundary; not screenshot-only grounding.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R15",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L431",
+      "quote": "However, due to the high number of steps required (over 50), our agent occasionally produces actions that deviate from the original plan, ultimately resulting in irreparable failure.",
+      "support_explanation": "Long-horizon plan drift, Appendix F.4.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R16",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L411",
+      "quote": "For all model usage, a maximum token length of 256 and a temperature value of 0, indicating greedy decoding, are used.",
+      "support_explanation": "Some inference-budget detail, not total latency or cost.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R17",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L238",
+      "quote": "Also, RCI is more expensive to run compared to approaches that just sample once from the LLM.",
+      "support_explanation": "Cost burden admitted; no matched total-compute demonstration.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R18",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L417",
+      "quote": "Following previous works [ 38 , 62 , 74 ] , we use the correct label to decide when to stop the RCI loop.",
+      "support_explanation": "Reasoning-task oracle stop; NOT evidence of oracle GUI action selection.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R19",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L440",
+      "quote": "In the absence of external feedback, RCI prompting on reasoning benchmarks exhibits performance equivalent to, or below that of a zero-shot approach.",
+      "support_explanation": "Table 17 explicitly limits general unassisted reasoning claims.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "R20",
+      "material_id": "2303.17491",
+      "material_hash": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "locator": "L424",
+      "quote": "This action does not match the regular expressions. The updated instruction that matches one of the regular expressions is `",
+      "support_explanation": "Recovered Appendix D actual repair prompt, not just heading.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "W01",
+      "material_id": "2307.13854",
+      "material_hash": "896882a2c125ec2595dc2ed78f638950bc0b0a7c04c187bafa82c8174d7ecc62",
+      "locator": "Sec 5, L369-372",
+      "quote": "The explicit reasoning procedure is somewhat helpful, it brings 2.34% improvement over the version without it.",
+      "support_explanation": "Fixed adjacent source independently documents a small CoT benefit in realistic web tasks; not a direct RCI evaluation.",
+      "kind": "author_report"
+    }
+  ],
+  "signatures": [
+    {
+      "sig_id": "S1",
+      "object": "Task-level plan and subsequent action proposals",
+      "information": "Frozen GPT-3.5/GPT-4; task instruction, task demonstrations, current HTML and executed-action history; no screenshot policy input.",
+      "operation": "Generate a plan, explicitly critique and revise it ordinarily once; condition next actions on revised plan.",
+      "output": "Revised plan and task-grounded next action.",
+      "conditions": "Short enough HTML, relevant demonstrations, instructed backbone.",
+      "feedback": "Self-generated criticism; no task-specific reward used for policy fitting.",
+      "selection_rule": "Revised plan used after fixed prompt iteration, not independently validated winner selection.",
+      "selection_data": "Task-specific few-shot demonstrations; ablation tasks chosen using agent success tiers.",
+      "persistence": "Within-episode plan and executed-action history in prompt. No learned policy or cross-task memory update.",
+      "later_use": "Later actions of same episode read the plan/history.",
+      "claimed_effect": "Task alignment and low task-specific data demand.",
+      "failure_boundary": "Long-horizon drift; exemplar customization; no structural category holdout.",
+      "evidence_ids": [
+        "R02",
+        "R03",
+        "R08",
+        "R09",
+        "R15"
+      ]
+    },
+    {
+      "sig_id": "S2",
+      "object": "A task-grounded natural-language action",
+      "information": "Current HTML plus task/plan and preceding action proposal; agent regex specification.",
+      "operation": "One implicit state-grounding revision, then repair formatting up to three times until executable; dispatch via XPath/typing/keyboard adapter.",
+      "output": "Agent-admissible action or immediate episode failure if still unexecutable.",
+      "conditions": "Useful state must be represented by HTML; correct matching element/action syntax does not establish semantic correctness.",
+      "feedback": "Current state and syntactic admissibility check; environment reward measures eventual success.",
+      "selection_rule": "Accept executable instruction; semantic progress is not separately certified. State-grounding bypass on click-dialog-2.",
+      "selection_data": "Current episode; hand-set per-task exception not independently held out.",
+      "persistence": "Action history for subsequent steps, no retained external skill.",
+      "later_use": "Observe changed HTML and generate next action.",
+      "claimed_effect": "State-feasible and syntactically admissible actions without task-specific training.",
+      "failure_boundary": "Canvas invisible; popup recovery and exact key sequences can fail; formatting repair can execute wrong semantics.",
+      "evidence_ids": [
+        "R02",
+        "R04",
+        "R05",
+        "R13",
+        "R14",
+        "R20"
+      ]
+    }
+  ],
+  "gap": {
+    "author_gap": "Task-specific expert-data/reward requirements and simultaneous task/state/executability failures of generative computer control.",
+    "checked_gap": "Author text demonstrates concrete mismatch types and actual online failure cases. Fixed WebArena adjacent source supports nontrivial realistic-web residual, but does not independently establish RCI versus its direct ancestors.",
+    "lineage": [
+      {
+        "name": "WebN-T5-3B",
+        "version": null,
+        "source": "RCI Sec 3.2.2 and references [24]",
+        "verification": "author_report only; predecessor original absent from fixed reference bundle"
+      },
+      {
+        "name": "CC-Net",
+        "version": null,
+        "source": "RCI Sec 3.2.2, Appendix G and references [30]",
+        "verification": "author_report only; dictionary/no-dictionary distinction preserved; original unavailable"
+      },
+      {
+        "name": "CoT and self-critique antecedents",
+        "version": null,
+        "verification": "cited/discussed by author; original-source priority remains unresolved"
+      }
+    ],
+    "closest_adjacent": [
+      {
+        "paper_id": "2307.13854",
+        "version": "v4",
+        "source": "fixed reference Sec 4-6",
+        "relationship": "Later realistic-web benchmark context, not treated as pre-March-2023 prior art or an independent RCI trial."
+      }
+    ],
+    "residue": "A generic pretrained generator still must ground a task in actual HTML and in an executable schema, without per-task model fitting.",
+    "stakes": "Reducing task-specific data collection and reward engineering is useful; synthetic HTML tasks do not establish broad desktop autonomy.",
+    "method_response": "Separate plan/task, current-state and admissibility constraints into different prompt operations.",
+    "remaining_gap": [
+      "No independently checked nearest-predecessor residual or novelty proof in current fixed pack.",
+      "Long HTML and canvas input failures remain.",
+      "No strong category/site/platform generalization test or matched total inference budget."
+    ],
+    "evidence_ids": [
+      "R01",
+      "R02",
+      "R06",
+      "R07",
+      "R11",
+      "R14",
+      "R15",
+      "W01"
+    ],
+    "unresolved": [
+      "Controller notified of missing direct predecessor originals; instructed to retain author-level comparison and uncertainty rather than fetch asymmetric evidence."
+    ]
+  },
+  "rs_pattern": {
+    "primary": "adapt_via_conditioning",
+    "supporting": [
+      "heterogeneous_decomposition"
+    ],
+    "outside_taxonomy": false,
+    "reason": "Frozen-model task conditioning is executed, with different task/state/admissibility constraints assigned distinct revision prompts.",
+    "executes_pattern": true,
+    "resolves_problem": false,
+    "matches": [
+      {
+        "main_id": "adapt_via_conditioning",
+        "sub_id": null,
+        "role": "primary",
+        "fit": "strong main-card fit, weak rs:C03 tactic fit",
+        "tactic_steps_checked": [
+          "Task family expressed through reusable prompt/action schema; no parameter updates.",
+          "rs:C03 upstream context-interpreter training/reference-substrate alignment and structural-category exclusion are not demonstrated; subcard deliberately null."
+        ],
+        "success/failure_checks": [
+          {
+            "condition": "Mechanism-isolating conditioning ablation",
+            "status": "partial",
+            "reason": "Plan/state/agent removal reported, but plan removal also removes planning and changes compute."
+          },
+          {
+            "condition": "Structural task-category holdout / contamination audit",
+            "status": "unmet",
+            "reason": "Few-shot examples expose task types; frozen proprietary pretraining is unaudited."
+          },
+          {
+            "condition": "Task-specific conditioning and shallow-module attribution failure",
+            "status": "partial",
+            "reason": "55 selected tasks but per-task demonstrations, exceptions and excluded long HTML constrain genericity."
+          },
+          {
+            "condition": "Upstream schema training",
+            "status": "not_applicable",
+            "reason": "This work explicitly tests existing pretrained models rather than proposing context-interpreter training."
+          }
+        ],
+        "evidence_ids": [
+          "R08",
+          "R09",
+          "R11",
+          "R13"
+        ],
+        "reason": "Executes the parent inference-conditioning operation without earning the stronger subcard generalization claim."
+      },
+      {
+        "main_id": "heterogeneous_decomposition",
+        "sub_id": null,
+        "role": "supporting",
+        "fit": "moderate main fit; rs:C04 not applicable",
+        "tactic_steps_checked": [
+          "Partition action-generation constraints into task appropriateness, state feasibility and admissibility.",
+          "Apply explicit plan critique, implicit state revision and repeated syntax repair respectively.",
+          "rs:C04 is trained-artifact compression of a high-impact minority versus redundant bulk, not this method; no forced subcard."
+        ],
+        "success/failure_checks": [
+          {
+            "condition": "Partition is load-bearing",
+            "status": "partial",
+            "reason": "Removal ablations but not equal-budget uniform prompting."
+          },
+          {
+            "condition": "Empirically characterize heterogeneity before treatment",
+            "status": "partial",
+            "reason": "Distinct failure examples; no distribution-level isolation."
+          },
+          {
+            "condition": "Compression error bounds / deployment memory payoff",
+            "status": "not_applicable",
+            "reason": "No compression claim; assess action constraints rather than quantization lessons."
+          }
+        ],
+        "evidence_ids": [
+          "R02",
+          "R09",
+          "R13",
+          "R20"
+        ],
+        "reason": "Differentiated treatments are concrete; does not imply delegation to independent expert solvers."
+      }
+    ]
+  },
+  "domain_pattern": {
+    "namespace": "gui",
+    "matches": [
+      {
+        "main": "agent_loop_context_control",
+        "sub": "C20",
+        "version": "current fixed taxonomy; card read 2026-10-21",
+        "fit": "partial: repeated task/state/action schema; not screenshot description or post-action verified rollback",
+        "condition_checks": [
+          {
+            "id": "S1",
+            "status": "partial",
+            "reason": "Same-backbone stage removal exists; exact plotted magnitudes unavailable, plan removal is confounded.",
+            "evidence_ids": [
+              "R09"
+            ]
+          },
+          {
+            "id": "S2",
+            "status": "not_applicable",
+            "reason": "No screenshot-window compression proposed."
+          },
+          {
+            "id": "S3",
+            "status": "not_applicable",
+            "reason": "No manager or plan-tree pruning claim."
+          },
+          {
+            "id": "S4",
+            "status": "not_applicable",
+            "reason": "Primarily pre-action refinement, not a before/after rollback reflector."
+          },
+          {
+            "id": "S5",
+            "status": "partial",
+            "reason": "Multiple LLM ablations; detailed figure values unavailable."
+          },
+          {
+            "id": "S6",
+            "status": "not_applicable",
+            "reason": "No salience-memory nomination mechanism."
+          },
+          {
+            "id": "F1",
+            "status": "partial",
+            "reason": "Self-critique accuracy not independently measured; outcome uses environment reward.",
+            "evidence_ids": [
+              "R05"
+            ]
+          },
+          {
+            "id": "F2",
+            "status": "met",
+            "reason": "Long-horizon drift explicitly occurs; no claim of compression solving it.",
+            "evidence_ids": [
+              "R15"
+            ]
+          },
+          {
+            "id": "F3",
+            "status": "unknown",
+            "reason": "Language-model figure unobserved; do not infer magnitude."
+          },
+          {
+            "id": "F4",
+            "status": "partial",
+            "reason": "Stage removal exists but full cost comparison does not.",
+            "evidence_ids": [
+              "R09",
+              "R17"
+            ]
+          },
+          {
+            "id": "F5",
+            "status": "partial",
+            "reason": "State revision can hurt alignment; no transactional recovery guarantee.",
+            "evidence_ids": [
+              "R13"
+            ]
+          },
+          {
+            "id": "F6",
+            "status": "partial",
+            "reason": "Nontrivial selected synthetic tasks but weak realistic long-horizon coverage.",
+            "evidence_ids": [
+              "R11",
+              "R15"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "R02",
+          "R03",
+          "R04",
+          "R20"
+        ]
+      }
+    ],
+    "unassigned": [
+      "No specialist visual grounder, human-in-the-loop or persistent experience-retrieval match. planner_grounder_interface read as adjacent, not force-fit."
+    ],
+    "revision_proposals": []
+  },
+  "pattern_mapping": [
+    {
+      "rs_main": "adapt_via_conditioning",
+      "rs_sub": null,
+      "domain_namespace": "gui",
+      "domain_main": "agent_loop_context_control",
+      "domain_sub": "C20",
+      "operation_correspondence": "Prompt examples plus goal/HTML/plan condition the unchanged LLM; a fixed staged schema yields one executable next action.",
+      "necessary_conditions_and_differences": "Requires available structural HTML and relevant demonstrations. No screenshot-description step, cross-category holdout or cross-task retained improvement.",
+      "evidence_ids": [
+        "R02",
+        "R08",
+        "R20"
+      ]
+    },
+    {
+      "rs_main": "heterogeneous_decomposition",
+      "rs_sub": null,
+      "domain_namespace": "gui",
+      "domain_main": "agent_loop_context_control",
+      "domain_sub": "C20",
+      "operation_correspondence": "Task/state/admissibility constraints map to different prompt revisions inside one agent loop.",
+      "necessary_conditions_and_differences": "Different operations, not independent models or external symbolic solvers; syntax acceptance does not certify goal completion.",
+      "evidence_ids": [
+        "R02",
+        "R04",
+        "R13"
+      ]
+    }
+  ],
+  "expectations": [
+    {
+      "id": "E08",
+      "version": "cua-agents/v1; manifest-bound",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2"
+        }
+      ],
+      "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Same model stages removed, but no specialist visual grounder exists and no fixed-plan equal-call critique comparison.",
+      "evidence_ids": [
+        "R09"
+      ],
+      "score_item": [
+        "E.causality"
+      ]
+    },
+    {
+      "id": "E13",
+      "version": "cua-agents/v1; manifest-bound",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2404.07972",
+          "note": "authors: more red-teaming could reduce remaining false positives/negatives"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2602.00575",
+          "note": "authors: OSWorld-Verified scripts produce false negatives (multiple solutions)"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s2",
+          "note": "reviewer audit on correct and deliberate-failure trajectories"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2610.05001#s2",
+          "note": "detection rate plus non-rejection rate on legal alternatives"
+        }
+      ],
+      "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Positive environment reward and explicit failure definition are used; independent two-sided checker audit is not established.",
+      "evidence_ids": [
+        "R05",
+        "R12"
+      ],
+      "score_item": [
+        "E.measurement"
+      ]
+    },
+    {
+      "id": "E15",
+      "version": "cua-agents/v1; manifest-bound",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2501.12326",
+          "note": "authors: offline benchmark results may fail to capture online capability"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s3",
+          "note": "SOP R^2=0.934 vs AndroidControl-High 0.470 against AndroidWorld"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2602.09856",
+          "note": "authors: offline evaluation cannot assess alternative valid trajectories or recovery"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2"
+        }
+      ],
+      "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+      "applicable": true,
+      "status": "met",
+      "reason": "Computer-task results are interaction outcomes, not teacher-forced action accuracy.",
+      "evidence_ids": [
+        "R05"
+      ],
+      "score_item": [
+        "E.measurement"
+      ]
+    },
+    {
+      "id": "E16",
+      "version": "cua-agents/v1; manifest-bound",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "3 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "3 runs, std 1.1%"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.10031",
+          "note": "3 repetitions"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2311.08649",
+          "note": "authors: monetary constraints prevented multiple runs"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2411.02337",
+          "note": "authors: random task generation raises variance across seeds"
+        }
+      ],
+      "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+      "applicable": true,
+      "status": "unmet",
+      "reason": "No reconstructable multiple-run mean/spread or confidence intervals in text/tables/appendices; unobserved figure error bars remain unknown, not asserted absent.",
+      "evidence_ids": [
+        "R05",
+        "R10"
+      ],
+      "score_item": [
+        "E.statistics"
+      ]
+    },
+    {
+      "id": "E17",
+      "version": "cua-agents/v1; manifest-bound",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "reports both 15 and 50 steps"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2",
+          "note": "5 actions vs 30 for some baselines (condition)"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2",
+          "note": "differing step caps; efficiency stratified"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s3",
+          "note": "budget exhaustion"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "average steps reported"
+        }
+      ],
+      "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Token limit and repair count stated, not a matched overall episode-step/model-call budget; historical baselines differ.",
+      "evidence_ids": [
+        "R04",
+        "R10",
+        "R16",
+        "R17"
+      ],
+      "score_item": [
+        "E.cost",
+        "E.causality"
+      ]
+    },
+    {
+      "id": "E19",
+      "version": "cua-agents/v1; manifest-bound",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2509.23738",
+          "note": "authors: AndroidWorld re-engineered; validated only by matching 32.8 baseline"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2",
+          "note": "modified scroll/type and +5 max steps disclosed"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.19723",
+          "note": "authors: 112 of 116 AndroidWorld tasks; one WebArena task per template"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "unscorable network/reCAPTCHA tasks disclosed"
+        }
+      ],
+      "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Dropped tasks and reduced email/social components disclosed; no demonstrated re-evaluation of imported baseline scores under every modification.",
+      "evidence_ids": [
+        "R10",
+        "R11",
+        "R12"
+      ],
+      "score_item": [
+        "E.measurement",
+        "E.holdout"
+      ]
+    },
+    {
+      "id": "E21",
+      "version": "cua-agents/v1; manifest-bound",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        }
+      ],
+      "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+      "applicable": true,
+      "status": "partial",
+      "reason": "HTML-only observations stated and dictionary action asymmetry acknowledged; no screenshot-only matched arm.",
+      "evidence_ids": [
+        "R07",
+        "R14"
+      ],
+      "score_item": [
+        "E.measurement",
+        "E.causality"
+      ]
+    },
+    {
+      "id": "E23",
+      "version": "cua-agents/v1; manifest-bound",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s3"
+        }
+      ],
+      "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Nine-task difficulty tiers and qualitative long-horizon failures; tiers derived from evaluated agent success, not independent human-step strata.",
+      "evidence_ids": [
+        "R15"
+      ],
+      "score_item": [
+        "X",
+        "E.statistics"
+      ]
+    },
+    {
+      "id": "core-E08",
+      "version": "gui agent_loop_context_control card, read 2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "patterns/main/agent_loop_context_control.md#Reviewer-expectations"
+      ],
+      "applies_when": "A prompted decomposition claims task-success improvements.",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Grounding stages removed, with planning/call-budget confounds.",
+      "evidence_ids": [
+        "R09"
+      ],
+      "score_item": [
+        "E.causality"
+      ]
+    },
+    {
+      "id": "core-E21",
+      "version": "gui agent_loop_context_control card, read 2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "patterns/main/agent_loop_context_control.md#Reviewer-expectations"
+      ],
+      "applies_when": "The architecture adds LLM calls.",
+      "applicable": true,
+      "status": "unmet",
+      "reason": "Fixed local iteration limits but no measured token-total/latency/cost frontier.",
+      "evidence_ids": [
+        "R04",
+        "R16",
+        "R17"
+      ],
+      "score_item": [
+        "E.cost"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "text": "RCI yields strong MiniWoB++ task completion with few demonstrations and no task-specific parameter updates.",
+      "setting": {
+        "backbone": "primarily gpt-3.5-turbo, some GPT-4; APIs Jan-Mar 2023",
+        "environment": "55 selected MiniWoB++ task types, HTML observation, XPath and keyboard actions",
+        "budget": "temperature 0; max 256 generation tokens; ordinarily one plan critique, one state revision, at most three admissibility repairs"
+      },
+      "baseline/control": "Historical WebN-T5/CC-Net/SotA figures; dictionary-free CC-Net identified separately.",
+      "selection_vs_test": "Task-specific prompt examples; exclusions and component truncations; no independent unseen-category contamination audit.",
+      "result/denominator": {
+        "author_report": "41% higher score than WebN-T5; 6% over dictionary-free CC-Net; task-level rates in Table 18",
+        "task_types": 55,
+        "episode_count": null,
+        "uncertainty": "Figure-only aggregate values and exact color-coded GPT-4 assignment not inferred."
+      },
+      "evidence_ids": [
+        "R01",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R10",
+        "R11",
+        "R12",
+        "R16"
+      ],
+      "counterevidence": [
+        "Historical/action-space/harness and foundation-model differences; broad desktop transfer not tested."
+      ],
+      "allowed_conclusion": "Author-reported online performance on the selected modified synthetic suite, not independently reproduced superiority under matched compute/information."
+    },
+    {
+      "claim_id": "C2",
+      "text": "The three grounding operations cause the success gains.",
+      "setting": "Nine task types selected by own measured difficulty tiers; same GPT-3.5 backbone.",
+      "baseline/control": "Remove plan sampling, state grounding, or regex repair.",
+      "selection_vs_test": "Ablation tasks not an independent random held-out structural split.",
+      "result/denominator": "Qualitative drops reported; unavailable plot magnitudes unknown; no equal-total-call baseline.",
+      "evidence_ids": [
+        "R02",
+        "R09",
+        "R13",
+        "R20"
+      ],
+      "counterevidence": [
+        "Plan ablation removes planning itself. State refinement can harm and is omitted for one task."
+      ],
+      "allowed_conclusion": "Stage utility is plausible and partially supported, but critique-specific causal attribution is incomplete."
+    },
+    {
+      "claim_id": "C3",
+      "text": "RCI improves reasoning.",
+      "setting": "Separate arithmetic/commonsense experiments, with correct-label stopping.",
+      "baseline/control": "Zero-shot and CoT, with and without RCI.",
+      "selection_vs_test": "Oracle labels choose when to stop on reasoning tasks only.",
+      "result/denominator": "Table 17 explicitly reports degradation/equivalence without external feedback.",
+      "evidence_ids": [
+        "R18",
+        "R19"
+      ],
+      "counterevidence": [
+        "No basis for unassisted reliable self-correction."
+      ],
+      "allowed_conclusion": "Feedback-assisted reasoning benefit only; do not conflate the oracle with GUI policy access."
+    }
+  ],
+  "assessment": {
+    "evidence_level": "online",
+    "claim_support": "scoped",
+    "strongest_supported_claim": "Author-reported execution-checked completion on 55 selected, partly modified MiniWoB++ task types using frozen LLM prompting and a concrete task/state/admissibility chain. Stage ablations support utility but not matched-compute causal superiority.",
+    "unresolved": [
+      "Direct predecessor originals unavailable: comparisons retained as author reports, priority and residual novelty not independently certified.",
+      "Image-only aggregate/ablation magnitudes and color-dependent model assignments unknown.",
+      "Episode denominators, repeated-run uncertainty, contamination and real cost insufficiently established.",
+      "Appendix C.4 versus Table 18 click-tab-2-hard rates appear inconsistent; no invented reconciliation."
+    ],
+    "retained_chain": {
+      "status": "not_applicable",
+      "reason": "No cross-task improvement claim; within-episode plan/history reuse is not retained policy learning."
+    },
+    "replication": "No implementation inspected/executed; no our_run evidence."
+  },
+  "ratings": {
+    "G": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "A concrete data/reward and three-grounding bottleneck is evidenced, but direct-neighbor gap is checked only at author-report level; no independently established frontier residual. Controller explicitly retains this fixed-pack limitation.",
+      "evidence_ids": [
+        "R01",
+        "R02",
+        "R06",
+        "R07",
+        "W01"
+      ],
+      "counterevidence_ids": [
+        "R11"
+      ],
+      "search_scope": []
+    },
+    "M": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Task/state/admissibility operations and information access are reconstructable and predict different failures; heuristic iteration caps and absence of matched single-call/extra-call controls prevent strongest mechanism claim.",
+      "evidence_ids": [
+        "R02",
+        "R03",
+        "R04",
+        "R08",
+        "R20"
+      ],
+      "counterevidence_ids": [
+        "R13"
+      ],
+      "search_scope": []
+    },
+    "X": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Actual regex and grounding prompts, retry rule and failures allow reconstruction; task-specific state bypass and visual/long-context boundaries prevent generic robust execution.",
+      "evidence_ids": [
+        "R04",
+        "R13",
+        "R14",
+        "R15",
+        "R20"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "E.measurement": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Actual environment reward measures completion with explicit unexecutable/task failures and per-task table; task filtering, modified harness and imported baseline results limit comparability.",
+      "evidence_ids": [
+        "R05",
+        "R10"
+      ],
+      "counterevidence_ids": [
+        "R11",
+        "R12"
+      ],
+      "search_scope": []
+    },
+    "E.causality": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "Same-backbone grounding ablations are relevant, but deleting plan generation changes planning and compute; main results inherit pretrained-model/action/harness differences and plot-only sizes remain unknown.",
+      "evidence_ids": [
+        "R02",
+        "R09"
+      ],
+      "counterevidence_ids": [
+        "R07",
+        "R10",
+        "R13"
+      ],
+      "search_scope": []
+    },
+    "E.holdout": {
+      "status": "resolved",
+      "rating": 1,
+      "reason": "Several selected task types and task-specific few-shot examples, not an audited novel-category/site/platform holdout; long-HTML failures excluded.",
+      "evidence_ids": [
+        "R08",
+        "R11"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Sec 3.2, Appendix C.3-C.5 and F/G"
+      ]
+    },
+    "E.statistics": {
+      "status": "resolved",
+      "rating": 1,
+      "reason": "Per-task rates and concrete failure modes are informative, but episode counts, repeated-run uncertainty and independent difficulty strata are not reconstructable. Unseen plot error bars are unknown rather than claimed nonexistent.",
+      "evidence_ids": [
+        "R05",
+        "R15"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Complete main experiments; Appendix C experimental setup; F failures; G tables and available figure captions"
+      ]
+    },
+    "E.cost": {
+      "status": "resolved",
+      "rating": 1,
+      "reason": "Generation-token and repair bounds plus few-shot counts are reported; no matched end-to-end compute/latency or monetary measurement supports the sample-efficiency-to-practical-efficiency leap.",
+      "evidence_ids": [
+        "R04",
+        "R08",
+        "R16",
+        "R17"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Sec 3.2.3, discussion, Appendix C.1 and D"
+      ]
+    }
+  },
+  "score": {
+    "raw": 58.75,
+    "display": 58.8,
+    "lower": 58.75,
+    "upper": 58.75,
+    "coverage": 1.0,
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+  },
+  "status": "reviewed",
+  "reason": "Concrete, reconstructable training-free staged prompting with online synthetic-task evidence; broad superiority is scoped by historical mismatched baselines, task/harness selection, weak holdout/statistics and unmeasured extra inference cost. Images and missing predecessor originals are explicit uncertainties, not fabricated evidence.",
+  "expectation_exclusions": {
+    "E01/E02": "No desktop OS or mobile empirical claim; benchmark-specific future standards not imposed on synthetic MiniWoB.",
+    "E03/E04/E20": "Not self-hosted realistic-site or live-site success evaluation; do not retroactively demand later benchmark practice.",
+    "E05/E06/E24": "No trained screenshot-coordinate grounder or controlled layout-robustness claim.",
+    "E07/E09/E10/E11/E12/E14/E22/E26/E27/E28/E29/E30/E31/E32/E33/E34": "No new learned GUI policy, reward judge, synthetic-data training or world-model contribution; self-criticism prompting is not PRM training.",
+    "E18": "Revisions not a simulated lookahead/best-of-N selector.",
+    "E25": "No infeasible-target benchmark claim.",
+    "E35": "Within-episode plan/history are not a cross-task experience store."
+  }
+}

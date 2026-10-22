@@ -1,0 +1,68 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "re1",
+  "attempt_id": "a3",
+  "seat": "sol",
+  "model_type": "sonnet",
+  "actual_model": "gpt-6.1-sol",
+  "session_id": "681194da-49f5-4ad4-8eb4-573b45384076",
+  "receipt_ref": null,
+  "receipt_ref_reason": "No separately exposed provider invocation receipt; runtime model identity and session reference are available.",
+  "assigned": 2,
+  "reviewed": 2,
+  "needs_fulltext": 0,
+  "needs_evidence": 0,
+  "outside_taxonomy": 0,
+  "schema_errors": 0,
+  "assigned_papers": [
+    {
+      "paper_key": "2606.31612",
+      "version": "2606.31612v2",
+      "file": "2606.31612.json",
+      "status": "reviewed"
+    },
+    {
+      "paper_key": "2504.14603",
+      "version": "2504.14603v2",
+      "file": "2504.14603.json",
+      "status": "reviewed"
+    }
+  ],
+  "input_hash": "0c53f80620262543975e422d5296c86482ed960182744018b026378068fb68ec",
+  "scope": "Direct assignment overrides the six-paper/a1 scope in the inherited batch manifest. Only these two assigned paper records were produced in a3.",
+  "supersedes_note": "a1 material upgrade: full primary scientific text plus authoritative ATMem PDF supplement resolves HTML-omitted Boxes A.3/A.7. a3 capacity split: only ATMem and UFO2 assigned. No prior attempt, other-seat record, aggregate, archive or score was read or inherited.",
+  "procedural_context_exposure": "Coordinator disclosed source availability and mentioned a previous other-seat missing-material closure. No scientific judgment or numerical score was consulted; fresh a3 material-upgraded split review records explicitly disclose this procedural context.",
+  "checks": {
+    "exact_assigned_ids_and_versions": true,
+    "primary_and_supplement_hashes": true,
+    "all_87_evidence_quotes_contiguous_and_hash_bound": true,
+    "newline_based_locator_verification": true,
+    "original_subcard_parent_relationships": true,
+    "gui_namespace_and_subcard_parents": true,
+    "exact_frozen_condition_ids_names_definitions": true,
+    "all_35_expectations_audited_per_paper": true,
+    "flat_eight_rating_keys_and_top_level_status_string": true,
+    "evidence_reference_integrity": true,
+    "score_arithmetic_and_coverage": true,
+    "decimal_half_up_display_raw_unrounded": true,
+    "atomic_per_paper_save_before_report": true,
+    "only_assigned_attempt_written": true,
+    "transient_own_generator_removed": true
+  },
+  "validation_boundary": "Mechanical validation does not establish semantic correctness, independent reproduction, benchmark parity or calibrated scientific truth. No paper code, prompt instructions or experiments were executed. Figure-only numerical information was not fabricated. No git operation or external message was performed.",
+  "material_notes": [
+    "ATMem authoritative PDF supplement is cited independently for Boxes A.3/A.7; these prompts are present, not an unresolved paper omission.",
+    "ATMem Table4 Mem. is fraction of tasks using explicit memory at least once; training rho is memory-active-step fraction. Neither is actual inference cost.",
+    "UFO2 identity is explicit and text/table numerical discrepancies are preserved as counterevidence.",
+    "Fixed neighboring unversioned snapshots are SHA-bound with version uncertainty disclosed; no unobserved version identifiers were invented. Only stated neighboring-source excerpts are marked read."
+  ],
+  "blockers": [],
+  "status": "completed",
+  "reason": "Both assigned independent reviews completed and mechanically validated. Primary material sufficient for scoped judgments; unresolved scientific limits remain in each record rather than blocking completion. This closes only the worker attempt, not dual review, aggregation or shared validation state.",
+  "record_sha256": {
+    "2606.31612.json": "b09ccd325adf83a2e2265401497362c8b58ce6721233314cd53946828e2a5a5f",
+    "2504.14603.json": "4185781ca65a0144cf0e2549b9f8eeec7fa1c5897f6c9c42dd6e61970a44e930"
+  },
+  "closed_at": "2026-10-22T02:37:01.275764+00:00"
+}

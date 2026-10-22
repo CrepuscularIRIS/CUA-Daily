@@ -1,0 +1,1807 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p3",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "paper": {
+  "paper_key": "2306.07863",
+  "paper_id": "arXiv:2306.07863",
+  "title": "Synapse: Trajectory-as-Exemplar Prompting with Memory for Computer Control",
+  "version": "2306.07863v3",
+  "claim_type": "system_method",
+  "central_claim": "Synapse(状态抽象+轨迹即 exemplar 提示+exemplar 记忆)在 MiniWoB++ 用 48 个任务的演示解决 64 个任务达 99.2% 平均成功率,并在 Mind2Web 上较此前 SOTA 提示方法步 SR 相对提升 56%(作者原主张)",
+  "central_claim_evidence_ids": [
+   "E001",
+   "E002",
+   "E003"
+  ]
+ },
+ "provenance": {
+  "input_hash": "37cac126a6041a3d720b9b855d9bac88b70aa47dcfd33a2f89604ee5e3ad0671",
+  "rubric_version": "SCORE_SPEC v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "taxonomy=430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21;conditions=a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "domain_taxonomy_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "pattern_protocol_hash": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "review_worksheet_hash": "b0ca3ac92a458c934894aee62c88d6de8ab53901047326e0c8abdfd1a0d3219e",
+  "evidence_rules_hash": "336e1bcdd149cd485ee5a1f22101ca594997b755b47555447ba6661b23a1fac5",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m] (self-reported in system prompt: Sonnet 5.5)",
+  "session_id": "681194da-49f5-4ad4-8eb4-573b45384076",
+  "receipt_ref": null,
+  "receipt_ref_note": "no receipt/run-record path exposed to the worker; session_id taken from CLAUDE_CODE_SESSION_ID",
+  "timestamp": "2026-10-22T01:53:24Z",
+  "note": ""
+ },
+ "materials": [
+  {
+   "material_id": "M-2306.07863-v3",
+   "url": "https://arxiv.org/html/2306.07863 (2306.07863v3, 19 Jan 2024)",
+   "sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Related Work",
+    "3 Synapse (3.1–3.4)",
+    "4 Evaluation (4.1–4.5)",
+    "5 Discussion/Limitations",
+    "Appendix A (Table 3 per-task, Fig 6/7)",
+    "Appendix B (environment details, action-space listing, state-abstraction prompt sources)",
+    "Appendix C (prompt listings C.1 terminal, C.2 book-flight, C.3 text-transform failure, C.4 Mind2Web; sampled)"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Figure 3/4/5/6/7 plot content (bar charts; per-task numbers also in Table 3)",
+    "Appendix C.2 book-flight prompt listing read only partially (structure verified, not every exemplar token)"
+   ]
+  },
+  {
+   "material_id": "M-2306.06070-ref",
+   "url": "references.json pinned: Mind2Web 2306.06070",
+   "sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+   "pinned_sha256_in_references_json": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+   "sections_read": [
+    "Table 2 main results",
+    "Table 7 GPT-4 50-task subset",
+    "§4.3 in-context learning setup"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "other sections not needed for this review"
+   ],
+   "role": "nearest_neighbor_reference (baseline source)"
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "E001",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "Abstract; 2306.07863.txt L86",
+   "quote": "In MiniWoB ++ , Synapse achieves a 99.2% average success rate (a 10% relative improvement) across 64 tasks using demonstrations from only 48 tasks.",
+   "support_explanation": "中心主张(MiniWoB++)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E002",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "Abstract; 2306.07863.txt L86",
+   "quote": "Synapse also exhibits a 56% relative improvement in average step success rate over the previous state-of-the-art prompting scheme in Mind2Web.",
+   "support_explanation": "中心主张(Mind2Web,相对提升基于低绝对值)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E003",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "Abstract; 2306.07863.txt L86",
+   "quote": "we introduce Synapse , a computer agent featuring three key components: i) state abstraction",
+   "support_explanation": "三组件",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E004",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§1; 2306.07863.txt L86",
+   "quote": "First, the limited context length of LLMs, combined with complex computer states, poses challenges for few-shot learning.",
+   "support_explanation": "gap 1:上下文长度+复杂状态",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E005",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§1; 2306.07863.txt L86",
+   "quote": "Second, the exemplar structures used by existing computer agents can lead to error accumulation in multi-round LLM queries and struggle to capture the complete trajectory information.",
+   "support_explanation": "gap 2:exemplar 结构",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E006",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§1; 2306.07863.txt L86",
+   "quote": "Third, current computer agents require task-specific exemplars within a predefined scope.",
+   "support_explanation": "gap 3:任务特定 exemplar",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E007",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§3.2; 2306.07863.txt L86",
+   "quote": "For scenarios where the context can handle multiple states, such as email-inbox in MiniWoB ++ , we apply explicit abstraction through state-observation pairs",
+   "support_explanation": "显式状态抽象=few-shot 提示 LLM 提取观测",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E008",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§3.2; 2306.07863.txt L86",
+   "quote": "we adopt implicit abstraction by pairing task descriptions and state-parsing code",
+   "support_explanation": "隐式抽象=LLM 生成解析代码",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E009",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§3.2; 2306.07863.txt L86",
+   "quote": "If the code execution raises an error, we ask the LLM to perform zero-shot state abstraction.",
+   "support_explanation": "唯一的错误回退",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E010",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§3.2; 2306.07863.txt L86",
+   "quote": "Although this reduces the recall from 86% to 53%, i.e., only 53% of the clean observations contain the target element, it achieves a higher step success rate (Sec. 4.4 ).",
+   "support_explanation": "Mind2Web:top-k 3/5 使召回 86→53%(47% 目标元素不在观测中)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E011",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§3.3; 2306.07863.txt L86",
+   "quote": "Subsequently, the LLM is prompted with the current trajectory (the task description and previous clean observations and actions) to produce the next action.",
+   "support_explanation": "TaE:完整轨迹 exemplar+当前清洁观测历史",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E012",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§3.3; 2306.07863.txt L86",
+   "quote": "it implicitly prompts the LLM to generate temporally abstracted actions and query new states only when necessary",
+   "support_explanation": "多动作后才取新状态(时间抽象)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E013",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§3.4; 2306.07863.txt L86",
+   "quote": "We retrieve the top three exemplars from memory and use the most common one to retrieve its exemplars",
+   "support_explanation": "MiniWoB++ 检索规则:top3 取最常任务,再取该任务全部 exemplar",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E014",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§3.4; 2306.07863.txt L86",
+   "quote": "In Mind2Web, we encode the website name, domain, and task description as metadata for trajectories in the training set, and retrieve the corresponding exemplars of matched metadata for few-shot learning.",
+   "support_explanation": "Mind2Web 记忆键=站点名+领域+任务描述",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E015",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4.1; 2306.07863.txt L86",
+   "quote": "We only store the training set in the exemplar memory.",
+   "support_explanation": "Mind2Web 记忆只含训练集",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E016",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4.1; 2306.07863.txt L86",
+   "quote": "we query gpt-3.5-turbo-0301 and run 50 episodes to produce the results for each task",
+   "support_explanation": "MiniWoB++:gpt-3.5-turbo-0301,每任务 50 episode",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E017",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4.1; 2306.07863.txt L86",
+   "quote": "We configure the temperature to 0, i.e., greedy decoding.",
+   "support_explanation": "贪心解码,单次",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E018",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "App. B.1; 2306.07863.txt L177",
+   "quote": "The states are obtained from the environment, while the cleaned observations are provided by humans.",
+   "support_explanation": "显式抽象的 exemplar 观测由人给出",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E019",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "App. B.1; 2306.07863.txt L177",
+   "quote": "The code is tested by executing it with states derived from the environment and having its results reviewed by humans.",
+   "support_explanation": "隐式抽象代码经人审核",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E020",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4.3; 2306.07863.txt L86",
+   "quote": "With a mean success rate of 99.2%, Synapse achieves human-level performance and outperforms all baselines on MiniWoB ++ .",
+   "support_explanation": "主结果",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E021",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "App. A Table 3; 2306.07863.txt L797",
+   "quote": "# of solved tasks | 64 | 104 | 54 | 53 | 59 | 59 | 104 | 104 | 56 | 56 | 88",
+   "support_explanation": "各方法覆盖任务数:Ours 64 vs Human/CC-Net 104",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E022",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "App. A Table 3; 2306.07863.txt L796",
+   "quote": "Average | 0.992 | 0.935 | 0.906 | 0.929 | 0.962 | 0.665 | 0.935 | 0.305 | 0.802 | 0.484 | 0.646",
+   "support_explanation": "平均分:跨方法均值使用不同任务子集",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E023",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4.5; 2306.07863.txt L86",
+   "quote": "For the 16 unseen tasks, the average success rate is almost 100%.",
+   "support_explanation": "16 个‘未见’任务",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E024",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "App. B.1; 2306.07863.txt L177",
+   "quote": "Of the 64 tasks that we test (see Tab. 3 ), 48 are provided with exemplars, and 16 are unseen tasks.",
+   "support_explanation": "48 个有 exemplar,16 个无",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E025",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "App. B.1; 2306.07863.txt L177",
+   "quote": "The average number of exemplars per task for RCI and Synapse is 1.32 and 3.45, respectively.",
+   "support_explanation": "exemplar 数量更多",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E026",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "App. B.1; 2306.07863.txt L177",
+   "quote": "RCI relies on self-correction (task, state, and agent grounding) while Synapse does not.",
+   "support_explanation": "与 RCI 的对比设置不同",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E027",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4.3; 2306.07863.txt L86",
+   "quote": "Most of the observed failure cases are due to incorrect reasoning by LLMs.",
+   "support_explanation": "失败原因定性",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E028",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4.4 Table 1; 2306.07863.txt L430",
+   "quote": "MindAct (GPT-3.5) | 20.3 20.3 | 17.4 17.4 | 0.8 0.8 | 19.3 19.3 | 16.2 16.2 | 0.6 0.6 | 21.6 21.6 | 18.6 18.6 | 1.0 1.0",
+   "support_explanation": "基线 MindAct (GPT-3.5)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E029",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4.4 Table 1; 2306.07863.txt L431",
+   "quote": "Synapse w/ state abstraction | 29.8 29.8 | 25.2 25.2 | 2.0 2.0 | 26.1 26.1 | 19.6 19.6 | 0.6 0.6 | 28.0 28.0 | 24.3 24.3 | 1.8 1.8",
+   "support_explanation": "+状态抽象",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E030",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4.4 Table 1; 2306.07863.txt L432",
+   "quote": "Synapse w/ state abstraction + TaE | 32.8 32.8 | 29.2 29.2 | 2.0 2.0 | 28.0 28.0 | 22.7 22.7 | 0.6 0.6 | 29.0 29.0 | 26.2 26.2 | 1.8 1.8",
+   "support_explanation": "+TaE",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E031",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4.4 Table 1; 2306.07863.txt L433",
+   "quote": "Synapse w/ state abstraction + TaE + memory | 34.0 34.0 | 30.6 30.6 | 2.4 2.4 | 29.1 29.1 | 24.2 24.2 | 0.6 0.6 | 29.6 29.6 | 26.4 26.4 | 1.5 1.5",
+   "support_explanation": "完整;整任务 SR 仅 2.4/0.6/1.5",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E032",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4.5; 2306.07863.txt L86",
+   "quote": "In Mind2Web, direct generation with the top five elements improves the success rate by 32% compared to MCQ with the top-50 elements (Tab. 1 )",
+   "support_explanation": "‘状态抽象’增益=直接生成+top5 vs MCQ+top50,两因素混合",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E033",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4.5; 2306.07863.txt L86",
+   "quote": "In Mind2Web, the memory further improves Synapse with state abstraction and TaE prompting, leading to a 6% improvement in Step SR for cross-task and cross-website generalization.",
+   "support_explanation": "记忆在 cross-task/website 提升",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E034",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4.5 Table 2; 2306.07863.txt L458",
+   "quote": "Cross-Domain | 32.9 | 0.2 | -0.2",
+   "support_explanation": "跨域检索距离最大,增益≈0(GPT +0.2,CodeLlama −0.2)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E035",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4.5; 2306.07863.txt L86",
+   "quote": "This accounts for why memory does not aid in cross-domain generalization, as these domains are entirely unseen.",
+   "support_explanation": "作者承认跨域记忆无益",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E036",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§5; 2306.07863.txt L86",
+   "quote": "High inference latency is a major concern due to the use of LLMs.",
+   "support_explanation": "作者承认时延",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E037",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§5; 2306.07863.txt L86",
+   "quote": "Another concern is our dependence on the quality of exemplars.",
+   "support_explanation": "作者承认依赖 exemplar 质量",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E038",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§2; 2306.07863.txt L86",
+   "quote": "Recently, RCI ( Kim et al., 2023 ) employed recursive self-correction to solve MiniWoB ++ with a success rate of 90.6% in 54 tasks.",
+   "support_explanation": "最近邻 RCI",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E039",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§2; 2306.07863.txt L86",
+   "quote": "Pix2Act ( Shaw et al., 2023 ) solved 59 MiniWoB ++ tasks with tree search and BC on 1.3 million demonstrations.",
+   "support_explanation": "并发 Pix2Act(训练式)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E040",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§2; 2306.07863.txt L86",
+   "quote": "WebAgent ( Gur et al., 2023b ) employed a small element-ranking model for HTML state filtering and an LLM for few-shot action generation, but it did not investigate the exemplar structure and memory.",
+   "support_explanation": "最近邻 WebAgent",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E041",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§1; 2306.07863.txt L86",
+   "quote": "It prompts LLMs to predict the next action using multi-choice questions (MCQ), with candidate choices generated by an element-ranking model.",
+   "support_explanation": "最近邻 MindAct",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E042",
+   "material_id": "M-2306.06070-ref",
+   "material_sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+   "locator": "Mind2Web §4.3 (pinned 2306.06070); 2306.06070.txt L284",
+   "quote": "We use the same multiple-choice formulation as MindAct , and include three demonstration examples for in-context learning.",
+   "support_explanation": "固定来源:MindAct GPT-3.5 基线=MCQ+3 个 demo;与 Synapse 的设置(直接生成、top-5、检索 exemplar)不同",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E043",
+   "material_id": "M-2306.06070-ref",
+   "material_sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+   "locator": "Mind2Web Table 2 (pinned 2306.06070); 2306.06070.txt L262",
+   "quote": "w/ GPT-3.5 | 20.3 20.3 | 56.6 56.6 | 17.4 17.4 | 0.8 0.8 | 19.3 19.3 | 48.8 48.8 | 16.2 16.2 | 0.6 0.6 | 21.6 21.6 | 52.8 52.8 | 18.6 18.6 | 1.0 1.0",
+   "support_explanation": "固定来源核对:Synapse 表中 MindAct(GPT-3.5) 数值与 Mind2Web 原表一致",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E044",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4, Tables 1-3; full-text search (no continuous quote: negative/absence finding)",
+   "quote": null,
+   "support_explanation": "全文检索 temperature/seed/std/confidence/repeat:仅温度 0、每任务 50 episode 单次;无方差/置信区间/重复运行;Mind2Web 无 CI",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E045",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§3-§5, App. B; full-text search (no continuous quote: negative/absence finding)",
+   "quote": null,
+   "support_explanation": "全文检索 latency/token/cost:仅有‘时延高’文字承认与‘时间抽象降低成本和时延’的断言;无 token 数、API 花费、每任务调用次数、墙钟;无与 RCI/MindAct 的成本对比",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E046",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§4; full-text search (no continuous quote: negative/absence finding)",
+   "quote": null,
+   "support_explanation": "全文检索 contamination/overlap/pretraining:未讨论 gpt-3.5 对 MiniWoB++ 与 RCI 公开 exemplar 的可能预训练暴露;无开发/测试任务划分(48 个 exemplar 任务即评测任务)",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E047",
+   "material_id": "M-2306.07863-v3",
+   "material_sha256": "334dcb31bdbfe5386835c1deea98a20803cd9c23e5364054f9ed829b4b57b4e1",
+   "locator": "§3.3, §4.1; full-text search (no continuous quote: negative/absence finding)",
+   "quote": null,
+   "support_explanation": "最大步数仅提及‘maximum number of steps’,取值未报告",
+   "kind": "our_inference"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "每步送入 LLM 的状态表示(基线=原始 HTML 或 top-50 元素)",
+   "information": "原始 HTML(MiniWoB++)/Mind2Web 排序模型 top-k 元素(k=3 历史/5 当前);人写或 GPT-4 生成并经人审的抽象 exemplar",
+   "operation": "few-shot 让 LLM 把原始状态改写成任务相关‘清洁观测’(显式),或生成解析代码执行得到观测(隐式);代码报错则零样本抽象",
+   "output": "短观测文本",
+   "conditions": "状态过长时用隐式;Mind2Web 用排序器截断(召回 86→53%)",
+   "feedback": "代码执行报错",
+   "selection_rule_data": "exemplar 与解析代码由作者人工提供/审核",
+   "persistence": "抽象 prompt 存入 exemplar 记忆",
+   "later_use": "按任务检索时随轨迹一起取回",
+   "claimed_effect": "解决 book-flight;email-inbox-nl-turk 52%→100%;Mind2Web 步 SR +32%(相对 MindAct GPT-3.5)",
+   "failure_boundary": "Mind2Web 召回降到 53%(47% 的清洁观测不含目标);抽象质量依赖人写 exemplar",
+   "evidence_ids": [
+    "E007",
+    "E008",
+    "E009",
+    "E010",
+    "E018",
+    "E019",
+    "E032"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "few-shot exemplar 的结构(基线=高层 plan 或 MCQ 单步)",
+   "information": "完整成功轨迹 ⟨task, obs, action, …, obs, action⟩,LLM 可输出多个动作直到需要新状态",
+   "operation": "把完整轨迹作为 exemplar,当前轨迹(任务+历史清洁观测+动作)作为查询,迭代追加执行结果",
+   "output": "代码形式动作(MiniWoB++)/CLICK-TYPE-SELECT[id](Mind2Web)",
+   "conditions": "需要状态抽象把轨迹压进上下文",
+   "feedback": "执行后的新观测;无自我纠错/反思",
+   "selection_rule_data": "无自动选择;exemplar 为人工演示",
+   "persistence": "当前 episode 内的轨迹在上下文中累积",
+   "later_use": "同一 episode 后续步",
+   "claimed_effect": "guess-number/use-spinner/use-autocomplete 100/100/98 vs RCI 20/88/58;Mind2Web 步 SR 再 +19% 相对状态抽象变体",
+   "failure_boundary": "LLM 推理错误(count-shape 数错、text-transform 抄错字符)",
+   "evidence_ids": [
+    "E011",
+    "E012",
+    "E026",
+    "E027",
+    "E030"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "exemplar 记忆与检索(基线=任务→exemplar 的硬编码映射)",
+   "information": "任务描述+初始状态(MiniWoB++,5 个种子)/站点名+领域+任务描述(Mind2Web 训练集)的 embedding(text-embedding-ada-002,Faiss)",
+   "operation": "欧氏距离最近邻检索;MiniWoB++ 取 top3 中最多任务并取其全部 exemplar;Mind2Web 取匹配元数据的 exemplar",
+   "output": "few-shot 提示中的 exemplar 集合",
+   "conditions": "任务有清晰划分(MiniWoB++);Mind2Web 仅训练集入库",
+   "feedback": "无",
+   "selection_rule_data": "检索相似度;exemplar 本身来自人类演示,非 agent 自产",
+   "persistence": "向量库(固定,不随 agent 运行更新)",
+   "later_use": "每个新任务开头",
+   "claimed_effect": "64 个任务仅用 48 个任务的演示;Mind2Web cross-task/website +≈6% 步 SR",
+   "failure_boundary": "跨域检索距离大(32.9)且增益≈0(+0.2/−0.2);依赖 exemplar 质量",
+   "evidence_ids": [
+    "E013",
+    "E014",
+    "E015",
+    "E024",
+    "E023",
+    "E034",
+    "E035",
+    "E037"
+   ]
+  }
+ ],
+ "retention_trace": {
+  "applicable": "not_applicable",
+  "reason": "Synapse 为静态 ICL harness+检索增强;记忆库来自人类演示/人工审核的抽象 prompt,不含 agent 自产改动的选择-留存闭环,作者也未声称自我改进。故不编造 retained 闭环;改动对象仅为‘提示结构+检索’。",
+  "before": null,
+  "proposed_change": null,
+  "selection_data_rule": null,
+  "persisted_change": null,
+  "later_tasks": null,
+  "measured_gain": null,
+  "evidence_ids": [
+   "E018",
+   "E019",
+   "E015"
+  ]
+ },
+ "gap": {
+  "author_gap": "现有 LLM 计算机 agent:(1) 上下文长度+复杂状态限制 exemplar 数;(2) exemplar 结构(高层 plan、MCQ)无法表示完整轨迹并在多轮查询中累积错误;(3) 依赖任务专用 exemplar,忽略任务相似性、泛化差",
+  "checked_gap": "gap(1)(3)有 MiniWoB++ 逐任务证据(RCI 无法解 book-flight/click-pie、RCI 需 54 套任务专用 exemplar);gap(2)在 guess-number/use-spinner/use-autocomplete 上 RCI 20/88/58 vs Synapse 100/100/98 有对应,但 RCI 含自纠错且基座/exemplar 数不同(1.32 vs 3.45),不能单独归因于 exemplar 结构;最近邻 RCI/AdaPlanner/Pix2Act 原文未在本批固定集合,MindAct 已固定(2306.06070)",
+  "lineage_closest_adjacent": [
+   {
+    "item": "RCI (Kim et al. 2023):高层 plan exemplar + recursive self-correction,54 任务 90.6%",
+    "source_version": "as cited in 2306.07863v3 §2;未固定(2303.17491 在全文池但不属固定参考集)"
+   },
+   {
+    "item": "MindAct (Deng et al. 2023):排序器 top-50 + MCQ exemplar",
+    "source_version": "2306.06070 pinned (sha 87feadb8e…)"
+   },
+   {
+    "item": "AdaPlanner (Sun 2023):环境反馈自纠错",
+    "source_version": "as cited;未固定"
+   },
+   {
+    "item": "WebAgent (Gur 2023b):排序模型过滤 HTML + few-shot 动作生成,未研究 exemplar 结构与记忆",
+    "source_version": "as cited in v3;WebAgent 2307.12856 在本批,但 Synapse 的说法仅为转述"
+   },
+   {
+    "item": "Pix2Act/CC-Net/WebGUM:训练式方法,需 1.3M–2.4M 演示",
+    "source_version": "as cited;其中 Pix2Act 2306.00245 在本批"
+   }
+  ],
+  "residue": "长轨迹/长 HTML 状态任务;exemplar 人工选择与任务对应的硬编码;Mind2Web 整任务 SR 仍 ≤3.2%",
+  "stakes": "上下文被状态占满则 exemplar 数受限;任务专用 exemplar 使新任务/新站点难以泛化",
+  "method_response": "状态抽象压缩 token、TaE 保留完整轨迹、记忆按相似度取回 exemplar",
+  "remaining_gap": "exemplar 质量/人工;高时延;跨域记忆无益;真实网站整任务成功率仍很低;未测试真实在线站点",
+  "evidence_ids": [
+   "E004",
+   "E005",
+   "E006",
+   "E038",
+   "E041",
+   "E040",
+   "E039",
+   "E025",
+   "E026"
+  ],
+  "unresolved": [
+   "RCI/AdaPlanner 原文不在固定参考集,对 gap(2)‘RCI 即使给对 plan 仍出错’的说法无法独立核对",
+   "与 WebAgent(同批 2307.12856)的关系:Synapse v3 引用了 WebAgent,但两者互为并发工作,不作为祖先"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "adapt_via_conditioning",
+  "supporting": [],
+  "outside_taxonomy": false,
+  "reason": "",
+  "matches": [
+   {
+    "main_id": "adapt_via_conditioning",
+    "sub_id": "C03",
+    "role": "primary",
+    "fit": "good",
+    "tactic_steps_checked": [
+     {
+      "step": 1,
+      "status": "met",
+      "note": "统一的条件化 schema=⟨task, observation, action,…⟩ 轨迹 exemplar,承载全部 MiniWoB++/Mind2Web 任务,新任务不需新参数"
+     },
+     {
+      "step": 2,
+      "status": "met",
+      "note": "参考基底=向量库中的人类演示轨迹+抽象 prompt(跨 48 任务/Mind2Web 训练集,广度有限)"
+     },
+     {
+      "step": 3,
+      "status": "met",
+      "note": "无上游调参;靠检索最近邻 exemplar 作为一等输入(检索在推理时)"
+     },
+     {
+      "step": 4,
+      "status": "partial",
+      "note": "‘按任务类别留出’:16 个无 exemplar 任务(但与有 exemplar 的兄弟任务极相似)、Mind2Web cross-website/domain;未做预训练污染审计"
+     },
+     {
+      "step": 5,
+      "status": "partial",
+      "note": "与 RCI/MindAct 对比,未与‘更长上下文 / 最近邻平均 / 随机 exemplar’等廉价替代在等预算下比较"
+     }
+    ],
+    "success_checks": [
+     {
+      "cond": "structural holdout of task categories",
+      "status": "partial",
+      "evidence_ids": [
+       "E023",
+       "E024"
+      ]
+     },
+     {
+      "cond": "ablation toggling conditioning signal",
+      "status": "partial",
+      "note": "Mind2Web 逐步加组件;无‘随机 exemplar’对照",
+      "evidence_ids": [
+       "E029",
+       "E030",
+       "E031"
+      ]
+     },
+     {
+      "cond": "characterise sensitivity to conditioning-source coverage",
+      "status": "met",
+      "note": "Table 2 检索距离 vs 记忆增益",
+      "evidence_ids": [
+       "E034",
+       "E035"
+      ]
+     }
+    ],
+    "failure_checks": [
+     {
+      "cond": "claims no-adaptation while source overlaps eval domain",
+      "status": "partial",
+      "note": "MiniWoB++ 的 48 任务 exemplar 与评测任务重合;16 个‘未见’与有 exemplar 的兄弟任务极相似",
+      "evidence_ids": [
+       "E024",
+       "E046"
+      ]
+     },
+     {
+      "cond": "manual task-specific search for signal",
+      "status": "unmet",
+      "note": "exemplar/抽象代码由人工提供、审核",
+      "evidence_ids": [
+       "E018",
+       "E019"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E003",
+     "E011",
+     "E013",
+     "E014",
+     "E023",
+     "E034"
+    ],
+    "reason": "核心操作是把任务表达成检索得到的完整轨迹 exemplar 并在推理时直接求解,不更新参数,符合 adapt_via_conditioning/C03;状态抽象同样是 few-shot 条件化。非仅提及:检索规则、exemplar 格式与消融都落实。"
+   }
+  ],
+  "executes_pattern": {
+   "value": true,
+   "reason": "检索+轨迹 exemplar 条件化被实际实现并有逐组件消融(Mind2Web)",
+   "evidence_ids": [
+    "E031",
+    "E013"
+   ]
+  },
+  "resolves_problem": {
+   "value": "partial",
+   "reason": "MiniWoB++ 的三类 gap 在 64 个任务上基本关闭(99.2%);Mind2Web 真实站点整任务 SR 仅 2.4/0.6/1.5,跨域记忆无益,故对真实站点 gap 未关闭",
+   "evidence_ids": [
+    "E020",
+    "E031",
+    "E035"
+   ]
+  }
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "version": "gui-domain-cards taxonomy=430aa36290ec conditions=a7501743e64e",
+  "matches": [
+   {
+    "namespace": "gui",
+    "main": "experience_memory_retrieval",
+    "sub": "K27",
+    "version": "gui-domain-cards taxonomy=430aa36290ec conditions=a7501743e64e",
+    "fit": "good",
+    "condition_checks": [
+     {
+      "id": "experience_memory_retrieval.S1",
+      "kind": "success_condition",
+      "status": "met",
+      "reason": "记忆来自同一套件的演示(MiniWoB++ 48 任务;Mind2Web 训练集)",
+      "evidence_ids": [
+       "E024",
+       "E015"
+      ]
+     },
+     {
+      "id": "experience_memory_retrieval.S2",
+      "kind": "success_condition",
+      "status": "unmet",
+      "reason": "存的是完整轨迹+人工抽象,而非摘要;无‘摘要 vs 原轨迹’消融",
+      "evidence_ids": [
+       "E011"
+      ]
+     },
+     {
+      "id": "experience_memory_retrieval.F1",
+      "kind": "failure_mode",
+      "status": "unmet(observed)",
+      "reason": "跨域增益≈0(+0.2/−0.2),与 K27 ‘OOD 小增益’一致",
+      "evidence_ids": [
+       "E034",
+       "E035"
+      ]
+     },
+     {
+      "id": "experience_memory_retrieval.F3",
+      "kind": "failure_mode",
+      "status": "partial",
+      "reason": "cross-website 增益在 Table 2 中有拆分,但 MiniWoB++ 的记忆增益未单独隔离",
+      "evidence_ids": [
+       "E033",
+       "E046"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E013",
+     "E014",
+     "E034"
+    ],
+    "reason": "检索相似任务的存储轨迹进上下文,K27 操作一致;差异:存的是人类演示而非 agent 自探索摘要,且不更新。"
+   },
+   {
+    "namespace": "gui",
+    "main": "structured_screen_observation",
+    "sub": "C13",
+    "version": "gui-domain-cards taxonomy=430aa36290ec conditions=a7501743e64e",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "id": "structured_screen_observation.S3",
+      "kind": "success_condition",
+      "status": "partial",
+      "reason": "Mind2Web 报告排序器召回(86→53%)与最终步 SR;但改为直接生成而非 MCQ,与 S3 ‘MCQ over ranked candidates’ 不同",
+      "evidence_ids": [
+       "E010",
+       "E032"
+      ]
+     },
+     {
+      "id": "structured_screen_observation.S5",
+      "kind": "success_condition",
+      "status": "unmet",
+      "reason": "无 tokens/步 与成功率同时报告",
+      "evidence_ids": [
+       "E045"
+      ]
+     },
+     {
+      "id": "structured_screen_observation.F1",
+      "kind": "failure_mode",
+      "status": "unmet(observed)",
+      "reason": "k=5 时 47% 目标元素不在观测内",
+      "evidence_ids": [
+       "E010"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E007",
+     "E008",
+     "E010"
+    ],
+    "reason": "状态抽象=在策略看到文本观测前裁剪/重写(C13),但用 LLM few-shot 与排序器而非规则;故 partial。"
+   }
+  ],
+  "unassigned": [
+   "‘一次输出多个动作直到需要新状态’(temporal abstraction of actions) —— 现有领域卡无对应"
+  ],
+  "revision_proposals": [
+   {
+    "type": "candidate_note",
+    "text": "‘LLM 生成状态解析代码并执行(code-as-observation)’可能是 structured_screen_observation 的新子机制;目前仅 2306.07863 单篇 → 只能 case,不可 candidate_pattern",
+    "status": "pending(未核)"
+   }
+  ]
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "adapt_via_conditioning",
+   "rs_sub": "C03",
+   "domain": {
+    "namespace": "gui",
+    "main": "experience_memory_retrieval",
+    "sub": "K27"
+   },
+   "operation_correspondence": "RS C03:把检索得到的参考实例作为一等条件输入,推理期无参数更新;domain K27:把存储的过往 episode 检索进上下文。对应点=按任务相似度取回过往轨迹",
+   "necessary_conditions_and_differences": "必要条件=记忆库有相近任务/站点;差异=K27 的记忆多为 agent 自产摘要,Synapse 为人类演示;不同于 K27 的‘摘要优于原始’",
+   "evidence_ids": [
+    "E013",
+    "E014",
+    "E034"
+   ]
+  },
+  {
+   "rs_main": "adapt_via_conditioning",
+   "rs_sub": "C03",
+   "domain": {
+    "namespace": "gui",
+    "main": "structured_screen_observation",
+    "sub": "C13"
+   },
+   "operation_correspondence": "状态抽象也是 few-shot 条件化(抽象 exemplar 让 LLM 把原始状态改写)—— RS C03 的条件化 schema 延伸;domain C13:裁剪/重构观测",
+   "necessary_conditions_and_differences": "必要条件=观测过长;差异=C13 多为规则式裁剪,Synapse 用 LLM 生成/代码并因此依赖人工 exemplar",
+   "evidence_ids": [
+    "E007",
+    "E008",
+    "E010"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1",
+   "text": "Report execution-checked success rate on OSWorld (or OSWorld-Verified) for desktop computer-use claims, stating the step budget (15 vs 50 steps) and observation setting",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "桌面 OSWorld 主张;本文为 web 模拟器/离线 Mind2Web,且 OSWorld 晚于本文。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1",
+   "text": "Report online success on AndroidWorld for mobile-agent claims, not only offline AndroidControl/AITW step metrics",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "移动端主张;不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1",
+   "text": "Report success on WebArena (self-hosted, functional-correctness checkers) for web-agent training or planning claims; if the 165-task WebArena-Lite or a per-template subset is used, say so and justify it",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "WebArena(2307.13854)晚于 Synapse v1,记入 current_relevance;本文 v3(2024-01)虽已出版,但中心主张不是 WebArena。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1",
+   "text": "Evaluate live-web agents on Online-Mind2Web (human-validated, start URL given, no search engine) or Mind2Web-Live rather than only WebVoyager, where a naive search-and-click agent already solves 51% of sampled tasks",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Online-Mind2Web/Mind2Web-Live 晚于本文;本文无 live-web 评测。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1",
+   "text": "Report GUI grounding on ScreenSpot-Pro (high-resolution professional desktop) and ScreenSpot-v2, not only ScreenSpot v1, which saturates (7B and 72B indistinguishable)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1",
+   "text": "Compare a new grounder against UGround(-V1-7B), Aguvis-7B/72B, OS-Atlas-7B and UI-TARS(-1.5) at matched backbone size",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1",
+   "text": "Compare a native end-to-end GUI policy against UI-TARS(-1.5)-7B (or the same backbone's SFT-only model) and against an agentic framework (GPT-4o/o3 planner + specialised grounder such as UGround, Aria-UI, Jedi, GTA1)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1",
+   "text": "For planner-grounder systems, hold the planner fixed and swap grounders (e.g. GPT-4o + UGround vs + Aguvis vs + Jedi), and report the planner alone",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1",
+   "text": "Compare GUI online-RL methods against DigiRL, WebRL, filtered BC / AWR and an SFT-only model trained on the same data",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1",
+   "text": "Validate an LLM/VLM success judge or outcome reward model against human labels on trajectories from agents not used to build it (agreement/accuracy, plus the resulting success-rate gap)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1",
+   "text": "Report judge reliability separately for positive and negative verdicts (precision and NPV, or precision/recall per class), not only overall accuracy",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1",
+   "text": "When a learned judge or PRM is the RL reward, show downstream policy gain against an alternative reward (rule/script checker, ORM vs PRM, another judge), and address reward hacking or bias",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1",
+   "text": "Measure execution checkers (evaluation scripts) two-sidedly: false negatives on alternative valid solutions as well as false positives",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1",
+   "text": "For PRMs or step-level verifiers, ablate the label source (human vs GPT-4o-generated step labels)",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1",
+   "text": "Do not rest an agent capability claim on offline step accuracy (AndroidControl, Multimodal-Mind2Web, GUI Odyssey) alone; add an online benchmark or show the offline metric predicts online success",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": true,
+   "status": "partial",
+   "reason": "真实网站主张(Mind2Web)只有离线步指标且整任务 SR ≤2.4%;MiniWoB++ 有在线可执行评测(但为模拟器),故不止依赖离线指标。",
+   "evidence_ids": [
+    "E031",
+    "E020"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1",
+   "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "温度 0 单次运行、50 episode/任务,无重复/CI。",
+   "evidence_ids": [
+    "E017",
+    "E016",
+    "E044"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1",
+   "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "最大步数取值与步数使用未报告;Mind2Web 为单步离线。",
+   "evidence_ids": [
+    "E047"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1",
+   "text": "For inference-time search or best-of-N (simulated lookahead, verifier reranking), report cost/latency and the number of candidates, and compare against real-execution tree search where reset is possible",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1",
+   "text": "Disclose and validate any modification to an online benchmark harness (re-implemented checkers, changed action implementations, dropped tasks, extra steps)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "applicable": true,
+   "status": "partial",
+   "reason": "MiniWoB++ 使用 legacy 分支并沿用 RCI 的动作空间(披露);Mind2Web 把 MCQ 改成直接生成并改 top-k(披露,但对基线并非同设置)。",
+   "evidence_ids": [
+    "E032",
+    "E042"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1",
+   "text": "For live-web results, state the evaluation date and handle site drift (replace outdated tasks, report blocked/CAPTCHA tasks)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1",
+   "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1",
+   "text": "Report results across backbone sizes (e.g. 7B and 32B/72B), since gains from GUI data/RL recipes shrink with model size",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": true,
+   "status": "partial",
+   "reason": "提示配方在 GPT-3.5 与 CodeLlama-7B 上对比(仅 Mind2Web),趋势一致;MiniWoB++ 仅 GPT-3.5。",
+   "evidence_ids": [
+    "E031"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1",
+   "text": "Stratify online success by human reference step count (difficulty) and audit failure causes",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1",
+   "text": "Test grounding robustness under controlled perturbations (zoom, text size, window position/clutter, relational instructions) with matched pairs",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1",
+   "text": "Report refusal / infeasible-task behaviour (instructions with no valid target)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1",
+   "text": "Compare a synthetic-trajectory recipe against an instruction-first / task-driven synthesis baseline with the same executor and similar data size",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1",
+   "text": "Show a data-scaling curve (fraction or count of synthetic samples vs downstream score) and say where it saturates",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1",
+   "text": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "记忆只存 Mind2Web 训练集(分离良好);MiniWoB++ 的 exemplar 任务与评测任务重合,仅 16 个近似兄弟任务为‘未见’。",
+   "evidence_ids": [
+    "E015",
+    "E024"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1",
+   "text": "Ablate error-correction/reflection data against filtered behaviour cloning at the same iteration count",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1",
+   "text": "Evaluate a GUI world model by downstream agent success and closed-loop (multi-step, autoregressive) rollouts, not only teacher-forced one-step fidelity",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1",
+   "text": "Ablate imagination / lookahead horizon, since world-model errors compound beyond 1 (lookahead) or about 5 (training) steps",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1",
+   "text": "For training in a world model, include sim-only vs real-anchored vs SFT-only arms",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1",
+   "text": "Back world-model or synthetic-environment fidelity scores with a second independent judge, human validation or executable checks, not a VLM judge from the same family as the training reward",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1",
+   "text": "For a digital twin / simulated app used for training or evaluation, measure its realism and whether it preserves the ranking of agents or checkpoints seen in the real environment",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:Synapse 的中心主张是 ICL 提示结构/检索,不涉及对应的 grounding/judge/world-model/synthesis/RL 评审情境。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1",
+   "text": "For memory/retrieval agents, show gains on environments other than those the memory was built from",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "applicable": true,
+   "status": "partial",
+   "reason": "记忆在 cross-task/website 有小增益,跨域≈0;MiniWoB++ 记忆增益未独立隔离。",
+   "evidence_ids": [
+    "E033",
+    "E034",
+    "E035"
+   ],
+   "score_item": "E.holdout"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "MiniWoB++ 上 99.2% 平均成功率(64 任务),不依赖自纠错,仅用 48 个任务的演示(作者原主张)",
+   "setting": "legacy MiniWoB++;gpt-3.5-turbo-0301;temperature 0;50 episode/任务",
+   "baseline_control": "人类(CC-Net 论文)、RCI 90.6%/54 任务、AdaPlanner、Pix2Act、WebGUM 等(均为转引的原论文数字,覆盖任务数不同)",
+   "selection_vs_test": "exemplar 与抽象 prompt 由作者为 48 个任务准备,并在同任务上评测;无单独开发集;16 个无 exemplar 任务近似兄弟任务",
+   "result_denominator": "0.992 平均;各列任务数 64/104/54/…;对比行均值基于不同子集",
+   "evidence_ids": [
+    "E001",
+    "E020",
+    "E022",
+    "E021",
+    "E016",
+    "E023",
+    "E024"
+   ],
+   "counterevidence": [
+    "E021",
+    "E046",
+    "E018",
+    "E025",
+    "E026"
+   ],
+   "allowed_conclusion": "scoped:在 legacy MiniWoB++ 的 64 个任务、人工准备 exemplar 的条件下,Synapse 在这些任务上的平均成功率 99.2%,与列出的基线在各自任务子集上比较领先;不是‘解决 MiniWoB++’(104 任务)或对真实网站的结论。"
+  },
+  {
+   "claim_id": "C2",
+   "text": "Mind2Web 上相对 MindAct(GPT-3.5)步 SR 相对提升 32%/50%/56%(状态抽象/+TaE/+记忆)",
+   "setting": "离线 Mind2Web;GPT-3.5-turbo-16k-0613 与 CodeLlama-7B;temperature 0",
+   "baseline_control": "MindAct(GPT-3.5)(固定来源:MCQ+3 demo+top-50);Synapse 变体为直接生成+top-5/3+检索 exemplar",
+   "selection_vs_test": "记忆只存训练集;三种泛化划分",
+   "result_denominator": "步 SR 17.4/16.2/18.6 → 30.6/24.2/26.4(GPT-3.5);整任务 SR 0.8/0.6/1.0 → 2.4/0.6/1.5",
+   "evidence_ids": [
+    "E002",
+    "E028",
+    "E029",
+    "E030",
+    "E031",
+    "E032",
+    "E042",
+    "E043"
+   ],
+   "counterevidence": [
+    "E042",
+    "E032",
+    "E010",
+    "E044"
+   ],
+   "allowed_conclusion": "scoped:相对 MindAct 的‘MCQ top-50’基线,直接生成+小 top-k+TaE+检索在离线步 SR 上更高;‘提升’是多因素(格式、k、exemplar 结构、检索)组合,相对提升建立在小绝对值与整任务 SR≤2.4% 之上。"
+  },
+  {
+   "claim_id": "C3",
+   "text": "状态抽象使长页面任务(book-flight)与更多 exemplar 成为可能",
+   "setting": "MiniWoB++ Fig.5 等",
+   "baseline_control": "无状态抽象",
+   "selection_vs_test": "同任务",
+   "result_denominator": "email-inbox-nl-turk 52%→100%;book-flight 无抽象不可解(图像,Table 3 给出 1.00)",
+   "evidence_ids": [
+    "E008",
+    "E022"
+   ],
+   "counterevidence": [],
+   "allowed_conclusion": "supported(定性/单图):在这些任务上抽象是必要条件;Fig.5 数值图像未读。"
+  },
+  {
+   "claim_id": "C4",
+   "text": "exemplar 记忆实现对未见任务/相似任务的泛化",
+   "setting": "MiniWoB++ 16 个无 exemplar 任务;Mind2Web 三划分",
+   "baseline_control": "静态 few-shot(Mind2Web 变体)",
+   "selection_vs_test": "16 个‘未见’与有 exemplar 的兄弟任务相似(如 email-inbox vs email-inbox-nl-turk)",
+   "result_denominator": "16 任务平均≈100%;Mind2Web cross-task +1.4/+1.9、cross-website +1.5/+1.0、cross-domain +0.2/−0.2",
+   "evidence_ids": [
+    "E023",
+    "E033",
+    "E034",
+    "E035"
+   ],
+   "counterevidence": [
+    "E035",
+    "E024"
+   ],
+   "allowed_conclusion": "scoped:对近邻任务有效,对真正跨域无效。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_reason": "MiniWoB++ 为交互环境、成功由环境奖励判定;Mind2Web 为离线 step 指标不抬升等级;16 个‘未见’任务是同套件近亲,不判 transfer;exemplar 来自评测任务。",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "在 legacy MiniWoB++ 的 64 个任务上(其中 48 个有人工准备的轨迹 exemplar/抽象 prompt,16 个近邻任务无),gpt-3.5-turbo-0301 温度 0、每任务 50 episode 的平均成功率为 99.2%,高于表中各基线在其各自任务子集上的均值;在离线 Mind2Web 上,直接生成+小 top-k+TaE+检索较 MindAct(GPT-3.5, MCQ top-50)步 SR 高(17.4/16.2/18.6→30.6/24.2/26.4),但整任务 SR≤2.4% 且跨域记忆无增益。",
+  "original_claim_preserved": "99.2% across 64 tasks using demonstrations from only 48 tasks; 56% relative improvement on Mind2Web (作者原文)",
+  "flags": {
+   "online": "author_report(MiniWoB++)",
+   "transfer": false,
+   "retained": "not_applicable(记忆为人类演示)",
+   "improver": "not_claimed",
+   "our_reproduction": false
+  },
+  "unresolved": [
+   "RCI/AdaPlanner 原文未固定,对比公平性只能依据作者转述",
+   "GPT-3.5 的 MiniWoB++ 预训练暴露",
+   "MiniWoB++ 组件消融数值(仅图像)",
+   "exemplar 人工准备成本"
+  ]
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "三类瓶颈具体并有任务级对应(book-flight、use-autocomplete、task-specific exemplar),最近邻(RCI/MindAct/AdaPlanner/WebAgent/Pix2Act)与祖先清楚;扣一档因 RCI 等原文未固定、gap(2) 与自纠错/exemplar 数混杂。",
+   "evidence_ids": [
+    "E004",
+    "E005",
+    "E006",
+    "E038",
+    "E041",
+    "E040"
+   ],
+   "counterevidence_ids": [
+    "E026",
+    "E025"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "每个组件对应一个已命名瓶颈,操作与信息假设可重建(状态抽象→token 减少→更多 exemplar;TaE→少查询→少累积错误;记忆→相似任务)。弱点:‘多动作时间抽象’与‘去掉自纠错’的因果拆分未隔离;human-crafted 抽象是隐含前提。",
+   "evidence_ids": [
+    "E008",
+    "E011",
+    "E012",
+    "E013",
+    "E031"
+   ],
+   "counterevidence_ids": [
+    "E018",
+    "E026"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "附录给出完整 prompt/动作空间/检索细节(embedding、Faiss、top3 多数规则、k=3/5),错误回退仅有代码失败→零样本抽象;限制与失败(跨域、时延、exemplar 质量、LLM 推理错)被披露。缺最大步数取值与 exemplar 人工选择流程细节。",
+   "evidence_ids": [
+    "E009",
+    "E013",
+    "E014",
+    "E036",
+    "E037",
+    "E027"
+   ],
+   "counterevidence_ids": [
+    "E047"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "MiniWoB++ 为环境奖励(可执行);Mind2Web 离线 step 指标有标注真值;基线数字核对到固定的 Mind2Web 原表一致。弱点:跨方法 Average 基于不同任务子集;Mind2Web 整任务 SR 太低、离线不能反映在线能力。",
+   "evidence_ids": [
+    "E020",
+    "E021",
+    "E028",
+    "E043"
+   ],
+   "counterevidence_ids": [
+    "E021",
+    "E031"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Mind2Web 逐组件加法有控制(同 LLM),CodeLlama 趋势一致;但‘状态抽象’步混了生成格式(直接生成 vs MCQ)与 k(50→5);无随机/最近邻-无关 exemplar 对照;MiniWoB++ 与 RCI 对比同时改变 exemplar 数、是否自纠错、基座版本;MiniWoB++ 组件消融仅图(Fig.5)。",
+   "evidence_ids": [
+    "E029",
+    "E030",
+    "E031",
+    "E010"
+   ],
+   "counterevidence_ids": [
+    "E032",
+    "E026",
+    "E042"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "MiniWoB++ 无开发/测试划分(48 个 exemplar 任务即评测任务,抽象 prompt 为这些任务人工调试),16 个无 exemplar 任务近似兄弟任务;gpt-3.5 对 MiniWoB++ 的预训练暴露未讨论;Mind2Web 有 cross-task/website/domain 且记忆仅训练集,是较好留出。",
+   "evidence_ids": [
+    "E024",
+    "E015"
+   ],
+   "counterevidence_ids": [
+    "E046",
+    "E024"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "温度 0 单次、50 episode/任务,无方差/CI/重复;Mind2Web 整任务 SR 个位数无 CI;相对提升(56%)基于小绝对值。有逐任务表与覆盖任务数(分母较清楚)。",
+   "evidence_ids": [
+    "E016",
+    "E017",
+    "E021"
+   ],
+   "counterevidence_ids": [
+    "E044"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "仅承认高时延;无 token、调用次数、墙钟、API 费用;exemplar 数 3.45 vs RCI 1.32 提示更长提示但未折算成本;‘时间抽象降低成本和时延’仅断言。",
+   "evidence_ids": [
+    "E036",
+    "E025"
+   ],
+   "counterevidence_ids": [
+    "E045"
+   ],
+   "search_scope": [
+    "全文检索 latency/token/cost/API"
+   ]
+  }
+ },
+ "score": {
+  "raw": 65.0,
+  "display": 65.0,
+  "lower": 65.0,
+  "upper": 65.0,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+ },
+ "status": {
+  "value": "reviewed",
+  "reason": "完整主文与附录(含 prompt 列表)已读;Fig.3–7 图像内容缺失但数值在表中;不影响八项判断。"
+ }
+}

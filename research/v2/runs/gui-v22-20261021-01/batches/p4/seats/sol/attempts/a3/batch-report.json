@@ -1,0 +1,76 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p4",
+  "attempt_id": "a3",
+  "seat": "sol",
+  "supersedes_note": "a1 capacity split",
+  "assigned": [
+    "2310.04716"
+  ],
+  "reviewed": [],
+  "needs_fulltext": [
+    "2310.04716"
+  ],
+  "needs_evidence": [],
+  "outside_taxonomy": [],
+  "schema_errors": [],
+  "records_written": 1,
+  "papers_read": 1,
+  "scored": 0,
+  "disposition_note": "Lists are mutually exclusive final dispositions: paper is needs_fulltext, not reviewed/scored. Additional nearest-neighbor evidence blocker recorded separately below.",
+  "additional_needs_evidence": [
+    "2310.04716: contemporaneous Spotlight/task-reward primary sources not in fixed reference bundle"
+  ],
+  "model_type": "sonnet",
+  "actual_model": "gpt-6.1-sol",
+  "session_id": "681194da-49f5-4ad4-8eb4-573b45384076",
+  "receipt_ref": null,
+  "receipt_ref_reason": "No independent model-provider receipt was supplied; not probed.",
+  "timestamp": "2026-10-22T02:22:21.346645+00:00",
+  "input_hash": "93d0dafbc452f91483228d9ad53bd5dcd7df4a98d3d7bdf6af2905c87de6b1ca",
+  "assignment_scope": "One-paper a3 capacity split explicitly assigned; do not infer all5 manifest papers assigned to this worker.",
+  "outputs": [
+    {
+      "paper_key": "2310.04716",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p4/seats/sol/attempts/a3/2310.04716.json",
+      "sha256": "a5a67899f686f6be6af78a4780456b90b2a2016fa8225995a824951e44ec2750",
+      "status": "needs_fulltext"
+    }
+  ],
+  "checks": {
+    "json_parse": "passed",
+    "required_fields": "passed",
+    "paper_version_and_material_hash": "passed",
+    "non_corpus_asset_hashes": "passed",
+    "flat_eight_ratings": "passed",
+    "unknown_no_point_score": "passed",
+    "weighted_interval_and_coverage": "passed",
+    "exact_continuous_quotes_and_line_locators": "passed",
+    "evidence_id_references": "passed",
+    "original_parent_sub_and_gui_namespace": "passed",
+    "table_number_discrepancies": "preserved",
+    "actual_images": "not_inspected_unknown",
+    "scientific_reproduction": "not_performed",
+    "semantic_review": "seat analysis only; controller/Opus pending"
+  },
+  "blockers": [
+    {
+      "type": "needs_fulltext",
+      "request": "Obtain the explicitly referenced split-statistics and detailed web-collection supplementary; fix version/hash for both seats before rescoring.",
+      "evidence_ids": [
+        "E005"
+      ]
+    },
+    {
+      "type": "needs_evidence",
+      "request": "For independent gap/lineage audit, fix Spotlight2209.14927 and task-rewardCV2302.08242 original source versions; include precise Pix2Seq/Donut lineage sources if controller requires full novelty comparison. No seat-private fetch.",
+      "evidence_ids": [
+        "E036",
+        "E037"
+      ]
+    }
+  ],
+  "material_note": "Explicitly referenced split statistics and web-collection details absent from available A–E. Images unknown. Two body/caption table-number mismatches preserved literally.",
+  "blindness": "No other seat, a1/a2 review, aggregate, archive, old score, acceptance or citation ranking read. User-supplied factual leads independently checked against fixed text; no other-seat judgment accessed."
+}

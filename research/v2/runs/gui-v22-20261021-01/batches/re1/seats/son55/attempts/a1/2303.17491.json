@@ -1,0 +1,884 @@
+{
+ "paper": {
+  "paper_key": "2303.17491",
+  "paper_id": "arXiv:2303.17491",
+  "title": "Language Models can Solve Computer Tasks",
+  "version": "2303.17491v3",
+  "claim_type": "system_method",
+  "central_claim": "A pre-trained LLM prompted with Recursive Criticism and Improvement (RCI) over task, state and agent grounding can execute MiniWoB++ computer tasks from 2-3 demonstrations, outperforming prior LLM, SL and RL approaches (second to CC-Net SL+RL), and RCI also improves LLM reasoning when external feedback is given."
+ },
+ "evidence": [
+  {
+   "evidence_id": "E001",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Abstract",
+   "quote": "the agent Recursively Criticizes and Improves its output (RCI)",
+   "support_explanation": "Central operation: critique-then-improve prompting.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E002",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 2.2.1",
+   "quote": "we propose decomposing this action sampling into three reasoning steps each of which considers task grounding, state grounding, and agent grounding",
+   "support_explanation": "Three-stage decomposition of one action.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E003",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 3.2.1",
+   "quote": "The state space of our agent consists solely of HTML code.",
+   "support_explanation": "Observation is HTML only; no pixels.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E004",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 2.2.2",
+   "quote": "The implicit RCI is repeatedly run until the resulting action is executable, with a maximum loop count set to limit the number of iterations.",
+   "support_explanation": "Agent grounding loop terminates on an executability (regex) check: a mechanical signal.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E005",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 2.2.2",
+   "quote": "Empirical analysis on MiniWoB++ tasks suggests that setting the loop count to 3 yields optimal performance.",
+   "support_explanation": "Hyperparameter tuned on the evaluation benchmark itself.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E006",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 2.2.2",
+   "quote": "we observe that a single pass of explicit RCI suffices for most of MiniWoB++ tasks",
+   "support_explanation": "Plan critique loop count chosen from benchmark observation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E007",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 2.2.2",
+   "quote": "We avoid repeating the implicit RCI cycle more than once as it does not impact the success rate based on our observations.",
+   "support_explanation": "State-grounding loop count fixed by observation; no numbers.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E008",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 3.2.1",
+   "quote": "We employ a set of 55 tasks to enable fair comparisons with baselines, as previous works are only evaluated on a subset of tasks consistently.",
+   "support_explanation": "Task subset; Table 18 lists 54 tasks with an Ours value.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E009",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 3.2.1",
+   "quote": "certain commonly evaluated tasks in prior works are excluded due to the excessive length of HTML code for some UI components",
+   "support_explanation": "Tasks removed for HTML length.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E010",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 3.2.2",
+   "quote": "However, a direct comparison with CC-Net is not possible since it uses dictionary-based typing actions.",
+   "support_explanation": "CC-Net comparison is re-scoped using its ablation row, not rerun.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E011",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 3.2.2",
+   "quote": "Among all the baselines, our approach achieves the second highest score.",
+   "support_explanation": "Author states CC-Net (SL+RL) is higher.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E012",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 3.2.3",
+   "quote": "Our results show that our agent achieved a higher success rate than all baselines, requiring 120x fewer samples than WebN-T5-3B and 11,000x fewer samples than CC-Net .",
+   "support_explanation": "Sec 3.2.3 claims higher than all baselines; conflicts with E011.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E013",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 3.2.4",
+   "quote": "Our results indicate that each grounding contribution is essential to solving computer tasks, with each contributing almost equally to the overall success rate.",
+   "support_explanation": "Stage ablation claim (9 tasks, one backbone).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E014",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Fig 5 caption",
+   "quote": "The experimental design employs the use of InstructGPT-3 + RLHF model ( gpt-3.5-turbo ).",
+   "support_explanation": "Ablations only on gpt-3.5-turbo.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E015",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 4",
+   "quote": "leaving the generalization ability of RCI to other models unexplored",
+   "support_explanation": "Backbone generality admitted unexplored.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E016",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 5",
+   "quote": "RCI is more expensive to run compared to approaches that just sample once from the LLM.",
+   "support_explanation": "Cost acknowledged, not quantified.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E017",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "App C.2",
+   "quote": "we use the correct label to decide when to stop the RCI loop",
+   "support_explanation": "Reasoning-task RCI uses ground-truth label as stop signal.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E018",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "App G Table 17",
+   "quote": "In the absence of external feedback, RCI prompting on reasoning benchmarks exhibits performance equivalent to, or below that of a zero-shot approach.",
+   "support_explanation": "Self-critique alone does not help on reasoning; Table 1/2 gains depend on oracle label feedback.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E019",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 3.1",
+   "quote": "in the absence of this external feedback mechanism, the RCI process is prone to false negative critics, subsequently leading to a decrease in performance",
+   "support_explanation": "Self-critic unreliability noted by authors.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E020",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "App C.5",
+   "quote": "we outline several modifications that were incorporated into the MiniWoB++ benchmark for the purpose of our evaluation with language models that have a limited context length",
+   "support_explanation": "Harness modified; baselines not rerun on modified tasks.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E021",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "App C.5 Table 5",
+   "quote": "The quantity of randomly generated emails has been restricted to a range of three to six.",
+   "support_explanation": "Concrete task simplification.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E022",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "App F.1",
+   "quote": "Consequently, we opt to exclude the state grounding step for this particular task.",
+   "support_explanation": "Per-task pipeline change after seeing failure.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E023",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "App F.2",
+   "quote": "including explanatory trajectories in the few-shot examples can significantly reduce the number of required few-shot examples",
+   "support_explanation": "Hand-crafted per-task explanatory demonstrations.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E024",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "App G Table 18 note",
+   "quote": "We generously estimate the performance of CC-Net (RL) based on their figures.",
+   "support_explanation": "Some baseline numbers are estimated from figures.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E025",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "App G Table 18 note",
+   "quote": "Ours (w/ GPT-4) depicts the performance outcomes obtained through the use of the GPT-4 model for some tasks",
+   "support_explanation": "GPT-4 column only for some tasks; selection rule not stated.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E026",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 3.2.2",
+   "quote": "We observed three main failure modes of our agent: (i) underperformance in tasks that require long-horizon planning",
+   "support_explanation": "Failure analysis (qualitative).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E027",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "App D Table 7",
+   "quote": "Based on the current plan and task, the next proper instruction should be `",
+   "support_explanation": "Task-grounding prompt tail (appendix now present).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E028",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "App D Table 9",
+   "quote": "This action does not match the regular expressions. The updated instruction that matches one of the regular expressions is `",
+   "support_explanation": "Agent-grounding prompt tail.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E029",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "App G Table 18",
+   "quote": "terminal 1.00 1.00 n/a 0.00 0.00 0.00 0.00 0.00 0.00 0.00",
+   "support_explanation": "Row shows tasks included where trained baselines score 0; per-task table is the only per-task evidence.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E030",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "App G Table 18",
+   "quote": "click-checkboxes-soft 0.72 0.96 0.54 0.95 0.12 0.04 0.94 0.54 0.12 0.95",
+   "support_explanation": "GPT-4 column exceeds gpt-3.5 column on selected tasks (nine tasks differ in our recount).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E031",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 3.2.3",
+   "quote": "Rather than directly updating model parameters with demonstration data, our approach involves integrating two to three demonstrations into the prompt for in-context learning",
+   "support_explanation": "Demonstration budget: 2-3 per task.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E032",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 1",
+   "quote": "previous approaches to this problem require large amounts of expert demonstrations and task-specific reward functions, both of which are impractical for new tasks",
+   "support_explanation": "Author gap.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E033",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 4",
+   "quote": "The agent’s focus on short-term decisions overlooks the necessity for long-term strategy",
+   "support_explanation": "Admitted limitation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E034",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 3.2.2",
+   "quote": "Notably, our proposed RCI prompting method outperforms the SotA LLM approach [ 24 ] , even when the latter employs both finetuning and few-shot examples in prompts.",
+   "support_explanation": "Comparison with WebN-T5 (LLM approach).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E035",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 3.2.1",
+   "quote": "we have selected tasks that involve free-form language typing actions, which have been reported to have an almost-zero success rate in previous works",
+   "support_explanation": "Task selection includes hard-for-baseline tasks.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E036",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "App G Table 18 note",
+   "quote": "The performance of baseline models has been sourced from prior studies",
+   "support_explanation": "Baselines copied, not rerun in the same harness.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E037",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Sec 2.2.2",
+   "quote": "The benefits of conditioning on the plan for improved grounding of actions are twofold.",
+   "support_explanation": "Plan used as in-episode memory.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E038",
+   "material_id": "M-2303.17491",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "locator": "Table 18 recount (our_inference)",
+   "quote": "click-checkboxes-large 0.94 0.94 0.22 0.71 0.00 0.00 0.84 0.22 0.00 0.71",
+   "support_explanation": "Our recount of Table 18 over 53 parsed rows: Ours(gpt-3.5) mean 0.919, CC-Net SL+RL 0.934, GPT-4 column 0.954; guess-number row has only 9 values so is excluded from the recount.",
+   "kind": "our_inference"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "Per-step action generation of an LLM agent on MiniWoB++: plan -> task-grounded action -> state-grounded action -> agent-grounded action.",
+   "information": "Task text, HTML state, plan, history of executed instructions, agent specification (5 regexes); GPT-3/3.5/4 via API; temperature 0, 256 max tokens.",
+   "operation": "Explicit RCI on the plan (1 pass); implicit RCI to ground the action to the current HTML (1 pass); implicit RCI to fix format until it matches the regexes (<=3 loops).",
+   "output": "One natural-language instruction executed by an instruction-following agent.",
+   "conditions": "HTML short enough for context; 2-3 hand-built demonstrations per task.",
+   "feedback": "Regex admissibility check (mechanical); otherwise self-critique with no external verdict.",
+   "selection_rule": "No candidate selection; each revision replaces the previous output.",
+   "persistence": "not_applicable beyond the episode: the plan acts as in-episode memory; nothing persisted across tasks.",
+   "later_use": "plan and history used at later steps of the same episode only",
+   "claimed_effect": "MiniWoB++ average success above SL/RL SotA aggregates and second only to CC-Net SL+RL with 120x-11,000x fewer samples.",
+   "failure_boundary": "Long-horizon, multi-step reasoning, visually rendered tasks (E026); long HTML (E009).",
+   "evidence_ids": [
+    "E002",
+    "E003",
+    "E004",
+    "E006",
+    "E007",
+    "E027",
+    "E028",
+    "E031",
+    "E037"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "RCI prompting for reasoning benchmarks (8 datasets).",
+   "information": "Question plus the ground-truth label as stop signal for up to two RCI loops.",
+   "operation": "Criticize previous answer then improve it.",
+   "output": "Final answer.",
+   "conditions": "Oracle stop signal; without it accuracy <= zero-shot (E018).",
+   "feedback": "Ground-truth label (external feedback).",
+   "selection_rule": "Stop loop when output matches the label.",
+   "persistence": "not_applicable",
+   "later_use": "not_applicable",
+   "claimed_effect": "Zero-shot + RCI above zero-shot and CoT on most benchmarks.",
+   "failure_boundary": "False-negative critics without external feedback (E019).",
+   "evidence_ids": [
+    "E017",
+    "E018",
+    "E019"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "LLM agents that take keyboard/mouse actions lag behind SL/RL approaches, which need large demonstration sets and task-specific reward functions that are impractical for new tasks.",
+  "checked_gap": "Real and sourced: trained agents need 12K-2.4M demonstrations (CC-Net, WebN-T5). The paper does not show that the residual limitation of prompted LLM agents lies in grounding rather than raw model strength; the three-stage split is argued by construction.",
+  "lineage": [
+   "WebN-T5-3B / Gur et al. 2022 (LLM fine-tuned on 12K demonstrations), cited",
+   "CC-Net (Humphreys 2022), cited",
+   "ReAct, Reflexion, Self-Refine, SayCan, Inner Monologue as reasoning/grounding neighbours, cited in App B",
+   "WebGPT/WebShop with custom commands, cited"
+  ],
+  "lineage_note": "The 14-paper references.json has no pre-2023 neighbour; later pinned items (Mind2Web 2306.06070, WebArena 2307.13854) are current_relevance, not ancestors. Lineage statements are author_report from App B.",
+  "closest_adjacent": "ReAct (interleaved reasoning+action) and Self-Refine/Reflexion (self-feedback refinement); the paper asserts novelty as implicit-feedback self-critique but does not compare to them in the same harness.",
+  "residue": "Long-horizon planning, multi-step reasoning, vision-dependent tasks, long HTML, action space limited to click/type.",
+  "stakes": "Practical few-shot computer-control without reward engineering (author claim).",
+  "method_response": "Inference-time critique loops at three grounding stages give a model-only substitute for trained grounding components; admissibility is checked by regex.",
+  "remaining_gap": "Not shown: gains over ReAct/CoT/Self-Refine under the same harness; behaviour outside MiniWoB++.",
+  "evidence_ids": [
+   "E032",
+   "E026",
+   "E033",
+   "E011"
+  ],
+  "unresolved": [
+   "Contribution of RCI vs stronger backbone (gpt-3.5/4 vs T5-3B baseline)",
+   "Cost per task"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "decompose_and_delegate",
+  "supporting": [
+   "adapt_via_conditioning"
+  ],
+  "outside_taxonomy": false,
+  "reason": "",
+  "matches": [
+   {
+    "main_id": "decompose_and_delegate",
+    "sub_id": "C25",
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "1_responsibility_boundary": "partial: task/state/agent grounding named as distinct failure sites but all handled by the same LLM; no distinct solver",
+     "2_machine_checkable_artifact": "partial: the action string is checked against 5 regexes (agent grounding); the plan and state-grounded action are free text",
+     "3_close_loop_with_verifiable_signal": "partial: regex executability is mechanical; plan/state critique is self-generated and the paper itself shows self-critique needs oracle feedback on reasoning tasks (E018)",
+     "4_external_oracle_if_self_eval_unreliable": "unmet for the reasoning claim (label used as stop), n/a for computer tasks"
+    },
+    "success_checks": "Each stage ablated (E013) on 9 tasks.",
+    "failure_checks": "Chains generic prompts of one model (risk named in card); self-evaluation reliability not independently validated.",
+    "evidence_ids": [
+     "E002",
+     "E004",
+     "E013",
+     "E018"
+    ],
+    "reason": "The actual operation is staged decomposition with the model critiquing its own output; fits the card only through its \"model's own verify-and-revise loop\" branch."
+   },
+   {
+    "main_id": "adapt_via_conditioning",
+    "sub_id": "C03",
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "1_schema": "met: fixed prompt schema with agent spec and regexes",
+     "3_no_parameter_update": "met",
+     "4_category_holdout": "unmet: MiniWoB++ tasks used for design and test",
+     "5_cheaper_baseline": "partial: compares to trained models, not to longer-context or non-RCI prompting in same harness"
+    },
+    "success_checks": "2-3 demonstrations per task, no weight updates (E031).",
+    "failure_checks": "Demonstrations hand-tuned per task (E022, E023).",
+    "evidence_ids": [
+     "E031",
+     "E022",
+     "E023"
+    ],
+    "reason": "Demonstrations in context rather than training is a separate operation from the critique loops."
+   }
+  ],
+  "executes_pattern": true,
+  "resolves_problem": "partial: on the 53-54 selected MiniWoB++ tasks a prompted LLM comes within about 1.5 points of CC-Net SL+RL (our recount 0.919 vs 0.934; 0.954 with GPT-4 on selected tasks); not shown for realistic sites or long horizons."
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "agent_loop_context_control",
+    "sub": "C20",
+    "version": "patterns@2026-10 (cua-agents-core C20)",
+    "fit": "partial",
+    "condition_checks": {
+     "fixed_schema_each_step": "met: plan -> action -> grounding revisions every step",
+     "self_declared_stop": "unmet/unknown: episodes end by environment",
+     "observation_description_step": "not used",
+     "strong_prompted_backbone": "met: gpt-3.5/4",
+     "ablation_of_roles": "partial: three groundings ablated on 9 tasks, one backbone (E013, E014)"
+    },
+    "evidence_ids": [
+     "E002",
+     "E013",
+     "E014"
+    ],
+    "reason": "Prompted per-step plan/act loop with self-revision.",
+    "namespace": "gui"
+   }
+  ],
+  "unassigned": [
+   "Pre-execution self-critique of the proposed action (RCI) is not C18 (which reflects on before/after observations after execution); no existing gui sub-card covers it."
+  ],
+  "revision_proposals": []
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": "C25",
+   "domain_namespace": "gui",
+   "domain_main": "agent_loop_context_control",
+   "domain_sub": "C20",
+   "operation_correspondence": "RS: staged decomposition with a model-run verify-and-revise loop; gui: per-step prompted plan-then-act schema with self-revision.",
+   "required_conditions_and_differences": "gui C20 expects self-declared stop and an observe step; RCI adds pre-execution critique and a regex-checked format stage. RS card expects an independent solver, absent here.",
+   "evidence_ids": [
+    "E002",
+    "E004",
+    "E018"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E16",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E16"
+   ],
+   "applies_when": "empirical comparison on an online benchmark with LLM sampling/environment noise",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "No number of episodes per task, seeds or intervals reported; greedy decoding makes LLM deterministic but MiniWoB episodes are randomised.",
+   "evidence_ids": [
+    "E029"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E19"
+   ],
+   "applies_when": "result on a modified/re-engineered online harness",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Modifications (reduced email/social-media components, dropped long-HTML tasks, generative typing) are disclosed in App C but baselines were not rerun on the modified tasks and the effect is not quantified.",
+   "evidence_ids": [
+    "E009",
+    "E020",
+    "E021",
+    "E036"
+   ],
+   "score_item": "E.holdout, E.causality"
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E03"
+   ],
+   "applies_when": "planning method claimed to improve web agents",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Only MiniWoB++ (synthetic mini-websites); no WebArena/Mind2Web/real-site test. Noting WebArena appeared after v1 of this paper, so this is a scope observation, not a fault.",
+   "evidence_ids": [
+    "E003",
+    "E015"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E18"
+   ],
+   "applies_when": "inference-time multi-call method (search/best-of-N); RCI is the nearest analogue",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Cost is acknowledged as higher but number of calls/tokens/latency is not reported; no compute-matched baseline (e.g., resampling).",
+   "evidence_ids": [
+    "E016"
+   ],
+   "score_item": "E.cost, E.causality"
+  },
+  {
+   "id": "core-E08",
+   "version": "patterns/main/agent_loop_context_control.md",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "patterns/main/agent_loop_context_control.md#reviewer-expectations"
+   ],
+   "applies_when": "multi-stage/hierarchical prompted loop claim",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Each grounding stage removed with the same backbone (met) but on nine tasks only, gpt-3.5 only, no numbers in text (Fig 5).",
+   "evidence_ids": [
+    "E013",
+    "E014"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "core-E21",
+   "version": "patterns/main/agent_loop_context_control.md",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "patterns/main/agent_loop_context_control.md#reviewer-expectations"
+   ],
+   "applies_when": "architecture adding model calls per step",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Per-step call count/tokens/latency not given.",
+   "evidence_ids": [
+    "E016"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E10"
+   ],
+   "applies_when": "LLM/VLM used to label trajectory success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Success is the MiniWoB++ programmatic reward; the LLM critic is part of the method, not a success judge. Its reliability is still unvalidated, see E018/E019.",
+   "evidence_ids": [
+    "E019"
+   ],
+   "score_item": "none"
+  }
+ ],
+ "expectations_not_applicable": {
+  "ids": [
+   "E01",
+   "E02",
+   "E04-E09",
+   "E11-E15",
+   "E17",
+   "E20-E35"
+  ],
+  "reason": "No desktop/mobile/live-web benchmark, no training, no learned judge, no world model/memory/data synthesis; E17 (equal step budget) cannot be checked because step budgets are not stated (unknown, not graded)."
+ },
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "RCI agent surpasses SL and RL SotA aggregates and outperforms prior LLM approaches on MiniWoB++; second only to CC-Net SL+RL.",
+   "setting": "55 selected tasks (54 listed), gpt-3.5-turbo (and gpt-4 on some tasks), 2-3 demonstrations, temperature 0",
+   "baseline_control": "Numbers copied from prior papers; CC-Net (no dictionary typing) used as fair comparator; some baseline numbers estimated from figures",
+   "selection_vs_test": "Loop counts, task-specific demonstrations and per-task pipeline choices made on the same benchmark; no dev/test split",
+   "result_denominator": "Per-task success rates in Table 18; episodes per task not stated; our recount 0.919 vs 0.934 (CC-Net SL+RL), 0.954 with GPT-4 column",
+   "evidence_ids": [
+    "E011",
+    "E012",
+    "E008",
+    "E010",
+    "E024",
+    "E025",
+    "E036",
+    "E038"
+   ],
+   "counterevidence": "Sec 3.2.3 says higher than all baselines yet Sec 3.2.2 says second; tasks dropped for HTML length and some modified.",
+   "allowed_conclusion": "On the selected MiniWoB++ tasks the RCI agent is competitive with the best trained agent; superiority over SL/RL aggregates is supported on this subset only."
+  },
+  {
+   "claim_id": "C2",
+   "text": "Each of task/state/agent grounding RCI contributes almost equally.",
+   "setting": "9 tasks in 3 difficulty bins, gpt-3.5-turbo",
+   "baseline_control": "Remove each stage",
+   "selection_vs_test": "Tasks binned using the same agent success rates",
+   "result_denominator": "Figure 5 (image); not in text",
+   "evidence_ids": [
+    "E013",
+    "E014"
+   ],
+   "counterevidence": "Tiny task set; difficulty bins defined by the agent itself; no backbone replication.",
+   "allowed_conclusion": "Qualitatively, removing a stage lowers success on these 9 tasks."
+  },
+  {
+   "claim_id": "C3",
+   "text": "RCI improves LLM reasoning and beats CoT.",
+   "setting": "8 datasets, label feedback stop",
+   "baseline_control": "zero-shot, CoT without label feedback",
+   "selection_vs_test": "n/a",
+   "result_denominator": "Tables 1, 2 vs Table 17",
+   "evidence_ids": [
+    "E017",
+    "E018",
+    "E019"
+   ],
+   "counterevidence": "Without label feedback RCI <= zero-shot; the CoT comparison is uneven.",
+   "allowed_conclusion": "Self-critique with an oracle stop signal raises accuracy; no evidence for gains from self-critique alone."
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "On a hand-tuned subset of 53-54 MiniWoB++ tasks, a gpt-3.5/gpt-4 agent with 2-3 in-context demonstrations and three critique/revision stages reaches about 0.92 mean success (0.95 mixing in GPT-4 where reported), comparable to CC-Net SL+RL (0.93) and above SL-only and RL-only agents; the reasoning gains require ground-truth feedback.",
+  "unresolved": [
+   "RCI vs stronger backbone and vs ReAct/CoT in same harness",
+   "Cost",
+   "Selection rule for GPT-4 column",
+   "Episodes per task"
+  ],
+  "retention": "not_applicable: no cross-task persistence; plan is in-episode memory only",
+  "reproduction": "author_report; our only computation is a recount of Table 18 (our_inference)"
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Clear gap (trained computer agents need huge demos/rewards; prompted LLMs lagged) with named neighbours, and failures decomposed into task/state/agent grounding; but the claim that grounding rather than backbone strength is the bottleneck is untested and nearest self-refine neighbours are not compared.",
+   "evidence_ids": [
+    "E032",
+    "E026",
+    "E011"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Operation, information and per-stage purpose are explicit, the regex executability check is a concrete mechanism and ablations plus the oracle-feedback finding give distinguishable predictions; self-critique reliability remains the weak assumption (E019).",
+   "evidence_ids": [
+    "E002",
+    "E004",
+    "E018",
+    "E019",
+    "E013"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Appendix now gives agent spec, regexes and the three prompt tails, loop counts and failure cases; per-task demonstrations and critique prompt text for computer tasks are not printed and per-task pipeline deviations (drop state grounding for click-dialog-2) show conditions are tuned.",
+   "evidence_ids": [
+    "E027",
+    "E028",
+    "E004",
+    "E022",
+    "E023"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Success is programmatic MiniWoB++ reward, an executable verifier; deductions: episodes per task unknown, harness modified, baseline numbers copied and partly estimated.",
+   "evidence_ids": [
+    "E029",
+    "E036",
+    "E024"
+   ],
+   "counterevidence_ids": [
+    "E020"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Stage ablation (9 tasks, one backbone) and backbone ablation exist; no compute-matched or non-RCI baseline in same harness, backbone strength confounds the comparison with T5-3B, reasoning gains rely on oracle labels, GPT-4 column selection unexplained.",
+   "evidence_ids": [
+    "E013",
+    "E014",
+    "E017",
+    "E025"
+   ],
+   "counterevidence_ids": [
+    "E018"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Prompts, loop counts and per-task tricks were tuned on MiniWoB++ and evaluated on the same tasks; tasks dropped/modified; single synthetic benchmark; pretraining contamination unaudited.",
+   "evidence_ids": [
+    "E005",
+    "E006",
+    "E022",
+    "E023",
+    "E020",
+    "E009"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "No episodes count, seeds or intervals; per-task two-decimal rates only; internal inconsistency between \"second highest\" and \"higher than all baselines\"; failure analysis qualitative.",
+   "evidence_ids": [
+    "E012",
+    "E011",
+    "E026"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Higher cost admitted and 120x-11,000x sample-complexity advantage over trained baselines (demonstration counts) is reported, but no inference calls/tokens/latency or cost-matched comparison.",
+   "evidence_ids": [
+    "E016",
+    "E031"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  }
+ },
+ "status": "reviewed",
+ "status_reason": "Complete fixed-render material read; per-task few-shot demonstrations and figure images remain unavailable and are marked as such.",
+ "sanity_notes": [
+  "Claim 3 (reasoning) is scored only through ratings of the central computer-task claim; its oracle-feedback dependence lowers E.causality."
+ ],
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "re1",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "supersedes_note": "re-eval on fixed-render material (v1 dropped listings)",
+ "provenance": {
+  "input_hash": "0c53f80620262543975e422d5296c86482ed960182744018b026378068fb68ec",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": {
+   "taxonomy": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+   "conditions": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+  },
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m] (self-reported by system prompt: Sonnet 5.5)",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_receipt_reason": "no session id or receipt exposed to the worker in this runtime",
+  "timestamp": "2026-10-22T02:00:01Z"
+ },
+ "materials": [
+  {
+   "material_id": "M-2303.17491",
+   "url": "https://arxiv.org/html/2303.17491v3",
+   "sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2303.17491.txt",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Methods",
+    "3 Evaluation (3.1, 3.2.1-3.2.5, Fig 4-6 captions)",
+    "4 Limitations",
+    "5 Discussion",
+    "Appendix A-G including Table 3 models, C.2-C.5, D prompts (agent spec, regexes, Tables 7-9 prompt tails), E cross-grounding examples, F failure modes, G Table 17 and Table 18 (recounted)"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Per-task few-shot demonstrations are not printed in the text (only agent spec, regexes and prompt tails); Figures 4-10 are images (values for Fig 4a not in text)."
+   ]
+  }
+ ],
+ "score": {
+  "raw": 62.5,
+  "display": 62.5,
+  "lower": 62.5,
+  "upper": 62.5,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+ }
+}

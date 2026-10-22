@@ -1,0 +1,32 @@
+{
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p3",
+ "attempt_id": "a2",
+ "seat": "son55",
+ "scope": "single paper re-review (2305.14257) superseding a1 needs_fulltext",
+ "assigned": 1,
+ "reviewed": 1,
+ "needs_fulltext": 0,
+ "needs_evidence": 0,
+ "outside_taxonomy": 0,
+ "schema_errors": 0,
+ "model_type": "haiku",
+ "actual_model": "Sonnet 5.5 (claude-sonnet-5-5[1m])",
+ "session_ref": null,
+ "session_ref_reason": "not exposed to worker",
+ "papers": {
+  "2305.14257": {
+   "status": "reviewed",
+   "score_raw": 62.5,
+   "claim_support": "scoped",
+   "evidence_level": "online"
+  }
+ },
+ "blockers": [],
+ "notes": [
+  "Dispatch described the paper as the Mind2Web paper; it is the ASH prompting paper (WebShop).",
+  "ReAct and WebShop source texts are not pinned; lineage rests on this paper's own description.",
+  "Pages 1-4 of the pdftotext are garbled (duplicate layers); affected items recorded in evidence distortion_note."
+ ],
+ "contamination": "none reported"
+}

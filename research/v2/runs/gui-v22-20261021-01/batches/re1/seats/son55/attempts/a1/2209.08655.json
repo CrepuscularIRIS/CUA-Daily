@@ -1,0 +1,737 @@
+{
+ "paper": {
+  "paper_key": "2209.08655",
+  "paper_id": "arXiv:2209.08655",
+  "title": "Enabling Conversational Interaction with Mobile UI using Large Language Models",
+  "version": "2209.08655v2",
+  "claim_type": "system_method",
+  "claim_type_note": "Static, single-screen, single-turn prompting method (no closed loop, no training); judged on its own offline feasibility claim, not as an interactive agent.",
+  "central_claim": "Prompting a single pre-trained LLM with a view-hierarchy-to-HTML screen representation and at most two exemplars can enable four conversational mobile-UI tasks with competitive performance and no dedicated datasets or training."
+ },
+ "evidence": [
+  {
+   "evidence_id": "E001",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 4.1.1",
+   "quote": "we represent a mobile UI in texts by converting its view hierarchy data into HTML syntax",
+   "support_explanation": "Core operation: view hierarchy -> HTML text.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E002",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 4.1.2",
+   "quote": "we use a subset of properties related to the text description of an element",
+   "support_explanation": "Property pruning to class/text/resource_id/content_desc.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E003",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 4.3",
+   "quote": "we only show the leaf nodes visible to the users, as non-leaf nodes are usually containers that do not contain textual information",
+   "support_explanation": "Leaf-node-only pruning in the prompt.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E004",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 4.1.5",
+   "quote": "we insert numeric indexes to each element as the \"id\" attribute",
+   "support_explanation": "DFS-ordered numeric ids used as the output target.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E005",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 5 intro",
+   "quote": "we limit the number of exemplars in a prompt to be two at most",
+   "support_explanation": "Shots capped by the 1920-token PaLM input length.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E006",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 5.1.2",
+   "quote": "The input field counts were fed with a ground truth count extracted from the screen HTML.",
+   "support_explanation": "Question-generation CoT step uses a count extracted from the HTML, not predicted by the model.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E007",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 4.2",
+   "quote": "we found that this technique does not improve performance for tasks where the output can be directly obtained from the input screen HTML",
+   "support_explanation": "CoT ablation is asserted from 'early investigations' with no numbers.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E008",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 5.1.4",
+   "quote": "Our approach achieves an almost perfect average score of 4.98 on grammar correctness, while the rule-based approach receives a 3.6 average rating.",
+   "support_explanation": "QG human rating vs template baseline.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E009",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 5.1.4",
+   "quote": "our approach achieves an F1 score of 95.9% (precision = 95.4%, recall = 96.3%)",
+   "support_explanation": "QG coverage; template covers 100% by construction.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E010",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 5.2.4",
+   "quote": "63.5% of them rated LLM summaries as more accurate, while 28.6% voted for benchmark model summaries",
+   "support_explanation": "Summarization human pairwise vs Screen2Words.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E011",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 5.2.4",
+   "quote": "When evaluating these models against automatic metrics, LLM generally scored less than the benchmark model.",
+   "support_explanation": "Automatic summarization metrics favour the trained baseline.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E012",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 5.3.3",
+   "quote": "In the remaining 288 question-answer pairs, 57 ground truth answers are not present in the view hierarchy data.",
+   "support_explanation": "QA denominator: 57/288 unanswerable from hierarchy; paper evaluates only answerable ones.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E013",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 5.3.4",
+   "quote": "1-shot LLM achieved a 62.9% Micro-F1 score, significantly outperforming the baseline’s score of 37.2%.",
+   "support_explanation": "QA vs off-the-shelf DistilBERT (not trained on HTML).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E014",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 5.4.4",
+   "quote": "Our approach underperforms the benchmark results from the Seq2Act model",
+   "support_explanation": "Mapping task: LLM below trained Seq2Act (80.36/45.00 vs 89.21/70.59).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E015",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 5.4.4",
+   "quote": "Our best-performing setting is the 2-shot LLM & in-app, which achieves 80.36 partial and 45.0 complete accuracy scores.",
+   "support_explanation": "Best mapping result; in-app exemplar from the same app package.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E016",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 5.4.3",
+   "quote": "We randomly sampled one screen from each unique app package in the dataset as prompt modules.",
+   "support_explanation": "Exemplar selection is random; number of prompt draws and variance not reported.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E017",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 1",
+   "quote": "each of them only addresses a limited aspect of conversational interaction and requires considerable effort in curating large-scale datasets and training dedicated models",
+   "support_explanation": "Author gap.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E018",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 5.2.4",
+   "quote": "our approach may not perform well for screens without texts and have a strong focus on visuals",
+   "support_explanation": "Self-stated failure boundary.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E019",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 6.5",
+   "quote": "A limitation of our investigation is that we only use the view hierarchy information",
+   "support_explanation": "Single channel; no screenshot condition.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E020",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 6.6",
+   "quote": "Our current method does not explicitly address this issue.",
+   "support_explanation": "Hallucination/steerability left unaddressed.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E021",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 5 intro",
+   "quote": "All the studies were conducted with the PaLM model",
+   "support_explanation": "Single backbone; model size, decoding settings and cost not stated anywhere in the text.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E022",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 4.1.1",
+   "quote": "if a prompt falls within the training data distribution of a language model, it is more likely for few-shot learning to perform",
+   "support_explanation": "Design rationale for HTML; never tested against alternative serialisations.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E023",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 3",
+   "quote": "we limit our study to unit conversations which include, at most, a single turn from the user and agent",
+   "support_explanation": "Scope: single screen, single turn, no execution loop.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E024",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "App A.4 Listing 4",
+   "quote": "Given a screen , an instruction , predict the id of the UI element to perform the instruction .",
+   "support_explanation": "Appendix prompt for the mapping task, now recoverable (fixed render).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E025",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "App A.1 Listing 1",
+   "quote": "Now reasoning starts : Q : How many input tags are there on the screen ? A : 4",
+   "support_explanation": "Appendix QG prompt shows the count answered inside the exemplar CoT; with E006 the test-time count is supplied.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E026",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 5.2.4",
+   "quote": "The model could not generate meaningful summaries in the zero-shot setting",
+   "support_explanation": "Zero-shot fails for summarization; mapping zero-shot also ~0 (Table 4).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E027",
+   "material_id": "M-2209.08655",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "locator": "Sec 6.3",
+   "quote": "Multi-turn interactions can enable the agent to ask for clarifications on ambiguous cases",
+   "support_explanation": "Ambiguity/clarification not modelled.",
+   "kind": "author_report"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "Text serialisation of an Android UI screen: view hierarchy -> HTML (class->tag mapping, text, resource_name->class attr, content_desc->alt, DFS numeric id), leaf visible nodes only.",
+   "information": "View hierarchy only (no screenshot, no pixels, no history). Ground-truth input-field count is extracted from the HTML for the QG chain of thought.",
+   "operation": "DFS conversion with heuristic tag mapping and property subset.",
+   "output": "HTML string fed to an LLM.",
+   "conditions": "Hierarchy must be accurate (paper notes inaccurate hierarchies in RICO) and the screen must be text-bearing; token limit 1920.",
+   "feedback": "none",
+   "selection_rule": "not_applicable (no selection loop)",
+   "persistence": "not_applicable (stateless, per screen)",
+   "later_use": "not_applicable",
+   "claimed_effect": "LLM can read mobile screens in a form near its pretraining distribution.",
+   "failure_boundary": "Icons/images without alt text, visual apps, long hierarchies (E018, E019).",
+   "evidence_ids": [
+    "E001",
+    "E002",
+    "E003",
+    "E004",
+    "E022",
+    "E019"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "Few-shot prompt per task: preamble + <=2 exemplars (screen HTML [+ CoT] + tagged output) + test screen; CoT only for question generation.",
+   "information": "Exemplars from the same dataset as the test (random draw); in-app exemplar from same app package in one mapping condition.",
+   "operation": "In-context conditioning of a frozen PaLM; output parsed through <SOQ>/<SOS>/<SOA>/<SOI> tags.",
+   "output": "Questions / summary / answer / element id.",
+   "conditions": "1-shot gives most of the gain; 2-shot marginal.",
+   "feedback": "none (no execution, no environment)",
+   "selection_rule": "random exemplar sampling (E016); no retrieval or selection rule",
+   "persistence": "not_applicable",
+   "later_use": "not_applicable",
+   "claimed_effect": "Competitive vs task-specific baselines on 4 tasks with 2 examples.",
+   "failure_boundary": "Mapping task below Seq2Act; summarization below on automatic metrics; zero-shot fails (E026).",
+   "evidence_ids": [
+    "E005",
+    "E006",
+    "E007",
+    "E016",
+    "E024",
+    "E025",
+    "E026"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "Task-specific datasets and models are needed for each conversational UI task; unclear whether an LLM pre-trained on language can be adapted to GUIs at all.",
+  "checked_gap": "Real: per-task datasets (Seq2Act, Screen2Words) are costly and the paper shows a training-free route works for generation-style tasks. The residual is only partly located: the paper does not locate a perception/planning/action bottleneck in an interactive loop and does not test the interactive task-completion setting.",
+  "lineage": [
+   "Seq2Act (Li et al. 2020b), cited in text: language instruction -> UI action sequences, trained on large datasets",
+   "Screen2Words (Wang et al. 2021), cited in text: trained screen summarisation",
+   "Widget Captioning, Screen Recognition, VUT, Screen2Vec cited as UI-language bridges",
+   "Few-shot prompting / CoT (Brown 2020, Wei 2022b) as the method ancestor"
+  ],
+  "lineage_note": "No locally pinned reference source (the 14-paper references.json) predates this paper, so the lineage is taken from the fixed text itself (author_report); later web/UI-agent work (Mind2Web 2306.06070) is current_relevance, not ancestry.",
+  "closest_adjacent": "Seq2Act and Screen2Words as trained task-specific models; paper itself reports being below Seq2Act on the mapping task.",
+  "residue": "Multi-screen/multi-turn interaction, visual information, and reliability are explicitly left open (Sec 6.3, 6.5, 6.6).",
+  "stakes": "Prototyping language interactions without datasets; accessibility use cases (author claim).",
+  "method_response": "Serialise hierarchy as HTML so a code-trained LLM can read it; use exemplars instead of training. The serialisation is argued but not ablated.",
+  "remaining_gap": "No interactive closed-loop evaluation; trained model still better on instruction->action; design choices of the representation untested.",
+  "evidence_ids": [
+   "E017",
+   "E014",
+   "E019",
+   "E023",
+   "E027"
+  ],
+  "unresolved": [
+   "Whether HTML serialisation matters vs other serialisations (no ablation).",
+   "Pretraining-data contamination of RICO/PixelHelp-style content not audited."
+  ]
+ },
+ "rs_pattern": {
+  "primary": "adapt_via_conditioning",
+  "supporting": [
+   "unify_into_shared_representation"
+  ],
+  "outside_taxonomy": false,
+  "reason": "",
+  "matches": [
+   {
+    "main_id": "adapt_via_conditioning",
+    "sub_id": "C03",
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "1_schema": "met: preamble+exemplar+HTML+tagged output is a single schema across four tasks (Sec 4.3, App A)",
+     "2_substrate": "partial: only <=2 exemplars per task, no broad corpus",
+     "3_upstream_phase": "skipped by design (frozen LLM, sub-move: no upstream tuning)",
+     "4_category_holdout": "unmet: exemplars and tests come from same datasets; only in-app vs cross-app contrast; no contamination audit",
+     "5_cheaper_baseline": "partial: baselines are trained task models, template, DistilBERT; no longer-context/nearest-neighbour/serialisation ablation"
+    },
+    "success_checks": "Conditioning signal is the novel serialisation; no toggle ablation of the conditioning channel; generality shown over 4 tasks (one model, one backbone).",
+    "failure_checks": "Single backbone (PaLM); contamination unaudited; manual per-task prompt design.",
+    "evidence_ids": [
+     "E001",
+     "E005",
+     "E016",
+     "E021",
+     "E024"
+    ],
+    "reason": "The actual operation is expressing each task as in-context conditioning over a text screen with no parameter update."
+   },
+   {
+    "main_id": "unify_into_shared_representation",
+    "sub_id": "C18",
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "serialize_structured_signal_into_dominant_modality_surface_form": "met: view hierarchy -> HTML (Sec 4.1)",
+     "validate_interface_carries_structure": "unmet: no probe/ablation",
+     "ablate_interface_vs_backbone": "unmet",
+     "beat_specialists": "unmet: below Seq2Act on mapping, below Screen2Words on auto metrics"
+    },
+    "success_checks": "Interface (serializer) is the load-bearing artifact; breadth over four tasks.",
+    "failure_checks": "No ablation isolating interface from backbone; underperforms specialist on mapping.",
+    "evidence_ids": [
+     "E001",
+     "E004",
+     "E014",
+     "E022"
+    ],
+    "reason": "The HTML serialisation is a distinct operation (interface construction) from the in-context conditioning; it is a different artifact the paper contributes."
+   }
+  ],
+  "executes_pattern": true,
+  "resolves_problem": "partial: removes the need for task datasets for generation-style tasks per author human evaluation, but not for instruction->action where a trained model is clearly better (E014)."
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "structured_screen_observation",
+    "sub": "C01",
+    "version": "patterns@2026-10 (cua-agents-core C01)",
+    "fit": "partial",
+    "condition_checks": {
+     "structural_view_available": "met: Android view hierarchy",
+     "unique_ids_per_element": "met: DFS numeric id",
+     "policy_picks_id": "met only in the offline mapping task; no execution on the device",
+     "dense/duplicate_elements": "unreported: Listing 4 prompt shows duplicate icons (Photos, Maps) with no handling discussed"
+    },
+    "evidence_ids": [
+     "E004",
+     "E024"
+    ],
+    "reason": "Id-indexed element targets from hierarchy, but offline prediction only.",
+    "namespace": "gui"
+   },
+   {
+    "main": "structured_screen_observation",
+    "sub": "C13",
+    "version": "patterns@2026-10 (cua-agents-core C13)",
+    "fit": "partial",
+    "condition_checks": {
+     "prune_low_relevance_nodes": "met: leaf visible nodes, property subset",
+     "token_savings_reported": "unmet: no token count or success-vs-pruning comparison"
+    },
+    "evidence_ids": [
+     "E002",
+     "E003"
+    ],
+    "reason": "Observation pruning is performed to fit the token limit but its effect is not measured.",
+    "namespace": "gui"
+   }
+  ],
+  "unassigned": [
+   "Agent-initiated question generation (screen QG) has no good gui card: R02 (agent_initiated_user_interaction) is about deciding WHEN to ask with trained timing; this paper generates the text of questions for given input fields."
+  ],
+  "revision_proposals": []
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "adapt_via_conditioning",
+   "rs_sub": "C03",
+   "domain_namespace": "gui",
+   "domain_main": "structured_screen_observation",
+   "domain_sub": "C01",
+   "operation_correspondence": "RS: unified conditioning schema. gui: the schema is an id-indexed HTML view of the hierarchy that a frozen LLM reads and answers by id.",
+   "required_conditions_and_differences": "gui C01 expects execution on the element and element-id action space in an environment; here the id is only predicted offline. RS C03 expects category-level holdout; absent.",
+   "evidence_ids": [
+    "E001",
+    "E004",
+    "E024"
+   ]
+  },
+  {
+   "rs_main": "unify_into_shared_representation",
+   "rs_sub": "C18",
+   "domain_namespace": "gui",
+   "domain_main": "structured_screen_observation",
+   "domain_sub": "C13",
+   "operation_correspondence": "RS: serializer is the interface; gui: observation pruning/restructuring of text observation.",
+   "required_conditions_and_differences": "gui C13 requires reporting success and tokens per step; not done.",
+   "evidence_ids": [
+    "E002",
+    "E003"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E15",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    ".forge/domains/cua-agents/v1/profile/expectations.json#E15"
+   ],
+   "applies_when": "capability claim measured with offline teacher-forced step metrics",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Paper claims feasibility, not agent task success, and itself concedes it is below Seq2Act and that actual-agent integration is future work; but the instruction->action result is offline only and no online benchmark exists.",
+   "evidence_ids": [
+    "E014",
+    "E023",
+    "E015"
+   ],
+   "score_item": "E.measurement, E.holdout"
+  },
+  {
+   "id": "core-E10",
+   "version": "patterns/main/structured_screen_observation.md (cua-agents-core)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "patterns/main/structured_screen_observation.md#reviewer-expectations"
+   ],
+   "applies_when": "claim that a screen representation improves an agent",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Representation choice (HTML) is argued by pretraining distribution but never compared with other serialisations or with screenshots under the same backbone.",
+   "evidence_ids": [
+    "E022",
+    "E019"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "core-E14",
+   "version": "patterns/main/structured_screen_observation.md",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "patterns/main/structured_screen_observation.md#reviewer-expectations"
+   ],
+   "applies_when": "grounding claim on dense app screens",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "Appendix prompts contain duplicated labels (e.g. Photos, Maps appear twice) but no failure analysis of repeated elements is given.",
+   "evidence_ids": [
+    "E024"
+   ],
+   "score_item": "E.statistics"
+  }
+ ],
+ "expectations_not_applicable": {
+  "ids": [
+   "E01-E09",
+   "E10-E14",
+   "E16-E35"
+  ],
+  "reason": "No OSWorld/AndroidWorld/WebArena/Online-Mind2Web claim, no RL, no learned judge/PRM (human raters), no world model/memory/synthesis, no multi-run online benchmark; E21 screenshot-vs-a11y comparison would apply only to an agent comparison, none here."
+ },
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "Competitive performance on four conversational mobile-UI tasks using only two exemplars and no training.",
+   "setting": "PaLM, frozen, <=2 shots, RICO/Screen2Words/ScreenQA-preliminary/PixelHelp",
+   "baseline_control": "Template (QG), Screen2Words (summ.), DistilBERT (QA), Seq2Act (mapping)",
+   "selection_vs_test": "Exemplars random-drawn from same datasets; test screens held out from exemplars; no contamination audit",
+   "result_denominator": "QG: 931 questions, 3 raters each, coverage F1 95.9; summarization: 4310 screens, 3 raters, 64.1% majority LLM-better; QA: 231 answerable of 288 pairs, 2-shot exact 66.7 / micro-F1 64.8; mapping: 187 PixelHelp tasks, in-app 2-shot 80.36/45.00 vs Seq2Act 89.21/70.59",
+   "evidence_ids": [
+    "E008",
+    "E009",
+    "E010",
+    "E011",
+    "E012",
+    "E013",
+    "E014",
+    "E015"
+   ],
+   "counterevidence": "Mapping and automatic summarization metrics are below the trained baselines; QA metric under-counts aliases.",
+   "allowed_conclusion": "A frozen LLM with serialised hierarchy and 1-2 exemplars is a viable offline baseline for these tasks; superior only on the human-rated generation tasks."
+  },
+  {
+   "claim_id": "C2",
+   "text": "The HTML screen representation and CoT recipe are what make LLMs usable on mobile UIs.",
+   "setting": "same",
+   "baseline_control": "none (no alternative serialisation, no no-CoT arm)",
+   "selection_vs_test": "n/a",
+   "result_denominator": "not tested",
+   "evidence_ids": [
+    "E007",
+    "E022"
+   ],
+   "counterevidence": "No ablation; CoT effect is only asserted from early investigations.",
+   "allowed_conclusion": "Unsupported as a causal claim; the representation is a plausible design."
+  }
+ ],
+ "assessment": {
+  "evidence_level": "offline",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "On PaLM, serialising the view hierarchy as HTML and giving 1-2 exemplars yields human-preferred generation (questions, summaries) vs weak or older baselines and a clear gain over DistilBERT on QA, while being 10 points (partial) / 25 points (complete) below Seq2Act on instruction->action; no interactive or task-completion evidence.",
+  "unresolved": [
+   "Ablation of the serialisation and CoT",
+   "Contamination of pretraining with RICO-like screens",
+   "Interactive task success"
+  ],
+  "retention": "not_applicable: static prompting study, no selection/persistence loop (no before->proposal->selection->persistence->later task)",
+  "reproduction": "author_report only; no our_run"
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Concrete, sourced gap (per-task datasets; unknown LLM adaptability to GUIs) with named trained neighbours (Seq2Act, Screen2Words) and honest residue list; but bottleneck is feasibility rather than a located failure in a perceive-act loop, and nearest neighbours are not locally pinned.",
+   "evidence_ids": [
+    "E017",
+    "E014",
+    "E019"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Mechanism is coherent and each serialisation choice has a stated rationale (code in pretraining, token limit, ids as output), but the key assumption (HTML near the training distribution helps) is never tested against alternative representations and CoT use is asserted.",
+   "evidence_ids": [
+    "E001",
+    "E002",
+    "E003",
+    "E022",
+    "E007"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Operation chain is reconstructible: DFS conversion, tag map, property subset, leaf-only pruning, exemplar structure, output tags, now with appendix prompts for all four tasks; limits (length, hierarchy errors, no visuals) stated. QG test-time count is supplied from HTML which is a small hidden privilege.",
+   "evidence_ids": [
+    "E001",
+    "E003",
+    "E004",
+    "E006",
+    "E024",
+    "E025",
+    "E018"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Human ratings by 17/37 raters with 3 votes each on large samples and a human preference for summaries make the generation claim reasonably measured; QA string-match under-counts aliases and drops 57/288 pairs; mapping is a sequence-match offline metric; no executed task outcome.",
+   "evidence_ids": [
+    "E008",
+    "E010",
+    "E012",
+    "E015"
+   ],
+   "counterevidence_ids": [
+    "E011"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "No ablation of HTML vs other serialisations, no CoT ablation (asserted only), no longer-context or retrieval alternative; shot count (0/1/2) and in-app vs cross-app are the only controls; baselines differ in training and observation (DistilBERT not trained on HTML).",
+   "evidence_ids": [
+    "E007",
+    "E022",
+    "E013"
+   ],
+   "counterevidence_ids": [
+    "E026"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Exemplars are separated from test screens and cross-app vs in-app is a partial transfer probe, so the scoped feasibility claim is not leaked internally; but datasets are public RICO/PixelHelp, pretraining overlap is unaudited, all evaluation is on one offline hierarchy-based setting, and no unseen app/platform tests.",
+   "evidence_ids": [
+    "E016",
+    "E015",
+    "E023"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "QG has a significance test (Mann-Whitney p<0.0001), denominators are stated (931 questions, 4310 screens, 288->231 pairs); QA/mapping have no intervals and the effect of random exemplar draws is unreported.",
+   "evidence_ids": [
+    "E008",
+    "E012",
+    "E016"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "not_reported",
+   "rating": 0,
+   "reason": "Model size, decoding settings, latency and per-call cost are not stated, although \"lightweight\" is a headline claim; only the 1920-token input cap is mentioned.",
+   "evidence_ids": [
+    "E005",
+    "E021"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": [
+    "Full main text Secs 1-7 and Appendix A searched for model size, parameters, latency, cost, decoding settings, seeds: no hits (only PaLM name and the 1920-token limit)"
+   ]
+  }
+ },
+ "status": "reviewed",
+ "status_reason": "Complete fixed-render material read including all four appendix prompts.",
+ "sanity_notes": [
+  "claim_type chosen system_method because the paper proposes a representation+prompting system; no retention loop is invented.",
+  "Rating G=3 is a judgment between anchors 2 and 4."
+ ],
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "re1",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "supersedes_note": "re-eval on fixed-render material (v1 dropped listings)",
+ "provenance": {
+  "input_hash": "0c53f80620262543975e422d5296c86482ed960182744018b026378068fb68ec",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": {
+   "taxonomy": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+   "conditions": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+  },
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m] (self-reported by system prompt: Sonnet 5.5)",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_receipt_reason": "no session id or receipt exposed to the worker in this runtime",
+  "timestamp": "2026-10-22T02:00:01Z"
+ },
+ "materials": [
+  {
+   "material_id": "M-2209.08655",
+   "url": "https://arxiv.org/html/2209.08655v2",
+   "sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2209.08655.txt",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Related Work",
+    "3 Conversation for Mobile UI Tasks",
+    "4 Prompting LLMs (4.1-4.3)",
+    "5 Feasibility Experiments (5.1-5.4, Tables 1-4)",
+    "6 Discussion (6.1-6.7)",
+    "7 Conclusion",
+    "Appendix A.1-A.4 (Listings 1-4, now present)"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Figure images (Figs 1-7 screenshots) are not renderable in text; their captions and the Tables are read."
+   ]
+  }
+ ],
+ "score": {
+  "raw": 53.75,
+  "display": 53.8,
+  "lower": 53.75,
+  "upper": 53.75,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+ }
+}

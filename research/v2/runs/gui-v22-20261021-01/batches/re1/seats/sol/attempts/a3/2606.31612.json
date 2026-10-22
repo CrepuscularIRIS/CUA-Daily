@@ -1,0 +1,2700 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "re1",
+  "attempt_id": "a3",
+  "seat": "sol",
+  "paper": {
+    "paper_key": "2606.31612",
+    "paper_id": "2606.31612",
+    "title": "What Memory Do GUI Agents Really Need? From Passive Records to Active Task-Driving States",
+    "version": "2606.31612v2",
+    "claim_type": "component_training",
+    "central_claim": "Active Task-Driving Memory represents task data and its evolving execution status rather than passive records; verifier-gated SFT plus memory-ON/OFF, cost-aware STR-GRPO learn selective useful memory use, yielding state-of-the-art online mobile performance and improved data-scope control on a scalable controlled benchmark. Original broad superiority, generalization and utility claims are retained here, not replaced with the narrower conclusion below."
+  },
+  "supersedes_note": "Independent a3 review after a1 material upgrade (uncapped primary material; ATMem PDF supplement resolves HTML-omitted Boxes A.3/A.7) and a3 capacity split assigning only 2606.31612 and 2504.14603. No a1/a2/other-seat/aggregate/archive judgments or scores read or inherited.",
+  "provenance": {
+    "input_hash": "0c53f80620262543975e422d5296c86482ed960182744018b026378068fb68ec",
+    "rubric_version": "v2.2-draft_uncalibrated",
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "rubric_status_note": "Used the assigned fixed draft under explicit batch authorization; no claim that calibration/freeze has occurred.",
+    "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+    "domain_cards_hash": {
+      "taxonomy": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+      "conditions": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+    },
+    "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+    "model_type": "sonnet",
+    "actual_model": "gpt-6.1-sol",
+    "session_id": "681194da-49f5-4ad4-8eb4-573b45384076",
+    "receipt_ref": null,
+    "receipt_ref_reason": "No separately exposed provider invocation receipt; actual model is the supplied runtime identity, not probed.",
+    "timestamp": "2026-10-22T02:26:35.693912+00:00",
+    "material_addenda": [
+      {
+        "material_id": "pdf-supplement",
+        "sha256": "f988a9d95fdc55c0e9f7a2a2358b1f9f79a6a2dc5f0e007fc4b2fe2fb3d5bbdb",
+        "url": "https://arxiv.org/pdf/2606.31612v2"
+      }
+    ],
+    "scope_override": "Direct assignment: these two papers only; inherited manifest names a1 and contains six papers.",
+    "blind_boundary": "No prior attempts, other batches, other seat, aggregates, scores, archive or acceptance/ranking information accessed. Coordinator disclosed availability of supplemental source, not used as a score anchor.",
+    "source_execution": "Source prompts and code treated only as data. No paper code or experiment executed; no external messages or git operations.",
+    "procedural_context_exposure": "Coordinator message disclosed supplemental source readiness and mentioned an earlier other-seat missing-material closure. No scientific judgment, numerical score, ranking or other-seat record was consulted; a3 is the expressly assigned new material-upgraded capacity-split attempt. This procedural exposure is not hidden."
+  },
+  "materials": [
+    {
+      "material_id": "main",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2606.31612.txt",
+      "url": "https://arxiv.org/html/2606.31612v2",
+      "version": "2606.31612v2",
+      "sha256": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "sections_read": [
+        "Abstract; sections 1-5; Tables 1-4; complete scientific appendix A.1-A.7 and Listing 1; duplicated HTML text deduplicated during reading"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "version_note": null
+    },
+    {
+      "material_id": "pdf-supplement",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2606.31612.pdf-supplement.txt",
+      "url": "https://arxiv.org/pdf/2606.31612v2",
+      "version": "2606.31612v2",
+      "sha256": "f988a9d95fdc55c0e9f7a2a2358b1f9f79a6a2dc5f0e007fc4b2fe2fb3d5bbdb",
+      "sections_read": [
+        "Complete PDF text; especially authoritative Box A.3 execution prompt, Box A.7 task-generation prompt, Table 5-6 and Listing 1"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "version_note": null
+    },
+    {
+      "material_id": "ref-awm",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2409.07429.txt",
+      "url": "https://arxiv.org/html/2409.07429",
+      "version": null,
+      "sha256": "3b2c8ce934b2f2808d61d943bc9a44ddc21cecc25b6ff71d5dfb62d5a7d01518",
+      "sections_read": [
+        "Abstract/introduction; sections 2.1-2.3; cross-task/website/domain comparison passages"
+      ],
+      "complete": false,
+      "missing_sections": [
+        "Only the stated lineage/method excerpts were required and read; remainder not used as evidence."
+      ],
+      "version_note": "Fixed local snapshot; upstream reference version is not recorded in the supplied unversioned source header. No version inferred."
+    },
+    {
+      "material_id": "ref-aw",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2405.14573.txt",
+      "url": "https://arxiv.org/html/2405.14573",
+      "version": null,
+      "sha256": "d745a9085e86a2ea357a27f08bb1c0fd1918ff9040ef9885c5db387c456a56cc",
+      "sections_read": [
+        "Introduction; sections 3.3-3.5, 4.1; system-state checking, parameterization and M3A reflection"
+      ],
+      "complete": false,
+      "missing_sections": [
+        "Only the stated lineage/method excerpts were required and read; remainder not used as evidence."
+      ],
+      "version_note": "Fixed local snapshot; upstream reference version is not recorded in the supplied unversioned source header. No version inferred."
+    },
+    {
+      "material_id": "ref-mai",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2512.22047.txt",
+      "url": "https://arxiv.org/html/2512.22047v1",
+      "version": "2512.22047v1",
+      "sha256": "c134dac591c66cc8d583a75a91995a5bdcee6edb3949f9deeaf49e6632b688ac",
+      "sections_read": [
+        "Abstract; sections 2.3 and 3 navigation results; AndroidWorld Table 6, MobileWorld Table 8, RL ablation Table 9"
+      ],
+      "complete": false,
+      "missing_sections": [
+        "Only the stated lineage/method excerpts were required and read; remainder not used as evidence."
+      ],
+      "version_note": null
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "A01",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "Abstract; text lines 57-57",
+      "quote": "Existing methods treat memory largely as passive storage, where past observations are accumulated and retrieved when needed.",
+      "support_explanation": "Author gap; not accepted as a universal description of all prior memory methods.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A02",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "3.1; text lines 130-130",
+      "quote": "Before each model call, the current ATMem state m t m_{t} is inserted into the system prompt as the current task-driving memory.",
+      "support_explanation": "Explicit inference conditioning channel and carry-forward state.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A03",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "3.1; text lines 144-144",
+      "quote": "Once the relevant attributes are identified, Schema.locked freezes the field set to prevent structural drift across steps.",
+      "support_explanation": "Main prose asserts a locked schema; compare actual prompt fields.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A04",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "3.2; text lines 158-158",
+      "quote": "A trajectory is retained only if its terminal environment state passes the corresponding task verifier.",
+      "support_explanation": "SFT acceptance criterion; whole-trajectory success does not validate every internal memory label.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A05",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "3.2; text lines 159-159",
+      "quote": "This verifier-gated process yields 21,713 step-level SFT samples.",
+      "support_explanation": "Size of successful teacher data, not independent tests.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A06",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "3.3; text lines 163-163",
+      "quote": "During paired rollouts, we intervene on the explicit ATMem channel by enabling or masking memory access while keeping the task initialization unchanged.",
+      "support_explanation": "Within-task experimental intervention during RL.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A07",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "3.3; text lines 168-168",
+      "quote": "The intervention changes only the explicit memory channel, while previous observations, executed actions, and reasoning traces remain available in both conditions.",
+      "support_explanation": "OFF is not an amnesic or history-free agent.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A08",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "3.3 Eq.4; text lines 170-170",
+      "quote": "Thus, ρ i \\rho_{i} measures the fraction of memory-active steps",
+      "support_explanation": "Reward cost is memory-active-step fraction, not tokens, latency, or dollars.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A09",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "3.4; text lines 189-189",
+      "quote": "If its outputs do not match the expected scores, the verifier is manually corrected and revalidated until it passes all calibration cases.",
+      "support_explanation": "Actual checker repair loop with constructed positive and perturbed terminal states.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A10",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "3.4 Eq.7-8; text lines 203-203",
+      "quote": "Distractor entries, incorrect fields, incorrect values, and changes in unrelated apps are counted as false positives.",
+      "support_explanation": "Scope-F1 penalizes unwanted edits; App-Prog alone does not.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A11",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "4.1; text lines 212-212",
+      "quote": "Each level contains 32 task instances, yielding 96 instances across 14 mobile apps.",
+      "support_explanation": "Controlled benchmark denominator.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A12",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "4.2; text lines 219-219",
+      "quote": "Table 2 evaluates cross-environment generalization on MobileWorld, where all environments are unseen during training.",
+      "support_explanation": "Author-reported environment holdout, not independently audited application/template split.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A13",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "Table 4; text lines 1375-1375",
+      "quote": "SFT + GRPO | 74.8 | 45.7 | 20.7 | 44.7",
+      "support_explanation": "Same Qwen3-VL-8B recipe control, AW SR/Mem and MW SR/Mem.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A14",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "Table 4; text lines 1377-1377",
+      "quote": "SFT + STR-GRPO | 76.6 | 31.9 | 23.3 | 30.1",
+      "support_explanation": "STR point estimates, not replicated outcomes.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A15",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "Table 4 caption; text lines 231-231",
+      "quote": "Mem. denotes the fraction of tasks in which the agent invokes ATMem at least once during execution.",
+      "support_explanation": "Reported task-level invocation fraction is distinct from per-step rho training penalty.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A16",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "Table 3; text lines 1361-1361",
+      "quote": "ATMem-UI (Ours) | 8B | 6.2 | 11.7 | 15.7 | 6.2 | 9.4 | 9.8 | 3.1 | 6.3 | 8.2",
+      "support_explanation": "DataScope V1/V2/V3 SR, progress, scope; low absolute success despite relative rank.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A17",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "Table 3; text lines 1350-1350",
+      "quote": "GPT-5.2+ UIIns ( OpenAI, 2025 ; Chen et al., 2025 ) | – | 18.8 | 35.4 | 38.4 | 6.2 | 16.1 | 21.3 | 3.1 | 9.3 | 13.2",
+      "support_explanation": "Stronger teacher beats or ties terminal SR and retains greater partial progress; not a size-matched baseline.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A18",
+      "material_id": "pdf-supplement",
+      "material_hash": "f988a9d95fdc55c0e9f7a2a2358b1f9f79a6a2dc5f0e007fc4b2fe2fb3d5bbdb",
+      "locator": "Appendix Box A.3; text lines 1393-1393",
+      "quote": "Use <memory> only when cross-step storage or comparison is needed; otherwise output {}.",
+      "support_explanation": "Authoritative Box A.3 prompt is present in PDF, absent in HTML rendering.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A19",
+      "material_id": "pdf-supplement",
+      "material_hash": "f988a9d95fdc55c0e9f7a2a2358b1f9f79a6a2dc5f0e007fc4b2fe2fb3d5bbdb",
+      "locator": "Appendix Box A.3; text lines 1406-1406",
+      "quote": "\"status\":     \"remaining\" | \"finished\" | \"skipped\",",
+      "support_explanation": "Actual PDF prompt item status enum; whitespace retained exactly.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A20",
+      "material_id": "pdf-supplement",
+      "material_hash": "f988a9d95fdc55c0e9f7a2a2358b1f9f79a6a2dc5f0e007fc4b2fe2fb3d5bbdb",
+      "locator": "Appendix Box A.3 Rules; text lines 1447-1447",
+      "quote": "Update an item status to finished in the same step after a successful operation.",
+      "support_explanation": "Prompt-level status update, not independent per-step semantic checking.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A21",
+      "material_id": "pdf-supplement",
+      "material_hash": "f988a9d95fdc55c0e9f7a2a2358b1f9f79a6a2dc5f0e007fc4b2fe2fb3d5bbdb",
+      "locator": "Appendix Box A.7; text lines 1661-1661",
+      "quote": "Difficulty is increased only through target data volume and confusable distractor density, not by adding new steps or extra",
+      "support_explanation": "Authoritative generation prompt fixes logical workflow, varying data load; multiple data axes still co-vary.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A22",
+      "material_id": "pdf-supplement",
+      "material_hash": "f988a9d95fdc55c0e9f7a2a2358b1f9f79a6a2dc5f0e007fc4b2fe2fb3d5bbdb",
+      "locator": "Appendix Table 6; text lines 1475-1475",
+      "quote": "CalendarMeetingPrepAndNotify                     Calendar                       1",
+      "support_explanation": "Table 6 lists one Calendar app for this family.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A23",
+      "material_id": "pdf-supplement",
+      "material_hash": "f988a9d95fdc55c0e9f7a2a2358b1f9f79a6a2dc5f0e007fc4b2fe2fb3d5bbdb",
+      "locator": "Appendix Listing 1; text lines 1742-1742",
+      "quote": "Five apps are chained: Calendar -> Tasks -> Markor -> Contacts -> SMS.",
+      "support_explanation": "Listing 1 gives five apps for the same named task family; preserve discrepancy.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A24",
+      "material_id": "main",
+      "material_hash": "fec7cdac4aece344cc8ffe0dc5be7f68484f089ee2806234f202b72d54eb227d",
+      "locator": "4.1; text lines 208-208",
+      "quote": "Policy optimization is performed on 128 NVIDIA H20 GPUs",
+      "support_explanation": "Training compute disclosure exists; does not establish deployment savings.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A25",
+      "material_id": "ref-awm",
+      "material_hash": "3b2c8ce934b2f2808d61d943bc9a44ddc21cecc25b6ff71d5dfb62d5a7d01518",
+      "locator": "2.1; text lines 131-131",
+      "quote": "We add induced workflows into the agent memory M M as guidance for subsequent task-solving.",
+      "support_explanation": "Earlier memory already guides action; residual is mutable within-task per-item execution state, not first active use of any memory.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A26",
+      "material_id": "ref-aw",
+      "material_hash": "d745a9085e86a2ea357a27f08bb1c0fd1918ff9040ef9885c5db387c456a56cc",
+      "locator": "3.5; text lines 230-230",
+      "quote": "Composite tasks are more challenging due to their complexity but provide partial rewards for subtask completion",
+      "support_explanation": "DataScope inherits executable composite-task/partial-credit lineage rather than inventing those generally.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A27",
+      "material_id": "ref-mai",
+      "material_hash": "c134dac591c66cc8d583a75a91995a5bdcee6edb3949f9deeaf49e6632b688ac",
+      "locator": "Table 6 AndroidWorld; text lines 985-985",
+      "quote": "MAI-UI-8B | 8B | 70.7",
+      "support_explanation": "Fixed neighboring source corroborates same-size AndroidWorld baseline.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A28",
+      "material_id": "ref-mai",
+      "material_hash": "c134dac591c66cc8d583a75a91995a5bdcee6edb3949f9deeaf49e6632b688ac",
+      "locator": "Table 6 AndroidWorld; text lines 987-987",
+      "quote": "MAI-UI-235B-A22B | 235B | 76.7",
+      "support_explanation": "Unqualified all-scale SOTA cannot be inferred from 76.6; larger neighbor reports 76.7 under a separately reported protocol.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "A29",
+      "material_id": "ref-mai",
+      "material_hash": "c134dac591c66cc8d583a75a91995a5bdcee6edb3949f9deeaf49e6632b688ac",
+      "locator": "Table 8 MobileWorld; text lines 1024-1024",
+      "quote": "MAI-UI-8B | 27.5 | 22.2 | 20.0 | 24.9",
+      "support_explanation": "Same-scale neighbor reports MobileWorld GUI-only 27.5 and overall24.9; ATMem23.3 is not demonstrated to dominate the full fixed frontier. Do not conflate GUI-only116 and overall201.",
+      "kind": "author_report"
+    }
+  ],
+  "signatures": [
+    {
+      "sig_id": "S1",
+      "object": "Within-episode task-driving memory m_t and GUI policy context",
+      "information": "Task, screenshots/current observation, ordinary action/reasoning history and self-generated structured memory; no evidence deployment policy reads privileged task-checker state.",
+      "operation": "Inject m_t before inference; generate thought, exactly one mobile_use action and JSON memory; parse and carry m_(t+1) to the next turn; harvest then execute with remaining/finished/skipped items.",
+      "output": "GUI action and updated item/phase state.",
+      "conditions": "Correct item identity and observation-based success recognition; prompt schema uses context/schema.fields/items while prose additionally names Constraints, source checklists and Schema.locked.",
+      "feedback": "New observation after action. Terminal verifier is separate from the agent memory update.",
+      "selection_rule/data": "Policy chooses nonempty memory versus {}; completion and item updates remain fallible model decisions.",
+      "persistence": "During episode only; stable IDs/statuses carried in next prompt. No demonstrated cross-task store for these memory objects.",
+      "later_use": "Subsequent steps of this task, not independent future tasks.",
+      "claimed_effect": "Avoid repeated, omitted and out-of-scope operations.",
+      "failure_boundary": "Incorrect status or eligibility can be propagated; no rollback or external per-item validator proven; prompt/prose field equivalence unresolved.",
+      "evidence_ids": [
+        "A02",
+        "A03",
+        "A18",
+        "A19",
+        "A20"
+      ]
+    },
+    {
+      "sig_id": "S2",
+      "object": "Qwen3-VL4B/8B parameters and teacher/RL trajectories",
+      "information": "Teacher planner+UIIns;20-app120-template training environment; verifier sees final app internals unavailable to deployed GUI policy.",
+      "operation": "Generate~1.2K candidates; filter~1.1K executable tasks; retain successful teacher trajectories for21,713 SFT steps; online balanced ON/OFF rollouts from unchanged initialization; mixed-group advantages and clipped token policy updates.",
+      "output": "SFT then STR-GRPO policy checkpoint.",
+      "conditions": "Task verifiers accurate; intervention disables explicit channel only; memory-OFF memory tokens masked from loss.",
+      "feedback": "R=terminal binary verifier success minus alpha*z*rho, where rho is memory-active-step fraction.",
+      "selection_rule/data": "SFT accepts terminal-pass trajectories and rejects failures; RL reweights policy updates using group-normalized cost-adjusted rewards, not a per-task accepted patch.",
+      "persistence": "Trained model parameters, not a self-modifying runtime algorithm.",
+      "later_use": "Evaluate resulting checkpoints on AW, MW and DataScope.",
+      "claimed_effect": "Learn selective useful memory rather than blindly imitate frequent memory.",
+      "failure_boundary": "Success-only supervision may retain wrong intermediate memories; intervention and penalty not separately factorially ablated; alpha sensitivity and equivalent training budgets insufficiently specified.",
+      "evidence_ids": [
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08",
+        "A13",
+        "A14",
+        "A15"
+      ]
+    },
+    {
+      "sig_id": "S3",
+      "object": "DataScope task specs, initial app data, final-state checkers",
+      "information": "Generator and verifier get shared workflow/expected-output spec and privileged app storage; agent must interact through GUI.",
+      "operation": "32 families instantiated at3 data-load levels; seed targets and distractors; synthesize verifier; test controlled correct and faulty states, manually repair; evaluate task SR, app-complete progress, scope-aware atomic F1.",
+      "output": "96 executable task instances across14 apps and automatic scores.",
+      "conditions": "Workflow largely fixed while targets,distractors and repeated operations co-increase; inspectable app states; expected outputs accurate.",
+      "feedback": "Calibration expected scores against actual verifier outputs.",
+      "selection_rule/data": "Reject/repair verifier until all constructed validation states pass.",
+      "persistence": "Task/initializer/checker artifacts retained as benchmark; not retained improvement of an agent.",
+      "later_use": "Score multiple policies on the same controlled suite.",
+      "claimed_effect": "Expose multi-entry coverage/distractor errors hidden by coarse SR.",
+      "failure_boundary": "Same spec/generator can share errors; no independently sampled legal-alternative audit or quantified residual checker error; family-table discrepancy and synthetic-to-natural memory attribution unresolved.",
+      "evidence_ids": [
+        "A09",
+        "A10",
+        "A11",
+        "A16",
+        "A17",
+        "A21",
+        "A22",
+        "A23"
+      ]
+    }
+  ],
+  "retention_audit": {
+    "before": "Qwen3-VL base -> SFT checkpoint",
+    "proposed_change": "SFT trajectory training then cost-aware ON/OFF STR-GRPO parameter updates",
+    "selection_data_rule": "Verifier-pass SFT traces; terminal-success-minus-active-memory penalty gives RL group advantages.",
+    "accepted_rejected": "SFT failures rejected; RL samples weighted by advantages, not discrete deployable modifications selected on holdout.",
+    "persisted_artifact": "Policy weights; episode memory is transient.",
+    "later_tasks": "Reported AW/MW/DataScope evaluation; MobileWorld described as unseen environments.",
+    "independent_gain": "Point-estimate recipe difference +1.8/+2.6SR versus GRPO, without independent repeats or separated penalty/intervention effects.",
+    "retained_improvement_claim": "Ordinary learned-policy retention, not demonstrated cross-task episodic-memory improvement or recursive improver improvement.",
+    "evidence_ids": [
+      "A04",
+      "A06",
+      "A12",
+      "A13",
+      "A14"
+    ]
+  },
+  "gap": {
+    "author_gap": "Passive records leave item ownership, eligibility and completion implicit; long-horizon data workflows require active status tracking.",
+    "checked_gap": "Specific item-level bookkeeping is a meaningful residual. Universal passive-memory framing is too broad: AWM already stores workflows to drive subsequent decisions; AndroidWorld already composes executable tasks and partial rewards; MAI-UI already uses SFT+RL.",
+    "lineage/closest_adjacent": [
+      {
+        "paper_id": "2409.07429",
+        "version": null,
+        "material_id": "ref-awm",
+        "relation": "Earlier workflow conditioning, distinct from mutable within-episode execution ledger.",
+        "evidence_ids": [
+          "A25"
+        ]
+      },
+      {
+        "paper_id": "2405.14573",
+        "version": null,
+        "material_id": "ref-aw",
+        "relation": "Executable state checking, seeded/composite tasks and partial credit predecessor.",
+        "evidence_ids": [
+          "A26"
+        ]
+      },
+      {
+        "paper_id": "2512.22047",
+        "version": "v1",
+        "material_id": "ref-mai",
+        "relation": "Same-scale mobile SFT/RL frontier and richer-action MW comparator.",
+        "evidence_ids": [
+          "A27",
+          "A28",
+          "A29"
+        ]
+      }
+    ],
+    "residue": "Train explicit eligibility/status bookkeeping and selective invocation, stress-test scope rather than claim all memory was passive.",
+    "stakes": "Wrong recipients/records or duplicate writes create harmful side effects, not just longer traces.",
+    "method_response": "Structured item+phase state, terminal-verified SFT, same-initialization ON/OFF training and scope-aware checker construction.",
+    "remaining_gap": "Need aggregate same-policy representation/field removal, intervention-vs-cost factorial controls, independent checker audit, strict app/template separation, repeats and real deployment accounting.",
+    "evidence_ids": [
+      "A01",
+      "A02",
+      "A06",
+      "A09",
+      "A10",
+      "A25",
+      "A26",
+      "A27",
+      "A28",
+      "A29"
+    ],
+    "unresolved": [
+      "Unversioned fixed lineage snapshots have hashes but no exact upstream version in their supplied headers.",
+      "Exact matched aggregate flat-memory/full-history values reside in a figure not directly inspected; caption alone is not a numerical ablation.",
+      "Training20-app/template overlaps with AW/DataScope and full evaluation budget equivalence not exhaustively enumerated."
+    ]
+  },
+  "rs_pattern": {
+    "primary": "adapt_via_conditioning",
+    "supporting": [
+      "controlled_diagnostic_design"
+    ],
+    "outside_taxonomy": false,
+    "reason": "Inference uses shared structured task conditioning after upstream training; diagnostic construction is a supporting contribution. No generic memory keyword matching.",
+    "executes_pattern": true,
+    "resolves_problem": false,
+    "matches": [
+      {
+        "main_id": "adapt_via_conditioning",
+        "sub_id": "C03",
+        "role": "primary",
+        "fit": "partial",
+        "tactic_steps_checked": [
+          {
+            "step": "Canonical task format",
+            "status": "met",
+            "reason": "phase/context/schema/items prompt; parse and reinject"
+          },
+          {
+            "step": "Upstream training for format use",
+            "status": "met",
+            "reason": "Verified SFT and onlineRL"
+          },
+          {
+            "step": "New task without per-task weight update",
+            "status": "met",
+            "reason": "Inference memory updates only"
+          },
+          {
+            "step": "Disentangle conditioning and category transfer",
+            "status": "partial",
+            "reason": "ON/OFF training and recipe ablations; no strict category holdout or complete representation factorial test"
+          }
+        ],
+        "success_checks": [
+          "Explicit inference interface and shared format are reconstructible.",
+          "MobileWorld environment holdout is reported."
+        ],
+        "failure_checks": [
+          "Schema contents remain model-generated and fallible.",
+          "Per-task no-retraining does not mean no upstream training.",
+          "Independent conditioning-format attribution and unseen-category evidence incomplete."
+        ],
+        "evidence_ids": [
+          "A02",
+          "A04",
+          "A06",
+          "A12",
+          "A18",
+          "A19"
+        ],
+        "reason": "C03 fits canonical conditioning, not the entire training contribution; generic RL is not incorrectly labeled label-free pretext training."
+      },
+      {
+        "main_id": "controlled_diagnostic_design",
+        "sub_id": "C02",
+        "role": "supporting",
+        "fit": "partial",
+        "tactic_steps_checked": [
+          {
+            "step": "Name hidden axis",
+            "status": "met",
+            "reason": "Multi-entry coverage and same-schema distractor density"
+          },
+          {
+            "step": "Controlled instances",
+            "status": "partial",
+            "reason": "Same family/workflow but targets,distractors and operation count co-vary"
+          },
+          {
+            "step": "Independent oracle",
+            "status": "partial",
+            "reason": "Final app states external to agent, but oracle and tasks share generation spec"
+          },
+          {
+            "step": "Divergence and external validity",
+            "status": "partial",
+            "reason": "Performance drops across levels; not a single-confound causal diagnosis of memory"
+          }
+        ],
+        "success_checks": [
+          "Executable outcome anchor and explicit partial metrics.",
+          "Prompt fixes task class."
+        ],
+        "failure_checks": [
+          "No separate target-count versus distractor-density factorial experiment.",
+          "Controlled calibration is not independent legal-alternative validation.",
+          "Transfer from diagnostic load to natural memory errors not isolated."
+        ],
+        "evidence_ids": [
+          "A09",
+          "A10",
+          "A11",
+          "A16",
+          "A21"
+        ],
+        "reason": "Controlled benchmark is actual operation, but weaker than C02 decisive single-confound reattribution."
+      }
+    ]
+  },
+  "domain_pattern": {
+    "namespace": "gui",
+    "matches": [
+      {
+        "namespace": "gui",
+        "main": "agent_loop_context_control",
+        "sub": "C16",
+        "version": "sha256:430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+        "fit": "partial",
+        "condition_checks": [
+          {
+            "condition_id": "S1",
+            "status": "partial",
+            "reason": "ON/OFF intervention during training; no full same-policy field/representation removal.",
+            "evidence_ids": [
+              "A06",
+              "A13",
+              "A14"
+            ],
+            "condition_name": "Each role removed with the same backbone",
+            "condition_definition": "The paper ablates the progress-summary/planning agent, memory unit, manager or reflector by removing it and reports the drop (SR 88.6 -> 59.1 without the planning agent; instruction SR 56% -> 12% without the manager hub or the reflection agent; subtask SR 76.0 -> 48.1) (2406.01014#s1, 2502.14282#s2, 2502.14282#s3).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "S2",
+            "status": "not_applicable",
+            "reason": "Not a recent-screenshot window compression method.",
+            "evidence_ids": [],
+            "condition_name": "Recent steps at full fidelity, older steps as text, with the window ablated",
+            "condition_definition": "A few recent screenshots are kept verbatim and older history becomes action text or summaries, with the number of screenshots / history level ablated (three recent screenshots plus L1 action text beats one; L2 text history adds nothing) (2508.09123#s4, 2406.01014#s1).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "S3",
+            "status": "partial",
+            "reason": "harvest/execute progress drives action; no explicit plan-tree pruning.",
+            "evidence_ids": [
+              "A18",
+              "A19"
+            ],
+            "condition_name": "Proactive replanning or prunable plan trees",
+            "condition_definition": "The manager replans after every subgoal rather than only on failure (+4.62 / +6.15 points), or the agent maintains a plan tree it can branch and prune (WebArena SR 38.2% -> 43.1%) (2504.00906#s2, 2410.13825#s5).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "S4",
+            "status": "partial",
+            "reason": "Screen-based operation success required, but not independently checked each step.",
+            "evidence_ids": [
+              "A20"
+            ],
+            "condition_name": "Reflection on visible, reversible errors",
+            "condition_definition": "Post-action reflection compares before/after observations in settings where errors show as screen non-change or a recognisably wrong page and are reversible; guidelines plus a post-action success/failure summary lift M3A 19.8% -> 30.6% on AndroidWorld (2401.16158#s3, 2406.01014#s3, 2405.14573#s2).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "S5",
+            "status": "not_applicable",
+            "reason": "Not a manager-worker hierarchy contribution.",
+            "evidence_ids": [],
+            "condition_name": "Hierarchy benefit shown across backbones",
+            "condition_definition": "Separating planning from action decisions is reported across several backbones (Mobile-Agent-E 75.1 vs 53.0 satisfaction across three backbones) (2501.11733#s1).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "S6",
+            "status": "partial",
+            "reason": "Retained relevant content and SR are reported; no aggregate matched step/cost attribution.",
+            "evidence_ids": [
+              "A02",
+              "A14",
+              "A15"
+            ],
+            "condition_name": "Agent-nominated retained content with step savings",
+            "condition_definition": "The agent lists pivotal element ids or focus content to keep, and the paper reports both success and steps (WebArena SR 37.1% -> 38.2%, steps 12.0 -> 8.6; removing the focus memory: SR 88.6 -> 77.3) (2410.13825#s4, 2406.01014#s2).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F1",
+            "status": "risk",
+            "reason": "Item completion is self-declared; terminal verification does not prove per-step label accuracy.",
+            "evidence_ids": [
+              "A04",
+              "A20"
+            ],
+            "condition_name": "Reflector and self-check accuracy unmeasured",
+            "condition_definition": "Reflection accuracy is as low as 78.8%, executor self-checks and the supervising orchestrator hallucinate, and completion is self-declared without a checker (2406.01014#s3, 2508.03923#s3, 2411.10323#s2, 2312.13771#s3).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F2",
+            "status": "risk",
+            "reason": "Wrong structured memory can propagate; status accuracy not quantified.",
+            "evidence_ids": [
+              "A19",
+              "A20"
+            ],
+            "condition_name": "Summaries hide errors over long horizons",
+            "condition_definition": "Summaries returning only the final state hide intermediate mistakes from the orchestrator, long-horizon tasks (>30-50 actions) still lose coherent context, and summary error propagation is not measured (2508.03923#s2, 2508.09123#s4, 2406.01014#s1).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F3",
+            "status": "not_applicable",
+            "reason": "No decomposition into worker roles.",
+            "evidence_ids": [],
+            "condition_name": "Decomposition degrades weaker backbones",
+            "condition_definition": "With a weaker backbone the full multi-agent framework falls below its single agent (Qwen2.5-VL) (2502.14282#s2).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F4",
+            "status": "partial",
+            "reason": "Recipe ablation exists; complete inference-cost isolation missing.",
+            "evidence_ids": [
+              "A13",
+              "A14",
+              "A24"
+            ],
+            "condition_name": "No role-removal ablation and unreported per-step cost",
+            "condition_definition": "Several systems give no role-removal ablation, so gains cannot be assigned to the hierarchy alone, while each role adds per-step cost (2501.11733#s1, 2402.07939#s1, 2402.07456#s4).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F5",
+            "status": "risk",
+            "reason": "Wrong writes/messages not guaranteed reversible.",
+            "evidence_ids": [
+              "A10"
+            ],
+            "condition_name": "Irreversible actions and state-blind replanning",
+            "condition_definition": "Plausible-looking wrong pages and irreversible actions (sending messages) defeat screenshot-diff reflection; plan pruning resets only the agent's context, not the web state (2406.01014#s3, 2401.16158#s3, 2410.13825#s5).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F6",
+            "status": "partial",
+            "reason": "Explicit multi-entry suite and baselines, but low terminal SR and qualitative loop cases.",
+            "evidence_ids": [
+              "A11",
+              "A16"
+            ],
+            "condition_name": "Loop pathologies on small, baseline-free suites",
+            "condition_definition": "Repeated actions to the step limit, early stopping triggered by an 'unachievable' hint, loops from caching actions but not outcomes, or retained content that hurts dense single-page tasks, evaluated on small benchmarks without baselines (2307.13854#s4, 2405.14573#s3, 2410.13825#s4, 2401.16158#s2).",
+            "namespace": "gui"
+          }
+        ],
+        "evidence_ids": [
+          "A02",
+          "A18",
+          "A19",
+          "A20"
+        ],
+        "reason": "C16 agent-retained focus content generalizes to structured item ledger; main card fixed-backbone prompted-loop assumption does not encompass the policy training itself.",
+        "executes_pattern": true,
+        "resolves_problem": false,
+        "condition_note": "Conditions are claim-appropriate check questions, not a counted scoring denominator. Risk denotes plausible unexcluded failure, not an observed event unless explicitly stated."
+      },
+      {
+        "namespace": "gui",
+        "main": "trajectory_level_policy_training",
+        "sub": null,
+        "version": "sha256:430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+        "fit": "strong_at_main_only",
+        "condition_checks": [
+          {
+            "condition_id": "S1",
+            "status": "met",
+            "reason": "Verifier-gated SFT precedes onlineRL.",
+            "evidence_ids": [
+              "A04",
+              "A05",
+              "A06"
+            ],
+            "condition_name": "SFT/offline initialisation before online RL",
+            "condition_definition": "Online RL starts from an SFT/offline-trained policy; ~1k online trajectories suffice on short AitW tasks (2406.11896#s1, 2411.02337#s3).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "S2",
+            "status": "partial",
+            "reason": "Clipped on-policy update; no demonstrated replay/perplexity-band recipe.",
+            "evidence_ids": [
+              "A06",
+              "A07"
+            ],
+            "condition_name": "Constrained updates with success replay",
+            "condition_definition": "Updates are KL-constrained to the previous-phase policy and replay successful trajectories within a perplexity band; tasks are curriculum-filtered for informativeness (2411.02337#s3, 2406.11896#s1).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "S3",
+            "status": "not_applicable",
+            "reason": "No first-error correction data contribution.",
+            "evidence_ids": [],
+            "condition_name": "First-error correction and recovery data",
+            "condition_definition": "Training data corrects the first erroneous step and adds a recovery action after it; reflection data raises level-2 success 14.58% -> 23.61%, online reflection tuning 23.61% -> 34.72%, and DPO on corrected vs erroneous actions improves OSWorld (72B 18.8 -> 22.7) (2506.08012#s1, 2506.08012#s2, 2501.12326#s1).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "S4",
+            "status": "not_applicable",
+            "reason": "Terminal-accepted trajectories, not action-matching thought filtering.",
+            "evidence_ids": [],
+            "condition_name": "Reasoning kept only if action-consistent",
+            "condition_definition": "Generated per-step thoughts are kept only when the sampled action matches ground truth (bootstrapping), avoiding superficial rationalisation (2501.12326#s2, 2412.04454#s2).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "S5",
+            "status": "not_applicable",
+            "reason": "Training/evaluation are executable, not semi-online proxy.",
+            "evidence_ids": [],
+            "condition_name": "Offline proxy validated against online success",
+            "condition_definition": "A semi-online/offline protocol is shown to correlate with online success (SOP vs AndroidWorld, R^2=0.934) (2509.11543#s3).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "S6",
+            "status": "not_applicable",
+            "reason": "No mixed reasoning-level contribution.",
+            "evidence_ids": [],
+            "condition_name": "Mixed reasoning levels with the decoding level ablated",
+            "condition_definition": "Reasoning annotations synthesised by a strong MLLM are trained as a mixture of levels and the level used at decoding is ablated (mixing L1/L2/L3 and decoding L2: OSWorld 18.5% vs 13.1% L2-only; reflective long CoT 11.5% -> 15.3%) (2508.09123#s2, 2508.09123#s3, 2312.08914#s3).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F1",
+            "status": "unknown",
+            "reason": "Long-phase stability and replay need not be inferred from clipped updates.",
+            "evidence_ids": [],
+            "condition_name": "Unregularised multi-phase updates",
+            "condition_definition": "Without KL or replay, performance degrades over phases; replaying failures destabilises (2411.02337#s3).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F2",
+            "status": "not_applicable",
+            "reason": "No expert exact-action mismatch reward.",
+            "evidence_ids": [],
+            "condition_name": "Exact-match correctness rejects valid alternatives",
+            "condition_definition": "Valid alternative actions are treated as mismatches and non-expert branches never see real next states (2509.11543#s1, 2509.11543#s3).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F3",
+            "status": "partial",
+            "reason": "Long-horizon cases and3 difficulty levels, but no benchmark run-to-run spread.",
+            "evidence_ids": [
+              "A11",
+              "A16"
+            ],
+            "condition_name": "Short tasks, subsets, few repeats",
+            "condition_definition": "Evaluated on short tasks only, with few repeats and on subsets (WebArena-Lite) (2406.11896#s1, 2411.02337#s3).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F4",
+            "status": "partial",
+            "reason": "4B/8B final models, detailed STR ablation8B only.",
+            "evidence_ids": [
+              "A13",
+              "A14"
+            ],
+            "condition_name": "Gains not shown across model sizes",
+            "condition_definition": "Gains shrink with model size (2509.11543#s1).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F5",
+            "status": "partial",
+            "reason": "Task checker calibration exists; per-step memory correctness unvalidated.",
+            "evidence_ids": [
+              "A09",
+              "A20"
+            ],
+            "condition_name": "Unvalidated error labels and environment assumptions",
+            "condition_definition": "MLLM verifier/first-error labels are not validated against humans, the method assumes Back restores the previous screen, and covers visual/grounding but not high-level planning errors; reflection tuning is not isolated by ablation (2506.08012#s1, 2506.08012#s2, 2501.12326#s1).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F6",
+            "status": "unknown",
+            "reason": "Teacher reasoning noise not independently measured.",
+            "evidence_ids": [],
+            "condition_name": "Reasoning noise from source traces",
+            "condition_definition": "Single-sample system-2 decoding is worse in-domain (irrelevant/hallucinated reasoning); redundant actions in source trajectories yield wrong reasoning (7.8%); an observation-description (L3) level misleads at inference and self-correction is conjectured rather than isolated (2501.12326#s2, 2412.04454#s2, 2508.09123#s3, 2508.09123#s2).",
+            "namespace": "gui"
+          }
+        ],
+        "evidence_ids": [
+          "A04",
+          "A05",
+          "A06",
+          "A07",
+          "A08"
+        ],
+        "reason": "Subcard null deliberately: K20 requires learned critics/mixed TD-MC and filtered replay, unlike group-relative STR-GRPO; other subcards concern different data edits.",
+        "executes_pattern": true,
+        "resolves_problem": false,
+        "condition_note": "Conditions are claim-appropriate check questions, not a counted scoring denominator. Risk denotes plausible unexcluded failure, not an observed event unless explicitly stated."
+      },
+      {
+        "namespace": "gui",
+        "main": "verifiable_execution_reward",
+        "sub": "K12",
+        "version": "sha256:430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+        "fit": "strong",
+        "condition_checks": [
+          {
+            "condition_id": "S1",
+            "status": "met",
+            "reason": "Privileged app storage final-state checking.",
+            "evidence_ids": [
+              "A09",
+              "A10"
+            ],
+            "condition_name": "Checker reads privileged state",
+            "condition_definition": "Reward comes from reading environment internals (files, configs, backend/localStorage fields, instrumentation flags, logs) compared to goal conditions or gold artefacts; benchmarks package apps as resettable containers/emulators with seeded, parameterised task initialisation and report variance across seeds (SR 27.6-33.2%) (2404.07972#s1, 2601.04126#s2, 2609.07712#s2, 2307.13854#s1, 2405.14573#s1, 2405.14573#s4).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "S2",
+            "status": "partial",
+            "reason": "Outcome-only semantics permit path alternatives in principle; independent alternatives audit absent.",
+            "evidence_ids": [
+              "A09"
+            ],
+            "condition_name": "Outcome-only checks accept alternative paths",
+            "condition_definition": "Checkers test the final state rather than the action sequence, so alternative correct paths are accepted, e.g. state-locator checkers (2404.07972#s1, 2609.07712#s2, 2307.13854#s3).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "S3",
+            "status": "partial",
+            "reason": "Shared task spec, generated checkers and repair, not evaluator-library-first guarantee.",
+            "evidence_ids": [
+              "A09",
+              "A21"
+            ],
+            "condition_name": "Tasks synthesised checker-first with test-driven repair",
+            "condition_definition": "Tasks (and generated sites) are produced from an evaluator library or shared spec, with a repair loop until task-relevant tests pass (removing it: 85.6 -> 82.6) (2510.17790#s2, 2601.04126#s1).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "S4",
+            "status": "partial",
+            "reason": "App/data partial scores are terminal metrics, not online instrumented intermediate RL rewards.",
+            "evidence_ids": [
+              "A10"
+            ],
+            "condition_name": "Dense partial credit from instrumented checkpoints",
+            "condition_definition": "Instrumented checkpoints give partial credit and more discriminative RL groups (767 vs 174 discriminative GRPO groups, 4.4x) (2601.04126#s2).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "S5",
+            "status": "not_applicable",
+            "reason": "Executability filtering is not explicit difficulty-band RL curriculum.",
+            "evidence_ids": [],
+            "condition_name": "Difficulty-band filtering before RL",
+            "condition_definition": "Synthesised tasks are filtered to a difficulty band before RL training (2510.17790#s2).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "S6",
+            "status": "partial",
+            "reason": "Constructed success/failure calibration; no independent legal/faulty pools with error rates.",
+            "evidence_ids": [
+              "A09"
+            ],
+            "condition_name": "Two-sided checker validation",
+            "condition_definition": "Checkers/oracles are assessed on independent pools of faulty and legal implementations, measuring false rejects of legal alternatives as well as detection of failures (2610.05001#s2).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F1",
+            "status": "risk",
+            "reason": "Residual checker error not quantified beyond constructed tests.",
+            "evidence_ids": [
+              "A09"
+            ],
+            "condition_name": "Checker error rates unquantified",
+            "condition_definition": "Residual false positives/negatives are not quantified, and checkpoint weights are LLM-chosen and unvalidated (2404.07972#s1, 2601.04126#s2); two-sided validation remains a survey recommendation, not measured; must_include and GPT-4 fuzzy match can accept partially wrong content (2610.05001#s2, 2610.05001#s3, 2307.13854#s3, 2401.13649#s3).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F2",
+            "status": "partial",
+            "reason": "Generation plus manual repair reduces labor but no measured annotation hours.",
+            "evidence_ids": [
+              "A09"
+            ],
+            "condition_name": "Manual per-task checkers limit scale",
+            "condition_definition": "Checkers are per-task manual work (~2 man-hours each) and do not exist for unannotated tasks (2404.07972#s1).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F3",
+            "status": "partial",
+            "reason": "Real apps, but restricted inspectable app states.",
+            "evidence_ids": [
+              "A11"
+            ],
+            "condition_name": "Synthetic environments without real server logic",
+            "condition_definition": "Generated sites have no real server logic and are single-site, single-user in scope; benchmark apps are restricted to ones without login and with inspectable local storage, or clones with sampled data (2601.04126#s1, 2405.14573#s1, 2307.13854#s1).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F4",
+            "status": "risk",
+            "reason": "Train/spec overlap beyond MW assertion not enumerated.",
+            "evidence_ids": [
+              "A12"
+            ],
+            "condition_name": "Synthesis/test overlap not analysed",
+            "condition_definition": "Overlap between synthesised tasks and the test distribution is not analysed (2510.17790#s2).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F5",
+            "status": "partial",
+            "reason": "Incremental STR SR gains1.8/2.6 need variance; not zero benefit.",
+            "evidence_ids": [
+              "A13",
+              "A14"
+            ],
+            "condition_name": "Small downstream RL gain",
+            "condition_definition": "Evaluator-first tasks are harder and fewer, and the RL gain is ~2 points (2510.17790#s2).",
+            "namespace": "gui"
+          },
+          {
+            "condition_id": "F6",
+            "status": "partial",
+            "reason": "State checker plus GUI observations, not screen-only truth.",
+            "evidence_ids": [
+              "A09",
+              "A10"
+            ],
+            "condition_name": "Screenshot-blind state",
+            "condition_definition": "Screenshots alone cannot see some state (e.g. file size), so screenshot judges and scripts are complementary; a design relying on one alone misses cases (2404.07972#s1).",
+            "namespace": "gui"
+          }
+        ],
+        "evidence_ids": [
+          "A09",
+          "A10",
+          "A11",
+          "A21"
+        ],
+        "reason": "K12 is actual reward/evaluation operation. K34 is only partial comparator: calibration is stronger than no audit but not independent two-sided implementation pools.",
+        "executes_pattern": true,
+        "resolves_problem": false,
+        "condition_note": "Conditions are claim-appropriate check questions, not a counted scoring denominator. Risk denotes plausible unexcluded failure, not an observed event unless explicitly stated."
+      }
+    ],
+    "unassigned": [
+      {
+        "main": "experience_memory_retrieval",
+        "reason": "Episode-local ATMem is not a persistent cross-task experience retrieval library."
+      },
+      {
+        "main": "structured_screen_observation",
+        "reason": "No new screenshot parser is the evaluated contribution."
+      }
+    ],
+    "revision_proposals": []
+  },
+  "pattern_mapping": [
+    {
+      "rs_main": "adapt_via_conditioning",
+      "rs_sub": "C03",
+      "domain_namespace": "gui",
+      "domain_main": "agent_loop_context_control",
+      "domain_sub": "C16",
+      "operation_correspondence": "Structured item state is next-step conditioning, retained by the agent.",
+      "necessary_conditions/differences": "Task conditioning after upstream training; no per-new-task weight update, but not a fixed-backbone-only training study.",
+      "evidence_ids": [
+        "A02",
+        "A18",
+        "A19"
+      ]
+    },
+    {
+      "rs_main": "controlled_diagnostic_design",
+      "rs_sub": "C02",
+      "domain_namespace": "gui",
+      "domain_main": "verifiable_execution_reward",
+      "domain_sub": "K12",
+      "operation_correspondence": "Controlled data-load variants scored from initialized/final app internals.",
+      "necessary_conditions/differences": "Oracle privileges belong to evaluator; multiple load axes co-vary and calibration shares source spec.",
+      "evidence_ids": [
+        "A09",
+        "A10",
+        "A21"
+      ]
+    },
+    {
+      "rs_main": "adapt_via_conditioning",
+      "rs_sub": "C03",
+      "domain_namespace": "gui",
+      "domain_main": "trajectory_level_policy_training",
+      "domain_sub": null,
+      "operation_correspondence": "Upstream learning teaches the conditioning interface and selective use.",
+      "necessary_conditions/differences": "Original C03 only partly covers training; no claim group advantages equal learned-critic K20.",
+      "evidence_ids": [
+        "A04",
+        "A06",
+        "A07"
+      ]
+    }
+  ],
+  "expectations": [
+    {
+      "id": "E01",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s1",
+          "note": "defines execution-based per-task checkers"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "OSWorld at 15 and 50 steps, averaged over 3 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2",
+          "note": "OSWorld planner+grounder success"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "OSWorld-Verified 15 steps, averaged over 4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "OSWorld-Verified (15 steps) as transfer target"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "OSWorld-Verified success after GRPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.08164#s1",
+          "note": "OSWorld full set"
+        }
+      ],
+      "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "The paper does not make the specific claim in this expectation: an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E02",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.09856#s2"
+        }
+      ],
+      "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+      "applicable": true,
+      "status": "met",
+      "reason": "Online AndroidWorld SR reported, not offline step matching.",
+      "evidence_ids": [
+        "A14"
+      ],
+      "score_item": [
+        "E.measurement"
+      ],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E03",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.02907#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.14721#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2411.02337",
+          "note": "authors concede evaluation on 165-task WebArena-Lite subset due to cost"
+        }
+      ],
+      "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "The paper does not make the specific claim in this expectation: an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E04",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2",
+          "note": "constructs Online-Mind2Web; WebVoyager overstates competence"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s1",
+          "note": "Online-Mind2Web and Mind2Web-Live"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "Online-Mind2Web as transfer benchmark"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2",
+          "note": "Mind2Web-Live"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "Mind2Web-Live"
+        }
+      ],
+      "applies_when": "a claim about web-agent success on real, live websites",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "The paper does not make the specific claim in this expectation: a claim about web-agent success on real, live websites",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E05",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.14262#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2501.12326",
+          "note": "authors: ScreenSpot v1/v2 may not be robust enough to capture gains at scale"
+        }
+      ],
+      "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "The paper does not make the specific claim in this expectation: a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E06",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s1",
+          "note": "vs UGround"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3",
+          "note": "vs UGround-V1-7B, OS-Atlas-7B, Aguvis"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "vs UI-TARS-7B/72B, UGround-V1-7B, Aguvis, OS-Atlas"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012",
+          "note": "GPT-4o + UGround / Aguvis-7B / Aria-UI baselines"
+        }
+      ],
+      "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "The paper does not make the specific claim in this expectation: a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E07",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1",
+          "note": "vs UI-TARS-7B, SFT-only, offline RL"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2",
+          "note": "vs UI-TARS-7B/72B, GPT-4o+Aria-UI"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "UI-TARS-1.5-7B base"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "UI-TARS-1.5-7B, GTA1-7B+o3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "UI-TARS-1.5-7B base"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "UI-TARS-1.5-7B base"
+        }
+      ],
+      "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Base/SFT/GRPO and UI-TARS-family comparisons; GPT5.2+UIIns teacher reference, but not matched compute/privileges.",
+      "evidence_ids": [
+        "A13",
+        "A14",
+        "A17"
+      ],
+      "score_item": [
+        "E.causality",
+        "E.cost"
+      ],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E08",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2"
+        }
+      ],
+      "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "The paper does not make the specific claim in this expectation: a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E09",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s3",
+          "note": "vs SFT, Filtered BC, AWR, DigiRL"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2406.11896#s1",
+          "note": "vs Filtered BC, AWR"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1",
+          "note": "vs SFT-only, offline GRPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "vs WebRL, NNetNav SFT"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "vs ORM-based PPO and ARPO"
+        }
+      ],
+      "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+      "applicable": true,
+      "status": "partial",
+      "reason": "SFT and ordinary GRPO controls isolate recipe progression; not a complete DigiRL/WebRL/filteredBC benchmark under identical data/budgets.",
+      "evidence_ids": [
+        "A13",
+        "A14"
+      ],
+      "score_item": [
+        "E.causality"
+      ],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E10",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2406.11896#s2",
+          "note": "2.8% error vs human"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s2",
+          "note": "79.4% on 100 manually labelled rollouts"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "agreement with human labels; held-out agents"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s1",
+          "note": "accuracy vs human-corrected labels"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s2",
+          "note": "Spearman with human labels"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2311.08649#s2",
+          "note": "F1 0.74 vs manual labels"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.09038",
+          "note": "authors concede VLM judges can admit failures or reject valid successes; no precision reported"
+        }
+      ],
+      "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Task-level training/evaluation acceptance uses executable state checkers, not an LLM success judge; LLM generates tasks/checkers before calibration.",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E11",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2510.18596#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "precision on AgentRewardBench; low recall noted"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s1",
+          "note": "F1 under class imbalance"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2504.01382",
+          "note": "authors concede o4-mini WebJudge is overly conservative with low recall"
+        }
+      ],
+      "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No learned GUI judge reliability claim.",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E12",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "PRM-PPO vs ORM-PPO vs ARPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "VAGEN reward vs ProRe reward"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.18596",
+          "note": "authors: UPE not validated inside RL; abstention may bias kept samples"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2605.06732#s3",
+          "note": "theory: systematic reward bias is not removed by more rollouts"
+        }
+      ],
+      "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Reward is script checker, not a learned reward model.",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E13",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2404.07972",
+          "note": "authors: more red-teaming could reduce remaining false positives/negatives"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2602.00575",
+          "note": "authors: OSWorld-Verified scripts produce false negatives (multiple solutions)"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s2",
+          "note": "reviewer audit on correct and deliberate-failure trajectories"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2610.05001#s2",
+          "note": "detection rate plus non-rejection rate on legal alternatives"
+        }
+      ],
+      "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Controlled correct/faulty state calibration and manual repair, not independent legal-alternative/error-rate audit.",
+      "evidence_ids": [
+        "A09"
+      ],
+      "score_item": [
+        "E.measurement"
+      ],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E14",
+      "version": "cua-agents/v1",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2509.23738",
+          "note": "authors: GPT-4o labels show significant gap to human experts"
+        }
+      ],
+      "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "The paper does not make the specific claim in this expectation: a claim that a process reward model for GUI steps improves RL or best-of-N",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E15",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2501.12326",
+          "note": "authors: offline benchmark results may fail to capture online capability"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s3",
+          "note": "SOP R^2=0.934 vs AndroidControl-High 0.470 against AndroidWorld"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2602.09856",
+          "note": "authors: offline evaluation cannot assess alternative valid trajectories or recovery"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2"
+        }
+      ],
+      "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Online executable results already used; no capability claim rests on offline matching.",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E16",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "3 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "3 runs, std 1.1%"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.10031",
+          "note": "3 repetitions"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2311.08649",
+          "note": "authors: monetary constraints prevented multiple runs"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2411.02337",
+          "note": "authors: random task generation raises variance across seeds"
+        }
+      ],
+      "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+      "applicable": true,
+      "status": "unmet",
+      "reason": "No independent repeated online evaluation/CI identified in sections4-5 and full appendix/PDF; group reward standard deviation is an RL normalization statistic, not evaluation variance.",
+      "evidence_ids": [
+        "A11",
+        "A14"
+      ],
+      "score_item": [
+        "E.statistics"
+      ],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E17",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "reports both 15 and 50 steps"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2",
+          "note": "5 actions vs 30 for some baselines (condition)"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2",
+          "note": "differing step caps; efficiency stratified"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s3",
+          "note": "budget exhaustion"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "average steps reported"
+        }
+      ],
+      "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Training hardware/time and response limits described; exact matched evaluation step/token budgets across comparison systems insufficiently specified.",
+      "evidence_ids": [
+        "A24",
+        "A15"
+      ],
+      "score_item": [
+        "E.cost"
+      ],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E18",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2",
+          "note": "$ and seconds vs tree search"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s1",
+          "note": "wall-clock vs tree search"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s2",
+          "note": "gain vs N, plateau"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "best-of-N vs N"
+        }
+      ],
+      "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "The paper does not make the specific claim in this expectation: a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E19",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2509.23738",
+          "note": "authors: AndroidWorld re-engineered; validated only by matching 32.8 baseline"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2",
+          "note": "modified scroll/type and +5 max steps disclosed"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.19723",
+          "note": "authors: 112 of 116 AndroidWorld tasks; one WebArena task per template"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "unscorable network/reCAPTCHA tasks disclosed"
+        }
+      ],
+      "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Custom20-app arena and DataScope initializer/checker construction described; AW execution/harness parity not exhaustively validated.",
+      "evidence_ids": [
+        "A09",
+        "A11"
+      ],
+      "score_item": [
+        "X",
+        "E.measurement"
+      ],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E20",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2504.01382",
+          "note": "authors: websites evolve so tasks must be replaced"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2406.11896",
+          "note": "authors: frozen policies degrade over time due to site/app changes"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.09038",
+          "note": "authors: evolving websites complicate reproducibility"
+        }
+      ],
+      "applies_when": "a claim measured on live websites or live apps",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Real mobile app interactions and virtual training platform given; full per-app eval versions/dates/seeds not enumerated.",
+      "evidence_ids": [
+        "A11",
+        "A12"
+      ],
+      "score_item": [
+        "E.holdout"
+      ],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E21",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        }
+      ],
+      "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Policy GUI observations separated from privileged verifier; teacher planner+grounder differs from native policy; full baseline budget/observation parity incomplete.",
+      "evidence_ids": [
+        "A07",
+        "A17"
+      ],
+      "score_item": [
+        "M",
+        "E.causality"
+      ],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E22",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543",
+          "note": "relative gain 7B +104% vs 32B +37%"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3",
+          "note": "2B/7B/72B"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.02345#s2",
+          "note": "seven backbones"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "7B and 72B"
+        }
+      ],
+      "applies_when": "a claim that a training recipe generalises across policy backbones",
+      "applicable": true,
+      "status": "partial",
+      "reason": "4B/8B final comparisons, not independently replicated training-recipe ablation across diverse backbones.",
+      "evidence_ids": [
+        "A13",
+        "A14"
+      ],
+      "score_item": [
+        "E.holdout"
+      ],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E23",
+      "version": "cua-agents/v1",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s3"
+        }
+      ],
+      "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+      "applicable": true,
+      "status": "partial",
+      "reason": "32 families/3 levels and failure analysis; level mixes target count, distractor count and operation count; no independent horizon-controlled replication.",
+      "evidence_ids": [
+        "A11",
+        "A16",
+        "A21"
+      ],
+      "score_item": [
+        "G",
+        "E.statistics"
+      ],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E24",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2604.14262#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s3",
+          "note": "knowledge-free re-annotated instructions"
+        }
+      ],
+      "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Data-load robustness, not demonstrated layout-shift robustness.",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E25",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "OSWorld-G refusal category"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s1",
+          "note": "infeasible tasks"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.04454",
+          "note": "authors: model cannot indicate uncertainty or refuse"
+        }
+      ],
+      "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Prompt permits infeasible status; no distinct ambiguous/infeasible benchmark partition audit.",
+      "evidence_ids": [
+        "A18",
+        "A19"
+      ],
+      "score_item": [
+        "E.measurement"
+      ],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E26",
+      "version": "cua-agents/v1",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.02907#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        }
+      ],
+      "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Template synthesis rather than exploration-first/reverse/world-model synthesis.",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E27",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s1",
+          "note": "diminishing after ~100K screenshots"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "10%-100% no saturation"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.19723",
+          "note": "authors: performance saturates at larger data scales"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.02345#s1",
+          "note": "log-linear"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "memory-size scaling"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2608.05891",
+          "note": "authors: returns saturate after 20K rollouts"
+        }
+      ],
+      "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Verified synthetic trajectories and recipe controls, but independent synthetic-vs-human/matched-source ablation absent.",
+      "evidence_ids": [
+        "A04",
+        "A05",
+        "A13",
+        "A14"
+      ],
+      "score_item": [
+        "E.causality"
+      ],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E28",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "test-query search actions filtered from in-domain data"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1",
+          "note": "only 20 of 833 AndroidControl apps seen in synthesis"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "train on generated sites, evaluate on OSWorld/Online-Mind2Web/MobileWorld"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "OOD GUI-Odyssey and OSWorld"
+        }
+      ],
+      "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+      "applicable": true,
+      "status": "partial",
+      "reason": "MW explicitly unseen; complete training/test app/template and DataScope-generation overlap accounting not provided.",
+      "evidence_ids": [
+        "A12",
+        "A21"
+      ],
+      "score_item": [
+        "E.holdout"
+      ],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E29",
+      "version": "cua-agents/v1",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2506.08012",
+          "note": "authors: reflection data covers visual/grounding errors, not high-level planning"
+        }
+      ],
+      "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "The paper does not make the specific claim in this expectation: a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E30",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2609.00048#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "intrinsic accuracy correlated with Mind2Web-Live SR"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.09856#s2",
+          "note": "AndroidWorld SR with lookahead"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s1",
+          "note": "downstream SR ablation"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2"
+        }
+      ],
+      "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "The paper does not make the specific claim in this expectation: a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E31",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s1",
+          "note": "H=1 best"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "dream length 4-5 best"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2410.13232",
+          "note": "authors: errors accumulate with search depth"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2402.01086",
+          "note": "authors: autoregressive error accumulation (robotics)"
+        }
+      ],
+      "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "The paper does not make the specific claim in this expectation: a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E32",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "0% real underperforms SFT"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2608.05891",
+          "note": "authors: world-model-only data lowers ATP below base"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2403.03949#s3",
+          "note": "real co-training 2-3.5x over sim co-training (robotics)"
+        }
+      ],
+      "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "The paper does not make the specific claim in this expectation: a claim that policy training on world-model or simulated GUI rollouts improves agents",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E33",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2609.00048",
+          "note": "authors: VLM judges miss fine-grained task-state errors; more human-validated checks needed"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.14721#s1",
+          "note": "ranking checked under a second (Claude-Opus-4.1) judge"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "intrinsic metric correlated with executed SR"
+        }
+      ],
+      "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "The paper does not make the specific claim in this expectation: a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E34",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s1",
+          "note": "blind A/B realism; placeholder residual"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.03597#s1",
+          "note": "checkpoint ranking preserved vs real"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2403.03949#s1",
+          "note": "targeted twin vs generic assets"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2507.07067",
+          "note": "authors: residual sim-to-real gap is unavoidable after calibration"
+        }
+      ],
+      "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "The paper does not make the specific claim in this expectation: a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    },
+    {
+      "id": "E35",
+      "version": "cua-agents/v1",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "OOD gains small"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.08164#s2"
+        }
+      ],
+      "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "ATMem persists within one episode, not retrieved experience across tasks.",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "text": "Structured ATMem improves data-dependent execution beyond passive memory.",
+      "setting": "Qwen3-VL4B/8B online mobile; teacher GPT5(+.2 naming varies)+UIIns reference.",
+      "baseline/control": "Base/SFT/ordinaryGRPO; Figure1 caption claims same-planner flat/full-history comparison but plot values not inspected.",
+      "selection_vs_test": "Terminal-success-gated teacher training; MW unseen assertion; DataScope overlap not enumerated.",
+      "result/denominator": "Table4 STR76.6AW/23.3MW versusGRPO74.8/20.7; full per-run denominators/seeds not supplied here.",
+      "evidence_ids": [
+        "A02",
+        "A06",
+        "A13",
+        "A14"
+      ],
+      "counterevidence": [
+        "A03",
+        "A20"
+      ],
+      "allowed_conclusion": "Training recipe produces higher reported point estimates; cannot isolate schema fields, extra reasoning, training data, cost penalty and intervention independently."
+    },
+    {
+      "claim_id": "C2",
+      "text": "STR-GRPO learns selective useful memory and efficiency.",
+      "setting": "8B fixed-backbone recipe progression.",
+      "baseline/control": "SFT+GRPO.",
+      "selection_vs_test": "ON/OFF training interventions, no independent deployment selection experiment.",
+      "result/denominator": "SR+1.8AW/+2.6MW; task-level any-memory fraction45.7→31.9 and44.7→30.1.",
+      "evidence_ids": [
+        "A06",
+        "A07",
+        "A08",
+        "A13",
+        "A14",
+        "A15"
+      ],
+      "counterevidence": [
+        "A24"
+      ],
+      "allowed_conclusion": "Lower incidence of explicit memory with higher point-estimate SR; neither task invocation fraction nor active-step penalty measures actual inference cost savings."
+    },
+    {
+      "claim_id": "C3",
+      "text": "DataScope scales data-coverage difficulty and ATMem handles it best among compared native agents.",
+      "setting": "96 instances/32families/14apps; each level32.",
+      "baseline/control": "Multiple native policies and proprietary teacher.",
+      "selection_vs_test": "Fixed template variants with targets/distractors; independent calibration pools not established.",
+      "result/denominator": "ATMemSR6.2/6.2/3.1, roughly2/2/1 tasks if rounded from32; teacher18.8/6.2/3.1 with greater partial scores.",
+      "evidence_ids": [
+        "A09",
+        "A10",
+        "A11",
+        "A16",
+        "A17",
+        "A21"
+      ],
+      "counterevidence": [
+        "A22",
+        "A23"
+      ],
+      "allowed_conclusion": "Useful controlled scope-stress resource and small relative native gains; no general solution or clean single-confound memory diagnosis."
+    },
+    {
+      "claim_id": "C4",
+      "text": "State-of-the-art online mobile performance and strong unseen-environment generalization.",
+      "setting": "Paper broad claim retained; separate scale/action/subset protocols.",
+      "baseline/control": "Same-scale MAI-UI8B70.7AW corroborated; fixed MAI-UI235B76.7AW and8B27.5GUI-onlyMW/24.9overall are omitted frontier comparisons.",
+      "selection_vs_test": "Author says MW environments unseen; not independently audited.",
+      "result/denominator": "76.6AW/23.3MW; comparator protocols not demonstrably identical.",
+      "evidence_ids": [
+        "A12",
+        "A14",
+        "A27"
+      ],
+      "counterevidence": [
+        "A28",
+        "A29"
+      ],
+      "allowed_conclusion": "Higher than the selected same-scale AW baselines and reported improvement over own controls; unrestricted SOTA and dominance of full mobile frontier unsupported."
+    }
+  ],
+  "assessment": {
+    "evidence_level": "transfer",
+    "evidence_level_reason": "Author-reported online MW execution on environments explicitly unseen during training meets the unseen-environment branch; only Android platform demonstrated, no cross-platform claim or independent replication.",
+    "claim_support": "scoped",
+    "strongest_supported_claim": "Verifier-filtered SFT plus STR-GRPO yields reported Qwen3-VL8B online point estimates76.6AW/23.3MW, +1.8/+2.6 over ordinaryGRPO while fewer tasks invoke explicit memory. DataScope makes scope errors measurable, but its terminal success remains6.2/6.2/3.1. Broad SOTA, independent schema-causal attribution and deployment efficiency are not established.",
+    "unresolved": [
+      "Independent run-to-run uncertainty and exact eval budget matching.",
+      "Prompt/prose schema equivalence, per-item update correctness and invalid-memory recovery.",
+      "Checker residual error, alternative valid results and train/spec overlaps.",
+      "Figure-only aggregate memory ablation numbers and graphic error-count labels not inspected; do not infer them from captions.",
+      "Table6 one-app CalendarMeetingPrepAndNotify conflicts with five-app Listing1.",
+      "Fixed MAI-UI frontier comparisons require exact same MW subset/protocol before numerical superiority comparisons."
+    ],
+    "not_reproduced": true,
+    "task_improvement": "Author-reported online gains.",
+    "retained_improvement": "Training checkpoint retention, not independently isolated cross-task memory gain.",
+    "improver_improvement": "Not claimed or demonstrated."
+  },
+  "ratings": {
+    "G": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Concrete item-identity/eligibility/completion gap with executable scope stress; lineage checked against AWM/AW/MAI. Universal passive-memory and full-frontier framing too broad for4.",
+      "evidence_ids": [
+        "A01",
+        "A25",
+        "A26",
+        "A27"
+      ],
+      "counterevidence_ids": [
+        "A28",
+        "A29"
+      ],
+      "search_scope": []
+    },
+    "M": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Explicit state interface, verifier gating and balanced-channel objective address bookkeeping and selective use. Reconstructible overall, but schema-lock/prose versus actual prompt, self-labeled status and coupled penalty/intervention keep assumptions below4.",
+      "evidence_ids": [
+        "A02",
+        "A04",
+        "A06",
+        "A07",
+        "A08",
+        "A18",
+        "A19"
+      ],
+      "counterevidence_ids": [
+        "A03",
+        "A20"
+      ],
+      "search_scope": []
+    },
+    "X": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Execution prompt and generation prompt are now present in authoritative PDF; full operational loop, data selection and checker-repair chain described. Not penalized as missing prompts. Recovery, exact schema consistency and independent checker acceptance bounds remain incomplete.",
+      "evidence_ids": [
+        "A04",
+        "A05",
+        "A09",
+        "A18",
+        "A19",
+        "A20",
+        "A21"
+      ],
+      "counterevidence_ids": [
+        "A22",
+        "A23"
+      ],
+      "search_scope": []
+    },
+    "E.measurement": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Online executable SR plus app/scope metrics and controlled checker calibration support meaningful measurement. Not4 because calibration shares generated spec, error rates/legal alternatives unaudited, and family metadata inconsistent.",
+      "evidence_ids": [
+        "A09",
+        "A10",
+        "A11",
+        "A14",
+        "A16"
+      ],
+      "counterevidence_ids": [
+        "A22",
+        "A23"
+      ],
+      "search_scope": []
+    },
+    "E.causality": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "Same-backbone SFT/GRPO/STR controls and training intervention are relevant; separate representation, cost coefficient and intervention factorials plus matched training compute not established.",
+      "evidence_ids": [
+        "A06",
+        "A07",
+        "A13",
+        "A14"
+      ],
+      "counterevidence_ids": [
+        "A08",
+        "A20"
+      ],
+      "search_scope": []
+    },
+    "E.holdout": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "Explicit MW unseen-environment assertion and multiple suites provide some transfer evidence. Complete app/template construction separation is missing; unrestricted SOTA conflicts with broader fixed frontier rather than proving it.",
+      "evidence_ids": [
+        "A11",
+        "A12",
+        "A27"
+      ],
+      "counterevidence_ids": [
+        "A28",
+        "A29"
+      ],
+      "search_scope": [
+        "Complete main scientific text sections1-5 and appendixA.1-A.7, Tables1-6, Listing1; authoritative full PDF supplement; searches for repeats,confidence intervals,seeds,budget,alpha,learning rate. Figure-only values remain unknown, not treated as absent."
+      ]
+    },
+    "E.statistics": {
+      "status": "resolved",
+      "rating": 1,
+      "reason": "Task-family/difficulty denominators and failure discussion exist, but32 per level yields few successes; no independent repeated-evaluation variance/CI in complete relevant text. Group reward SD is not evaluation uncertainty.",
+      "evidence_ids": [
+        "A11",
+        "A16",
+        "A17"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Complete main scientific text sections1-5 and appendixA.1-A.7, Tables1-6, Listing1; authoritative full PDF supplement; searches for repeats,confidence intervals,seeds,budget,alpha,learning rate. Figure-only values remain unknown, not treated as absent."
+      ]
+    },
+    "E.cost": {
+      "status": "resolved",
+      "rating": 1,
+      "reason": "Hardware/time and response caps disclosed; memory usage proxy and task invocation fraction do not show real token/latency/dollar savings or fair total training/evaluation budgets.",
+      "evidence_ids": [
+        "A08",
+        "A15",
+        "A24"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Complete main scientific text sections1-5 and appendixA.1-A.7, Tables1-6, Listing1; authoritative full PDF supplement; searches for repeats,confidence intervals,seeds,budget,alpha,learning rate. Figure-only values remain unknown, not treated as absent."
+      ]
+    }
+  },
+  "status": "reviewed",
+  "reason": "Complete scientific primary text plus authoritative PDF prompts permit a full scoped review; numerical image details remain bounded unknowns and do not block text-supported ratings.",
+  "score": {
+    "raw": 65.0,
+    "display": 65.0,
+    "lower": 65.0,
+    "upper": 65.0,
+    "coverage": 1.0,
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+  },
+  "validation": {
+    "json": true,
+    "exact_contiguous_quotes": true,
+    "source_hashes": true,
+    "original_subcard_parents": true,
+    "gui_namespace_and_parents": true,
+    "flat_eight_ratings": true,
+    "score_recomputed": true,
+    "evidence_references": true,
+    "boundary": "Mechanical validity is not semantic correctness or reproduction.",
+    "exact_domain_condition_ids_and_definitions": true,
+    "scope_ids_and_versions": true
+  },
+  "review_sequence": {
+    "A_fixed_facts": "Identity/version/hash and full scientific source checked; broad central claim retained; 3 operational signatures; training or retention chain traced.",
+    "B_gap_and_patterns": "Fixed nearest-source excerpts checked; original15+31 overviews and selected full originals read before matching; GUI taxonomy/conditions, matched full cards and applicable frozen expectations checked.",
+    "C_claims_and_scoring": "Online author reports distinguished from our inference; matrix/settings/limitations documented; eight axes independently reasoned and mechanically recalculated; exact quotes/hashes/parents/IDs verified."
+  },
+  "experiment_context": {
+    "backbones": "Qwen3-VL4B/8B trained into ATMem-UI. Detailed recipe comparison is8B; teacher planner+UIIns has different information, parameters and action machinery.",
+    "training_data": "20 real Android apps,120 human-designed verified templates,~1.2K candidates/~1.1K executable instances and21,713 terminal-accepted teacher SFT steps.",
+    "evaluation_environment": "AndroidWorld, MobileWorld GUI navigation and DataScope96 instances in32families/14apps; MobileWorld environments described as unseen during training. Full app/version/template overlap not enumerated.",
+    "budget": "128 Android containers/H20 GPUs for training; appendix~2hSFT/~3daysRL and long response caps disclosed. No fully matched inference token/latency/dollar accounting, RL alpha sensitivity or independent budget parity.",
+    "selection_development_test": "SFT acceptance by terminal verifier, STR ON/OFF groups from equal initializations. Checker calibration built from shared specs. No independent legal-implementation pool or complete app/template split registry.",
+    "metrics_and_denominators": "SR is full terminal task success; DataScope32tasks/level with App-Prog andScope-F1. Table4Mem is fraction of tasks invoking memory at least once; trainingrho is fraction of memory-active steps. Uninspected plots are not numerical evidence.",
+    "statistics": "Known DataScope task-family/level counts but no independent run variance/CI. Group reward standard deviation is not evaluation uncertainty.",
+    "alternative_explanations": "Extra upstream SFT data, genericRL effects, coupled memory intervention and active-step penalty, compute, model scale and teacher privilege. Full structured-vs-flat/full-history/no-memory factorial not quantitatively established from available inspected text.",
+    "evidence_ids": [
+      "A04",
+      "A05",
+      "A06",
+      "A07",
+      "A08",
+      "A09",
+      "A10",
+      "A11",
+      "A12",
+      "A13",
+      "A14",
+      "A15",
+      "A24"
+    ]
+  }
+}

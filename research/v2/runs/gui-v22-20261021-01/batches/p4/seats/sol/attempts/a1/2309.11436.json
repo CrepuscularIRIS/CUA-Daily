@@ -1,0 +1,152 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p4",
+  "attempt_id": "a1",
+  "seat": "sol",
+  "paper": {
+    "paper_key": "2309.11436",
+    "paper_id": "2309.11436",
+    "title": "You Only Look at Screens: Multimodal Chain-of-Action Agents",
+    "version": "2309.11436v4",
+    "claim_type": null,
+    "central_claim": null,
+    "unassessed_reason": "Identity from fixed manifest only; do not infer central claim or type from title."
+  },
+  "provenance": {
+    "input_hash": "93d0dafbc452f91483228d9ad53bd5dcd7df4a98d3d7bdf6af2905c87de6b1ca",
+    "rubric_version": "v2.2 draft_uncalibrated (supplied run snapshot; no independent freeze claim)",
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+    "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+    "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+    "model_type": "sonnet",
+    "actual_model": "gpt-6.1-sol",
+    "session_id": null,
+    "receipt_ref": null,
+    "runtime_record_note": "Model identity from invocation system context; no session/receipt identifier exposed; no model probing.",
+    "timestamp": "2026-10-22T01:52:17.648764+00:00"
+  },
+  "materials": [
+    {
+      "material_id": "2309.11436",
+      "url": "https://arxiv.org/html/2309.11436v4",
+      "version": "2309.11436v4",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2309.11436.txt",
+      "sha256": "3a89bbb09dde45aa3131bccdd54b4f2052a321f0a2b7eb065969d5b8ebb8d296",
+      "sections_read": [],
+      "complete": false,
+      "missing_sections": [],
+      "available": true,
+      "reading_complete": false,
+      "reading_note": "complete=false denotes incomplete worker reading, not identified source truncation. Hash-bound material is available; no material defect alleged. All substantive sections still require reading."
+    }
+  ],
+  "evidence": [],
+  "signatures": [],
+  "gap": {},
+  "rs_pattern": {
+    "primary": null,
+    "supporting": [],
+    "matches": [],
+    "outside_taxonomy": false,
+    "reason": "Not assessed; not an outside-taxonomy conclusion.",
+    "executes_pattern": null,
+    "resolves_problem": null
+  },
+  "domain_pattern": {
+    "namespace": "gui",
+    "matches": [],
+    "unassigned": [],
+    "revision_proposals": []
+  },
+  "pattern_mapping": [],
+  "expectations": [],
+  "claims": [],
+  "assessment": {
+    "evidence_level": null,
+    "claim_support": "unresolved",
+    "strongest_supported_claim": null,
+    "unresolved": [
+      "Full substantive reading not performed; no scientific judgment or score."
+    ]
+  },
+  "ratings": {
+    "G": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Not assessed: methods/results/appendices have not been read by this worker.",
+      "evidence_ids": [],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "M": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Not assessed: methods/results/appendices have not been read by this worker.",
+      "evidence_ids": [],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "X": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Not assessed: methods/results/appendices have not been read by this worker.",
+      "evidence_ids": [],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "E.measurement": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Not assessed: methods/results/appendices have not been read by this worker.",
+      "evidence_ids": [],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "E.causality": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Not assessed: methods/results/appendices have not been read by this worker.",
+      "evidence_ids": [],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "E.holdout": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Not assessed: methods/results/appendices have not been read by this worker.",
+      "evidence_ids": [],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "E.statistics": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Not assessed: methods/results/appendices have not been read by this worker.",
+      "evidence_ids": [],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "E.cost": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Not assessed: methods/results/appendices have not been read by this worker.",
+      "evidence_ids": [],
+      "counterevidence_ids": [],
+      "search_scope": []
+    }
+  },
+  "score": {
+    "raw": null,
+    "display": null,
+    "lower": 0.0,
+    "upper": 100.0,
+    "coverage": 0.0,
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+  },
+  "status": "needs_evidence",
+  "blocker_type": "worker_reading_limit",
+  "reason": "worker_reading_limit: this worker exhausted practical reading/context capacity after complete AutoDroid and LASER reviews. Supplied repaired fulltext exists and its hash matches; this is NOT missing publisher/fulltext evidence and NOT a finding that the paper omitted evidence. Core methods, experiments, listings and appendices of this paper remain unread; must be reviewed in a fresh continuation/attempt rather than scored from metadata."
+}

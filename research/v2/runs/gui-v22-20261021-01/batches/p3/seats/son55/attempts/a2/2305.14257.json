@@ -1,0 +1,1714 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p3",
+ "attempt_id": "a2",
+ "seat": "son55",
+ "supersedes": {
+  "attempt_id": "a1",
+  "disposition": "needs_fulltext",
+  "reason": "arXiv HTML unavailable; material upgraded to PDF-to-text (pdftotext -layout) of 2305.14257v3. This record is a fresh independent review; the a1 directory was not read."
+ },
+ "paper": {
+  "paper_key": "2305.14257",
+  "paper_id": "arXiv:2305.14257",
+  "title": "Hierarchical Prompting Assists Large Language Model on Web Navigation",
+  "version": "2305.14257v3",
+  "claim_type": "system_method",
+  "central_claim": "A simple hierarchical prompting approach, ASH (Actor-Summarizer-Hierarchical): a dedicated Summarizer prompt first builds an action-aware, condensed observation, and an Actor prompt then predicts the next action from the summarised history; it outperforms the previous state-of-the-art prompting mechanism (ReAct) on WebShop task success (abstract: 6.2%; body: 6.8%, 29% relative), helps most on long trajectories, reduces invalid-action hallucination and mitigates the need for explicit reasoning, with potential for interactive decision making tasks with long observation traces in general.",
+  "identity_note": "The dispatch text called this the Mind2Web dataset paper; the pinned text is the ASH prompting paper (WebShop), which does not cite or use Mind2Web. Mind2Web (2306.06070) was not used as a nearest neighbour."
+ },
+ "provenance": {
+  "input_hash": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+  "input_hash_note": "sha256 of research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2305.14257.txt (PDF via pdftotext -layout, fetched 2026-10-21). 126718 is the character count, file is 126820 bytes. Batch manifest input_bundle_sha256 (37cac126...) was computed for a1 (no_html) and does not cover this upgraded material.",
+  "rubric_version": "radar-score-v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": {
+   "taxonomy": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+   "conditions": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+  },
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "model_type": "haiku",
+  "actual_model": "Sonnet 5.5 (claude-sonnet-5-5[1m], from system prompt)",
+  "session_id": null,
+  "session_id_reason": "not exposed to the worker in this runtime",
+  "receipt_ref": null,
+  "receipt_ref_reason": "no run receipt available to the worker",
+  "timestamp": "2026-10-22T02:08:32Z (host clock)",
+  "blind": "No a1, other-seat, aggregate, earlier-judgment or other-batch files were read. The batch manifest was read for asset hashes only. queue.jsonl tier/kind hints were seen once in a grep and not used."
+ },
+ "materials": [
+  {
+   "material_id": "M2305.14257v3-pdftxt",
+   "url": "https://arxiv.org/pdf/2305.14257v3",
+   "sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Web Navigation Task",
+    "3 ASH Prompting (3.1, 3.2)",
+    "4 Experiment",
+    "5 Results",
+    "6 Related Work",
+    "7 Conclusion",
+    "Limitations",
+    "Ethics",
+    "References",
+    "Appendix A",
+    "Appendix B",
+    "Appendix C.1-C.4",
+    "Appendix D",
+    "Appendix E.1-E.2",
+    "Appendix F"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "extraction_limits": "Pages 1-4 are extracted as interleaved duplicate text layers: the Sec 3 equation, footnote 2 and Figure 1-5 text are partly garbled; Figure 4 per-bin counts and exact Figure 5 bar placement are not recoverable; no figure images were used. Garbled items are marked per evidence and kept unknown where they matter."
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "E001",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "title block; txt line 4",
+   "quote": "Hierarchical Prompting Assists Large Language Model on Web Navigation",
+   "support_explanation": "Identity: title matches manifest; arXiv stamp in the same text carries v3 (30 Oct 2023).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E002",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Abstract; txt line 46",
+   "quote": "by 6.2% on task success rate, demonstrating its",
+   "support_explanation": "Abstract states a 6.2% success-rate gain over previous SOTA prompting.",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  },
+  {
+   "evidence_id": "E003",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 1 Introduction (left col); txt line 177",
+   "quote": "2022b) by 6.8% on task success rate (29% relative",
+   "support_explanation": "Introduction states 6.8% (29% relative); conflicts with the 6.2% in the abstract of the same version.",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  },
+  {
+   "evidence_id": "E004",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Table 1; txt line 567",
+   "quote": "R E ACT CODE - DAVINCI -002                    53.4                23.4",
+   "support_explanation": "ReAct (authors' re-implementation) with code-davinci-002: Avg Score 53.4, Success 23.4%.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E005",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Table 1; txt line 568",
+   "quote": "A SH CODE - DAVINCI -002                      56.7                30.2",
+   "support_explanation": "ASH with code-davinci-002: Avg Score 56.7, Success 30.2% (+6.8 pt SR, +3.3 avg score vs E004).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E006",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Table 1; txt line 570",
+   "quote": "R E ACT GPT-3.5- TURBO                   27.3                 3.0",
+   "support_explanation": "ReAct with gpt-3.5-turbo: 27.3 / 3.0% success.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E007",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Table 1; txt line 571",
+   "quote": "A SH GPT-3.5- TURBO                     44.5                12.6",
+   "support_explanation": "ASH with gpt-3.5-turbo: 44.5 / 12.6% success.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E008",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 5 Results (right col); txt line 548",
+   "quote": "is the context length limitations of 4k in GPT-3.5-",
+   "support_explanation": "Authors attribute the large GPT-3.5-turbo gap to the 4k context window.",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  },
+  {
+   "evidence_id": "E009",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 5 Results; txt line 556",
+   "quote": "the context length, leading to failures. These results",
+   "support_explanation": "ReAct often exceeds the context length and fails; context overflow is a stated cause of the gain, i.e. a confound with 'relevance' of the summary.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E010",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 5 'Performance vs trajectory length'; txt line 623",
+   "quote": "ACT only achieves an average score of 7.4, A SH",
+   "support_explanation": "For trajectories longer than 11 steps ReAct averages 7.4 (ASH value on next line).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E011",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 5 'Performance vs trajectory length'; txt line 624",
+   "quote": "increases the score to 38.2. This finding highlights",
+   "support_explanation": "ASH averages 38.2 on >11-step trajectories; per-bin counts are only in Figure 4 (not recoverable from text).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E012",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 5 'ASH promotes valid action grounding'; txt line 591",
+   "quote": "shown in Figure 5a, 12.7% of failures in R E ACT",
+   "support_explanation": "12.7% of ReAct failures are repeated invalid actions (share of failures, not of tasks).",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  },
+  {
+   "evidence_id": "E013",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 5; txt line 606",
+   "quote": "the failure rate to 10.4%. Our hypothesis is that the",
+   "support_explanation": "ASH 10.4% (stated as 18% relative reduction); the 'noisy context triggers hallucination' mechanism is explicitly a hypothesis, untested.",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  },
+  {
+   "evidence_id": "E014",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 5 'ASH mitigates the need of explicit reasoning'; txt line 626",
+   "quote": "would allow the naive prompting mechanism to out-",
+   "support_explanation": "Claims DIRECT+ASH beats ReAct 'by a significant margin'; bar labels 22.2/23.4/27.4 (Figure 5b) appear on separate extracted lines 557-560 and are assigned to DIRECT / ReAct / DIRECT+ASH by x-axis order (medium confidence).",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  },
+  {
+   "evidence_id": "E015",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Figure 5b x-axis labels; txt line 563",
+   "quote": "D IRECT        R E ACT     D IRECT+A SH",
+   "support_explanation": "Order of bars; bar labels 22.2, 23.4 (= Table 1 ReAct SR) and 27.4 are extracted at lines 557-560.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E016",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 4 footnote 2; txt line 510",
+   "quote": "entire product space and sampled a consistent 500 trajectories",
+   "support_explanation": "Evaluation uses the text-rich WebShop setting over the entire product space, 500 trajectories.",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  },
+  {
+   "evidence_id": "E017",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 4 footnote 2; txt line 526",
+   "quote": "top three.",
+   "support_explanation": "Footnote (interleaved text layers, lines ~512-526) says that, unlike Yao et al. (2022b), the authors keep page complexity and do not manually limit search results to the top three; i.e. ReAct's original setting pre-trimmed observations by hand.",
+   "kind": "author_report",
+   "distortion_note": "footnote text is two overlapping layers: 'Different from Yao et al. (2022b), we retain the complexity of web pages and do not manually limit the search results to top 3' (reconstructed, medium confidence)"
+  },
+  {
+   "evidence_id": "E018",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 4 footnote 3; txt line 531",
+   "quote": "We find that the free CODE - DAVINCI -002 yields stronger",
+   "support_explanation": "Base-model choice (code-davinci-002 over text-davinci-002) justified by performance.",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  },
+  {
+   "evidence_id": "E019",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 4 Model and Hyperparameters; txt line 360",
+   "quote": "and the reproduction of R E ACT.3 We use greedy",
+   "support_explanation": "Same base model for ASH and the ReAct reproduction, greedy decoding (one run per configuration).",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  },
+  {
+   "evidence_id": "E020",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 4 Model and Hyperparameters; txt line 364",
+   "quote": "trajectory after 20 steps (the average number of",
+   "support_explanation": "20-step cap; 'average number of steps is 6.5' on the next line (method not specified).",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  },
+  {
+   "evidence_id": "E021",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 4; txt line 366",
+   "quote": "steps is 6.5), or if the agent issues an invalid ac-",
+   "support_explanation": "Termination rule: 20 steps, or invalid actions for consecutive steps -> score 0.0.",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  },
+  {
+   "evidence_id": "E022",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Limitations; txt line 650",
+   "quote": "other limitation is that we did not test our approach",
+   "support_explanation": "Authors concede no test on more realistic web-navigation benchmarks.",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  },
+  {
+   "evidence_id": "E023",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Limitations; txt line 652",
+   "quote": "due to a lack of such benchmarks at the time we",
+   "support_explanation": "Reason given: no such benchmark existed when the work was finished.",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  },
+  {
+   "evidence_id": "E024",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Limitations; txt line 647",
+   "quote": "We did not employ",
+   "support_explanation": "Authors state no detailed manual/automatic prompt engineering for Actor and Summarizer prompts (claim; prompts are nevertheless hand-written and task-specific).",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  },
+  {
+   "evidence_id": "E025",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Appendix A; txt line 785",
+   "quote": "our version of ReAct on CODE - DAVINCI -002 and design prompts for ASH in an analogous fashion to run",
+   "support_explanation": "ReAct is re-implemented by the authors; ASH prompts designed 'in an analogous fashion'. ReAct prompt text is not given in this material.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E026",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Appendix A; txt line 784",
+   "quote": "obscure implementation details of ReAct on Webshop from the paper",
+   "support_explanation": "Authors cite obscure ReAct-on-WebShop details as reason for re-implementation (no validation against published numbers in this material).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E027",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Appendix A; txt line 777",
+   "quote": "We initially tested on a smaller subset of 50 samples (out of 500)",
+   "support_explanation": "Base-model choice was made on a 50-task subset drawn from the same 500 evaluation tasks.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E028",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Table 2; txt line 789",
+   "quote": "R E ACT + TEXT- DAVINCI -002      50.2       15.3",
+   "support_explanation": "Subset: ReAct+text-davinci-002 50.2 / 15.3.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E029",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Table 2; txt line 790",
+   "quote": "A SH + TEXT- DAVINCI -002        60.9       23.1",
+   "support_explanation": "Subset: ASH+text-davinci-002 60.9 / 23.1.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E030",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Table 2; txt line 791",
+   "quote": "R E ACT + CODE - DAVINCI -002     61.3       23.1",
+   "support_explanation": "Subset: ReAct+code-davinci-002 61.3 / 23.1.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E031",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Table 2; txt line 792",
+   "quote": "A SH + CODE - DAVINCI -002       62.6       28.8",
+   "support_explanation": "Subset: ASH+code-davinci-002 62.6 / 28.8. With n=50 success rates must be multiples of 2.0; 15.3, 23.1, 28.8 equal 8/52, 12/52, 15/52, so the stated n=50 is inconsistent with the reported rates (our arithmetic).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E032",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Appendix C.2 Summarizer prompt rule 4; txt line 1314",
+   "quote": "4. When there is a long list of options or products in the webpage , try to retain",
+   "support_explanation": "Summarizer rule: keep only a couple of products/options by relevance to Instruction and Previous Action.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E033",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Appendix C.2 rule 5; txt line 1317",
+   "quote": "5. If \" Invalid Action \" is found in the Observation , add hint within info [< Condensed",
+   "support_explanation": "Summarizer is told to add hints on invalid actions: it injects information, not only prunes.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E034",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Appendix C.2 rule 3; txt line 1312",
+   "quote": "3. Do not remove navigating buttons since the agent must be able to go back and",
+   "support_explanation": "Navigation buttons are retained verbatim (differentiated treatment of content types).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E035",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Appendix C.2 few-shot example; txt line 1497",
+   "quote": "Hint : No Search button found on this webpage , Go to search page .",
+   "support_explanation": "Example of a summarizer-authored hint absent from the raw page.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E036",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Appendix E.1; txt line 2088",
+   "quote": "The S UMMARIZER fail when the raw observation is too long. It simply repeats many of the options",
+   "support_explanation": "Reported summarizer failure: under-compression on very long raw observations (anecdotal; no rate).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E037",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Appendix E.2; txt line 2259",
+   "quote": "S UMMARIZER fails because of hallucination. It hallucinates an non-existing size option",
+   "support_explanation": "Reported summarizer failure: hallucinated an option required by the instruction (anecdotal; no rate).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E038",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Appendix C.4 Actor prompt rule 2; txt line 1780",
+   "quote": "2. Do not repeat Action like clicking the same product or searching the same query .",
+   "support_explanation": "The GPT-3.5 Actor prompt contains behavioural rules (no repeat; 'Follow Hint in Observation carefully'); whether the ReAct baseline prompt had matching rules is not shown.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E039",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Appendix C.4 Actor prompt rule 6; txt line 1789",
+   "quote": "6. Follow Hint in Observation carefully .",
+   "support_explanation": "Actor is instructed to follow summarizer hints, i.e. the two stages are co-designed.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E040",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 3 (right col); txt line 199",
+   "quote": "and predicts at . Mathematically, A SH decomposes",
+   "support_explanation": "ASH factorises P(a_t|H_t) into a stateless Summarizer term and a stateful Actor term over the summarised history (equation garbled in extraction).",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  },
+  {
+   "evidence_id": "E041",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Appendix F; txt line 2331",
+   "quote": "for seed in range (501 , 1000) :",
+   "support_explanation": "Evaluation seeds 501..999 (499 values) while text says 500 trajectories; evaluation set identity vs prompt examples not stated.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E042",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Appendix F; txt line 2328",
+   "quote": "num_products = None , # full product space",
+   "support_explanation": "Environment configuration: WebAgentTextEnv text_rich, full product space.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E044",
+   "material_id": "M2305.14257v3-pdftxt",
+   "material_sha256": "463914b80b191f4f13a135b4824b865f813998dc7ddeaae444d0291fba14da1d",
+   "locator": "Sec 6 Related Work (left col); txt line 650",
+   "quote": "A SH differs from R E ACT mainly",
+   "support_explanation": "Authors' own differentiation: (1) split observation processing into condense-then-act; (2) separate development of Actor/Summarizer prompts.",
+   "kind": "author_report",
+   "distortion_note": "pdftotext two-column layout is interleaved/duplicated on this page; quote is a verbatim fragment of one extracted line, surrounding words are not reliable"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "SIG1",
+   "object": "per-step raw web observation (WebShop text_rich page: search results, product pages) before it enters the agent context; baseline = ReAct raw observation",
+   "information": "Summariser input: instruction, previous action a_{t-1}, raw page o_t, few-shot demonstrations with a step-by-step instruction; stateless (no earlier observations). No privileged labels or test data stated.",
+   "operation": "LLM writes a short rationale then 'info[...]' condensed observation: remove instruction text, keep ~3 closest products, filter options, keep navigation buttons, add hints/'(to click)' tags",
+   "output": "condensed observation o'_t",
+   "conditions": "effect claimed when raw observation is long/irrelevant; GPT-3.5 4k window",
+   "feedback": "none beyond the environment page after the previous action; invalid-action messages surface in the raw page and trigger hints",
+   "selection_rule_data": "none: single greedy generation, no candidate selection, no verifier; relevance judgement is the LLM's own",
+   "persistence": "o'_t replaces o_t in the Actor's history H'_t for the rest of the episode; nothing carried across tasks",
+   "later_use": "later steps of the same episode read summaries only",
+   "claimed_effect": "SR 23.4->30.2 (code-davinci-002), 3.0->12.6 (gpt-3.5-turbo); better on >11-step trajectories",
+   "failure_boundary": "under-compression on very long pages and hallucinated option (anecdotes E.1/E.2), rates unmeasured",
+   "evidence_ids": [
+    "E032",
+    "E033",
+    "E034",
+    "E035",
+    "E036",
+    "E037",
+    "E040"
+   ]
+  },
+  {
+   "sig_id": "SIG2",
+   "object": "next-action prediction over the summarised history",
+   "information": "instruction plus alternating condensed observations and actions; actions search/click/think; rules incl. 'Follow Hint in Observation carefully'",
+   "operation": "few-shot prompted actor predicts one action per step",
+   "output": "action string executed in WebShop",
+   "conditions": "greedy decoding, 20-step cap, termination on consecutive invalid actions",
+   "feedback": "environment observation (summarised)",
+   "selection_rule_data": "not applicable",
+   "persistence": "in-episode history only",
+   "later_use": "same episode",
+   "claimed_effect": "with DIRECT actor: 22.2 -> 27.4 SR (Figure 5b, medium confidence)",
+   "failure_boundary": "repeated invalid actions still 10.4% of failures",
+   "evidence_ids": [
+    "E038",
+    "E039",
+    "E019",
+    "E020",
+    "E021",
+    "E012",
+    "E013",
+    "E014"
+   ]
+  }
+ ],
+ "retention_trace": {
+  "applicable": false,
+  "reason": "Static prompting harness; no claim that a change is selected and persisted for later tasks. Summaries live only within one episode (before -> summarise each page -> Actor history -> same episode); no selection data, no cross-task persistence, no improver gain claimed."
+ },
+ "gap": {
+  "author_gap": "LLMs struggle with complicated observations in interactive decision making; prior work shaped action spaces and reasoning (ReAct) but 'little attention' went to encoding states (E003/E002 and Intro).",
+  "checked_gap": "Plausible and partly evidenced by the authors' own diagnostics (context overflow at 4k, ReAct 7.4 avg beyond 11 steps, 12.7% repeated invalid actions), but overflow, irrelevance and hallucination are not separated, and all evidence is author_report from one environment.",
+  "lineage": [
+   "CoT -> ReAct (Yao et al. 2022b) -> ASH (closest, per Sec 6)",
+   "WebShop benchmark (Yao et al. 2022a) provides the environment",
+   "action-structure/program prompting (Singh 2022, Liang 2022, Zhou 2021)",
+   "raw-observation embodied prompting (Ahn 2022, Huang 2022)",
+   "multi-stage prompting in other tasks (Liu 2022, Tan 2021)"
+  ],
+  "closest_adjacent": {
+   "work": "ReAct on WebShop",
+   "source": "described by this paper only (ReAct/WebShop full text is not pinned in this material)",
+   "authors_differences": "ReAct condenses internally and acts in one prompt; ASH splits condense/act and develops prompts separately (E044)",
+   "adjacent_practice": "original ReAct setting limited search results to the top 3 by hand (E017); ASH automates trimming by an LLM; a rule-based trimming baseline is not tested"
+  },
+  "residue": "Observation encoding for prompted web agents; automatic, goal-conditioned trimming instead of hand trimming.",
+  "stakes": "Context budget, long-horizon success, and invalid-action loops for prompted LLM web agents.",
+  "method_response": "Stateless goal-conditioned Summarizer feeding a stateful Actor (SIG1, SIG2).",
+  "remaining_gap": "Summariser fidelity unmeasured with documented failures (E036, E037); extra per-step LLM cost unreported; single simulated environment; gain vs rule-based truncation untested; ReAct baseline fidelity unvalidated.",
+  "current_relevance": "Later benchmarks (e.g. WebArena, arXiv 2307.13854, which is in this paper's v3 reference list) post-date the experiments; used here only as a date note, not as a predecessor and not evaluated.",
+  "evidence_ids": [
+   "E002",
+   "E003",
+   "E008",
+   "E010",
+   "E012",
+   "E017",
+   "E044",
+   "E022"
+  ],
+  "unresolved": [
+   "Whether ReAct's published WebShop result matches the authors' re-implementation (source text not pinned)",
+   "Which of overflow vs irrelevance vs hallucination drives the gain",
+   "ReAct baseline prompt content (not in this material; code link not opened)"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "decompose_and_delegate",
+  "supporting": [],
+  "outside_taxonomy": false,
+  "matches": [
+   {
+    "main_id": "decompose_and_delegate",
+    "sub_id": null,
+    "role": "primary",
+    "fit": "weak",
+    "tactic_steps_checked": {
+     "C25_step1_boundary_by_comparative_advantage": "not met: both stages are the same LLM, no sound external solver",
+     "C25_step2_machine_checkable_artifact": "not met: intermediate artifact (condensed observation) is free-form text",
+     "C25_step3_close_loop_with_verifiable_signal": "not met: no verifier/consensus on the summary",
+     "C25_step4_ablate_load_bearing_step": "partial: ReAct vs ASH and DIRECT vs DIRECT+ASH, no component ablation",
+     "C25_step5_account_for_cost": "not met: cost unreported"
+    },
+    "success_checks": [
+     {
+      "item": "typed, verifiable handoff artifact",
+      "status": "unmet"
+     },
+     {
+      "item": "single load-bearing mechanism isolated by ablation",
+      "status": "partial"
+     },
+     {
+      "item": "baseline failure named as structural cause and targeted",
+      "status": "partial"
+     }
+    ],
+    "failure_checks": [
+     {
+      "item": "assembly of off-the-shelf prompts with no isolated load-bearing component",
+      "status": "partial"
+     },
+     {
+      "item": "prompts hand-tailored to one benchmark, no transfer evidence",
+      "status": "present"
+     },
+     {
+      "item": "cost of multiplied model calls unmeasured",
+      "status": "present"
+     },
+     {
+      "item": "only marginal gain over unified baseline",
+      "status": "not_observed (6.8 pt SR, 29% relative, single run)"
+     }
+    ],
+    "evidence_ids": [
+     "E040",
+     "E044",
+     "E032",
+     "E033",
+     "E036"
+    ],
+    "reason": "Operation is a two-stage split of per-step processing (condense observation, then act) with a text handoff; the authors present exactly this decoupling and separate prompt development (E044). It fits the main-card signature at the coarse level only. The sub-card C25 (singleton under this parent) requires a machine-checkable artifact and a sound solver closing the loop, which this method lacks, so sub_id is null."
+   }
+  ],
+  "outside_taxonomy_considered": "Also defensible: no RS card describes goal-conditioned LLM observation summarisation. Candidates opened and rejected: architectural_operator_substitution (needs proof the surrogate preserves a property; none), adapt_via_conditioning/C03 (few-shot is only the mechanism, the claim is not task-generalisation by conditioning), heterogeneous_decomposition/C04 (compression of trained artifacts with error decomposition).",
+  "reason": "Primary chosen at weak fit because the main-card operational signature (decompose -> route to separately prompted stage via an intermediate artifact) matches the authors' operation; the card's when-to-apply (a part better handled by a sound external/symbolic solver) does not hold. No supporting card is needed. No score depends on this label.",
+  "executes_pattern": {
+   "value": "partial",
+   "reason": "Executes the decomposition shape but not the verifiable-artifact / solver-feedback core."
+  },
+  "resolves_problem": {
+   "value": false,
+   "reason": "Authors show gains but also residual summariser failures (E036, E037), SR 30.2% / 12.6%, a single environment; the long-observation problem is mitigated, not shown closed."
+  },
+  "cards_opened": {
+   "main_full": [
+    "decompose_and_delegate"
+   ],
+   "main_partial_definition_signature_when_to_apply": [
+    "architectural_operator_substitution",
+    "adapt_via_conditioning",
+    "heterogeneous_decomposition"
+   ],
+   "sub_opened": {
+    "C25": "full",
+    "C03": "tactical+steps",
+    "C04": "tactical+steps",
+    "C09": "tactical",
+    "C12": "tactical",
+    "C14": "tactical",
+    "C30": "tactical"
+   },
+   "overviews_read": [
+    "ideation-patterns/overview.md",
+    "ideation-sub-patterns/overview.md"
+   ]
+  }
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "structured_screen_observation",
+    "sub": "C13",
+    "role": "primary",
+    "fit": "partial",
+    "version": {
+     "taxonomy_sha256": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+     "conditions_sha256": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+     "status": "candidate_pattern (cua-agents-core)"
+    },
+    "operation_mapping": "C13 prunes/restructures the text observation before the policy sees it. ASH's Summarizer does this with an LLM conditioned on goal and previous action (drop irrelevant products/options, keep navigation buttons) before the Actor sees it. Differences: C13 evidence is rule-based; the Summarizer is learned-by-prompting and also injects hints.",
+    "condition_checks": [
+     {
+      "id": "S5",
+      "kind": "success",
+      "status": "partial",
+      "note": "Success rate reported; refinement is LLM-based not rule-based; tokens per step not reported.",
+      "evidence_ids": [
+       "E005",
+       "E032"
+      ]
+     },
+     {
+      "id": "S4",
+      "kind": "success",
+      "status": "partial",
+      "note": "Raw vs summarised observation compared under the same backbone (ReAct vs ASH), but no other encodings (rule truncation).",
+      "evidence_ids": [
+       "E004",
+       "E005"
+      ]
+     },
+     {
+      "id": "F1",
+      "kind": "failure",
+      "status": "unmet",
+      "note": "Target loss/hallucination by the pruner occurs (E.1/E.2) and its recall is unmeasured; for F items 'unmet' means the failure mode is present or unaddressed.",
+      "evidence_ids": [
+       "E036",
+       "E037"
+      ]
+     },
+     {
+      "id": "F6",
+      "kind": "failure",
+      "status": "unmet",
+      "note": "Pruning cost unreported; single site, no per-category breakdown.",
+      "evidence_ids": [
+       "E016"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E032",
+     "E033",
+     "E034",
+     "E036",
+     "E037"
+    ]
+   }
+  ],
+  "unassigned": [
+   "Summariser-injected hints (information not in the raw page, e.g. 'No Search button found', '(to click)') are not covered by C13 prune/restructure.",
+   "Decoupled development of summariser and actor prompts as a design principle (no domain card)."
+  ],
+  "considered_not_matched": {
+   "C15": "history compression keeps recent steps raw; ASH never keeps raw observations in history",
+   "C16": "retained content is nominated by a stateless summariser per step, not by the agent for later steps",
+   "C17": "no subgoal manager/worker",
+   "C20": "ReAct-style think action is inherited, not the contribution"
+  },
+  "revision_proposals": [
+   {
+    "proposal": "Widen C13 wording to include goal-conditioned LLM summarisation of the text observation (with optional hint injection) as a variant distinct from rule-based pruning; add the summariser under-compression and hallucination as C13 failure modes.",
+    "support": "single paper (2305.14257); candidate only, do not apply in-batch"
+   }
+  ]
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": null,
+   "domain": {
+    "namespace": "gui",
+    "main": "structured_screen_observation",
+    "sub": "C13"
+   },
+   "operation_correspondence": "RS: split per-step processing into a condense stage and an act stage joined by a text artifact. Domain: the condense stage is the observation-pruning operation of C13; the act stage is the ordinary prompted policy.",
+   "necessary_conditions_and_differences": "RS requires a verifiable artifact and sound solver (absent); C13 evidence is rule-based and reports tokens/step (absent). Mapping holds at the operation level only.",
+   "evidence_ids": [
+    "E032",
+    "E033",
+    "E040",
+    "E044"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "desktop/OSWorld claim; not a desktop agent",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "mobile/AndroidWorld claim; not a mobile agent",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Claim is a prompting/planning-style method improving a web agent; evidence is WebShop only. WebArena is in the v3 reference list but no WebArena (or Mind2Web/Online-Mind2Web) result is reported. Authors state they lacked a realistic benchmark when the work was finished (E022, E023), which explains but does not satisfy the expectation.",
+   "evidence_ids": [
+    "E022",
+    "E023"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "live-website claim; WebShop is a simulator, not a live site",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "pixel grounding claim; text observations only",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "grounder comparison; no grounder",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "native end-to-end GUI policy claim; prompted LLM, no training",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "planner-grounder swap; no grounder",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "online RL claim; no RL",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no LLM/VLM judge or ORM; programmatic WebShop reward",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no learned judge",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no learned reward",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "existing WebShop reward used; no new checker or benchmark",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no PRM",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "evaluation is online (interactive WebShop), not offline step accuracy",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Single greedy run per configuration; no repeats, variance or confidence interval for the online comparison.",
+   "evidence_ids": [
+    "E019"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Same 20-step cap and invalid-action termination are stated for the setup; average 6.5 steps is given but not per method, and budget-exhaustion rates per method are not reported (only the invalid-action share).",
+   "evidence_ids": [
+    "E020",
+    "E021",
+    "E012"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "not an inference-time selection/best-of-N method; cost is covered by core-E21",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Harness choices are disclosed (text_rich, full product space, no top-3 trimming, seeds, step cap, terminations) but the re-implemented ReAct baseline is neither shown nor validated against its published WebShop number, and the sampled 500 vs seeds 501-999 is unreconciled.",
+   "evidence_ids": [
+    "E016",
+    "E017",
+    "E021",
+    "E025",
+    "E026",
+    "E041",
+    "E042"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no live web",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "text-only observation for both methods; observation compression is the manipulated variable, not a modality comparison",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "prompting method, not a training recipe; backbone results still reported (two models) and judged under E.holdout/E.causality",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Success stratified by realised trajectory length (Figure 4; ReAct 7.4 vs ASH 38.2 beyond 11 steps) and one failure cause audited (invalid-action repetition); not stratified by human/reference length, per-bin counts unreadable, and bins are outcome-conditioned.",
+   "evidence_ids": [
+    "E010",
+    "E011",
+    "E012",
+    "E013"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no grounding-robustness claim",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no refusal/infeasible-task claim",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no trajectory-synthesis recipe",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no synthetic data",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no synthesis/exploration/memory built from environments; hold-out/overlap questions of hand-written demonstrations are judged under E.holdout",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no reflection/error-correction training data",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no world model",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no world model rollouts",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no world-model training",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no world-model fidelity judge",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no digital twin",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "no experience memory across tasks (summaries are per-episode only)",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "core-E08",
+   "version": "cua-agents-core profile (as quoted in patterns/main/agent_loop_context_control.md)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "patterns/main/agent_loop_context_control.md"
+   ],
+   "applies_when": "Ablate each role of a multi-agent / hierarchical GUI framework by removing it with the same backbone",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Role-removal style evidence: ReAct (no summariser) vs ASH, and DIRECT vs DIRECT+ASH on a second actor design; but the Summarizer's internal parts (previous action input, rationale, hint injection) and the Actor prompt additions are not ablated. (Expectation text taken from the agent_loop_context_control card; it is from the cua-agents-core profile, not in the hash-bound cua-agents/v1 file.)",
+   "evidence_ids": [
+    "E004",
+    "E005",
+    "E014",
+    "E038"
+   ],
+   "score_item": "E.causality",
+   "note": "not in the manifest-bound expectations file; included because the matched domain card cites it"
+  },
+  {
+   "id": "core-E21",
+   "version": "cua-agents-core profile (as quoted in patterns/main/agent_loop_context_control.md)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "patterns/main/agent_loop_context_control.md"
+   ],
+   "applies_when": "Report inference cost and latency per step or per task for multi-model or multi-call architectures",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Architecture adds a model call per step plus a long few-shot Summarizer prompt; no tokens, calls, latency or cost per task reported. (Expectation text from the agent_loop_context_control card, cua-agents-core profile, not in the hash-bound file.)",
+   "evidence_ids": [
+    "E020"
+   ],
+   "score_item": "E.cost",
+   "note": "not in the manifest-bound expectations file; included because the matched domain card cites it"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "CL1",
+   "text": "ASH outperforms ReAct on WebShop with code-davinci-002 (SR 23.4 -> 30.2, avg score 53.4 -> 56.7).",
+   "setting": "WebShop text_rich, full product space, 500 trajectories, greedy decoding, max 500 tokens, 20-step cap",
+   "baseline_control": "authors' re-implementation of ReAct, same base model/decoding",
+   "selection_vs_test": "no separate dev set stated; base model chosen on 50-task subset of the same 500 tasks (E027)",
+   "result_denominator": "500 tasks (seeds 501-999 in code: 499 values); success=score 1.0; failures include invalid-action terminations and step-cap",
+   "evidence_ids": [
+    "E004",
+    "E005",
+    "E016",
+    "E041"
+   ],
+   "counterevidence": [
+    "E002 vs E003: abstract states 6.2 pt, body 6.8 pt",
+    "E025: baseline re-implemented, prompt not shown",
+    "E019: single run, no variance"
+   ],
+   "allowed_conclusion": "Author-reported single-run gain of 6.8 pt SR on WebShop vs their own ReAct; not shown to exceed noise or a rule-truncation baseline."
+  },
+  {
+   "claim_id": "CL2",
+   "text": "ASH also improves gpt-3.5-turbo (SR 3.0 -> 12.6, avg 27.3 -> 44.5).",
+   "setting": "as CL1 with gpt-3.5-turbo-0613 (4k context)",
+   "baseline_control": "ReAct re-implementation",
+   "selection_vs_test": "same as CL1",
+   "result_denominator": "500 tasks",
+   "evidence_ids": [
+    "E006",
+    "E007",
+    "E008",
+    "E009"
+   ],
+   "counterevidence": [
+    "E008/E009: ReAct frequently exceeds the 4k context; the gap mixes relevance with token reduction"
+   ],
+   "allowed_conclusion": "ASH avoids the context-overflow failure of raw-observation ReAct under a 4k window; the semantic value of summarising is not separated from simply shortening."
+  },
+  {
+   "claim_id": "CL3",
+   "text": "ASH helps more on long-horizon tasks (>11 steps: ReAct 7.4 vs ASH 38.2 avg score).",
+   "setting": "Figure 4 bins by realised trajectory length",
+   "baseline_control": "ReAct",
+   "selection_vs_test": "post-hoc stratification of the same runs",
+   "result_denominator": "per-bin counts only in the figure (unreadable)",
+   "evidence_ids": [
+    "E010",
+    "E011"
+   ],
+   "counterevidence": [
+    "trajectory length is an outcome (looping/failing runs are long), so bins are not task-difficulty strata"
+   ],
+   "allowed_conclusion": "ASH-run long trajectories score higher than ReAct-run long trajectories; not a difficulty-matched comparison."
+  },
+  {
+   "claim_id": "CL4",
+   "text": "ASH reduces hallucination-style failures (repeated invalid actions: 12.7% -> 10.4% of failures, 18% relative).",
+   "setting": "Figure 5a failure attribution",
+   "baseline_control": "ReAct",
+   "selection_vs_test": "post-hoc",
+   "result_denominator": "share of failures; failure counts differ between methods",
+   "evidence_ids": [
+    "E012",
+    "E013"
+   ],
+   "counterevidence": [
+    "E013: mechanism explicitly a hypothesis",
+    "E037: summariser itself hallucinates"
+   ],
+   "allowed_conclusion": "Share of failures that are repeated invalid actions is lower by 2.3 pt; causal story untested."
+  },
+  {
+   "claim_id": "CL5",
+   "text": "ASH mitigates the need for explicit reasoning: DIRECT+ASH (27.4) beats ReAct (23.4) 'by a significant margin'.",
+   "setting": "Figure 5b",
+   "baseline_control": "DIRECT (22.2) and ReAct (23.4)",
+   "selection_vs_test": "same 500 tasks",
+   "result_denominator": "500 tasks; bar labels extracted from separate lines (medium confidence)",
+   "evidence_ids": [
+    "E014",
+    "E015",
+    "E005"
+   ],
+   "counterevidence": [
+    "no significance test; ASH with ReAct-style actor (30.2) is still above DIRECT+ASH (27.4), so reasoning still helps"
+   ],
+   "allowed_conclusion": "A 4-pt SR difference in one run; explicit reasoning is not shown to be unnecessary."
+  },
+  {
+   "claim_id": "CL6",
+   "text": "(Framing) The approach has broad applicability to interactive decision making with long observation traces.",
+   "setting": "only WebShop evaluated",
+   "baseline_control": "n/a",
+   "selection_vs_test": "n/a",
+   "result_denominator": "one environment",
+   "evidence_ids": [
+    "E022",
+    "E023"
+   ],
+   "counterevidence": [
+    "E022"
+   ],
+   "allowed_conclusion": "Not supported beyond WebShop; stated by the authors as a limitation."
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_reason": "Interactive WebShop environment with programmatic reward; single simulated site, no unseen environment or cross-platform result, so not transfer (EVIDENCE.md rules 1-2). No learned verifier.",
+  "claim_support": "scoped",
+  "author_claim_kept": "broad applicability to interactive decision making; ASH > ReAct; helps long trajectories; fewer hallucinated invalid actions; reduces need for explicit reasoning",
+  "strongest_supported_claim": "In the authors' single greedy run on 500 WebShop text-rich tasks, replacing raw observations in a ReAct-style prompt with per-step LLM summaries raised reported success from 23.4% to 30.2% (code-davinci-002) and from 3.0% to 12.6% (gpt-3.5-turbo, where ReAct hits the 4k window), against the authors' own ReAct re-implementation.",
+  "cannot_say": [
+   "gain exceeds run-to-run noise or a rule-truncation baseline",
+   "summarisation, not mere shortening, causes the gain",
+   "reduced hallucination is the mechanism",
+   "explicit reasoning is unnecessary",
+   "works outside WebShop or in real browsers",
+   "cost-neutral"
+  ],
+  "unresolved": [
+   "ReAct baseline fidelity",
+   "summariser error rate",
+   "compute/cost per task"
+  ],
+  "reproduction": "none; all results are author_report, no code was run"
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Specific, sourced bottleneck: long/noisy raw observations (WebShop pages) degrade a prompted agent (context overflow at 4k for gpt-3.5-turbo; ReAct avg score 7.4 beyond 11 steps; 12.7% of ReAct failures are repeated invalid actions). The authors' own lineage (ReAct as closest, action-structure work, multi-stage prompting) is explicit and the residue (observation encoding, unlike action/reasoning shaping) is correctly located. Not 4: nearest-neighbour comparison is a single authors' re-implementation of ReAct; ReAct/WebShop source text is not pinned in this material, so lineage rests on the authors' description; the hand-trimmed (top-3) observation setting of the original ReAct run is the most relevant adjacent practice and is mentioned only in a footnote; stakes outside one simulated shop are asserted, not shown; whether overflow or irrelevance is the bottleneck is not separated.",
+   "evidence_ids": [
+    "E003",
+    "E008",
+    "E009",
+    "E010",
+    "E012",
+    "E017",
+    "E044"
+   ],
+   "counterevidence_ids": [
+    "E022"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "The operation, information and assumptions are reconstructible: a stateless Summarizer sees instruction, previous action and raw page, writes a short rationale then 'info[...]' with relevant products/options retained, navigation buttons kept, hints added; the Actor sees only summarised history. This addresses the stated bottleneck (length and irrelevance) directly and plausibly (E032-E035, E040). Not 4: the mechanism hypothesis (noise triggers hallucination) is labelled a hypothesis and not tested; no distinguishable prediction versus the obvious cheap alternative (rule-based top-k truncation, history truncation) is stated; the summariser can also add information (hints), so gains cannot be attributed to pruning alone.",
+   "evidence_ids": [
+    "E013",
+    "E032",
+    "E033",
+    "E034",
+    "E035",
+    "E040",
+    "E044"
+   ],
+   "counterevidence_ids": [
+    "E036",
+    "E037"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Operation chain is fully disclosed and reconstructible: both Summarizer and Actor prompts (C.1-C.4) for both models, action space (search/click/think), step cap 20, invalid-action termination, greedy decoding, environment config and seeds (E019-E021, E041, E042, E032-E039). Failure modes are shown (under-compression on long pages, hallucinated option; E036, E037) and an error-recovery hook exists (hints on invalid action). Not 4: summariser fidelity (recall of the target among retained options, hallucination rate) is never measured; the ReAct baseline prompt is not shown; domain-card C13 conditions (tokens per step, per-category effects) and transfer boundaries are not addressed; no verifier gates a bad summary.",
+   "evidence_ids": [
+    "E019",
+    "E020",
+    "E021",
+    "E032",
+    "E033",
+    "E038",
+    "E039",
+    "E041",
+    "E042"
+   ],
+   "counterevidence_ids": [
+    "E036",
+    "E037"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Outcome comes from the WebShop environment's programmatic attribute-match reward (success = score 1.0), 500 tasks, two metrics, two base models, plus a 50-task subset on a third (E004-E007, E016, E028-E031); no learned judge. Not 4: the ReAct comparator is the authors' re-implementation with undisclosed prompt and no sanity check against the published ReAct number; the abstract's 6.2% contradicts the body's 6.8% (23.4->30.2); Table 2 rates imply n=52 not 50; per-length counts exist only as a figure; the 500 trajectories vs seeds 501-999 (499 values) is unreconciled.",
+   "evidence_ids": [
+    "E004",
+    "E005",
+    "E006",
+    "E007",
+    "E016",
+    "E019"
+   ],
+   "counterevidence_ids": [
+    "E002",
+    "E003",
+    "E025",
+    "E031",
+    "E041"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Relevant controls exist: same base model and decoding for ASH vs ReAct, a second base model, and DIRECT vs DIRECT+ASH which removes the reasoning actor while adding the summariser (E004-E007, E014). Key gaps: (a) no ablation of summariser inputs or hints (previous action, step-by-step rationale, hint injection) nor of Actor-prompt additions (E038, E039) that ReAct may lack; (b) no cheap alternative such as top-k rule truncation or history truncation, although the authors' own footnote says the original ReAct setting trimmed results to top 3 (E017); (c) the gpt-3.5-turbo gain (3.0 -> 12.6) is explained by 4k context overflow (E008, E009) and so is confounded with relevance; (d) ASH uses at least two LLM calls per step versus one, unequal compute; (e) the 'hallucination' mechanism is a stated hypothesis (E013); (f) 'mitigates need for explicit reasoning' is only partly supported: ASH with ReAct-style actor (30.2) still beats DIRECT+ASH (27.4).",
+   "evidence_ids": [
+    "E004",
+    "E005",
+    "E006",
+    "E007",
+    "E014",
+    "E015"
+   ],
+   "counterevidence_ids": [
+    "E008",
+    "E009",
+    "E013",
+    "E017",
+    "E025",
+    "E038",
+    "E039"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "All evidence is from one simulated e-commerce environment (WebShop, text-rich), one split, with no second environment, unseen sites or real browser; the authors concede no more realistic benchmark was tried (E022, E023) while the abstract claims broad applicability to interactive decision making. Selection/test separation is not stated: the base-model choice was made on a 50-task subset of the same 500 evaluation tasks (E027), and it is not stated whether few-shot demonstration instructions overlap the evaluation seeds (E041); contamination of code-davinci-002 with WebShop-like text is not discussed. The narrow claim (WebShop, two backbones) is addressed; the broad claim has no evidence.",
+   "evidence_ids": [
+    "E022",
+    "E023",
+    "E027",
+    "E041"
+   ],
+   "counterevidence_ids": [
+    "E016"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Single greedy run per configuration (E019); no seeds, variance, confidence interval or significance test, yet 'significant' is used (E014). By arithmetic only (our inference): at p~0.25-0.3 and n=500 the binomial SE of a success rate is ~2 pt, so a 6.8 pt gap is probably but not demonstrably outside noise, and the 4.0 pt DIRECT+ASH vs ReAct gap and 2.3 pt invalid-action share gap are not. Failure analysis is partial (invalid-action share, two anecdotal summariser failures) and per-length counts are unreadable in this extraction; Table 2 n is internally inconsistent (E031); 'trajectory length' bins are conditioned on outcome (failing/looping runs are long), which weakens the long-horizon reading.",
+   "evidence_ids": [
+    "E010",
+    "E011",
+    "E012",
+    "E013",
+    "E014",
+    "E019",
+    "E031"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Some budget parity at the interface level: same base model, greedy decoding, max 500 tokens, 20-step cap and termination rule for both methods (E019-E021). But ASH makes at least two LLM calls per step and carries a long few-shot Summarizer prompt (C.1/C.2), and no tokens, calls, latency or dollar cost is reported anywhere in the main text or appendices (keyword search for cost/token/latency/price found only the max-token setting); the only compute-related result is qualitative (context overflow of ReAct).",
+   "evidence_ids": [
+    "E019",
+    "E020",
+    "E021"
+   ],
+   "counterevidence_ids": [
+    "E008",
+    "E009"
+   ],
+   "search_scope": [
+    "Sections 1-7 and Limitations/Ethics read in full",
+    "Appendices A-F read in full",
+    "grep for cost, token, latency, price, dollar, call: only max-token and context-window mentions"
+   ]
+  }
+ },
+ "score": {
+  "raw": 62.5,
+  "display": 62.5,
+  "lower": 62.5,
+  "upper": 62.5,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+ },
+ "status": "reviewed",
+ "status_reason": "Complete paper text (main + all appendices) available; layout distortion on pages 1-4 recorded; all eight rating items judged.",
+ "reading_notes": [
+  "Internal inconsistencies found: abstract 6.2% vs body 6.8%; Table 2 stated n=50 but rates correspond to n=52; 500 trajectories vs seeds range(501,1000)=499.",
+  "ReAct baseline prompt is not in the material; ASH Actor prompt carries extra behavioural rules (E038, E039).",
+  "Hypothetical alternative explanations not tested: rule-based top-k truncation, history truncation, extra LLM compute, prompt-rule differences."
+ ]
+}

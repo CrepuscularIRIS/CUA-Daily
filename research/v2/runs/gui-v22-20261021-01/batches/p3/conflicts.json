@@ -1,0 +1,947 @@
+{
+ "batch": "p3",
+ "attempt": "a1",
+ "coverage_ok": true,
+ "errors": [],
+ "n_conflict_papers": 5,
+ "conflicts": {
+  "2305.14257": [
+   {
+    "field": "rs.outside",
+    "sol": false,
+    "son55": null
+   }
+  ],
+  "2306.00245": [
+   {
+    "field": "rs.matches",
+    "sol": [
+     "self_supervised_signal_engineering/rs:C08",
+     "unify_into_shared_representation/rs:C18"
+    ],
+    "son55": [
+     "self_supervised_signal_engineering/C08",
+     "unify_into_shared_representation/C18"
+    ]
+   },
+   {
+    "field": "domain.matches",
+    "sol": [
+     "planner_grounder_interface/C12",
+     "trajectory_level_policy_training/None"
+    ],
+    "son55": [
+     "planner_grounder_interface/C12",
+     "trajectory_level_policy_training/K20"
+    ]
+   },
+   {
+    "field": "rating.E.causality",
+    "sol": {
+     "status": "resolved",
+     "rating": 2
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 3
+    }
+   },
+   {
+    "field": "rating.E.statistics",
+    "sol": {
+     "status": "resolved",
+     "rating": 3
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "expectation.E01",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E02",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E03",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E04",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E05",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E05/E06/E08/E15/E22/E29",
+    "sol": "not_applicable",
+    "son55": null
+   },
+   {
+    "field": "expectation.E06",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E07",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E08",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E09",
+    "sol": "partial",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E10",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E11",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E12",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E13",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E14",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E15",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E16",
+    "sol": "met",
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E17",
+    "sol": "partial",
+    "son55": "unknown"
+   },
+   {
+    "field": "expectation.E18",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E19",
+    "sol": "partial",
+    "son55": "met"
+   },
+   {
+    "field": "expectation.E20",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E21",
+    "sol": "met",
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E22",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E23",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E24",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E25",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E26",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E27",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E28",
+    "sol": "partial",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E29",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E30",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E31",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E32",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E33",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E34",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E35",
+    "sol": null,
+    "son55": "not_applicable"
+   }
+  ],
+  "2306.01242": [
+   {
+    "field": "evidence_level",
+    "sol": "online",
+    "son55": "offline"
+   },
+   {
+    "field": "claim_support",
+    "sol": "scoped",
+    "son55": "unresolved"
+   },
+   {
+    "field": "rs.matches",
+    "sol": [
+     "decompose_and_delegate/rs:C25"
+    ],
+    "son55": [
+     "decompose_and_delegate/C25"
+    ]
+   },
+   {
+    "field": "rating.G",
+    "sol": {
+     "status": "resolved",
+     "rating": 3
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.E.measurement",
+    "sol": {
+     "status": "resolved",
+     "rating": 2
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 1
+    }
+   },
+   {
+    "field": "expectation.E01",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E02",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E03",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E04",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E05",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E06",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E07",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E08",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E09",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E10",
+    "sol": "partial",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E12",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E13",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E14",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E15",
+    "sol": null,
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E18",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E19",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E21",
+    "sol": "met",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E22",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E23",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E24",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E26",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E27",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E28",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E29",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E30",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E31",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E32",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E33",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E34",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E35",
+    "sol": null,
+    "son55": "not_applicable"
+   }
+  ],
+  "2306.07863": [
+   {
+    "field": "rating.E.statistics",
+    "sol": {
+     "status": "resolved",
+     "rating": 2
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 1
+    }
+   },
+   {
+    "field": "expectation.E01",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E02",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E03",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E04",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E05",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E06",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E07",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E08",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E09",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E11",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E12",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E13",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E14",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E15",
+    "sol": null,
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E16",
+    "sol": "partial",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E17",
+    "sol": null,
+    "son55": "unknown"
+   },
+   {
+    "field": "expectation.E18",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E19",
+    "sol": null,
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E20",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E21",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E22",
+    "sol": null,
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E23",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E24",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E25",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E26",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E27",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E29",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E30",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E31",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E32",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E33",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E34",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.RS:C03-distance",
+    "sol": "partial",
+    "son55": null
+   },
+   {
+    "field": "expectation.RS:C03-equal-budget",
+    "sol": "partial",
+    "son55": null
+   },
+   {
+    "field": "expectation.core-E05",
+    "sol": "partial",
+    "son55": null
+   },
+   {
+    "field": "expectation.core-E14",
+    "sol": "partial",
+    "son55": null
+   }
+  ],
+  "2307.12856": [
+   {
+    "field": "claim_support",
+    "sol": "partial_pending_fulltext",
+    "son55": "scoped"
+   },
+   {
+    "field": "status",
+    "sol": "needs_fulltext",
+    "son55": "reviewed"
+   },
+   {
+    "field": "rs.supporting",
+    "sol": [
+     "self_supervised_signal_engineering"
+    ],
+    "son55": [
+     "self_supervised_signal_engineering",
+     "targeted_self_supervised_objective"
+    ]
+   },
+   {
+    "field": "rs.matches",
+    "sol": [
+     "decompose_and_delegate/C25",
+     "self_supervised_signal_engineering/C08"
+    ],
+    "son55": [
+     "decompose_and_delegate/C25",
+     "self_supervised_signal_engineering/C08",
+     "targeted_self_supervised_objective/None"
+    ]
+   },
+   {
+    "field": "domain.matches",
+    "sol": [
+     "None/None",
+     "None/None"
+    ],
+    "son55": [
+     "planner_grounder_interface/C10",
+     "planner_grounder_interface/C11",
+     "structured_screen_observation/C13"
+    ]
+   },
+   {
+    "field": "rating.G",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 3
+    }
+   },
+   {
+    "field": "rating.M",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 3
+    }
+   },
+   {
+    "field": "rating.X",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.E.measurement",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.E.causality",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.E.holdout",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.E.statistics",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 1
+    }
+   },
+   {
+    "field": "rating.E.cost",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 1
+    }
+   },
+   {
+    "field": "expectation.E01",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E02",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E03",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E04",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E05",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E06",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E07",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E08",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E09",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E10",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E11",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E12",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E13",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E14",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E15",
+    "sol": null,
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E16",
+    "sol": null,
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E17",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E18",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E19",
+    "sol": null,
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E20",
+    "sol": null,
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E21",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E22",
+    "sol": null,
+    "son55": "met"
+   },
+   {
+    "field": "expectation.E23",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E24",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E25",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E26",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E27",
+    "sol": null,
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E28",
+    "sol": null,
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E29",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E30",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E31",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E32",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E33",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E34",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E35",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.core-E05",
+    "sol": "partial",
+    "son55": null
+   },
+   {
+    "field": "expectation.core-E14",
+    "sol": "unknown",
+    "son55": null
+   }
+  ]
+ }
+}

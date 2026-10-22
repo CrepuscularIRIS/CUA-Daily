@@ -1,0 +1,819 @@
+{
+ "paper": {
+  "paper_key": "2606.07027",
+  "paper_id": "arXiv:2606.07027",
+  "title": "StainFlow: Entity-Stain Tracking and Evidence Linking for Process Rewards in GUI Agents",
+  "version": "2606.07027v2",
+  "claim_type": "component_training",
+  "claim_type_note": "A process-reward component trained against (used inside GRPO) plus a trajectory-completion judge; judged as a reward component, not as a whole agent.",
+  "central_claim": "StainFlow, an entity-stain-flow process reward model (Global Entity Stain Tracking + Local Stain Evidence Linking), gives denser and more objective step rewards than milestone and local PRMs, relatively improving AndroidWorld online-RL success by 3.2% (62.28 vs 60.34 for OS-Themis) and OGRBench trajectory-completion accuracy by 1.8% (88.2 vs 86.6)."
+ },
+ "evidence": [
+  {
+   "evidence_id": "E001",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Abstract",
+   "quote": "trajectory-level success feedback is too sparse to provide reliable credit assignment for intermediate exploration steps",
+   "support_explanation": "Author gap: sparse outcome reward.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E002",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 1",
+   "quote": "existing PRMs still suffer from two hierarchical limitations in global task partitioning and local evidence selection",
+   "support_explanation": "Author-claimed limitations of prior PRMs.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E003",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 2",
+   "quote": "mitigates reliance on a single milestone chain by iterating milestones through an agent pipeline, but introduces substantial inference cost",
+   "support_explanation": "OS-Themis described as costly; no cost numbers given later.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E004",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 2",
+   "quote": "judge actions or short contexts more directly, but often miss long-range visual evidence for executed steps",
+   "support_explanation": "Local PRM limitation (GUI-Critic-R1 etc.).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E005",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 3.3",
+   "quote": "outputs a set of screenshot-checkable task entities",
+   "support_explanation": "Entity extraction by an auxiliary VLM from the instruction alone.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E006",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 3.3",
+   "quote": "if it appears in the current screenshot, the stain is set to the recognition confidence; otherwise, it decays by an entity-specific factor",
+   "support_explanation": "Stain update rule s_t = b c + (1-b) gamma s_{t-1}.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E007",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 3.4",
+   "quote": "A step is verified as a key node if it introduces a new task-relevant state change.",
+   "support_explanation": "Key-node acceptance rule (VLM decision).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E008",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 3.5",
+   "quote": "combines the continuous stain term and the discrete key-node term",
+   "support_explanation": "Step reward = lambda*stain + (1-lambda)*key-node.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E009",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 3.5",
+   "quote": "we follow the critic-free group optimization style of GRPO",
+   "support_explanation": "Policy update is standard GRPO with process advantage added.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E010",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Algorithm 2",
+   "quote": "from environment or rule-based verification",
+   "support_explanation": "Outcome reward remains the AndroidWorld rule-based reward; PRM is additive.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E011",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 4.1",
+   "quote": "The training set is generated from AndroidWorld task templates with random seeds different from the validation set, yielding 928 trajectories.",
+   "support_explanation": "Train and validation share templates; only seeds differ.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E012",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 4.1",
+   "quote": "the trained GUI policy model is Qwen3-VL-8B",
+   "support_explanation": "Policy backbone fixed; verifiers vary.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E013",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 4.1",
+   "quote": "each method is trained for 5 epochs with batch size 64, GRPO group size 8, learning rate",
+   "support_explanation": "Shared RL training recipe.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E014",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Table 1",
+   "quote": "StainFlow 60.34 0.78 0.41 0.37 18.62 ADMIRE Qwen3.5-27B 57.76 0.37 0.15 0.22 20.21 OS-Themis 60.34 0.38 0.29 0.09 18.05 StainFlow 62.28 0.81 0.39 0.42 18.36",
+   "support_explanation": "Headline AndroidWorld rows; differences vs OS-Themis are 1.7-1.9 points.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E015",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 4.2",
+   "quote": "with a 3.2% relative gain over the strongest baseline OS-Themis",
+   "support_explanation": "Arithmetic: 62.28/60.34.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E016",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Table 2 (StainFlow)",
+   "quote": "Gemini-3-Flash 88.7 89.4 91.0 91.3 84.0 83.0 93.5 84.9 86.2 86.2 88.2 87.5 89.0 88.2",
+   "support_explanation": "Best overall judgment row (Acc 88.2).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E017",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Table 2 (OS-Themis)",
+   "quote": "Gemini-3-Flash 86.5 87.0 89.9 90.4 85.5 83.2 93.5 83.9 82.5 81.8 86.6 88.4 84.1 86.2",
+   "support_explanation": "Strongest baseline row (Acc 86.6); OS-Themis higher on Windows Acc (85.5 vs 84.0) and overall Precision (88.4 vs 87.5).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E018",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Table 3",
+   "quote": "Only Global Stain 56.03 0.85 0.62 0.23 20.82 Only Local Judgment 56.89 0.59 0.27 0.32 19.41 Fixed Local Window 57.76 0.32 0.18 0.14 20.05 StainFlow 60.34 0.78 0.41 0.37 18.62",
+   "support_explanation": "Component ablation at 9B; Only Global Stain gives failed trajectories reward 0.62.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E019",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Table 5",
+   "quote": "0.2 59.48 0.69 0.31 0.38 0.4 60.34 0.78 0.41 0.37 0.6 58.62 0.82 0.55 0.27 0.8 56.89 0.89 0.61 0.28",
+   "support_explanation": "lambda sweep on AndroidWorld validation success.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E020",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 4.4",
+   "quote": "we test 0.1, 0.5, 1.0, and 1.5 in AndroidWorld online RL with Qwen3.5-9B as the verifier",
+   "support_explanation": "eta chosen from a sweep evaluated on the reported metric.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E021",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 4.4",
+   "quote": "achieves the highest success rate of 60.34, indicating that a moderate process-reward weight balances",
+   "support_explanation": "Default eta=0.5 selected by validation success (same number as headline 9B row).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E022",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "App B.1",
+   "quote": "StainFlow instead makes at most two verifier calls per step, and its first-pass entity observation can run asynchronously during rollout",
+   "support_explanation": "Cost advantage claimed with no measured latency or token numbers.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E023",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 5",
+   "quote": "Due to computational constraints, we have not yet validated StainFlow with larger-scale data or longer training.",
+   "support_explanation": "Self-stated limit.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E024",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Checklist Q7",
+   "quote": "The paper ensure the reproducibility of the experiment by fixing random seeds.",
+   "support_explanation": "Checklist answer for statistical significance: seeds fixed, no error bars.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E025",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "App E",
+   "quote": "We provide the full prompts used in the submitted code below.",
+   "support_explanation": "The five prompt bodies promised here are absent from the fixed-render material (heading followed directly by Appendix F).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E026",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 4.5",
+   "quote": "and even the relatively short Web trajectories exceed 7.6",
+   "support_explanation": "Evidence-span analysis supports long-range evidence claim.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E027",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 4.1",
+   "quote": "For ADMIRE and OS-Themis, milestone and non-milestone steps receive rewards of 1 and 0.",
+   "support_explanation": "Baseline reward re-implemented by authors as 0/1.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E028",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "App B.2",
+   "quote": "for inputs that exceed the verifier’s context window, which we set to 81920 for all verifiers, we truncate from the beginning of the trajectory",
+   "support_explanation": "ZeroGUI baseline truncated on long trajectories.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E029",
+   "material_id": "M-2405.14573",
+   "sha256": "d745a9085e86a2ea357a27f08bb1c0fd1918ff9040ef9885c5db387c456a56cc",
+   "locator": "Pinned AndroidWorld",
+   "quote": "AndroidWorld consists of a suite of 116 tasks, spread across 20 diverse applications",
+   "support_explanation": "Denominator for Table 1: 70/116=60.34 etc.; 62.28 is not k/116.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E030",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Sec 4.1",
+   "quote": "Qwen3.5-VL-27B [ 27 ] as auxiliary verifier models",
+   "support_explanation": "Verifier models for the proposed method and ADMIRE/OS-Themis.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E031",
+   "material_id": "M-2606.07027",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "locator": "Table 1 recount (our_inference)",
+   "quote": "OS-Themis 58.62 0.36 0.22 0.14 18.56 StainFlow 60.34",
+   "support_explanation": "Our arithmetic: 60.34% = 70/116 and 58.62% = 68/116 (a two-task gap); 62.28% = 72.25/116, so the denominator or averaging is unstated.",
+   "kind": "our_inference"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "Step-level reward for GUI RL: per-step stain concentration of task entities plus verified key nodes.",
+   "information": "Full executed trajectory (screenshots, actions) retrospectively; instruction; an auxiliary VLM (Qwen3.5-9B/27B); outcome reward from AndroidWorld rule-based checker.",
+   "operation": "VLM extracts screenshot-checkable entities from the instruction; per step VLM reports visibility/confidence/state; stain s_t updates by recognition or decay gamma; candidates recalled from high stain / stain change / state change; evidence window = candidate + neighbours (+-1) + steps linked to triggering entities; VLM verifies key node; step reward = lambda*weighted-mean stain + (1-lambda)*key-node flag.",
+   "output": "Step rewards r_t in [0,1], key-node chain, completion prediction.",
+   "conditions": "Task has visually checkable entities; two verifier calls per step at most; persistent entities decay 0.8, others 0.5.",
+   "feedback": "VLM observations only; no step-level environment labels.",
+   "selection_rule": "Thresholds tau_A=0.9, tau_B=0, tail=3, lambda=0.4, eta=0.5 chosen by sweeps on the evaluation benchmark/validation (E019-E021).",
+   "persistence": "Used only to compute advantages inside the GRPO run; policy weights are the retained artifact.",
+   "later_use": "Step advantage A_P fused with outcome advantage A_O (A = A_O + eta*A_P).",
+   "claimed_effect": "AndroidWorld success 54.31 (outcome only) -> 60.34 (9B) / 62.28 (27B); OGRBench overall Acc 88.2.",
+   "failure_boundary": "Entities invisible to screenshots; stronger reward for failed trajectories if entities visible (Only Global Stain 0.62).",
+   "evidence_ids": [
+    "E005",
+    "E006",
+    "E007",
+    "E008",
+    "E009",
+    "E010",
+    "E019",
+    "E021",
+    "E018"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "Trajectory-level rewards are sparse; existing PRMs either fix a subjective milestone chain (global) or use short fixed windows (local), losing long-range evidence.",
+  "checked_gap": "Plausible and partly evidenced: milestone methods give successful trajectories at most 0.38 reward and local judges have narrow reward gap (Table 1), and evidence spans exceed 7.6-14.1 steps (Sec 4.5). The paper has not isolated whether PRM quality, rather than policy capacity or RL recipe, is the main limit on AndroidWorld.",
+  "lineage": [
+   "GUI-Critic-R1 (local), ADMIRE (milestones from successes), OS-Themis (multi-agent milestone verification), cited in the text",
+   "DigiRL, ZeroGUI trajectory judges, cited",
+   "GRPO / PRPO process-outcome alignment, cited"
+  ],
+  "lineage_note": "None of these neighbours is in the locally pinned 14-paper set; relationships come from the fixed text (author_report). Pinned AndroidWorld/OSWorld are used only for benchmark facts.",
+  "closest_adjacent": "OS-Themis (closest in both judgment and RL); the authors reimplement it with 0/1 milestone rewards.",
+  "residue": "Cost relative to OS-Themis not measured; extension to broader environments and scale is future work (E023).",
+  "stakes": "Credit assignment for long-horizon GUI RL.",
+  "method_response": "Replace a milestone chain by entity visibility dynamics, and replace fixed windows by entity-linked evidence windows, then verify key nodes with a VLM.",
+  "remaining_gap": "Prompts, reliability of entity extraction/recognition, reward hacking not analysed, cost.",
+  "evidence_ids": [
+   "E001",
+   "E002",
+   "E003",
+   "E004",
+   "E026",
+   "E023"
+  ],
+  "unresolved": [
+   "Whether gains over OS-Themis (2-task gap) are beyond seed noise",
+   "Prompt content"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "self_supervised_signal_engineering",
+  "supporting": [],
+  "outside_taxonomy": false,
+  "reason": "",
+  "matches": [
+   {
+    "main_id": "self_supervised_signal_engineering",
+    "sub_id": "C26",
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "1_diagnose_missing_supervision": "partial: missing step-level credit is stated; the signal is a scalar process reward, not a comparative preference",
+     "2_harvest_non_human_source": "met: VLM verifier observations of trajectories",
+     "3_granularity_matching": "met: step-level reward with a key-node term",
+     "4_optimize_inside_objective": "partial: advantage fusion in GRPO; no new objective reformulation",
+     "5_attribution": "partial: baseline PRMs under same recipe and outcome-only reference; same-compute and judge-identity controls missing"
+    },
+    "success_checks": "Closes the loop to downstream RL success (not just judge accuracy); typed dense rewards.",
+    "failure_checks": "Resembles the single-component swap risk (granularity) but adds entity tracking/dynamic windows; downstream gain is within about 2 tasks of the strongest baseline.",
+    "evidence_ids": [
+     "E008",
+     "E009",
+     "E014",
+     "E018"
+    ],
+    "reason": "The actual operation manufactures a dense scalar reward for RL from model observations without human step labels."
+   }
+  ],
+  "executes_pattern": true,
+  "resolves_problem": "partial: improves the reward-gap metrics and success over outcome-only and over PRM baselines by small margins on AndroidWorld (single run); not shown to remove subjective milestone dependence causally."
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "learned_outcome_and_process_judges",
+    "sub": "K19",
+    "version": "patterns@2026-10 (cua-agents K19)",
+    "fit": "good",
+    "condition_checks": {
+     "PRM_trained_on_human_step_labels": "not met: zero-shot VLM verifier, no step-label training",
+     "in_distribution_environment": "met: train templates = eval templates",
+     "validated_against_humans": "partial: OGRBench judgment accuracy reported; step-reward accuracy against human step labels not reported",
+     "reward_hacking_analysed": "unmet: reward-gap and curves only",
+     "single_run": "present (card failure condition)"
+    },
+    "evidence_ids": [
+     "E011",
+     "E014",
+     "E016",
+     "E024"
+    ],
+    "reason": "Dense step-level process rewards for multi-turn GUI RL.",
+    "namespace": "gui"
+   },
+   {
+    "main": "learned_outcome_and_process_judges",
+    "sub": "K16",
+    "version": "patterns@2026-10 (cua-agents K16)",
+    "fit": "partial",
+    "condition_checks": {
+     "judge_sees_more_than_last_frames": "met: entire trajectory evidence",
+     "agreement_with_humans": "partial: OGRBench Acc/Prec/Rec reported",
+     "positive_and_negative_verdict_reliability": "partial: Prec and Rec only, no NPV"
+    },
+    "evidence_ids": [
+     "E016",
+     "E017"
+    ],
+    "reason": "Trajectory-completion verifier as an inference-time outcome judge on OGRBench.",
+    "namespace": "gui"
+   }
+  ],
+  "unassigned": [],
+  "revision_proposals": []
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "self_supervised_signal_engineering",
+   "rs_sub": "C26",
+   "domain_namespace": "gui",
+   "domain_main": "learned_outcome_and_process_judges",
+   "domain_sub": "K19",
+   "operation_correspondence": "RS: manufacture a step-level reward from a non-human source; gui: dense step rewards from a VLM-based PRM used as GRPO advantages.",
+   "required_conditions_and_differences": "gui K19 expects a PRM trained on human step labels; here the PRM is prompted, so label-quality conditions do not apply but verifier validation does (not done). RS C26 expects preference pairs; here a scalar reward.",
+   "evidence_ids": [
+    "E005",
+    "E008",
+    "E009"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E12",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E12"
+   ],
+   "applies_when": "learned reward/verifier claimed to improve GUI-agent RL",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Compared with outcome-only reward, GUI-Critic-R1, ADMIRE and OS-Themis under one policy/recipe (met); reward hacking and bias are not analysed.",
+   "evidence_ids": [
+    "E014",
+    "E027",
+    "E018"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E10"
+   ],
+   "applies_when": "LLM/VLM judge labelling trajectory success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "OGRBench completion-judgment accuracy vs benchmark labels is reported across five platforms; step-level reward quality against human labels and label provenance of OGRBench are not given here.",
+   "evidence_ids": [
+    "E016",
+    "E017"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E11"
+   ],
+   "applies_when": "judge reliable as reward/evaluator",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Overall Prec and Recall are reported (StainFlow 87.5/89.0 with Gemini) but not negative-class NPV or subset-level class metrics.",
+   "evidence_ids": [
+    "E016",
+    "E017"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E16"
+   ],
+   "applies_when": "online benchmark comparison",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Single run with fixed seeds; no error bars; a 2-task gap vs OS-Themis (60.34 vs 58.62 = 70 vs 68 of 116).",
+   "evidence_ids": [
+    "E024",
+    "E031",
+    "E029"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E02"
+   ],
+   "applies_when": "mobile agent success claim",
+   "applicable": true,
+   "status": "met",
+   "reason": "Online AndroidWorld success with the environment rule-based checker.",
+   "evidence_ids": [
+    "E010",
+    "E014"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E17"
+   ],
+   "applies_when": "comparison where step budgets may differ",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "Average executed steps reported (18.36-21.73) but the maximum step budget used at evaluation is not stated.",
+   "evidence_ids": [
+    "E014"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E22"
+   ],
+   "applies_when": "recipe claimed to generalise across backbones",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Verifier size varied (9B/27B) but policy fixed at Qwen3-VL-8B; no other policy backbones.",
+   "evidence_ids": [
+    "E012",
+    "E014"
+   ],
+   "score_item": "E.holdout"
+  }
+ ],
+ "expectations_not_applicable": {
+  "ids": [
+   "E01",
+   "E03-E09",
+   "E13-E15",
+   "E18-E21",
+   "E23-E35"
+  ],
+  "reason": "No OSWorld/WebArena/grounding claim; E14 (PRM label source ablation) does not apply because the verifier is prompted, not trained on step labels; no world model/synthesis/memory."
+ },
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "StainFlow rewards improve AndroidWorld online-RL success over outcome-only and PRM baselines (62.28 vs 60.34).",
+   "setting": "Qwen3-VL-8B policy, GRPO, 5 epochs, 928 training trajectories from AndroidWorld templates, validation by different seeds",
+   "baseline_control": "No training, outcome reward, GUI-Critic-R1, ADMIRE, OS-Themis under the same recipe; baseline rewards converted to 0/1 by authors",
+   "selection_vs_test": "Training templates equal evaluation templates; eta, lambda chosen on the reported validation success",
+   "result_denominator": "AndroidWorld 116 tasks (our inference); single run; 62.28 is not an integer count",
+   "evidence_ids": [
+    "E011",
+    "E014",
+    "E015",
+    "E019",
+    "E020",
+    "E021",
+    "E029",
+    "E031"
+   ],
+   "counterevidence": "Margin over OS-Themis is about two tasks; no variance.",
+   "allowed_conclusion": "In one seeded run, StainFlow rewards gave the highest success among compared PRMs on the in-template validation set; the +3.2% relative is within plausible run-to-run noise."
+  },
+  {
+   "claim_id": "C2",
+   "text": "StainFlow improves trajectory completion judgment on OGRBench across platforms (88.2 overall, +1.8% relative).",
+   "setting": "OGRBench five subsets, five verifier models",
+   "baseline_control": "DigiRL, ZeroGUI (truncated beginning), OS-Themis",
+   "selection_vs_test": "tau_A, tau_B, N(t), tail length defaults compared on OGRBench itself (Table 4)",
+   "result_denominator": "subset sizes not given; best row Gemini-3-Flash",
+   "evidence_ids": [
+    "E016",
+    "E017",
+    "E028"
+   ],
+   "counterevidence": "OS-Themis is higher on Windows Acc (85.5 vs 84.0) and overall Precision (88.4 vs 87.5) with Gemini.",
+   "allowed_conclusion": "StainFlow is generally better or comparable to strong judges with 1-3 point margins; no uncertainty."
+  },
+  {
+   "claim_id": "C3",
+   "text": "Both modules are necessary.",
+   "setting": "AndroidWorld, 9B verifier",
+   "baseline_control": "three ablated variants",
+   "selection_vs_test": "same",
+   "result_denominator": "single run",
+   "evidence_ids": [
+    "E018"
+   ],
+   "counterevidence": "Variants lose 2.6-4.3 points (about 3-5 tasks) with no variance.",
+   "allowed_conclusion": "Ablations are directionally supportive."
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "On AndroidWorld with an 8B policy and in-template validation, training with StainFlow-shaped step advantages ended at 60.34 (9B verifier) vs 58.62 for OS-Themis and 54.31 for outcome-only in one seeded run, and StainFlow-driven trajectory completion judgment scored 88.2 Acc on OGRBench with Gemini-3-Flash; no statistical or out-of-template evidence.",
+  "unresolved": [
+   "Seed/variance",
+   "Prompt content (Appendix E absent)",
+   "Reward hacking",
+   "Cost vs OS-Themis",
+   "OGRBench label provenance"
+  ],
+  "retention": "Reward model is a training-time component: before (outcome-only GRPO) -> candidate step rewards (VLM stain + key nodes) -> selection by thresholds -> used as advantage -> policy weights updated -> later rollouts evaluated on validation tasks of same templates. Policy-improvement retained in weights; no PRM update loop.",
+  "reproduction": "author_report only"
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Specific, sourced gap (sparse outcome; milestone subjectivity; fixed windows missing long-range evidence) with named neighbours and reward-gap and evidence-span diagnostics; residue (cost, scale) acknowledged. Not 4 because the gap that PRM quality limits AndroidWorld RL is not isolated and none of the neighbours is pinned for checking.",
+   "evidence_ids": [
+    "E001",
+    "E002",
+    "E003",
+    "E004",
+    "E026"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Stain dynamics, evidence linking and the reward combination follow a reconstructible chain with stated rationale for decay and windows; ablations and the Only-Global-Stain reward (0.62 for failures) expose the mechanism, though the assumption that entity visibility tracks progress is untested for entity-poor tasks.",
+   "evidence_ids": [
+    "E005",
+    "E006",
+    "E007",
+    "E008",
+    "E018"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Algorithms 1-2, equations and hyperparameters are explicit and baseline conversions are described; five prompts (the part that realises entity observation and key-node verification) are absent from the material, and eval step budget/size not given.",
+   "evidence_ids": [
+    "E005",
+    "E006",
+    "E010",
+    "E013",
+    "E025",
+    "E027"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Online AndroidWorld success uses the environment checker, and OGRBench reports Acc/Prec/Rec/F1 on five platforms; deductions for unstated OGRBench label provenance, no NPV, and success denominator (62.28) not reconcilable.",
+   "evidence_ids": [
+    "E010",
+    "E014",
+    "E016",
+    "E029",
+    "E031"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Same-policy comparison with outcome-only and three PRMs plus three component variants, lambda/eta/decay sweeps; but single-run margins of about two tasks, no judge-identity or same-compute control, baselines adapted to 0/1 by the authors, and no reward-hacking analysis.",
+   "evidence_ids": [
+    "E014",
+    "E018",
+    "E019",
+    "E027"
+   ],
+   "counterevidence_ids": [
+    "E031"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "OGRBench spans five platforms externally, but RL training and validation share AndroidWorld templates, defaults for eta/lambda/tau were chosen on the reported benchmarks, and only one policy backbone and one online environment are used.",
+   "evidence_ids": [
+    "E011",
+    "E020",
+    "E021",
+    "E012"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Single seeded run, no error bars (checklist), no subset sizes; 2-task margin on 116 tasks; 62.28 not an integer count.",
+   "evidence_ids": [
+    "E024",
+    "E031",
+    "E029"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Claims at most two verifier calls per step and asynchronous observation but gives no latency, tokens or GPU time, and compares with OS-Themis only qualitatively; average steps are reported.",
+   "evidence_ids": [
+    "E022",
+    "E003",
+    "E023"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  }
+ },
+ "status": "reviewed",
+ "status_reason": "Material reviewed in full except Appendix E prompt bodies, which are absent from the fixed render although the text says they are provided.",
+ "sanity_notes": [
+  "E.holdout=2 reflects the genuine five-platform OGRBench evaluation for the judge claim, offset by tuning on the eval set."
+ ],
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "re1",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "supersedes_note": "re-eval on fixed-render material (v1 dropped listings)",
+ "provenance": {
+  "input_hash": "0c53f80620262543975e422d5296c86482ed960182744018b026378068fb68ec",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": {
+   "taxonomy": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+   "conditions": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+  },
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m] (self-reported by system prompt: Sonnet 5.5)",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_receipt_reason": "no session id or receipt exposed to the worker in this runtime",
+  "timestamp": "2026-10-22T02:00:01Z"
+ },
+ "materials": [
+  {
+   "material_id": "M-2606.07027",
+   "url": "https://arxiv.org/html/2606.07027v2",
+   "sha256": "9e50274e1d93cb7a6dfbd098c7dd2166e5b63a87972b3e1f8914951bb15ce4f7",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2606.07027.txt",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Related Work",
+    "3 Approach (3.1-3.5, Eq 1-13)",
+    "4 Experiments (4.1-4.5, Tables 1-3)",
+    "5 Conclusion",
+    "NeurIPS checklist",
+    "Appendix A-D including Algorithm 1 and 2 listings, Tables 4-5",
+    "Appendix E heading (prompt bodies absent)",
+    "Appendix F captions"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "Appendix E: the five prompt bodies promised by the text are not present in the fixed render; Figures 1-6 (images) not readable; OGRBench label provenance and subset sizes not given in this paper."
+   ]
+  },
+  {
+   "material_id": "M-2405.14573",
+   "role": "pinned_reference",
+   "sha256": "d745a9085e86a2ea357a27f08bb1c0fd1918ff9040ef9885c5db387c456a56cc",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2405.14573.txt",
+   "sections_read": [
+    "passages cited in evidence only (neighbor check, not a full review)"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not reviewed as a subject paper"
+   ]
+  }
+ ],
+ "score": {
+  "raw": 65.0,
+  "display": 65.0,
+  "lower": 65.0,
+  "upper": 65.0,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+ }
+}

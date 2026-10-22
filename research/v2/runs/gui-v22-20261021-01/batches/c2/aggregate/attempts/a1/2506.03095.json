@@ -1,0 +1,2177 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c2",
+ "attempt_id": "a1",
+ "seat": "aggregate",
+ "paper": {
+  "paper_key": "2506.03095",
+  "paper_id": "2506.03095",
+  "title": "DPO Learning with LLMs-Judge Signal for Computer Use Agents",
+  "version": "2506.03095v1",
+  "claim_type": "component_training",
+  "central_claim": "A GPT-4o 'LLM-as-Judge' that scores 10 sampled UI-TARS-2B responses per AGUVIS instance yields preference pairs for DPO that make a lightweight, privacy-preserving, locally-run 2B GUI agent outperform its baseline on OSWorld without human annotation.",
+  "claim_scope": "Single-step AGUVIS instances, UI-TARS-2B only, OSWorld 369 tasks at 15 and 50 steps; privacy/local-efficiency claims are framing, not tested."
+ },
+ "provenance": {
+  "input_hash": "26b023b230f3f5dfbc6207db584916bc00434db1bd9d7e96eea6447b745b95a8",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "aggregate_rules": "docs/agents/AGGREGATE_OPUS.md",
+  "aggregate_rules_sha256": "1ad0c4f39af2ceb06924fc015d8660711edcd9a6f891444e902b44f79584f4e0",
+  "conflicts_sha256": "a783fc782433569cf60e791e1cb10df29c76dc7538682fe5a7720e0e45ade8ba",
+  "references_sha256": "bfab82252df94f8136e45a678eba7cf5435f983dc948866f8f15edb74bd8d6d3",
+  "model_type": "fable",
+  "actual_model": "claude-opus-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "timestamp": "2026-10-22T02:28:19+00:00",
+  "independence_note": "Aggregation over two seat inputs; each fixed paper text was read before the seat scores, but this is not a third blind review or human gold. All results are author reports; nothing was reproduced."
+ },
+ "materials": [
+  {
+   "material_id": "agg:2506.03095",
+   "url": "https://arxiv.org/html/2506.03095",
+   "sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2506.03095.txt",
+   "role": "paper",
+   "sections_read": [
+    "full text"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "manifest_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "matches_manifest_pin": true
+  },
+  {
+   "material_id": "sol:arxiv:2506.03095",
+   "url": "https://arxiv.org/html/2506.03095v1",
+   "sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2506.03095.txt",
+   "sections_read": [
+    "entire fixed HTML text: abstract, methods, experiments, references, all rendered appendices"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "asserted_version": "2506.03095v1",
+   "version_binding": "Version supplied by batch manifest; cached SOURCE URL is unversioned, no independent fetch/version verification performed."
+  },
+  {
+   "material_id": "sol:arxiv:2501.12326",
+   "url": "https://arxiv.org/html/2501.12326",
+   "sha256": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2501.12326.txt",
+   "sections_read": [
+    "4.4–4.6"
+   ],
+   "complete": false,
+   "missing_sections": []
+  },
+  {
+   "material_id": "sol:arxiv:2404.07972",
+   "url": "https://arxiv.org/html/2404.07972",
+   "sha256": "5907f5ab2f95d036e676d17d701a77fd30850e3eccb55b014183d318520ff9d1",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2404.07972.txt",
+   "sections_read": [
+    "2environment"
+   ],
+   "complete": false,
+   "missing_sections": []
+  },
+  {
+   "material_id": "son55:M:2506.03095v1",
+   "url": "https://arxiv.org/html/2506.03095v1",
+   "fetched_source": "https://arxiv.org/html/2506.03095",
+   "sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "manifest_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "on_disk_sha256_at_build": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "material_drift": false,
+   "read_state": "pinned",
+   "drift_note": null,
+   "role": "paper_under_review",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Related Work",
+    "3 LLM-as-Judge DPO Training Pipeline",
+    "4.1-4.5 Experiments and failure analysis",
+    "5 Conclusion",
+    "References"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Figures 1-3 (pipeline, judge prompt, score histogram) are images; judge prompt text is not in the text render"
+   ]
+  },
+  {
+   "material_id": "son55:M:2412.09605",
+   "url": "https://arxiv.org/html/2412.09605",
+   "fetched_source": "https://arxiv.org/html/2412.09605",
+   "sha256": "ff0d81b000884775c3d21cacef43eb7db8eb5f0286152dd3fb0f1df0e9fd65bd",
+   "on_disk_sha256_at_build": "ff0d81b000884775c3d21cacef43eb7db8eb5f0286152dd3fb0f1df0e9fd65bd",
+   "material_drift": false,
+   "role": "fixed_reference_neighbor:AgentTrek",
+   "sections_read": [
+    "passages cited in evidence[] only (gap/lineage fact check)"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; used as fixed factual source for the cited passages only"
+   ]
+  },
+  {
+   "material_id": "son55:M:2501.12326",
+   "url": "https://arxiv.org/html/2501.12326",
+   "fetched_source": "https://arxiv.org/html/2501.12326",
+   "sha256": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "on_disk_sha256_at_build": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "material_drift": false,
+   "role": "fixed_reference_neighbor:UI-TARS",
+   "sections_read": [
+    "passages cited in evidence[] only (gap/lineage fact check)"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; used as fixed factual source for the cited passages only"
+   ]
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "agg:DP-A01",
+   "material_id": "agg:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 3 Response Scoring",
+   "quote": "For each task in the AGUVIS dataset, we present GPT-4o with 10 sampled responses from UI-TARS-2B alongside the ground truth answer, all within a single prompt.",
+   "support_explanation": "The judge sees the gold answer, so it grades closeness to an existing label rather than replacing annotation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:DP-A02",
+   "material_id": "agg:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 3 Pairing",
+   "quote": "The first strategy pairs each model-generated response with a score below 80 against the corresponding ground-truth answer.",
+   "support_explanation": "DPO-1 uses the gold label as the preferred sample.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:DP-A03",
+   "material_id": "agg:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 4.2",
+   "quote": "we run the evaluation three times and average the performance.",
+   "support_explanation": "Three-run means; no spread reported.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:DP-A04",
+   "material_id": "agg:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Table 1 (15 steps)",
+   "quote": "Weighted Avg. | 9.18 | 8.46 | 9.33 | 6.91 | 3.14",
+   "support_explanation": "15-step gain about 2.4 points of 369 tasks.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:DP-A05",
+   "material_id": "agg:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Table 2 (50 steps)",
+   "quote": "Weighted Avg | 9.01 | 8.88 | 8.24 | 8.83 | 1.52",
+   "support_explanation": "No gain at 50 steps; DPO-3 below baseline.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:DP-A06",
+   "material_id": "agg:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 4.4",
+   "quote": "our system did experience hardware failures during inference in some 50-step runs",
+   "support_explanation": "50-step arm contaminated and not rerun.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:DP-A07",
+   "material_id": "agg:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 1",
+   "quote": "This local-first design eliminates the need for network communication during inference, providing strong privacy guarantees",
+   "support_explanation": "Privacy/local claim is asserted; no on-device measurement exists in the text.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E01",
+   "material_id": "sol:arxiv:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "L62",
+   "quote": "operate entirely on local machines",
+   "support_explanation": "Original local-firstprivacy/efficiencyclaim; mustnotconfusecloudteachertrainingwithinference.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E02",
+   "material_id": "sol:arxiv:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "L98",
+   "quote": "temperature = 0.7, top k = 10, top p = 0.9",
+   "support_explanation": "10candidates/statefromUI-TARS2B.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E03",
+   "material_id": "sol:arxiv:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "L104",
+   "quote": "alongside the ground truth answer, all within a single prompt",
+   "support_explanation": "Judgeusesreferenceanswer;notannotation-freegroundtruthcreation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E04",
+   "material_id": "sol:arxiv:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "L114",
+   "quote": "a score below 80 against the corresponding ground-truth answer",
+   "support_explanation": "DPO1acceptsgoldvsbelow80;DPO2usesrankedgeneratedpairs.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E05",
+   "material_id": "sol:arxiv:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "L131",
+   "quote": "we run the evaluation three times and average the performance",
+   "support_explanation": "Threerepeatsbutnospread.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E06",
+   "material_id": "sol:arxiv:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "L171",
+   "quote": "Weighted Avg. | 9.18 | 8.46 | 9.33 | 6.91 | 3.14",
+   "support_explanation": "15stepresult6.91→9.33;35.03%relative.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E07",
+   "material_id": "sol:arxiv:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "L188",
+   "quote": "Weighted Avg | 9.01 | 8.88 | 8.24 | 8.83 | 1.52",
+   "support_explanation": "50stepDPO3belowbase;notconsistentimprovement.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E08",
+   "material_id": "sol:arxiv:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "L155",
+   "quote": "hardware failures during inference in some 50-step runs",
+   "support_explanation": "Unresolvedinfrastructureconfoundexplicitlyreported.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E09",
+   "material_id": "sol:arxiv:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "L206",
+   "quote": "gets stuck repeating the same faulty step across multiple timesteps",
+   "support_explanation": "Recoveryfailurepersists.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E10",
+   "material_id": "sol:arxiv:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "L135",
+   "quote": "five dedicated servers, each with dual Intel",
+   "support_explanation": "Evaluationinfrastructuredoesnotdemonstrateconsumerdevice deployment.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E11",
+   "material_id": "sol:arxiv:2506.03095",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "L125",
+   "quote": "369 real-world computer tasks",
+   "support_explanation": "Benchmarkdenominatoranddomains.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:R01",
+   "material_id": "sol:arxiv:2501.12326",
+   "material_sha256": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "locator": "L684",
+   "quote": "SFT only utilizes the corrected steps",
+   "support_explanation": "UI-TARSalreadyusesGUIcorrected/rejectedactionDPO;actualdeltaautomatedjudgepairing.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:R02",
+   "material_id": "sol:arxiv:2501.12326",
+   "material_sha256": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "locator": "L710",
+   "quote": "annotated reflective pairs from online bootstrapping data for DPO training",
+   "support_explanation": "PredecessorGUIpolicyDPOpipelinefixedreference.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:R03",
+   "material_id": "sol:arxiv:2404.07972",
+   "material_sha256": "5907f5ab2f95d036e676d17d701a77fd30850e3eccb55b014183d318520ff9d1",
+   "locator": "L273",
+   "quote": "we implement an execution-based reward function",
+   "support_explanation": "OSWorldexecution-evaluationanchor.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E001",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Abstract",
+   "quote": "we introduce an LLM-as-Judge framework that automatically evaluates and filters synthetic interaction trajectories, producing high-quality data for reinforcement learning without human annotation",
+   "support_explanation": "Author-stated method and its data claim (trajectories, human-free).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E002",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Abstract",
+   "quote": "developing a lightweight vision-language model that runs entirely on local machines",
+   "support_explanation": "Privacy / local-deployment framing of the central claim.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E003",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 1",
+   "quote": "how to obtain high-quality GUI interaction data without extensive human labeling",
+   "support_explanation": "Author-stated problem.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E004",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 3 Data Sampling",
+   "quote": "we first sampled multiple responses from our base policy model, UI-TARS-2B, using task instances from the AGUVIS dataset",
+   "support_explanation": "Candidates come from the policy being trained, on AGUVIS task instances.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E005",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 3 Data Sampling",
+   "quote": "with the goal of predicting the next interaction step within the graphical interface",
+   "support_explanation": "AGUVIS instances are single-step next-action prediction, not trajectories.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E006",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 3 Data Sampling",
+   "quote": "we generate a set of 10 diverse candidate completions",
+   "support_explanation": "k=10 samples per instance.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E007",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 3 Response Scoring",
+   "quote": "we present GPT-4o with 10 sampled responses from UI-TARS-2B alongside the ground truth answer, all within a single prompt.",
+   "support_explanation": "Judge input = sampled responses + ground-truth answer (the judge has the label); no screenshot is mentioned for the judge.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E008",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 3 Response Scoring",
+   "quote": "We instruct GPT-4o to assign a quality score between 0 and 100 to each response based on its relevance, accuracy, and alignment with the task instruction.",
+   "support_explanation": "Judge output: 0-100 score per response.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E009",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 3 Pairing",
+   "quote": "The first strategy pairs each model-generated response with a score below 80 against the corresponding ground-truth answer.",
+   "support_explanation": "Pair type 1: ground truth chosen vs low-scored model sample rejected (threshold 80).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E010",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 3 Pairing",
+   "quote": "The second strategy constructs preference pairs directly between model-generated responses.",
+   "support_explanation": "Pair type 2: judge-ordered model-vs-model pairs.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E011",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 4.3",
+   "quote": "with the vast majority of samples receiving a score of 0 and only a small fraction scoring between 5 and 50.",
+   "support_explanation": "Judge scores are almost all 0, so most pairs reduce to wrong-vs-gold; little graded signal.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E012",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Table 1",
+   "quote": "Weighted Avg. | 9.18 | 8.46 | 9.33 | 6.91 | 3.14",
+   "support_explanation": "15-step OSWorld weighted success: DPO-1/2/3 vs baseline 6.91.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E013",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Table 1",
+   "quote": "% improvement | 32.86 | 22.43 | 35.03 | - | -",
+   "support_explanation": "Relative improvements at 15 steps.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E014",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Table 2",
+   "quote": "Weighted Avg | 9.01 | 8.88 | 8.24 | 8.83 | 1.52",
+   "support_explanation": "50-step OSWorld weighted success; baseline 8.83.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E015",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Table 2",
+   "quote": "% improvement | +2.04% | +0.57% | -6.68% | - | -",
+   "support_explanation": "At 50 steps gains are ~0 and DPO-3 regresses.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E016",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 4.2",
+   "quote": "for each models, we run the evaluation three times and average the performance.",
+   "support_explanation": "Three runs averaged; spread not reported.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E017",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 4.4 50-Steps",
+   "quote": "our system did experience hardware failures during inference in some 50-step runs, which could have contributed to degraded performance.",
+   "support_explanation": "50-step measurements are partially corrupted by infrastructure failures (no rerun).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E018",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 4.4 50-Steps",
+   "quote": "all DPO models perform worse under the 50-step setting compared to their 15-step counterparts.",
+   "support_explanation": "More steps lowers DPO models; baseline improves 6.91 -> 8.83.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E019",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 4.4 50-Steps",
+   "quote": "DPO models in the 15-step setting still outperform the baseline even when it operates under the more flexible 50-step setting.",
+   "support_explanation": "Claim of efficiency at shorter budgets (9.33 vs 8.83 is 0.5 points).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E020",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 4.4 15-Steps",
+   "quote": "Overall, DPO-3 demonstrates the most consistent and robust gains, validating the benefit of integrating both preference supervision schemes.",
+   "support_explanation": "Author claim about DPO-3 consistency; contradicted by Table 2.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E021",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 5",
+   "quote": "By leveraging GPT-4 to automatically evaluate model-generated interaction trajectories, we construct high-quality preference pairs for Direct Preference Optimization.",
+   "support_explanation": "Conclusion again says trajectories (and GPT-4 vs GPT-4o), but the pipeline is single-step (E005).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E022",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 4.5",
+   "quote": "we conduct a qualitative analysis of failure cases by manually inspecting samples where the agent failed to complete the task.",
+   "support_explanation": "Failure analysis is qualitative, with no counts.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E023",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Table 1",
+   "quote": "VLC | 16.50 | 10.40 | 8.21 | 1.96 | 21.57",
+   "support_explanation": "Per-domain cells are noisy (VLC baseline 1.96 vs DPO-1 16.50), reflecting a few tasks per domain.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E024",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Table 1 caption",
+   "quote": "Max Diff is computed based on the best performance compared to the average baseline",
+   "support_explanation": "Max-Diff column compares the best DPO variant to the baseline mean, an optimistic statistic.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E025",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 4.2 Hardware Setup",
+   "quote": "Our environment consists of five dedicated servers, each with dual Intel ® Xeon ® Platinum 8468 Processors, 1TB of RAM",
+   "support_explanation": "Evaluation ran on cloud servers with hosted vLLM endpoints, not on consumer/local hardware.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E026",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "whole paper",
+   "quote": null,
+   "support_explanation": "No human validation of the GPT-4o judge, no judge-vs-rule or judge-vs-exact-match comparison, and no ablation of any pipeline component appears anywhere in the paper.",
+   "kind": "our_inference",
+   "absence_check": {
+    "patterns": [
+     "inter-annotator",
+     "agreement with human",
+     "human (agreement|validation|evaluation of the judge)",
+     "ablat",
+     "exact[- ]match"
+    ],
+    "hits": 0,
+    "scope": "full text of 2506.03095 incl. appendices"
+   }
+  },
+  {
+   "evidence_id": "son55:E027",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "whole paper",
+   "quote": null,
+   "support_explanation": "No DPO hyper-parameters (beta, learning rate, epochs, batch size, adapters) and no number of preference pairs or training samples are reported.",
+   "kind": "our_inference",
+   "absence_check": {
+    "patterns": [
+     "\\bbeta\\b",
+     "learning rate",
+     "epochs?",
+     "batch size",
+     "LoRA",
+     "number of (preference )?pairs",
+     "\\d+k (preference )?(pairs|samples)"
+    ],
+    "hits": 0,
+    "scope": "full text of 2506.03095 incl. appendices"
+   }
+  },
+  {
+   "evidence_id": "son55:E028",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "whole paper",
+   "quote": null,
+   "support_explanation": "No SFT-on-ground-truth baseline (same samples, same backbone) is reported, so DPO with judge scores is not separated from plain training on the labels.",
+   "kind": "our_inference",
+   "absence_check": {
+    "patterns": [
+     "\\bSFT\\b",
+     "supervised fine-tuning baseline"
+    ],
+    "hits": 0,
+    "scope": "full text of 2506.03095 incl. appendices"
+   }
+  },
+  {
+   "evidence_id": "son55:E029",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "whole paper",
+   "quote": null,
+   "support_explanation": "No latency, memory, on-device or privacy measurement is reported even though the central framing is a privacy-preserving, resource-efficient local agent.",
+   "kind": "our_inference",
+   "absence_check": {
+    "patterns": [
+     "\\bms\\b",
+     "tokens? per second",
+     "peak memory",
+     "VRAM",
+     "consumer (GPU|hardware) (benchmark|test)",
+     "inference (time|speed) (of|was|is)"
+    ],
+    "hits": 0,
+    "scope": "full text of 2506.03095 incl. appendices"
+   }
+  },
+  {
+   "evidence_id": "son55:E030",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 2 (UI-TARS)",
+   "quote": "UI-TARS [ 13 ] introduces a self-reflective task-aware decision-making framework that employs DPO to refine action selection through recursive evaluation.",
+   "support_explanation": "Authors position UI-TARS DPO as the closest prior work.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E031",
+   "material_id": "son55:M:2501.12326",
+   "material_sha256": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "locator": "Sec 4.5 (UI-TARS source)",
+   "quote": "where annotators pinpoint mistakes in agent-generated traces and label the corrective actions",
+   "support_explanation": "UI-TARS builds DPO pairs from human-annotated corrections; this paper swaps annotators for a GPT-4o scorer that already sees the gold action.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E032",
+   "material_id": "son55:M:2412.09605",
+   "material_sha256": "ff0d81b000884775c3d21cacef43eb7db8eb5f0286152dd3fb0f1df0e9fd65bd",
+   "locator": "Sec 2.2 (AgentTrek source)",
+   "quote": "A separate VLM evaluator assesses trajectory quality to ensure effectiveness.",
+   "support_explanation": "VLM-as-evaluator for GUI data filtering already exists (AgentTrek) and was human-validated there (1,081 trajectories reviewed); this paper reports no validation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E033",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Sec 4.1",
+   "quote": "which comprises 369 real-world computer tasks involving web and desktop applications in open domains",
+   "support_explanation": "Evaluation set size: 369 OSWorld tasks.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E034",
+   "material_id": "son55:M:2506.03095v1",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "locator": "Table 1 caption",
+   "quote": "Each agent has maximum 15 steps.",
+   "support_explanation": "Step budget definition for the headline table.",
+   "kind": "author_report"
+  }
+ ],
+ "preliminary_evidence_judgment": "Read before seat scores. UI-TARS-2B samples 10 single-step responses per AGUVIS instance; GPT-4o scores all 10 (0-100) with the ground-truth answer in the prompt; pairs are gold vs <80 samples (DPO-1), higher vs lower sample (DPO-2) or both (DPO-3); DPO hyper-parameters and pair counts are not reported, the judge prompt is only a figure. OSWorld (369 tasks), 3-run averages: 15-step 6.91 -> 9.18/8.46/9.33, 50-step 8.83 -> 9.01/8.88/8.24 with admitted hardware failures; no spread, no SFT-on-gold or rule-matching control, judge never validated, privacy/local-efficiency never measured. Applicable cards/expectations: rs C26; gui judges, R01-like single-step offline update; E09, E10, E12, E16, E17, E27.",
+ "agreed_items_review": "Agreed items M=2, X=2, E.measurement=2, E.causality=1, E.cost=1, claim_type component_training, evidence_level online, claim_support scoped were re-checked: all stand.",
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "UI-TARS-2B policy weights via offline DPO on judge-built preference pairs",
+   "information": "GPT-4o sees the instruction text (task, action space, output format), 10 sampled responses and the ground-truth answer; screenshot access for the judge is not described.",
+   "operation": "Sample 10 responses/instance from the policy; GPT-4o scores each 0-100; build pairs either (gold chosen, model response <80 rejected) or (higher-scored vs lower-scored model responses); DPO.",
+   "output": "DPO-1 (gold vs low), DPO-2 (model vs model), DPO-3 (union).",
+   "conditions": "Labeled single-step data (gold answers) must exist; the policy must make many low-score responses.",
+   "feedback": "Judge score relative to the gold answer; no environment feedback.",
+   "selection_rule_data": "Threshold 80 for rejection; model-vs-model pairs need different scores; most scores are 0 (E011); no validation of the judge.",
+   "persistence": "DPO weights",
+   "later_use": "OSWorld evaluation with 15 and 50 steps, 3 runs averaged",
+   "claimed_effect": "Weighted success 6.91 -> 9.33 (+35%) at 15 steps (E012, E013); ~0 at 50 steps (E014, E015).",
+   "failure_boundary": "No 50-step gain; DPO-3 -6.68% at 50 steps (E015); invalid/wrong coordinates and repeated wrong actions remain (E022).",
+   "evidence_ids": [
+    "son55:E004",
+    "son55:E005",
+    "son55:E006",
+    "son55:E007",
+    "son55:E008",
+    "son55:E009",
+    "son55:E010",
+    "son55:E011",
+    "son55:E012",
+    "son55:E013",
+    "son55:E014",
+    "son55:E015",
+    "son55:E022"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "Cloud-hosted VLM agents raise privacy/cost concerns; a compact local agent is hard to train without costly human labeling (E002, E003).",
+  "checked_gap": "The labels already exist: the judge is given the AGUVIS gold answer (E007), so the claimed 'no human annotation' problem is not what the judge solves; its role reduces to graded matching of a sampled action to the label. The local/privacy problem is a deployment framing that the method (DPO fine-tuning) does not address and the paper does not measure (E025, E029). Nearest neighbors: UI-TARS DPO with human-annotated corrections (E031), AgentTrek VLM evaluator with human validation (E032).",
+  "lineage_closest_adjacent": [
+   {
+    "source": "2501.12326 UI-TARS",
+    "solved": "DPO from corrected-vs-erroneous action pairs with human annotators; no ablation isolating reflection tuning in UI-TARS per domain card K26",
+    "unsolved_for_this_setting": "human cost",
+    "evidence_ids": [
+     "son55:E030",
+     "son55:E031"
+    ]
+   },
+   {
+    "source": "2412.09605 AgentTrek",
+    "solved": "VLM evaluator filters synthesized trajectories and was validated against human labels",
+    "unsolved_for_this_setting": "not applied to DPO pair building",
+    "evidence_ids": [
+     "son55:E032"
+    ]
+   }
+  ],
+  "residue": "Whether a GPT-4o scorer adds anything over exact/semantic matching to the gold action when the gold action is in its prompt; whether the gain survives an SFT baseline on the same data; any measurable local-efficiency benefit.",
+  "stakes": "Cheap preference data for small GUI policies; but the delta from UI-TARS is a label-source swap (human annotator -> GPT-4o with gold).",
+  "method_response": "Replace annotators by an LLM scorer and pair the gold with sampled errors; evaluate online.",
+  "remaining_gap": "No judge reliability, no SFT/rule-reward control, 50-step null, no local-efficiency evidence, trajectories vs single-step mismatch.",
+  "evidence_ids": [
+   "agg:DP-A01",
+   "son55:E031",
+   "sol:R01"
+  ],
+  "unresolved": "Whether any part of the 15-step gain is attributable to the judge rather than to training on gold labels.",
+  "current_relevance": "n/a",
+  "aggregate_neighbor_check": "UI-TARS (fixed reference) already trains DPO on corrected-vs-erroneous action pairs; the residual is a label-source swap (annotator -> GPT-4o with the gold answer visible). AGUVIS itself is not in the fixed package, so lineage statements about it stay author-attributed. The controller's 'RCI lineage gap' cue does not occur in this paper or either seat record (RCI = 2303.17491 belongs to the re1 reference request); no RCI judgement is made here."
+ },
+ "rs_pattern": {
+  "primary": "self_supervised_signal_engineering",
+  "supporting": [],
+  "matches": [
+   {
+    "main_id": "self_supervised_signal_engineering",
+    "sub_id": "C26",
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "1_comparative_gap": "weak: gold labels exist (E007), so ranking is not the only available signal",
+     "2_harvest_non_human_source_in_distribution": "executed: pairs use the policy's own samples (E004) and an AI judge (E007)",
+     "3_granularity_minimal_pairs": "not executed: single-step responses, pairs differ in whole action, no error-typing",
+     "4_contrastive_objective": "executed: DPO (E009, E010)",
+     "5_attribution_vs_self_improvement_same_compute": "missing: no SFT/judge-free/rule-reward baseline (E027, E028)"
+    },
+    "success_checks": [
+     "gain attributable to preference structure by ablating against extra fine-tuning: unmet",
+     "close the loop to the end metric: met for online OSWorld at 15 steps"
+    ],
+    "failure_checks": [
+     "single-component swap (human label -> AI judge): hit - the closest prior (UI-TARS DPO) differs mainly by label source (E031)",
+     "stops at benchmark without downstream: not hit",
+     "gain too small: 50-step gains ~0 (E015)"
+    ],
+    "evidence_ids": [
+     "son55:E004",
+     "son55:E007",
+     "son55:E009",
+     "son55:E010",
+     "son55:E015",
+     "son55:E031"
+    ],
+    "reason": "Pairwise preferences from an AI judge consumed by DPO is the C26 operation; the card's own failure mode (label-source swap without payoff) applies."
+   }
+  ],
+  "outside_taxonomy": false,
+  "reason": "Closest RS family is manufacturing a comparative supervisory signal; no second main is needed.",
+  "executes_pattern": "partial (judge-scored pairs + DPO executed; attribution and granularity steps missing)",
+  "resolves_problem": "not established: no control separates the judge's contribution; local/privacy problem not measured",
+  "aggregate_source_seat": "son55",
+  "aggregate_reason": "self_supervised_signal_engineering/C26 in both seats (sol writes rs:C26): same card. Fit partial: the card's own failure mode (label-source swap without attribution control) applies."
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "namespace": "gui",
+    "main": "learned_outcome_and_process_judges",
+    "sub": null,
+    "version": "fixed-2026-10-21:430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "fit": "partial;referencescoredsingle-stepactionsratherthanfulltrajectoryoutcomes",
+    "condition_checks": [
+     {
+      "id": "S1",
+      "type": "S",
+      "name": "Judge agreement with humans reported",
+      "status": "unmet",
+      "reason": "Nohumanorexecutablecomparisonofjudgescores.",
+      "evidence_ids": [
+       "sol:E03",
+       "sol:E04",
+       "sol:E06",
+       "sol:E07"
+      ]
+     },
+     {
+      "id": "S2",
+      "type": "S",
+      "name": "Completion visible in the judged state",
+      "status": "partial",
+      "reason": "Referenceanswerisvisible,butactualnextstateorcompletionisnotobserved.",
+      "evidence_ids": [
+       "sol:E03",
+       "sol:E04",
+       "sol:E06",
+       "sol:E07"
+      ]
+     },
+     {
+      "id": "S3",
+      "type": "S",
+      "name": "Graded scores as weights, not hard filters",
+      "status": "not_applicable",
+      "reason": "Preferencepairs,notsampling-weightORM.",
+      "evidence_ids": []
+     },
+     {
+      "id": "S4",
+      "type": "S",
+      "name": "Judge acquires hidden state actively",
+      "status": "not_applicable",
+      "reason": "This condition concerns a different tactic under this main, not the operation or claim executed here; no score denominator is removed.",
+      "evidence_ids": []
+     },
+     {
+      "id": "S5",
+      "type": "S",
+      "name": "Reliability over coverage via abstention",
+      "status": "not_applicable",
+      "reason": "This condition concerns a different tactic under this main, not the operation or claim executed here; no score denominator is removed.",
+      "evidence_ids": []
+     },
+     {
+      "id": "S6",
+      "type": "S",
+      "name": "Human-labelled, in-distribution PRM",
+      "status": "not_applicable",
+      "reason": "This condition concerns a different tactic under this main, not the operation or claim executed here; no score denominator is removed.",
+      "evidence_ids": []
+     },
+     {
+      "id": "F1",
+      "type": "F",
+      "name": "Judge sees only partial state",
+      "status": "partial",
+      "reason": "Scorescachedactionresponses,notresultingtransition.",
+      "evidence_ids": [
+       "sol:E03",
+       "sol:E04",
+       "sol:E06",
+       "sol:E07"
+      ]
+     },
+     {
+      "id": "F2",
+      "type": "F",
+      "name": "Disagreement with humans on free-form tasks",
+      "status": "unknown",
+      "reason": "Nohumancomparisonreported;numericalagreementcannotbeinferred.",
+      "evidence_ids": [
+       "sol:E03",
+       "sol:E04",
+       "sol:E06",
+       "sol:E07"
+      ]
+     },
+     {
+      "id": "F3",
+      "type": "F",
+      "name": "Systematic bias treated as noise",
+      "status": "partial",
+      "reason": "Referenceanchoringprovidessignalbutnojudgebiastest.",
+      "evidence_ids": [
+       "sol:E03",
+       "sol:E04",
+       "sol:E06",
+       "sol:E07"
+      ]
+     },
+     {
+      "id": "F4",
+      "type": "F",
+      "name": "Reward exploitation not analysed",
+      "status": "unmet",
+      "reason": "RewardexploitationandOODappvalidationnotreported.",
+      "evidence_ids": [
+       "sol:E03",
+       "sol:E04",
+       "sol:E06",
+       "sol:E07"
+      ]
+     },
+     {
+      "id": "F5",
+      "type": "F",
+      "name": "Coverage loss from abstention unvalidated in RL",
+      "status": "not_applicable",
+      "reason": "This condition concerns a different tactic under this main, not the operation or claim executed here; no score denominator is removed.",
+      "evidence_ids": []
+     },
+     {
+      "id": "F6",
+      "type": "F",
+      "name": "Generic judge assumed adequate",
+      "status": "unmet",
+      "reason": "GenericGPT4oassumedadequatewithouthardjudgebenchmark.",
+      "evidence_ids": [
+       "sol:E03",
+       "sol:E04",
+       "sol:E06",
+       "sol:E07"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "sol:E03",
+     "sol:E04",
+     "sol:E06",
+     "sol:E07"
+    ],
+    "aggregate_source_seat": "sol"
+   },
+   {
+    "main": "rule_reward_single_step_rl",
+    "sub": "gui:R01",
+    "version": "gui-R01",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "condition_id": "S1 Same-data, same-backbone SFT baseline",
+      "status": "unmet",
+      "note": "no SFT control (E028)",
+      "evidence_ids": [
+       "son55:E028"
+      ]
+     },
+     {
+      "condition_id": "S2 Difficulty filtering by base-model sampling, ablated",
+      "status": "partial",
+      "note": "10 samples scored, rejected below 80, not ablated (E006, E009)",
+      "evidence_ids": [
+       "son55:E006",
+       "son55:E009"
+      ]
+     },
+     {
+      "condition_id": "S5 Out-of-domain or online evidence",
+      "status": "met",
+      "note": "online OSWorld execution-based success (E012)",
+      "evidence_ids": [
+       "son55:E012"
+      ]
+     },
+     {
+      "condition_id": "F1 Single-reference, single-step evidence for an agent claim",
+      "status": "partial",
+      "note": "training reference = single gold action; evaluation is online (E005, E007)",
+      "evidence_ids": [
+       "son55:E005",
+       "son55:E007"
+      ]
+     },
+     {
+      "condition_id": "F3 RL gain confounded with data or backbone",
+      "status": "hit",
+      "note": "no control separates preference learning from the gold labels",
+      "evidence_ids": [
+       "son55:E028"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "son55:E004",
+     "son55:E005",
+     "son55:E006",
+     "son55:E007",
+     "son55:E012",
+     "son55:E028"
+    ],
+    "executes_pattern": true,
+    "resolves_problem": "not_claimed_by_us",
+    "reason": "Operational shape of R01 (static labelled steps, k samples from base, label-referenced scoring, offline update, then evaluate) with an LLM scorer and DPO substituted for rules and GRPO.",
+    "namespace": "gui",
+    "aggregate_source_seat": "son55"
+   }
+  ],
+  "unassigned": [],
+  "revision_proposals": [],
+  "aggregate_note": "Judge role recorded under learned_outcome_and_process_judges with sub null (C25 scores trajectories; here single-step responses are scored against a gold answer). Operational shape = R01 (static single-step instances, k base samples, label-referenced scoring, offline update) with an LLM scorer and DPO instead of rules and GRPO. trajectory_level_policy_training/K26 not kept: no first-error localisation or trajectory-level data."
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "self_supervised_signal_engineering",
+   "rs_sub": "C26",
+   "domain": {
+    "namespace": "gui",
+    "main": "rule_reward_single_step_rl",
+    "sub": "R01"
+   },
+   "operation_correspondence": "RS: harvest a non-human comparative signal and optimize with a preference objective. GUI: judge-scored policy samples vs gold -> DPO on static single-step data.",
+   "necessary_conditions_and_differences": "R01 uses rule rewards + GRPO; here an LLM scorer + DPO. Both lack online multi-step training.",
+   "evidence_ids": [
+    "son55:E007",
+    "son55:E009",
+    "son55:E010"
+   ]
+  },
+  {
+   "rs_main": "self_supervised_signal_engineering",
+   "rs_sub": "C26",
+   "domain": {
+    "namespace": "gui",
+    "main": "learned_outcome_and_process_judges",
+    "sub": null
+   },
+   "operation_correspondence": "RS: AI judge as the signal source. GUI: GPT-4o as scorer of action responses.",
+   "necessary_conditions_and_differences": "C25 judges full trajectories; this judge sees text responses + gold, so success-checking validation conditions (S1) are the relevant ones and are unmet.",
+   "evidence_ids": [
+    "son55:E007",
+    "son55:E008",
+    "son55:E026"
+   ],
+   "aggregate_note": "domain side updated from {'namespace': 'gui', 'main': 'learned_outcome_and_process_judges', 'sub': 'C25'} to the final domain_pattern pick"
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "applicable": true,
+   "status": "partial",
+   "reason": "OSWorld at 15 and 50 steps with 3 runs averaged; observation setting is not stated and numbers are per-domain weighted averages; no OSWorld-Verified.",
+   "evidence_ids": [
+    "son55:E012",
+    "son55:E014",
+    "son55:E016",
+    "son55:E034"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Claim concerns desktop OSWorld only; no mobile, self-hosted web or live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Claim concerns desktop OSWorld only; no mobile, self-hosted web or live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Claim concerns desktop OSWorld only; no mobile, self-hosted web or live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No grounding-model, perturbation or refusal claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No grounding-model, perturbation or refusal claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Baseline is the unmodified UI-TARS-2B (same backbone); no same-data SFT model and no agentic-framework comparison.",
+   "evidence_ids": [
+    "son55:E012",
+    "son55:E028"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Not a planner-grounder system.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Offline preference optimization is evaluated against the base model only; no SFT/filtered-BC/AWR control trained on the same data.",
+   "evidence_ids": [
+    "son55:E028"
+   ],
+   "score_item": "E.causality",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "GPT-4o judge supplies the training signal with no human validation (not even a sample).",
+   "evidence_ids": [
+    "son55:E026",
+    "son55:E007"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "No judge precision/NPV or per-class reliability; only a score histogram.",
+   "evidence_ids": [
+    "son55:E011",
+    "son55:E026"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Learned-judge reward is not compared with a rule/exact-match alternative and no bias/hacking discussion is given.",
+   "evidence_ids": [
+    "son55:E026"
+   ],
+   "score_item": "E.causality",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "OSWorld's own checkers are used unchanged; the paper makes no checker claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No PRM step-label claim or inference-time search.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Success is measured online on OSWorld; offline step accuracy is not the evidence.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Three runs averaged, but no spread/CI; 50-step runs partly invalidated by hardware failures and not rerun.",
+   "evidence_ids": [
+    "son55:E016",
+    "son55:E017"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Baseline and DPO share 15 and 50 step caps, but steps used/budget exhaustion are not reported and the 50-step arm is unreliable.",
+   "evidence_ids": [
+    "son55:E034",
+    "son55:E014",
+    "son55:E017"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No PRM step-label claim or inference-time search.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No benchmark-harness modification is claimed.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Claim concerns desktop OSWorld only; no mobile, self-hosted web or live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "Observation setting (screenshot-only vs a11y) is not stated.",
+   "evidence_ids": [],
+   "score_item": "E.measurement",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1-fixed-2026-10-21",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2509.11543",
+     "note": "relative gain 7B +104% vs 32B +37%"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2501.12326#s3",
+     "note": "2B/7B/72B"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2604.02345#s2",
+     "note": "seven backbones"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.04454#s3",
+     "note": "7B and 72B"
+    }
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "requirement": "Report results across backbone sizes (e.g. 7B and 32B/72B), since gains from GUI data/RL recipes shrink with model size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "ThiscompactdesktopofflineDPOclaimdoesnotinvolve cross-backbonerecipeclaim.",
+   "evidence_ids": [],
+   "score_item": [],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No new benchmark or long-horizon stratification claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No grounding-model, perturbation or refusal claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No grounding-model, perturbation or refusal claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Not an exploration-first / reverse synthesis comparison claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "No data-size or scaling information at all.",
+   "evidence_ids": [
+    "son55:E027"
+   ],
+   "score_item": "E.causality",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1-fixed-2026-10-21",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2411.06559#s2",
+     "note": "test-query search actions filtered from in-domain data"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.19723#s1",
+     "note": "only 20 of 833 AndroidControl apps seen in synthesis"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2601.04126#s2",
+     "note": "train on generated sites, evaluate on OSWorld/Online-Mind2Web/MobileWorld"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2510.09038#s1",
+     "note": "OOD GUI-Odyssey and OSWorld"
+    }
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "requirement": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "ThiscompactdesktopofflineDPOclaimdoesnotinvolve exploredmemoryornewenvironmentgeneration.",
+   "evidence_ids": [],
+   "score_item": [],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No reflection or first-error recovery data claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No world model, simulator or digital twin.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No world model, simulator or digital twin.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No world model, simulator or digital twin.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No world model, simulator or digital twin.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No world model, simulator or digital twin.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No retrieval-memory component.",
+   "evidence_ids": [],
+   "score_item": null
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "DPO models outperform the UI-TARS-2B baseline on OSWorld under a 15-step budget (weighted success 6.91 -> 9.33, +35%).",
+   "setting": "OSWorld 369 tasks, 3 runs averaged",
+   "baseline_control": "unmodified UI-TARS-2B",
+   "selection_vs_test": "DPO-1/2/3 all evaluated and reported on the same test set; no dev split",
+   "result_denominator": "3.14-point max difference; per-domain cells based on few tasks (E023)",
+   "evidence_ids": [
+    "son55:E012",
+    "son55:E013",
+    "son55:E016",
+    "son55:E023",
+    "son55:E024"
+   ],
+   "counterevidence": [
+    "son55:E028"
+   ],
+   "allowed_conclusion": "A modest (about 2.4 point) average gain over the base model at 15 steps; not attributed to the judge.",
+   "claim_support": "scoped"
+  },
+  {
+   "claim_id": "C2",
+   "text": "DPO also helps at 50 steps / shorter budgets are more efficient.",
+   "setting": "50 steps; baseline 8.83",
+   "baseline_control": "baseline at 50 steps",
+   "selection_vs_test": "same",
+   "result_denominator": "+2.04%, +0.57%, -6.68%",
+   "evidence_ids": [
+    "son55:E014",
+    "son55:E015",
+    "son55:E017",
+    "son55:E018",
+    "son55:E019"
+   ],
+   "counterevidence": [
+    "son55:E015",
+    "son55:E017"
+   ],
+   "allowed_conclusion": "No reliable gain at 50 steps; the 15-step vs 50-step baseline comparison differs by 0.5 points.",
+   "claim_support": "unsupported"
+  },
+  {
+   "claim_id": "C3",
+   "text": "The LLM-as-Judge produces high-quality preference data without human annotation.",
+   "setting": "GPT-4o with gold answer in prompt",
+   "baseline_control": "none",
+   "selection_vs_test": "n/a",
+   "result_denominator": "no judge audit",
+   "evidence_ids": [
+    "son55:E007",
+    "son55:E011",
+    "son55:E026"
+   ],
+   "counterevidence": [
+    "son55:E011",
+    "agg:DP-A01",
+    "agg:DP-A02"
+   ],
+   "allowed_conclusion": "Judge quality is unmeasured; the gold answer is itself human labeled data.",
+   "claim_support": "unsupported",
+   "aggregate_note": "The judge sees the gold answer; DPO-1 prefers the gold label itself."
+  },
+  {
+   "claim_id": "C4",
+   "text": "The resulting agent is privacy-preserving and resource-efficient on local machines.",
+   "setting": "n/a",
+   "baseline_control": "none",
+   "selection_vs_test": "n/a",
+   "result_denominator": "none",
+   "evidence_ids": [
+    "son55:E002",
+    "son55:E025",
+    "son55:E029"
+   ],
+   "counterevidence": [
+    "son55:E025",
+    "agg:DP-A07"
+   ],
+   "allowed_conclusion": "Only that a 2B model can be fine-tuned; no local deployment evidence.",
+   "claim_support": "unsupported",
+   "aggregate_note": "Privacy guarantee asserted, not measured."
+  },
+  {
+   "claim_id": "C5",
+   "text": "DPO-3 (combined pairs) is the most consistent and robust.",
+   "setting": "15 and 50 steps",
+   "baseline_control": "DPO-1/2",
+   "selection_vs_test": "same",
+   "result_denominator": "best at 15 steps; -6.68% at 50 steps",
+   "evidence_ids": [
+    "son55:E020",
+    "son55:E012",
+    "son55:E015"
+   ],
+   "counterevidence": [
+    "son55:E015"
+   ],
+   "allowed_conclusion": "Best at 15 steps only.",
+   "claim_support": "contradicted"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_note": "OSWorld execution checkers; AGUVIS composition is outside the fixed package, so non-use of OSWorld apps cannot be verified and the DPO variant is reported on the same benchmark -> online, not transfer.",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "Author-reported 3-run means: offline DPO of UI-TARS-2B on GPT-4o-scored (gold-referenced) AGUVIS single-step pairs raises OSWorld success from 6.91 to 8.46-9.33 at 15 steps; no gain at 50 steps (8.83 vs 8.24-9.01, partly affected by hardware failures). The judge's contribution beyond the gold labels, and the privacy/local-efficiency claims, are not supported.",
+  "not_supported": [
+   "LLM-judge necessity vs gold-label matching/SFT",
+   "Privacy-preserving / resource-efficient deployment",
+   "Benefit at 50 steps",
+   "DPO-3 as most robust"
+  ],
+  "unresolved": [
+   "DPO hyper-parameters and pair counts",
+   "Judge prompt text (figure only)",
+   "AGUVIS/OSWorld overlap"
+  ],
+  "author_report_only": true,
+  "our_run": false
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "The stated 'no human annotation' gap is undercut by the method itself (the judge is given the AGUVIS gold answer and DPO-1 prefers that gold label), the privacy/local gap is generic to any small model and not diagnosed, and the residual over UI-TARS's DPO (label source) is not isolated.",
+   "evidence_ids": [
+    "agg:DP-A01",
+    "agg:DP-A02",
+    "agg:DP-A07",
+    "son55:E031"
+   ],
+   "counterevidence_ids": [
+    "sol:E01"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Concrete pairing rules and DPO; the judge's marginal role over gold matching is unargued and score distributions collapse near 0.",
+   "evidence_ids": [
+    "son55:E009",
+    "son55:E010",
+    "son55:E011",
+    "sol:E03"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Sampling parameters, threshold and pairing rules are given; DPO hyper-parameters, data size and observation setting are missing and the judge prompt is only an image.",
+   "evidence_ids": [
+    "son55:E006",
+    "son55:E008",
+    "son55:E022"
+   ],
+   "counterevidence_ids": [
+    "son55:E027"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Execution-checked OSWorld outcomes averaged over three runs, but small absolute values, a 50-step arm with hardware failures and an unvalidated training judge.",
+   "evidence_ids": [
+    "son55:E012",
+    "agg:DP-A03",
+    "agg:DP-A06"
+   ],
+   "counterevidence_ids": [
+    "son55:E026"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Only DPO variants vs base; no SFT-on-gold, rule/exact-match reward or judge-free control, so the gain cannot be attributed to the judge or the preference structure.",
+   "evidence_ids": [
+    "son55:E028",
+    "agg:DP-A02"
+   ],
+   "counterevidence_ids": [
+    "son55:E026"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Training instances (AGUVIS, static) are distinct from the online OSWorld evaluation, a real separation; no overlap analysis, a single benchmark, and all variants reported on that benchmark.",
+   "evidence_ids": [
+    "son55:E004",
+    "son55:E033",
+    "son55:E012"
+   ],
+   "counterevidence_ids": [
+    "son55:E020"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Three-run means over 369 tasks for every model (partly meets E16) but no spread; the 2.4-point 15-step margin is ~9 tasks, the 50-step arm is contaminated, and the 'Max Diff' statistic takes the best of three variants per domain.",
+   "evidence_ids": [
+    "agg:DP-A03",
+    "agg:DP-A04",
+    "agg:DP-A05"
+   ],
+   "counterevidence_ids": [
+    "agg:DP-A06",
+    "son55:E024"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Equal inference settings and step caps; no GPT-4o labelling cost, training compute or on-device latency despite the efficiency framing.",
+   "evidence_ids": [
+    "son55:E034"
+   ],
+   "counterevidence_ids": [
+    "agg:DP-A07",
+    "son55:E029"
+   ],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 42.5,
+  "display": 42.5,
+  "lower": 42.5,
+  "upper": 42.5,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(15G+25M+20X+10Emeas+10Ecaus+10Ehold+5Estat+5Ecost)/4; unknown -> L uses 0, U uses 4; raw=null while any unknown"
+ },
+ "status": "reviewed",
+ "status_reason": "Full fixed text read (on-disk listing-preserving render of the manifest version); all eight items resolved.",
+ "input_seat_hashes": {
+  "sol": "4321dd1a8765e501d5422f91470fc9365d9500f0ff12358e92cf0c0d480e2af2",
+  "son55": "9e5c7a8ced12c4fc21e048f6e666a5776219e450ee9fcd0a5080c62cc5bf31ae"
+ },
+ "aggregate_model": "fable",
+ "aggregate_actual_model": "claude-opus-5-5[1m]",
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_note": "Configured model type fable (upstream claude-opus-5-5[1m]) per batch manifest model_types.opus55; no session id or invocation receipt is exposed to this agent.",
+ "seat_integrity_check": {
+  "sol": {
+   "file_sha256": "4321dd1a8765e501d5422f91470fc9365d9500f0ff12358e92cf0c0d480e2af2",
+   "status": "reviewed",
+   "status_field_shape": "str",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "sonnet",
+   "actual_model": "gpt-6.1-sol",
+   "on_disk_fulltext_sha256_now": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "on_disk_matches_manifest_pin": true,
+   "seat_reported_material_drift": null
+  },
+  "son55": {
+   "file_sha256": "9e5c7a8ced12c4fc21e048f6e666a5776219e450ee9fcd0a5080c62cc5bf31ae",
+   "status": "reviewed",
+   "status_field_shape": "dict (contract expects string; value read from .value)",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "haiku",
+   "actual_model": "claude-sonnet-5-5[1m]",
+   "on_disk_fulltext_sha256_now": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b",
+   "on_disk_matches_manifest_pin": true,
+   "seat_reported_material_drift": false
+  }
+ },
+ "resolutions": [
+  {
+   "field_path": "rs.matches",
+   "sol_value": [
+    "self_supervised_signal_engineering/rs:C26"
+   ],
+   "son55_value": [
+    "self_supervised_signal_engineering/C26"
+   ],
+   "decision": "same_supported_fact",
+   "final_value": "self_supervised_signal_engineering/rs:C26",
+   "reason": "Identical card; the conflict is only the 'rs:' prefix. Fit recorded as partial (son55).",
+   "evidence_ids": [
+    "son55:E009"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "domain.matches",
+   "sol_value": [
+    "learned_outcome_and_process_judges/None",
+    "trajectory_level_policy_training/None"
+   ],
+   "son55_value": [
+    "learned_outcome_and_process_judges/C25",
+    "rule_reward_single_step_rl/R01",
+    "trajectory_level_policy_training/K26"
+   ],
+   "decision": "revised",
+   "final_value": "learned_outcome_and_process_judges/null + rule_reward_single_step_rl/gui:R01 (partial)",
+   "reason": "Keeps sol's null sub for the judge (C25 is trajectory scoring) and son55's R01 as the operational shape; drops trajectory-level entries (sol's null and son55's K26) because training is on single-step instances without first-error localisation.",
+   "evidence_ids": [
+    "agg:DP-A01",
+    "son55:E005"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "rating.G",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 1
+   },
+   "decision": "son55",
+   "final_value": {
+    "status": "resolved",
+    "rating": 1
+   },
+   "reason": "The gap premise is partly contradicted by the method's reliance on gold labels (agg:DP-A01/A02) and the privacy gap is asserted only; sol's 2 credited the framing.",
+   "evidence_ids": [
+    "agg:DP-A01",
+    "agg:DP-A02",
+    "agg:DP-A07"
+   ],
+   "score_impact": "-3.75 vs sol"
+  },
+  {
+   "field_path": "rating.E.holdout",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 1
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "son55",
+   "final_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "reason": "Static AGUVIS training vs online OSWorld evaluation is a genuine train/test separation (anchor 2 with gaps), and all three variants are reported, limiting selection bias; sol's 1 under-credited this.",
+   "evidence_ids": [
+    "son55:E033"
+   ],
+   "score_impact": "+2.5 vs sol"
+  },
+  {
+   "field_path": "rating.E.statistics",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 1
+   },
+   "decision": "sol",
+   "final_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "reason": "Repeated runs (n=3) with denominators are the relevant statistical evidence; missing spread and the contaminated 50-step arm are the remaining gaps (anchor 2). Consistent with single-run papers in this run receiving 1.",
+   "evidence_ids": [
+    "agg:DP-A03"
+   ],
+   "score_impact": "+1.25 vs son55"
+  },
+  {
+   "field_path": "expectation.E09",
+   "sol_value": "partial",
+   "son55_value": "unmet",
+   "decision": "son55",
+   "final_value": "unmet",
+   "reason": "No SFT-only, filtered-BC or other RL/preference baseline on the same data; pair-strategy variants are not comparison baselines.",
+   "evidence_ids": [
+    "son55:E028"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E12",
+   "sol_value": "partial",
+   "son55_value": "unmet",
+   "decision": "son55",
+   "final_value": "unmet",
+   "reason": "No alternative reward source and no hacking/bias analysis; a gain over base alone is not what E12 asks.",
+   "evidence_ids": [
+    "son55:E028"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E21",
+   "sol_value": "partial",
+   "son55_value": "unknown",
+   "decision": "son55",
+   "final_value": "unknown",
+   "reason": "The observation setting is not stated in the text.",
+   "evidence_ids": [],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E22",
+   "sol_value": "not_applicable",
+   "son55_value": "unmet",
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "No claim that the recipe generalises across policy backbones; 'generalizable' refers to tasks.",
+   "evidence_ids": [],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E27",
+   "sol_value": "not_applicable",
+   "son55_value": "unmet",
+   "decision": "son55",
+   "final_value": "unmet",
+   "reason": "The judged preference pairs are synthetic training data; no data-size or scaling information exists.",
+   "evidence_ids": [],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E28",
+   "sol_value": "not_applicable",
+   "son55_value": "partial",
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "No self-generated tasks, explored transitions, memory or synthesised environments; AGUVIS instances are fixed. Train/test separation is judged under E.holdout.",
+   "evidence_ids": [],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  }
+ ],
+ "shared_error_corrections": [],
+ "aggregate_status": "accepted_final",
+ "aggregate_status_reason": "All 11 mechanical conflicts resolved from the fixed text; no scoring unknowns.",
+ "final_record_hash": "af8beaebaffefda1e1807cb1f2a6dbc80cbe3165721da32f43355118cdafe2bd"
+}

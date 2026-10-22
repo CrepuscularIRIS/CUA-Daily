@@ -1,0 +1,420 @@
+[
+ {
+  "field": "status",
+  "sol": "needs_evidence",
+  "son55": "reviewed"
+ },
+ {
+  "field": "rs.primary",
+  "sol": "generative_process_redesign",
+  "son55": "decompose_and_delegate"
+ },
+ {
+  "field": "rs.supporting",
+  "sol": [
+   "adapt_via_conditioning"
+  ],
+  "son55": []
+ },
+ {
+  "field": "rs.matches",
+  "sol": [
+   "adapt_via_conditioning/None",
+   "generative_process_redesign/None"
+  ],
+  "son55": [
+   "decompose_and_delegate/None"
+  ]
+ },
+ {
+  "field": "rating.G",
+  "sol": {
+   "status": "unknown",
+   "rating": null
+  },
+  "son55": {
+   "status": "resolved",
+   "rating": 3
+  }
+ },
+ {
+  "field": "expectation.E01",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E02",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E03",
+  "sol": null,
+  "son55": "unmet"
+ },
+ {
+  "field": "expectation.E04",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E05",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E06",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E07",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E08",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E09",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E10",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E11",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E12",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E13",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E14",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E15",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E16",
+  "sol": null,
+  "son55": "unmet"
+ },
+ {
+  "field": "expectation.E17",
+  "sol": null,
+  "son55": "partial"
+ },
+ {
+  "field": "expectation.E18",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E19",
+  "sol": null,
+  "son55": "partial"
+ },
+ {
+  "field": "expectation.E20",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E21",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E22",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E23",
+  "sol": null,
+  "son55": "partial"
+ },
+ {
+  "field": "expectation.E24",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E25",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E26",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E27",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E28",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E29",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E30",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E31",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E32",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E33",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E34",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E35",
+  "sol": null,
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.core-E08",
+  "sol": null,
+  "son55": "partial"
+ },
+ {
+  "field": "expectation.core-E21",
+  "sol": null,
+  "son55": "unmet"
+ },
+ {
+  "field": "expectation.cua-agents-core:E07",
+  "sol": "unmet",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents-core:E08",
+  "sol": "partial",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents-core:E10",
+  "sol": "partial",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents-core:E21",
+  "sol": "unmet",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E01",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E02",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E03",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E04",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E05",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E06",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E07",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E08",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E09",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E10",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E11",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E12",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E13",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E14",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E15",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E16",
+  "sol": "unmet",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E17",
+  "sol": "partial",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E18",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E19",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E20",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E21",
+  "sol": "met",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E22",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E23",
+  "sol": "partial",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E24",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E25",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E26",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E27",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E28",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E29",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E30",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E31",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E32",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E33",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E34",
+  "sol": "not_applicable",
+  "son55": null
+ },
+ {
+  "field": "expectation.cua-agents:E35",
+  "sol": "not_applicable",
+  "son55": null
+ }
+]

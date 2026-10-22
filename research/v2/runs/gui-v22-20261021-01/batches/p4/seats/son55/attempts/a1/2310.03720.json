@@ -1,0 +1,1239 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p4",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "paper": {
+  "paper_key": "2310.03720",
+  "paper_id": "2310.03720",
+  "title": "SteP: Stacked LLM Policies for Web Actions",
+  "version": "2310.03720v4",
+  "claim_type": "system_method",
+  "central_claim": "SteP defines an MDP whose state is a stack of LLM policies so that any policy can act, invoke another policy (pushed with an empty history) or terminate and hand control back; dynamic composition of a hand-written library of policies solves a diverse set of web tasks, improving WebArena from 14.9% to 33.5% over SOTA GPT-4 single policies and being competitive on MiniWoB++ with far less data, while using 2.3x fewer tokens than a flat prompt. Scope as measured: WebArena 804 tasks (gpt-4-turbo-preview), MiniWoB++ 45 tasks (text-davinci-003), a self-built airline CRM and three live airline sites (figure only)."
+ },
+ "provenance": {
+  "input_hash": "93d0dafbc452f91483228d9ad53bd5dcd7df4a98d3d7bdf6af2905c87de6b1ca",
+  "rubric_version": "radar SCORE_SPEC v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "pattern_protocol_hash": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "review_worksheet_hash": "b0ca3ac92a458c934894aee62c88d6de8ab53901047326e0c8abdfd1a0d3219e",
+  "evidence_rules_hash": "336e1bcdd149cd485ee5a1f22101ca594997b755b47555447ba6661b23a1fac5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "expectations_version": "cua-agents/v1 (E01-E35)",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m] (Sonnet 5.5, self-reported from system prompt)",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_receipt_note": "worker subagent has no exposed session id or receipt in its context; null by design",
+  "timestamp": "2026-10-22T01:59:54Z",
+  "contamination": "none observed: did not open the other seat, Opus aggregate, old scores, old Reel, archive/ or other batches"
+ },
+ "materials": [
+  {
+   "material_id": "M-2310.03720",
+   "url": "https://arxiv.org/html/2310.03720v4",
+   "source_header": "https://arxiv.org/html/2310.03720",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.03720.txt",
+   "sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "version": "2310.03720v4",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Related Work",
+    "3 Problem Formulation",
+    "4 Approach (4.1-4.2, Algorithm 1)",
+    "5 Experiments (5.1.1-5.1.5, Tables 1-3)",
+    "6 Limitations",
+    "Ethics",
+    "Reproducibility",
+    "References",
+    "Appendix A.1 hyper-parameters",
+    "Appendix A.2 WebArena policy prompts (13 of 14 shown; in-context examples elided)",
+    "Appendix A.3 MiniWoB++ policies",
+    "Appendix A.4 task-wise table",
+    "Appendix B ablations (CoT, scaling, Llama)",
+    "Appendix C airline CRM",
+    "Appendix D live websites",
+    "second rendering with pipe tables"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "In-context examples of each policy are elided as \"[...]\" in Appendix A.2 and the remaining policy prompt is referred to the external code base.",
+    "Figures 3-15 are images (live-website results, Fig 7 example sweep, CoT plot, model-scaling plots)."
+   ]
+  },
+  {
+   "material_id": "M-2409.07429",
+   "url": "https://arxiv.org/html/2409.07429",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2409.07429.txt",
+   "sha256": "3b2c8ce934b2f2808d61d943bc9a44ddc21cecc25b6ff71d5dfb62d5a7d01518",
+   "version": "pinned in references.json (Agent Workflow Memory)",
+   "sections_read": [
+    "Section 3 baseline description and Table 1 passage that cite SteP"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; only passages that mention the reviewed paper were read"
+   ],
+   "role": "pinned_reference_excerpt"
+  },
+  {
+   "material_id": "M-2504.07079",
+   "url": "https://arxiv.org/html/2504.07079",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2504.07079.txt",
+   "sha256": "989c6bb80b2c6b5e3dc9875926e44f1051818eb99cc57a04fad57d039c799d1d",
+   "version": "pinned in references.json (SkillWeaver)",
+   "sections_read": [
+    "WebArena comparison paragraph that cites SteP"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; only passages that mention the reviewed paper were read"
+   ],
+   "role": "pinned_reference_excerpt"
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "E001",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "Abstract",
+   "quote": "On WebArena, SteP improves (14.9% to 33.5%) over SOTA that uses GPT-4 policies, while on MiniWob++, SteP is competitive with prior works while using significantly less data.",
+   "support_explanation": "Author headline claim.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E002",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "Abstract",
+   "quote": "Simply specifying a large prompt to handle all possible behaviors and states is extremely complex, and results in behavior leaks between unrelated behaviors.",
+   "support_explanation": "Author-stated gap 1 (single large prompt).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E003",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "1 Introduction",
+   "quote": "This restricts control to a static hierarchy that fails to adapt to varying task complexity.",
+   "support_explanation": "Author-stated gap 2 (static hierarchies).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E004",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "1 Introduction",
+   "quote": "SteP defines a Markov Decision Process (MDP) where the state is a stack of policies.",
+   "support_explanation": "Core formulation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E005",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "4.1 Stacked Policy Model",
+   "quote": "Each policy in the stack maintains its own history of observation, reason, action.",
+   "support_explanation": "Per-policy local context.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E006",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "4.1",
+   "quote": "The new policy is initialized with an empty history and is pushed onto the stack.",
+   "support_explanation": "Invoke operation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E007",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "4.1",
+   "quote": "Terminate and hand back control: It can choose to terminate with a return value",
+   "support_explanation": "Terminate operation (return value appended to parent history).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E008",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "5.1 Policies",
+   "quote": "policies for WebArena, each covering multiple intents.",
+   "support_explanation": "Library of 14 policies for WebArena (7 for MiniWoB++).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E009",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "5.1 Policies",
+   "quote": "To design policies, we cluster intents that are functionally equivalent, e.g., searching over orders or listing products.",
+   "support_explanation": "Library is designed from the evaluated task intents.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E010",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "5.1.2",
+   "quote": "SteP covers at least 50 50 intents out of a total of 170 170 intents.",
+   "support_explanation": "Library coverage of WebArena intent templates.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E011",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "5.1.2",
+   "quote": "Most significant gains come from Shopping, Reddit where the policies cover a larger percentage of intents.",
+   "support_explanation": "Gains track coverage of authored policies.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E012",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "5.1 Baselines",
+   "quote": "Flat is a single policy that concatenates instructions and examples from all the policies in the library into a single prompt.",
+   "support_explanation": "Flat control definition.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E013",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "5.1 Baselines",
+   "quote": "we create two baselines Flat-4K that caps the prompt size to 4000 4000 tokens and Flat-8K that caps it to 8000 8000",
+   "support_explanation": "Flat controls are truncated to 4k and 8k tokens.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E014",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "Table 1",
+   "quote": "Mean all WebArena intents 0.12 0.15 0.20 6.44 0.23 7.25 0.33 10.0",
+   "support_explanation": "Column order: Zhou et al. 0.12, Akter et al. 0.15, Flat-4k 0.20, Flat-8k 0.23, SteP 0.33 (with mean #actions 10.0 for SteP).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E015",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "Table 1 caption",
+   "quote": "WebArena Success Rates over 804 tasks categorized by task intents across different websites.",
+   "support_explanation": "Denominator: all 804 tasks.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E016",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "5.1.3",
+   "quote": "On some intents, success rates even regress",
+   "support_explanation": "Longer flat prompts can hurt individual intents.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E017",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "5.1.3",
+   "quote": "This is because additional instructions create larger prompts, making it difficult for the model to pay attention.",
+   "support_explanation": "Author attribution of Flat regressions.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E018",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "5.1.4",
+   "quote": "SteP is distributed around a smaller number of tokens, averaging 22.7 22.7 K compared to 52 52 K.",
+   "support_explanation": "Input tokens per trajectory.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E019",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "5.1.4",
+   "quote": "histogram of context lengths for SteP and Flat-8k across all successful WebArena trajectories.",
+   "support_explanation": "Token comparison is conditional on success; SteP succeeds more often.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E020",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "5.1.4",
+   "quote": "Hence total cost and inference time for SteP is lower than Flat-8k .",
+   "support_explanation": "Time claim without wall-clock data in the text.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E021",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "Table 2",
+   "quote": "Synapse ( Zheng et al., 2024 ) gpt-3.5-turbo 100 0.98 SteP (Ours) text-davinci-003 10 0.96",
+   "support_explanation": "MiniWoB++ comparison rows.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E022",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "Table 2",
+   "quote": "RCI ( Kim et al., 2023 ) gpt-4 21 0.94 AdaPlanner ( Sun et al., 2024 ) text-davinci-003 65 0.93",
+   "support_explanation": "More prior rows; models differ.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E023",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "5.1.2",
+   "quote": "In comparison, SteP uses 10 10 trajectories from only 6 6 tasks.",
+   "support_explanation": "Demonstration count for MiniWoB++ (hand-written policy instructions not counted as data).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E024",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "Table 3",
+   "quote": "Mean (all 45 tasks) 0.60 3.70 0.72 3.38 0.65 3.43 0.96 2.89",
+   "support_explanation": "Flat zero/few-shot 0.60/0.72 vs SteP zero/few-shot 0.65/0.96 over 45 tasks.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E025",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "5.1.2",
+   "quote": "SteP generalizes to remaining tasks through composition, i.e., by breaking them down into subtasks soluble by existing library policies.",
+   "support_explanation": "Composition claim for tasks lacking exemplars.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E026",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "Appendix A.3 Table 4",
+   "quote": "Method Examples Tasks covered by examples Flat 7 choose-date, book-flight SteP 21 choose-date, book-flight search-engine, click-tab-2 click-checkbox, email-inbox",
+   "support_explanation": "Flat gets 7 examples and SteP 21; example tasks are among the evaluated 45.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E027",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "5.1.5",
+   "quote": "We observe two main sources of improvement:",
+   "support_explanation": "Decomposition vs more per-policy examples are separate sources per authors (Figure 7, image).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E028",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "Appendix A.1",
+   "quote": "We use a a temperature of 0.3 0.3 and set the number of calls to 3 3",
+   "support_explanation": "Sampling setting; no repeated-run protocol stated.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E029",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "Appendix A.1",
+   "quote": "We use OpenAI API for model calls, gpt-4-turbo-preview as the default model for WebArena and text-davinci-003 for other environments.",
+   "support_explanation": "Models.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E030",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "5.1 Environments",
+   "quote": "We evaluate across 5 5 tasks averaged over 20 20 scenarios per task.",
+   "support_explanation": "AirlineCRM denominator.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E031",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "Appendix D.3",
+   "quote": "For each run, we evaluate by comparing model performance against a reference human demonstration.",
+   "support_explanation": "Live-website success is judged against a human demonstration, not an executed checker.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E032",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "Appendix D.3",
+   "quote": "SteP Few-shot is able to generalize to multiple websites even though it has demonstration from only one (i.e. jetblue.com).",
+   "support_explanation": "Live generalisation claim; numbers in Figure 15 (image).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E033",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "6 Limitations",
+   "quote": "Manually defined policies. For any new domain, the user needs to identify commonly occurring subtasks that are shared across multiple tasks.",
+   "support_explanation": "Manual authoring is the first limitation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E034",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "6 Limitations",
+   "quote": "Communication overhead. By decomposing tasks into smaller policies, we also incur a communication overhead between policies that adds to inference times.",
+   "support_explanation": "Time overhead conceded.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E035",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "6 Limitations",
+   "quote": "Moreover, it fails to communicate what is missing to the parent policy, which can create an endless loop.",
+   "support_explanation": "Control-loop failure mode conceded.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E036",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "Appendix A.2",
+   "quote": "We provide the prompts for all 14 14 commonly used policies below and for the reset, we refer the reader to the code base.",
+   "support_explanation": "Prompt material partly external; examples elided.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E037",
+   "material_id": "M-2409.07429",
+   "material_sha256": "3b2c8ce934b2f2808d61d943bc9a44ddc21cecc25b6ff71d5dfb62d5a7d01518",
+   "locator": "AWM Section 3 baselines",
+   "quote": "We also compare to the SteP method ( Sodhi et al., 2023 ) , which uses 14 human expert written workflows tailored to solving WebArena.",
+   "support_explanation": "A later pinned paper describes SteP as human-written, WebArena-tailored workflows (consistent with E008/E009).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E038",
+   "material_id": "M-2409.07429",
+   "material_sha256": "3b2c8ce934b2f2808d61d943bc9a44ddc21cecc25b6ff71d5dfb62d5a7d01518",
+   "locator": "AWM Section 3.1.1",
+   "quote": "Notably, AWM also outperforms SteP, which uses strong domain-specific supervision from human-written workflows",
+   "support_explanation": "Later work treats SteP 33.0 as reference for human-engineered workflows; third-party restatement of the number, not a reproduction.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E039",
+   "material_id": "M-2504.07079",
+   "material_sha256": "989c6bb80b2c6b5e3dc9875926e44f1051818eb99cc57a04fad57d039c799d1d",
+   "locator": "SkillWeaver WebArena comparison",
+   "quote": "In comparison with SteP ( Sodhi et al., 2024 ) , which incorporates the external memory of domain-specific human-written workflows",
+   "support_explanation": "Second later work with the same reading.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E040",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "2 Related Work",
+   "quote": "Compared to decomposition approaches like DecomP ( Khot et al., 2023 ) which generates a static program with subroutines that cannot invoke each other",
+   "support_explanation": "Positioning against static decomposition.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E041",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "2 Related Work",
+   "quote": "While these methods focus on efficiently learning policies, they restrict the decomposition to a predefined hierarchy of 2 or 3 levels.",
+   "support_explanation": "Positioning against hierarchical RL.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E042",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "2 Related Work",
+   "quote": "defining state machines ( Ma et al., 2023 )",
+   "support_explanation": "LASER (Ma et al.) is named in the related-work list of state-machine approaches without a comparison.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E043",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "derived: binomial SE",
+   "quote": null,
+   "support_explanation": "Our arithmetic: WebArena n=804 gives SE about 1.6 points per method; SteP 0.33 vs Flat-8k 0.23 is a 10-point gap, about 4 combined SE if sampling noise were the only variance. No repeated-run variance is reported, and per-intent cells in Table 1 are 5 tasks.",
+   "kind": "our_inference",
+   "derived_from": [
+    "E014",
+    "E015"
+   ]
+  },
+  {
+   "evidence_id": "E044",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "derived: instruction volume confound",
+   "quote": null,
+   "support_explanation": "Our reading: Flat-4k/Flat-8k are truncated to 4k/8k tokens (E013) while SteP can draw on up to 14 policy prompts of up to 4k tokens each (up to about 56k tokens of authored guidance across the library), so the contrast decomposition-vs-flat is confounded with the amount of authored guidance exposed. The paper does not run an uncapped flat prompt; whether the backbone context allows it is outside the paper (gpt-4-turbo-preview is a long-context model, outside knowledge, unverified here).",
+   "kind": "our_inference",
+   "derived_from": [
+    "E009",
+    "E012",
+    "E013",
+    "E029"
+   ]
+  },
+  {
+   "evidence_id": "E045",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "derived: holdout",
+   "quote": null,
+   "support_explanation": "Our reading: all 804 WebArena tasks are the test set and the 14 policies were designed by clustering WebArena intents (E009), with coverage of at least 50 of 170 intents; the MiniWoB++ exemplars come from tasks that are also among the 45 evaluated tasks (E026). The only evaluation on sites not used in construction is the live airline experiment, judged against a human demonstration with results in an image.",
+   "kind": "our_inference",
+   "derived_from": [
+    "E009",
+    "E010",
+    "E026",
+    "E031"
+   ]
+  },
+  {
+   "evidence_id": "E046",
+   "material_id": "M-2310.03720",
+   "material_sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+   "locator": "absence check",
+   "quote": null,
+   "support_explanation": "Searched main text, Tables 1-5, Limitations, Appendices A-D for: a static-hierarchy or non-recursive baseline (DecomP/ADaPT-style) run in the same harness, an ablation that disables recursion or self-invocation, counts of wrong push/pop decisions, wall-clock time, dollar cost, repeated runs or confidence intervals on WebArena, an uncapped flat prompt, per-intent coverage vs gain regression, the maximum step budget, the observation format of the Zhou et al. baseline. None reported; figures are images.",
+   "kind": "our_inference"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "name": "Stacked policy control state",
+   "object": "Control flow of a prompted web agent (baseline: one flat policy with a long prompt)",
+   "information": "Serialised page text, objective, per-policy local history (observation, reason, action); library of policy descriptions visible to every policy as callable actions.",
+   "operation": "Top-of-stack policy emits (a) a web action, (b) an invocation of a library policy (pushed with empty history) or (c) a stop with a return value (popped; value appended to the parent history). The stack can grow recursively.",
+   "output": "Environment action or stack change.",
+   "conditions": "Policies authored by hand; descriptions informative enough for the LLM to choose; return values carry needed state.",
+   "feedback": "Environment observations and policy return values.",
+   "selection_rule_data": "LLM picks the next call from the policy descriptions; no learned selection.",
+   "persistence": "Stack and local histories live within an episode only; the library is a fixed hand-written asset.",
+   "later_use": "The library is reused across tasks in the same environment.",
+   "claimed_effect": "WebArena 0.23 (Flat-8k) to 0.33; MiniWoB++ few-shot 0.72 (Flat) to 0.96; 22.7K vs 52K tokens.",
+   "failure_boundary": "Incomplete information passed to a sub-policy can create an endless loop; communication overhead; manual authoring.",
+   "evidence_ids": [
+    "E004",
+    "E005",
+    "E006",
+    "E007",
+    "E033",
+    "E034",
+    "E035"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "name": "Hand-authored policy library with dedicated instructions and examples",
+   "object": "Source of task knowledge in prompts",
+   "information": "Author knowledge of the target sites (e.g. which menu to open, filter rules) written as instructions and few-shot examples per policy (up to 4k tokens each).",
+   "operation": "Cluster functionally equivalent intents; write a templated prompt per cluster; register it with a description as a callable action for every other policy.",
+   "output": "14 policies for WebArena, 7 for MiniWoB++.",
+   "conditions": "Domain knowledge of the sites; policy count small relative to intents covered (at least 50 of 170).",
+   "feedback": "None in the paper.",
+   "selection_rule_data": "Clustering by the authors on the evaluated intents.",
+   "persistence": "Static prompts in the code base.",
+   "later_use": "All 804 tasks and MiniWoB++ tasks.",
+   "claimed_effect": "Gains concentrate where policies cover more intents.",
+   "failure_boundary": "Coverage gaps leave other intents unimproved; examples elided in the appendix.",
+   "evidence_ids": [
+    "E008",
+    "E009",
+    "E010",
+    "E011",
+    "E036",
+    "E045"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "name": "Flat control (same guidance in one capped prompt)",
+   "object": "Baseline built by the authors",
+   "information": "All policy instructions and examples concatenated up to 4k or 8k tokens.",
+   "operation": "Single policy over a long prompt.",
+   "output": "Environment actions.",
+   "conditions": "Prompt capped at 4k/8k tokens.",
+   "feedback": "n/a",
+   "selection_rule_data": "n/a",
+   "persistence": "n/a",
+   "later_use": "n/a",
+   "claimed_effect": "Flat 0.20 / 0.23 vs SteP 0.33; some intents regress with longer prompts.",
+   "failure_boundary": "The cap means the control does not receive all authored guidance (E044).",
+   "evidence_ids": [
+    "E012",
+    "E013",
+    "E014",
+    "E016",
+    "E017",
+    "E044"
+   ]
+  }
+ ],
+ "retention_trace": {
+  "applicable": false,
+  "reason": "The library is hand-written and static; the paper lists automatic discovery of policies from experience as future work. No retained change, selection or later-task improvement loop is claimed.",
+  "evidence_ids": [
+   "E033"
+  ]
+ },
+ "gap": {
+  "author_gap": "One LLM policy cannot cover the combinatorial open-world tasks and site variation; a big prompt leaks behaviour between unrelated behaviours and long contexts dilute attention; existing decompositions are static hierarchies.",
+  "checked_gap": "The long-prompt part is supported inside the paper (Flat-4k to Flat-8k gains only 0.20 to 0.23 and some intents regress). The static-hierarchy limitation is argued by example (nested search_list) but no static or non-recursive baseline is run, so its practical size is unverified. Prior WebArena figures (0.12 / 0.15) come from other prompts, models and observation formats.",
+  "lineage_closest_adjacent": [
+   {
+    "source": "WebArena single-policy GPT-4 baseline (Zhou et al., 2023) and Akter et al.",
+    "version": "WebArena 2307.13854 pinned; numbers from SteP Table 1",
+    "role": "main comparison",
+    "solves": "ReAct-style CoT single policy",
+    "not_solved": "long multi-step navigation"
+   },
+   {
+    "source": "DecomP / ADaPT / Synapse / RCI / AdaPlanner",
+    "version": "not pinned",
+    "role": "decomposition, planning, retrieval or iterative prompting neighbours",
+    "solves": "static decomposition, plan prediction, trajectory retrieval",
+    "not_solved": "per SteP: static hierarchy; need whole-task demonstrations (Synapse)"
+   },
+   {
+    "source": "LASER (2309.08172, same batch)",
+    "version": "named under state machines",
+    "role": "closest control-structure neighbour",
+    "solves": "finite-state prompt control for one domain",
+    "not_solved": "no comparison made"
+   }
+  ],
+  "residue": "Manual policy authoring (domain knowledge), library coverage, overhead, incomplete information passing, loops.",
+  "stakes": "Without the control structure agents need ever longer prompts that degrade; with it, authoring effort replaces training data.",
+  "method_response": "Callable specialised prompts under an LLM-chosen stack with local histories and return values.",
+  "remaining_gap": "No test that dynamic recursion rather than a fixed two-level split is needed; no uncapped flat control; the library is authored with sight of the test intents.",
+  "current_relevance": "Pinned later works (Agent Workflow Memory 2409.07429, SkillWeaver 2504.07079) both describe SteP as human-written, WebArena-tailored workflows and use its 33.0 as the human-engineered reference; they aim to remove that authoring. Only the passages that cite SteP were read.",
+  "evidence_ids": [
+   "E002",
+   "E003",
+   "E016",
+   "E017",
+   "E037",
+   "E038",
+   "E039",
+   "E040",
+   "E041",
+   "E042"
+  ],
+  "unresolved": [
+   "DecomP, ADaPT, Synapse, RCI, AdaPlanner are not pinned; positioning claims about them are the authors.",
+   "Zhou et al. / Akter et al. baseline settings (model, observation format) are not in the material."
+  ]
+ },
+ "rs_pattern": {
+  "primary": "decompose_and_delegate",
+  "supporting": [],
+  "outside_taxonomy": false,
+  "reason": "A monolithic web task is split into subtasks that are routed to specialised prompted policies through typed calls (policy name plus query) and return values, with a stack as the control structure. Fit is partial at the main-card level: the delegates are other LLM prompts, not sound external solvers, and the handoff artifacts are not mechanically verified.",
+  "matches": [
+   {
+    "main_id": "decompose_and_delegate",
+    "sub_id": null,
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": [
+     {
+      "step": "identify bottleneck seam",
+      "status": "partial",
+      "note": "seam is prompt length / behaviour leakage, argued and evidenced by the Flat control"
+     },
+     {
+      "step": "typed handoff artifact",
+      "status": "partial",
+      "note": "call name+query and return value are structured text, not machine-checked"
+     },
+     {
+      "step": "close loop with solver verification",
+      "status": "missing",
+      "note": "no verifier; delegates are LLM prompts"
+     },
+     {
+      "step": "ablate load-bearing step",
+      "status": "partial",
+      "note": "Flat vs SteP; no non-recursive control; flat control capped"
+     },
+     {
+      "step": "cost accounting",
+      "status": "partial",
+      "note": "tokens reported; wall-clock not"
+     }
+    ],
+    "success_checks": [
+     {
+      "check": "boundary at seam where competence changes",
+      "status": "partial"
+     },
+     {
+      "check": "typed verifiable handoffs",
+      "status": "unmet"
+     },
+     {
+      "check": "ablation collapses to named baseline",
+      "status": "partial",
+      "note": "collapse to Flat requires removing the stack but the Flat control differs in guidance volume"
+     },
+     {
+      "check": "reusable capital accumulates",
+      "status": "partial",
+      "note": "policies are reusable across tasks but hand-written and static"
+     }
+    ],
+    "failure_checks": [
+     {
+      "check": "routing/prompts hand-tailored to one benchmark",
+      "status": "hit",
+      "note": "policies authored on WebArena intents; MiniWoB++ and CRM have their own libraries"
+     },
+     {
+      "check": "cost of added calls unmeasured",
+      "status": "hit_partly",
+      "note": "tokens yes, time no"
+     },
+     {
+      "check": "no ablation isolating mechanism from extra data/guidance",
+      "status": "hit_partly",
+      "note": "E044"
+     }
+    ],
+    "evidence_ids": [
+     "E004",
+     "E005",
+     "E006",
+     "E007",
+     "E009",
+     "E012",
+     "E013",
+     "E044"
+    ],
+    "reason": "sub_id null: C25 (the only sub) requires a machine-checkable intermediate artifact and a solver feedback loop, which this paper does not have; the main-card signature (decompose, route to specialised solvers via structured artifacts) is the actual operation."
+   }
+  ],
+  "executes_pattern": {
+   "value": "partial",
+   "reason": "Decomposition and routing to specialised policies are executed with structured calls; verification and isolating controls are not.",
+   "evidence_ids": [
+    "E004",
+    "E006",
+    "E007",
+    "E044"
+   ]
+  },
+  "resolves_problem": {
+   "value": "unresolved",
+   "reason": "Flat-vs-SteP shows better success under a capped flat prompt, but the persistent problem (generalising beyond authored coverage without manual policies) is explicitly not resolved, and dynamic composition vs static hierarchy is not tested.",
+   "evidence_ids": [
+    "E033",
+    "E044",
+    "E046"
+   ]
+  }
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "agent_loop_context_control",
+    "sub": "gui:C17",
+    "version": "taxonomy 430aa36290ec",
+    "fit": "partial",
+    "operation_checked": "manager decomposes into subgoals, workers execute, control returns on completion; here any policy can call any other including itself and each keeps local history",
+    "condition_checks": [
+     {
+      "id": "S1",
+      "status": "partial",
+      "note": "Flat vs SteP under the same backbone, but no single-role-removal ablation"
+     },
+     {
+      "id": "S3",
+      "status": "partial",
+      "note": "recursive calls let the agent abandon a sub-strategy by terminating a policy; no replanning analysis"
+     },
+     {
+      "id": "S5",
+      "status": "partial",
+      "note": "three OpenAI models and Llama-13B subsets in Appendix B on a few MiniWoB++ tasks"
+     },
+     {
+      "id": "F3",
+      "status": "unknown",
+      "note": "Llama-13B shows SteP above Flat on many tasks but both weak; no full-framework-vs-single-agent comparison for weaker models on WebArena"
+     },
+     {
+      "id": "F4",
+      "status": "hit_partly",
+      "note": "per-step token cost reported, wall-clock not; Flat-vs-SteP is a decomposition ablation but not role removal"
+     },
+     {
+      "id": "F6",
+      "status": "hit",
+      "note": "endless loop from missing information acknowledged"
+     }
+    ],
+    "evidence_ids": [
+     "E005",
+     "E006",
+     "E007",
+     "E018",
+     "E035",
+     "E044"
+    ],
+    "reason": "C17 is the closest gui card; the difference is a dynamic, self-invoking policy stack with per-policy local context instead of a fixed manager/worker split. Not a clean fit, recorded as a revision proposal below."
+   }
+  ],
+  "unassigned": [
+   {
+    "operation": "Dynamic call stack of authored prompt policies with per-policy local history and return values; context scoping by policy",
+    "nearest_card": "gui:C17 (manager/worker) and gui:C15 (history compression) each cover part",
+    "evidence_ids": [
+     "E005",
+     "E006",
+     "E007",
+     "E018"
+    ]
+   }
+  ],
+  "revision_proposals": [
+   {
+    "status": "proposal_unchecked",
+    "text": "Candidate sibling or extension under agent_loop_context_control: explicit control structure over prompted policies (finite-state controller in LASER 2309.08172, dynamic policy stack in SteP 2310.03720). Two independent full-text works in this batch; conditions need reading both, not edited here.",
+    "evidence_ids": [
+     "E004",
+     "E042"
+    ]
+   }
+  ]
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": null,
+   "domain": {
+    "namespace": "gui",
+    "main": "agent_loop_context_control",
+    "sub": "gui:C17"
+   },
+   "operation_correspondence": "Split a task into subtasks executed by specialised prompted policies under a controller; replan or return when a subtask ends.",
+   "conditions_differences": "RS card expects sound solvers and verifiable artifacts; gui:C17 expects a manager/worker split with self-declared completion. SteP uses a self-invoking stack and local histories and has no verifier.",
+   "evidence_ids": [
+    "E004",
+    "E006",
+    "E007"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E03",
+   "version": "cua-agents/v1",
+   "text": "Report success on WebArena (self-hosted, functional-correctness checkers) for web-agent training or planning claims; if the 165-task WebArena-Lite or a per-template subset is used, say so and justify it",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": true,
+   "status": "met",
+   "reason": "WebArena evaluated on all 804 tasks with its functional-correctness checkers, not on a subset (Table 1 caption); per-site and per-intent breakdowns are given.",
+   "evidence_ids": [
+    "E015",
+    "E014"
+   ],
+   "score_item": "E.measurement",
+   "provenance_note": "practice/limitation-derived expectation from the frozen cua-agents/v1 profile; not a real reviewer statement and not an acceptance cause"
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1",
+   "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Single run per method on WebArena; MiniWoB++ uses 50 seeds per task and AirlineCRM 20 scenarios, but no repeated-run spread or confidence interval is given, and sampling temperature is 0.3.",
+   "evidence_ids": [
+    "E028",
+    "E030",
+    "E043"
+   ],
+   "score_item": "E.statistics",
+   "provenance_note": "practice/limitation-derived expectation from the frozen cua-agents/v1 profile; not a real reviewer statement and not an acceptance cause"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1",
+   "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Mean actions per task are reported (6.44 / 7.25 / 10.0 on WebArena); the maximum step budget is not stated in the material and SteP uses more actions than the flat baselines.",
+   "evidence_ids": [
+    "E014",
+    "E046"
+   ],
+   "score_item": "E.cost",
+   "provenance_note": "practice/limitation-derived expectation from the frozen cua-agents/v1 profile; not a real reviewer statement and not an acceptance cause"
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1",
+   "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "SteP observation is stated as serialised DOM text, while the comparison numbers from Zhou et al. and Akter et al. come from other pipelines whose observation format is not described in the material.",
+   "evidence_ids": [
+    "E046"
+   ],
+   "score_item": "E.causality",
+   "provenance_note": "practice/limitation-derived expectation from the frozen cua-agents/v1 profile; not a real reviewer statement and not an acceptance cause"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1",
+   "text": "Report results across backbone sizes (e.g. 7B and 32B/72B), since gains from GUI data/RL recipes shrink with model size",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Appendix B varies the model (text-davinci-003, gpt-3.5-turbo, gpt-4) and adds Llama-7B/13B on three or ten MiniWoB++ tasks; WebArena uses one model.",
+   "evidence_ids": [
+    "E029"
+   ],
+   "score_item": "E.causality",
+   "provenance_note": "practice/limitation-derived expectation from the frozen cua-agents/v1 profile; not a real reviewer statement and not an acceptance cause"
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1",
+   "text": "For live-web results, state the evaluation date and handle site drift (replace outdated tasks, report blocked/CAPTCHA tasks)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Live-website experiment (three airline sites) states no evaluation date and no handling of site drift or blocked pages.",
+   "evidence_ids": [
+    "E031",
+    "E032"
+   ],
+   "score_item": "E.holdout",
+   "provenance_note": "practice/limitation-derived expectation from the frozen cua-agents/v1 profile; not a real reviewer statement and not an acceptance cause"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "On WebArena SteP reaches 0.33 success, above prior single GPT-4 policies (0.12/0.15) and Flat baselines (0.20/0.23).",
+   "setting": "All 804 WebArena tasks, gpt-4-turbo-preview, temperature 0.3; 14 hand-written policies of at most 4k tokens each.",
+   "baseline_control": "Flat-4k and Flat-8k (same instructions and examples, capped), prior numbers from Zhou et al. and Akter et al.",
+   "selection_vs_test": "Policy library designed by clustering the evaluated intents; all tasks are test.",
+   "result_denominator": "n=804; one run.",
+   "evidence_ids": [
+    "E001",
+    "E014",
+    "E015",
+    "E009",
+    "E013",
+    "E029"
+   ],
+   "counterevidence": "Flat controls truncated while SteP sees up to 14 policies of guidance (E044); library tuned on test intents (E045); prior numbers use other models and prompts; gains concentrate where policies cover more intents (E011).",
+   "allowed_conclusion": "With authored, test-intent-informed policies, a stack of LLM policies beats flat prompts capped at 4k/8k tokens by about 10-13 points on WebArena; the decomposition contribution net of authored-guidance volume is not isolated."
+  },
+  {
+   "claim_id": "C2",
+   "text": "On MiniWoB++ SteP is competitive with prior work using far less data (0.96 with 10 trajectories).",
+   "setting": "45 tasks, 50 seeds per task, text-davinci-003; 7 policies, 21 examples.",
+   "baseline_control": "Flat zero/few-shot (0.60/0.72), prior methods with different models and data.",
+   "selection_vs_test": "Exemplars come from tasks that are among the evaluated tasks.",
+   "result_denominator": "45 tasks x 50 seeds.",
+   "evidence_ids": [
+    "E021",
+    "E022",
+    "E023",
+    "E024",
+    "E026"
+   ],
+   "counterevidence": "Synapse 0.98 and CC-Net 0.96 are higher or equal; data count excludes authored instructions; Flat gets 7 examples vs SteP 21 (E026).",
+   "allowed_conclusion": "Competitive with, not better than, the best prior methods, at a lower count of demonstration trajectories but with hand-written policy prompts."
+  },
+  {
+   "claim_id": "C3",
+   "text": "SteP uses 2.3x fewer tokens than Flat-8k and so costs less.",
+   "setting": "Input tokens per trajectory over successful WebArena trajectories.",
+   "baseline_control": "Flat-8k.",
+   "selection_vs_test": "n/a",
+   "result_denominator": "Successful trajectories only (22.7K vs 52K).",
+   "evidence_ids": [
+    "E018",
+    "E019",
+    "E020",
+    "E034"
+   ],
+   "counterevidence": "Conditioned on success; extra calls and communication overhead are conceded; wall-clock time not measured.",
+   "allowed_conclusion": "Input tokens per successful trajectory are lower; total cost and time claims are untested."
+  },
+  {
+   "claim_id": "C4",
+   "text": "SteP improves on a self-built airline CRM and generalises to live airline sites from a single demonstration site.",
+   "setting": "CRM: 5 tasks x 20 scenarios; live: 3 sites x 10 runs, compared with a human demonstration; results in figures.",
+   "baseline_control": "Flat zero/few-shot.",
+   "selection_vs_test": "Simulator built by the authors; live demo from jetblue only.",
+   "result_denominator": "100 scenarios; 30 live runs.",
+   "evidence_ids": [
+    "E030",
+    "E031",
+    "E032"
+   ],
+   "counterevidence": "Numbers are in images; live success is judged by similarity to a human demonstration.",
+   "allowed_conclusion": "Qualitative support only from the text."
+  },
+  {
+   "claim_id": "C5",
+   "text": "Dynamic composition (any policy can call any policy, including itself) is necessary beyond static hierarchies.",
+   "setting": "Argued by the nested search_list example.",
+   "baseline_control": "None run.",
+   "selection_vs_test": "n/a",
+   "result_denominator": "n/a",
+   "evidence_ids": [
+    "E003",
+    "E040",
+    "E041",
+    "E046"
+   ],
+   "counterevidence": "No static-hierarchy baseline or no-recursion ablation.",
+   "allowed_conclusion": "Unsupported by experiment in this paper."
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "claim_support": "scoped",
+  "author_claim_preserved": "dynamic composition of policies improves WebArena from 14.9% to 33.5% and is competitive on MiniWob++ with significantly less data while using 2.3x fewer tokens",
+  "strongest_supported_claim": "With 14 hand-written, WebArena-intent-informed policy prompts, a policy-stack controller on gpt-4-turbo-preview solves 33% of the 804 WebArena tasks versus 20-23% for flat prompts that are capped at 4k-8k tokens and contain the same material, and uses fewer input tokens per successful trajectory; on MiniWoB++ it is on par with the best in-context methods. Whether the gain comes from decomposition rather than from exposing more authored guidance, and whether dynamic recursion matters, is not isolated; the library is not shown to generalise beyond authored coverage.",
+  "unresolved": [
+   "uncapped flat control",
+   "static/non-recursive control",
+   "prior-baseline settings",
+   "live-site and CRM numbers (images)",
+   "maximum step budget",
+   "external code base holds the elided examples"
+  ],
+  "reproduction": "No reproduction run; third-party restatement of the 33.0 figure in AWM and SkillWeaver is author-copied, not a rerun."
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Specific bottleneck (single long prompt, static hierarchy) with an in-paper diagnostic: longer flat prompts barely help and regress some intents; named neighbours (DecomP, ADaPT, Synapse, state machines). The static-hierarchy residue is argued without a baseline and the authoring cost is conceded.",
+   "evidence_ids": [
+    "E002",
+    "E003",
+    "E016",
+    "E017",
+    "E040",
+    "E041"
+   ],
+   "counterevidence_ids": [
+    "E046"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "The stack MDP is formal and reconstructable (push/act/pop, local histories, return values) and it directly targets prompt-length and behaviour leakage. The assumption that the LLM can choose the right callee from a description is only exercised, not tested, and the benefit of recursion is not predicted and checked.",
+   "evidence_ids": [
+    "E004",
+    "E005",
+    "E006",
+    "E007",
+    "E002"
+   ],
+   "counterevidence_ids": [
+    "E046"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Algorithm, policy format, most prompts and hyperparameters are given; failure modes (overhead, incomplete information loop, manual library) are stated. In-context examples are elided or external, the step budget is unstated and the wrong-call rate is unmeasured.",
+   "evidence_ids": [
+    "E008",
+    "E028",
+    "E029",
+    "E033",
+    "E034",
+    "E035",
+    "E036"
+   ],
+   "counterevidence_ids": [
+    "E046"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "WebArena functional-correctness checkers on all 804 tasks and MiniWoB++ built-in rewards are execution-based; AirlineCRM uses an evaluate API against gold actions and live sites are compared to a human demonstration, which is weaker.",
+   "evidence_ids": [
+    "E015",
+    "E030",
+    "E031"
+   ],
+   "counterevidence_ids": [
+    "E031"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "A same-model Flat control, zero/few-shot sweep, CoT and model-scale ablations exist, but the flat control is capped at 4k/8k tokens while SteP receives the full library, MiniWoB++ Flat has 7 examples vs 21, and there is no non-recursive or static-hierarchy baseline.",
+   "evidence_ids": [
+    "E012",
+    "E013",
+    "E024",
+    "E027"
+   ],
+   "counterevidence_ids": [
+    "E026",
+    "E044",
+    "E046"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "All 804 WebArena tasks are test and the library was built by clustering those intents; MiniWoB++ exemplars come from evaluated tasks; the only unseen-site evidence (live airline sites) is figure-only, judged against a human demonstration and undated.",
+   "evidence_ids": [
+    "E009",
+    "E010",
+    "E026",
+    "E031",
+    "E032"
+   ],
+   "counterevidence_ids": [
+    "E045"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Large denominators (804 tasks, 45x50 seeds, 20 scenarios) and per-site/per-task tables are given, but WebArena is one run at temperature 0.3 with no spread, and several results are only in figures.",
+   "evidence_ids": [
+    "E014",
+    "E015",
+    "E024",
+    "E030",
+    "E043"
+   ],
+   "counterevidence_ids": [
+    "E028"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Input tokens per trajectory, mean actions and the extra communication overhead are reported against the flat baselines, with the limitation conceded; wall-clock time and dollar cost are asserted not measured and the token comparison is conditioned on successful runs.",
+   "evidence_ids": [
+    "E018",
+    "E014",
+    "E034"
+   ],
+   "counterevidence_ids": [
+    "E019",
+    "E020"
+   ],
+   "search_scope": []
+  }
+ },
+ "status": "reviewed",
+ "status_reason": "Complete body and appendices read; in-context examples elided in the paper and figure data unavailable are recorded. Pinned AWM and SkillWeaver were read only at passages that cite SteP. All eight items resolved.",
+ "score": {
+  "raw": 66.25,
+  "display": 66.3,
+  "lower": 66.25,
+  "upper": 66.25,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+ },
+ "readable_summary": "System method (policy stack), score 66.3 (66.25), online WebArena/MiniWoB++, claim scoped. Execution-checked results on all 804 WebArena tasks, same-model flat control and cost reporting; but the flat control is truncated to 4k/8k tokens, the 14 policies were authored from the evaluated intents, there is no static or non-recursive baseline, and WebArena is a single run.",
+ "readable_summary_zh": "系统方法(策略栈),66.3 分(66.25),WebArena/MiniWoB++ 在线,主张 scoped。804 个 WebArena 任务全量、执行检查,有同模型 flat 对照与成本报告;但 flat 对照被截断到 4k/8k,14 个策略依据被评测意图人工编写,没有静态/非递归基线,WebArena 为单次运行。"
+}

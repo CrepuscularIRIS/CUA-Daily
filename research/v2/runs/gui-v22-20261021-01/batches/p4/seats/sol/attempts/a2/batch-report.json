@@ -1,0 +1,81 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p4",
+  "attempt_id": "a2",
+  "seat": "sol",
+  "supersedes_note": "a1 capacity split",
+  "assigned": 2,
+  "assigned_paper_keys": [
+    "2309.11436",
+    "2310.03720"
+  ],
+  "reviewed": 2,
+  "needs_fulltext": 0,
+  "needs_evidence": 0,
+  "outside_taxonomy": 0,
+  "schema_errors": [],
+  "blockers": [],
+  "model_type": "sonnet",
+  "actual_model": "gpt-6.1-sol",
+  "session_id": "681194da-49f5-4ad4-8eb4-573b45384076",
+  "receipt_ref": null,
+  "receipt_ref_reason": "No separate receipt exposed; actual model identified by session environment, not probed.",
+  "input_hash": "93d0dafbc452f91483228d9ad53bd5dcd7df4a98d3d7bdf6af2905c87de6b1ca",
+  "timestamp": "2026-10-22T02:35:17.753548+00:00",
+  "assignment_note": "Explicit a2 capacity split covers exactly these two papers despite original a1/five-paper manifest. No a1 or other seat/aggregate/archive review read.",
+  "supplement": {
+    "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.03720.pdf-supplement.txt",
+    "version": "2310.03720v4",
+    "sha256": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+    "use": "Algorithm1 complete pseudocode verified and cited pdf-supplement; external examples remain unresolved."
+  },
+  "corpus_hash_note": "Assigned fulltexts and rules/card/expectation hashes verified. Corpus hash differs after remote ingest; coordinator clarified snapshot freezing semantics, not a blocker. Manifest and observed hashes retained in provenance.",
+  "unresolved_nonblocking": [
+    "Auto-GUI Table3 versus Table9 individual history/plan label swap; no preferred marginal effect selected.",
+    "Auto-GUI image-only baseline prompts/heatmap unknown.",
+    "SteP exact examples […]/extra policies external and not fetched; development/test separation cannot be audited.",
+    "SteP24observed action pairs versus21maximum examples unresolved; input-token cost conditioned on success.",
+    "Live reference demonstration comparison insufficient for outcome-checked transfer.",
+    "Exact revision absent for unversioned neighboring raw renders; frozen hashes retained without guessed versions."
+  ],
+  "records": [
+    {
+      "paper_key": "2309.11436",
+      "version": "2309.11436v4",
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p4/seats/sol/attempts/a2/2309.11436.json",
+      "sha256": "fa4aed1e05472fe7d0d7e33bd4eba8d817ad41955e5cb4b61aad4329aa280c39",
+      "status": "reviewed",
+      "evidence_count": 22,
+      "material_count": 2,
+      "quote_hash_and_locator_checks": "passed",
+      "score_arithmetic": "passed"
+    },
+    {
+      "paper_key": "2310.03720",
+      "version": "2310.03720v4",
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p4/seats/sol/attempts/a2/2310.03720.json",
+      "sha256": "a6ee8d777147456a5e438d2736cba9669b7de6de2ea0e1ba2c1ca5d49e66f061",
+      "status": "reviewed",
+      "evidence_count": 32,
+      "material_count": 4,
+      "quote_hash_and_locator_checks": "passed",
+      "score_arithmetic": "passed"
+    }
+  ],
+  "checks": {
+    "required_fields": "passed",
+    "exact_assigned_set": "passed",
+    "eight_flat_ratings": "passed",
+    "rating_and_score_arithmetic": "passed",
+    "material_sha256": "passed",
+    "continuous_quotes_and_locator_lines": "passed",
+    "all_nested_evidence_refs": "passed",
+    "rs_parent_child": "C18 correct parent; adaptation child null",
+    "domain_namespace": "gui",
+    "blind_review_scope": "maintained",
+    "atomic_outputs": "passed"
+  },
+  "boundaries": "Structural/quote checks do not establish scientific reproduction or independently prove semantics. No paper code executed, external repositories fetched, git/shared files modified.",
+  "attempt_status": "closed"
+}

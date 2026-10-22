@@ -1,0 +1,1844 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p3",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "paper": {
+  "paper_key": "2306.00245",
+  "paper_id": "arXiv:2306.00245",
+  "title": "From Pixels to UI Actions: Learning to Follow Instructions via Graphical User Interfaces",
+  "version": "2306.00245v2",
+  "claim_type": "system_method",
+  "central_claim": "pixel-only 输入+通用 mouse/keyboard 动作的 agent(Pix2Act)在 MiniWob++ 上超过人类众包者,并建立 WebShop 像素基线(作者原主张,范围=‘MiniWob++ benchmark’)",
+  "central_claim_evidence_ids": [
+   "E001",
+   "E002"
+  ]
+ },
+ "provenance": {
+  "input_hash": "37cac126a6041a3d720b9b855d9bac88b70aa47dcfd33a2f89604ee5e3ad0671",
+  "rubric_version": "SCORE_SPEC v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "taxonomy=430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21;conditions=a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "domain_taxonomy_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "pattern_protocol_hash": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "review_worksheet_hash": "b0ca3ac92a458c934894aee62c88d6de8ab53901047326e0c8abdfd1a0d3219e",
+  "evidence_rules_hash": "336e1bcdd149cd485ee5a1f22101ca594997b755b47555447ba6661b23a1fac5",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m] (self-reported in system prompt: Sonnet 5.5)",
+  "session_id": "681194da-49f5-4ad4-8eb4-573b45384076",
+  "receipt_ref": null,
+  "receipt_ref_note": "no receipt/run-record path exposed to the worker; session_id taken from CLAUDE_CODE_SESSION_ID",
+  "timestamp": "2026-10-22T01:50:38Z",
+  "note": ""
+ },
+ "materials": [
+  {
+   "material_id": "M-2306.00245-v2",
+   "url": "https://arxiv.org/html/2306.00245 (2306.00245v2, 06 Dec 2023)",
+   "sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Environment",
+    "3 Proposed Agent / 3.1 Training / Tree Search",
+    "4 Benchmarks and Demonstrations",
+    "5 Experiments (5.1–5.3)",
+    "6 Related Work",
+    "7 Limitations/Broader Impact",
+    "References",
+    "App. A (dataset details, task exclusions, rendering)",
+    "App. B (beam search, MCTS, compute)",
+    "App. C (variance, Table 4 per-task)"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Figure 3 main-results bar chart values (image-only; WebShop Pix2Act/WebGUM scores unknown)",
+    "Figure 4 per-task bars (Table 4 gives numeric per-task values)"
+   ]
+  },
+  {
+   "material_id": "M-2306.00245-figs",
+   "url": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2306.00245/",
+   "sha256": null,
+   "sha256_per_file": "see figs.json (miniwob_episode obs×5, action×5, compare_env×2); read directly: observation-0/2, action-0/2, both compare_env",
+   "sections_read": [
+    "Figure 2 (episode, 4 of 10 frames viewed)",
+    "Figure 5 (rendering differences, 2 of 2)"
+   ],
+   "complete": true,
+   "missing_sections": []
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "E001",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "Abstract; 2306.00245.txt L110",
+   "quote": "we show, for the first time, that it is possible for such agents to outperform human crowdworkers on the MiniWob++ benchmark of GUI-based instruction following tasks",
+   "support_explanation": "作者中心主张(摘要)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E002",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§1 Contributions (1); 2306.00245.txt L116",
+   "quote": "We show, for the first time, that an agent using pixel-only inputs and a generic action space can outperform human crowdworkers on the MiniWob++ benchmark, significantly improving over prior work on this setting",
+   "support_explanation": "中心主张原文,范围为 MiniWob++ benchmark",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E003",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§1 Introduction; 2306.00245.txt L116",
+   "quote": "its performance drops by 75% when the DOM information is removed from the agent’s observations",
+   "support_explanation": "作者 gap:CC-Net 去 DOM 后掉 75%(引用他文,非本文实测)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E004",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§1 Introduction; 2306.00245.txt L114",
+   "quote": "they are not always available",
+   "support_explanation": "作者 gap:结构化输入并非总能获得",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E005",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§2 Environment; 2306.00245.txt L120",
+   "quote": "Importantly, the DOM information is not provided by the environment and is therefore not used in any way to define observations or actions.",
+   "support_explanation": "信息可见性:仅像素,无 DOM",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E006",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§2 Environment; 2306.00245.txt L120",
+   "quote": "Our action space consists of raw mouse and keyboard actions",
+   "support_explanation": "通用低层动作空间",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E007",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§3 Input; 2306.00245.txt L124",
+   "quote": "In preliminary experiments, we did not observe significant gains from conditioning on past observations for MiniWob++, and thus we only use the screenshot of the current step in our experiments.",
+   "support_explanation": "MiniWoB++ 仅用当前帧,无历史压缩",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E008",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§3 Greedy Policy; 2306.00245.txt L125",
+   "quote": "we track which actions have been taken for a given observation, and select the highest probability action in the beam that has not previously been taken given the current observation",
+   "support_explanation": "防环回退规则(唯一的错误恢复机制)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E009",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§3.1 Tree Search; 2306.00245.txt L125",
+   "quote": "we apply tree search as a simple method for policy improvement",
+   "support_explanation": "策略改进=MCTS,非 REINFORCE/PPO",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E010",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§3.1 Tree Search; 2306.00245.txt L125",
+   "quote": "tree search leverages the deterministic nature of the environment to look ahead at the consequences of possible actions",
+   "support_explanation": "搜索依赖确定性、可重置环境(特权)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E011",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App. B.2 Value network; 2306.00245.txt L212",
+   "quote": "The model is trained on transitions from the human demonstrations, which demonstrate close to optimal behavior in many cases.",
+   "support_explanation": "价值网络用人类演示训练且后续保持固定",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E012",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.1 Training Details; 2306.00245.txt L129",
+   "quote": "We performed 2 iterations of policy improvement with tree search, collecting a total of 826K episodes across all tasks, and tuning for a further 26K steps.",
+   "support_explanation": "2 轮 MCTS 蒸馏,826K 条 episode",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E013",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App. B.2 Policy improvement; 2306.00245.txt L215",
+   "quote": "We then filter trajectories where the raw reward is",
+   "support_explanation": "选择规则:按环境原始奖励阈值过滤(阈值 <0.8 被剔除)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E014",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App. B.2 Policy improvement; 2306.00245.txt L215",
+   "quote": "To produce these trajectories, we randomly sample MiniWob++ tasks and seeds, and select actions according to",
+   "support_explanation": "训练 episode 来自随机采样的任务与种子",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E015",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.3 Table 2; 2306.00245.txt L132",
+   "quote": "Iteration Policy 0 1 2 Greedy 66.5 93.1 96.2 Tree Search 91.7 98.4 —",
+   "support_explanation": "同一模型 greedy vs 搜索及迭代结果",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E016",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.3 Tree search analysis; 2306.00245.txt L132",
+   "quote": "The best greedy policy achieves performance close to the best tree search policy, but does not require access to reward signals or additional exploration at inference time.",
+   "support_explanation": "部署时无需搜索/奖励",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E017",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§7 Tree Search; 2306.00245.txt L148",
+   "quote": "relied on the ability to procedurally generate new MiniWob++ environment and instruction variations and receive reward signals for task completion",
+   "support_explanation": "作者承认的适用前提",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E018",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§7 Tree Search; 2306.00245.txt L148",
+   "quote": "we did not perform a detailed comparison relative to other search and RL algorithms in this study",
+   "support_explanation": "作者承认未与其他 RL/搜索算法对比",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E019",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§1 Contributions (3); 2306.00245.txt L117",
+   "quote": "In the behavioral cloning setting, pre-training improves task scores from 17.1 to 66.5 on MiniWob++ and from 1.1 to 46.7 on WebShop.",
+   "support_explanation": "预训练消融(BC)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E020",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App. C Table 4; 2306.00245.txt L215",
+   "quote": "average 96.2 66.5 94.3 96.3 38.7",
+   "support_explanation": "Ours=96.2, Ours(BC)=66.5, Human=94.3, CC-Net=96.3, CC-Net(BC)=38.7(59 任务均值)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E021",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.2 Main Results; 2306.00245.txt L129",
+   "quote": "we estimate the performance of CC-Net without DOM information by assuming that the drop in performance on the subset of tasks we study was also 75%",
+   "support_explanation": "去 DOM 的 CC-Net 基线为估算值",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E022",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.3 DOM comparison; 2306.00245.txt L129",
+   "quote": "Pix2Act achieves comparable performance to their best model, while relying on only a subset of the information used by CC-Net, and using a comparable number of human demonstrations for training.",
+   "support_explanation": "与带 DOM 的 CC-Net 持平",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E023",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.3 DOM comparison; 2306.00245.txt L129",
+   "quote": "Another difference is that CC-Net uses a real time setting, which enables some forms of interaction not supported by our environment",
+   "support_explanation": "与 CC-Net 环境不同(实时 vs Selenium)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E024",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.3 DOM comparison; 2306.00245.txt L131",
+   "quote": "WebGUM outperforms Pix2Act when compared on this setting.",
+   "support_explanation": "WebShop 上仍落后 HTML 输入方法",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E025",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.3 Table 1; 2306.00245.txt L132",
+   "quote": "Pretraining leads to non-trivial generalization (28.3) to held out tasks that were unobserved at training time compared to a randomly initialized model (7.6).",
+   "support_explanation": "9 个留出任务(BC)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E026",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.3 footnote 7; 2306.00245.txt L131",
+   "quote": "We manually pick the 9 tasks to verify they include only actions or elements that would be reasonable to generalize to from the training tasks.",
+   "support_explanation": "留出任务由人工挑选",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E027",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App. A.1; 2306.00245.txt L210",
+   "quote": "Note that determining the set of 59 tasks was based solely on the feasibility of conversion to our observation and action format, and not based on model performance.",
+   "support_explanation": "59 任务按可转换性选定",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E028",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App. A.1; 2306.00245.txt L211",
+   "quote": "Therefore, for simplicity, we excluded tasks that involve scrolling: book-flight",
+   "support_explanation": "排除滚动、复制粘贴、动画等任务",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E029",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§4.1 Evaluation; 2306.00245.txt L127",
+   "quote": "For each task, we compute the mean over 100 random seeds, and then compute the mean over 59 MiniWob++ tasks.",
+   "support_explanation": "评测分母:59 任务×100 seeds",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E030",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App. C.1; 2306.00245.txt L215",
+   "quote": "we ran 3 trials with different evaluation seeds for the strongest Pix2Act model",
+   "support_explanation": "3 次不同评测种子(仅最强模型)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E031",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App. C.1; 2306.00245.txt L215",
+   "quote": "the standard deviation across these trials was 0.15",
+   "support_explanation": "评测方差 0.15",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E032",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§4.1 Human Demonstrations; 2306.00245.txt L127",
+   "quote": "This results in different renderings of the same underlying environment state, introducing a shift between the screenshots seen during training and those observed at test time.",
+   "support_explanation": "演示与环境渲染分布不一致(作者承认)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E033",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App. B.3; 2306.00245.txt L215",
+   "quote": "We fine-tuned models using 64 Google Cloud TPU v3 cores.",
+   "support_explanation": "训练算力",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E034",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§3; 2306.00245.txt L123",
+   "quote": "variant with 282M parameters",
+   "support_explanation": "模型 282M",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E035",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§4.2; 2306.00245.txt L129",
+   "quote": "Task Score, which is the average reward across 500 test instructions",
+   "support_explanation": "WebShop 标准 500 测试指令",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E036",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.3; 2306.00245.txt L132",
+   "quote": "results in a drop of 4.0 in Task Score",
+   "support_explanation": "WebShop 先在 MiniWoB++ 中间微调的迁移收益",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E037",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§7 Broader Impact; 2306.00245.txt L148",
+   "quote": "we have trained and evaluated models only in offline environments",
+   "support_explanation": "仅离线模拟环境,无真实服务",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E038",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§4.1; 2306.00245.txt L127",
+   "quote": "Starting with approximately 1.3 million demonstrations across the 59 supported tasks",
+   "support_explanation": "~1.3M 演示 (81% 可转换)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E039",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App. C.1; full-text search (no continuous quote: negative/absence finding)",
+   "quote": null,
+   "support_explanation": "全文检索 disjoint/overlap/held-out seed/seed split:未报告训练 episode 种子与评测种子是否不相交",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E040",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App. C.1; full-text search (no continuous quote: negative/absence finding)",
+   "quote": null,
+   "support_explanation": "全文检索:仅评测种子重复(3 次),未报告重复训练/不同初始化的方差,WebShop 无方差",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E041",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5-§7, App. B.3; full-text search (no continuous quote: negative/absence finding)",
+   "quote": null,
+   "support_explanation": "全文检索 latency/inference cost/wall-clock/FLOPs/maximum steps 数值:未报告推理时延、每 episode 成本、最大步数取值",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E042",
+   "material_id": "M-2306.00245-v2",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.2 Figure 3; full-text search (no continuous quote: negative/absence finding)",
+   "quote": null,
+   "support_explanation": "Figure 3(主结果柱状图,含 WebShop Pix2Act 与 WebGUM 数值)为图像,pinned 图集仅含 Fig.2/5,文本中无该数值;WebShop 绝对得分与差距=unknown",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E043",
+   "material_id": "M-2306.00245-figs",
+   "material_sha256": "2a985e5d9eae3baddb7d62ee3a50428f6a03c88ffe756e6e72410b8016fface2",
+   "locator": "Appendix A.2 Figure 5; fulltext-figs/2306.00245/images-compare_env_ours.png (image read directly)",
+   "quote": null,
+   "support_explanation": "直接读图:Selenium 渲染的 MiniWoB++ 截图(自有环境)。与 humphreys_env 对比可见字体样式与元素大小/位置的细微差异,印证 render_shift 文字声明",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E044",
+   "material_id": "M-2306.00245-figs",
+   "material_sha256": "59e439868d31338deb67ecad7cc04267b9fcaada65c971cad14ee0d646d5934f",
+   "locator": "Appendix A.2 Figure 5; fulltext-figs/2306.00245/images-compare_env_humphreys_env.png (image read directly)",
+   "quote": null,
+   "support_explanation": "直接读图:CC-Net(X11)渲染的同一任务状态;与自有渲染不同,印证训练/测试观测偏移",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E045",
+   "material_id": "M-2306.00245-figs",
+   "material_sha256": "720729716e40bb09abc279622a1f2eadbb71735f6f37a05cc25228f07d1d6e9c",
+   "locator": "§3 Figure 2; fulltext-figs/2306.00245/miniwob_episode-observation-0.png (image read directly)",
+   "quote": null,
+   "support_explanation": "直接读图 observation-0/2:截图顶部渲染黄色指令条+光标,下方 UI;动作仅为 click 的坐标 bin;印证‘只有像素、指令渲染在图像上’的观测形式",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E046",
+   "material_id": "M-2306.00245-figs",
+   "material_sha256": "732c2e7750600f531db193473d8277ca11e2d1f036d4425f50d5c81c86cc22ae",
+   "locator": "§3 Figure 2; fulltext-figs/2306.00245/miniwob_episode-action-0.png (image read directly)",
+   "quote": null,
+   "support_explanation": "直接读图 action-0/2:点击位置以红点标注(图示用,非模型输入);episode 为逐步 click,无文本动作解释",
+   "kind": "our_inference"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "agent 的观测/动作接口(基线=DOM/HTML 观测 + 任务专用动作)",
+   "information": "仅 RGB 截图(指令渲染在图像顶部,绘制光标与鼠标按下指示);DOM/HTML 不可见;仅当前帧(WebShop 额外在图上渲染最近 5 个动作)",
+   "operation": "Pix2Struct 图像编码器+文本解码器(282M)逐步自回归输出离散化 mouse/keyboard 动作 token(click X Y bins 等)",
+   "output": "每步一个动作文本;beam 取 k-best",
+   "conditions": "MiniWoB++ 160×210、32×32 坐标 bin;WebShop 800×600",
+   "feedback": "下一步截图(环境确定性)",
+   "selection_rule_data": "greedy:取 beam 中该观测下尚未执行过的最高概率动作(防环)",
+   "persistence": "无跨步记忆(MiniWoB++ 不看历史帧)",
+   "later_use": "not_applicable:接口设计,无留存对象",
+   "claimed_effect": "像素-only 在 MiniWoB++ 59 任务均值 96.2 ≈ CC-Net(DOM) 96.3 > 人 94.3",
+   "failure_boundary": "不支持滚动/复制粘贴/拖选文本/动画任务;WebShop 弱于 HTML 的 WebGUM;训练-测试渲染偏移",
+   "evidence_ids": [
+    "E005",
+    "E006",
+    "E007",
+    "E008",
+    "E020",
+    "E028",
+    "E024",
+    "E032",
+    "E045"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "策略初始化 + 行为克隆数据",
+   "information": "约 1.3M 人类演示(转换到 Selenium 动作空间,81% 可转换)、Pix2Struct 屏幕解析预训练权重(截图→简化 HTML)",
+   "operation": "以预训练权重初始化,在转换后的演示上做监督微调(BC)",
+   "output": "BC 策略(MiniWoB++ 66.5;WebShop 46.7)",
+   "conditions": "演示与环境渲染/动作存在偏移,59 任务按可转换性挑选",
+   "feedback": "无(离线 BC)",
+   "selection_rule_data": "演示过滤:reward<0.8 约 6% 剔除;10% 做开发集",
+   "persistence": "权重",
+   "later_use": "同权重做 S3 的搜索先验",
+   "claimed_effect": "预训练使 BC 得分 17.1→66.5(MiniWob++)、1.1→46.7(WebShop)",
+   "failure_boundary": "单一规模(282M),无大模型/其他预训练对照",
+   "evidence_ids": [
+    "E019",
+    "E038",
+    "E032",
+    "E027",
+    "E043",
+    "E044"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "训练分布/策略权重(MCTS 蒸馏式迭代改进)",
+   "information": "训练期特权:可重置、确定性环境与终态奖励;价值网络(同架构)由人类演示的未来奖励训练并保持固定",
+   "operation": "MCTS(K=16 轮,top-8 动作,叶值=0.1×价值网+rollout)取最多访问动作;在随机 task/seed 上采样 episode;过滤后 SFT;重复 2 轮",
+   "output": "更强的 greedy 策略(无需推理期搜索)",
+   "conditions": "环境可程序化生成变体并给出奖励;可重置",
+   "feedback": "环境终态奖励(surrogate:每步 -1/30)",
+   "selection_rule_data": "保留原始奖励 ≥0.8 的搜索 episode;学习率下调、warmup 4000 以稳定",
+   "persistence": "策略权重(价值网络固定)",
+   "later_use": "同一批 59 任务的随机种子评测;WebShop 不使用",
+   "claimed_effect": "greedy 66.5→93.1→96.2;搜索策略 91.7→98.4",
+   "failure_boundary": "作者:依赖可生成变体与奖励、可重置;未与其他 RL/搜索算法比较",
+   "evidence_ids": [
+    "E009",
+    "E010",
+    "E011",
+    "E012",
+    "E013",
+    "E014",
+    "E015",
+    "E016",
+    "E017",
+    "E018"
+   ]
+  }
+ ],
+ "retention_trace": {
+  "applicable": "partial",
+  "reason": "论文主张 S1/S2 为静态接口+预训练贡献(不适用留存);S3 声称‘搜索产生新专家轨迹→微调→更强策略’,按此追踪。",
+  "before": "BC 策略 greedy 66.5(搜索 91.7)",
+  "proposed_change": "MCTS(策略+价值网先验,K=16)在随机任务/种子上生成 episode(共 826K,2 轮)",
+  "selection_data_rule": "环境原始奖励 ≥0.8 才保留;价值网络基于人类演示、固定;搜索使用特权奖励/重置",
+  "persisted_change": "策略权重(继续 SFT 26K steps/轮)",
+  "later_tasks": "同样 59 个 MiniWoB++ 任务,随机评测种子(与训练种子是否相交未报告)",
+  "measured_gain": "greedy 66.5→93.1(iter1)→96.2(iter2);搜索策略 91.7→98.4",
+  "evidence_ids": [
+   "E015",
+   "E012",
+   "E013",
+   "E014",
+   "E039"
+  ],
+  "verdict": "task improvement(同分布)被作者报告;retained improvement 需留出种子/任务才能独立成立,此处 seed 不相交性未报告 → 仅 in-distribution 支持;无 improver 外推证据。"
+ },
+ "gap": {
+  "author_gap": "既有 GUI agent 依赖 HTML/DOM 与任务专用动作,但结构化信息不一定可得;纯像素+通用动作的 agent 此前远弱于带 DOM 的模型(CC-Net 去 DOM 掉 75%)",
+  "checked_gap": "gap 在其引用的 CC-Net 论文中有据,但 CC-Net 去 DOM 的逐任务数字本文无法获得,本文用‘固定掉 75%’估算;CC-Net 原文未在本批固定来源中(2202.08137 不在 references.json),故最近邻比较只能靠本文转述 —— 见 unresolved",
+  "lineage_closest_adjacent": [
+   {
+    "item": "World of Bits (Shi et al. 2017):CNN 视觉+结构输入,通用动作,弱于人",
+    "source_version": "as cited in 2306.00245v2 §6;未固定"
+   },
+   {
+    "item": "MiniWoB++ DOM 专用架构 (Liu 2018; Gur 2018; Jia 2019)",
+    "source_version": "as cited;未固定 (Liu 2018=1802.08802 存在于全文池但不属本批固定参考集)"
+   },
+   {
+    "item": "CC-Net (Humphreys et al. 2022):像素+DOM、低层动作、大规模演示,达到人类水平;去 DOM 掉 75%",
+    "source_version": "as cited in 2306.00245v2 §1/§5.3;未固定"
+   },
+   {
+    "item": "Pix2Struct (Lee et al. 2023) 截图解析预训练",
+    "source_version": "as cited;未固定"
+   },
+   {
+    "item": "WebGUM (Furuta 2023, HTML+动作空间,WebShop 优于 Pix2Act)",
+    "source_version": "as cited;未固定"
+   }
+  ],
+  "residue": "像素-only+通用动作在 WebShop(文本密集、页面需滚动)上仍弱于 HTML 方法;滚动、复制粘贴、拖选文本、动画任务未支持;模型较小",
+  "stakes": "无 DOM 可用(脚本化 web 应用、移动应用、沙箱)的场景无法使用结构化 agent;像素接口更通用",
+  "method_response": "屏幕解析预训练提供视觉理解先验 + 通用 mouse/keyboard 动作 + BC + MCTS 蒸馏提升",
+  "remaining_gap": "仅 simulator 内;未覆盖真实站点;45/104 个 MiniWoB++ 任务被排除;WebShop 与 HTML 方法的差距(数值图像中);训练期需要特权环境",
+  "evidence_ids": [
+   "E003",
+   "E004",
+   "E021",
+   "E022",
+   "E024",
+   "E028"
+  ],
+  "unresolved": [
+   "CC-Net 原文/Humphreys 2022、WebGUM 原文不在本批固定 references.json,最近邻核对只能基于本文转述,建议总控补材料或接受此限制",
+   "WebShop 主结果数值(Figure 3 图像)未在固定材料中"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "unify_into_shared_representation",
+  "supporting": [
+   "self_supervised_signal_engineering"
+  ],
+  "outside_taxonomy": false,
+  "reason": "",
+  "matches": [
+   {
+    "main_id": "unify_into_shared_representation",
+    "sub_id": "C18",
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": [
+     {
+      "step": 1,
+      "status": "met",
+      "note": "bespoke DOM/任务专用动作管线 → 单一像素输入+通用动作;阻碍假设是‘需要结构化输入’"
+     },
+     {
+      "step": 2,
+      "status": "partial",
+      "note": "接口=截图(指令/光标渲染入图)+离散 bin 动作 token;语义结构借自 Pix2Struct 预训练(借用而非新造);用 17.1→66.5 的预训练消融间接证明接口承载语义"
+     },
+     {
+      "step": 3,
+      "status": "met",
+      "note": "同一 seq2seq 模型联合训练 59 任务,无任务特定头"
+     },
+     {
+      "step": 4,
+      "status": "partial",
+      "note": "有预训练/无预训练 BC 对照;‘同模型+DOM’的天真对照缺失,CC-Net 去 DOM 为估算"
+     },
+     {
+      "step": 5,
+      "status": "partial",
+      "note": "留出 9 任务 28.3(BC);MiniWoB++ 与 DOM 方法持平,WebShop 仍落后 → 未‘胜过’所有专用方法"
+     }
+    ],
+    "success_checks": [
+     {
+      "cond": "unification unlocks measured capability",
+      "status": "partial",
+      "evidence_ids": [
+       "E025"
+      ]
+     },
+     {
+      "cond": "generality across multiple tasks/backbones",
+      "status": "partial",
+      "evidence_ids": [
+       "E020",
+       "E024"
+      ]
+     }
+    ],
+    "failure_checks": [
+     {
+      "cond": "mechanically recombining off-the-shelf components",
+      "status": "partial",
+      "note": "Pix2Struct 现成,贡献在适配与 MCTS 迭代;未见新识别洞察",
+      "evidence_ids": [
+       "E019"
+      ]
+     },
+     {
+      "cond": "single backbone/narrow validation",
+      "status": "unmet",
+      "note": "仅 282M Pix2Struct;两个 web 模拟基准",
+      "evidence_ids": [
+       "E034"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E002",
+     "E005",
+     "E006",
+     "E019",
+     "E025",
+     "E020",
+     "E024",
+     "E045"
+    ],
+    "reason": "操作上确实把‘截图→通用动作文本’统一进单一图像到文本模型并取代 DOM 管线,而不仅是提到;但接口大部分借自 Pix2Struct 且是单一规模,故 fit=partial。"
+   },
+   {
+    "main_id": "self_supervised_signal_engineering",
+    "sub_id": "C08",
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": [
+     {
+      "step": "generate",
+      "status": "met",
+      "note": "MCTS+策略/价值网生成 826K episode"
+     },
+     {
+      "step": "gate",
+      "status": "met",
+      "note": "环境奖励 ≥0.8 才保留(用真实奖励,而非模型自评)"
+     },
+     {
+      "step": "retrain/iterate",
+      "status": "met",
+      "note": "2 轮,每轮更强的搜索"
+     },
+     {
+      "step": "dynamic feedback to generator",
+      "status": "unmet",
+      "note": "无按失败区域自适应采样,价值网固定"
+     }
+    ],
+    "success_checks": [
+     {
+      "cond": "explicit curation stage load-bearing and ablated",
+      "status": "unknown",
+      "note": "未做‘无过滤’消融",
+      "evidence_ids": [
+       "E013"
+      ]
+     }
+    ],
+    "failure_checks": [
+     {
+      "cond": "strong isolating baseline missing (plain more-BC/ same-data)",
+      "status": "unmet",
+      "note": "无等数据量 BC 对照,搜索收益与额外 826K 数据混杂",
+      "evidence_ids": [
+       "E015",
+       "E012"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E009",
+     "E012",
+     "E013",
+     "E015",
+     "E018"
+    ],
+    "reason": "‘生成-过滤-重训-迭代’的循环由搜索而非模型自评驱动,信号来自环境奖励;与 C08 步骤相符但信号源不是‘模型自产’,故 partial;supporting 因搜索蒸馏是区别于接口统一的另一操作。"
+   }
+  ],
+  "executes_pattern": {
+   "value": true,
+   "reason": "接口统一与搜索蒸馏均真实执行并有消融/迭代结果",
+   "evidence_ids": [
+    "E019",
+    "E015"
+   ]
+  },
+  "resolves_problem": {
+   "value": "partial",
+   "reason": "MiniWoB++ 59 任务上均值与带 DOM 的 CC-Net 持平且略高于人;WebShop 仍落后 HTML 方法;45 个任务被排除,故不能说‘关闭’像素-only gap",
+   "evidence_ids": [
+    "E020",
+    "E024",
+    "E028"
+   ]
+  }
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "version": "gui-domain-cards taxonomy=430aa36290ec conditions=a7501743e64e",
+  "matches": [
+   {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "C12",
+    "version": "gui-domain-cards taxonomy=430aa36290ec conditions=a7501743e64e",
+    "fit": "good",
+    "condition_checks": [
+     {
+      "id": "planner_grounder_interface.S4",
+      "kind": "success_condition",
+      "status": "met",
+      "reason": "统一的 mouse/keyboard 动作 schema 覆盖所有任务;X11 演示与 WebShop 高层动作被映射进该 schema",
+      "evidence_ids": [
+       "E006",
+       "E038"
+      ]
+     },
+     {
+      "id": "planner_grounder_interface.S4/OOD",
+      "kind": "success_condition",
+      "status": "partial",
+      "reason": "留出任务零样本迁移 28.3(vs 7.6),但仅 BC 且留出任务由人挑选",
+      "evidence_ids": [
+       "E025",
+       "E026"
+      ]
+     },
+     {
+      "id": "planner_grounder_interface.F5",
+      "kind": "failure_mode",
+      "status": "unmet(failure observed, acknowledged)",
+      "reason": "接口粒度:无拖选文本/滚动/双击,相应任务被排除",
+      "evidence_ids": [
+       "E028"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E006",
+     "E038",
+     "E025",
+     "E028"
+    ],
+    "reason": "把异构演示(X11 实时动作、WebShop 高层动作)改写成声明过的低层动作 schema,并用截图策略 SFT —— 与 C12 操作一致,但 C12 卡片以大 VLM 为主,此处为 282M 专用模型。"
+   },
+   {
+    "namespace": "gui",
+    "main": "trajectory_level_policy_training",
+    "sub": "K20",
+    "version": "gui-domain-cards taxonomy=430aa36290ec conditions=a7501743e64e",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "id": "trajectory_level_policy_training.S1",
+      "kind": "success_condition",
+      "status": "met",
+      "reason": "SFT/BC 初始化后再做在线数据生成",
+      "evidence_ids": [
+       "E019",
+       "E012"
+      ]
+     },
+     {
+      "id": "trajectory_level_policy_training.S2",
+      "kind": "success_condition",
+      "status": "partial",
+      "reason": "过滤高回报 episode 并调低学习率稳定更新;无 KL/回放",
+      "evidence_ids": [
+       "E013"
+      ]
+     },
+     {
+      "id": "trajectory_level_policy_training.F3",
+      "kind": "failure_mode",
+      "status": "unmet",
+      "reason": "短任务(≈3 步/任务)、固定模拟器、无多次训练重复",
+      "evidence_ids": [
+       "E038",
+       "E040"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E012",
+     "E013",
+     "E015",
+     "E018"
+    ],
+    "reason": "K20 是‘价值基线+优势过滤的在线 RL’;Pix2Act 用 MCTS+价值网生成过滤数据后 SFT,近似 expert iteration;近但非同一算法,故 partial。"
+   }
+  ],
+  "unassigned": [
+   "像素-only 输入(无 DOM)作为设计选择本身:现有 structured_screen_observation 卡覆盖的是结构化输入,不含‘纯像素策略’"
+  ],
+  "revision_proposals": [
+   {
+    "type": "boundary_note",
+    "target": "K20",
+    "text": "搜索蒸馏(MCTS→SFT, expert iteration)是否纳入 K20 或另立候选;仅 2306.00245 单篇全文支持,按 PATTERN_PROTOCOL 只能记为 case,需第二篇独立全文才可 candidate_pattern",
+    "status": "pending(未核)"
+   }
+  ]
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "unify_into_shared_representation",
+   "rs_sub": "C18",
+   "domain": {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "C12"
+   },
+   "operation_correspondence": "RS C18:把缺少主流配方所需底座的模态改写成主流模态的表面形式(渲染像素)并用单一模型处理;domain C12:把异构动作/演示归一为声明的低层动作 schema 后对截图策略做 SFT。共同点=输入端(像素)与输出端(动作文本)均统一",
+   "necessary_conditions_and_differences": "必要条件=统一 schema 覆盖全部任务、演示被实际转换(81%);差异=C12 多为大 VLM+离线数据集,Pix2Act 为小模型+模拟器,且任务按可转换性筛选",
+   "evidence_ids": [
+    "E006",
+    "E038",
+    "E027"
+   ]
+  },
+  {
+   "rs_main": "self_supervised_signal_engineering",
+   "rs_sub": "C08",
+   "domain": {
+    "namespace": "gui",
+    "main": "trajectory_level_policy_training",
+    "sub": "K20"
+   },
+   "operation_correspondence": "RS C08:生成候选训练实例→质量门→回灌→迭代;domain K20:在线过滤后的高回报轨迹继续训练。共同点=用可验证奖励过滤自产轨迹并迭代",
+   "necessary_conditions_and_differences": "必要条件=可重置/可评分环境;差异=Pix2Act 生成器是 MCTS(特权),K20 为在线 RL 采样与学习型 critic",
+   "evidence_ids": [
+    "E010",
+    "E013",
+    "E015"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1",
+   "text": "Report execution-checked success rate on OSWorld (or OSWorld-Verified) for desktop computer-use claims, stating the step budget (15 vs 50 steps) and observation setting",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "桌面 OSWorld 主张;本文是 web 模拟器(MiniWoB++/WebShop),且 OSWorld 晚于本文。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1",
+   "text": "Report online success on AndroidWorld for mobile-agent claims, not only offline AndroidControl/AITW step metrics",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "移动端主张;本文不涉及 Android。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1",
+   "text": "Report success on WebArena (self-hosted, functional-correctness checkers) for web-agent training or planning claims; if the 165-task WebArena-Lite or a per-template subset is used, say so and justify it",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "WebArena 主张;WebArena(2307.13854)晚于本文,记入 current_relevance,不作为发表时缺陷。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1",
+   "text": "Evaluate live-web agents on Online-Mind2Web (human-validated, start URL given, no search engine) or Mind2Web-Live rather than only WebVoyager, where a naive search-and-click agent already solves 51% of sampled tasks",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "live-web 主张;本文仅模拟器。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1",
+   "text": "Report GUI grounding on ScreenSpot-Pro (high-resolution professional desktop) and ScreenSpot-v2, not only ScreenSpot v1, which saturates (7B and 72B indistinguishable)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1",
+   "text": "Compare a new grounder against UGround(-V1-7B), Aguvis-7B/72B, OS-Atlas-7B and UI-TARS(-1.5) at matched backbone size",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1",
+   "text": "Compare a native end-to-end GUI policy against UI-TARS(-1.5)-7B (or the same backbone's SFT-only model) and against an agentic framework (GPT-4o/o3 planner + specialised grounder such as UGround, Aria-UI, Jedi, GTA1)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1",
+   "text": "For planner-grounder systems, hold the planner fixed and swap grounders (e.g. GPT-4o + UGround vs + Aguvis vs + Jedi), and report the planner alone",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1",
+   "text": "Compare GUI online-RL methods against DigiRL, WebRL, filtered BC / AWR and an SFT-only model trained on the same data",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "声称‘搜索蒸馏作为 policy improvement 简单有效’,作者承认未与其他搜索/RL 算法详细对比;当时无 DigiRL/WebRL(现行期望,记入 current_relevance)。有同模型 BC-vs-搜索对照。",
+   "evidence_ids": [
+    "E018",
+    "E015"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1",
+   "text": "Validate an LLM/VLM success judge or outcome reward model against human labels on trajectories from agents not used to build it (agreement/accuracy, plus the resulting success-rate gap)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1",
+   "text": "Report judge reliability separately for positive and negative verdicts (precision and NPV, or precision/recall per class), not only overall accuracy",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1",
+   "text": "When a learned judge or PRM is the RL reward, show downstream policy gain against an alternative reward (rule/script checker, ORM vs PRM, another judge), and address reward hacking or bias",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1",
+   "text": "Measure execution checkers (evaluation scripts) two-sidedly: false negatives on alternative valid solutions as well as false positives",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1",
+   "text": "For PRMs or step-level verifiers, ablate the label source (human vs GPT-4o-generated step labels)",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1",
+   "text": "Do not rest an agent capability claim on offline step accuracy (AndroidControl, Multimodal-Mind2Web, GUI Odyssey) alone; add an online benchmark or show the offline metric predicts online success",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "主张基于可执行奖励的模拟器在线评测,而非离线 step 准确率。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1",
+   "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "partial",
+   "reason": "online/模拟器数字有 3 次评测种子 sd 0.15(最强模型),无训练重复、WebShop 无方差。",
+   "evidence_ids": [
+    "E030",
+    "E031",
+    "E040"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1",
+   "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "最大步数‘可配置’但取值未报告;无 steps used / 耗尽统计。",
+   "evidence_ids": [
+    "E041"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1",
+   "text": "For inference-time search or best-of-N (simulated lookahead, verifier reranking), report cost/latency and the number of candidates, and compare against real-execution tree search where reset is possible",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1",
+   "text": "Disclose and validate any modification to an online benchmark harness (re-implemented checkers, changed action implementations, dropped tasks, extra steps)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "applicable": true,
+   "status": "met",
+   "reason": "自建 Selenium 环境、59/104 任务、不支持动作、演示转换率(81%)、渲染偏移均明确披露。",
+   "evidence_ids": [
+    "E027",
+    "E028",
+    "E038",
+    "E032",
+    "E043"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1",
+   "text": "For live-web results, state the evaluation date and handle site drift (replace outdated tasks, report blocked/CAPTCHA tasks)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1",
+   "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": true,
+   "status": "partial",
+   "reason": "像素-only 与 DOM 输入的比较来自 CC-Net(带/不带 DOM),其中去 DOM 为估算;无同模型 DOM/像素对照。",
+   "evidence_ids": [
+    "E021",
+    "E022"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1",
+   "text": "Report results across backbone sizes (e.g. 7B and 32B/72B), since gains from GUI data/RL recipes shrink with model size",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1",
+   "text": "Stratify online success by human reference step count (difficulty) and audit failure causes",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1",
+   "text": "Test grounding robustness under controlled perturbations (zoom, text size, window position/clutter, relational instructions) with matched pairs",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1",
+   "text": "Report refusal / infeasible-task behaviour (instructions with no valid target)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1",
+   "text": "Compare a synthetic-trajectory recipe against an instruction-first / task-driven synthesis baseline with the same executor and similar data size",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1",
+   "text": "Show a data-scaling curve (fraction or count of synthetic samples vs downstream score) and say where it saturates",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1",
+   "text": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "自产(搜索)训练 episode 与评测使用同一批 59 个任务;仅 BC 模型做了任务级留出。",
+   "evidence_ids": [
+    "E025",
+    "E014",
+    "E039"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1",
+   "text": "Ablate error-correction/reflection data against filtered behaviour cloning at the same iteration count",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1",
+   "text": "Evaluate a GUI world model by downstream agent success and closed-loop (multi-step, autoregressive) rollouts, not only teacher-forced one-step fidelity",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1",
+   "text": "Ablate imagination / lookahead horizon, since world-model errors compound beyond 1 (lookahead) or about 5 (training) steps",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1",
+   "text": "For training in a world model, include sim-only vs real-anchored vs SFT-only arms",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1",
+   "text": "Back world-model or synthetic-environment fidelity scores with a second independent judge, human validation or executable checks, not a VLM judge from the same family as the training reward",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1",
+   "text": "For a digital twin / simulated app used for training or evaluation, measure its realism and whether it preserves the ranking of agents or checkpoints seen in the real environment",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1",
+   "text": "For memory/retrieval agents, show gains on environments other than those the memory was built from",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when 不成立:本文不是对应的 grounding/judge/world-model/synthesis/memory/RL 评审情境(中心主张为像素接口+搜索蒸馏)。",
+   "evidence_ids": [],
+   "score_item": null
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "像素-only+通用动作的 Pix2Act 在 MiniWob++ 上超过人类众包者(作者原主张)",
+   "setting": "自建 Selenium Chrome 环境;59/104 任务;100 随机种子/任务;分数=MiniWob++ 原始奖励映射到[0,100]",
+   "baseline_control": "Human 94.3(CC-Net 论文数字、实时 X11 环境)、CC-Net 带 DOM 96.3、CC-Net 去 DOM 为估算(×0.25)",
+   "selection_vs_test": "59 任务按‘可转换性’选定,非按模型表现;但训练 episode 与评测种子是否不相交未报告",
+   "result_denominator": "96.2(greedy,第 2 轮后);3 次评测种子 96.2/96.4/96.1,sd 0.15;分母 59×100",
+   "evidence_ids": [
+    "E002",
+    "E020",
+    "E029",
+    "E030",
+    "E031",
+    "E027",
+    "E021",
+    "E023"
+   ],
+   "counterevidence": [
+    "E023",
+    "E028",
+    "E039",
+    "E021"
+   ],
+   "allowed_conclusion": "scoped:在作者自建环境、59 个可转换任务上与 DOM 方法持平且略高于报告的人类均值(跨环境比较);不可推广为‘整个 MiniWob++’或‘人类水平 GUI 控制’。"
+  },
+  {
+   "claim_id": "C2",
+   "text": "屏幕解析预训练是关键成分",
+   "setting": "BC,同数据同模型,有/无 Pix2Struct 预训练",
+   "baseline_control": "随机初始化",
+   "selection_vs_test": "同分布开发/测试;MiniWoB++ 与 WebShop",
+   "result_denominator": "MiniWoB++ 17.1→66.5;WebShop 1.1→46.7(单次训练)",
+   "evidence_ids": [
+    "E019",
+    "E025"
+   ],
+   "counterevidence": [
+    "E040"
+   ],
+   "allowed_conclusion": "supported(单次训练、282M):预训练对 BC 起主导作用;未区分‘屏幕解析’与‘任意大规模视觉-语言预训练’。"
+  },
+  {
+   "claim_id": "C3",
+   "text": "树搜索是简单有效的策略改进方式",
+   "setting": "同一模型 greedy vs MCTS;2 轮蒸馏",
+   "baseline_control": "BC greedy;无与 PPO/REINFORCE/等数据 BC 的对比",
+   "selection_vs_test": "训练种子/评测种子相交性未报告;搜索需特权奖励",
+   "result_denominator": "greedy 66.5→93.1→96.2;搜索 91.7→98.4;12 个难任务 λ 消融 28.8/74.2/78.3/57.4",
+   "evidence_ids": [
+    "E015",
+    "E012",
+    "E013",
+    "E018",
+    "E016"
+   ],
+   "counterevidence": [
+    "E018",
+    "E017",
+    "E039"
+   ],
+   "allowed_conclusion": "scoped:在可重置、可程序化生成的 MiniWoB++ 内,搜索蒸馏显著抬高 greedy 得分;与等量数据 BC 或其他 RL 算法的优劣未知。"
+  },
+  {
+   "claim_id": "C4",
+   "text": "WebShop:首个像素-only 基线,仍落后 HTML 方法",
+   "setting": "500 条标准测试指令;1,566 人类演示",
+   "baseline_control": "WebGUM(HTML+专用动作)",
+   "selection_vs_test": "标准划分 1012/54/500",
+   "result_denominator": "数值仅在 Figure 3(未固定图);文本仅给预训练 1.1→46.7 与中间微调 +4.0",
+   "evidence_ids": [
+    "E035",
+    "E024",
+    "E036",
+    "E042"
+   ],
+   "counterevidence": [],
+   "allowed_conclusion": "unresolved(数值):可确认‘有基线且落后 WebGUM’,无法核对 Pix2Act/WebGUM 的绝对分差。"
+  },
+  {
+   "claim_id": "C5",
+   "text": "预训练+通用接口可迁移到训练期未见任务",
+   "setting": "留出 9/59 任务;BC,无搜索",
+   "baseline_control": "随机初始化 7.6",
+   "selection_vs_test": "留出任务人工挑选",
+   "result_denominator": "28.3 vs 65.5(含这些任务训练)",
+   "evidence_ids": [
+    "E025",
+    "E026"
+   ],
+   "counterevidence": [
+    "E026"
+   ],
+   "allowed_conclusion": "scoped:同一套件内的‘非平凡’任务级迁移,强度远低于在任务上训练;非跨平台迁移。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_reason": "MiniWoB++/WebShop 为可交互模拟器,成功由环境奖励判定;训练任务与评测任务重合,留出任务仅 BC → 不判 transfer(EVIDENCE 规则 2)。",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "在作者自建 Selenium 环境、59 个按可转换性选定的 MiniWoB++ 任务上,282M 像素-only Pix2Act(BC+2 轮 MCTS 蒸馏)greedy 均值 96.2(评测种子 sd 0.15),与带 DOM 的 CC-Net(96.3)持平、略高于报告的人类均值(94.3,另一环境);预训练使 BC 由 17.1 升至 66.5;WebShop 为首个像素基线且低于 HTML 的 WebGUM。",
+  "original_claim_preserved": "pixel-only agent outperforms human crowdworkers on MiniWob++ (作者原文)",
+  "flags": {
+   "online": "author_report",
+   "transfer": false,
+   "retained": "in-distribution only; train/eval seed disjointness unreported",
+   "improver": "not_claimed (搜索随模型变强 91.7→98.4 为作者报告)",
+   "our_reproduction": false
+  },
+  "unresolved": [
+   "训练/评测种子不相交性",
+   "WebShop 绝对数值(Figure 3 图像)",
+   "CC-Net 去 DOM 的真实数字",
+   "与等量 BC / 其他 RL 的对比"
+  ]
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "gap 具体(像素-only 与 DOM 的差距、去 DOM 掉 75%、DOM 不总可得)且最近邻谱系清楚(WoB→DOM 专用→CC-Net→Pix2Struct);但最近邻原文未固定且去-DOM 基线为估算,扣一档。",
+   "evidence_ids": [
+    "E003",
+    "E004",
+    "E021"
+   ],
+   "counterevidence_ids": [
+    "E021"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "操作与假设可重建:像素输入+通用动作消除 DOM 依赖;预训练提供视觉先验;MCTS 蒸馏提升 greedy。预训练消融与搜索对照构成可区分预测(去预训练 17.1,搜索 greedy 提升)。关键假设‘提升来自屏幕解析而非规模/数据’未被隔离。",
+   "evidence_ids": [
+    "E005",
+    "E019",
+    "E015",
+    "E010"
+   ],
+   "counterevidence_ids": [
+    "E040"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "操作链、信息权限、选择/留存(奖励阈值、价值网固定、2 轮)、适用条件(可重置/奖励/确定性)与失败边界(滚动/复制粘贴/WebShop)均清楚;错误恢复仅有防环规则,无历史/反思;最大步数、种子划分未报告。",
+   "evidence_ids": [
+    "E008",
+    "E012",
+    "E013",
+    "E017",
+    "E028"
+   ],
+   "counterevidence_ids": [
+    "E041"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "MiniWoB++/WebShop 为模拟器可执行奖励,100 种子×59 任务,逐任务表;弱点:‘人类=94.3’来自另一实时 X11 环境、CC-Net 去 DOM 基线是估算,跨环境比较不严。",
+   "evidence_ids": [
+    "E029",
+    "E020"
+   ],
+   "counterevidence_ids": [
+    "E021",
+    "E023"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "BC 预训练消融、同模型 greedy-vs-搜索与迭代、λ 消融提供清晰对照;缺等数据 BC 对照(搜索收益与 826K 额外数据混杂)、缺 DOM 同模型对照、缺与 RL 算法对比(作者承认)。",
+   "evidence_ids": [
+    "E019",
+    "E015",
+    "E022"
+   ],
+   "counterevidence_ids": [
+    "E018",
+    "E021"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "评测集=训练任务(59 任务同环境),训练/评测种子是否不相交未报告;留出 9 任务仅 BC、人工挑选;MiniWoB++ 同时为开发与测试环境;WebShop 使用标准划分。主张范围被限制在模拟器内,但留出证据弱。",
+   "evidence_ids": [
+    "E025",
+    "E026"
+   ],
+   "counterevidence_ids": [
+    "E039",
+    "E014"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "报告 3 次评测种子 sd=0.15(仅最强模型)、逐任务表、任务排除清单(分母清楚);缺训练重复/不同初始化方差,WebShop 无方差,单次训练。",
+   "evidence_ids": [
+    "E030",
+    "E031",
+    "E028"
+   ],
+   "counterevidence_ids": [
+    "E040"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "报告 TPU 规模、步数、episode 数与模型大小;未报告推理时延/成本、最大步数、搜索训练的墙钟;与 CC-Net 的演示量‘可比’仅为文字陈述。",
+   "evidence_ids": [
+    "E033",
+    "E034",
+    "E012"
+   ],
+   "counterevidence_ids": [
+    "E041"
+   ],
+   "search_scope": [
+    "全文检索 latency/inference cost/wall-clock/max steps 数值"
+   ]
+  }
+ },
+ "score": {
+  "raw": 70.0,
+  "display": 70.0,
+  "lower": 70.0,
+  "upper": 70.0,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+ },
+ "status": {
+  "value": "reviewed",
+  "reason": "完整主文+附录文本已读,并直接读取 12 张补充图中的 6 张;仅 Figure 3 数值缺失,不影响八项评分的主要判断,已在 unresolved 标注。"
+ }
+}

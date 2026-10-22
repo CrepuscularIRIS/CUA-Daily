@@ -76,5 +76,22 @@
     "self_reported_model": "Opus 5.5 (1M context)"
    }
   }
+ },
+ "rubric_frozen": {
+  "date": "2026-10-21",
+  "weights": {
+   "G": 15,
+   "M": 25,
+   "X": 20,
+   "E.measurement": 10,
+   "E.causality": 10,
+   "E.holdout": 10,
+   "E.statistics": 5,
+   "E.cost": 5
+  },
+  "rubric_sha256": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "anchor_clarification": "calibration/anchor_clarification_r1.md",
+  "agreement": "calibration/agreement.json (10 pairs, median 2.5, 90% within 10)",
+  "freeze_report": "calibration/freeze_report.md"
  }
 }

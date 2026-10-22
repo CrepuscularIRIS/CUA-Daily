@@ -1,0 +1,182 @@
+{
+  "schema_version": "radar-batch-report-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p4",
+  "attempt_id": "a1",
+  "seat": "sol",
+  "model_type": "sonnet",
+  "actual_model": "gpt-6.1-sol",
+  "session_id": null,
+  "receipt_ref": null,
+  "runtime_record_note": "Model supplied by invocation context; session/receipt IDs unavailable; no probing.",
+  "input_bundle_sha256": "93d0dafbc452f91483228d9ad53bd5dcd7df4a98d3d7bdf6af2905c87de6b1ca",
+  "timestamp": "2026-10-22T01:53:10.954534+00:00",
+  "counts": {
+    "assigned": 5,
+    "records": 5,
+    "reviewed": 2,
+    "scored": 2,
+    "needs_fulltext": 0,
+    "needs_evidence": 3,
+    "outside_taxonomy": 0,
+    "out_of_scope": 0,
+    "schema_errors": 0,
+    "asset_binding_errors": 1
+  },
+  "reviewed": [
+    "2308.15272",
+    "2309.08172"
+  ],
+  "unreviewed": [
+    "2309.11436",
+    "2310.03720",
+    "2310.04716"
+  ],
+  "blockers": [
+    {
+      "type": "worker_reading_limit",
+      "paper_keys": [
+        "2309.11436",
+        "2310.03720",
+        "2310.04716"
+      ],
+      "reason": "Full repaired texts available and hash-verified, but not substantively read; context/reading capacity after two completed papers. No author-side missing-evidence conclusion.",
+      "required_action": "Schedule remaining3 papers in a fresh worker attempt with same fixed inputs; do not treat null-score placeholders as reviewed."
+    },
+    {
+      "type": "manifest_asset_hash_mismatch",
+      "asset": "corpus",
+      "expected": "ab81004336f12af0464893fc548cb5eba57552028d6a2431c2db1014ecf52cbc",
+      "actual": "512cd2cf30414bdeec46e71d209eb1824ec5ccf1dec58057c21f90da5ba0bf4f",
+      "path": "research/corpus.jsonl",
+      "reason": "Current shared corpus differs from manifest digest. Worker did not consult corpus contents for judgment and does not change shared corpus/manifest. All9 rubric/card/protocol/expectation assets and5 paper hashes match.",
+      "required_action": "Controller must resolve snapshot binding; do not silently relabel this attempt validated."
+    },
+    {
+      "type": "rubric_status_caveat",
+      "reason": "Fixed SCORE_SPEC is draft_uncalibrated; seat judgments do not establish calibrated production scores."
+    },
+    {
+      "type": "lineage_material_limit",
+      "paper_keys": [
+        "2308.15272",
+        "2309.08172"
+      ],
+      "reason": "Nearest historical originals absent from fixed14-reference list; target-attributed lineage documented, not exhaustive novelty validation. Refresh shared input for both seats if independent original needed."
+    }
+  ],
+  "checks": {
+    "manifest_paper_set_exact": true,
+    "all_paper_material_hashes_match": true,
+    "manifest_assets_recomputed": [
+      {
+        "asset": "corpus",
+        "expected": "ab81004336f12af0464893fc548cb5eba57552028d6a2431c2db1014ecf52cbc",
+        "actual": "512cd2cf30414bdeec46e71d209eb1824ec5ccf1dec58057c21f90da5ba0bf4f",
+        "match": false
+      },
+      {
+        "asset": "rubric",
+        "expected": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+        "actual": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+        "match": true
+      },
+      {
+        "asset": "pattern_protocol",
+        "expected": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373",
+        "actual": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373",
+        "match": true
+      },
+      {
+        "asset": "batch_contract",
+        "expected": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+        "actual": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+        "match": true
+      },
+      {
+        "asset": "review_worksheet",
+        "expected": "b0ca3ac92a458c934894aee62c88d6de8ab53901047326e0c8abdfd1a0d3219e",
+        "actual": "b0ca3ac92a458c934894aee62c88d6de8ab53901047326e0c8abdfd1a0d3219e",
+        "match": true
+      },
+      {
+        "asset": "evidence_rules",
+        "expected": "336e1bcdd149cd485ee5a1f22101ca594997b755b47555447ba6661b23a1fac5",
+        "actual": "336e1bcdd149cd485ee5a1f22101ca594997b755b47555447ba6661b23a1fac5",
+        "match": true
+      },
+      {
+        "asset": "rs_cards_manifest",
+        "expected": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+        "actual": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+        "match": true
+      },
+      {
+        "asset": "domain_taxonomy",
+        "expected": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+        "actual": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+        "match": true
+      },
+      {
+        "asset": "domain_conditions",
+        "expected": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+        "actual": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+        "match": true
+      },
+      {
+        "asset": "expectations",
+        "expected": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+        "actual": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+        "match": true
+      }
+    ],
+    "continuous_quotes_matched": 39,
+    "rating_keys_statuses_and_reference_ids_checked": true,
+    "deterministic_scores_recomputed": true,
+    "pending_records_have_null_scores": true,
+    "blind_boundary_preserved": true,
+    "other_seat_or_old_records_read": false,
+    "git_operations": false,
+    "write_scope": "own attempt directory only",
+    "validation_limit": "Targeted stdlib structural/hash/quote/arithmetic checks, not a complete v2 validator. Does not prove scientific correctness, reproduction, production calibration or full input binding: corpus mismatch unresolved."
+  },
+  "records": [
+    {
+      "paper_key": "2308.15272",
+      "status": "reviewed",
+      "sha256": "00578401d9f23bcdc35e529639ca458e1fbc1b8a0731e80fd1289cf8cddd13fd",
+      "evidence_quotes_checked": 17,
+      "source_hash_matches": true
+    },
+    {
+      "paper_key": "2309.08172",
+      "status": "reviewed",
+      "sha256": "333757a19e94d0d81aa5dece1d7ec7809414c92e463919e1c86ae9b68700fe42",
+      "evidence_quotes_checked": 22,
+      "source_hash_matches": true
+    },
+    {
+      "paper_key": "2309.11436",
+      "status": "needs_evidence",
+      "sha256": "4011d8c710f71040c20c4506ba3f670c48c45d9329848031f34aaf4be9a1948c",
+      "evidence_quotes_checked": 0,
+      "source_hash_matches": true
+    },
+    {
+      "paper_key": "2310.03720",
+      "status": "needs_evidence",
+      "sha256": "be8fe38d22e2b343e42ec3f63daa8ae394ac4bacac7939b75511831523acc7e5",
+      "evidence_quotes_checked": 0,
+      "source_hash_matches": true
+    },
+    {
+      "paper_key": "2310.04716",
+      "status": "needs_evidence",
+      "sha256": "90339d4a1203f9d7025474914fba15899466b63c125dc0c7e0887b9d18fe77cc",
+      "evidence_quotes_checked": 0,
+      "source_hash_matches": true
+    }
+  ],
+  "status": "partial_complete_with_asset_mismatch",
+  "reason": "Two papers fully read incl all supplied listings/prompts/appendices and atomically written;3 explicitly unreviewed/unscored placeholders. Partial worker handoff, not validated batch; attempt closes on report."
+}

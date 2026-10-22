@@ -49,8 +49,8 @@ def load_seat(bdir: Path, seat: str, attempt: str) -> dict[str, dict]:
     d = {}
     adir = bdir / "seats" / seat / "attempts" / attempt
     for f in adir.glob("*.json"):
-        if f.name == "batch-report.json":
-            continue
+        if f.name == "batch-report.json" or f.name.startswith("_"):
+            continue  # worker helper files (quote caches, build scripts) are not paper records
         try:
             d[f.stem] = json.loads(f.read_text())
         except json.JSONDecodeError as e:

@@ -1,0 +1,2420 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c2",
+ "attempt_id": "a1",
+ "seat": "aggregate",
+ "paper": {
+  "paper_key": "2505.13909",
+  "paper_id": "2505.13909",
+  "title": "Efficient Agent Training for Computer Use",
+  "version": "2505.13909v2",
+  "claim_type": "component_training",
+  "central_claim": "With only 312 human computer-use trajectories augmented by Trajectory Boost (9 teacher-sampled alternative single-step actions per human step from Claude 3.7 Sonnet, 27K samples), SFT of Qwen2.5-VL-72B gives PC Agent-E, a 141% relative improvement over the base and 10% over the teacher on WindowsAgentArena-V2, more effective and efficient than human-only SFT or direct distillation, and it generalizes to OSWorld.",
+  "claim_scope": "Windows desktop, screenshot-only, 141-task author-modified WAA-V2 (feasible tasks only); 72B backbone; SFT; OSWorld Linux used as a cross-platform check. Also releases WAA-V2 as a secondary resource contribution."
+ },
+ "provenance": {
+  "input_hash": "26b023b230f3f5dfbc6207db584916bc00434db1bd9d7e96eea6447b745b95a8",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "aggregate_rules": "docs/agents/AGGREGATE_OPUS.md",
+  "aggregate_rules_sha256": "1ad0c4f39af2ceb06924fc015d8660711edcd9a6f891444e902b44f79584f4e0",
+  "conflicts_sha256": "a783fc782433569cf60e791e1cb10df29c76dc7538682fe5a7720e0e45ade8ba",
+  "references_sha256": "bfab82252df94f8136e45a678eba7cf5435f983dc948866f8f15edb74bd8d6d3",
+  "model_type": "fable",
+  "actual_model": "claude-opus-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "timestamp": "2026-10-22T02:28:19+00:00",
+  "independence_note": "Aggregation over two seat inputs; each fixed paper text was read before the seat scores, but this is not a third blind review or human gold. All results are author reports; nothing was reproduced."
+ },
+ "materials": [
+  {
+   "material_id": "agg:2505.13909",
+   "url": "https://arxiv.org/html/2505.13909",
+   "sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2505.13909.txt",
+   "role": "paper",
+   "sections_read": [
+    "full text"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "manifest_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "matches_manifest_pin": true
+  },
+  {
+   "material_id": "sol:arxiv:2505.13909",
+   "url": "https://arxiv.org/html/2505.13909v2",
+   "sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2505.13909.txt",
+   "sections_read": [
+    "entire fixed HTML text: abstract, methods, experiments, references, all rendered appendices"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "asserted_version": "2505.13909v2",
+   "version_binding": "Version supplied by batch manifest; cached SOURCE URL is unversioned, no independent fetch/version verification performed."
+  },
+  {
+   "material_id": "sol:arxiv:2501.12326",
+   "url": "https://arxiv.org/html/2501.12326",
+   "sha256": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2501.12326.txt",
+   "sections_read": [
+    "4.4–4.6"
+   ],
+   "complete": false,
+   "missing_sections": []
+  },
+  {
+   "material_id": "sol:arxiv:2412.09605",
+   "url": "https://arxiv.org/html/2412.09605",
+   "sha256": "ff0d81b000884775c3d21cacef43eb7db8eb5f0286152dd3fb0f1df0e9fd65bd",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2412.09605.txt",
+   "sections_read": [
+    "2method"
+   ],
+   "complete": false,
+   "missing_sections": []
+  },
+  {
+   "material_id": "sol:arxiv:2404.07972",
+   "url": "https://arxiv.org/html/2404.07972",
+   "sha256": "5907f5ab2f95d036e676d17d701a77fd30850e3eccb55b014183d318520ff9d1",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2404.07972.txt",
+   "sections_read": [
+    "2environment"
+   ],
+   "complete": false,
+   "missing_sections": []
+  },
+  {
+   "material_id": "son55:M:2505.13909v2",
+   "url": "https://arxiv.org/html/2505.13909v2",
+   "fetched_source": "https://arxiv.org/html/2505.13909",
+   "sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "manifest_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "on_disk_sha256_at_build": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "material_drift": false,
+   "read_state": "pinned",
+   "drift_note": null,
+   "role": "paper_under_review",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Related Work",
+    "3 Method (3.1-3.5)",
+    "4 WindowsAgentArena-V2",
+    "5 Experiment (5.1-5.6)",
+    "6 Conclusion",
+    "Appendix A Training Details",
+    "B Original WAA",
+    "C Smaller Model",
+    "D Human+DD baseline",
+    "E Extended Test-Time Scaling",
+    "F Prompts",
+    "G PC Tracker manual",
+    "H LLM use"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Figure 3, 7, 8 numeric values are plots and not present in the text render (scaling curves read only through prose)"
+   ]
+  },
+  {
+   "material_id": "son55:M:2412.09605",
+   "url": "https://arxiv.org/html/2412.09605",
+   "fetched_source": "https://arxiv.org/html/2412.09605",
+   "sha256": "ff0d81b000884775c3d21cacef43eb7db8eb5f0286152dd3fb0f1df0e9fd65bd",
+   "on_disk_sha256_at_build": "ff0d81b000884775c3d21cacef43eb7db8eb5f0286152dd3fb0f1df0e9fd65bd",
+   "material_drift": false,
+   "role": "fixed_reference_neighbor:AgentTrek",
+   "sections_read": [
+    "passages cited in evidence[] only (gap/lineage fact check)"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; used as fixed factual source for the cited passages only"
+   ]
+  },
+  {
+   "material_id": "son55:M:2501.12326",
+   "url": "https://arxiv.org/html/2501.12326",
+   "fetched_source": "https://arxiv.org/html/2501.12326",
+   "sha256": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "on_disk_sha256_at_build": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "material_drift": false,
+   "role": "fixed_reference_neighbor:UI-TARS",
+   "sections_read": [
+    "passages cited in evidence[] only (gap/lineage fact check)"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; used as fixed factual source for the cited passages only"
+   ]
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "agg:PA-A01",
+   "material_id": "agg:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 4 (Preventing infeasible hacking)",
+   "quote": "we removed all infeasible tasks to prevent infeasible hacking",
+   "support_explanation": "Main benchmark is feasible-only by authors' design.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:PA-A02",
+   "material_id": "agg:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Table 4 (OSWorld)",
+   "quote": "PC Agent-E (Ours) | 10.9 | 63.3 | 14.9",
+   "support_explanation": "Trained model drops from 86.7 (base) to 63.3 on infeasible OSWorld tasks: the category removed from WAA-V2 is one where the method regresses; the 141% headline is scoped to feasible tasks.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:PA-A03",
+   "material_id": "agg:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 5.1 Method Baseline",
+   "quote": "We sample 10 end-to-end trajectories from Claude 3.7 Sonnet for each of the 312 tasks.",
+   "support_explanation": "Direct-distillation baseline is sampled without any stated success filter, so 'error accumulation' is not separated from training on failed rollouts.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:PA-A04",
+   "material_id": "agg:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 5.1 Settings",
+   "quote": "All other models, including Claude and Qwen, were evaluated using our simple PC Agent-E scaffold.",
+   "support_explanation": "Teacher is evaluated in the student's scaffold (no image history), while UI-TARS gets its native framework; 'beats the teacher' is scaffold-bound.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:PA-A05",
+   "material_id": "agg:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 4 (Fixing evaluation flaws)",
+   "quote": "relied on human evaluators for a few complex tasks to improve assessment reliability",
+   "support_explanation": "Part of WAA-V2 success is human-graded; the number and rule are not given.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:PA-A06",
+   "material_id": "agg:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Table 3",
+   "quote": "PC Agent-E (Ours) | 4.8 | 64.1 | 46.2 | 50.0 | 57.9 | 35.7 | 33.3 | 36.0",
+   "support_explanation": "With 17 Chrome / 141 total tasks, 64.1 and 36.0 are not k/n counts; the averaging or grading behind them is unexplained.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:PA-A07",
+   "material_id": "agg:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 3.2",
+   "quote": "we retained only trajectories whose task descriptions have an overlap of 0 under 13-gram and less than 0.7 under 3-gram, and a cosine semantic similarity under 0.85 with respect to any test task",
+   "support_explanation": "Explicit task-text decontamination against WAA-V2.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E01",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L202",
+   "quote": "We employed a rigorous data decontamination procedure on these collected trajectories.",
+   "support_explanation": "Task-text contamination filtering; not application holdout.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E02",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L224",
+   "quote": "the current action, and the corresponding screenshot.",
+   "support_explanation": "Thought annotation is action-conditioned; privileged teacher information relative to deployment.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E03",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L232",
+   "quote": "These sampled action decisions from Claude 3.7 Sonnet are not executed in real computer environments",
+   "support_explanation": "Nine unverified alternatives per human state; no rollout verification of leaves.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E04",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L243",
+   "quote": "We finally obtained 27K training samples from 312 augmented trajectories",
+   "support_explanation": "SFT data persisted from augmented snapshots.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E05",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L294",
+   "quote": "The default maximum number of steps was set to 30",
+   "support_explanation": "Screenshot-only 1280x720 setting, native UI-TARS scaffold differs.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E06",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L310",
+   "quote": "PC Agent-E (Ours) | 4.8 | 64.1 | 46.2 | 50.0 | 57.9 | 35.7 | 33.3 | 36.0",
+   "support_explanation": "141-task Windows result; 14.9 base /32.6 teacher in same table.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E07",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L320",
+   "quote": "which yields a limited gain (improved from 14.9 to 17.2)",
+   "support_explanation": "Human-only control versus 36.0 boosted.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E08",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L330",
+   "quote": "while Trajectory Boost required only 3 hours under the same hardware conditions",
+   "support_explanation": "900h versus3h offline synthesis, not equivalent full accounting of tokens/concurrency.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E09",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L345",
+   "quote": "PC Agent-E (Ours) | 10.9 | 63.3 | 14.9",
+   "support_explanation": "339 feasible and30 infeasible OSWorld tasks, 30-step Linux transfer.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E10",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L461",
+   "quote": "this combined baseline achieves a score of 26.9, comparable to direct distillation alone (26.2), yet significantly lower than PC Agent-E (36.0)",
+   "support_explanation": "Strong human+distillation control.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E11",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L477",
+   "quote": "PC Agent-E | 26.9 | 36.0 | 31.4",
+   "support_explanation": "50-step performance decreases; termination boundary.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E12",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L437",
+   "quote": "for 2 epochs using 32 NVIDIA GPUs over approximately 5 hours",
+   "support_explanation": "Training cost and hyperparameters disclosed.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E13",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L257",
+   "quote": "reduced the initialization failure rate from 10%–30% (depending on hardware) to below 5%",
+   "support_explanation": "Harness reset/initialization interventions; not two-sided checker audit.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E14",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L457",
+   "quote": "although the gains are not as significant as those observed with the 72B model",
+   "support_explanation": "7B 5.0 to6.4; sharply size-dependent.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:R01",
+   "material_id": "sol:arxiv:2501.12326",
+   "material_sha256": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "locator": "L626",
+   "quote": "reverse annotation of thoughts conditioned on ground-truth actions (i.e., ActRe) can lead to false positives",
+   "support_explanation": "UI-TARS already diagnoses action-conditioned rationalisation; predecessor, fixed reference.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:R02",
+   "material_id": "sol:arxiv:2412.09605",
+   "material_sha256": "ff0d81b000884775c3d21cacef43eb7db8eb5f0286152dd3fb0f1df0e9fd65bd",
+   "locator": "L220",
+   "quote": "execute these structured tutorials in real web environments",
+   "support_explanation": "AgentTrek uses executed tutorial-guided synthesis; contrast snapshot-only alternatives.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:R03",
+   "material_id": "sol:arxiv:2404.07972",
+   "material_sha256": "5907f5ab2f95d036e676d17d701a77fd30850e3eccb55b014183d318520ff9d1",
+   "locator": "L281",
+   "quote": "The snapshot feature also enables efficient reset of the virtual environment.",
+   "support_explanation": "OSWorld existing reset/evaluation lineage.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E15",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L255",
+   "quote": "we removed all infeasible tasks to prevent infeasible hacking",
+   "support_explanation": "Changes benchmark population; does not solve calibrated refusal.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E16",
+   "material_id": "sol:arxiv:2505.13909",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "L259",
+   "quote": "We identified and corrected several evaluation errors and relied on human evaluators for a few complex tasks",
+   "support_explanation": "Evaluation changes disclosed but checker correctness not exhaustively quantified.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E001",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Abstract",
+   "quote": "Starting with just 312 human-annotated computer use trajectories, we further augment them by synthesizing diverse alternative action decisions with Claude 3.7 Sonnet.",
+   "support_explanation": "Central recipe: tiny human seed set plus teacher-synthesized alternative decisions.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E002",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Abstract",
+   "quote": "our PC Agent-E model achieved a remarkable 141% relative improvement, and even surpassed the Claude 3.7 Sonnet by 10% in relative terms on WindowsAgentArena-V2",
+   "support_explanation": "Headline performance claim (base model and teacher comparison).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E003",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 3.4 Trajectory Boost",
+   "quote": "we utilize a frontier computer use agent model, Claude 3.7 Sonnet, to generate single-step alternative action decisions.",
+   "support_explanation": "Operation: single-step teacher sampling, not end-to-end rollouts.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E004",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 3.4 Trajectory Boost",
+   "quote": "These sampled action decisions from Claude 3.7 Sonnet are not executed in real computer environments, but serve as important augmented data for later agent training.",
+   "support_explanation": "Alternative actions are never executed or verified; no environment feedback enters the selection.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E005",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 3.4 Trajectory Boost",
+   "quote": "In practice, we sample 9 action decisions in parallel.",
+   "support_explanation": "Scaling factor s=10 (9 teacher + 1 human) per step.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E006",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 3.5 Agent Training",
+   "quote": "the history in the training sample includes only prior human actions on the main trunk of the Traj Tree",
+   "support_explanation": "History visible to the student is always human-trunk history, even for teacher-sampled alternative actions.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E007",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 3.5 Agent Training",
+   "quote": "We finally obtained 27K training samples from 312 augmented trajectories",
+   "support_explanation": "Training-set size actually used for SFT.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E008",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 3.3 Thought Completion",
+   "quote": "we provide Claude 3.7 Sonnet with: task description, historical actions with their previously reconstructed thought processes, the current action, and the corresponding screenshot.",
+   "support_explanation": "Thought Completion is hindsight reconstruction conditioned on the human action.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E009",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 3.2 Trajectory Collection",
+   "quote": "we retained only trajectories whose task descriptions have an overlap of 0 under 13-gram and less than 0.7 under 3-gram, and a cosine semantic similarity under 0.85 with respect to any test task.",
+   "support_explanation": "Decontamination rule against WAA-V2 test tasks.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E010",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 3.2 Trajectory Collection",
+   "quote": "no additional verification was required to ensure trajectory correctness",
+   "support_explanation": "Human trajectories are accepted without execution-based verification.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E011",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Appendix E",
+   "quote": "over 90% of trajectories contain fewer than 15 steps",
+   "support_explanation": "Training horizon distribution is short; authors tie 50-step degradation to it.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E012",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 4 WindowsAgentArena-V2",
+   "quote": "an updated benchmark comprising 141 tasks across 11 widely-used Windows applications, all derived from the original WindowsAgentArena",
+   "support_explanation": "Main evaluation benchmark is authors' modified fork of WAA.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E013",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 4 WindowsAgentArena-V2",
+   "quote": "as a temporary solution in WindowsAgentArena-V2, we removed all infeasible tasks to prevent infeasible hacking",
+   "support_explanation": "Benchmark modification: infeasible tasks dropped.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E014",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 4 WindowsAgentArena-V2",
+   "quote": "We implemented VM snapshot restoration before each evaluation",
+   "support_explanation": "Resettable-environment control added to WAA-V2.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E015",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 4 WindowsAgentArena-V2",
+   "quote": "This approach reduced the initialization failure rate from 10%–30% (depending on hardware) to below 5%.",
+   "support_explanation": "Initial-state validation with up to three restarts.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E016",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 4 WindowsAgentArena-V2",
+   "quote": "We identified and corrected several evaluation errors and relied on human evaluators for a few complex tasks to improve assessment reliability.",
+   "support_explanation": "Checker fixes and partial human evaluation; counts of fixed checkers / human-judged tasks not given.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E017",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Table 3",
+   "quote": "PC Agent-E (Ours) | 4.8 | 64.1 | 46.2 | 50.0 | 57.9 | 35.7 | 33.3 | 36.0",
+   "support_explanation": "PC Agent-E WAA-V2 per-category and total success.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E018",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Table 3",
+   "quote": "Claude 3.7 Sonnet | 2.4 | 46.5 | 61.5 | 54.2 | 52.6 | 29.0 | 16.7 | 32.6",
+   "support_explanation": "Teacher (non-thinking) success on WAA-V2 under the PC Agent-E scaffold.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E019",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Table 3",
+   "quote": "Qwen2.5-VL-72B | 0.0 | 34.7 | 15.4 | 20.8 | 26.3 | 7.6 | 16.7 | 14.9",
+   "support_explanation": "Base model success.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E020",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Table 3",
+   "quote": "Claude 3.7 Sonnet (thinking) | 2.4 | 64.1 | 46.2 | 66.7 | 52.6 | 21.9 | 25.0 | 35.4",
+   "support_explanation": "Stronger teacher variant is within 0.6 points of the student.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E021",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Table 3 / Table 7 header row",
+   "quote": "Number of Tasks | 42 | 17 | 13 | 24 | 19 | 14 | 12 | 141",
+   "support_explanation": "Denominators. 64.1% of 17 and 36.0% of 141 are not integer task counts (e.g. 11/17=64.7, 51/141=36.2), so reported figures are averages or fractional scores of an undisclosed kind.",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "son55:E022",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 5.3",
+   "quote": "Compared to training on human trajectories alone, which yields a limited gain (improved from 14.9 to 17.2), PC Agent-E achieves substantially greater performance gains (improved from 14.9 to 36.0).",
+   "support_explanation": "Human-only SFT vs Trajectory Boost ablation (s=1 vs s=10).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E023",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 5.1 Method Baseline",
+   "quote": "We sample 10 end-to-end trajectories from Claude 3.7 Sonnet for each of the 312 tasks.",
+   "support_explanation": "Direct-distillation baseline definition.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E024",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 5.1 Method Baseline",
+   "quote": "The resulting 3,120 trajectories are then used for training with the identical procedure as PC Agent-E, matching the trajectory number of our method for a fair comparison.",
+   "support_explanation": "Baseline matched on trajectory count, not on step count or on filtering.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E025",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 5.1 / 5.4 (baseline description)",
+   "quote": null,
+   "support_explanation": "The text describes no success filtering, verifier or rejection sampling of the 3,120 distilled teacher trajectories, whose source model succeeds on only ~33% of tasks (E018); the baseline therefore appears to train on unfiltered, partly failed trajectories. A filtered-distillation baseline is absent.",
+   "kind": "our_inference",
+   "absence_check": {
+    "patterns": [
+     "rejection sampl",
+     "filter\\w* (the )?(sampled |distilled |teacher |Claude )",
+     "only (successful|correct) (trajector|rollout)"
+    ],
+    "hits": 0,
+    "scope": "full text of 2505.13909 incl. appendices"
+   }
+  },
+  {
+   "evidence_id": "son55:E026",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Appendix D / Table 7",
+   "quote": "this combined baseline achieves a score of 26.9, comparable to direct distillation alone (26.2), yet significantly lower than PC Agent-E (36.0)",
+   "support_explanation": "Human + distillation baseline.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E027",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 5.4",
+   "quote": "the distillation baseline took about 900 hours , while Trajectory Boost required only 3 hours under the same hardware conditions",
+   "support_explanation": "Reported data-generation time/cost (hours) of both recipes.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E028",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 5.2 Analysis",
+   "quote": "We found that our improvements primarily stem from enhanced planning capabilities.",
+   "support_explanation": "Mechanism claim rests on a qualitative reading of 50 trajectories (no counts per failure type).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E029",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 5.2 Analysis",
+   "quote": "We did not observe significant improvements in knowledge or grounding capabilities.",
+   "support_explanation": "Scope boundary of the gain.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E030",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Table 6 (Appendix C)",
+   "quote": "PC Agent-E 7B | 6.4",
+   "support_explanation": "7B student on WAA-V2; base is 5.0.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E031",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Table 6 (Appendix C)",
+   "quote": "Qwen2.5-VL-7B | 5.0",
+   "support_explanation": "7B base score.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E032",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Table 4 (Sec 5.6)",
+   "quote": "Qwen2.5-VL-72B | 4.4 | 86.7 | 11.1",
+   "support_explanation": "OSWorld 30-step: base feasible/infeasible/total.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E033",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Table 4 (Sec 5.6)",
+   "quote": "PC Agent-E (Ours) | 10.9 | 63.3 | 14.9",
+   "support_explanation": "OSWorld 30-step: student; total gain is driven by feasible tasks (4.4->10.9) while infeasible score falls (86.7->63.3).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E034",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 5.6",
+   "quote": "the weaker Qwen2.5-VL-72B model paradoxically achieved markedly better performance on infeasible tasks.",
+   "support_explanation": "Empirical support for the 'infeasible hacking' diagnosis.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E035",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Table 4 (Sec 5.6)",
+   "quote": "Number of Tasks | 339 | 30 | 369",
+   "support_explanation": "OSWorld split: 339 feasible / 30 infeasible.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E036",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Table 8 (Appendix E)",
+   "quote": "PC Agent-E | 26.9 | 36.0 | 31.4",
+   "support_explanation": "Step-budget sensitivity (15/30/50) of the student; base is 11.3/14.9/11.9.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E037",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Appendix E",
+   "quote": "We identify that the performance degradation at 50 steps is primarily caused by the models’ inability to correctly recognize task completion.",
+   "support_explanation": "Termination/stop-condition failure acknowledged.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E038",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Appendix A",
+   "quote": "fine-tuned on a dataset of 27k samples for 2 epochs using 32 NVIDIA GPUs over approximately 5 hours",
+   "support_explanation": "Training compute.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E039",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 3.2",
+   "quote": "The whole annotation process was completed by two annotators within a single day",
+   "support_explanation": "Human annotation cost.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E040",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 5.1 Settings",
+   "quote": "For the UI-TARS model series, we adopted their native framework, which supports image history and code block actions. All other models, including Claude and Qwen, were evaluated using our simple PC Agent-E scaffold.",
+   "support_explanation": "Baseline interface not matched: UI-TARS gets image history; others use history-free text scaffold.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E041",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 5.1 Settings",
+   "quote": "The default maximum number of steps was set to 30",
+   "support_explanation": "Step budget used for the main table.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E042",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 5.1 / whole paper",
+   "quote": null,
+   "support_explanation": "No repeated runs, seeds, standard deviations or confidence intervals are reported anywhere in the paper, including appendices.",
+   "kind": "our_inference",
+   "absence_check": {
+    "patterns": [
+     "random seeds?",
+     "standard dev",
+     "confidence interval",
+     "averaged over",
+     "three runs|3 runs|repeated runs|multiple runs|each experiment was run"
+    ],
+    "hits": 0,
+    "scope": "full text of 2505.13909 incl. appendices"
+   }
+  },
+  {
+   "evidence_id": "son55:E043",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "whole paper",
+   "quote": null,
+   "support_explanation": "No monetary or token cost of the 27K Claude sampling calls, nor of the Claude end-to-end baseline, is reported; only wall-clock hours (E027).",
+   "kind": "our_inference",
+   "absence_check": {
+    "patterns": [
+     "API cost",
+     "\\$\\s?\\d",
+     "token cost",
+     "dollars"
+    ],
+    "hits": 0,
+    "scope": "full text of 2505.13909 incl. appendices"
+   }
+  },
+  {
+   "evidence_id": "son55:E044",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 3.2",
+   "quote": "Each task description was compared against the tasks in our main evaluation benchmark ( §4 ) using n-gram overlap and semantic similarity metrics.",
+   "support_explanation": "Decontamination is stated against WAA-V2 only; no equivalent statement for OSWorld or for application/environment overlap.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E045",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 1",
+   "quote": "A key factor contributing to these deficiencies is the extreme scarcity of high-quality computer use trajectory data",
+   "support_explanation": "Author-stated gap.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E046",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 2.2",
+   "quote": "Our work differs from prior work by synthesizing high-quality multi-step trajectories based on real-world human demonstrations and emphasizing data efficiency.",
+   "support_explanation": "Author-stated delta from AgentTrek / OS-Genesis style synthesis.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E047",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 5.4",
+   "quote": "This avoids the error accumulation that can occur in end-to-end trajectory distillation.",
+   "support_explanation": "Explanation for beating direct distillation; asserted, not isolated by an experiment.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E048",
+   "material_id": "son55:M:2412.09605",
+   "material_sha256": "ff0d81b000884775c3d21cacef43eb7db8eb5f0286152dd3fb0f1df0e9fd65bd",
+   "locator": "Abstract (AgentTrek)",
+   "quote": "achieving a cost of just $0.55 per high-quality trajectory without human annotators",
+   "support_explanation": "Nearest neighbor: automatic guided-replay synthesis with an evaluator, web-only.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E049",
+   "material_id": "son55:M:2412.09605",
+   "material_sha256": "ff0d81b000884775c3d21cacef43eb7db8eb5f0286152dd3fb0f1df0e9fd65bd",
+   "locator": "Method (AgentTrek)",
+   "quote": "A separate VLM evaluator assesses trajectory quality to ensure effectiveness.",
+   "support_explanation": "AgentTrek applies a trajectory-level filter; PC Agent-E applies none to the augmented actions.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E050",
+   "material_id": "son55:M:2501.12326",
+   "material_sha256": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "locator": "Sec 1 (UI-TARS)",
+   "quote": "Rigorous multi-stage filtering—incorporating rule-based heuristics, VLM scoring, and human review—ensures trace quality.",
+   "support_explanation": "Nearest neighbor: UI-TARS iterative online trace bootstrapping with multi-stage filtering and reflection tuning on VMs.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E051",
+   "material_id": "son55:M:2505.13909v2",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "locator": "Sec 5.2 Analysis",
+   "quote": "examining 50 trajectories that Qwen2.5-VL-72B failed but PC Agent-E succeeded",
+   "support_explanation": "Sample size of the qualitative failure analysis.",
+   "kind": "author_report"
+  }
+ ],
+ "preliminary_evidence_judgment": "Read before seat scores. SFT of Qwen2.5-VL-72B on 312 human Windows trajectories (two annotators, one day) whose steps get Claude-3.7 reconstructed thoughts plus 9 unexecuted Claude-3.7 alternative single-step decisions per human state (27K samples; history always the human trunk). Main evaluation is the authors' WAA-V2: 141 feasible tasks, VM snapshot reset, some checkers fixed and a few tasks human-graded, all infeasible tasks removed; 30-step cap; single reported run whose percentages are not k/141 counts. 14.9 -> 36.0 vs human-only 17.2, unfiltered end-to-end Claude distillation 26.2, human+distillation 26.9 at equal trajectory count; Claude-3.7 32.6 is run in the authors' scaffold (no image history) while UI-TARS uses its native framework. OSWorld (Linux, unseen OS) 11.1 -> 14.9, feasible 4.4 -> 10.9 but infeasible 86.7 -> 63.3, i.e. the trained model regresses on exactly the category WAA-V2 removed. Explicit n-gram/semantic decontamination against the test tasks. Applicable cards/expectations: gui C21 (reasoning synthesis + SFT), C22 (resettable executable benchmark); E01, E13, E16, E19, E22, E23, E25, E27.",
+ "agreed_items_review": "Agreed items M=3, X=3, E.statistics=1, E.cost=3, claim_type component_training, evidence_level transfer, claim_support scoped were re-checked against the text: all stand. Added scope boundary: the trained model regresses on infeasible tasks (OSWorld), the category WAA-V2 removes.",
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "SFT training set for a screenshot-only ReAct policy (thought+action per step, history = text log of earlier human thoughts/actions)",
+   "information": "Teacher (Claude 3.7 Sonnet, non-thinking, in PC Agent-E scaffold) sees <task, screenshot o_k, human-trunk history h_k> at each recorded human step; no later frames, no execution; student never sees teacher history, only human-trunk history.",
+   "operation": "At every human step, sample 9 single-step (thought, action) alternatives from the teacher in parallel; keep human step as the 10th; each node becomes one SFT sample (Traj Tree).",
+   "output": "27K SFT samples from 312 trajectories; Qwen2.5-VL-72B SFT 2 epochs.",
+   "conditions": "Needs a seed set of correct human trajectories with recorded screenshots; teacher must be strong at single-step decisions; states restricted to human-visited trunk.",
+   "feedback": "None from the environment; alternative actions are not executed.",
+   "selection_rule_data": "No filter/verifier/majority vote on teacher actions is described; selection of the whole recipe against baselines is done on the WAA-V2 test tasks (the benchmark the authors built).",
+   "persistence": "Student weights after SFT; no memory/skill store.",
+   "later_use": "Single-pass evaluation on WAA-V2 (30 steps) and OSWorld (30 steps).",
+   "claimed_effect": "14.9 -> 36.0 on WAA-V2 (E019, E017); >teacher 32.6 (E018); beats human-only 17.2 and direct distillation 26.2/26.9 (E022, E026).",
+   "failure_boundary": "Termination awareness collapses beyond training length (50 steps, E036-E037); 7B gain small (5.0->6.4, E030-E031); knowledge/grounding not improved (E029); wrong teacher actions are not detectable.",
+   "evidence_ids": [
+    "son55:E003",
+    "son55:E004",
+    "son55:E005",
+    "son55:E006",
+    "son55:E007",
+    "son55:E019",
+    "son55:E017",
+    "son55:E018",
+    "son55:E022",
+    "son55:E026",
+    "son55:E029",
+    "son55:E030",
+    "son55:E031",
+    "son55:E036",
+    "son55:E037"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "Per-step thought text of human trajectories",
+   "information": "Claude sees task, earlier reconstructed thoughts, the current human action (and click-marked screenshot) and writes a first-person pre-action thought (hindsight with the action visible).",
+   "operation": "Iteratively reconstruct a thought for each human action; then use (thought, action) as SFT target.",
+   "output": "Human trajectories with thoughts.",
+   "conditions": "Action-conditioned (so thoughts are action-consistent by construction).",
+   "feedback": "none",
+   "selection_rule_data": "none described (no check that reconstructed thought would lead to the action without seeing it)",
+   "persistence": "in training data only",
+   "later_use": "student produces thought then action at inference",
+   "claimed_effect": "Part of the human-only baseline (17.2); no separate ablation of thought completion.",
+   "failure_boundary": "Hindsight leakage and rationalization risk not examined.",
+   "evidence_ids": [
+    "son55:E008",
+    "son55:E022"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "WindowsAgentArena benchmark (evaluation harness)",
+   "information": "Authors inspect original WAA and identify (i) no VM reset between tasks, (ii) FAIL-always hack on infeasible tasks, (iii) unstable initial states, (iv) buggy checkers.",
+   "operation": "VM snapshot restore per task; remove all infeasible tasks; initial-state validation with <=3 restarts; fix some evaluation functions and human-grade a few tasks -> 141 tasks.",
+   "output": "WAA-V2 (141 tasks, 11 apps).",
+   "conditions": "Evaluated tasks are only those with feasible goals.",
+   "feedback": "The weaker base model scores higher on infeasible tasks in WAA and OSWorld (E034, E032-E033).",
+   "selection_rule_data": "Authors choose what to drop/fix after assessing the original benchmark; selection was made before final results (not stated).",
+   "persistence": "released benchmark",
+   "later_use": "main evaluation of the paper",
+   "claimed_effect": "More robust and fair evaluation; initialization failure 10-30% -> <5% (E015).",
+   "failure_boundary": "Evaluator corrections not enumerated or two-sidedly validated; dropping infeasible tasks removes refusal ability from measurement; benchmark and method are from the same group.",
+   "evidence_ids": [
+    "son55:E012",
+    "son55:E013",
+    "son55:E014",
+    "son55:E015",
+    "son55:E016",
+    "son55:E034",
+    "son55:E032",
+    "son55:E033"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "Open-source computer-use agents lag proprietary systems; the key factor is scarcity of high-quality trajectory data (E045).",
+  "checked_gap": "Real: desktop/Windows trajectory data is expensive to collect; end-to-end teacher rollouts need online VM interaction (reported 900 h for 3,120 trajectories, E027). The fixed neighbors address web tutorials (AgentTrek) or large VM infra with multi-stage filtering (UI-TARS); neither targets a tiny human seed set on Windows. The paper never compares against AgentTrek/UI-TARS-style data at equal budget; the delta is argued in related work only (E046).",
+  "lineage_closest_adjacent": [
+   {
+    "source": "2412.09605 AgentTrek (fixed html 2412.09605)",
+    "solved": "tutorial-guided replay with VLM evaluator filter; $0.55 per trajectory, web-focused",
+    "unsolved_for_this_setting": "not Windows desktop; filters on outcome, not human-anchored states",
+    "evidence_ids": [
+     "son55:E048",
+     "son55:E049"
+    ]
+   },
+   {
+    "source": "2501.12326 UI-TARS (fixed html 2501.12326)",
+    "solved": "iterative online trace bootstrapping with rule/VLM/human filtering and reflection tuning at VM scale",
+    "unsolved_for_this_setting": "needs hundreds of VMs and annotators; a 312-trajectory regime is not considered",
+    "evidence_ids": [
+     "son55:E050"
+    ]
+   },
+   {
+    "source": "direct distillation (authors' baseline)",
+    "solved": "teacher rollouts need no human seed",
+    "unsolved_for_this_setting": "expensive (E027) and appears unfiltered (E025)",
+    "evidence_ids": [
+     "son55:E023",
+     "son55:E024",
+     "son55:E025",
+     "son55:E027"
+    ]
+   }
+  ],
+  "residue": "Teacher knowledge about planning/recovery is not yet in open student; human trajectories alone (17.2) do not transfer it; whether teacher single-step signals at human states are accurate is unmeasured.",
+  "stakes": "Data-efficiency of open Windows agents (312 trajectories vs ~900 GPU-hours of rollouts).",
+  "method_response": "Anchor on human-visited states (cheap, always valid), ask the teacher only for single-step decisions offline, train on the multiplicity of decisions; avoid long-horizon error accumulation (E047, asserted).",
+  "remaining_gap": "Alt actions unverified; no filtered-distillation or best-of-N teacher control; termination weakness; gains stay in planning, not grounding/knowledge; small-model gain minimal; same-group benchmark; no repeats.",
+  "evidence_ids": [
+   "agg:PA-A03",
+   "son55:E027",
+   "son55:E048",
+   "son55:E050"
+  ],
+  "unresolved": "Whether Trajectory Boost beats a success-filtered distillation baseline of the same teacher; contribution of human-state anchoring vs sample multiplicity (Fig 7 not readable in text).",
+  "current_relevance": "Later UI-TARS-2 (fixed ref 2509.02544) reports 50.6 on WindowsAgentArena; not used to judge this paper's problem placement.",
+  "aggregate_neighbor_check": "Closest operational alternative (teacher end-to-end distillation on the same 312 tasks) is compared at equal trajectory count; AgentTrek/UI-TARS data pipelines (fixed references) are positioned but not run. Residual (human-anchored single-step teacher branching without executing teacher rollouts) is concrete and quantified (3 h vs 900 h)."
+ },
+ "rs_pattern": {
+  "primary": "self_supervised_signal_engineering",
+  "supporting": [
+   "controlled_diagnostic_design"
+  ],
+  "matches": [
+   {
+    "main_id": "self_supervised_signal_engineering",
+    "sub_id": null,
+    "role": "primary",
+    "fit": "strong main; no exact sub",
+    "tactic_steps_checked": "Manufacture thought/action supervision from teacher outputs and train. C08 rejected as exact sub: no load-bearing gate on generated leaves; C07 internal tiny-lever adaptation absent; C26 preference objective absent.",
+    "success_failure_checks": "Downstream online comparison exists; no sample gate ablation or leaf reliability audit.",
+    "evidence_ids": [
+     "sol:E02",
+     "sol:E03",
+     "sol:E04",
+     "sol:E07",
+     "sol:E10"
+    ],
+    "reason": "Generated labels are actual training targets, not merely mentioned synthesis."
+   },
+   {
+    "main_id": "controlled_diagnostic_design",
+    "sub_id": "rs:C02",
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": "Identify infeasible-FAIL shortcut, separate feasible/infeasible OSWorld scores and remove infeasible WAA tasks.",
+    "success_failure_checks": "Known oracle anchoring and correction exist; removals change task population, not a complete single-variable matched-pair diagnostic.",
+    "evidence_ids": [
+     "sol:E09",
+     "sol:E13",
+     "sol:E15",
+     "sol:E16"
+    ],
+    "reason": "Benchmark intervention is distinct from the training mechanism."
+   }
+  ],
+  "outside_taxonomy": false,
+  "reason": "Concrete efficient training intervention with strong recipe controls, but generated alternatives are never executed or independently checked. Transfer isLinux afterWindowsfine-tuning, notbroadplatformgeneralism. Evidence does not establish a closedself-improver orsolve termination; allscoresprovisional underdraftv2.2.",
+  "executes_pattern": true,
+  "resolves_problem": false,
+  "aggregate_source_seat": "sol",
+  "aggregate_reason": "self_supervised_signal_engineering with sub null: rs:C08's load-bearing step is a quality gate before candidates enter training; Trajectory Boost has none (both seats agree on the missing filter). Supporting controlled_diagnostic_design/rs:C02 (partial) for the infeasible-hacking benchmark repair, as in both seats."
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "trajectory_level_policy_training",
+    "sub": "gui:C21",
+    "version": "gui-C21",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "condition_id": "S4 Reasoning kept only if action-consistent",
+      "status": "partial",
+      "note": "Thought Completion is action-conditioned (E008) so human thoughts are consistent by construction; teacher thoughts are paired with teacher actions but never checked.",
+      "evidence_ids": [
+       "son55:E008",
+       "son55:E004"
+      ]
+     },
+     {
+      "condition_id": "S6 Mixed reasoning levels with decoding level ablated",
+      "status": "unmet",
+      "note": "single thought style; no level ablation.",
+      "evidence_ids": [
+       "son55:E008"
+      ]
+     },
+     {
+      "condition_id": "F2 Exact-match correctness rejects valid alternatives",
+      "status": "met_avoided",
+      "note": "Opposite design: multiple valid alternatives are intentionally trained on (E003).",
+      "evidence_ids": [
+       "son55:E003"
+      ]
+     },
+     {
+      "condition_id": "F3 Short tasks, subsets, few repeats",
+      "status": "unmet_hit",
+      "note": "training >90% <15 steps (E011); single-pass evaluation without repeats (E042).",
+      "evidence_ids": [
+       "son55:E011",
+       "son55:E042"
+      ]
+     },
+     {
+      "condition_id": "F4 Gains not shown across model sizes",
+      "status": "partial",
+      "note": "72B and 7B shown; 7B gain small (E030, E031).",
+      "evidence_ids": [
+       "son55:E030",
+       "son55:E031"
+      ]
+     },
+     {
+      "condition_id": "F6 Reasoning noise from source traces",
+      "status": "unknown",
+      "note": "No audit of teacher thought quality.",
+      "evidence_ids": [
+       "son55:E004"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "son55:E003",
+     "son55:E008",
+     "son55:E011",
+     "son55:E030",
+     "son55:E031",
+     "son55:E042"
+    ],
+    "executes_pattern": true,
+    "resolves_problem": "partial",
+    "reason": "C21 = strong MLLM writes reasoning for demonstration steps then SFT. Thought Completion executes that; Trajectory Boost goes beyond C21 (adds sampled alternatives) and is not covered by any existing sub-card.",
+    "namespace": "gui",
+    "aggregate_source_seat": "son55"
+   },
+   {
+    "main": "verifiable_execution_reward",
+    "sub": "gui:C22",
+    "version": "gui-C22",
+    "fit": "weak",
+    "condition_checks": [
+     {
+      "condition_id": "S1 Checker reads privileged state",
+      "status": "met",
+      "note": "WAA rule-based evaluators over VM state, with VM snapshot reset (E014).",
+      "evidence_ids": [
+       "son55:E014"
+      ]
+     },
+     {
+      "condition_id": "S6 Two-sided checker validation",
+      "status": "unmet",
+      "note": "Fixes to checkers are described anecdotally (YouTube-history example) without false-negative measurement (E016).",
+      "evidence_ids": [
+       "son55:E016"
+      ]
+     },
+     {
+      "condition_id": "F1 Checker error rates unquantified",
+      "status": "unmet_hit",
+      "note": "error rates not reported.",
+      "evidence_ids": [
+       "son55:E016"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "son55:E014",
+     "son55:E016"
+    ],
+    "executes_pattern": true,
+    "resolves_problem": "not_claimed",
+    "reason": "WAA-V2 re-uses resettable VM + checker design from WAA/OSWorld; the paper adds snapshot reset and checker bugfixes, so the match is to the benchmark side only.",
+    "namespace": "gui",
+    "aggregate_source_seat": "son55"
+   }
+  ],
+  "unassigned": [
+   "Teacher single-step alternative-action augmentation anchored on human-visited states (Trajectory Boost) has no domain card; closest are K25/C21 (reasoning augmentation) and K26 (corrections), none sample alternatives."
+  ],
+  "revision_proposals": [
+   "Candidate (single paper, case-level): 'human-trunk, teacher-branch offline augmentation' needs a second independent full text before candidate_pattern status."
+  ],
+  "aggregate_note": "Thought Completion = gui:C21 (strong MLLM writes reasoning for demonstrations, then SFT a screenshot policy; more specific than sibling K25); Trajectory Boost's sampled alternatives are recorded as unassigned. WAA-V2 (snapshot reset + privileged checkers + fixes) = gui:C22, weak."
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "self_supervised_signal_engineering",
+   "rs_sub": null,
+   "domain": {
+    "namespace": "gui",
+    "main": "trajectory_level_policy_training",
+    "sub": "C21"
+   },
+   "operation_correspondence": "Teacher manufactures thought/action labels consumed bySFT, maps toK25reasoning augmentation; alternative branches are additional operation.",
+   "necessary_conditions_differences": "Training labels versus online state correctness and harness oracle must not be conflated.",
+   "evidence_ids": [
+    "sol:E02",
+    "sol:E03",
+    "sol:E06",
+    "sol:E09",
+    "sol:E11",
+    "sol:E14"
+   ],
+   "aggregate_note": "domain side updated from {'namespace': 'gui', 'main': 'trajectory_level_policy_training', 'sub': 'K25'} to the final domain_pattern pick"
+  },
+  {
+   "rs_main": "controlled_diagnostic_design",
+   "rs_sub": "rs:C02",
+   "domain": {
+    "namespace": "gui",
+    "main": "verifiable_execution_reward",
+    "sub": "C22"
+   },
+   "operation_correspondence": "Infeasible shortcut diagnosis andreset/checker correction maptoevaluation design, no exact GUIsubfit.",
+   "necessary_conditions_differences": "Training labels versus online state correctness and harness oracle must not be conflated.",
+   "evidence_ids": [
+    "sol:E05",
+    "sol:E11",
+    "sol:E13",
+    "sol:E15",
+    "sol:E16"
+   ],
+   "aggregate_note": "domain side updated from {'namespace': 'gui', 'main': 'online_evaluation_methodology', 'sub': None} to the final domain_pattern pick"
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Desktop claim; OSWorld run at 30 steps (non-standard 15/50), screenshot-only, no OSWorld-Verified, single table entry, no run count; main benchmark is Windows WAA-V2 rather than OSWorld.",
+   "evidence_ids": [
+    "son55:E033",
+    "son55:E035",
+    "son55:E041",
+    "son55:E042"
+   ],
+   "score_item": "E.measurement",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Claim is about Windows/Linux desktop; no mobile, self-hosted web or live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Claim is about Windows/Linux desktop; no mobile, self-hosted web or live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Claim is about Windows/Linux desktop; no mobile, self-hosted web or live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No grounding-model or perturbation-robustness claim; paper states grounding was not improved.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No grounding-model or perturbation-robustness claim; paper states grounding was not improved.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Compares to base, human-only SFT, UI-TARS-1.5-7B and UI-TARS-72B-DPO and Claude; no planner+specialised-grounder framework; UI-TARS run in its own scaffold with image history (E040).",
+   "evidence_ids": [
+    "son55:E019",
+    "son55:E017",
+    "son55:E040",
+    "son55:E022"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Not a planner-grounder system.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "SFT only; no RL, learned reward/PRM or inference-time search.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No LLM/VLM judge is used as reward or evaluator (only rule-based checkers plus a few human gradings).",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No LLM/VLM judge is used as reward or evaluator (only rule-based checkers plus a few human gradings).",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "SFT only; no RL, learned reward/PRM or inference-time search.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Checker corrections described but false positives/negatives are not measured two-sidedly.",
+   "evidence_ids": [
+    "son55:E016"
+   ],
+   "score_item": "E.measurement",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "SFT only; no RL, learned reward/PRM or inference-time search.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Success is measured online, not by offline step accuracy.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "No repeated runs/CI reported; table values are not integer fractions of the task counts (E021) and averaging is undisclosed.",
+   "evidence_ids": [
+    "son55:E042",
+    "son55:E021"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Main table at 30 steps for all models; 15/30/50 reported only for base and student; steps used and budget exhaustion not reported; 50-step degradation explained by missed termination.",
+   "evidence_ids": [
+    "son55:E041",
+    "son55:E036",
+    "son55:E037"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "SFT only; no RL, learned reward/PRM or inference-time search.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Harness changes are disclosed (snapshot, infeasible removal, restart validation, checker fixes) but the number/kind of fixed evaluators and human-graded tasks is not listed, and no validation beyond anecdotes.",
+   "evidence_ids": [
+    "son55:E012",
+    "son55:E013",
+    "son55:E014",
+    "son55:E015",
+    "son55:E016"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Claim is about Windows/Linux desktop; no mobile, self-hosted web or live-web claim.",
+   "evidence_ids": [],
+   "score_item": null,
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": true,
+   "status": "met",
+   "reason": "All models are screenshot-only at 1280x720; a11y is not used.",
+   "evidence_ids": [
+    "son55:E040"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": true,
+   "status": "met",
+   "reason": "72B main plus 7B appendix; 7B gain is small (5.0->6.4) which the authors attribute to planning-only improvement.",
+   "evidence_ids": [
+    "son55:E030",
+    "son55:E031",
+    "son55:E029"
+   ],
+   "score_item": "E.holdout",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1-fixed-2026-10-21",
+   "source_strength": "single_source",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2504.01382#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2609.07712#s3"
+    }
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "requirement": "Stratify online success by human reference step count (difficulty) and audit failure causes",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Training lengths and50 trajectory failure audit; lacks human-reference-length success stratification.",
+   "evidence_ids": [
+    "sol:E11"
+   ],
+   "score_item": [
+    "E.statistics"
+   ],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No grounding-model or perturbation-robustness claim; paper states grounding was not improved.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Infeasible behaviour reported separately on OSWorld (63.3 vs 86.7), but dropped from the main benchmark; the FAIL action is trained on only as part of ordinary action space.",
+   "evidence_ids": [
+    "son55:E013",
+    "son55:E032",
+    "son55:E033"
+   ],
+   "score_item": "E.measurement",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1-fixed-2026-10-21",
+   "source_strength": "single_source",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2410.02907#s3"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.19723#s1"
+    }
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "requirement": "Compare a synthetic-trajectory recipe against an instruction-first / task-driven synthesis baseline with the same executor and similar data size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No exploration-first/reverse synthesis claim is made by this desktop SFT/data recipe.",
+   "evidence_ids": [],
+   "score_item": [],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Scaling factor s is varied (Fig 7) but numeric points are only in a figure not available in text; saturation point not described in prose.",
+   "evidence_ids": [
+    "son55:E005",
+    "son55:E022"
+   ],
+   "score_item": "E.causality",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Task-description decontamination vs WAA-V2 is explicit (E009); apps overlap by design; OSWorld is a separate-platform check but with no stated decontamination (E044).",
+   "evidence_ids": [
+    "son55:E009",
+    "son55:E044",
+    "son55:E033"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No reflection/error-recovery data claimed.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No world model or simulator/digital twin.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No world model or simulator/digital twin.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No world model or simulator/digital twin.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No LLM/VLM judge is used as reward or evaluator (only rule-based checkers plus a few human gradings).",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No world model or simulator/digital twin.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No retrieval-memory component.",
+   "evidence_ids": [],
+   "score_item": null
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "PC Agent-E gets 141% relative improvement over Qwen2.5-VL-72B on WAA-V2.",
+   "setting": "Windows VM, screenshot-only, 30 steps, 141 feasible tasks, 72B",
+   "baseline_control": "base Qwen2.5-VL-72B under same scaffold",
+   "selection_vs_test": "Benchmark built by the authors; training tasks decontaminated against it (E009); no separate dev split described",
+   "result_denominator": "14.9 -> 36.0 over 141 tasks; non-integer rates (E021); no repeats (E042)",
+   "evidence_ids": [
+    "son55:E017",
+    "son55:E019",
+    "son55:E021",
+    "son55:E009",
+    "son55:E042"
+   ],
+   "counterevidence": [
+    "son55:E042",
+    "agg:PA-A01",
+    "agg:PA-A02",
+    "agg:PA-A06"
+   ],
+   "allowed_conclusion": "Large gain on this author benchmark for a single reported training run; magnitude uncertain without repeats.",
+   "claim_support": "supported",
+   "aggregate_note": "Headline is on a feasible-only benchmark; the trained model regresses on infeasible OSWorld tasks (86.7 -> 63.3); table rates are not k/141 counts."
+  },
+  {
+   "claim_id": "C2",
+   "text": "PC Agent-E surpasses its teacher Claude 3.7 Sonnet by 10% relative.",
+   "setting": "same scaffold; non-thinking teacher",
+   "baseline_control": "Claude 3.7 Sonnet 32.6; thinking variant 35.4",
+   "selection_vs_test": "same",
+   "result_denominator": "36.0 vs 32.6 (3.4 pts, ~5 tasks of 141) and vs 35.4 (0.6 pts)",
+   "evidence_ids": [
+    "son55:E017",
+    "son55:E018",
+    "son55:E020",
+    "son55:E021"
+   ],
+   "counterevidence": [
+    "son55:E020",
+    "son55:E042",
+    "agg:PA-A04"
+   ],
+   "allowed_conclusion": "Student is comparable to the teacher (and to the thinking teacher); 'surpasses' is not statistically established.",
+   "claim_support": "scoped",
+   "aggregate_note": "Teacher run in the student's scaffold without image history."
+  },
+  {
+   "claim_id": "C3",
+   "text": "Trajectory Boost is more effective and efficient than human-only SFT and direct distillation.",
+   "setting": "matched 312 tasks / 3,120 trajectories",
+   "baseline_control": "human-only (17.2), DD (26.2), human+DD (26.9)",
+   "selection_vs_test": "same test set",
+   "result_denominator": "36.0 vs 26.2/26.9/17.2; time 3 h vs 900 h",
+   "evidence_ids": [
+    "son55:E022",
+    "son55:E023",
+    "son55:E024",
+    "son55:E025",
+    "son55:E026",
+    "son55:E027",
+    "son55:E047"
+   ],
+   "counterevidence": [
+    "son55:E025",
+    "agg:PA-A03"
+   ],
+   "allowed_conclusion": "Beats unfiltered teacher-rollout distillation at equal trajectory count and is far cheaper in wall-clock; superiority over success-filtered distillation or equal-step controls is untested.",
+   "claim_support": "scoped",
+   "aggregate_note": "Distillation baseline has no stated success filter."
+  },
+  {
+   "claim_id": "C4",
+   "text": "Gains come from improved planning (verification and self-correction).",
+   "setting": "50 failed/succeeded trajectories",
+   "baseline_control": "base model",
+   "selection_vs_test": "qualitative",
+   "result_denominator": "no counts per failure type",
+   "evidence_ids": [
+    "son55:E028",
+    "son55:E029",
+    "son55:E051"
+   ],
+   "counterevidence": [],
+   "allowed_conclusion": "Plausible but anecdotal.",
+   "claim_support": "unresolved"
+  },
+  {
+   "claim_id": "C5",
+   "text": "The method generalizes to OSWorld (34% relative improvement).",
+   "setting": "OSWorld 369 tasks, 30 steps, trained on Windows data only",
+   "baseline_control": "base 72B",
+   "selection_vs_test": "OSWorld not used in training; decontamination not stated",
+   "result_denominator": "11.1 -> 14.9; feasible 4.4 -> 10.9; infeasible 86.7 -> 63.3",
+   "evidence_ids": [
+    "son55:E032",
+    "son55:E033",
+    "son55:E035",
+    "son55:E044"
+   ],
+   "counterevidence": [
+    "son55:E034"
+   ],
+   "allowed_conclusion": "Small but real feasible-task gain on a different OS; absolute level low; infeasible score confounds the headline.",
+   "claim_support": "scoped"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "transfer",
+  "evidence_level_note": "OSWorld (Linux) was not used to build the system and is checked by executable evaluators, so EVIDENCE rule 1 gives transfer; the transfer gain is small (feasible 4.4 -> 10.9) and apps overlap with the Windows training data.",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "Author-reported, single run: on the authors' feasible-only WAA-V2 (141 tasks, 30 steps), SFT of Qwen2.5-VL-72B on 312 human trajectories plus 9 unexecuted Claude-3.7 single-step alternatives per human state raises success from 14.9 to 36.0, above human-only SFT (17.2) and unfiltered end-to-end Claude distillation (26.2) at equal trajectory count; on unseen-OS OSWorld feasible tasks 4.4 -> 10.9, with a drop on infeasible tasks (86.7 -> 63.3).",
+  "not_supported": [
+   "Superiority over a success-filtered distillation baseline",
+   "Beating the teacher outside the authors' screenshot-only scaffold or beyond noise (36.0 vs 32.6, ~5 tasks)",
+   "Gains on infeasible-task behaviour",
+   "Correctness of the synthetic alternative actions"
+  ],
+  "unresolved": [
+   "Non-integer success rates",
+   "Number of human-graded tasks",
+   "Teacher token/API cost"
+  ],
+  "author_report_only": true,
+  "our_run": false
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Desktop-trajectory scarcity and the cost of teacher rollouts are concrete and quantified (two annotators/one day; 900 h vs 3 h); the residual is distinguished from the nearest operational alternative (end-to-end teacher distillation) by experiment, and lineage (AgentTrek, OS-Genesis, UI-TARS thought augmentation) is stated. Not 4: data pipelines like AgentTrek/UI-TARS are only positioned, not bounded.",
+   "evidence_ids": [
+    "son55:E045",
+    "son55:E027",
+    "son55:E046",
+    "sol:E08",
+    "agg:PA-A03"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Human-state anchoring + single-step teacher branching is reconstructable and yields a distinguishing prediction vs end-to-end distillation that is tested; the assumption that unexecuted teacher alternatives are valid is unchecked.",
+   "evidence_ids": [
+    "son55:E003",
+    "son55:E005",
+    "son55:E047",
+    "sol:E03"
+   ],
+   "counterevidence_ids": [
+    "son55:E025"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Prompts, action space, sample construction (trunk-only history), training hyper-parameters and scaffold are given; missing a quality gate for alternatives and termination supervision (50-step decline).",
+   "evidence_ids": [
+    "son55:E006",
+    "son55:E007",
+    "son55:E038",
+    "son55:E036"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Executable WAA checkers with VM snapshot reset and OSWorld are credible, but the headline benchmark is author-modified (checker fixes without error rates, infeasible tasks dropped, an unstated number of human-graded tasks) and its success rates are not k/141 counts.",
+   "evidence_ids": [
+    "son55:E014",
+    "son55:E016",
+    "agg:PA-A01",
+    "agg:PA-A05",
+    "agg:PA-A06"
+   ],
+   "counterevidence_ids": [
+    "son55:E021"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Same-backbone human-only, end-to-end distillation and human+distillation controls at equal trajectory count plus a scaling curve support a recipe effect, but the distillation baseline is unfiltered (so 'error accumulation' is not separated from training on failed rollouts), Thought Completion and anchoring are not ablated, and the teacher comparison is scaffold-bound.",
+   "evidence_ids": [
+    "son55:E022",
+    "son55:E023",
+    "son55:E024",
+    "son55:E026"
+   ],
+   "counterevidence_ids": [
+    "agg:PA-A03",
+    "agg:PA-A04"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Explicit n-gram/semantic decontamination of training tasks against every test task and an executable test on an unseen OS (OSWorld) with a small but positive feasible-task gain; same apps by design and OSWorld itself not decontaminated keep it below 4. The feasible-only WAA-V2 scope is disclosed in the benchmark definition.",
+   "evidence_ids": [
+    "agg:PA-A07",
+    "son55:E009",
+    "son55:E033",
+    "sol:E09"
+   ],
+   "counterevidence_ids": [
+    "agg:PA-A02"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Task denominators and a 50-step negative result are given, but there is a single run, no spread, and the teacher margin is ~5 tasks.",
+   "evidence_ids": [
+    "son55:E042",
+    "son55:E020",
+    "sol:E11"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Annotation effort, training compute (32 GPUs, ~5 h), synthesis wall-clock (3 h vs 900 h), equal 30-step caps and step-limit sensitivity are reported; teacher token/API cost and UI-TARS's native-framework advantage are not accounted.",
+   "evidence_ids": [
+    "son55:E027",
+    "son55:E038",
+    "son55:E039",
+    "son55:E036"
+   ],
+   "counterevidence_ids": [
+    "son55:E043",
+    "son55:E040"
+   ],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 67.5,
+  "display": 67.5,
+  "lower": 67.5,
+  "upper": 67.5,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(15G+25M+20X+10Emeas+10Ecaus+10Ehold+5Estat+5Ecost)/4; unknown -> L uses 0, U uses 4; raw=null while any unknown"
+ },
+ "status": "reviewed",
+ "status_reason": "Full fixed text read (on-disk listing-preserving render of the manifest version); all eight items resolved.",
+ "input_seat_hashes": {
+  "sol": "bd71cb19e8fec76356880ae5dfa8e663f51c54cb7a2d42f76ca8f26d60bc37f0",
+  "son55": "dcc659913ca7a693c97cbfd00857ac7a622dfd3c1e0fc0c30b033386097279e7"
+ },
+ "aggregate_model": "fable",
+ "aggregate_actual_model": "claude-opus-5-5[1m]",
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_note": "Configured model type fable (upstream claude-opus-5-5[1m]) per batch manifest model_types.opus55; no session id or invocation receipt is exposed to this agent.",
+ "seat_integrity_check": {
+  "sol": {
+   "file_sha256": "bd71cb19e8fec76356880ae5dfa8e663f51c54cb7a2d42f76ca8f26d60bc37f0",
+   "status": "reviewed",
+   "status_field_shape": "str",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "sonnet",
+   "actual_model": "gpt-6.1-sol",
+   "on_disk_fulltext_sha256_now": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "on_disk_matches_manifest_pin": true,
+   "seat_reported_material_drift": null
+  },
+  "son55": {
+   "file_sha256": "dcc659913ca7a693c97cbfd00857ac7a622dfd3c1e0fc0c30b033386097279e7",
+   "status": "reviewed",
+   "status_field_shape": "dict (contract expects string; value read from .value)",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "haiku",
+   "actual_model": "claude-sonnet-5-5[1m]",
+   "on_disk_fulltext_sha256_now": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02",
+   "on_disk_matches_manifest_pin": true,
+   "seat_reported_material_drift": false
+  }
+ },
+ "resolutions": [
+  {
+   "field_path": "rs.matches",
+   "sol_value": [
+    "controlled_diagnostic_design/rs:C02",
+    "self_supervised_signal_engineering/None"
+   ],
+   "son55_value": [
+    "controlled_diagnostic_design/C02",
+    "self_supervised_signal_engineering/C08"
+   ],
+   "decision": "sol",
+   "final_value": "self_supervised_signal_engineering/null + controlled_diagnostic_design/rs:C02",
+   "reason": "C08 requires a single quality gate before training; none exists here (son55's own tactic check marks the filter step 'missing'). Assigning C08 would rest on generator vocabulary only.",
+   "evidence_ids": [
+    "son55:E004",
+    "son55:E025"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "domain.matches",
+   "sol_value": [
+    "online_evaluation_methodology/None",
+    "trajectory_level_policy_training/K25"
+   ],
+   "son55_value": [
+    "trajectory_level_policy_training/C21",
+    "verifiable_execution_reward/C22"
+   ],
+   "decision": "son55",
+   "final_value": "gui:C21 + gui:C22 (weak)",
+   "reason": "C21 matches Thought Completion more specifically than K25 (strong MLLM + SFT of a screenshot policy); the benchmark repair is the resettable executable-checker benchmark card C22 rather than an unspecific online_evaluation_methodology/null.",
+   "evidence_ids": [
+    "son55:E008",
+    "son55:E014"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "rating.G",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "sol",
+   "final_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "reason": "The residual is bounded against the nearest operational alternative by an actual matched experiment and its stakes are quantified; son55's deduction (no equal-budget AgentTrek/UI-TARS comparison) is real but keeps G at 3 rather than the anchor-2 'incomplete nearest-neighbour comparison'.",
+   "evidence_ids": [
+    "agg:PA-A03",
+    "son55:E027",
+    "son55:E046"
+   ],
+   "score_impact": "+3.75 vs son55"
+  },
+  {
+   "field_path": "rating.E.measurement",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "son55",
+   "final_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "reason": "Re-read Sec 4 and Table 3: the headline benchmark is author-modified with undisclosed human grading and non-integer rates; sol's 3 credited the checkers without these.",
+   "evidence_ids": [
+    "agg:PA-A01",
+    "agg:PA-A05",
+    "agg:PA-A06"
+   ],
+   "score_impact": "-2.5 vs sol"
+  },
+  {
+   "field_path": "rating.E.causality",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "son55",
+   "final_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "reason": "The unfiltered distillation baseline is the key missing control for the stated mechanism (error accumulation), and the teacher comparison runs the teacher in the student's scaffold.",
+   "evidence_ids": [
+    "agg:PA-A03",
+    "agg:PA-A04"
+   ],
+   "score_impact": "-2.5 vs sol"
+  },
+  {
+   "field_path": "rating.E.holdout",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "sol",
+   "final_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "reason": "Explicit, thresholded decontamination against all test tasks plus an executable unseen-OS test is more than anchor 2; son55's points (same apps, OSWorld not decontaminated, author-built benchmark) cap it at 3. The infeasible regression (agg:PA-A02) is a scope boundary already visible in the paper's own tables.",
+   "evidence_ids": [
+    "agg:PA-A07",
+    "son55:E033"
+   ],
+   "score_impact": "+2.5 vs son55"
+  },
+  {
+   "field_path": "expectation.E01",
+   "sol_value": "met",
+   "son55_value": "partial",
+   "decision": "son55",
+   "final_value": "partial",
+   "reason": "OSWorld is reported only as a base-vs-ours transfer check at a non-standard 30-step budget; the desktop headline is on WAA-V2.",
+   "evidence_ids": [
+    "son55:E032"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E13",
+   "sol_value": "partial",
+   "son55_value": "unmet",
+   "decision": "son55",
+   "final_value": "unmet",
+   "reason": "Checker fixes are anecdotal; no two-sided measurement is reported, which is what E13 asks.",
+   "evidence_ids": [
+    "son55:E016"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E20",
+   "sol_value": "partial",
+   "son55_value": "not_applicable",
+   "decision": "son55",
+   "final_value": "not_applicable",
+   "reason": "Claims are desktop-VM claims; no live-web result is claimed.",
+   "evidence_ids": [],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E22",
+   "sol_value": "partial",
+   "son55_value": "met",
+   "decision": "son55",
+   "final_value": "met",
+   "reason": "Results are reported for 7B and 72B, with the small 7B gain disclosed.",
+   "evidence_ids": [
+    "son55:E030",
+    "son55:E031"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E23",
+   "sol_value": "partial",
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "WAA-V2 is released as a benchmark contribution, so E23 applies; failure audit is qualitative and success is not stratified by reference length.",
+   "evidence_ids": [
+    "sol:E11"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E25",
+   "sol_value": "challenged_with_evidence",
+   "son55_value": "partial",
+   "decision": "son55",
+   "final_value": "partial",
+   "reason": "Infeasible behaviour is reported only on OSWorld (63.3 vs 86.7) and removed from WAA-V2; the 'infeasible hacking' argument is one two-model contrast, not a challenge that replaces the expectation.",
+   "evidence_ids": [
+    "agg:PA-A01",
+    "agg:PA-A02"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E26",
+   "sol_value": "not_applicable",
+   "son55_value": "partial",
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Trajectory Boost is human-anchored teacher augmentation, not exploration-first/reverse/world-model synthesis; the distillation comparison is credited under E.causality.",
+   "evidence_ids": [],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E27",
+   "sol_value": "met",
+   "son55_value": "partial",
+   "decision": "son55",
+   "final_value": "partial",
+   "reason": "Scaling factor is varied (Fig 7) but numeric points and saturation are not given in the text.",
+   "evidence_ids": [
+    "son55:E022"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  }
+ ],
+ "shared_error_corrections": [],
+ "aggregate_status": "accepted_final",
+ "aggregate_status_reason": "All 14 mechanical conflicts resolved from the fixed text; no scoring unknowns.",
+ "final_record_hash": "5e2ef34542f4e9f9ae2d33dee98dac8f4e0740aae38d099eac4dc16af7ddca4f"
+}

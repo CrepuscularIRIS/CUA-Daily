@@ -1,0 +1,1099 @@
+{
+ "paper": {
+  "paper_key": "2504.14603",
+  "paper_id": "arXiv:2504.14603",
+  "title": "UFO2: The Desktop AgentOS",
+  "version": "2504.14603v2",
+  "claim_type": "system_method",
+  "central_claim": "A deeply OS-integrated multi-agent AgentOS for Windows (HostAgent + application-specialised AppAgents, UIA+vision hybrid control detection, unified GUI-API Puppeteer, retrieval-based knowledge integration, speculative multi-action execution, PiP isolation) outperforms prior CUAs including Operator: even with GPT-4o it reaches 27.9% on WAA and 28.6% on OSWorld-W (vs Operator 20.8/14.3) and cuts steps."
+ },
+ "evidence": [
+  {
+   "evidence_id": "E001",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Abstract",
+   "quote": "most existing CUAs remain conceptual prototypes, hindered by shallow OS integration, fragile screenshot-based interaction, and disruptive execution",
+   "support_explanation": "Author gap.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E002",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 2.3",
+   "quote": "They ignore rich system interfaces such as accessibility APIs, application process state, and native inter-process communication mechanisms",
+   "support_explanation": "Specific missing channels.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E003",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 3.1",
+   "quote": "HostAgent decomposes it into a series of subtasks, each mapped to the application best suited to fulfill it.",
+   "support_explanation": "Manager-worker decomposition.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E004",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 3.2",
+   "quote": "The global execution plan is serialized into a finite state machine (FSM)",
+   "support_explanation": "Explicit FSM controller with CONTINUE/ASSIGN/PENDING/FINISH/FAIL states.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E005",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 3.5",
+   "quote": "If a semantically equivalent API is available, Puppeteer prefers it over GUI automation for reliability and atomicity.",
+   "support_explanation": "API-first routing rule.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E006",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 3.5",
+   "quote": "If an API fails or is unavailable ( e.g. , missing bindings or runtime permission errors), the system gracefully falls back to GUI-based control",
+   "support_explanation": "Fallback rule.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E007",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 3.4",
+   "quote": "Visual detections with Intersection-over-Union (IoU) greater than 10% against any UIA-derived control are discarded.",
+   "support_explanation": "Fusion rule: UIA controls win; remaining visual detections become pseudo-UIA objects.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E008",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 3.6",
+   "quote": "Periodically, these logs are mined offline by a summarization module that distills successful trajectories into reusable Example records.",
+   "support_explanation": "Experience persistence: success logs -> Example DB.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E009",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 3.7",
+   "quote": "(2) Runtime Validation: For each action, the system consults the Windows UIA API to verify the action’s preconditions",
+   "support_explanation": "Speculative batch validated by OS-level checks, not by a model.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E010",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.1",
+   "quote": "Windows Agent Arena (WAA) ( 49 ) : Consists of 154 live automation tasks across 15 commonly used Windows applications",
+   "support_explanation": "WAA scale.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E011",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.1",
+   "quote": "OSWorld-W ( 50 ) : A targeted subset of the OSWorld benchmark specifically tailored for Windows, comprising 49 live tasks",
+   "support_explanation": "OSWorld-W scale: one task = 2.04 points.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E012",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.1 footnote",
+   "quote": "Reported baseline scores in OSWorld differ slightly from prior results focused on Ubuntu due to corrections in verification scripts and alignment with Windows-specific tasks (OSWorld-W).",
+   "support_explanation": "Harness modification note (verification scripts corrected).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E013",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.1",
+   "quote": "each agent is restricted to a maximum of 30 execution steps per task",
+   "support_explanation": "Equal step cap.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E014",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.1",
+   "quote": "API integrations were selectively implemented for three office applications within OSWorld-W as illustrative examples; no APIs were introduced for the WAA tasks.",
+   "support_explanation": "APIs for OSWorld-W Office only.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E015",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 1",
+   "quote": "Operator | computer-use | 20.8% | 14.3%",
+   "support_explanation": "Strongest baseline: WAA 20.8, OSWorld-W 14.3 (7 of 49).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E016",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 1",
+   "quote": "UFO 2 | GPT-4o | 27.9% | 28.6%",
+   "support_explanation": "Headline; OSWorld-W 28.6 = 14 of 49.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E017",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 1",
+   "quote": "UFO 2 -base | GPT-4o | 23.4% | 16.3%",
+   "support_explanation": "Base (UIA, GUI-only, no knowledge) OSWorld-W 16.3.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E018",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.5",
+   "quote": "We create 34 help documents tailored to benchmark tasks, each containing precise step-by-step instructions",
+   "support_explanation": "Test-task-specific help documents authored by the team.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E019",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.5",
+   "quote": "For subsequent tasks, UFO 2 dynamically retrieves up to three relevant past execution logs to guide task planning and execution.",
+   "support_explanation": "Self-experience retrieved for later benchmark tasks; source tasks vs test tasks unspecified.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E020",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.5",
+   "quote": "summarizes successful execution trajectories—validated by our Task Evaluator and archives them into a retrievable knowledge database",
+   "support_explanation": "Success gate is the authors LLM Task Evaluator.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E021",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 5.6",
+   "quote": "includes an automated task evaluation engine based on LLM-as-a-judge",
+   "support_explanation": "LLM judge, no agreement with scripts reported.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E022",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 3",
+   "quote": "UIA | GPT-4o | 23.4% | - | 22.4% | -",
+   "support_explanation": "UIA-only OSWorld-W is 22.4 here but 16.3 as UFO2-base in Table 1.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E023",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 3",
+   "quote": "Hybrid | GPT-4o | 26.6% | 9.9% | 22.4% | 12.5%",
+   "support_explanation": "Hybrid on OSWorld-W equals UIA-only SR (22.4) with GPT-4o although CRR>0.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E024",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 5",
+   "quote": "GUI-only | GPT-4o | 16.3% | - | - | - | 13.8",
+   "support_explanation": "GUI-only OSWorld-W 16.3 (=8/49).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E025",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 5",
+   "quote": "GUI+API | GPT-4o | 22.4% | 5.9% | 14.3% | 25.0% | 12.9",
+   "support_explanation": "GUI+API 22.4 (=11/49); ablation baseline differs from Table 3 UIA row definition.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E026",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 6",
+   "quote": "None | GPT-4o | 23.4% | - | 22.4% | -",
+   "support_explanation": "'None' knowledge row OSWorld-W 22.4 equals GUI+API, not 16.3.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E027",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.4",
+   "quote": "We calculate ACS on the subset of tasks that both configurations successfully complete, ensuring a fair comparison.",
+   "support_explanation": "ACS conditioned on jointly solved tasks (survivorship).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E028",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 7",
+   "quote": "Single | GPT-4o | 23.4% | 10.00 | 30 | 22.4% | 13.30 | 10",
+   "support_explanation": "Subset sizes 30 and 10 tasks for step comparison.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E029",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.2",
+   "quote": "more than 62% of failures were attributed to Control Detection Failures",
+   "support_explanation": "Error analysis on WAA for UFO2-base.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E030",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.8",
+   "quote": "Across all configurations, the LLM inference phase dominates total latency, averaging around 10 seconds per inference.",
+   "support_explanation": "Latency profile.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E031",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.8",
+   "quote": "the fully integrated UFO 2 incurs only an additional 1 second per step for its hybrid control detection pipeline",
+   "support_explanation": "Overhead of hybrid detection.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E032",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.7",
+   "quote": "Figure 23 shows that UFO 2 + Operator achieves higher success rates than running Operator alone, particularly on WAA (26.0% vs. 20.8%).",
+   "support_explanation": "HostAgent alone adds +5.2 to Operator.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E033",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 5.2",
+   "quote": "whenever an AppAgent identifies an action matching predefined risk criteria, it transitions into a dedicated PENDING state, pausing execution and actively prompting the user for confirmation",
+   "support_explanation": "Safeguard: risky actions gated by user confirmation (no evaluation).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E034",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 1",
+   "quote": "Even when paired with general-purpose models like GPT-4o, UFO 2 outperforms dedicated CUAs by over 10%",
+   "support_explanation": "Headline claim.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E035",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.1",
+   "quote": "Each task runs independently, and verification strictly follows the original scripts provided by each benchmark.",
+   "support_explanation": "Executable verification via benchmark scripts.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E036",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 5.3",
+   "quote": "We find that even minimal wrappers ( e.g. , for OpenAI Operator ( 12 ) ) lead to tangible performance gains",
+   "support_explanation": "Everything-as-an-AppAgent claim.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E037",
+   "material_id": "M-2409.07429",
+   "sha256": "3b2c8ce934b2f2808d61d943bc9a44ddc21cecc25b6ff71d5dfb62d5a7d01518",
+   "locator": "Pinned AWM abstract",
+   "quote": "a method for inducing commonly reused routines, i.e. , workflows , and selectively providing workflows to the agent to guide subsequent generations",
+   "support_explanation": "Pinned neighbour for experience-derived guidance injection.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E038",
+   "material_id": "M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.1",
+   "quote": "We evaluate UFO 2 using two established Windows-centric automation benchmarks",
+   "support_explanation": "Benchmarks WAA and OSWorld-W.",
+   "kind": "author_report"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "Agent architecture and action interface on Windows: HostAgent (FSM, blackboard) delegating subtasks to per-application AppAgents whose Puppeteer chooses between registered native APIs and GUI actions.",
+   "information": "Screenshots, UIA control metadata, SoM-annotated controls, OS process info; API registry; private and shared blackboard memory.",
+   "operation": "Task decomposition into dependency-ordered subtasks; ReAct loop per AppAgent; API-first with GUI fallback; PENDING state for risky actions.",
+   "output": "GUI event or API call per step.",
+   "conditions": "App APIs exist (COM for Office) — 12 hand-written APIs for Word/Excel/PowerPoint; UIA available or visual fallback.",
+   "feedback": "UIA state checks; execution result/error from API; user confirmation for risky steps.",
+   "selection_rule": "Prefer semantically equivalent API; fallback on failure.",
+   "persistence": "Session memory and blackboard within a session.",
+   "later_use": "within session",
+   "claimed_effect": "GUI+API raises OSWorld-W SR 16.3 -> 22.4 (GPT-4o) and 16.3 -> 24.5 (o1).",
+   "failure_boundary": "Apps without APIs or UIA support (LibreOffice), plan errors on OSWorld-W.",
+   "evidence_ids": [
+    "E003",
+    "E004",
+    "E005",
+    "E006",
+    "E014",
+    "E024",
+    "E025",
+    "E029",
+    "E033"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "Hybrid control detection: UIA controls plus OmniParser-v2 detections merged by IoU deduplication.",
+   "information": "UIA tree + screenshot parsed by YOLOv8/Florence-2.",
+   "operation": "Drop visual boxes with IoU>10% against UIA; wrap the rest as pseudo-UIA controls; SoM annotate.",
+   "output": "Unified control list for the agent.",
+   "conditions": "Custom-rendered UIs",
+   "feedback": "none",
+   "selection_rule": "UIA priority",
+   "persistence": "not_applicable",
+   "later_use": "not_applicable",
+   "claimed_effect": "Control Recovery Ratio 9.9% (WAA), up to 25% (OSWorld-W, o1).",
+   "failure_boundary": "Vision-only worse than UIA on OSWorld-W (14.3 vs 22.4).",
+   "evidence_ids": [
+    "E007",
+    "E022",
+    "E023"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "Knowledge substrate: help-document index and Example DB of summarised successful trajectories, retrieved into prompts.",
+   "information": "34 authored help docs tailored to benchmark tasks; past execution logs validated by an LLM Task Evaluator; retrieval top-1 doc, top-3 logs.",
+   "operation": "Offline summarisation of success logs; embedding retrieval at run time.",
+   "output": "Retrieved guidance in prompt.",
+   "conditions": "Similar tasks repeat; judge reliability.",
+   "feedback": "LLM Task Evaluator verdict (success gate).",
+   "selection_rule": "Keep successful trajectories only.",
+   "persistence": "Application-specific vector store / example DB.",
+   "later_use": "Retrieved for subsequent tasks (E019).",
+   "claimed_effect": "Plan Recovery Ratio up to 17.7%; WAA SR 23.4 -> 26.6.",
+   "failure_boundary": "Benefit varies by model (o1 self-experience WAA 25.3 -> 20.8).",
+   "evidence_ids": [
+    "E008",
+    "E018",
+    "E019",
+    "E020",
+    "E021",
+    "E026"
+   ]
+  },
+  {
+   "sig_id": "S4",
+   "object": "Speculative multi-action execution.",
+   "information": "One LLM call predicts k actions; UIA validates each before execution.",
+   "operation": "Batch predict, validate, execute, early-exit and replan.",
+   "output": "Multiple actions per inference",
+   "conditions": "Predictable UI transitions",
+   "feedback": "UIA preconditions",
+   "selection_rule": "First failed validation halts the batch",
+   "persistence": "not_applicable",
+   "later_use": "not_applicable",
+   "claimed_effect": "ACS -10% (WAA) / -51.5% (OSWorld-W) with similar SR.",
+   "failure_boundary": "ACS measured on jointly solved tasks only (10 tasks on OSWorld-W).",
+   "evidence_ids": [
+    "E009",
+    "E027",
+    "E028"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "CUAs rely on screenshots and simulated input, ignoring accessibility/APIs and process state, and lock the user out of the desktop.",
+  "checked_gap": "Plausible and partially measured: 62% of WAA failures of the UIA-only base are control-detection failures and OSWorld-W errors are plan-heavy (author error analysis). The comparison with baselines is, however, a system-vs-system one with unequal access to APIs and authored knowledge.",
+  "lineage": [
+   "UFO v1 (same group), NAVI/WAA, OmniAgent/OmniParser, Agent S, OpenAI Operator, Claude Computer Use - baselines in Table 1",
+   "AWM (pinned) as experience-derived guidance injection"
+  ],
+  "lineage_note": "The pinned references.json contains no Windows desktop CUA; WAA/OSWorld numbers of baselines come from the paper and cited works; later work (UI-TARS-2, MAI-UI) is current_relevance only.",
+  "closest_adjacent": "UFO v1 (UIA + vision) and Agent S (hierarchy plus experience retrieval).",
+  "residue": "Latency (10 s/step LLM), UIA gaps in third-party apps, human-level gap.",
+  "stakes": "Practical desktop automation with non-disruptive execution.",
+  "method_response": "Make OS interfaces first-class: UIA+vision, APIs, FSM orchestration, retrieval knowledge, PiP.",
+  "remaining_gap": "Which components cause the gain once baselines get the same APIs and documents; test-task leakage in knowledge.",
+  "evidence_ids": [
+   "E001",
+   "E002",
+   "E029",
+   "E037"
+  ],
+  "unresolved": [
+   "Equal-information baselines",
+   "Experience DB / test overlap"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "decompose_and_delegate",
+  "supporting": [
+   "adapt_via_conditioning",
+   "unify_into_shared_representation"
+  ],
+  "outside_taxonomy": false,
+  "reason": "",
+  "matches": [
+   {
+    "main_id": "decompose_and_delegate",
+    "sub_id": "C25",
+    "role": "primary",
+    "fit": "good",
+    "tactic_steps_checked": {
+     "1_responsibility_boundary": "met: HostAgent for decomposition/lifecycle, AppAgents for per-app execution, APIs/UIA as exact tools",
+     "2_machine_checkable_artifact": "met: structured subtask plan, FSM states, typed action/API calls, UIA preconditions",
+     "3_close_loop_with_verifiable_signal": "met for speculative batches (UIA precondition checks) and API results/errors; partial for planning (self-declared FINISH)",
+     "4_external_oracle_when_self_eval_unreliable": "partial: OS-level validation replaces model judging for actions, but experience gating uses an LLM evaluator"
+    },
+    "success_checks": "API vs GUI contrast and speculative validation are mechanical.",
+    "failure_checks": "Risk of chaining generic agents; role-removal ablation of HostAgent decomposition only via Operator-as-AppAgent.",
+    "evidence_ids": [
+     "E003",
+     "E004",
+     "E005",
+     "E009",
+     "E032"
+    ],
+    "reason": "The central operation is delegating subtasks to specialised executors and exact OS/API solvers through structured artifacts."
+   },
+   {
+    "main_id": "adapt_via_conditioning",
+    "sub_id": "C03",
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "2_reference_substrate": "met: help-doc index and Example DB",
+     "3_no_parameter_update": "met",
+     "4_category_holdout": "unmet: docs tailored to benchmark tasks; experience DB source unspecified",
+     "5_cheaper_baseline": "unmet"
+    },
+    "success_checks": "On/off knowledge ablation (Table 6).",
+    "failure_checks": "Contamination of substrate with test-task knowledge.",
+    "evidence_ids": [
+     "E008",
+     "E018",
+     "E019",
+     "E026"
+    ],
+    "reason": "Retrieval-conditioned prompts are a separate operation from the decomposition."
+   },
+   {
+    "main_id": "unify_into_shared_representation",
+    "sub_id": "C18",
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "serialize_foreign_signal_into_dominant_interface": "met: visual detections wrapped as pseudo-UIA controls; GUI and API actions in one Puppeteer action space",
+     "ablate_interface_vs_backbone": "partial: Tables 3 and 5",
+     "beat_specialists": "partial: beats Operator under authors setting"
+    },
+    "success_checks": "Unified control graph; mixed GUI-API action space.",
+    "failure_checks": "Vision-only underperforms UIA (E022/E023); unmatched baselines.",
+    "evidence_ids": [
+     "E005",
+     "E007",
+     "E023"
+    ],
+    "reason": "Control fusion and action unification are interface constructions different from decomposition."
+   }
+  ],
+  "executes_pattern": true,
+  "resolves_problem": "partial: the integrated system beats the listed baselines on two Windows benchmarks, but the gain is not shown to be due to OS integration rather than test-tailored APIs and documents."
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "planner_grounder_interface",
+    "sub": "C11",
+    "version": "patterns@2026-10 (cua-agents-core C11)",
+    "fit": "good",
+    "condition_checks": {
+     "hybrid_beats_GUI_only_with_fewer_steps": "met: 16.3 -> 22.4/24.5 SR with fewer steps (Table 5)",
+     "scripting_access_in_target_apps": "met only for Word/Excel/PowerPoint (hand-written 12 APIs)",
+     "strong_reasoning_orchestrator_needed": "suggested: o1 gains more than GPT-4o",
+     "sdk_effect_separated_from_other_changes": "partial"
+    },
+    "evidence_ids": [
+     "E005",
+     "E006",
+     "E014",
+     "E024",
+     "E025"
+    ],
+    "reason": "GUI actions mixed with application API calls in one action space.",
+    "namespace": "gui"
+   },
+   {
+    "main": "agent_loop_context_control",
+    "sub": "C17",
+    "version": "patterns@2026-10 (cua-agents-core C17)",
+    "fit": "good",
+    "condition_checks": {
+     "role_removal_ablation": "partial: Operator-as-AppAgent only; no HostAgent-removal arm",
+     "subgoal_termination_checkable": "partial: FINISH/FAIL states, self-declared",
+     "weaker_backbone_degradation": "unreported",
+     "per_step_cost": "reported (Table 8, Fig 24)"
+    },
+    "evidence_ids": [
+     "E003",
+     "E004",
+     "E032",
+     "E030"
+    ],
+    "reason": "Manager (HostAgent) decomposes, workers (AppAgents) act.",
+    "namespace": "gui"
+   },
+   {
+    "main": "structured_screen_observation",
+    "sub": "C02",
+    "version": "patterns@2026-10 (cua-agents-core C02)",
+    "fit": "good",
+    "condition_checks": {
+     "detector_trained_on_UI_elements": "met: OmniParser-v2",
+     "fusion_benefit_model_dependent": "seen: o1 vs GPT-4o differ (Table 3)",
+     "parser_cost_reported": "met: +1 s per step",
+     "duplicate_icons_handling": "IoU dedup only against UIA"
+    },
+    "evidence_ids": [
+     "E007",
+     "E022",
+     "E023",
+     "E031"
+    ],
+    "reason": "Pixel parser outputs fused with UIA elements as an indexed control list.",
+    "namespace": "gui"
+   }
+  ],
+  "unassigned": [
+   "Knowledge substrate maps to experience_memory_retrieval (C19) and the PENDING safeguard to injection_defense_isolation (C35); neither selected among the top three but both are scored through expectations."
+  ],
+  "revision_proposals": []
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": "C25",
+   "domain_namespace": "gui",
+   "domain_main": "agent_loop_context_control",
+   "domain_sub": "C17",
+   "operation_correspondence": "RS: decompose and delegate to specialised solvers via structured artifacts; gui: manager decomposes, workers act and report.",
+   "required_conditions_and_differences": "gui C17 asks for role-removal ablations; RS C25 asks mechanical checks: UIA preconditions supply them for speculative actions only.",
+   "evidence_ids": [
+    "E003",
+    "E004",
+    "E009"
+   ]
+  },
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": "C25",
+   "domain_namespace": "gui",
+   "domain_main": "planner_grounder_interface",
+   "domain_sub": "C11",
+   "operation_correspondence": "RS: route to exact solver; gui: API calls beside GUI actions in one space.",
+   "required_conditions_and_differences": "APIs handwritten for three Office apps; availability condition of C11 is explicit.",
+   "evidence_ids": [
+    "E005",
+    "E014"
+   ]
+  },
+  {
+   "rs_main": "unify_into_shared_representation",
+   "rs_sub": "C18",
+   "domain_namespace": "gui",
+   "domain_main": "structured_screen_observation",
+   "domain_sub": "C02",
+   "operation_correspondence": "RS: wrap foreign modality into the dominant interface; gui: pixel detections converted to UIA-like controls.",
+   "required_conditions_and_differences": "Interface contribution not isolated from backbone (no detector-only ablation separate from model change).",
+   "evidence_ids": [
+    "E007",
+    "E022",
+    "E023"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E01"
+   ],
+   "applies_when": "desktop computer-use success claim",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Windows benchmarks WAA and OSWorld-W (a 49-task Windows subset of OSWorld, scripts corrected) rather than OSWorld/OSWorld-Verified proper; step cap 30 stated; observation setting (UIA+SoM) stated.",
+   "evidence_ids": [
+    "E010",
+    "E011",
+    "E012",
+    "E013",
+    "E038"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E16"
+   ],
+   "applies_when": "online benchmark comparison",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Single run per configuration; OSWorld-W steps of 2.04 points.",
+   "evidence_ids": [
+    "E011",
+    "E016",
+    "E015"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E17"
+   ],
+   "applies_when": "compare agents at equal step budget",
+   "applicable": true,
+   "status": "met",
+   "reason": "30-step cap applied to all agents; steps used reported (ACS) though on joint-success subsets.",
+   "evidence_ids": [
+    "E013",
+    "E027"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E19"
+   ],
+   "applies_when": "modified/re-engineered harness",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Footnote discloses corrected verification scripts and Windows-adapted OSWorld-W; no validation shown; baselines run by authors or taken from sources not detailed.",
+   "evidence_ids": [
+    "E012",
+    "E035"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E28"
+   ],
+   "applies_when": "memory/documents improve benchmark success",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Help documents are tailored to benchmark tasks and the self-experience store is filled by runs on the same benchmark; no held-out apps or tasks.",
+   "evidence_ids": [
+    "E018",
+    "E019"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "expectations.json#E35"
+   ],
+   "applies_when": "memory/retrieval claim",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "No gains shown on environments other than those the memory was built from.",
+   "evidence_ids": [
+    "E019",
+    "E026"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E10"
+   ],
+   "applies_when": "LLM judge labelling trajectory success (filtering)",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Task Evaluator (LLM-as-a-judge) gates the experience DB; agreement with benchmark scripts not reported.",
+   "evidence_ids": [
+    "E020",
+    "E021"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E21"
+   ],
+   "applies_when": "observation spaces differ between compared agents",
+   "applicable": true,
+   "status": "partial",
+   "reason": "UIA-only, vision-only and hybrid observation compared (Table 3); baselines have different observation modalities (Operator screenshots) and not reported separately.",
+   "evidence_ids": [
+    "E022",
+    "E023",
+    "E015"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "core-E08",
+   "version": "patterns/main/agent_loop_context_control.md",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "patterns/main/agent_loop_context_control.md#reviewer-expectations"
+   ],
+   "applies_when": "planner-executor/manager-worker decomposition claim",
+   "applicable": true,
+   "status": "partial",
+   "reason": "No HostAgent removal with the same backbone; Operator-as-AppAgent (26.0 vs 20.8) is the only role contrast.",
+   "evidence_ids": [
+    "E032",
+    "E036"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "core-E21",
+   "version": "patterns/main/agent_loop_context_control.md",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "patterns/main/agent_loop_context_control.md#reviewer-expectations"
+   ],
+   "applies_when": "architecture adding model calls per step",
+   "applicable": true,
+   "status": "met",
+   "reason": "Step counts, LLM time per step (~10 s) and +1 s for hybrid detection are reported.",
+   "evidence_ids": [
+    "E030",
+    "E031",
+    "E027"
+   ],
+   "score_item": "E.cost"
+  }
+ ],
+ "expectations_not_applicable": {
+  "ids": [
+   "E02-E09",
+   "E11-E15",
+   "E18",
+   "E20",
+   "E22-E27",
+   "E29-E34"
+  ],
+  "reason": "Windows desktop only: no mobile/web/grounding/RL/world-model/judge-as-reward claim; E11 not applicable because the LLM evaluator is not offered as a reliable evaluator or reward."
+ },
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "UFO 2 outperforms Operator and other CUAs: WAA 27.9 vs 20.8; OSWorld-W 28.6 vs 14.3 (GPT-4o), 30.5/32.7 with o1.",
+   "setting": "WAA 154 tasks, OSWorld-W 49 tasks, 30 steps, benchmark scripts",
+   "baseline_control": "Five CUAs; baselines GPT-4o except Operator; UFO2 full includes 12 handwritten Office APIs (OSWorld-W), 34 task-tailored help docs and experience DB",
+   "selection_vs_test": "Knowledge and APIs authored for/derived from the evaluation tasks",
+   "result_denominator": "WAA 154; OSWorld-W 49 (14 vs 7 solved)",
+   "evidence_ids": [
+    "E010",
+    "E011",
+    "E013",
+    "E014",
+    "E015",
+    "E016",
+    "E018",
+    "E019",
+    "E034"
+   ],
+   "counterevidence": "UFO2-base (no APIs, no docs) beats Operator by 2.6 (WAA) and 2.0 (OSWorld-W, one task); ablation baselines are inconsistent across tables.",
+   "allowed_conclusion": "UFO2 (authors configuration) scores higher than listed baselines on these two Windows benchmarks; the part attributable to OS integration as opposed to test-tailored resources is not separated."
+  },
+  {
+   "claim_id": "C2",
+   "text": "GUI+API raises success and reduces steps; hybrid detection recovers failures; knowledge integration reduces plan errors; speculation cuts steps by up to 51.5%.",
+   "setting": "OSWorld-W 49 tasks (APIs for 27 Office tasks) and WAA",
+   "baseline_control": "component on/off",
+   "selection_vs_test": "same tasks",
+   "result_denominator": "49 and 154 tasks; ACS on subsets of 10-34 jointly solved tasks",
+   "evidence_ids": [
+    "E022",
+    "E023",
+    "E024",
+    "E025",
+    "E026",
+    "E027",
+    "E028"
+   ],
+   "counterevidence": "OSWorld-W UIA-only baselines are 22.4 (Tables 3, 6, 7) and 16.3 (Tables 1, 5); hybrid equals UIA SR for GPT-4o on OSWorld-W; o1 self-experience lowers WAA SR (25.3 -> 20.8).",
+   "allowed_conclusion": "Directionally plausible component benefits; magnitudes are not reliable."
+  },
+  {
+   "claim_id": "C3",
+   "text": "PiP isolation lets users work concurrently.",
+   "setting": "system description",
+   "baseline_control": "none",
+   "selection_vs_test": "n/a",
+   "result_denominator": "no user study or measurement",
+   "evidence_ids": [
+    "E033"
+   ],
+   "counterevidence": "No evaluation of PiP or safeguard.",
+   "allowed_conclusion": "Design claim only."
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "On WAA (154) and OSWorld-W (49) with a 30-step cap, the full UFO 2 configuration scores 27.9/28.6 (GPT-4o) vs 20.8/14.3 for Operator in single runs, and the UIA-only base already exceeds Operator on WAA by 2.6 points; the contribution of OS integration versus test-tailored APIs/documents/experience, and the individual component magnitudes, are not established.",
+  "unresolved": [
+   "Equal-resource baselines",
+   "Experience DB overlap with test tasks",
+   "Inconsistent ablation baselines",
+   "LLM evaluator reliability",
+   "PiP/safeguard evaluation"
+  ],
+  "retention": "Experience path: before (no DB) -> candidate Example records from logged runs -> selection (only trajectories validated by the Task Evaluator as success) -> persisted in application-specific example DB -> retrieved (top 3) for subsequent tasks -> gain WAA 23.4 -> 26.6 (GPT-4o) but -4.5 for o1 on WAA; the retained gain depends on whether source runs include evaluation tasks, which is unreported.",
+  "reproduction": "author_report only"
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Gap is concrete in systems terms (no access to accessibility/API state; disruptive control), tied to a measured failure breakdown (62% control detection failures on WAA base) and baseline systems; not 4 because the nearest neighbour UFO v1 and Agent S are not pinned/compared in mechanism and the 7-contribution scope spreads the gap thin.",
+   "evidence_ids": [
+    "E001",
+    "E002",
+    "E029",
+    "E015"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Each module has a stated mechanism and a checkable signal (UIA preconditions for speculative batches, API-first routing, IoU fusion, FSM states), and the error analysis motivates the hybrid/knowledge additions; the problem-fit of the bundled design (which component addresses which residue) is partly tested by ablations but hampered by inconsistent baselines.",
+   "evidence_ids": [
+    "E004",
+    "E005",
+    "E007",
+    "E009",
+    "E029"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Architecture, state machines, fusion rule, API registry, retrieval flow and speculation loop are reconstructable with parameters like IoU 10% and caps (30 steps, top-1 doc, top-3 logs); deductions for no prompts, garbled Algorithm 1, unspecified action-selection policy between API and GUI, and unspecified composition of the Table 1 \"full\" configuration across benchmarks.",
+   "evidence_ids": [
+    "E004",
+    "E005",
+    "E007",
+    "E013",
+    "E018",
+    "E019"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Success uses the benchmarks own verification scripts with a 30-step cap and single-benchmark LLM judge not used for the main metric; deductions for corrected scripts / Windows adaptation (OSWorld-W) without validation and for baseline scores whose sources are not detailed.",
+   "evidence_ids": [
+    "E035",
+    "E013",
+    "E012",
+    "E010",
+    "E011"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Component on/off tables exist for each module and Operator-as-AppAgent isolates the HostAgent effect partially, but baselines get neither the 12 APIs nor the task-tailored docs, ablation baselines differ between tables (OSWorld-W 16.3 vs 22.4), step savings are computed on jointly-solved subsets, and gains are 1-3 tasks on a 49-task set.",
+   "evidence_ids": [
+    "E024",
+    "E025",
+    "E026",
+    "E032",
+    "E027"
+   ],
+   "counterevidence_ids": [
+    "E022",
+    "E023",
+    "E017"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Help documents are written for the benchmark tasks, APIs are built for the benchmark Office apps, and the self-experience DB is filled from benchmark runs with no stated separation; no unseen applications; evaluation limited to two Windows benchmarks.",
+   "evidence_ids": [
+    "E018",
+    "E019",
+    "E014",
+    "E020"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Single runs; OSWorld-W increments of 2.04 points with headline gaps of 7 tasks; subset step comparisons on 10-34 tasks; internal inconsistency across tables; error analysis percentages without denominators.",
+   "evidence_ids": [
+    "E011",
+    "E016",
+    "E028",
+    "E022"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Reports step counts, LLM and non-LLM latency per step (about 10 s per LLM call, +1 s hybrid detection), hardware (A100 for OmniParser, 8-core VMs) and a speculative-execution inference reduction; deductions for no token/dollar numbers, ACS on jointly solved subsets and no cost for authoring APIs/docs.",
+   "evidence_ids": [
+    "E030",
+    "E031",
+    "E027",
+    "E028"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  }
+ },
+ "status": "reviewed",
+ "status_reason": "Complete text read; Algorithm 1 only partly legible and images unavailable (marked). The paper has no prompt appendix.",
+ "sanity_notes": [
+  "G, M, X are all 3: the system is extensive and well described but scope is spread across seven contributions."
+ ],
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "re1",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "supersedes_note": "re-eval on fixed-render material (v1 dropped listings)",
+ "provenance": {
+  "input_hash": "0c53f80620262543975e422d5296c86482ed960182744018b026378068fb68ec",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": {
+   "taxonomy": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+   "conditions": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+  },
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m] (self-reported by system prompt: Sonnet 5.5)",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_receipt_reason": "no session id or receipt exposed to the worker in this runtime",
+  "timestamp": "2026-10-22T02:00:01Z"
+ },
+ "materials": [
+  {
+   "material_id": "M-2504.14603",
+   "url": "https://arxiv.org/html/2504.14603v2",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2504.14603.txt",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Background",
+    "3 System Design (3.1-3.7, Algorithm 1 as rendered)",
+    "4 Picture-in-Picture",
+    "5 Implementation (5.1-5.6)",
+    "6 Evaluation (6.1-6.9, Tables 1-8)",
+    "7 Discussion",
+    "8 Related Work",
+    "9 Conclusion"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "Algorithm 1 listing is rendered token-per-line and only partly legible (logic recovered from Sec 3.7 text and Figure 11 caption); no appendix or prompt listings exist in this paper; Figures 2-25 (images) unavailable, including Fig 19 (error breakdown) and Fig 23/25 values; help-document contents and the 12 API implementations are not given."
+   ]
+  },
+  {
+   "material_id": "M-2409.07429",
+   "role": "pinned_reference",
+   "sha256": "3b2c8ce934b2f2808d61d943bc9a44ddc21cecc25b6ff71d5dfb62d5a7d01518",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2409.07429.txt",
+   "sections_read": [
+    "passages cited in evidence only (neighbor check, not a full review)"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not reviewed as a subject paper"
+   ]
+  }
+ ],
+ "score": {
+  "raw": 65.0,
+  "display": 65.0,
+  "lower": 65.0,
+  "upper": 65.0,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+ }
+}

@@ -1,0 +1,87 @@
+{
+ "schema_version": "radar-batch-report-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p3",
+ "attempt_id": "a2",
+ "role": "aggregate_opus55",
+ "model_type": "fable",
+ "actual_model": "claude-opus-5-5[1m]",
+ "session_id": null,
+ "session_reason": "not exposed to the aggregate worker; no probe",
+ "scope": "single paper 2305.14257 (PDF material upgrade re-review; supersedes a1 needs_fulltext)",
+ "supersedes": "a1",
+ "papers": {
+  "2305.14257": {
+   "aggregate_status": "accepted_final",
+   "record_status": "reviewed",
+   "score_raw": 62.5,
+   "score_display": "62.5",
+   "coverage": 1.0,
+   "claim_type": "system_method",
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "rs_primary": "generative_process_redesign",
+   "domain": "gui:structured_screen_observation/C13",
+   "mechanical_conflicts": 81,
+   "resolutions_total": 44,
+   "substantive_disagreements": 10,
+   "substantive_fields": [
+    "status",
+    "ratings.G",
+    "rs_pattern.primary",
+    "rs_pattern.supporting",
+    "rs_pattern.matches",
+    "expectations.E03",
+    "expectations.E19",
+    "expectations.E21",
+    "expectations.core-E07",
+    "expectations.core-E10"
+   ],
+   "namespace_only_same_supported_fact": 34,
+   "decisions": {
+    "sol": 3,
+    "son55": 4,
+    "revised": 3,
+    "same_supported_fact": 34,
+    "unresolved": 0
+   },
+   "shared_error_corrections": 3,
+   "unresolved": 0,
+   "record_path": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p3/aggregate/attempts/a2/2305.14257.json",
+   "record_sha256": "0afa4dc8a013a56d38f8f1420159c5688fa752b795c9f08fdd9093e82f48a5e5",
+   "final_record_hash": "cab38c00ad94590c1d52a83c59eb96a9f98958d9f81d6934d6484791ad9a53f9",
+   "input_seat_hashes": {
+    "sol": "df82520c2a9517bb1138e4fd8607888670056b7d01b84ac764e3e89ad33a15bf",
+    "son55": "7b662234b91ea1edf22d7f2dd095904aed7267a38ede4ba0744472857ddbace3"
+   }
+  }
+ },
+ "counts": {
+  "assigned": 1,
+  "accepted_final": 1,
+  "needs_revision": 0,
+  "needs_evidence": 0,
+  "needs_fulltext": 0,
+  "scored": 1,
+  "blocked": 0
+ },
+ "controller_actions": [
+  "p3/manifest.json still binds attempt a1 / no_html for 2305.14257; rebind to a2 PDF material sha 463914b8... before indexing (both seats flagged).",
+  "Seat input_hash definitions differ (sol composite d55f17a6..., son55 material sha); same material confirmed, unify definition.",
+  "ReAct/WebShop references entered after seat reviews and were used for G per the a2 brief; if strict AGGREGATE_OPUS re-dispatch is required, affected fields are ratings.G and gap.lineage only.",
+  "Rubric is draft_uncalibrated: do not use score 62.5 for production Reel ranking until freeze."
+ ],
+ "validation": {
+  "json_readable": true,
+  "all_81_conflicts_covered_by_resolutions": true,
+  "all_evidence_ids_resolve": true,
+  "all_quotes_exact_substring_of_hashed_material": true,
+  "material_and_reference_sha_verified": true,
+  "seat_file_sha_verified": true,
+  "eight_flat_ratings_all_resolved": true,
+  "score_recomputed": "250/4=62.5, L=U=62.5, coverage 1.0",
+  "final_record_hash_roundtrip": true,
+  "structural_checks_are_not_semantic_proof": true
+ },
+ "timestamp": "2026-10-22T02:22:26+00:00"
+}

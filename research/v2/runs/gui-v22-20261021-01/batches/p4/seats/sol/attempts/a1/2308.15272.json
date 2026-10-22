@@ -1,0 +1,1240 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p4",
+  "attempt_id": "a1",
+  "seat": "sol",
+  "paper": {
+    "paper_key": "2308.15272",
+    "paper_id": "2308.15272",
+    "title": "AutoDroid: LLM-powered Task Automation in Android",
+    "version": "2308.15272v4",
+    "claim_type": "system_method",
+    "central_claim": "AutoDroid handles arbitrary tasks on any Android app without manual effort, using app-specific exploration knowledge; reports 90.9% action accuracy and71.3% task success, improving accuracy and cost over GPT-4-powered baselines."
+  },
+  "provenance": {
+    "input_hash": "93d0dafbc452f91483228d9ad53bd5dcd7df4a98d3d7bdf6af2905c87de6b1ca",
+    "rubric_version": "v2.2 draft_uncalibrated (supplied run snapshot; no independent freeze claim)",
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+    "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+    "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+    "model_type": "sonnet",
+    "actual_model": "gpt-6.1-sol",
+    "session_id": null,
+    "receipt_ref": null,
+    "runtime_record_note": "Model identity from invocation system context; no session/receipt identifier exposed; no model probing.",
+    "timestamp": "2026-10-22T01:42:54.334370+00:00"
+  },
+  "materials": [
+    {
+      "material_id": "2308.15272",
+      "url": "https://arxiv.org/html/2308.15272v4",
+      "source_url_in_render": "https://arxiv.org/html/2308.15272",
+      "version": "2308.15272v4",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2308.15272.txt",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "sections_read": [
+        "Abstract",
+        "1",
+        "2.1-2.3",
+        "3.1-3.3",
+        "Algorithm1 complete",
+        "full CoT prompt and output requirements",
+        "4",
+        "5",
+        "6.1-6.6",
+        "Tables1-5",
+        "Figures1-9 captions and referenced discussion",
+        "7",
+        "8",
+        "9",
+        "Acknowledgement",
+        "References",
+        "all remaining unique render lines through1761"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "reading_note": "Render contains repeated ancestor/descendant prose. Read lines1-279, then every remaining line not an exact substring of prior covered content; all code/prompt/appendix content retained. No separate appendix in article. Figure pixels not embedded in txt; no unreported values inferred from plots."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E01",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "Abstract; rendered line 75",
+      "quote": "capable of handling arbitrary tasks on any Android application without manual efforts.",
+      "support_explanation": "Original broad system claim, not retrospectively narrowed.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E02",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "1,3; rendered line 92",
+      "quote": "AutoDroid randomly explores the target apps and extracts UI transition graphs from them.",
+      "support_explanation": "App-specific exploration precedes test use; not an unseen-environment experiment.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E03",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "3.2.2; rendered line 132",
+      "quote": "Then, we can find k most similar simulated tasks in the app memory",
+      "support_explanation": "Embedding retrieval feeds onclick functionality hints to frozen cloud LLMs.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E04",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "3.2.3; rendered line 146",
+      "quote": "Additionally, we provide the correct action to choose",
+      "support_explanation": "Teacher rationale generation sees target action; deployment does not.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E05",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "3.3.1; rendered line 157",
+      "quote": "We merge UI elements based on two rules:",
+      "support_explanation": "UTG successor equivalence and common interactive ancestor drive structural compression.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E06",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "6.3; rendered line 185",
+      "quote": "The actual completion rate in the real-system can be higher than the reported results, but we do not include real-system results since determining task completion can be ambiguous.",
+      "support_explanation": "Explicitly no real-system outcome results: 71.3% is offline trajectory agreement, not online success.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E07",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "Table 2; rendered line 178",
+      "quote": "Overall 2.3% 20.8% 22.4% 11.3% 57.7% 34.7% 65.1% 54.5% 90.9%",
+      "support_explanation": "GPT-4 action match 90.9 vs 54.5; same model but different observation/action scaffolds.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E08",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "Table 3; rendered line 186",
+      "quote": "Action 11.3% 57.7% 51.9% 20.6% 51.9% Completion 0.6% 41.1% 29.8% 0.6% 31.6%",
+      "support_explanation": "Vicuna CoT and MoTiF interactions: no simple monotone CoT-only story.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E09",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "6.5; rendered line 189",
+      "quote": "AutoDroid reduces LLM calls by 1.2 per task resulting in an overall decrease of 13.7%",
+      "support_explanation": "Operational call saving; offline preparation must also be counted.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E10",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "6.5; rendered line 190",
+      "quote": "Our shortcuts correctly guide LLMs in 75% of cases. Considering only the correct shortcuts",
+      "support_explanation": "38.02% step saving conditioned on correct shortcuts, not unconditional end-to-end efficiency.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E11",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "6.5; rendered line 190",
+      "quote": "For every app, it takes about 0.5-1 hour to generate the UI Transition Graph",
+      "support_explanation": "Preparation cost substantial; synthesis 5-10min and one-time embedding also reported.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E12",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "6.2; rendered line 182",
+      "quote": "We randomly sample 20 failure cases",
+      "support_explanation": "Failure taxonomy is sampled; no repeated task-success uncertainty estimate.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E13",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "6.4.2; rendered line 187",
+      "quote": "Note that the app and task in the MoTiF dataset",
+      "support_explanation": "Authors assert MoTiF disjointness, but memory still built on evaluated apps.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E14",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "Abstract; rendered line 78",
+      "quote": "a new benchmark for memory-augmented Android task automation with 158 common tasks.",
+      "support_explanation": "158 tasks/13 apps; headline 71.3% reported offline completion.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E15",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "3.2.2; rendered line 130",
+      "quote": "AutoDroid determines the importance of a UI element in the app memory based on the similarity between its simulated task and the current user task.",
+      "support_explanation": "Selection is relevance, not execution-verified quality acceptance.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E16",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "6.1; rendered line 175",
+      "quote": "We choose META-GUI",
+      "support_explanation": "Named task-automation nearest baselines; original independent papers not supplied in reference pack.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E17",
+      "material_id": "2308.15272",
+      "sha256": "0c351f1cc794f8eb126ed9061513a23beec73a48de01612c1177084404fbe0ad",
+      "locator": "6.6; rendered line 190",
+      "quote": "AutoDroid achieved a precision of 75.0% and a recall of 80.5%.",
+      "support_explanation": "Risky-action gate measured but imperfect; not a validated task-success judge.",
+      "kind": "author_report"
+    }
+  ],
+  "signatures": [
+    {
+      "sig_id": "S1",
+      "object": "App-specific UTG and functionality memory used by cloud-model policy",
+      "information": "Black-box UI structural tree plus offline exploration of the SAME target app; synthetic element functions and path successors available; not screenshot-only or unseen-app inference.",
+      "operation": "Randomly explore -> UTG -> LLM per-element task/function summaries -> Instructor-XL cosine top-k retrieval -> onclick future-function hints in current HTML -> LLM id/action -> executor",
+      "output": "UI action and completion sentinel",
+      "conditions": "Stable app/UI-state matching; explored route reaches useful functionality; LLM correctly interprets hints.",
+      "feedback": "Observed exploratory state transitions; generated descriptions, not ground-truth task-success reward.",
+      "selection_rule": "Top-k semantic similarity at task time; shortcut when max similarity > gamma. No reported quality rejection gate.",
+      "selection_data": "Offline explored target app and current instruction",
+      "persistence": "UTG, simulated task table, UI function table and embeddings in App Memory, reused across tasks.",
+      "later_use": "Runtime retrieves routes for later user tasks on the same app.",
+      "claimed_effect": "Memory ablation improves action and whole-reference-sequence agreement.",
+      "failure_boundary": "Coverage holes, erroneous functionality descriptions, state drift and incorrect shortcuts; no independent unseen-app transfer.",
+      "evidence_ids": [
+        "E02",
+        "E03",
+        "E15",
+        "E10"
+      ]
+    },
+    {
+      "sig_id": "S2",
+      "object": "UI representation and query budget",
+      "information": "Android hierarchy and automatic traversal of scrollable content, including initially off-screen nodes.",
+      "operation": "Prune invisible/noninformative nodes; merge same-successor UTG actions and same-interactive-ancestor leaves; auto-scroll and merge screens; shortcut stored routes",
+      "output": "Simplified HTML discrete ids; fewer model queries",
+      "conditions": "Merging preserves action-relevant distinctions and executor can recover mapped elements.",
+      "feedback": "Structural ancestry and recorded transitions",
+      "selection_rule": "Deterministic merge criteria, not learned outcome selection",
+      "selection_data": "UI tree and app UTG",
+      "persistence": "Static implementation plus app-specific graph",
+      "later_use": "At each runtime prompt",
+      "claimed_effect": "625.3 -> 339.0 mean tokens; calls -13.7%; action space 36.4 -> 13.2",
+      "failure_boundary": "Successor equivalence may obscure side effects; baselines lack automatic scroll information; shortcut saving reported on successful shortcuts only.",
+      "evidence_ids": [
+        "E05",
+        "E07",
+        "E09",
+        "E10"
+      ]
+    },
+    {
+      "sig_id": "S3",
+      "object": "Vicuna-7B app-specific weights",
+      "information": "Training teacher is given known next action and trajectory; extra MoTiF input/completion labels; runtime gets task, history and current UI only.",
+      "operation": "Synthesize task-action pairs from UTG; GPT-4 rationalizes provided target action; mix input/completion MoTiF examples; fine-tune Vicuna.",
+      "output": "App-specific policy checkpoint",
+      "conditions": "Synthetic rationales reflect real action semantics, mixture avoids premature completion.",
+      "feedback": "Trace-derived target actions plus teacher-generated rationale",
+      "selection_rule": "No explicit execution-validation filter reported; not iterative self-improvement.",
+      "selection_data": "Exploration-derived tasks plus unrelated MoTiF action types",
+      "persistence": "Fine-tuned parameters",
+      "later_use": "Later DroidTask predictions",
+      "claimed_effect": "57.7% action/41.1% sequence match vs untuned 11.3%/0.6%",
+      "failure_boundary": "Teacher rationalization noise not independently validated; single model size; no reported independent online evaluation.",
+      "evidence_ids": [
+        "E04",
+        "E08",
+        "E13"
+      ]
+    }
+  ],
+  "retained_chain": {
+    "before": "LLM-framework without app memory / untuned Vicuna",
+    "proposed_change": "App-function/route memory or generated-rationale SFT",
+    "selection_data/rule": "Relevance-based top-k and gamma shortcut; no outcome-tested accepted/rejected updates",
+    "persisted_change": "App Memory and optional fine-tuned checkpoint",
+    "later_tasks": "DroidTask predictions on already explored apps",
+    "measured_gain": "Offline agreement metrics, not independent retained online improvement",
+    "interpretation": "Static offline preparation/one-time component training; no RSI or improver claim."
+  },
+  "gap": {
+    "author_gap": "Manual demonstrations/API effort, lengthy GUI trees, missing app-specific route knowledge and expensive LLM queries.",
+    "checked_gap": "Opaque intermediate navigation lacks lexical relation to goal; reference UI trees expensive; authors show concrete calendar route and named baseline weakness.",
+    "lineage/closest_adjacent": [
+      {
+        "name": "LLM-framework (Wang et al2023)",
+        "version": "CHI2023 DOI10.1145/3544548.3580895 as cited by target v4",
+        "source": "Target sections1,6.1,7; independent original not fixed in references.json",
+        "role": "Nearest prompted mobile-UI baseline"
+      },
+      {
+        "name": "META-GUI (Sun et al2022)",
+        "version": "arXiv2205.11029 as cited; exact original version unresolved",
+        "source": "Target6.1,References",
+        "role": "Supervised conversational mobile GUI ancestor"
+      }
+    ],
+    "residue": "Prompting alone lacks app route knowledge; acquired knowledge needs token-bounded representation.",
+    "stakes": "Wrong intermediate action makes multi-step execution fail; cloud/local inference overhead.",
+    "method_response": "Explore UTG, synthesize/retrieve app-function paths; compress observations and cache shortcuts; teacher-rationale SFT for local models.",
+    "remaining_gap": "True task completion, app-disjoint generalization, dynamic UI drift and calibrated safe action selection remain unestablished.",
+    "evidence_ids": [
+      "E02",
+      "E03",
+      "E04",
+      "E05",
+      "E06",
+      "E10",
+      "E16"
+    ],
+    "unresolved": [
+      "Independent original nearest-neighbor fulltexts not supplied; do not claim exhaustive novelty search.",
+      "Plot-derived memory ablation values not recoverable from text; report only explicit numbers."
+    ],
+    "current_relevance": "Shared references include later AndroidWorld, UI-TARS and MAI-UI. These postdate target and are not retroactive novelty baselines."
+  },
+  "rs_pattern": {
+    "primary": "adapt_via_conditioning",
+    "supporting": [
+      "self_supervised_signal_engineering"
+    ],
+    "matches": [
+      {
+        "main_id": "adapt_via_conditioning",
+        "sub_id": "rs:C03",
+        "role": "primary",
+        "fit": "direct for frozen GPT-3.5/4 branch, not for fine-tuned Vicuna branch",
+        "tactic_steps_checked": [
+          {
+            "step": 1,
+            "status": "met",
+            "reason": "Canonical task/history/HTML/id-action format."
+          },
+          {
+            "step": 2,
+            "status": "met",
+            "reason": "Retrievable app-function/path substrate."
+          },
+          {
+            "step": 3,
+            "status": "met",
+            "reason": "No cloud updates; nearest task retrieval in shared embedding space."
+          },
+          {
+            "step": 4,
+            "status": "unmet",
+            "reason": "No exclusion of entire app/task categories from memory construction."
+          },
+          {
+            "step": 5,
+            "status": "partial",
+            "reason": "Memory on/off plus simple similarity baseline; equal-information route lookup/long context not isolated."
+          }
+        ],
+        "success/failure_checks": [
+          {
+            "condition": "Mechanism-isolating conditioning ablation",
+            "status": "partial",
+            "evidence_ids": [
+              "E03",
+              "E07"
+            ]
+          },
+          {
+            "condition": "Structural holdout and source coverage sensitivity",
+            "status": "unmet",
+            "evidence_ids": [
+              "E02"
+            ]
+          },
+          {
+            "condition": "Training conditioning as first-class channel",
+            "status": "not_applicable",
+            "reason": "C03 explicitly allows no upstream tuning; cloud branch frozen, not a reason to force retraining."
+          }
+        ],
+        "evidence_ids": [
+          "E02",
+          "E03",
+          "E15"
+        ],
+        "reason": "Actual stored app-instance conditioning, not mere prompt terminology; same-environment exposure limits generalization."
+      },
+      {
+        "main_id": "self_supervised_signal_engineering",
+        "sub_id": null,
+        "role": "supporting",
+        "fit": "direct for generated task/rationale training signal",
+        "tactic_steps_checked": [
+          {
+            "step": "derive nonhuman labels then train",
+            "status": "met",
+            "reason": "Exploration traces plus supplied action condition teacher rationales."
+          },
+          {
+            "step": "C08 explicit quality filter/iteration",
+            "status": "unmet",
+            "reason": "No load-bearing quality filter; C08 deliberately not assigned."
+          },
+          {
+            "step": "C26 comparative preference objective",
+            "status": "not_applicable",
+            "reason": "Point-label SFT, not ranking/reward objective."
+          }
+        ],
+        "success/failure_checks": [
+          {
+            "condition": "Signal-specific ablation",
+            "status": "partial",
+            "evidence_ids": [
+              "E08"
+            ]
+          },
+          {
+            "condition": "Noise curation",
+            "status": "unmet",
+            "evidence_ids": [
+              "E04"
+            ]
+          },
+          {
+            "condition": "Downstream target",
+            "status": "partial",
+            "reason": "Only offline proxy measured, not execution completion.",
+            "evidence_ids": [
+              "E06"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E04",
+          "E08"
+        ],
+        "reason": "Different operation from frozen conditioning; no C08/C26 forced fit."
+      }
+    ],
+    "outside_taxonomy": false,
+    "reason": "Frozen cloud branch adapts via retrieved app context; separate local branch manufactures supervised signals.",
+    "executes_pattern": true,
+    "resolves_problem": false
+  },
+  "domain_pattern": {
+    "namespace": "gui",
+    "matches": [
+      {
+        "main": "experience_memory_retrieval",
+        "sub": "gui:C19",
+        "version": "frozen taxonomy/conditions hashes in provenance",
+        "fit": "direct",
+        "condition_checks": [
+          {
+            "condition_id": "S1",
+            "status": "met",
+            "reason": "Memory intentionally built on target apps.",
+            "evidence_ids": [
+              "E02"
+            ]
+          },
+          {
+            "condition_id": "S2",
+            "status": "partial",
+            "reason": "LLM functionality summaries; no raw-vs-summary ablation.",
+            "evidence_ids": [
+              "E03"
+            ]
+          },
+          {
+            "condition_id": "S3",
+            "status": "unmet",
+            "reason": "No memory-size scaling curve.",
+            "evidence_ids": [
+              "E03"
+            ]
+          },
+          {
+            "condition_id": "S4",
+            "status": "not_applicable",
+            "reason": "No web-search manager-worker system.",
+            "evidence_ids": [
+              "E03"
+            ]
+          },
+          {
+            "condition_id": "S5",
+            "status": "partial",
+            "reason": "Reusable app-function/shortcut store and memory ablation, but no online gain.",
+            "evidence_ids": [
+              "E03",
+              "E06"
+            ]
+          },
+          {
+            "condition_id": "F3",
+            "status": "met",
+            "reason": "Held-out-environment evidence gap applies, not demonstrated transfer.",
+            "evidence_ids": [
+              "E02"
+            ]
+          },
+          {
+            "condition_id": "F5",
+            "status": "partial",
+            "reason": "25% shortcut misguidance; leakage of exact test instructions not established.",
+            "evidence_ids": [
+              "E10"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E02",
+          "E03",
+          "E10"
+        ]
+      },
+      {
+        "main": "structured_screen_observation",
+        "sub": "gui:C13",
+        "version": "frozen taxonomy/conditions hashes in provenance",
+        "fit": "direct pruning/merging and indexed actions",
+        "condition_checks": [
+          {
+            "condition_id": "S1",
+            "status": "met",
+            "reason": "Hierarchy exposes target elements.",
+            "evidence_ids": [
+              "E05"
+            ]
+          },
+          {
+            "condition_id": "S5",
+            "status": "partial",
+            "reason": "Token/accuracy gains reported, entire representation not factorially isolated.",
+            "evidence_ids": [
+              "E05",
+              "E07",
+              "E09"
+            ]
+          },
+          {
+            "condition_id": "F1",
+            "status": "unknown",
+            "reason": "No canvas/custom-widget target coverage test.",
+            "evidence_ids": [
+              "E05"
+            ]
+          },
+          {
+            "condition_id": "F6",
+            "status": "partial",
+            "reason": "Latency measured; per-app pruning harms not isolated.",
+            "evidence_ids": [
+              "E09"
+            ]
+          },
+          {
+            "condition_id": "S2/S3/S6",
+            "status": "not_applicable",
+            "reason": "No pixel parser, candidate ranker, or multimodal conflict claim.",
+            "evidence_ids": [
+              "E05"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E05",
+          "E07",
+          "E09"
+        ]
+      },
+      {
+        "main": "trajectory_level_policy_training",
+        "sub": "gui:K25",
+        "version": "frozen taxonomy/conditions hashes in provenance",
+        "fit": "direct rationale augmentation; language teacher over structured UI rather than VLM",
+        "condition_checks": [
+          {
+            "condition_id": "S4",
+            "status": "unmet",
+            "reason": "Known action supplied to rationale teacher, no sampled-action consistency filter.",
+            "evidence_ids": [
+              "E04"
+            ]
+          },
+          {
+            "condition_id": "S5",
+            "status": "unmet",
+            "reason": "No validated offline-online correlation.",
+            "evidence_ids": [
+              "E06"
+            ]
+          },
+          {
+            "condition_id": "S1/S2/S3",
+            "status": "not_applicable",
+            "reason": "No online RL, multi-phase replay or first-error correction claim.",
+            "evidence_ids": [
+              "E04"
+            ]
+          },
+          {
+            "condition_id": "F2",
+            "status": "met",
+            "reason": "Authors explicitly identify valid alternative paths scored wrong.",
+            "evidence_ids": [
+              "E06"
+            ]
+          },
+          {
+            "condition_id": "F6",
+            "status": "partial",
+            "reason": "CoT mixture interaction observed, rationale error rate not measured.",
+            "evidence_ids": [
+              "E08"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E04",
+          "E08",
+          "E06"
+        ]
+      }
+    ],
+    "unassigned": [],
+    "revision_proposals": []
+  },
+  "pattern_mapping": [
+    {
+      "rs_main": "adapt_via_conditioning",
+      "rs_sub": "rs:C03",
+      "domain": {
+        "namespace": "gui",
+        "main": "experience_memory_retrieval",
+        "sub": "gui:C19"
+      },
+      "operation_correspondence": "Canonical reference-conditioned inference instantiated by embedding-retrieved app functionality/route memories.",
+      "necessary_conditions/differences": "Same-app state match and useful exploration coverage; no category-level holdout and no persistent online update selection.",
+      "evidence_ids": [
+        "E02",
+        "E03",
+        "E15"
+      ]
+    },
+    {
+      "rs_main": "self_supervised_signal_engineering",
+      "rs_sub": null,
+      "domain": {
+        "namespace": "gui",
+        "main": "trajectory_level_policy_training",
+        "sub": "gui:K25"
+      },
+      "operation_correspondence": "Trace-derived next actions condition teacher-generated reasoning, then supervised Vicuna fitting.",
+      "necessary_conditions/differences": "Text teacher sees target action; not comparative reward or C08 quality-filter iteration; rationale consistency unchecked.",
+      "evidence_ids": [
+        "E04",
+        "E08"
+      ]
+    }
+  ],
+  "expectations": [
+    {
+      "id": "E02",
+      "version": "cua-agents/v1 fixed expectations hash",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.09856#s2"
+        }
+      ],
+      "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Mobile online-capability principle applies, but AndroidWorld postdates v4; no retroactive required benchmark penalty. Paper itself explicitly withholds real-system completion, so offline proxy cannot support whole-agent success.",
+      "evidence_ids": [
+        "E06"
+      ],
+      "score_item": [
+        "E.measurement"
+      ]
+    },
+    {
+      "id": "E15",
+      "version": "cua-agents/v1 fixed expectations hash",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2501.12326",
+          "note": "authors: offline benchmark results may fail to capture online capability"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s3",
+          "note": "SOP R^2=0.934 vs AndroidControl-High 0.470 against AndroidWorld"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2602.09856",
+          "note": "authors: offline evaluation cannot assess alternative valid trajectories or recovery"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2"
+        }
+      ],
+      "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+      "applicable": true,
+      "status": "unmet",
+      "reason": "71.3% is sequence matching on provided UI sequence; neither executable end-state nor offline-online correlation.",
+      "evidence_ids": [
+        "E06"
+      ],
+      "score_item": [
+        "E.measurement",
+        "E.holdout"
+      ]
+    },
+    {
+      "id": "E28",
+      "version": "cua-agents/v1 fixed expectations hash",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "test-query search actions filtered from in-domain data"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1",
+          "note": "only 20 of 833 AndroidControl apps seen in synthesis"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "train on generated sites, evaluate on OSWorld/Online-Mind2Web/MobileWorld"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "OOD GUI-Odyssey and OSWorld"
+        }
+      ],
+      "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+      "applicable": true,
+      "status": "partial",
+      "reason": "MoTiF apps/tasks stated unrelated; offline exploration nevertheless uses evaluated target apps; synthetic-task/test-query overlap not quantified.",
+      "evidence_ids": [
+        "E02",
+        "E13"
+      ],
+      "score_item": [
+        "E.holdout"
+      ]
+    },
+    {
+      "id": "E35",
+      "version": "cua-agents/v1 fixed expectations hash",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "OOD gains small"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.08164#s2"
+        }
+      ],
+      "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+      "applicable": true,
+      "status": "unmet",
+      "reason": "No independent environment outside constructed app memory.",
+      "evidence_ids": [
+        "E02"
+      ],
+      "score_item": [
+        "E.holdout"
+      ]
+    },
+    {
+      "id": "E21",
+      "version": "cua-agents/v1 fixed expectations hash",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        }
+      ],
+      "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Structure-based setting clearly disclosed, but baseline sees visible leaves whereas AutoDroid also auto-scrolls and merges; comparison not equal-information.",
+      "evidence_ids": [
+        "E05",
+        "E07"
+      ],
+      "score_item": [
+        "E.causality"
+      ]
+    },
+    {
+      "id": "E17",
+      "version": "cua-agents/v1 fixed expectations hash",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "reports both 15 and 50 steps"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2",
+          "note": "5 actions vs 30 for some baselines (condition)"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2",
+          "note": "differing step caps; efficiency stratified"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s3",
+          "note": "budget exhaustion"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "average steps reported"
+        }
+      ],
+      "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Calls/steps saved measured, but shortcut accounting conditions on correct cases and no shared closed-loop max-step exhaustion protocol.",
+      "evidence_ids": [
+        "E09",
+        "E10"
+      ],
+      "score_item": [
+        "E.cost"
+      ]
+    },
+    {
+      "id": "E16",
+      "version": "cua-agents/v1 fixed expectations hash",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "3 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "3 runs, std 1.1%"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.10031",
+          "note": "3 repetitions"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2311.08649",
+          "note": "authors: monetary constraints prevented multiple runs"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2411.02337",
+          "note": "authors: random task generation raises variance across seeds"
+        }
+      ],
+      "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Central benchmark is offline; latency alone has 10 repeats. Absence of task repeated seeds/CI still informs statistics by ordinary sampling reliability, not a false claim of violated online protocol.",
+      "evidence_ids": [
+        "E06",
+        "E12"
+      ],
+      "score_item": [
+        "E.statistics"
+      ]
+    },
+    {
+      "id": "E10",
+      "version": "cua-agents/v1 fixed expectations hash",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2406.11896#s2",
+          "note": "2.8% error vs human"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s2",
+          "note": "79.4% on 100 manually labelled rollouts"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "agreement with human labels; held-out agents"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s1",
+          "note": "accuracy vs human-corrected labels"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s2",
+          "note": "Spearman with human labels"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2311.08649#s2",
+          "note": "F1 0.74 vs manual labels"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.09038",
+          "note": "authors concede VLM judges can admit failures or reject valid successes; no precision reported"
+        }
+      ],
+      "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "LLM task-stop/risk prompts are not the evaluator: published success is expert-action exact match. Risk detector has precision/recall, which cannot validate task completion.",
+      "evidence_ids": [
+        "E06",
+        "E17"
+      ],
+      "score_item": [
+        "E.measurement"
+      ]
+    },
+    {
+      "id": "E09",
+      "version": "cua-agents/v1 fixed expectations hash",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s3",
+          "note": "vs SFT, Filtered BC, AWR, DigiRL"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2406.11896#s1",
+          "note": "vs Filtered BC, AWR"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1",
+          "note": "vs SFT-only, offline GRPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "vs WebRL, NNetNav SFT"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "vs ORM-based PPO and ARPO"
+        }
+      ],
+      "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No GUI RL algorithm; supervised Vicuna branch.",
+      "evidence_ids": [
+        "E04"
+      ],
+      "score_item": [
+        "E.causality"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "text": "Arbitrary Android tasks without manual effort; headline 90.9% action accuracy and 71.3% task completion.",
+      "setting": "13 tool-style Android apps; 158 manually annotated DroidTask tasks; GPT-4; temperature .25; teacher-forced/reference UI sequence.",
+      "baseline/control": "GPT-4 LLM-framework 54.5% action agreement; same underlying model, different structural observation and action space.",
+      "selection_vs_test": "Target apps explored before evaluation; no independent app holdout; task-level synthetic overlap unmeasured.",
+      "result/denominator": "Authors report 90.9% action agreement; 71.3% whole-reference-sequence completion, excluding completion-determination step in Fig7; action count not recovered from text.",
+      "evidence_ids": [
+        "E01",
+        "E06",
+        "E07",
+        "E14"
+      ],
+      "counterevidence": [
+        "E06: no real-system completion results; valid alternatives rejected; explored apps not transfer."
+      ],
+      "allowed_conclusion": "Improved offline action/reference-trace agreement in these explored apps, not 71.3% independently verified online success."
+    },
+    {
+      "claim_id": "C2",
+      "text": "App memory and generated CoT improve automation.",
+      "setting": "Cloud memory on/off; Vicuna7B fine-tuning CoT/MoTiF ablations.",
+      "baseline/control": "Memory removal; Table3 no Mo/no CoT/no both.",
+      "selection_vs_test": "Training/synthesis target-app data; MoTiF asserted unrelated.",
+      "result/denominator": "Vicuna full 57.7/41.1 action/sequence; no Mo 51.9/29.8; no CoT 20.6/.6; neither51.9/31.6.",
+      "evidence_ids": [
+        "E03",
+        "E04",
+        "E08",
+        "E13"
+      ],
+      "counterevidence": [
+        "No known-action-rationale correctness audit; nonmonotone interaction; no equal-information memory alternative."
+      ],
+      "allowed_conclusion": "Offline signal improves this implementation with mixture dependence; not retained self-improvement or general online transfer."
+    },
+    {
+      "claim_id": "C3",
+      "text": "Multi-granularity optimization reduces inference cost.",
+      "setting": "Cloud API and Vicuna smartphone/edge server; five paired prompts, ten API-latency samples.",
+      "baseline/control": "LLM-framework prompts",
+      "selection_vs_test": "Five random baseline prompts; shortcut savings separately computed only for correctly guided subset.",
+      "result/denominator": "625.3->339 tokens; calls -13.7%; shortcut correctness75%, correct-only step saving38.02%; app prep .5-1h+5-10min.",
+      "evidence_ids": [
+        "E09",
+        "E10",
+        "E11"
+      ],
+      "counterevidence": [
+        "Five-prompt small latency sample; output truncation case P5; no amortized cost curve."
+      ],
+      "allowed_conclusion": "Reported token/call savings with explicit preparation/conditional-cost limitations."
+    }
+  ],
+  "assessment": {
+    "evidence_level": "offline",
+    "claim_support": "scoped",
+    "strongest_supported_claim": "Author-reported improvement in offline next-action and reference-sequence agreement on158 tasks across13 explored apps, with reported token/call savings. Not independently checked online completion or unseen-environment transfer.",
+    "unresolved": [
+      "Original broad any-app/any-task claim exceeds explored tool-app offline evidence.",
+      "No independent reproduction performed.",
+      "Rubric snapshot is draft_uncalibrated; this is a seat judgment, not validated/final ranking."
+    ]
+  },
+  "ratings": {
+    "G": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Concrete representation, hidden route knowledge and query-cost bottlenecks; named LLM-framework/META-GUI lineage, but original nearest papers not independently fixed in shared pack and novelty remains bounded.",
+      "evidence_ids": [
+        "E02",
+        "E16"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Complete supplied v4 render, including Algorithm1 listings, all tables, 6.1-6.6, discussion and references; no appendix listed or present."
+      ]
+    },
+    "M": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "UTG route hints address semantically opaque intermediate steps; merging and synthetic-rationale training reconstructable with discriminating ablations, but semantic similarity/transition-equivalence assumptions incompletely tested.",
+      "evidence_ids": [
+        "E03",
+        "E04",
+        "E05"
+      ],
+      "counterevidence_ids": [
+        "E10"
+      ],
+      "search_scope": [
+        "Complete supplied v4 render, including Algorithm1 listings, all tables, 6.1-6.6, discussion and references; no appendix listed or present."
+      ]
+    },
+    "X": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Algorithm1, prompts, structural merges, memory tables and SFT recipe describe executable operations; k/gamma sensitivity, exploration coverage and noise rejection under-specified.",
+      "evidence_ids": [
+        "E03",
+        "E04",
+        "E05",
+        "E15"
+      ],
+      "counterevidence_ids": [
+        "E10"
+      ],
+      "search_scope": [
+        "Complete supplied v4 render, including Algorithm1 listings, all tables, 6.1-6.6, discussion and references; no appendix listed or present."
+      ]
+    },
+    "E.measurement": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "Transparent single-reference metrics with known limitations, but system claim is not checked by actual outcome execution.",
+      "evidence_ids": [
+        "E06",
+        "E07",
+        "E14"
+      ],
+      "counterevidence_ids": [
+        "E06"
+      ],
+      "search_scope": [
+        "Complete supplied v4 render, including Algorithm1 listings, all tables, 6.1-6.6, discussion and references; no appendix listed or present."
+      ]
+    },
+    "E.causality": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "Same cloud backbone and memory/CoT ablations informative; auto-scroll changes accessible information and multi-module changes not fully factorial/equal-compute.",
+      "evidence_ids": [
+        "E07",
+        "E08"
+      ],
+      "counterevidence_ids": [
+        "E05"
+      ],
+      "search_scope": [
+        "Complete supplied v4 render, including Algorithm1 listings, all tables, 6.1-6.6, discussion and references; no appendix listed or present."
+      ]
+    },
+    "E.holdout": {
+      "status": "resolved",
+      "rating": 1,
+      "reason": "Different tasks and asserted unrelated MoTiF, but same apps explored, synthetic-test semantic overlap and broader apps/platform transfer absent.",
+      "evidence_ids": [
+        "E02",
+        "E13"
+      ],
+      "counterevidence_ids": [
+        "E06"
+      ],
+      "search_scope": [
+        "Complete supplied v4 render, including Algorithm1 listings, all tables, 6.1-6.6, discussion and references; no appendix listed or present."
+      ]
+    },
+    "E.statistics": {
+      "status": "resolved",
+      "rating": 1,
+      "reason": "158-task denominator and sampled failure cases plus latency repeats; no repeated task evaluation spread, confidence intervals or representative failure distribution.",
+      "evidence_ids": [
+        "E12",
+        "E14"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Complete supplied v4 render, including Algorithm1 listings, all tables, 6.1-6.6, discussion and references; no appendix listed or present."
+      ]
+    },
+    "E.cost": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Token counts, API prices, device/edge latencies, training hardware and offline prep reported; correct-only shortcuts and small latency sample leave end-to-end budget fairness incomplete.",
+      "evidence_ids": [
+        "E09",
+        "E11"
+      ],
+      "counterevidence_ids": [
+        "E10"
+      ],
+      "search_scope": [
+        "Complete supplied v4 render, including Algorithm1 listings, all tables, 6.1-6.6, discussion and references; no appendix listed or present."
+      ]
+    }
+  },
+  "score": {
+    "raw": 62.5,
+    "display": "62.5",
+    "lower": 62.5,
+    "upper": 62.5,
+    "coverage": 1.0,
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+  },
+  "status": "reviewed",
+  "reason": "Complete version/hash and all supplied content checked; center claim scoped to offline evidence; provisional run-snapshot scoring only.",
+  "short_rationale": "App-specific UTG memory is a concrete answer to hidden-navigation knowledge and cost; headline success is offline trace matching, not executed task completion. Controlled memory/SFT ablations help, but explored-app exposure, reference-path metric and conditional shortcut accounting limit evidence."
+}

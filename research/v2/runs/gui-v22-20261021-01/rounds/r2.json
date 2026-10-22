@@ -1,0 +1,25 @@
+{
+  "round_id": "r2",
+  "date": "2026-10-21",
+  "milestone": "calibration closed; rubric frozen; production under frozen rubric",
+  "calibration": {
+    "c1_dev": "6/6 valid (5 a1 + 1 a2 pdf-upgrade), aggregated & verified",
+    "holdout_agreement": "10 pairs, median 2.5, 90% within 10 — PASS after one anchor clarification round (r1: unknown vs not_reported protocol; 2509.00366 sol a4 re-adjudication)",
+    "freeze": "weights unchanged; anchor_clarification_r1 + freeze_report.md; manifest.rubric_frozen recorded"
+  },
+  "index": {
+    "accepted_final": 22,
+    "by_batch": {"c1": 6, "c3": 5, "p1": 5, "p2": 3, "c2": 2, "p3_a2": 1},
+    "out_of_scope": 1,
+    "deferred_to_re1": ["2509.00366", "2606.07027", "2606.31612"]
+  },
+  "in_flight": ["re1 aggregate (6)", "p3 aggregate a3 (3)", "p4 aggregate (5)",
+                 "p3/sol a2b 2307.12856", "p7 seats (2)"],
+  "material_pipeline": [
+    "renderer v2 (ltx_listing base64 extraction); no-overwrite .rN policy",
+    "pdf_supplement path for HTML-dropped Boxes (2606.07027, 2606.31612, 2310.03720)",
+    "fulltext-figs packs + figs.json sha (2306.00245, 2306.01242, 2307.12856, 2401.01614, 2401.04124)",
+    "references pack: 17 fixed originals (AWM..MetaGPT)"
+  ],
+  "queue": {"total": 1328, "scored": 22, "in_batches": 16, "pending": 1290}
+}

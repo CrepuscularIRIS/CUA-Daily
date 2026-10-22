@@ -1,0 +1,48 @@
+{
+  "schema_version": "radar-batch-report-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "re1",
+  "attempt_id": "a2",
+  "seat": "sol",
+  "assigned": [
+    "2303.17491",
+    "2606.07027"
+  ],
+  "reviewed": 2,
+  "needs_fulltext": 0,
+  "needs_evidence": 0,
+  "outside_taxonomy": 0,
+  "schema_errors": [],
+  "model_type": "sonnet",
+  "actual_model": "gpt-6.1-sol",
+  "session_id": null,
+  "receipt_ref": null,
+  "unavailable_reason": "Runtime receipt/session identifier not separately exposed.",
+  "input_hash": "0c53f80620262543975e422d5296c86482ed960182744018b026378068fb68ec",
+  "material_addenda": [
+    {
+      "paper_id": "2606.07027",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2606.07027.pdf-supplement.txt",
+      "sha256": "502c25c42777329b61ad74b6dabed6e9940a0c801327ae9611b7905b9a03cc30",
+      "authorization": "Coordinator supplied same-version PDF-text prompt repair during this attempt; main HTML hash unchanged."
+    }
+  ],
+  "supersedes_note": "a1 material-upgrade reassessment scope; a2 capacity split only, no a1 records consulted.",
+  "validation": {
+    "assigned_versions_and_fulltext_hashes": true,
+    "fixed_asset_hashes": true,
+    "continuous_quotes_exact_matched": true,
+    "flat_rating_keys": true,
+    "score_arithmetic": true,
+    "rs_parent_and_gui_namespace": true,
+    "atomic_files": true,
+    "boundary": "Mechanical structure/hash/quote checks do not establish semantic validity or reproduction."
+  },
+  "blocking_issues": [],
+  "nonblocking_uncertainties": [
+    "Direct predecessor originals absent: controller instructed author-report-level comparison and uncertainty, request retained for later shared bundle.",
+    "Image-only content remains unknown; no screenshot/plot reconstruction.",
+    "PDF addendum explicitly bound by hash rather than falsely substituted into original input_bundle hash."
+  ],
+  "timestamp": "2026-10-22T02:15:22.007225+00:00"
+}

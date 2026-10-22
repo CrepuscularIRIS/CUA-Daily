@@ -1,0 +1,648 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p3",
+  "attempt_id": "a1",
+  "seat": "sol",
+  "paper": {
+    "paper_key": "2307.12856",
+    "paper_id": "2307.12856",
+    "title": "A Real-World WebAgent with Planning, Long Context Understanding, and Program Synthesis",
+    "version": "2307.12856v4",
+    "claim_type": "system_method",
+    "central_claim": "WebAgent combines HTML-T5 planning/HTML summarization, self-experience supervision and generalist grounded program synthesis to improve real-world web task success by over50%; HTML-T5 improves MiniWoB and offline Mind2Web."
+  },
+  "provenance": {
+    "input_hash": "37cac126a6041a3d720b9b855d9bac88b70aa47dcfd33a2f89604ee5e3ad0671",
+    "rubric_version": "v2.2 draft_uncalibrated",
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+    "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+    "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+    "model_type": "sonnet",
+    "actual_model": "gpt-6.1-sol",
+    "session_id": null,
+    "receipt_ref": null,
+    "unavailable_reason": "Session ID / model receipt not exposed to this worker; model name supplied in system context. No probing performed.",
+    "timestamp": "2026-10-22T02:31:36.289990+00:00",
+    "rubric_freeze_note": "Supplied rubric draft_uncalibrated: provisional independent seat judgment, not a calibrated final ranking."
+  },
+  "materials": [
+    {
+      "material_id": "paper",
+      "url": "https://arxiv.org/html/2307.12856v4",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2307.12856.txt",
+      "sha256": "45a1c8f90be6f19d3feb0208ec40d2f7907cfb0827fcbd5bebd859ba0489d1e7",
+      "sections_read": [
+        "All serialized text lines1–1831, methods/experiments/references and AppendicesA–K; all60 evaluation instructions and all serialized tables",
+        "Entire145492-character unique stream read consecutively0:26000,26000:52000,52000:78000,78000:104000,104000:130000,130000:end"
+      ],
+      "complete": false,
+      "missing_sections": [
+        "Figure3 architecture image",
+        "Figure5 illustrated map episode",
+        "AppendixD Figure6 example flow including image-only method/program details",
+        "AppendixG Figure8 complete illustrated episode"
+      ],
+      "read_method": "Whitespace-normalized substring dedup preserves novel serialized text/listings; caption reading does not establish image reading."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E01",
+      "material_id": "paper",
+      "sha256": "45a1c8f90be6f19d3feb0208ec40d2f7907cfb0827fcbd5bebd859ba0489d1e7",
+      "locator": "§3 workflow; text line545",
+      "quote": "This iterative process of planning, summarization, and program synthesis continues until a designated end-of-episode sub-instruction is predicted or the maximum number of iterations is reached.",
+      "support_explanation": "Executable Selenium feedback updates HTML; no exact numeric iteration budget identified in serialized text.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E02",
+      "material_id": "paper",
+      "sha256": "45a1c8f90be6f19d3feb0208ec40d2f7907cfb0827fcbd5bebd859ba0489d1e7",
+      "locator": "§3.2; text line630",
+      "quote": "The success of recorded demonstrations varies, and automating success criteria for real-world tasks remains challenging.",
+      "support_explanation": "Critical-error filter is not a sound semantic task-success oracle.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E03",
+      "material_id": "paper",
+      "sha256": "45a1c8f90be6f19d3feb0208ec40d2f7907cfb0827fcbd5bebd859ba0489d1e7",
+      "locator": "§3.2; text line630",
+      "quote": "we utilize environmental feedback to eliminate critical failures, such as program execution errors, retriever errors, and clearly erroneous URL prefixes",
+      "support_explanation": "Concrete training selection gate; absence of these failures does not entail goal completion.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E04",
+      "material_id": "paper",
+      "sha256": "45a1c8f90be6f19d3feb0208ec40d2f7907cfb0827fcbd5bebd859ba0489d1e7",
+      "locator": "§4.1; text line720",
+      "quote": "Through the self-experience supervision process, we curate 260 episodes on real estate website, 230 episodes on social media website, and 410 episodes on map website to finetune HTML-T5.",
+      "support_explanation": "Retained change is offline fine-tuning on site-specific self-experience, not online lifelong updates.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E05",
+      "material_id": "paper",
+      "sha256": "45a1c8f90be6f19d3feb0208ec40d2f7907cfb0827fcbd5bebd859ba0489d1e7",
+      "locator": "Table1; text line584",
+      "quote": "WebAgent | ✔ | ✔ | 65.0 | 87.6 | 70.0 | 85.8 | 80.0 | 93.8 | 20 / 33 / 25 | 70 / 50 / 50 | 10 / 17 / 25",
+      "support_explanation": "Author-reported site successes/scores and residual program/planning/summarization failure breakdowns.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E06",
+      "material_id": "paper",
+      "sha256": "45a1c8f90be6f19d3feb0208ec40d2f7907cfb0827fcbd5bebd859ba0489d1e7",
+      "locator": "Table3; text line764",
+      "quote": "HTML-T5-XL (ours) | 67.1 % | +6.7",
+      "support_explanation": "Reported12K MiniWoB aggregate; AppendixJ differs.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E07",
+      "material_id": "paper",
+      "sha256": "45a1c8f90be6f19d3feb0208ec40d2f7907cfb0827fcbd5bebd859ba0489d1e7",
+      "locator": "AppendixJ Table12; text line1775",
+      "quote": "Average | 0.856 | 0.655 | 0.755 | 0.484",
+      "support_explanation": "Appendix12K average65.5%, not Table3 67.1%; unresolved numerical inconsistency.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E08",
+      "material_id": "paper",
+      "sha256": "45a1c8f90be6f19d3feb0208ec40d2f7907cfb0827fcbd5bebd859ba0489d1e7",
+      "locator": "AppendixH.2; text line1606",
+      "quote": "We report the best per-step exact match accuracy in test set.",
+      "support_explanation": "Test-based best reporting/selection concern; no independent validation selection established.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E09",
+      "material_id": "paper",
+      "sha256": "45a1c8f90be6f19d3feb0208ec40d2f7907cfb0827fcbd5bebd859ba0489d1e7",
+      "locator": "AppendixJ Table12; text line1770",
+      "quote": "social-media-all | 0.31 | 0.84 | 0.09 | 0.00",
+      "support_explanation": "347K training does not dominate12K per task.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E10",
+      "material_id": "paper",
+      "sha256": "45a1c8f90be6f19d3feb0208ec40d2f7907cfb0827fcbd5bebd859ba0489d1e7",
+      "locator": "AppendixK; text line1785",
+      "quote": "the performance of Flan-U-PaLM-540B and gpt-3.5-turbo are the same (80% success, 93.8% score)",
+      "support_explanation": "Some generalist model substitution evidence on the same20 map instructions, not platform transfer.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E11",
+      "material_id": "paper",
+      "sha256": "45a1c8f90be6f19d3feb0208ec40d2f7907cfb0827fcbd5bebd859ba0489d1e7",
+      "locator": "AppendixD Figure6; text line1141",
+      "quote": "Figure 6: An example flow with planning, summarization, and grounded program synthesis in the real estate website.",
+      "support_explanation": "Caption only in supplied text; the example-flow image content has not been read.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E12",
+      "material_id": "paper",
+      "sha256": "45a1c8f90be6f19d3feb0208ec40d2f7907cfb0827fcbd5bebd859ba0489d1e7",
+      "locator": "AppendixG Figure8; text line1569",
+      "quote": "Figure 8: Example episodes of real-world web automation in map domain.",
+      "support_explanation": "Caption only; full illustrated episode is absent from serialized bundle.",
+      "kind": "author_report"
+    }
+  ],
+  "signatures": [
+    {
+      "sig_id": "S1",
+      "object": "Long HTML and multi-step web task",
+      "information": "Raw DOM/HTML, instruction/history and data-ref identifiers; not screenshot-only",
+      "operation": "HTML-T5 jointly predicts sub-instruction and relevant HTML references; specialist extracts snippets; Flan-U-PaLM540B synthesizes Selenium Python; interpreter executes and returns new HTML",
+      "output": "Executable web actions plus updated observation/history",
+      "conditions": "Accessible DOM, identifiable references, sufficient generalist code competence and same-site specialist supervision",
+      "feedback": "Post-execution HTML; no general runtime program repair established; exact illustrated programs missing",
+      "selection_rule": "End-of-episode instruction or max-iteration stop, numerical cap not identified",
+      "selection_data": "Current real website state",
+      "persistence": "Within-episode sub-instruction history",
+      "later_use": "Next planning cycle",
+      "claimed_effect": "Long-context comprehension and closed-loop planning improve real-site success",
+      "failure_boundary": "Plan failures remain50–70% of residual failures; interpreter execution is not semantic goal verification",
+      "evidence_ids": [
+        "E01",
+        "E05",
+        "E11",
+        "E12"
+      ]
+    },
+    {
+      "sig_id": "S2",
+      "object": "Scarce real-site supervision for specialist",
+      "information": "Handwritten instruction templates/slots, rule-based sub-instructions, regex reference extraction, generalist-generated programs and environmental feedback",
+      "operation": "Generate episodes, reject critical execution/retrieval/URL failures, retain and fine-tune HTML-T5",
+      "output": "Site-adapted planner/summarizer weights",
+      "conditions": "Template coverage and filter validity",
+      "feedback": "Observable critical failures, not complete semantic success",
+      "selection_rule": "Eliminate critical failures",
+      "selection_data": "260 real-estate,230 social-media,410 map episodes",
+      "persistence": "Fine-tuned HTML-T5 weights",
+      "later_use": "Subsequent test instructions on the same websites",
+      "claimed_effect": "Align specialist with real websites",
+      "failure_boundary": "No autonomous repeated improvement cycle; no filter-removal ablation or matched-extra-training causal isolation established; test slot overlap audit unclear",
+      "evidence_ids": [
+        "E02",
+        "E03",
+        "E04",
+        "E05"
+      ]
+    },
+    {
+      "sig_id": "S3",
+      "object": "HTML-specialist pretraining",
+      "information": "3.41M examples from100 CommonCrawl April2019WARC files; label-associated subtrees; PEGASUS initialization",
+      "operation": "LongT5 local/global attention plus mixture long-span denoising,100K steps,batch128,input4096/output910; downstream supervised fine-tuning",
+      "output": "HTML-T5220M/770M/3B specialist",
+      "conditions": "Markup exposes useful structural regularities; raw-text local/global attention is not a verified parse-tree constraint",
+      "feedback": "Denoising and downstream supervised losses",
+      "selection_rule": "Data filtering/subtree extraction; appendix best test EM reporting",
+      "selection_data": "HTML pretraining, MiniWoB demos, Mind2Web training set",
+      "persistence": "Model weights",
+      "later_use": "Online benchmark control and static prediction",
+      "claimed_effect": "Markup understanding improves over LongT5/Flan baselines",
+      "failure_boundary": "12K MiniWoB aggregate conflict67.1 vs65.5; test selection concern;128TPUv3 cores do not specify end-to-end runtime cost",
+      "evidence_ids": [
+        "E06",
+        "E07",
+        "E08",
+        "E09"
+      ]
+    }
+  ],
+  "gap": {
+    "author_gap": "Generalist LLMs struggle with planning and long HTML; benchmark-only agents lack real-website adaptation.",
+    "checked_gap": "Real-site integration and specialist markup adaptation are a concrete historical gap, not invention of decomposition or self-generated training.",
+    "lineage": [
+      {
+        "source": "2306.07863v3 Synapse, assigned fixed fulltext fully read",
+        "relation": "State abstraction plus trajectory prompting already reduces HTML/context bottlenecks without weight updates; WebAgent trains joint specialist and executes generated Selenium."
+      },
+      {
+        "source": "2306.00245v2 Pix2Act, assigned fixed fulltext fully read",
+        "relation": "Generated/filter-selected training episodes already distill persistent policies; WebAgent changes modality, template supervision and weak error gate."
+      },
+      {
+        "source": "LongT5/PEGASUS/WebN/MindAct as cited and compared by WebAgent",
+        "relation": "Borrowed local/global attention, initialization and HTML-agent baselines; these original source papers not independently read in this seat."
+      }
+    ],
+    "closest_adjacent": [
+      "Synapse2306.07863v3",
+      "LongT5 as author-described",
+      "WebN as author-described"
+    ],
+    "residue": "Train a long-context HTML specialist jointly for subgoal/snippet prediction and connect it to generalist Selenium synthesis on three actual sites.",
+    "stakes": "Long multi-page web workflows and HTML input cost.",
+    "method_response": "Markup pretraining, retained self-experience weights, subgoal/reference interface, observation-action loop.",
+    "remaining_gap": "Same-site adaptation only for online real web; no open-web transfer, semantic filter validation, fair full-compute comparison or robust recovery; some method figures missing.",
+    "evidence_ids": [
+      "E01",
+      "E02",
+      "E03",
+      "E04",
+      "E05",
+      "E08"
+    ],
+    "unresolved": [
+      "Figure-only methods/examples absent",
+      "Table3 versus AppendixJ aggregate conflict",
+      "Test-best checkpoint selection",
+      "No independent reading of LongT5/WebN originals"
+    ]
+  },
+  "rs_pattern": {
+    "primary": "decompose_and_delegate",
+    "supporting": [
+      "self_supervised_signal_engineering"
+    ],
+    "matches": [
+      {
+        "main_id": "decompose_and_delegate",
+        "sub_id": "C25",
+        "role": "primary",
+        "fit": "partial",
+        "reason": "Sub-instruction/snippet/program boundary and interpreter execution are genuine load-bearing artifacts, but full verification/revision closure cannot be established from missing figures; execution is not a sound web-goal solver.",
+        "evidence_ids": [
+          "E01",
+          "E05",
+          "E11",
+          "E12"
+        ],
+        "tactic_steps_checked": [
+          "Structural bottleneck: long noisy HTML versus generalist code capability",
+          "Program is machine-checkable, intermediate prose is not",
+          "HTML observation closes environment loop; no general verified repair",
+          "Planner/summarizer ablations change specialist training and loop form",
+          "Real-site breadth3 sites; no cost parity"
+        ],
+        "success_failure_checks": [
+          "Strong execution-quality criterion of typed verified handoffs is only partial",
+          "Table1 supports coupling, not isolated soundness",
+          "Extra training/model costs unmeasured"
+        ]
+      },
+      {
+        "main_id": "self_supervised_signal_engineering",
+        "sub_id": "C08",
+        "role": "supporting",
+        "fit": "strong_operation_qualified_quality",
+        "reason": "Template-conditioned generator plus critical-failure filter creates retained training instances and specialist weights; this is not verified success filtering or autonomous self-improvement.",
+        "evidence_ids": [
+          "E02",
+          "E03",
+          "E04"
+        ],
+        "tactic_steps_checked": [
+          "Corpus scarcity/real-site mismatch diagnosed",
+          "Templates/rules/generalist generate site episodes",
+          "Explicit gate rejects critical failures",
+          "Retained episodes fine-tune specialist",
+          "Same-site online improvement, unseen-site live transfer untested"
+        ],
+        "success_failure_checks": [
+          "No filter-off ablation",
+          "Gate soundness not demonstrated",
+          "No matched-budget simpler data recipe",
+          "No formal guarantee; not required for operation match"
+        ]
+      }
+    ],
+    "outside_taxonomy": false,
+    "reason": "Provisional identification from fully read serialized methods; partial C25 does not certify solver soundness, C08 does not certify successful supervision. No additional match for generic structure-aware naming.",
+    "executes_pattern": true,
+    "resolves_problem": false
+  },
+  "domain_pattern": {
+    "namespace": "gui",
+    "matches": [
+      {
+        "main_id": "planner_grounder_interface",
+        "sub_id": null,
+        "version": "fixed gui cards",
+        "fit": "partial",
+        "condition_checks": [
+          "Specialist plans/extracts HTML and generalist produces programs: reverse of common generalist planner/pixel-grounder split",
+          "No screenshot coordinate grounder or heterogeneous screenshot action normalization; reject gui C12",
+          "Executable program action abstraction relevant, but not hybrid GUI/code policy comparison"
+        ],
+        "evidence_ids": [
+          "E01",
+          "E05"
+        ]
+      },
+      {
+        "main_id": "structured_screen_observation",
+        "sub_id": "C13",
+        "version": "fixed gui cards",
+        "fit": "partial",
+        "condition_checks": [
+          "Task-conditioned HTML snippet pruning reduces generalist context",
+          "Learned reference prediction, not deterministic a11y rule restructuring",
+          "Summary-only baseline can hurt real-estate; lost context especially tables acknowledged in WebSRC"
+        ],
+        "evidence_ids": [
+          "E01",
+          "E05"
+        ]
+      }
+    ],
+    "unassigned": [
+      "No invented screenshot grounding or retained experience memory retrieval subcard"
+    ],
+    "revision_proposals": []
+  },
+  "pattern_mapping": [
+    {
+      "rs_main": "decompose_and_delegate",
+      "rs_sub": "C25",
+      "domain_namespace": "gui",
+      "domain_main": "planner_grounder_interface",
+      "domain_sub": null,
+      "operation_correspondence": "Specialist emits subgoal/reference snippets; generalist emits executable Python; environment supplies next HTML.",
+      "necessary_conditions_and_differences": "HTML privilege, program competence and partial verification; not specialist screenshot localization.",
+      "evidence_ids": [
+        "E01",
+        "E05"
+      ]
+    },
+    {
+      "rs_main": "self_supervised_signal_engineering",
+      "rs_sub": "C08",
+      "domain_namespace": "gui",
+      "domain_main": null,
+      "domain_sub": null,
+      "operation_correspondence": "Generated real-site episodes filtered then distilled to specialist weights.",
+      "necessary_conditions_and_differences": "Critical-error rejection is weaker than semantic successful-task acceptance; no fully read exact gui subcard imposed.",
+      "evidence_ids": [
+        "E02",
+        "E03",
+        "E04"
+      ]
+    }
+  ],
+  "expectations": [
+    {
+      "id": "E08",
+      "version": "fixed manifest cards v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "patterns/main/planner_grounder_interface.md"
+      ],
+      "applies_when": "Component split improves task success",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Planner/summarizer/full baselines present; specialist training and loop mode confound isolated attribution.",
+      "evidence_ids": [
+        "E05"
+      ],
+      "score_item": "E.causality"
+    },
+    {
+      "id": "E21",
+      "version": "fixed manifest cards v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "patterns/main/planner_grounder_interface.md"
+      ],
+      "applies_when": "Compare agents with differing observation privilege",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Explicit HTML/DOM system; screenshot-only policy comparisons are not matched evidence for visual grounding.",
+      "evidence_ids": [
+        "E01"
+      ],
+      "score_item": "E.measurement"
+    },
+    {
+      "id": "core-E05",
+      "version": "fixed manifest cards v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "patterns/main/structured_screen_observation.md"
+      ],
+      "applies_when": "Offline Mind2Web next-action claims",
+      "applicable": true,
+      "status": "partial",
+      "reason": "All3split Ele.Acc/Op.F1/StepSR/taskSR and MindAct comparison present; static cached action prediction not live transfer; later baseline expectations not retroactive invention requirements.",
+      "evidence_ids": [
+        "E06"
+      ],
+      "score_item": "E.holdout"
+    },
+    {
+      "id": "core-E14",
+      "version": "fixed manifest cards v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "patterns/main/structured_screen_observation.md"
+      ],
+      "applies_when": "Grounding on repeated dense elements",
+      "applicable": true,
+      "status": "unknown",
+      "reason": "Reference IDs/snippets disclosed in prose; no systematic duplicate stress test established, figure examples unavailable.",
+      "evidence_ids": [
+        "E11",
+        "E12"
+      ],
+      "score_item": "E.measurement"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "text": "Full system improves online real-site automation",
+      "setting": "Real-estate/social-media/map,20 evaluation instructions per site; author human supervision",
+      "baseline_control": "Plain Flan-U-PaLM; planner-only and summarizer-only systems",
+      "selection_vs_test": "Training260/230/410 episodes on same sites; template/slot disjointness and evaluation blinding not established",
+      "result_denominator": "Full SR65/70/80%, scores87.6/85.8/93.8; plain10/20/10%; absolute gains55/50/70pp, social exactly50pp",
+      "evidence_ids": [
+        "E04",
+        "E05"
+      ],
+      "counterevidence": [
+        "Planning50–70% residual failures",
+        "Only60instructions; no repeated full runs/intervals identified",
+        "Same-site adaptation is not unseen live-site transfer"
+      ],
+      "allowed_conclusion": "Author-reported same-site online system gain, not broad autonomous browsing reliability."
+    },
+    {
+      "claim_id": "C2",
+      "text": "Markup-specialist pretraining improves benchmark control",
+      "setting": "MiniWoB56tasks,100episodes/task;12K or347K human demonstrations",
+      "baseline_control": "WebN/LongT5/FlanLongT5/FlanT5 controls; not all equal data/model regimes",
+      "selection_vs_test": "AppendixH reports best test per-step EM for separate planning study; potential selection bias",
+      "result_denominator": "Table3 HTMLT5XL67.1%12K; AppendixJ65.5%;347K85.6%",
+      "evidence_ids": [
+        "E06",
+        "E07",
+        "E08",
+        "E09"
+      ],
+      "counterevidence": [
+        "Aggregate12K inconsistency unresolved",
+        "social-media-all31%347K vs84%12K",
+        "No total train/evaluation compute parity"
+      ],
+      "allowed_conclusion": "Useful specialist gains reported with unresolved exact12K aggregate, not verified scaling dominance."
+    },
+    {
+      "claim_id": "C3",
+      "text": "HTML-T5 generalizes across offline web splits",
+      "setting": "Mind2Web cached candidate/action prediction, supervised training",
+      "baseline_control": "MindActFlanT5XL, GPT4, Synapse author comparisons",
+      "selection_vs_test": "Official cross-task/site/domain splits; cached history not own-policy rollouts",
+      "result_denominator": "StepSR57.8/42.9/48.3%, whole-task10.3/5.6/5.1%; Ele.Acc60.6/47.6/50.2; Op.F181.7/71.9/74.9",
+      "evidence_ids": [
+        "E01"
+      ],
+      "counterevidence": [
+        "Synapse cited split values differ from assignedv3, version/protocol mismatch",
+        "Fine-tuned vs prompting methods not training-budget matched",
+        "Full-system unseen live-site transfer not measured"
+      ],
+      "allowed_conclusion": "Offline heldout prediction improvement, not online transfer."
+    }
+  ],
+  "assessment": {
+    "evidence_level": "online",
+    "claim_support": "partial_pending_fulltext",
+    "strongest_supported_claim": "From available text: author-reported online improvements on three training-adapted real sites and MiniWoB; offline Mind2Web evidence. Not worker reproduction, not semantic verified self-improvement, not live unseen-site transfer.",
+    "unresolved": [
+      "Figures3/5/6/8 missing, especially method/example programs in AppendicesD/G",
+      "Both seats require identical fixed figure supplement",
+      "12K aggregate67.1 vs65.5",
+      "No calibrated rubric freeze receipt supplied"
+    ]
+  },
+  "ratings": {
+    "G": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Missing figure-only method and full-episode contents; all ratings withheld under JUDGE_BATCH A1/BATCH_CONTRACT rather than infer missing programs/prompts. Available text analysis retained.",
+      "evidence_ids": [
+        "E11",
+        "E12"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire serialized paper and AppendicesA–K read; image captions exist but image contents not supplied; coordinator supplement requested"
+      ]
+    },
+    "M": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Missing figure-only method and full-episode contents; all ratings withheld under JUDGE_BATCH A1/BATCH_CONTRACT rather than infer missing programs/prompts. Available text analysis retained.",
+      "evidence_ids": [
+        "E11",
+        "E12"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire serialized paper and AppendicesA–K read; image captions exist but image contents not supplied; coordinator supplement requested"
+      ]
+    },
+    "X": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Missing figure-only method and full-episode contents; all ratings withheld under JUDGE_BATCH A1/BATCH_CONTRACT rather than infer missing programs/prompts. Available text analysis retained.",
+      "evidence_ids": [
+        "E11",
+        "E12"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire serialized paper and AppendicesA–K read; image captions exist but image contents not supplied; coordinator supplement requested"
+      ]
+    },
+    "E.measurement": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Missing figure-only method and full-episode contents; all ratings withheld under JUDGE_BATCH A1/BATCH_CONTRACT rather than infer missing programs/prompts. Available text analysis retained.",
+      "evidence_ids": [
+        "E11",
+        "E12"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire serialized paper and AppendicesA–K read; image captions exist but image contents not supplied; coordinator supplement requested"
+      ]
+    },
+    "E.causality": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Missing figure-only method and full-episode contents; all ratings withheld under JUDGE_BATCH A1/BATCH_CONTRACT rather than infer missing programs/prompts. Available text analysis retained.",
+      "evidence_ids": [
+        "E11",
+        "E12"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire serialized paper and AppendicesA–K read; image captions exist but image contents not supplied; coordinator supplement requested"
+      ]
+    },
+    "E.holdout": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Missing figure-only method and full-episode contents; all ratings withheld under JUDGE_BATCH A1/BATCH_CONTRACT rather than infer missing programs/prompts. Available text analysis retained.",
+      "evidence_ids": [
+        "E11",
+        "E12"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire serialized paper and AppendicesA–K read; image captions exist but image contents not supplied; coordinator supplement requested"
+      ]
+    },
+    "E.statistics": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Missing figure-only method and full-episode contents; all ratings withheld under JUDGE_BATCH A1/BATCH_CONTRACT rather than infer missing programs/prompts. Available text analysis retained.",
+      "evidence_ids": [
+        "E11",
+        "E12"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire serialized paper and AppendicesA–K read; image captions exist but image contents not supplied; coordinator supplement requested"
+      ]
+    },
+    "E.cost": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Missing figure-only method and full-episode contents; all ratings withheld under JUDGE_BATCH A1/BATCH_CONTRACT rather than infer missing programs/prompts. Available text analysis retained.",
+      "evidence_ids": [
+        "E11",
+        "E12"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire serialized paper and AppendicesA–K read; image captions exist but image contents not supplied; coordinator supplement requested"
+      ]
+    }
+  },
+  "score": {
+    "raw": null,
+    "display": null,
+    "lower": 0,
+    "upper": 100,
+    "coverage": 0,
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+  },
+  "status": "needs_fulltext",
+  "reason": "All serialized text read, but Figures3/5 and AppendixD Figure6/AppendixG Figure8 image-only architecture/method/episode content unavailable. Fixed identical figure supplement requested; no score until complete."
+}

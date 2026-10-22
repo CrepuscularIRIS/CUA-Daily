@@ -1,0 +1,70 @@
+{
+  "schema_version": "radar-batch-report-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "re1",
+  "attempt_id": "a4",
+  "seat": "sol",
+  "supersedes_note": "a1 protocol re-adjudication per anchor_clarification_r1",
+  "input_hash": "0c53f80620262543975e422d5296c86482ed960182744018b026378068fb68ec",
+  "assigned": 1,
+  "read_and_assessed": 1,
+  "records_written": 1,
+  "reviewed": 1,
+  "needs_fulltext": 0,
+  "needs_evidence": 0,
+  "out_of_scope": 0,
+  "outside_taxonomy": 0,
+  "outside_taxonomy_denominator": 1,
+  "outside_taxonomy_rate": 0.0,
+  "coverage_warning": false,
+  "pending": 0,
+  "reviewed_papers": [
+    "2509.00366"
+  ],
+  "needs_evidence_papers": [],
+  "pending_papers": [],
+  "dispositions": [
+    {
+      "paper_key": "2509.00366",
+      "status": "reviewed",
+      "record": "2509.00366.json",
+      "material_read_complete": true,
+      "material_read_basis": "a1 complete reading record; a4 hash verification only",
+      "raw": 41.25,
+      "changed_rating_items": [
+        "E.measurement"
+      ],
+      "reason": "per anchor_clarification_r1: a1 records complete fixed-material reading and the search scope below; applicable success-adjudication/validation evidence is not reported, not missing material or uncertain applicability. Thus not_reported=0; this is not a claim of zero task success. The prior request for additional evaluator evidence is a scientific limitation, not a scoring blocker."
+    }
+  ],
+  "model_type": "sonnet",
+  "actual_model": "gpt-6.1-sol",
+  "session_id": null,
+  "receipt_ref": null,
+  "run_ref": "gui-v22-20261021-01",
+  "unavailable_provenance_reason": "No session ID/model-call receipt exposed; actual_model uses system-provided name without probing.",
+  "timestamp": "2026-10-21",
+  "status": "completed",
+  "blockers": [],
+  "schema_errors": [],
+  "schema_warnings": [
+    "No repository machine validator invoked; scoped contract/arithmetic and preservation checks only.",
+    "Scientific evidence_level=null and claim_support=unresolved are unchanged; a calculable score does not certify online/transfer or supported claims."
+  ],
+  "validation": {
+    "assigned_p1_hash_matches_manifest_and_a1": true,
+    "a1_complete_material_and_search_scope_recorded": true,
+    "eight_flat_rating_keys": true,
+    "rating_states_types_and_ranges": true,
+    "score_arithmetic_recomputed": true,
+    "raw": 41.25,
+    "coverage": 1.0,
+    "unknown_rating_items": [],
+    "evidence_and_quotes_unchanged": true,
+    "seven_other_ratings_unchanged": true,
+    "all_scientific_analysis_unchanged": true,
+    "no_paper_reread_or_reanalysis": true,
+    "scope_limit": "Protocol re-adjudication only; not new scientific verification, replication, aggregate acceptance or calibration certification."
+  },
+  "ownership": "Only assigned sol/a4 directory written; no git or shared-state modification, no external requests, no execution of paper code."
+}

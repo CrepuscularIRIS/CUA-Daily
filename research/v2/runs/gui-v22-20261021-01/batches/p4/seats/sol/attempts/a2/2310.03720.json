@@ -1,0 +1,1346 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p4",
+  "attempt_id": "a2",
+  "seat": "sol",
+  "supersedes_note": "a1 capacity split",
+  "provenance": {
+    "input_hash": "93d0dafbc452f91483228d9ad53bd5dcd7df4a98d3d7bdf6af2905c87de6b1ca",
+    "rubric_version": "v2.2 draft_uncalibrated",
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+    "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+    "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+    "model_type": "sonnet",
+    "actual_model": "gpt-6.1-sol",
+    "session_id": "681194da-49f5-4ad4-8eb4-573b45384076",
+    "receipt_ref": null,
+    "receipt_ref_reason": "No separate model receipt exposed; actual model is supplied by session environment, not probed.",
+    "timestamp": "2026-10-22T02:33:09.372435+00:00",
+    "supersedes_note": "a1 capacity split",
+    "assignment_override": "Explicit a2 assignment is exactly 2309.11436 and 2310.03720; batch manifest retains original a1/five-paper scope. No a1 review was read.",
+    "corpus_manifest_hash": "ab81004336f12af0464893fc548cb5eba57552028d6a2431c2db1014ecf52cbc",
+    "corpus_observed_hash": "512cd2cf30414bdeec46e71d209eb1824ec5ccf1dec58057c21f90da5ba0bf4f",
+    "corpus_hash_note": "Coordinator clarified remote ingest followed by snapshot freezing; this difference is not a blocker. Assigned paper and rule/card/expectation hashes were independently verified; no corpus judgments inherited.",
+    "blindness": "No other attempt, other seat, aggregate, old scores or archive read. No included paper code executed.",
+    "supplement_note": "Shared v4 PDF supplement supplied by coordinator for missing SteP Algorithm 1; original input hash retained with explicit supplemental hash in materials.",
+    "locator_note": "PDF locator lines use Python splitlines/Read semantics, including form-feed page breaks; checked against exact quoted source line."
+  },
+  "paper": {
+    "paper_key": "2310.03720",
+    "paper_id": "2310.03720",
+    "title": "SteP: Stacked LLM Policies for Web Actions",
+    "version": "2310.03720v4",
+    "claim_type": "system_method",
+    "central_claim": "Dynamically compose human-defined prompted policies through a stack that adapts control depth to task complexity, improving diverse web-task success over flat/prior policies while using less context, demonstration data and overall cost/inference time."
+  },
+  "signatures": [
+    {
+      "sig_id": "S1",
+      "object": "Single long-context web policy replaced by stack of callable prompted policies",
+      "information": "Partial DOM/elementIDs, objective, URL, frame-local observation/reason/action history, child return. Browser state persists across calls. No future observations or outcome oracle.",
+      "operation": "Initialize root if stack empty; top policy emits environment action (returned to env.step), invocation (initialize/push empty-history child) or stop (pop, append return to parent). Internal call/return does not step browser.",
+      "output": "Browser primitive or eventual root termination; variable-depth recursive composition",
+      "conditions": "Compatible manually designed library, sufficient arguments/return information, capable instruction-following model. No independent subtask-success validator or finite-recursion guarantee.",
+      "feedback": "Browser observation and self-declared child response; benchmark outcomes evaluate but do not select persistent updates.",
+      "selection_rule/data": "LLM chooses subroutine/action at runtime; human writes prompts from recurrent subtasks. No autonomous policy acceptance/rejection.",
+      "persistence": "Fixed library across tasks; stack and histories are episodic; backbone unchanged.",
+      "later_use": "Reuse existing human-authored policy definitions on later tasks/subtasks, not discovery of retained skills.",
+      "claimed_effect": "Reduce irrelevant prompt interference and handle flexible-depth tasks.",
+      "failure_boundary": "Missing child information can create endless loop; popping context does not undo browser state.",
+      "evidence_ids": [
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E017",
+        "E018",
+        "E031"
+      ]
+    },
+    {
+      "sig_id": "S2",
+      "object": "Policy-specific conditional examples and scoped prompt capacity",
+      "information": "Dedicated instructions/few-shot pairs; DOM serialized into IDs/text; note stores within-task content in previous actions.",
+      "operation": "Only active policy prompt/context is shown rather than concatenating full library. MiniWoB examples disambiguate UI controls; Flat4K/8K concatenates library.",
+      "output": "REASON/ACTION in browser/subroutine schema",
+      "conditions": "Per-policy context generally <4K; example bodies are not included in fixed paper.",
+      "feedback": "Static demonstrations and author benchmark measurements, not experience retention.",
+      "selection_rule/data": "10MiniWoB demonstrations from6tasks; main24state-action pairs versus later21maximum examples; Flat7examples. Development/test separation incompletely auditable.",
+      "persistence": "Manual library instructions/examples; no self-modification",
+      "later_use": "Compose subroutines on other tasks; live-site evidence is reference comparison.",
+      "claimed_effect": "Improved success and fewer input tokens per successful WebArena trajectory.",
+      "failure_boundary": "Total demo capacity, extra model calls and successful-only token selection confound pure hierarchy/cost effects.",
+      "evidence_ids": [
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E015",
+        "E016",
+        "E021",
+        "E024",
+        "E025"
+      ]
+    }
+  ],
+  "gap": {
+    "author_gap": "One giant prompt mixes behaviors and long histories; fixed shallow hierarchies cannot adapt to nested recurrent subroutines.",
+    "checked_gap": "Dynamic callable policies and scoped history address a real interference/control bottleneck. Content-enriched Flat controls show residue beyond adding instructions, but do not isolate stack, example capacity, tuning and call budgets.",
+    "lineage/closest_adjacent": [
+      {
+        "source": "ReAct",
+        "version": "2210.03629v3",
+        "relationship": "Reason/action interleaving precedes SteP; new operation is local policy stack/call-return.",
+        "evidence_ids": [
+          "E027"
+        ]
+      },
+      {
+        "source": "WebArena single-policy baselines and functional checkers",
+        "version": "Frozen 2307.13854 local render; exact revision absent, hash bound to N1",
+        "relationship": "Existing DOM flat policy and outcome-checking benchmark; own Flat comparison more controlled than prior14.9headline.",
+        "evidence_ids": [
+          "E006",
+          "E007",
+          "E026",
+          "E028"
+        ]
+      },
+      {
+        "source": "DecomP, ADaPT, hierarchical RL, pushdown automata",
+        "version": "Author account in SteP v4 §2; originals not independently read",
+        "relationship": "Authors contrast static hierarchy/subroutines with recursive runtime invocation. This is lineage, not exhaustive verified novelty.",
+        "evidence_ids": [
+          "E001",
+          "E003",
+          "E031"
+        ]
+      }
+    ],
+    "residue": "Reusable selective context with correct subtask communication without loops, excessive overhead or benchmark-specific prompt engineering.",
+    "stakes": "Irrelevant prompt context and child missing information can both derail long workflows; task outcomes and expected full cost matter.",
+    "method_response": "Runtime stack tracks active policies, separates histories, and passes child results to caller.",
+    "remaining_gap": "Manual engineering, exact examples and development/test split unresolved; no independent child verifier/rollback/loop guarantee, complete expected cost, or outcome-checked live transfer.",
+    "evidence_ids": [
+      "E003",
+      "E005",
+      "E007",
+      "E009",
+      "E015",
+      "E017",
+      "E018",
+      "E021",
+      "E024",
+      "E031"
+    ],
+    "unresolved": [
+      "External examples/extra policies not fetched.",
+      "WebArena reference revision unidentified; no v-number guessed.",
+      "No exhaustive historical priority search."
+    ]
+  },
+  "rs_pattern": {
+    "primary": "adapt_via_conditioning",
+    "supporting": [],
+    "matches": [
+      {
+        "main_id": "adapt_via_conditioning",
+        "sub_id": null,
+        "role": "primary",
+        "fit": "partial",
+        "tactic_steps_checked": {
+          "target_specification": "Objectives/local DOM/instructions/examples condition fixed model.",
+          "execution": "Runtime scoped prompts support policy reuse, no per-task parameter change.",
+          "holdout": "Composed tasks shown, exact structural separation unresolved.",
+          "child_C03": "Full rs:C03 examined; canonical schema plus upstream context-interpretation training/shared transfer or retrieval substrate is not established merely by dedicated prompts. Child deliberately null."
+        },
+        "success/failure_checks": [
+          {
+            "condition": "Condition fixed parameters on target task/context",
+            "status": "met",
+            "reason": "Objectives, local observations and policy examples specify behavior without task-level fitting.",
+            "evidence_ids": [
+              "E002",
+              "E009",
+              "E017"
+            ]
+          },
+          {
+            "condition": "Generic reusable conditioning",
+            "status": "partial",
+            "reason": "Reusable policies cover many intents but require manual domain knowledge.",
+            "evidence_ids": [
+              "E006",
+              "E010",
+              "E017"
+            ]
+          },
+          {
+            "condition": "Structural holdout/contamination audit",
+            "status": "unknown",
+            "reason": "Exact examples […] and policy-development/test partition cannot be audited; not evidence that contamination did occur.",
+            "evidence_ids": [
+              "E021",
+              "E022"
+            ]
+          },
+          {
+            "condition": "Matched simpler conditioning baseline",
+            "status": "partial",
+            "reason": "Flat concatenates library and varies4K/8K; MiniWoB changes total example capacity and effective calls.",
+            "evidence_ids": [
+              "E007",
+              "E009",
+              "E013",
+              "E014"
+            ]
+          },
+          {
+            "condition": "Failure boundary",
+            "status": "partial",
+            "reason": "Information-loss loops and weak-model failures acknowledged; no validated guard.",
+            "evidence_ids": [
+              "E018",
+              "E031",
+              "E032"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E002",
+          "E009",
+          "E017",
+          "E021",
+          "E022"
+        ],
+        "reason": "Conditioning is the actual adaptation artifact. No forced C03 child; overview decompose-and-delegate is less exact for same-backbone prompts without specialized sound solvers."
+      }
+    ],
+    "outside_taxonomy": false,
+    "reason": "Reusable prompted behavior, not learned policy discovery or persistent improvement.",
+    "executes_pattern": {
+      "status": "partial",
+      "reason": "Conditional reuse implemented; generic structural-holdout conditions incomplete.",
+      "evidence_ids": [
+        "E009",
+        "E017",
+        "E021"
+      ]
+    },
+    "resolves_problem": {
+      "status": "partial",
+      "reason": "Benchmark improvements do not eliminate manual policy design/information-loss loops or establish general cost closure.",
+      "evidence_ids": [
+        "E007",
+        "E011",
+        "E015",
+        "E018"
+      ]
+    }
+  },
+  "domain_pattern": {
+    "namespace": "gui",
+    "matches": [
+      {
+        "main": "agent_loop_context_control",
+        "sub": "C17",
+        "version": "cua-agents-core/v1; candidate_pattern",
+        "fit": "partial",
+        "condition_checks": [
+          {
+            "condition": "Subgoal delegation and returned results",
+            "status": "met",
+            "reason": "Any active policy can invoke child and append returned response.",
+            "evidence_ids": [
+              "E003",
+              "E005"
+            ]
+          },
+          {
+            "condition": "Fixed manager/proactive full-plan replanning",
+            "status": "not_applicable",
+            "reason": "Symmetric dynamic-depth stack, not fixed manager; a difference rather than automatic failure.",
+            "evidence_ids": [
+              "E002",
+              "E031"
+            ]
+          },
+          {
+            "condition": "Hierarchy-removal controls",
+            "status": "partial",
+            "reason": "Flat same-family/content controls useful; recursion/history/examples/extra calls not separately isolated.",
+            "evidence_ids": [
+              "E007",
+              "E009",
+              "E028"
+            ]
+          },
+          {
+            "condition": "Reliable child termination/communication",
+            "status": "unmet",
+            "reason": "Self-declared stop and missing-information loops; no independent checker or rollback in algorithm.",
+            "evidence_ids": [
+              "E005",
+              "E018",
+              "E031"
+            ]
+          },
+          {
+            "condition": "Cross-backbone robustness",
+            "status": "partial",
+            "reason": "Three-task closed-model and ten-task open-model subsets; limited and format/repetition failures remain.",
+            "evidence_ids": [
+              "E032"
+            ]
+          },
+          {
+            "condition": "Actual full-trajectory costs",
+            "status": "partial",
+            "reason": "Only successful-trajectory input-token means; not all-attempt latency/dollars.",
+            "evidence_ids": [
+              "E015",
+              "E016"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E002",
+          "E003",
+          "E005",
+          "E018",
+          "E031"
+        ],
+        "reason": "Recursive subtask handoff and local context overlap manager/worker operation; no fixed manager, independent completion verifier or full replanning guarantee. Later card exemplars are not retroactive mandatory baselines."
+      }
+    ],
+    "unassigned": [],
+    "revision_proposals": []
+  },
+  "pattern_mapping": [
+    {
+      "rs_main": "adapt_via_conditioning",
+      "rs_sub": null,
+      "domain": {
+        "namespace": "gui",
+        "main": "agent_loop_context_control",
+        "sub": "C17"
+      },
+      "operation_correspondence": "Fixed models are conditioned by dedicated prompts/examples; stack routes subgoals/results and scopes that conditioning.",
+      "necessary_conditions/differences": "RS parent describes adaptation-by-context; GUI card describes control topology. Recursive peer callers differ from fixed manager, and strict rs:C03 training/shared-space substrate is not shown.",
+      "evidence_ids": [
+        "E002",
+        "E003",
+        "E005",
+        "E009",
+        "E017"
+      ]
+    }
+  ],
+  "expectations": [
+    {
+      "id": "E03",
+      "version": "cua-agents/v1; sha256:4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.02907#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.14721#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2411.02337",
+          "note": "authors concede evaluation on 165-task WebArena-Lite subset due to cost"
+        }
+      ],
+      "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+      "applicable": true,
+      "status": "met",
+      "reason": "All804 disclosed; Table1 macro intent mean and abstract percentage distinguished.",
+      "evidence_ids": [
+        "E006",
+        "E007",
+        "E008"
+      ],
+      "score_item": "E.measurement",
+      "source_interpretation": "Practice/limitation-derived question, not this paper’s actual review; later named benchmarks not imposed retroactively."
+    },
+    {
+      "id": "E10",
+      "version": "cua-agents/v1; sha256:4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2406.11896#s2",
+          "note": "2.8% error vs human"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s2",
+          "note": "79.4% on 100 manually labelled rollouts"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "agreement with human labels; held-out agents"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s1",
+          "note": "accuracy vs human-corrected labels"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s2",
+          "note": "Spearman with human labels"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2311.08649#s2",
+          "note": "F1 0.74 vs manual labels"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.09038",
+          "note": "authors concede VLM judges can admit failures or reject valid successes; no precision reported"
+        }
+      ],
+      "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+      "applicable": true,
+      "status": "partial",
+      "reason": "WebArena fuzzy-match39/40human audit exists; no new SteP-trajectory audit. CRM uses gold-action checker.",
+      "evidence_ids": [
+        "E023",
+        "E026"
+      ],
+      "score_item": "E.measurement",
+      "source_interpretation": "Practice/limitation-derived question, not this paper’s actual review; later named benchmarks not imposed retroactively."
+    },
+    {
+      "id": "E16",
+      "version": "cua-agents/v1; sha256:4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "3 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "3 runs, std 1.1%"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.10031",
+          "note": "3 repetitions"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2311.08649",
+          "note": "authors: monetary constraints prevented multiple runs"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2411.02337",
+          "note": "authors: random task generation raises variance across seeds"
+        }
+      ],
+      "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+      "applicable": true,
+      "status": "partial",
+      "reason": "50MiniWoBseeds and20CRMscenarios; no WebArena repetitions/spread. API n=3 is not replication.",
+      "evidence_ids": [
+        "E010",
+        "E019",
+        "E020",
+        "E030"
+      ],
+      "score_item": "E.statistics",
+      "source_interpretation": "Practice/limitation-derived question, not this paper’s actual review; later named benchmarks not imposed retroactively."
+    },
+    {
+      "id": "E17",
+      "version": "cua-agents/v1; sha256:4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "reports both 15 and 50 steps"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2",
+          "note": "5 actions vs 30 for some baselines (condition)"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2",
+          "note": "differing step caps; efficiency stratified"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s3",
+          "note": "budget exhaustion"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "average steps reported"
+        }
+      ],
+      "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Mean actions/context caps given; matched max environment/internal-call budgets/exhaustion not fully stated.",
+      "evidence_ids": [
+        "E007",
+        "E009",
+        "E031"
+      ],
+      "score_item": "E.cost",
+      "source_interpretation": "Practice/limitation-derived question, not this paper’s actual review; later named benchmarks not imposed retroactively."
+    },
+    {
+      "id": "E19",
+      "version": "cua-agents/v1; sha256:4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2509.23738",
+          "note": "authors: AndroidWorld re-engineered; validated only by matching 32.8 baseline"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2",
+          "note": "modified scroll/type and +5 max steps disclosed"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.19723",
+          "note": "authors: 112 of 116 AndroidWorld tasks; one WebArena task per template"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "unscorable network/reCAPTCHA tasks disclosed"
+        }
+      ],
+      "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No claimed modified standard checker; new CRM evaluator/liveDOM preprocessing disclosed separately.",
+      "evidence_ids": [
+        "E023",
+        "E024"
+      ],
+      "score_item": "E.measurement",
+      "source_interpretation": "Practice/limitation-derived question, not this paper’s actual review; later named benchmarks not imposed retroactively."
+    },
+    {
+      "id": "E20",
+      "version": "cua-agents/v1; sha256:4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2504.01382",
+          "note": "authors: websites evolve so tasks must be replaced"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2406.11896",
+          "note": "authors: frozen policies degrade over time due to site/app changes"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.09038",
+          "note": "authors: evolving websites complicate reproducibility"
+        }
+      ],
+      "applies_when": "a claim measured on live websites or live apps",
+      "applicable": true,
+      "status": "unmet",
+      "reason": "No live evaluation date/drift/CAPTCHA audit; reference-demo comparison not outcome transfer.",
+      "evidence_ids": [
+        "E024",
+        "E025"
+      ],
+      "score_item": "E.holdout",
+      "source_interpretation": "Practice/limitation-derived question, not this paper’s actual review; later named benchmarks not imposed retroactively."
+    },
+    {
+      "id": "E21",
+      "version": "cua-agents/v1; sha256:4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        }
+      ],
+      "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+      "applicable": true,
+      "status": "met",
+      "reason": "DOM/ID action setting and nonvisual MiniWoBsubset clearly bounded; no screenshot capability inferred.",
+      "evidence_ids": [
+        "E010",
+        "E024"
+      ],
+      "score_item": "E.measurement",
+      "source_interpretation": "Practice/limitation-derived question, not this paper’s actual review; later named benchmarks not imposed retroactively."
+    },
+    {
+      "id": "E23",
+      "version": "cua-agents/v1; sha256:4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s3"
+        }
+      ],
+      "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Simple/complex task tables and errors exist, not comprehensive human-horizon/failure denominators.",
+      "evidence_ids": [
+        "E011",
+        "E018",
+        "E032"
+      ],
+      "score_item": "E.statistics",
+      "source_interpretation": "Practice/limitation-derived question, not this paper’s actual review; later named benchmarks not imposed retroactively."
+    },
+    {
+      "id": "E25",
+      "version": "cua-agents/v1; sha256:4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "OSWorld-G refusal category"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s1",
+          "note": "infeasible tasks"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.04454",
+          "note": "authors: model cannot indicate uncertainty or refuse"
+        }
+      ],
+      "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Full WebArena includes infeasible tasks, N/A instructions exist; no refusal-stratified results or independent child infeasibility test.",
+      "evidence_ids": [
+        "E005",
+        "E006",
+        "E018"
+      ],
+      "score_item": "X",
+      "source_interpretation": "Practice/limitation-derived question, not this paper’s actual review; later named benchmarks not imposed retroactively."
+    },
+    {
+      "id": "E28",
+      "version": "cua-agents/v1; sha256:4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "test-query search actions filtered from in-domain data"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1",
+          "note": "only 20 of 833 AndroidControl apps seen in synthesis"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "train on generated sites, evaluate on OSWorld/Online-Mind2Web/MobileWorld"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "OOD GUI-Odyssey and OSWorld"
+        }
+      ],
+      "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No self-generated synthesis/exploration; manually built policy/test separation assessed directly.",
+      "evidence_ids": [
+        "E017",
+        "E021"
+      ],
+      "score_item": "E.holdout",
+      "source_interpretation": "Practice/limitation-derived question, not this paper’s actual review; later named benchmarks not imposed retroactively."
+    },
+    {
+      "id": "E35",
+      "version": "cua-agents/v1; sha256:4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "OOD gains small"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.08164#s2"
+        }
+      ],
+      "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Fixed human policy library/episodic context is not retained experience memory.",
+      "evidence_ids": [
+        "E002",
+        "E017"
+      ],
+      "score_item": "X",
+      "source_interpretation": "Practice/limitation-derived question, not this paper’s actual review; later named benchmarks not imposed retroactively."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "text": "Dynamic composition improves diverse web-task success over flat/prior policies.",
+      "setting": "WebArena804, gpt-4-turbo family, active policy4K",
+      "baseline/control": "Own Flat4K/8K concatenate library; prior GPT versions not fixed",
+      "selection_vs_test": "Manual intent clustering/policy development; exact example/development holdout unauditable",
+      "result/denominator": "Macro-intent .20/.23/.33 Flat4K/8K/SteP, mean actions6.44/7.25/10.0; abstract14.9→33.5 reported separately",
+      "evidence_ids": [
+        "E006",
+        "E007",
+        "E008",
+        "E009",
+        "E028"
+      ],
+      "counterevidence": [
+        "More actions/calls, manual engineering, incomplete development/test audit; prior comparison changes model."
+      ],
+      "allowed_conclusion": "Reported online DOM-benchmark improvement with meaningful content-enriched Flat controls, not general web autonomy."
+    },
+    {
+      "claim_id": "C2",
+      "text": "Composition uses fewer demos effectively on MiniWoB/CRM.",
+      "setting": "45nonvisual MiniWoBtasks×50seeds;5CRMtasks×20scenarios",
+      "baseline/control": "Flat zero/few versus SteP zero/few; Flat7 versus SteP21example capacity",
+      "selection_vs_test": "10demos from6tasks; main24pairs versus later21examples unreconciled; exact examples omitted",
+      "result/denominator": "MiniWoB .60/.72/.65/.96; CRM .24/.76/.68/.94, author prose; 5evaluated versus6supported CRM scenario types",
+      "evidence_ids": [
+        "E010",
+        "E011",
+        "E012",
+        "E013",
+        "E014",
+        "E029",
+        "E030"
+      ],
+      "counterevidence": [
+        "Hierarchy alone not isolated; fewer demos than prior studies also changes backbones/training; same-example graph effect sizes unknown."
+      ],
+      "allowed_conclusion": "High author-reported simulator/task success from modular prompt library, not contamination-free arbitrary-task transfer."
+    },
+    {
+      "claim_id": "C3",
+      "text": "Less context yields lower overall cost/inference time.",
+      "setting": "Successful WebArena trajectories only",
+      "baseline/control": "SteP versus Flat8K",
+      "selection_vs_test": "Postselect successes from methods with different success sets/calls",
+      "result/denominator": "Mean22.7K versus52Kinput tokens; separate number of successful sampled trajectories not stated",
+      "evidence_ids": [
+        "E015",
+        "E016"
+      ],
+      "counterevidence": [
+        "No all-attempt input/output/API dollar cost or wall clock; n=3generation overhead and failed runs not resolved."
+      ],
+      "allowed_conclusion": "Lower reported input tokens among successful trajectories only."
+    },
+    {
+      "claim_id": "C4",
+      "text": "Live-site generalization from jetblue to aa/united.",
+      "setting": "3sites,10reference-demo comparison runs/site",
+      "baseline/control": "Flatfew versus StePfew",
+      "selection_vs_test": "Demo site jetblue only; exact examples unknown",
+      "result/denominator": "10runs/site; image-only outcome values unknown",
+      "evidence_ids": [
+        "E024",
+        "E025"
+      ],
+      "counterevidence": [
+        "Human-reference comparison not independent execution-final-state checker; timing/drift audit absent."
+      ],
+      "allowed_conclusion": "Limited cross-site reference comparison, insufficient for transfer evidence label."
+    }
+  ],
+  "assessment": {
+    "evidence_level": "online",
+    "claim_support": "scoped",
+    "strongest_supported_claim": "Author-reported locally conditioned dynamic stack improves interactive DOM benchmarks over content-enriched flat baselines (WebArena macro .23→.33; MiniWoBfew .72→.96 under different example capacities), with fewer input tokens among successful WebArena trajectories.",
+    "unresolved": [
+      "Exact examples/extra policies external and not fetched.",
+      "24state-action pairs versus21maximum examples not reconciled.",
+      "Policy-development/test separation, complete failure budgets and total cost unknown.",
+      "Live reference evaluation insufficient for outcome-checked transfer.",
+      "Algorithm1 HTML omission resolved using v4 pdf-supplement hash3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e."
+    ],
+    "retention": "not_applicable: static human library/ephemeral stack, autonomous policy discovery explicitly future work.",
+    "reproduction": "None; no included code executed; all experiment outcomes author_report.",
+    "uncertainty_handling": "Unknown example contents/figures not imputed. Ratings assess visible evidence sufficiency, not a claim that leakage or hidden failure occurred."
+  },
+  "ratings": {
+    "G": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Specific prompt interference/long-context/fixed-depth bottleneck with ReAct/WebArena lineage and communication failure residue; broader priority and generalization boundary incomplete.",
+      "evidence_ids": [
+        "E001",
+        "E009",
+        "E018",
+        "E027"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "M": {
+      "status": "resolved",
+      "rating": 4,
+      "reason": "Scoped history, stack state, invocation/return precisely alter information/control, with distinguishable predictions versus Flat/static hierarchy and explicit communication assumptions. Mechanistic reconstruction is separate from causal outcome verification.",
+      "evidence_ids": [
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E009",
+        "E017",
+        "E018"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "X": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Full PDF Algorithm1 repairs HTML and makes static orchestration reconstructible; prompts/API settings and failure boundaries provided. Exact examples missing, child success self-declared and no loop guard keep execution below verified completeness.",
+      "evidence_ids": [
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E019",
+        "E020",
+        "E031"
+      ],
+      "counterevidence_ids": [
+        "E018",
+        "E021",
+        "E022"
+      ],
+      "search_scope": []
+    },
+    "E.measurement": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Interactive full WebArena and seeded MiniWoB/CRM outcome measures with counts and benchmark-side judge audit are relevant. New SteP-specific checker audit and CRM independence limited; live reference comparison not online transfer.",
+      "evidence_ids": [
+        "E006",
+        "E007",
+        "E010",
+        "E011",
+        "E023",
+        "E026",
+        "E030"
+      ],
+      "counterevidence_ids": [
+        "E024"
+      ],
+      "search_scope": []
+    },
+    "E.causality": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "Same-family Flat4K/8K/library and zero/few controls useful, but stack/history/prompt engineering/extra calls/total example capacity not separately isolated; prior GPT versions differ.",
+      "evidence_ids": [
+        "E007",
+        "E009",
+        "E012",
+        "E028"
+      ],
+      "counterevidence_ids": [
+        "E013",
+        "E014",
+        "E017"
+      ],
+      "search_scope": []
+    },
+    "E.holdout": {
+      "status": "resolved",
+      "rating": 1,
+      "reason": "Composition beyond six demo tasks and cross-site comparison give limited breadth; examples and development/test separation cannot be audited. Primary online tests remain constructed web-family settings; no outcome-checked independent transfer.",
+      "evidence_ids": [
+        "E010",
+        "E025"
+      ],
+      "counterevidence_ids": [
+        "E017",
+        "E021",
+        "E022",
+        "E024"
+      ],
+      "search_scope": []
+    },
+    "E.statistics": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "50seeds/task,20CRMscenarios and taskwise failures are substantive denominators. No WebArena repeat spread/CI; n=3API is not independent repetition,24/21count ambiguity remains.",
+      "evidence_ids": [
+        "E010",
+        "E011",
+        "E030",
+        "E032"
+      ],
+      "counterevidence_ids": [
+        "E014",
+        "E019",
+        "E020"
+      ],
+      "search_scope": []
+    },
+    "E.cost": {
+      "status": "resolved",
+      "rating": 1,
+      "reason": "Context caps/actions/successful-only input means useful, but SteP uses more WebArena browser actions and all-attempt output/API cost/wall-clock not measured; broad overall-cost claim unsupported.",
+      "evidence_ids": [
+        "E007",
+        "E015",
+        "E016"
+      ],
+      "counterevidence_ids": [
+        "E019",
+        "E020"
+      ],
+      "search_scope": []
+    }
+  },
+  "materials": [
+    {
+      "material_id": "P",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.03720.txt",
+      "url": "https://arxiv.org/html/2310.03720v4",
+      "version": "2310.03720v4",
+      "sha256": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+      "sections_read": [
+        "All substantive main text §§1–6, ethics/reproducibility, tables",
+        "All appendices A.1–A.4, B.1–B.3, C.1–C.2, D.1–D.3, full policy instructions and API listings read as data"
+      ],
+      "complete": true,
+      "complete_scope": "Substantive text in stated sections, not image contents or external code",
+      "missing_sections": [
+        "Algorithm 1 HTML body omitted; resolved by S.",
+        "Exact examples […]/extra policies referred to external code remain unresolved; not fetched.",
+        "Image contents unknown."
+      ]
+    },
+    {
+      "material_id": "S",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.03720.pdf-supplement.txt",
+      "url": "https://arxiv.org/pdf/2310.03720v4",
+      "version": "2310.03720v4",
+      "sha256": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "sections_read": [
+        "Full PDF-extracted text pp1–33, especially complete Algorithm 1 p5 and appendices/prompt listings pp16–33"
+      ],
+      "complete": true,
+      "complete_scope": "Substantive text in stated sections, not image contents or external code",
+      "missing_sections": [
+        "Image-only plot values unknown; exact examples remain […]."
+      ]
+    },
+    {
+      "material_id": "N1",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2307.13854.txt",
+      "url": "https://arxiv.org/html/2307.13854",
+      "version": null,
+      "sha256": "896882a2c125ec2595dc2ed78f638950bc0b0a7c04c187bafa82c8174d7ecc62",
+      "sections_read": [
+        "§3.2 evaluators, §4 single-policy baselines, Appendix A.8 evaluator validation L747–760"
+      ],
+      "complete": false,
+      "complete_scope": "Substantive text in stated sections, not image contents or external code",
+      "missing_sections": []
+    },
+    {
+      "material_id": "N2",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2210.03629.txt",
+      "url": "https://arxiv.org/html/2210.03629v3",
+      "version": "2210.03629v3",
+      "sha256": "1926917eff9c7a4b2a0aa29ff2ab583f8f2debf2223269c0a96cd1e901231e68",
+      "sections_read": [
+        "Abstract/introduction L65–129, interleaved reasoning/acting"
+      ],
+      "complete": false,
+      "complete_scope": "Substantive text in stated sections, not image contents or external code",
+      "missing_sections": []
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E001",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement abstract p1; L30",
+      "quote": "an approach to dynamically compose policies to solve a diverse set of web",
+      "support_explanation": "Original dynamic-composition claim, not learned self-improvement.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E002",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement §4.1 p4; L259",
+      "quote": "Each policy in the stack maintains its own",
+      "support_explanation": "Stack frames carry local history, with shared persistent browser state.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E003",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement Algorithm 1 p5; L312",
+      "quote": "new_policy = self.init_policy(action)",
+      "support_explanation": "Policy invocation initializes/pushes a child; full pseudocode repairs HTML omission.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E004",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement Algorithm 1 p5; L308",
+      "quote": "if self.is_environment_action(action):",
+      "support_explanation": "Only browser actions are returned to env.step; internal transitions do not step environment.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E005",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement Algorithm 1 p5; L319",
+      "quote": "policy.append_response(action) if policy else None",
+      "support_explanation": "Pop passes response to parent, not independent verified success.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E006",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement §5.1 p6; L482",
+      "quote": "We evaluate across all 804 tasks in the benchmark.",
+      "support_explanation": "Full WebArena coverage.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E007",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement Table 1 p7; L611",
+      "quote": "Mean all WebArena intents                    0.12                    0.15        0.20   6.44      0.23     7.25    0.33   10.0",
+      "support_explanation": "Macro-intent means and browser action counts; abstract percentage kept distinct.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E008",
+      "material_id": "P",
+      "material_hash": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+      "locator": "Abstract; L308",
+      "quote": "SteP improves (14.9% to 33.5%)",
+      "support_explanation": "Author headline result, not our reproduction.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E009",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement §5.1 p6; L501",
+      "quote": "Flat is a single policy that concatenates instructions and examples",
+      "support_explanation": "Content-enriched single-policy control.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E010",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement Appendix A.4 p24; L1795",
+      "quote": "We run 50 seeds",
+      "support_explanation": "MiniWoB45 nonvisual tasks ×50 randomized seeds.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E011",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement Table 5 p26; L1976",
+      "quote": "Mean                          0.60   3.70     0.72   3.38    0.65   3.43    0.96   2.89",
+      "support_explanation": "Full taskwise table supports success/action counts, no figure inference required.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E012",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement §5.1.5 p10; L861",
+      "quote": "For the same number of exam-",
+      "support_explanation": "Equal-example effect is qualitatively discussed; numeric curve image remains unknown.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E013",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement §5.1.5 p10; L859",
+      "quote": "We provide a maximum of",
+      "support_explanation": "Later maximum21 examples contrasts main24 action pairs.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E014",
+      "material_id": "P",
+      "material_hash": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+      "locator": "§5.1.2; L677",
+      "quote": "24 24 observation-action examples",
+      "support_explanation": "Main10-trajectory/24-pair report not silently equated with21 later capacity.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E015",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement §5.1.4 p10; L842",
+      "quote": "across all successful WebArena trajectories.",
+      "support_explanation": "Postselection on successes limits cost interpretation.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E016",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement §5.1.4 p10; L843",
+      "quote": "averaging 22.7K compared to 52K.",
+      "support_explanation": "Input-token means, not total expected all-attempt cost/latency.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E017",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement §6 p10; L875",
+      "quote": "identifying subtasks and writing policy prompts require domain knowledge.",
+      "support_explanation": "Human-authored library; autonomous discovery is future work.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E018",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement §6 p10; L886",
+      "quote": "fails to communicate what is missing to the parent policy, which can create an endless loop.",
+      "support_explanation": "Information loss and termination failure explicitly acknowledged.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E019",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement Appendix A.1 Listing 1 p16; L1158",
+      "quote": "n=3,",
+      "support_explanation": "API response sampling is not three independent benchmark repetitions.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E020",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement Appendix A.1 Listing 1 p16; L1161",
+      "quote": "response = response.choices[0].message.content.strip()",
+      "support_explanation": "First sampled choice used; distinct from repeated trajectories.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E021",
+      "material_id": "P",
+      "material_hash": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+      "locator": "Appendix A.2; L1207",
+      "quote": "\"examples\": [...]",
+      "support_explanation": "Exact few-shot examples omitted from fixed text.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E022",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement Appendix A.2 p19; L1390",
+      "quote": "the reader to the code base.",
+      "support_explanation": "External policy content not inspected and not awarded as reproducibility evidence.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E023",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement Appendix C.2 p32; L2284",
+      "quote": "These metrics are calculated",
+      "support_explanation": "CRM evaluates UI action outcomes against gold required actions.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E024",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement Appendix D.3 p33; L2335",
+      "quote": "we evaluate by comparing model performance against a reference human",
+      "support_explanation": "Live appendix is reference demonstration comparison, insufficient for outcome-checked transfer.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E025",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement Appendix D.3 p33; L2337",
+      "quote": "though it has demonstration from only one (i.e. jetblue.com).",
+      "support_explanation": "Author cross-site generalization claim retained, not upgraded without outcome verification.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E026",
+      "material_id": "N1",
+      "material_hash": "896882a2c125ec2595dc2ed78f638950bc0b0a7c04c187bafa82c8174d7ecc62",
+      "locator": "WebArena Appendix A.8; L749",
+      "quote": "we manually checked 40 examples and found that 39 of them are identical to our human judgment.",
+      "support_explanation": "Small benchmark-side fuzzy-match audit, not newly validated on SteP trajectories.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E027",
+      "material_id": "N2",
+      "material_hash": "1926917eff9c7a4b2a0aa29ff2ab583f8f2debf2223269c0a96cd1e901231e68",
+      "locator": "ReAct v3 introduction; L105",
+      "quote": "we explore the use of LLMs to generate both reasoning traces and task-specific actions in an interleaved manner",
+      "support_explanation": "Reason/action interleaving inherited; SteP changes scoping/control.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E028",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement §5.1 p6; L510",
+      "quote": "For models, on WebArena we evaluate with gpt-4-turbo",
+      "support_explanation": "Same-family own controls stronger than different-version prior-work headline comparison.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E029",
+      "material_id": "P",
+      "material_hash": "2b3b0a51f2f3e360e6c8189bef5faad0e667129e13e6ec6d72933b479442f3fc",
+      "locator": "§5.1.5; L735",
+      "quote": "Flat ( 0.24 → 0.76 0.24\\rightarrow 0.76 ) and SteP ( 0.68 → 0.94 0.68\\rightarrow 0.94 )",
+      "support_explanation": "CRM numbers available in prose, not inferred from unseen figure.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E030",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement §5.1 p6; L488",
+      "quote": "We evaluate across 5 tasks averaged over 20 scenarios per task.",
+      "support_explanation": "Five evaluated task types ×20scenarios, not all six supported scenario types.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E031",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement Algorithm 1 p5; L304",
+      "quote": "while not self.stack.is_empty():",
+      "support_explanation": "Internal stack loop has no explicit bounded-depth/loop guard in pseudocode.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E032",
+      "material_id": "S",
+      "material_hash": "3b4f9da3c30455101196293b542fb80ff40983886254e40e81fabaada1ca822e",
+      "locator": "pdf-supplement Appendix B.3 p29; L2121",
+      "quote": "The prompts used are the same as Flat Zero-shot and SteP Zero-shot.",
+      "support_explanation": "Limited open-model comparison, not universal backbone robustness.",
+      "kind": "author_report"
+    }
+  ],
+  "score": {
+    "raw": 70.0,
+    "display": 70.0,
+    "lower": 70.0,
+    "upper": 70.0,
+    "coverage": 1.0,
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+  },
+  "status": "reviewed",
+  "reason": "Well-specified dynamic stack and meaningful Flat controls show online improvement; manual policy development, omitted examples, example capacity, communication loops and success-conditioned costs prevent general-autonomy/transfer/cost-closure conclusions."
+}
