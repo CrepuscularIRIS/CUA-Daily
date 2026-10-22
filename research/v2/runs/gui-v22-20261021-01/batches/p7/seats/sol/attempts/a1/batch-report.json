@@ -1,0 +1,106 @@
+{
+  "schema_version": "radar-batch-report-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p7",
+  "attempt_id": "a1",
+  "seat": "sol",
+  "input_hash": "c008c83118f7c46d9b214c8ba01fe21e92c3748bb3365b7b8e4117a2b155d901",
+  "assigned": [
+    "2401.01614",
+    "2401.04124"
+  ],
+  "reviewed": [
+    "2401.01614",
+    "2401.04124"
+  ],
+  "needs_fulltext": [],
+  "needs_evidence": [],
+  "outside_taxonomy": [],
+  "outside_taxonomy_ratio": 0.0,
+  "schema_errors": [],
+  "counts": {
+    "assigned": 2,
+    "reviewed": 2,
+    "needs_fulltext": 0,
+    "needs_evidence": 0,
+    "outside_taxonomy": 0,
+    "schema_errors": 0
+  },
+  "model_type": "sonnet",
+  "actual_model": "gpt-6.1-sol",
+  "session_id": "681194da-49f5-4ad4-8eb4-573b45384076",
+  "receipt_ref": null,
+  "receipt_reason": "No separate signed upstream receipt supplied; invocation model recorded.",
+  "timestamp": "2026-10-22T02:49:33.072805+00:00",
+  "status": "completed",
+  "records": [
+    {
+      "paper_key": "2401.01614",
+      "version": "2401.01614v2",
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p7/seats/sol/attempts/a1/2401.01614.json",
+      "sha256": "a249b9c7bc6c200a40d37025cbafca28ca895caa14aff7af82bd9e4f76fe3a10",
+      "status": "reviewed",
+      "outside_taxonomy": false
+    },
+    {
+      "paper_key": "2401.04124",
+      "version": "2401.04124v3",
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p7/seats/sol/attempts/a1/2401.04124.json",
+      "sha256": "9c71c9b191ef6b427c169d51ed53737cf7e385af31da51d9205abfdaa6057ee9",
+      "status": "reviewed",
+      "outside_taxonomy": false
+    }
+  ],
+  "blockers": [],
+  "nonblocking_unknowns": [
+    {
+      "paper_key": "2401.01614",
+      "issue": "Figure3 numerical difficulty bars absent; group denominators/prose known. Overall tables independently usable."
+    },
+    {
+      "paper_key": "2401.04124",
+      "issue": "Full appendix Figure5 schema image absent; supplied structed is notification extraction, ex1 is AitW trajectory."
+    },
+    {
+      "paper_key": "2401.04124",
+      "issue": "Central SOP training-versus-inference input availability unresolved; no proven leakage finding. Auto-UI original unavailable/author-cited only."
+    }
+  ],
+  "supplemental_materials": [
+    {
+      "paper_key": "2401.01614",
+      "type": "shared_figures",
+      "count": 16,
+      "manifest": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/figs.json",
+      "all_sha256_verified": true
+    },
+    {
+      "paper_key": "2401.04124",
+      "type": "shared_figures",
+      "count": 4,
+      "manifest": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.04124/figs.json",
+      "all_sha256_verified": true
+    },
+    {
+      "paper_key": "2401.04124",
+      "type": "controller_added_reference",
+      "paper_id": "2308.00352",
+      "version": "v7",
+      "sha256": "6634cb85797b61b769f3b16b23508f12dff02d48ea9f97585e8e013a42236dd6",
+      "scope": "Acknowledged SOP ancestry corroboration only; no rating changed solely from supplement; aggregator must make shared-source/version boundary explicit."
+    }
+  ],
+  "validation": {
+    "identity_and_assigned_set": "passed",
+    "quote_substring_locator_and_hash": "passed",
+    "all_cited_material_hashes": "passed",
+    "original_parent_and_gui_namespace": "passed",
+    "eight_rating_fields": "passed",
+    "deterministic_score_arithmetic": "passed",
+    "mechanical_only": true,
+    "scientific_semantic_review": "Independent seat reasoning, not proof of correctness or reproduction",
+    "rubric_status": "draft_uncalibrated"
+  },
+  "blind_boundary": "No other-seat results, aggregate judgments, retired scores, Reels or archive content read. No git operation.",
+  "attempt_closed": true
+}

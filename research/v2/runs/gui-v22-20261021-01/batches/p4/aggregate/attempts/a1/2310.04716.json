@@ -1,0 +1,1141 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p4",
+ "attempt_id": "a1",
+ "seat": "opus55_aggregate",
+ "paper": {
+  "paper_key": "2310.04716",
+  "paper_id": "2310.04716",
+  "title": "Reinforced UI Instruction Grounding: Towards a Generic UI Task Automation API",
+  "version": "2310.04716v1",
+  "claim_type": "component_training",
+  "central_claim": "RUIG, a metadata-free screenshot+instruction grounding model (Swin encoder, BART decoder, pixel-to-sequence box tokens, document-understanding initialisation) trained with an additional policy-gradient objective rewarding the IoU of decoded coordinate tokens, outperforms state-of-the-art methods including metadata-based ones by a clear margin and shows potential as a generic UI task automation API.",
+  "scope_as_measured": "Single-step click-in-box accuracy and mIoU on MoTIF/RicoSCA mobile seen/unseen-app splits and an author-generated 37K-image Common Crawl web set (seen/unseen)."
+ },
+ "provenance": {
+  "input_hash": "93d0dafbc452f91483228d9ad53bd5dcd7df4a98d3d7bdf6af2905c87de6b1ca",
+  "rubric_version": "SCORE_SPEC v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "aggregate_rules_hash": "1ad0c4f39af2ceb06924fc015d8660711edcd9a6f891444e902b44f79584f4e0",
+  "evidence_rules_hash": "336e1bcdd149cd485ee5a1f22101ca594997b755b47555447ba6661b23a1fac5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "model_type": "fable",
+  "actual_model": "claude-opus-5-5[1m] (self-reported by the running agent)",
+  "timestamp": "2026-10-22T02:55:15.479870+00:00"
+ },
+ "materials": [
+  {
+   "material_id": "2310.04716",
+   "version": "2310.04716v1",
+   "url": "https://arxiv.org/html/2310.04716v1",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt",
+   "sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "sections_read_by_opus55": [
+    "Abstract",
+    "§1–§5",
+    "References",
+    "Appendix A–E"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Promised data statistics and web-collection details are absent from the published v1 material (body + Appendix A–E, which is the paper’s supplementary — see status ruling)",
+    "Figures 1–7 image-only"
+   ]
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "O01",
+   "material_id": "2310.04716",
+   "material_sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt line 80",
+   "quote": "The data statistics under different settings and the detailed introduction for our web data collection are placed in our supplementary.",
+   "kind": "author_report",
+   "verified_by": "opus55 substring match (NBSP-normalised) at build time"
+  },
+  {
+   "evidence_id": "O02",
+   "material_id": "2310.04716",
+   "material_sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt line 80",
+   "quote": "More details are in the supplementary.",
+   "kind": "author_report",
+   "verified_by": "opus55 substring match (NBSP-normalised) at build time"
+  },
+  {
+   "evidence_id": "O03",
+   "material_id": "2310.04716",
+   "material_sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt line 83",
+   "quote": "We describe the primary implementation details in Sec.4.1 of the main body, and further provide additional details here.",
+   "kind": "author_report",
+   "verified_by": "opus55 substring match (NBSP-normalised) at build time"
+  },
+  {
+   "evidence_id": "O04",
+   "material_id": "2310.04716",
+   "material_sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt line 83",
+   "quote": "We will clarify this in our revision.",
+   "kind": "author_report",
+   "verified_by": "opus55 substring match (NBSP-normalised) at build time"
+  },
+  {
+   "evidence_id": "O05",
+   "material_id": "2310.04716",
+   "material_sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt line 80",
+   "quote": "For the experiments with mobile data, we employ a newest benchmark proposed in ( Burns et al., 2022 ) and follow its corresponding configurations.",
+   "kind": "author_report",
+   "verified_by": "opus55 substring match (NBSP-normalised) at build time"
+  },
+  {
+   "evidence_id": "O06",
+   "material_id": "2310.04716",
+   "material_sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt line 82",
+   "quote": "As shown in Table 3 , RUIG (all tokens) can still achieve improvements relative to the baseline model",
+   "kind": "author_report",
+   "verified_by": "opus55 substring match (NBSP-normalised) at build time"
+  },
+  {
+   "evidence_id": "O07",
+   "material_id": "2310.04716",
+   "material_sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt line 82",
+   "quote": "Table 4: Investigation results on whether the policy gradients based loss should be adopted to all tokens.",
+   "kind": "author_report",
+   "verified_by": "opus55 substring match (NBSP-normalised) at build time"
+  },
+  {
+   "evidence_id": "O08",
+   "material_id": "2310.04716",
+   "material_sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt line 82",
+   "quote": "As shown in Table 6 , these traditional grounding approaches are significantly inferior to ours across different experimental settings.",
+   "kind": "author_report",
+   "verified_by": "opus55 substring match (NBSP-normalised) at build time"
+  },
+  {
+   "evidence_id": "O09",
+   "material_id": "2310.04716",
+   "material_sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt line 82",
+   "quote": "Table 3: Comparison results with traditional (non-UI customized) SOTA grounding approaches.",
+   "kind": "author_report",
+   "verified_by": "opus55 substring match (NBSP-normalised) at build time"
+  },
+  {
+   "evidence_id": "O10",
+   "material_id": "2310.04716",
+   "material_sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt line 83",
+   "quote": "Table 6: The performance of our proposed RUIG model when the model size is scaled up.",
+   "kind": "author_report",
+   "verified_by": "opus55 substring match (NBSP-normalised) at build time"
+  },
+  {
+   "evidence_id": "O11",
+   "material_id": "2310.04716",
+   "material_sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt line 79",
+   "quote": "enhancing fine-tuning performance ( Pinto et al., 2023 )",
+   "kind": "author_report",
+   "verified_by": "opus55 substring match (NBSP-normalised) at build time"
+  },
+  {
+   "evidence_id": "O12",
+   "material_id": "2310.04716",
+   "material_sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt line 83",
+   "quote": "Tuning computer vision models with task rewards. arXiv preprint arXiv:2302.08242",
+   "kind": "author_report",
+   "verified_by": "opus55 substring match (NBSP-normalised) at build time"
+  },
+  {
+   "evidence_id": "O13",
+   "material_id": "2310.04716",
+   "material_sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt line 83",
+   "quote": "our proposed RUIG model’s training time per epoch is increased by 38% on average",
+   "kind": "author_report",
+   "verified_by": "opus55 substring match (NBSP-normalised) at build time"
+  },
+  {
+   "evidence_id": "O14",
+   "material_id": "2310.04716",
+   "material_sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt line 80",
+   "quote": "we collect about 37K UI images from Common Crawl",
+   "kind": "author_report",
+   "verified_by": "opus55 substring match (NBSP-normalised) at build time"
+  },
+  {
+   "evidence_id": "O15",
+   "material_id": "2310.04716",
+   "material_sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt line 263",
+   "quote": "with pre-train | Baseline | 0.52 | 72.23 | 0.42 | 65.03 | 0.45 | 48.69 | 0.41 | 46.46",
+   "kind": "author_report",
+   "verified_by": "opus55 substring match (NBSP-normalised) at build time"
+  }
+ ],
+ "seat_evidence_note": "Seat evidence lists remain in the seat originals (bound by input_seat_hashes); ids prefixed sol:/son55: refer to them.",
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "pixel-to-sequence UI grounder",
+   "information": "screenshot + instruction only (no view hierarchy/boxes at inference); ground-truth boxes from metadata at training",
+   "operation": "teacher-forced CE on all output tokens + REINFORCE with IoU reward on coordinate-value tokens only (64 Monte Carlo samples)",
+   "output": "box tokens; centre used as click point",
+   "conditions": "document-understanding initialisation helps; reward restricted to coordinate tokens",
+   "feedback": "IoU vs ground-truth box (training only)",
+   "selection_rule": "n/a",
+   "persistence": "weights",
+   "later_use": "single-step grounding test splits",
+   "claimed_effect": "+8.5–15 points accuracy over CE baseline",
+   "failure_boundary": "ambiguous instructions, occlusion, noisy labels",
+   "evidence_ids": [
+    "O15",
+    "O13"
+   ]
+  }
+ ],
+ "retained_chain": {
+  "applicable": false,
+  "reason": "Component training; no retained-improvement claim."
+ },
+ "gap": {
+  "author_gap": "Prior UI grounders need view hierarchies/boxes; token-wise CE in pixel-to-sequence ignores the geometry of the box.",
+  "checked_gap": "Both bottlenecks concrete; metadata gap shown only qualitatively (Appendix D/E figures); token-wise CE gap supported by controlled gains. Task-reward tuning of CV models (O12) is cited but not differentiated (O11).",
+  "residue": "Agent-level use as an executor; ambiguity/label noise; external benchmarks.",
+  "remaining_gap": [
+   "no end-to-end agent test",
+   "no compute-matched or alternative IoU-aware loss control",
+   "web split statistics never published (O01)"
+  ],
+  "unresolved": [
+   "sol requested pinned Spotlight (2209.14927) and task-reward (2302.08242) originals — ruled non-blocking (see resolutions)"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "reframe_as_solvable_object",
+  "supporting": [
+   "unify_into_shared_representation",
+   "heterogeneous_decomposition"
+  ],
+  "outside_taxonomy": false,
+  "matches": [
+   {
+    "main_id": "reframe_as_solvable_object",
+    "sub_id": null,
+    "role": "primary",
+    "fit": "partial (main-level)",
+    "tactic_steps_checked": [
+     {
+      "step": "signature",
+      "status": "executed",
+      "note": "non-differentiable IoU through autoregressive decoding recast as expected-reward maximisation solved with policy gradients"
+     },
+     {
+      "step": "correspondence theorem",
+      "status": "missing",
+      "note": "none"
+     }
+    ],
+    "success_failure_checks": "reframe executed and ablated (PG on/off); no correspondence result",
+    "evidence_ids": [
+     "O15"
+    ],
+    "reason": "Sub null: C00 (transparency), C21 (RL recast as supervised — the opposite direction), C27 (games) do not describe this operation."
+   },
+   {
+    "main_id": "unify_into_shared_representation",
+    "sub_id": "rs:C18",
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": [
+     {
+      "step": 2,
+      "status": "executed",
+      "note": "boxes serialised as text tokens to reuse document-understanding pretraining"
+     },
+     {
+      "step": 4,
+      "status": "partial",
+      "note": "w/ vs w/o pretraining ablation (Table 1)"
+     }
+    ],
+    "success_failure_checks": "borrowed recipe, not the new contribution",
+    "evidence_ids": [
+     "O15"
+    ],
+    "reason": "From son55."
+   },
+   {
+    "main_id": "heterogeneous_decomposition",
+    "sub_id": null,
+    "role": "supporting",
+    "fit": "partial (main-level)",
+    "tactic_steps_checked": [
+     {
+      "step": "partition load-bearing",
+      "status": "executed",
+      "note": "reward only on coordinate tokens vs all tokens (Table 4)"
+     },
+     {
+      "step": "heterogeneity characterised first",
+      "status": "missing",
+      "note": "asserted, not measured"
+     }
+    ],
+    "success_failure_checks": "partition ablated",
+    "evidence_ids": [
+     "O06",
+     "O07"
+    ],
+    "reason": "From sol; rs:C04 is compression-specific, not selected."
+   }
+  ],
+  "reason": "Three distinct executed and ablated operations: reward recast (new contribution), token serialisation for pretraining reuse (borrowed), coordinate-token partition of the reward (design detail).",
+  "executes_pattern": "partial",
+  "resolves_problem": "unresolved — single-step offline gains only"
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "rule_reward_single_step_rl",
+    "sub": "gui:R01",
+    "fit": "partial",
+    "condition_checks": "rule (IoU) reward on labelled single-step grounding with policy gradient; earlier, no GRPO groups or filtering",
+    "evidence_ids": [
+     "O15"
+    ]
+   },
+   {
+    "main": "planner_grounder_interface",
+    "sub": "gui:C04",
+    "fit": "partial",
+    "condition_checks": "coordinates as text from pixels only; fine-tuning rather than continual pretraining on harvested pairs",
+    "evidence_ids": [
+     "O14"
+    ]
+   }
+  ],
+  "unassigned": [],
+  "revision_proposals": [
+   {
+    "status": "proposal_unchecked",
+    "source": "son55",
+    "text": "gui:R01 could list RUIG as an early non-GRPO policy-gradient member. Single paper; no card edit."
+   }
+  ]
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "reframe_as_solvable_object",
+   "rs_sub": null,
+   "domain": {
+    "namespace": "gui",
+    "main": "rule_reward_single_step_rl",
+    "sub": "gui:R01"
+   },
+   "operation_correspondence": "non-differentiable geometric metric optimised as a reward on single-step grounding",
+   "necessary_conditions": "ground-truth boxes",
+   "differences": "no group-relative baseline",
+   "evidence_ids": [
+    "O15"
+   ]
+  },
+  {
+   "rs_main": "unify_into_shared_representation",
+   "rs_sub": "rs:C18",
+   "domain": {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "gui:C04"
+   },
+   "operation_correspondence": "coordinates emitted as text tokens from pixels",
+   "necessary_conditions": "image-to-text pretraining",
+   "differences": "fine-tuning, not continual pretraining",
+   "evidence_ids": [
+    "O14"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E05",
+   "text": "Report GUI grounding on ScreenSpot-Pro (high-resolution professional desktop) and ScreenSpot-v2, not only ScreenSpot v1, which saturates (7B and 72B indistinguishable)",
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "source_strength": "common_practice",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Decided for son55. A grounding-recipe claim falls inside applies_when; no external/high-resolution benchmark; era note (ScreenSpot family postdates).",
+   "score_item": "E.holdout",
+   "decided_by": "opus55",
+   "seat_values": {
+    "sol": "not_applicable",
+    "son55": "unmet"
+   }
+  },
+  {
+   "id": "E06",
+   "text": "Compare a new grounder against UGround(-V1-7B), Aguvis-7B/72B, OS-Atlas-7B and UI-TARS(-1.5) at matched backbone size",
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "source_strength": "common_practice",
+   "applicable": true,
+   "status": "partial",
+   "reason": "[both seats agree] sol: Apply matched-comparison principle, not future named model list: same-architecture CE control and contemporaneous Spotlight*/Seq2Act are reported. Spotlight privileges differ; matched-size independent prior audit blocked by missing sources. | son55: Compared against the strongest contemporaneous UI-specific baseline reproduced under identical configuration (Spotlight*) and metadata-based Seq2Act; the named later baselines (UGround, Aguvis, OS-Atlas, UI-TARS) did not exist.",
+   "score_item": "E.causality",
+   "decided_by": "agreement_checked_by_opus55",
+   "seat_values": {
+    "sol": "partial",
+    "son55": "partial"
+   }
+  },
+  {
+   "id": "E08",
+   "text": "For planner-grounder systems, hold the planner fixed and swap grounders (e.g. GPT-4o + UGround vs + Aguvis vs + Jedi), and report the planner alone",
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "source_strength": "common_practice",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "sol only; accepted: no planner-grounder task-success experiment.",
+   "score_item": "E.causality",
+   "decided_by": "opus55",
+   "seat_values": {
+    "sol": "not_applicable",
+    "son55": null
+   }
+  },
+  {
+   "id": "E09",
+   "text": "Compare GUI online-RL methods against DigiRL, WebRL, filtered BC / AWR and an SFT-only model trained on the same data",
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "source_strength": "common_practice",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Decided for son55. The RL term trains a single-step grounding objective, not an agent-level RL algorithm; the same-data CE-only control that sol credited is scored under E.causality.",
+   "score_item": "E.causality",
+   "decided_by": "opus55",
+   "seat_values": {
+    "sol": "partial",
+    "son55": "not_applicable"
+   }
+  },
+  {
+   "id": "E15",
+   "text": "Do not rest an agent capability claim on offline step accuracy (AndroidControl, Multimodal-Mind2Web, GUI Odyssey) alone; add an online benchmark or show the offline metric predicts online success",
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "source_strength": "common_practice",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Decided for son55. The generic-API claim is in the title and conclusion; nothing beyond offline single-step accuracy supports it and no argument links the metric to agent success.",
+   "score_item": "E.measurement",
+   "decided_by": "opus55",
+   "seat_values": {
+    "sol": "partial",
+    "son55": "unmet"
+   }
+  },
+  {
+   "id": "E16",
+   "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "source_strength": "common_practice",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "[both seats agree] sol: No online/live numbers. Offline seed/CI and test-denominator uncertainty remains an E.statistics question, but is not established as globally not_reported while supplementary is missing. | son55: Defined for online benchmarks; this paper is offline. Single-run reporting is scored under E.statistics.",
+   "score_item": "E.statistics",
+   "decided_by": "agreement_checked_by_opus55",
+   "seat_values": {
+    "sol": "not_applicable",
+    "son55": "not_applicable"
+   }
+  },
+  {
+   "id": "E17",
+   "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "source_strength": "common_practice",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "sol only; accepted.",
+   "score_item": "E.cost",
+   "decided_by": "opus55",
+   "seat_values": {
+    "sol": "not_applicable",
+    "son55": null
+   }
+  },
+  {
+   "id": "E21",
+   "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "source_strength": "common_practice",
+   "applicable": true,
+   "status": "partial",
+   "reason": "sol only; accepted: input privileges of baselines disclosed, no controlled with/without-metadata factor.",
+   "score_item": "E.causality",
+   "decided_by": "opus55",
+   "seat_values": {
+    "sol": "partial",
+    "son55": null
+   }
+  },
+  {
+   "id": "E22",
+   "text": "Report results across backbone sizes (e.g. 7B and 32B/72B), since gains from GUI data/RL recipes shrink with model size",
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "source_strength": "common_practice",
+   "applicable": true,
+   "status": "partial",
+   "reason": "[both seats agree] sol: Appendix B covers4/12 decoder layers with CE baselines, showing continued gain in one Swin/BART family; does not establish different backbone families or different tasks. | son55: Two decoder depths (4 and 12 layers) show the gain persists; one architecture family and no larger backbone.",
+   "score_item": "E.causality",
+   "decided_by": "agreement_checked_by_opus55",
+   "seat_values": {
+    "sol": "partial",
+    "son55": "partial"
+   }
+  },
+  {
+   "id": "E24",
+   "text": "Test grounding robustness under controlled perturbations (zoom, text size, window position/clutter, relational instructions) with matched pairs",
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "source_strength": "common_practice",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Decided for son55. No matched-pair perturbation study in the published material; qualitative figure cases cannot satisfy it whatever they show; sol’s unknown rested on the rejected missing-material premise.",
+   "score_item": "E.holdout",
+   "decided_by": "opus55",
+   "seat_values": {
+    "sol": "unknown",
+    "son55": "unmet"
+   }
+  },
+  {
+   "id": "E25",
+   "text": "Report refusal / infeasible-task behaviour (instructions with no valid target)",
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "source_strength": "common_practice",
+   "applicable": true,
+   "status": "partial",
+   "reason": "sol only; accepted: ambiguity/noise acknowledged, no refusal protocol.",
+   "score_item": "E.measurement",
+   "decided_by": "opus55",
+   "seat_values": {
+    "sol": "partial",
+    "son55": null
+   }
+  },
+  {
+   "id": "E27",
+   "text": "Show a data-scaling curve (fraction or count of synthetic samples vs downstream score) and say where it saturates",
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "source_strength": "common_practice",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "sol only; accepted.",
+   "score_item": "E.causality",
+   "decided_by": "opus55",
+   "seat_values": {
+    "sol": "not_applicable",
+    "son55": null
+   }
+  },
+  {
+   "id": "E28",
+   "text": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "source_strength": "common_practice",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Revised. No claim that self-generated data improves results; the generated web pairs are the dataset itself, whose split integrity is scored under E.holdout. sol’s unknown rested on the rejected missing-material premise; son55 did not list it.",
+   "score_item": "E.holdout",
+   "decided_by": "opus55",
+   "seat_values": {
+    "sol": "unknown",
+    "son55": null
+   }
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "PG objective improves pixel-to-sequence grounding",
+   "setting": "same architecture/data/initialisation, 20 epochs, single runs",
+   "baseline/control": "CE-only baseline with and without pretraining (O15)",
+   "selection_vs_test": "MoTIF public config (O05); web split construction unpublished (O01)",
+   "result/denominator": "+8.5–15 points Acc; denominators not reported",
+   "evidence_ids": [
+    "O15",
+    "O05",
+    "O01"
+   ],
+   "counterevidence": [
+    "O13"
+   ],
+   "allowed_conclusion": "supported offline for single-step grounding; compute-matched control missing"
+  },
+  {
+   "claim_id": "C2",
+   "text": "Outperforms SOTA incl. metadata-based methods",
+   "setting": "MoTIF seen/unseen",
+   "baseline/control": "Spotlight* reproduced; copied Seq2Act etc.",
+   "selection_vs_test": "-",
+   "result/denominator": "81.16/73.92 vs 76.83/68.76",
+   "evidence_ids": [
+    "O05"
+   ],
+   "counterevidence": [
+    "O06",
+    "O08"
+   ],
+   "allowed_conclusion": "supported against reproduced Spotlight* on one benchmark"
+  },
+  {
+   "claim_id": "C3",
+   "text": "Potential as generic UI task automation API",
+   "setting": "none (no agent experiment)",
+   "baseline/control": "none",
+   "selection_vs_test": "-",
+   "result/denominator": "-",
+   "evidence_ids": [],
+   "counterevidence": [],
+   "allowed_conclusion": "not tested"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "offline",
+  "claim_support": "scoped",
+  "author_claim_preserved": "outperforms the state of the art by a clear margin, including metadata-based methods, and shows potential as a generic UI task automation API",
+  "strongest_supported_claim": "Under identical architecture, initialisation and training, adding an IoU-reward policy-gradient term on coordinate tokens raises single-step click-in-box accuracy of a metadata-free pixel-to-sequence grounder by ~9–15 points on MoTIF-based mobile and author-built web splits, and beats a same-configuration Spotlight reproduction on MoTIF. The generic-API/agent claim is untested.",
+  "unresolved": [
+   "all eight rating items pending an independent sol rating under the status ruling"
+  ],
+  "source_numbering_counterevidence": [
+   "O06 vs O07: prose \"Table 3\" = caption Table 4 (all-token PG)",
+   "O08 vs O09/O10: prose \"Table 6\" = caption Table 3 (GLIP/Grounding-DINO); actual Table 6 is decoder scaling"
+  ],
+  "reproduction": "none"
+ },
+ "ratings": {
+  "G": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Unresolved between seats: sol rated unknown solely because it judged the material incomplete; Opus rules the material complete (see status resolution), so sol’s premise falls but no independent sol rating exists. Re-dispatch requested. Opus provisional (non-binding): the in-paper lineage cites \"Tuning computer vision models with task rewards\" (O12) only as \"enhancing fine-tuning performance\" (O11) without differentiation; son55’s 3 may be high.",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": [],
+   "seat_values": {
+    "sol": null,
+    "son55": 3
+   }
+  },
+  "M": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Unresolved between seats: sol rated unknown solely because it judged the material incomplete; Opus rules the material complete (see status resolution), so sol’s premise falls but no independent sol rating exists. Re-dispatch requested. Opus provisional: son55’s 3 is supportable — Eq. 3 reward on coordinate tokens directly targets the stated non-differentiability; alternative IoU-aware objectives undiscussed.",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": [],
+   "seat_values": {
+    "sol": null,
+    "son55": 3
+   }
+  },
+  "X": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Unresolved between seats: sol rated unknown solely because it judged the material incomplete; Opus rules the material complete (see status resolution), so sol’s premise falls but no independent sol rating exists. Re-dispatch requested. Opus provisional: son55’s 2 is supportable — single-sentence estimator description; web construction/split statistics absent from the published material (O01).",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": [],
+   "seat_values": {
+    "sol": null,
+    "son55": 2
+   }
+  },
+  "E.measurement": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Unresolved between seats: sol rated unknown solely because it judged the material incomplete; Opus rules the material complete (see status resolution), so sol’s premise falls but no independent sol rating exists. Re-dispatch requested. Opus provisional: son55’s 2 is supportable — objective click-in-box/mIoU but metadata-derived, admittedly noisy ground truth; no agent-level measurement.",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": [],
+   "seat_values": {
+    "sol": null,
+    "son55": 2
+   }
+  },
+  "E.causality": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Unresolved between seats: sol rated unknown solely because it judged the material incomplete; Opus rules the material complete (see status resolution), so sol’s premise falls but no independent sol rating exists. Re-dispatch requested. Opus provisional: son55’s 3 is supportable — same-architecture/data/initialisation single-factor ablations (O15, Tables 2/4/6); no compute-matched CE control despite +38% training time (O13).",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": [],
+   "seat_values": {
+    "sol": null,
+    "son55": 3
+   }
+  },
+  "E.holdout": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Unresolved between seats: sol rated unknown solely because it judged the material incomplete; Opus rules the material complete (see status resolution), so sol’s premise falls but no independent sol rating exists. Re-dispatch requested. Opus provisional: son55’s 2 is supportable — MoTIF app-unseen protocol (O05); web split statistics never published (O01).",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": [],
+   "seat_values": {
+    "sol": null,
+    "son55": 2
+   }
+  },
+  "E.statistics": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Unresolved between seats: sol rated unknown solely because it judged the material incomplete; Opus rules the material complete (see status resolution), so sol’s premise falls but no independent sol rating exists. Re-dispatch requested. Opus provisional: son55’s 1 is supportable — single runs, no denominators for the web split.",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": [],
+   "seat_values": {
+    "sol": null,
+    "son55": 1
+   }
+  },
+  "E.cost": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Unresolved between seats: sol rated unknown solely because it judged the material incomplete; Opus rules the material complete (see status resolution), so sol’s premise falls but no independent sol rating exists. Re-dispatch requested. Opus provisional: son55’s 2 is supportable — +38% per-epoch training time, hardware/epochs/sampling budget; no inference cost.",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": [],
+   "seat_values": {
+    "sol": null,
+    "son55": 2
+   }
+  }
+ },
+ "score": {
+  "raw": null,
+  "display": null,
+  "lower": 0.0,
+  "upper": 100.0,
+  "coverage": 0.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "weights": {
+   "G": 15,
+   "M": 25,
+   "X": 20,
+   "E.measurement": 10,
+   "E.causality": 10,
+   "E.holdout": 10,
+   "E.statistics": 5,
+   "E.cost": 5
+  },
+  "formula": "S=(15G+25M+20X+10Emeas+10Ecaus+10Ehold+5Estat+5Ecost)/4"
+ },
+ "status": "reviewed",
+ "status_reason": "Material ruling: the published v1 (body + Appendix A–E) is complete; Appendix A is the \"supplementary\" referred to in §4.1 (O02, O03). The promised split statistics and web-collection details were never included in the published version — they are not reported, not missing material, and are not required to score the central controlled claim (mobile results use a public benchmark configuration, O05).",
+ "opus_initial_reading": "Read before any seat file: component_training grounding model; CE + REINFORCE with IoU reward on coordinate tokens (64 MC samples). Evidence offline single-step: MoTIF public configuration (O05) and an author-built web set (O14). Controlled same-architecture baseline with/without pretraining (O15); granularity, token-subset (Table 4) and decoder-depth ablations; reproduced Spotlight*. Cost +38% per epoch (O13). Body promises data statistics and web-collection details in \"our supplementary\" (O01, O02); Appendix A opens by continuing §4.1 implementation details (O03) and Appendix E ends \"We will clarify this in our revision\" (O04) — i.e. the appendices are the supplementary as published, and the promised statistics were never included. Prose table numbers disagree with captions twice (O06 vs O07; O08 vs O09/O10). Closest cited prior, task-reward tuning of CV models (O12), is mentioned only generically (O11).",
+ "seat_integrity_check": "Both seats read the same version and material sha256, the same input_hash 93d0dafb…, rubric/expectation/taxonomy hashes; both completed RS 15+31 and gui-namespace identification; no blindness breach recorded; seat roles match manifest model types. sol a3 is a complete read with status needs_fulltext and all eight ratings unknown; son55 a1 reviewed with all eight resolved. sol a3 wrote bare domain sub \"C26\"; normalised.",
+ "input_seat_hashes": {
+  "sol": {
+   "path": "research/v2/runs/gui-v22-20261021-01/batches/p4/seats/sol/attempts/a3/2310.04716.json",
+   "sha256": "a5a67899f686f6be6af78a4780456b90b2a2016fa8225995a824951e44ec2750",
+   "attempt_id": "a3",
+   "seat_status": "needs_fulltext",
+   "seat_score_raw": null,
+   "superseded_shells": [
+    "sol/attempts/a1/2310.04716.json (capacity null shell, sha 90339d4a…)"
+   ]
+  },
+  "son55": {
+   "path": "research/v2/runs/gui-v22-20261021-01/batches/p4/seats/son55/attempts/a1/2310.04716.json",
+   "sha256": "1c5ef1e0974db96b4a0189749a65773cda1b65cd9bef1fb1327196cea7994a0b",
+   "attempt_id": "a1",
+   "seat_status": "reviewed",
+   "seat_score_raw": 61.25,
+   "superseded_shells": []
+  }
+ },
+ "aggregate_model": "fable",
+ "aggregate_session": "681194da-49f5-4ad4-8eb4-573b45384076 (parent controller session id visible to this subagent; no separate subagent id exposed)",
+ "aggregate_receipt_ref": null,
+ "aggregate_receipt_reason": "No provider receipt exposed to the aggregate agent; not probed.",
+ "resolutions": [
+  {
+   "field_path": "status",
+   "sol_value": "needs_fulltext",
+   "son55_value": "reviewed",
+   "decision": "son55",
+   "final_value": "reviewed",
+   "reason": "§4.1 sends both implementation details (O02) and data statistics (O01) to \"our supplementary\"; Appendix A explicitly continues §4.1 implementation details (O03) and Appendix E carries a revision promise (O04), so the appendices are the supplementary as published. The statistics are absent from the paper itself, not from our copy: SCORE_SPEC \"not_reported\" applies once full material is searched. Scoring necessity: the central claim is a controlled same-architecture comparison whose mobile splits follow a public configuration (O05); the missing web statistics weaken E.holdout/E.statistics and are scorable as such. Table-number mismatches (O06/O07, O08/O09/O10) are recorded as source counterevidence; numbers within each table are internally coherent.",
+   "evidence_ids": [
+    "O01",
+    "O02",
+    "O03",
+    "O04",
+    "O05",
+    "O06",
+    "O07",
+    "O08",
+    "O09",
+    "O10"
+   ],
+   "score_impact": "enables scoring; does not itself fix any rating"
+  },
+  {
+   "field_path": "blockers.needs_evidence (sol)",
+   "sol_value": "Spotlight 2209.14927 and task-reward 2302.08242 originals required",
+   "son55_value": null,
+   "decision": "son55",
+   "final_value": "non-blocking",
+   "reason": "G is judged on in-paper lineage as for every other paper in this batch (AutoDroid neighbours also unpinned). The in-paper evidence already shows the closest prior (O12) is cited without differentiation (O11), which can be scored as counterevidence. Pinning is optional; if the controller pins it, both seats must receive it.",
+   "evidence_ids": [
+    "O11",
+    "O12"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "claim_support",
+   "sol_value": "unresolved",
+   "son55_value": "scoped",
+   "decision": "son55",
+   "final_value": "scoped",
+   "reason": "sol’s own record gives \"scoped\" as the label if material is complete; with the status ruling, scoped follows.",
+   "evidence_ids": [
+    "O15"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "rs.primary",
+   "sol_value": "heterogeneous_decomposition",
+   "son55_value": "unify_into_shared_representation",
+   "decision": "revised",
+   "final_value": "reframe_as_solvable_object",
+   "reason": "The paper’s new operation is recasting a non-differentiable box metric as expected-reward maximisation solved by policy gradients (son55’s weak supporting card); serialisation (son55 primary) is borrowed from pix2seq/Donut, and the coordinate-token partition (sol primary) is a secondary design choice. All three are executed and ablated, so primary = reframe, supporting = the two seat primaries.",
+   "evidence_ids": [
+    "O15",
+    "O06",
+    "O07"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "rs.supporting",
+   "sol_value": [],
+   "son55_value": [
+    "reframe_as_solvable_object"
+   ],
+   "decision": "revised",
+   "final_value": [
+    "unify_into_shared_representation",
+    "heterogeneous_decomposition"
+   ],
+   "reason": "See rs.primary.",
+   "evidence_ids": [
+    "O15"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "rs.matches",
+   "sol_value": [
+    "heterogeneous_decomposition/None"
+   ],
+   "son55_value": [
+    "reframe_as_solvable_object/None",
+    "unify_into_shared_representation/rs:C18"
+   ],
+   "decision": "revised",
+   "final_value": [
+    "reframe_as_solvable_object/None",
+    "unify_into_shared_representation/rs:C18",
+    "heterogeneous_decomposition/None"
+   ],
+   "reason": "Union with re-assigned roles; all subs checked against PARENTS.tsv.",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "domain.matches",
+   "sol_value": [
+    "online_evaluation_methodology/C26",
+    "planner_grounder_interface/None"
+   ],
+   "son55_value": [
+    "planner_grounder_interface/gui:C04",
+    "rule_reward_single_step_rl/gui:R01"
+   ],
+   "decision": "son55",
+   "final_value": [
+    "rule_reward_single_step_rl/gui:R01",
+    "planner_grounder_interface/gui:C04"
+   ],
+   "reason": "Domain matches should describe the paper’s operation: R01 (rule reward on single-step grounding) is the closest operational card and C04 covers pixels-to-coordinate-text under planner_grounder_interface (which also subsumes sol’s main-level match). gui:C26 is a benchmark-design card; RUIG only uses that metric. sol’s bare \"C26\" lacked the namespace.",
+   "evidence_ids": [
+    "O15",
+    "O14"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E05",
+   "sol_value": "not_applicable",
+   "son55_value": "unmet",
+   "decision": "son55",
+   "final_value": "unmet",
+   "reason": "Claim inside applies_when; era note kept (consistent with E02 handling for AutoDroid/Auto-GUI).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E08",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "No planner experiment.",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E09",
+   "sol_value": "partial",
+   "son55_value": "not_applicable",
+   "decision": "son55",
+   "final_value": "not_applicable",
+   "reason": "Not an agent RL claim.",
+   "evidence_ids": [
+    "O15"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E15",
+   "sol_value": "partial",
+   "son55_value": "unmet",
+   "decision": "son55",
+   "final_value": "unmet",
+   "reason": "Generic-API claim rests on offline single-step accuracy only.",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E17",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "No multi-step comparison.",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E21",
+   "sol_value": "partial",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "Baseline input privileges disclosed.",
+   "evidence_ids": [
+    "O05"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E24",
+   "sol_value": "unknown",
+   "son55_value": "unmet",
+   "decision": "son55",
+   "final_value": "unmet",
+   "reason": "No perturbation study; unknown premise rejected.",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E25",
+   "sol_value": "partial",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "Ambiguity acknowledged.",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E27",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "No data-scaling claim.",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E28",
+   "sol_value": "unknown",
+   "son55_value": null,
+   "decision": "revised",
+   "final_value": "not_applicable",
+   "reason": "No synthesis-improves claim; split integrity goes to E.holdout.",
+   "evidence_ids": [
+    "O01"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "rating.G",
+   "sol_value": {
+    "status": "unknown",
+    "rating": null
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "decision": "unresolved",
+   "final_value": null,
+   "reason": "sol’s unknown rests on the needs_fulltext premise rejected above, so it is not a substantive counter-rating; accepting son55’s value outright would turn this into a single-seat score. Needs an independent sol rating under the ruling. Opus provisional (non-binding): the in-paper lineage cites \"Tuning computer vision models with task rewards\" (O12) only as \"enhancing fine-tuning performance\" (O11) without differentiation; son55’s 3 may be high.",
+   "evidence_ids": [],
+   "score_impact": "score withheld (null)"
+  },
+  {
+   "field_path": "rating.M",
+   "sol_value": {
+    "status": "unknown",
+    "rating": null
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "decision": "unresolved",
+   "final_value": null,
+   "reason": "sol’s unknown rests on the needs_fulltext premise rejected above, so it is not a substantive counter-rating; accepting son55’s value outright would turn this into a single-seat score. Needs an independent sol rating under the ruling. Opus provisional: son55’s 3 is supportable — Eq. 3 reward on coordinate tokens directly targets the stated non-differentiability; alternative IoU-aware objectives undiscussed.",
+   "evidence_ids": [],
+   "score_impact": "score withheld (null)"
+  },
+  {
+   "field_path": "rating.X",
+   "sol_value": {
+    "status": "unknown",
+    "rating": null
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "unresolved",
+   "final_value": null,
+   "reason": "sol’s unknown rests on the needs_fulltext premise rejected above, so it is not a substantive counter-rating; accepting son55’s value outright would turn this into a single-seat score. Needs an independent sol rating under the ruling. Opus provisional: son55’s 2 is supportable — single-sentence estimator description; web construction/split statistics absent from the published material (O01).",
+   "evidence_ids": [],
+   "score_impact": "score withheld (null)"
+  },
+  {
+   "field_path": "rating.E.measurement",
+   "sol_value": {
+    "status": "unknown",
+    "rating": null
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "unresolved",
+   "final_value": null,
+   "reason": "sol’s unknown rests on the needs_fulltext premise rejected above, so it is not a substantive counter-rating; accepting son55’s value outright would turn this into a single-seat score. Needs an independent sol rating under the ruling. Opus provisional: son55’s 2 is supportable — objective click-in-box/mIoU but metadata-derived, admittedly noisy ground truth; no agent-level measurement.",
+   "evidence_ids": [],
+   "score_impact": "score withheld (null)"
+  },
+  {
+   "field_path": "rating.E.causality",
+   "sol_value": {
+    "status": "unknown",
+    "rating": null
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "decision": "unresolved",
+   "final_value": null,
+   "reason": "sol’s unknown rests on the needs_fulltext premise rejected above, so it is not a substantive counter-rating; accepting son55’s value outright would turn this into a single-seat score. Needs an independent sol rating under the ruling. Opus provisional: son55’s 3 is supportable — same-architecture/data/initialisation single-factor ablations (O15, Tables 2/4/6); no compute-matched CE control despite +38% training time (O13).",
+   "evidence_ids": [],
+   "score_impact": "score withheld (null)"
+  },
+  {
+   "field_path": "rating.E.holdout",
+   "sol_value": {
+    "status": "unknown",
+    "rating": null
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "unresolved",
+   "final_value": null,
+   "reason": "sol’s unknown rests on the needs_fulltext premise rejected above, so it is not a substantive counter-rating; accepting son55’s value outright would turn this into a single-seat score. Needs an independent sol rating under the ruling. Opus provisional: son55’s 2 is supportable — MoTIF app-unseen protocol (O05); web split statistics never published (O01).",
+   "evidence_ids": [],
+   "score_impact": "score withheld (null)"
+  },
+  {
+   "field_path": "rating.E.statistics",
+   "sol_value": {
+    "status": "unknown",
+    "rating": null
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 1
+   },
+   "decision": "unresolved",
+   "final_value": null,
+   "reason": "sol’s unknown rests on the needs_fulltext premise rejected above, so it is not a substantive counter-rating; accepting son55’s value outright would turn this into a single-seat score. Needs an independent sol rating under the ruling. Opus provisional: son55’s 1 is supportable — single runs, no denominators for the web split.",
+   "evidence_ids": [],
+   "score_impact": "score withheld (null)"
+  },
+  {
+   "field_path": "rating.E.cost",
+   "sol_value": {
+    "status": "unknown",
+    "rating": null
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "unresolved",
+   "final_value": null,
+   "reason": "sol’s unknown rests on the needs_fulltext premise rejected above, so it is not a substantive counter-rating; accepting son55’s value outright would turn this into a single-seat score. Needs an independent sol rating under the ruling. Opus provisional: son55’s 2 is supportable — +38% per-epoch training time, hardware/epochs/sampling budget; no inference cost.",
+   "evidence_ids": [],
+   "score_impact": "score withheld (null)"
+  }
+ ],
+ "shared_error_corrections": [],
+ "requests_to_controller": [
+  {
+   "request_id": "REQ-2310.04716-1",
+   "to": "controller",
+   "action": "Re-dispatch the sol seat (new attempt, e.g. a4, supersedes a3) for 2310.04716 with the same input bundle, blind to son55 and to this aggregate.",
+   "ruling_to_pass": "Published v1 material (body + Appendix A–E) is complete; Appendix A is the paper’s supplementary; promised split statistics/web-collection details are not reported in the paper (score their absence under E.holdout/E.statistics, not as needs_fulltext). Spotlight/task-reward originals are not required; if pinned, give them to both seats.",
+   "then": "Re-aggregate 2310.04716 (aggregate a2) against son55 a1 and the new sol attempt."
+  }
+ ],
+ "aggregate_status": "needs_revision",
+ "aggregate_status_reason": "Status, claim_support, patterns and expectations are resolved, but all eight score items lack an independent second-seat rating (sol withheld them on a material premise now overruled). Under AGGREGATE_OPUS step 2/5 this is a missing-seat condition to return to the controller, not a disagreement to arbitrate; score=null.",
+ "final_record_hash": "9090b7e34467d4e94cc045a6fd1176a0ca22324c6d26eccb2b3cdf4deeb7ccd0"
+}

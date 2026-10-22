@@ -1,0 +1,1458 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p8",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "paper": {
+  "paper_key": "2401.10935",
+  "paper_id": "arXiv:2401.10935",
+  "title": "SeeClick: Harnessing GUI Grounding for Advanced Visual GUI Agents",
+  "version": "2401.10935v2",
+  "claim_type": "component_training",
+  "claim_type_note": "主产出为 GUI grounding 预训练(组件训练)+ ScreenSpot 评测资源;‘视觉 agent’结论通过下游微调得出。",
+  "central_claim": "SeeClick 只依赖截图完成 GUI 任务;通过 GUI grounding 持续预训练(自动采集的网页/移动 grounding 数据)获得 grounding 能力,在 ScreenSpot 与 MiniWob/AITW/Mind2Web 上提升,并且 grounding 的进步与下游 agent 任务表现的提升直接相关。"
+ },
+ "provenance": {
+  "input_hash": "f3dad3d18251340267b0256f3f2897e3cfa491c66cc114afaf952cd15960672f",
+  "rubric_version": "SCORE_SPEC v2.2 draft_uncalibrated (weights frozen per controller)",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": {
+   "taxonomy": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+   "conditions": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+  },
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m] (Sonnet 5.5, as named in this worker's system prompt)",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_receipt_reason": "no session id / receipt exposed to the worker; not probed",
+  "timestamp": "2026-10-22T02:55:00Z"
+ },
+ "materials": [
+  {
+   "material_id": "M1",
+   "url": "https://arxiv.org/html/2401.10935v2",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2401.10935.r2.txt",
+   "sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "sections_read": [
+    "Abstract",
+    "1-6",
+    "Limitations",
+    "Ethics",
+    "References",
+    "App A",
+    "App B",
+    "App C(C.1-C.5)",
+    "Tables 1-8"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Fig 5/6/9 图内数值(未提供图,unknown)",
+    "App C.1 prompt Box(HTML 丢失,已由 M2 补)"
+   ],
+   "note": "文件内含同一正文两份渲染,已通读,内容一致。"
+  },
+  {
+   "material_id": "M2",
+   "url": "https://arxiv.org/pdf/2401.10935v2",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2401.10935.pdf-supplement.txt",
+   "sha256": "a609f7d2e82d6f3708fcfbaa0e2c400ce3a8a4fc1e32889af629f17149a82047",
+   "sections_read": [
+    "header note",
+    "App C.1 agent prompt Box (v2)"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "note": "总控终版补充(sha a609f7d2…,materials.jsonl #r3):v2 PDF 为 HTML 丢失 Box 的权威补充,prompt 属 v2 可评分内容;多栏交错文本不用于其他引文。"
+  },
+  {
+   "material_id": "M3",
+   "url": "n/a (figs bundle)",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.10935/",
+   "sha256": "5331d3d575df699ce5adcc363a192fa4065be8d97ea6fa7089daff2a85f37f84|04dbd75367f04115d161911f9a557920603c4290f6803dcb52ac3c490f882a95",
+   "sections_read": [
+    "framework.png(Fig 2)",
+    "screenspot.png(Fig 4)"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "未提供 Fig 5(MiniWob 对比)、Fig 6(相关性)、Fig 9(距离分布);webdata/案例图未读"
+   ],
+   "note": "总控共享 8 张图;仅读 2 张与评分相关者(sha256 前缀对应 figs.json)。"
+  },
+  {
+   "material_id": "M4",
+   "url": "https://arxiv.org/html/2306.06070",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2306.06070.txt",
+   "sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+   "sections_read": [
+    "metrics (Sec 4)"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "仅为核对 Mind2Web 离线指标定义而读取的共享引用"
+   ],
+   "note": "共享引用集成员(references.json)。"
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "E001",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Abstract",
+   "quote": "To alleviate this issue, we propose a novel visual GUI agent – SeeClick , which only relies on screenshots for task automation.",
+   "support_explanation": "作者对象:仅截图的视觉 GUI agent。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E002",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Abstract",
+   "quote": "consistently support our finding that advancements in GUI grounding directly correlate with enhanced performance in downstream GUI agent tasks.",
+   "support_explanation": "作者中心主张之一:grounding 提升与下游 agent 表现正相关。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E003",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 1 Introduction",
+   "quote": "(1) Structured text is not always accessible, especially for iOS or desktop applications where acquiring such information is challenging",
+   "support_explanation": "作者 gap(i):结构化文本不总可得。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E004",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 3.2 Web Data",
+   "quote": "(2) elements with a special “title” attribute that display descriptive text when hovering.",
+   "support_explanation": "网页监督信号来自 HTML 的可见文本与 title 属性(推理时不可见的特权结构)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E005",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 3.2 Mobile Data",
+   "quote": "We derive mobile UI grounding data by reversing the process of widget captioning,",
+   "support_explanation": "移动端 grounding 由 widget captioning 反向得到(artifact→指令的逆映射)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E006",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 3.2 General Data",
+   "quote": "resulting in a 1M dataset to train SeeClick",
+   "support_explanation": "混合数据 1M(含 LLaVA 通用数据),配 30 个任务 prompt。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E007",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 3.3",
+   "quote": "for about 10k steps (around 1 epoch) to obtain our GUI base model SeeClick",
+   "support_explanation": "训练规模:约 10k step,1 epoch。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E008",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 3.3",
+   "quote": "we employ LoRA ( Hu et al., 2021 ) to fine-tune both the visual encoder and LLM.",
+   "support_explanation": "LoRA 同时微调视觉编码器与 LLM。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E009",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 3.1",
+   "quote": "treating numerical values as natural languages without any additional tokenization or pre-/post-processing.",
+   "support_explanation": "坐标以自然语言数字文本生成,无专用 token。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E010",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Table 1",
+   "quote": "SeeClick 9.6B ✓ 78.0% 52.0% 72.2% 30.0% 55.7% 32.5% 53.4%",
+   "support_explanation": "ScreenSpot 平均点击准确率 53.4%(icon/widget 30-52%)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E011",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Table 1",
+   "quote": "Qwen-VL 9.6B ✗ 9.5% 4.8% 5.7% 5.0% 3.5% 2.4% 5.2%",
+   "support_explanation": "基座 Qwen-VL 在 ScreenSpot 仅 5.2%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E012",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Table 1",
+   "quote": "CogAgent 18B ✓ 67.0% 24.0% 74.2% 20.0% 70.4% 28.6% 47.4%",
+   "support_explanation": "同类 GUI 专用 LVLM CogAgent 47.4%,桌面/网页文本更强。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E013",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Table 1",
+   "quote": "GPT-4V - ✗ 22.6% 24.5% 20.2% 11.8% 9.2% 8.8% 16.2%",
+   "support_explanation": "GPT-4V 在 ScreenSpot 16.2%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E014",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 4",
+   "quote": "It includes over 600 interface screenshots from mobile (iOS, Android), desktop (macOS, Windows), and web platforms, along with 1200+ instructions and corresponding actionable elements",
+   "support_explanation": "ScreenSpot 规模与覆盖。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E015",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 4",
+   "quote": "ScreenSpot is carefully curated to ensure the samples are novel and not included in existing training resources.",
+   "support_explanation": "作者声称 ScreenSpot 样本新颖、不在现有训练资源中(未见审计证据)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E016",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "App B.1",
+   "quote": "We convened four experienced annotators, all either Ph.D. or master students in computer science",
+   "support_explanation": "ScreenSpot 标注者 4 人,未报告标注一致性或错误审计。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E017",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 5.1",
+   "quote": "Notably, all models struggle with locating icons/widgets",
+   "support_explanation": "icon/widget 是共同残余瓶颈。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E018",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 5.1",
+   "quote": "SeeClick exhibits slightly inferior performance in locating text within desktop and web compared to CogAgent, possibly due to lower resolution and much smaller training data.",
+   "support_explanation": "作者承认分辨率/数据量是文本 grounding 弱于 CogAgent 的候选原因。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E019",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Table 2",
+   "quote": "Pix2Act Image 1.3M 64.6% Qwen-VL Image 2.8K 48.4% SeeClick Image 2.8K 67.0%",
+   "support_explanation": "MiniWob(35 任务):SeeClick 67.0 vs Qwen-VL 48.4(同 2.8K 下游数据)vs Pix2Act 64.6(1.3M)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E020",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Table 2",
+   "quote": "WebGUM HTML+Image 347K 86.1% SeeClick Image 2.8K 73.6%",
+   "support_explanation": "MiniWob(45 任务):SeeClick 73.6 低于 WebGUM-347K 86.1。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E021",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 5.2.1",
+   "quote": "We compute the success rate over 50 random seeds for each task and then compute the mean over all tasks as the final score.",
+   "support_explanation": "MiniWob 协议:每任务 50 个随机种子(任务实例),为环境内可执行判定。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E022",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 5.2.1",
+   "quote": "Therefore, we rollout 50 successful episodes using an LLM strategy for each task in ( Zheng et al., 2023 ) , resulting in a 2.8K episodes dataset to train SeeClick",
+   "support_explanation": "MiniWob 训练数据来自同一批任务的 LLM 成功轨迹:测试种子与训练任务同分布。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E023",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 5.2.1",
+   "quote": "SeeClick exceeded the sota visual method Pix2Act, using less than 0.3 % 0.3\\% training data.",
+   "support_explanation": "‘0.3% 数据’仅指下游训练数据,不含 Qwen-VL 预训练与 1M GUI 预训练。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E024",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 5.2.2",
+   "quote": "In this work, we opt for an instruction-wise split, with 545/688/306/700/700 instructions from General/Install/GoogleApps/Single/WebShopping respectively, and retain one trajectory per instruction.",
+   "support_explanation": "AITW 自定义 instruction-wise 划分(作者重划分,与既有结果不直接可比)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E025",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Table 3",
+   "quote": "Qwen-VL Image 49.5 59.9 46.9 64.7 50.7 54.3 57.4 SeeClick Image 54.0 66.4 54.9 63.5 57.6 59.3 66.4",
+   "support_explanation": "AITW:SeeClick 总体 59.3 vs Qwen-VL 54.3,ClickAcc 66.4 vs 57.4(离线 step 匹配)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E026",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "App C.5",
+   "quote": "Some errors occur because the current step’s answer is not unique.",
+   "support_explanation": "AITW 单参考匹配会把合法替代路径计错。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E027",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Table 4",
+   "quote": "Qwen-VL ✓ 15.9 86.7 13.3 13.2 83.5 9.2 14.1 84.3 12.0 SeeClick ✓ 28.3 87.0 25.5 21.4 80.6 16.4 23.2 84.8 20.8",
+   "support_explanation": "Mind2Web(离线 step):SeeClick Step SR 25.5/16.4/20.8 vs Qwen-VL 13.3/9.2/12.0。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E028",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Table 4",
+   "quote": "MindAct ✗ 55.1 75.7 52.0 42.0 65.2 38.9 42.1 66.5 39.6",
+   "support_explanation": "HTML 候选选择的 MindAct 的 Step SR 39.6-52.0,明显高于 SeeClick。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E029",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 5.2.3",
+   "quote": "its performance trails sota HTML-based methods, since predicting click coordinates is much more difficult than choosing from HTML candidates.",
+   "support_explanation": "作者承认 Mind2Web 上落后于 HTML 方法。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E030",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "App C.4",
+   "quote": "for target elements not at the top, we randomly crop around their location, maintaining a consistent screenshot resolution of 1920*1080 for all observed interfaces.",
+   "support_explanation": "Mind2Web 观测以真值目标位置为中心随机裁剪:使用了测试时特权位置信息的可能,基线(HTML)不享有。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E031",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Table 5",
+   "quote": "Qwen-VL separate 48.4 54.3 11.5 SeeClick separate 67.0 59.3 20.9 SeeClick unified 64.1 57.1 19.5",
+   "support_explanation": "分别训练 vs 统一训练;统一略降。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E032",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 5.2.4",
+   "quote": "we analyze the average score improvements of several SeeClick ’s checkpoints on ScreenSpot and three downstream tasks.",
+   "support_explanation": "‘相关性’证据是 checkpoint 级(Fig 6);图中数值未提供(unknown)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E033",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Limitations",
+   "quote": "SeeClick currently simplifies the GUI action space to mainly focus on clicking and typing, excluding complex actions like dragging and double-clicking.",
+   "support_explanation": "动作空间局限。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E034",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Limitations",
+   "quote": "training on agent-specific data is necessary for SeeClick to execute multi-step tasks on interfaces like mobile and computer.",
+   "support_explanation": "多步任务需 agent 专用训练(非零样本)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E035",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "App A.2",
+   "quote": "All training takes around 24 hours on 8 NVIDIA A100 GPUs.",
+   "support_explanation": "预训练成本。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E036",
+   "material_id": "M2",
+   "material_sha256": "a609f7d2e82d6f3708fcfbaa0e2c400ce3a8a4fc1e32889af629f17149a82047",
+   "locator": "App C.1 prompt Box (PDF)",
+   "quote": "User: Please generate the next move according to the",
+   "support_explanation": "v2 PDF(权威补充)中的 App C.1 agent prompt Box(v2 HTML 渲染丢失):<img>Image</img> + 指令 + Previous actions Step1-4 → ‘SeeClick: <next action>’。属 v2 正文内容,计入评分依据。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E037",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "App C.1",
+   "quote": "a series of (k=4 in our setting) previous actions, to predict the next action to be taken.",
+   "support_explanation": "历史=前 k=4 步动作文本;无截图历史/摘要/验证。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E038",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "App A.1 Table 6",
+   "quote": "Web text_2_point 271K text_2_bbox 54K point_2_text 54K bbox_2_text 54K Mobile text_2_point 274K text_2_bbox 56K UI summarization 48K widget captioning 42K General LLaVA 145K Total 1M",
+   "support_explanation": "数据混合成分:grounding 与 OCR/caption/摘要/通用数据混合,未做成分消融。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E039",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "App A.1",
+   "quote": "Our preliminary experiments indicated that predicting points was slightly better than bounding boxes",
+   "support_explanation": "点 vs 框偏好来自未展示的预实验。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E040",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "App B.3",
+   "quote": "SeeClick ’s predictions with points were marginally better than bounding boxes, thus we selected point prediction for final evaluation.",
+   "support_explanation": "在 ScreenSpot 评测上依据点/框结果选择最终输出形式:对测试集有轻度选择。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E041",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "App B.4",
+   "quote": "It’s noteworthy that even incorrect predictions mostly occur near the target bounding box, suggesting the model recognizes the target but needs improvement in fine-grained localization.",
+   "support_explanation": "残余错误偏细粒度定位(Fig 9 数值未读)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E042",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 3.3",
+   "quote": "which possesses grounding capabilities and a higher resolution of 448*448.",
+   "support_explanation": "输入分辨率固定 448×448。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E043",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 5.2.1",
+   "quote": "Pix2Act ( Shaw et al., 2023 ) is the only prior vision-based approach, trained with extensive demonstration data to perform actions.",
+   "support_explanation": "最近邻:Pix2Act(1.3M 演示)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E044",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 5.1",
+   "quote": "(2) Recently released LVLMs specifically designed for GUI tasks, including Fuyu ( Bavishi et al., 2023 ) and CogAgent ( Hong et al., 2023 ) .",
+   "support_explanation": "最近邻:Fuyu、CogAgent(同期 GUI LVLM)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E045",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Table 8",
+   "quote": "Click-checkboxes-large 0.0 0.22 0.99 1.0 0.0 0.02",
+   "support_explanation": "MiniWob 逐任务失败:SeeClick 在 checkboxes-large 等任务近 0。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E046",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "App C.3 / Table 7",
+   "quote": "Auto-UI 68.2 76.9 71.4 84.6 70.3 74.3 CogAgent 65.4 78.9 75.0 93.5 71.1 76.9 SeeClick 67.6 79.6 75.9 84.6 73.1 76.2",
+   "support_explanation": "AITW 原划分上 SeeClick 与 CogAgent/Auto-UI 同量级(76.2 vs 76.9/74.3),作者称原划分过拟合。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E047",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 5.2.1",
+   "quote": "SeeClick notably excelled in tasks with dynamic interface layouts and element positions, confirming our hypothesis that general LVLMs struggle with accurately clicking",
+   "support_explanation": "动态布局任务上的提升支持‘点击精度’假设(Fig 5 图读不到,仅有 Table 8)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E048",
+   "material_id": "M3",
+   "material_sha256": "5331d3d575df699ce5adcc363a192fa4065be8d97ea6fa7089daff2a85f37f84|04dbd75367f04115d161911f9a557920603c4290f6803dcb52ac3c490f882a95",
+   "locator": "Figure 4 (screenspot.png, image)",
+   "quote": null,
+   "support_explanation": "图读取:ScreenSpot 元素数 Mobile 278 text/232 icon,Desktop 198/140,Web 210/151(合计 1209)。",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E049",
+   "material_id": "M3",
+   "material_sha256": "5331d3d575df699ce5adcc363a192fa4065be8d97ea6fa7089daff2a85f37f84|04dbd75367f04115d161911f9a557920603c4290f6803dcb52ac3c490f882a95",
+   "locator": "Figure 2 (framework.png, image)",
+   "quote": null,
+   "support_explanation": "图读取:(a) 多任务预训练→ViT+adapter→LVLM 输出 click(0.49,0.40);移动/网页/通用 VL 三类数据。",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E050",
+   "material_id": "M4",
+   "material_sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+   "locator": "Mind2Web Sec 4 metrics",
+   "quote": "Each step of the task is evaluated independently with the ground truth action history provided.",
+   "support_explanation": "参考文献 Mind2Web 原文:step 指标为带真值历史的离线逐步评测。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E052",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "App C.1",
+   "quote": "TASK COMPLETE and TASK IMPOSSIBLE",
+   "support_explanation": "动作空间含 TASK COMPLETE/TASK IMPOSSIBLE 状态(沿用 AITW)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E051",
+   "material_id": "M1",
+   "material_sha256": "2d81a80772ea69834632584e84af3838602213deff1ddf3f9bfc7c4ace1a9eb2",
+   "locator": "Sec 5.2.2",
+   "quote": "We follow Rawles et al. (2023) to adopt the screen-wise action matching score as the main metric",
+   "support_explanation": "AITW 指标为屏幕级动作匹配(离线)。",
+   "kind": "author_report"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "Qwen-VL-Chat 权重(9.6B LVLM,448×448 输入)的持续预训练数据与目标",
+   "information": "训练时:截图+由 HTML 文本/title 属性、widget caption、RICO 自动元素得到的元素文本与坐标(特权结构信息);推理时仅截图+指令",
+   "operation": "将自动采集的 text_2_point/text_2_bbox/point_2_text/bbox_2_text(网页)与反向 widget caption grounding、UI 摘要(移动)与 LLaVA 数据混为 ~1M 样本,30 个任务 prompt,LoRA(含视觉编码器)训练约 10k step",
+   "output": "文本形式坐标 click(x,y)(两位小数,归一化)",
+   "conditions": "网页来自 ~300k Common Crawl 页面;移动端依赖公开数据集;元素类型受限于可见文本与 title",
+   "feedback": "无环境反馈;监督=HTML/标注派生标签",
+   "selection_rule_data": "未报告采集后的质量过滤、去重或成分选择;点 vs 框来自未展示的预实验并在 ScreenSpot 上择优(E039/E040)",
+   "persistence": "模型权重 SeeClick(基座);随后按下游基准再微调",
+   "later_use": "MiniWob/AITW/Mind2Web 各自 fine-tune;另有联合训练实验(Table 5)",
+   "claimed_effect": "ScreenSpot 平均点击准确率 53.4%(Qwen-VL 5.2%,CogAgent 47.4%),并带动下游提升",
+   "failure_boundary": "icon/widget 与桌面弱;分辨率 448;文本 grounding 弱于 CogAgent;元素覆盖受限于 HTML 可见文本/title",
+   "evidence_ids": [
+    "E004",
+    "E005",
+    "E006",
+    "E007",
+    "E008",
+    "E009",
+    "E010",
+    "E038",
+    "E042"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "ScreenSpot 评测集(跨 iOS/Android/macOS/Windows/Web 的 grounding 基准)",
+   "information": "截图+指令→目标元素 bbox;标注者为 4 名 CS 研究生;文本/图标分类",
+   "operation": "point-in-bbox 点击准确率,按平台与文本/图标分层统计",
+   "output": "click accuracy(Table 1)",
+   "conditions": "单步静态,无规划/执行",
+   "feedback": "none",
+   "selection_rule_data": "作者声称样本新、不在现有训练资源中;未报告审计",
+   "persistence": "公开基准",
+   "later_use": "后续 grounder 论文比较(current_relevance,非本文证据)",
+   "claimed_effect": "暴露 GUI 对 icon/widget 的弱点,衡量预训练效果",
+   "failure_boundary": "仅英文、静态单步、无拒答项;一致性未报告",
+   "evidence_ids": [
+    "E014",
+    "E015",
+    "E016",
+    "E048"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "下游视觉 agent(截图+指令+前 4 步动作文本→下一步动作)",
+   "information": "当前截图、指令、k=4 个历史动作文本;无 HTML/a11y",
+   "operation": "在各基准训练集上微调 SeeClick/Qwen-VL(MiniWob 2.8K 轨迹、AITW instruction-wise 划分、Mind2Web 裁剪截图)",
+   "output": "click/type/select/swipe/PRESS_*/TASK_COMPLETE/TASK_IMPOSSIBLE 动作",
+   "conditions": "MiniWob 最多 30 个动作;Mind2Web 离线带真值历史",
+   "feedback": "无在线反馈用于训练(监督微调)",
+   "selection_rule_data": "无",
+   "persistence": "每基准独立 checkpoint",
+   "later_use": "各基准评测",
+   "claimed_effect": "MiniWob 67.0/73.6、AITW 59.3、Mind2Web Step SR ~20.9 均高于 Qwen-VL",
+   "failure_boundary": "动作空间局限、统一联合训练略降、Mind2Web 落后 HTML 方法",
+   "evidence_ids": [
+    "E019",
+    "E022",
+    "E025",
+    "E027",
+    "E031",
+    "E033",
+    "E036",
+    "E037",
+    "E052"
+   ]
+  }
+ ],
+ "retention_trace": {
+  "applicable": false,
+  "reason": "静态组件训练论文,无 retained/自我改进闭环;不编造 before→selection→persistence→later-tasks 链,持久化(权重)与后续使用见 signatures。"
+ },
+ "gap": {
+  "author_gap": "既有 GUI agent 依赖 HTML/DOM/VH 等结构化文本:不总可得(iOS/桌面)、冗长且缺布局/图标信息、形式异构;而现有 LVLM 缺乏 GUI grounding。",
+  "checked_gap": "grounding 缺口真实(基座 5.2%、GPT-4V 16.2%);‘结构化文本不可得’成立于桌面/iOS;‘grounding 是下游 agent 的关键瓶颈’仅被相关性与 SeeClick vs Qwen-VL 对照部分支持,未隔离。",
+  "lineage": [
+   {
+    "ancestor": "Pix2Act(截图-only,1.3M 演示)",
+    "relation": "最近邻/祖先",
+    "source": "SeeClick Sec 5.2.1 自述,原文不在共享引用集",
+    "version": "n/a",
+    "availability": "unresolved"
+   },
+   {
+    "ancestor": "CogAgent(18B,高分辨率 GUI 预训练)",
+    "relation": "最近邻(同期)",
+    "source": "SeeClick Table 1 自述数据,原文不在共享引用集",
+    "version": "n/a",
+    "availability": "unresolved"
+   },
+   {
+    "ancestor": "Fuyu / WebGUM / MindAct(Mind2Web)",
+    "relation": "对照",
+    "source": "SeeClick Table 1/2/4;Mind2Web 原文在共享引用集(2306.06070)",
+    "version": "n/a",
+    "availability": "partial"
+   },
+   {
+    "ancestor": "Qwen-VL(基座)",
+    "relation": "直接祖先",
+    "source": "SeeClick Sec 3.3",
+    "version": "n/a",
+    "availability": "paper-only"
+   }
+  ],
+  "closest_adjacent": "CogAgent:同为 GUI 专用 LVLM,18B、1120 级高分辨率,在桌面/网页文本 grounding 更强(E012/E018);Pix2Act:截图-only 但依赖 1.3M 演示。SeeClick 以 9.6B + 1M 自动数据解决‘小模型缺 grounding’,未解决高分辨率与图标细粒度。",
+  "residue": "icon/widget(30–52%)、桌面/网页文本弱于 CogAgent、细粒度定位、动作空间(拖拽/双击)、多步需 agent 专用训练;真实在线任务无成功率。",
+  "stakes": "桌面/iOS 无结构化文本时只能靠截图 grounding;ScreenSpot 暴露的 icon 残差是后续工作的核心瓶颈。",
+  "method_response": "用 HTML/标注自动派生的大规模 grounding 数据持续预训练 LVLM,并发布 ScreenSpot 衡量。",
+  "remaining_gap": "grounding 贡献未与其他预训练成分分离;分辨率/数据规模与 CogAgent 的差异;在线真实环境成功率;Fig 6 相关性数值未核。",
+  "current_relevance": "后续工作(未读入本批材料)以 ScreenSpot 为 grounding 评测常用基线,不用于反推本文发表时的问题位置。",
+  "evidence_ids": [
+   "E003",
+   "E011",
+   "E013",
+   "E017",
+   "E018",
+   "E043",
+   "E044"
+  ],
+  "unresolved": [
+   "CogAgent/Pix2Act 原文未在共享引用集,谱系仅凭 SeeClick 自述核对;空检索不代表新颖性。"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "self_supervised_signal_engineering",
+  "supporting": [
+   "controlled_diagnostic_design"
+  ],
+  "outside_taxonomy": false,
+  "matches": [
+   {
+    "main_id": "self_supervised_signal_engineering",
+    "sub_id": "rs:C08",
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "1 binding constraint is the corpus not the learner (diagnose)": "partial — Table 1 显示基座 5.2% 与 GPT-4V 16.2%,说明缺 GUI grounding 监督;但未排除‘更便宜的非生成式补救’(只做了下游微调对照,E019)",
+     "2 controllable generator reaching under-covered region": "partial — 无生成器;用 HTML 可见文本/title 与反向 widget caption 的‘逆映射(artifact→指令)’自动获得监督(E004/E005),覆盖网页/移动两域",
+     "3 one load-bearing filter": "missing — 未报告质量过滤/curation 阶段",
+     "4 retrain on filtered, iterate": "missing — 单次预训练,无迭代、无学习者反馈回流",
+     "5 close the gap to real target and compare cheaper baselines": "partial — 有下游迁移与 Qwen-VL 对照(E019/E025/E027),无数据成分/规模消融(E038)"
+    },
+    "success_checks": {
+     "filter removal breaks method": "unmet(无 filter)",
+     "mechanistic diagnosis of what proxy must correct": "partial(E011/E041)",
+     "intervention-validated causal link": "unmet(E032/E038)"
+    },
+    "failure_checks": {
+     "intermediate property shown but not tied to downstream objective": "not triggered(下游有测量,E019)",
+     "isolating baselines missing": "partially triggered(无成分消融)",
+     "swap-one-component thin wrapper": "partially applicable(数据来源与预训练 recipe 在当时较新,但无独立识别结构的分析)"
+    },
+    "evidence_ids": [
+     "E004",
+     "E005",
+     "E006",
+     "E011",
+     "E019",
+     "E038"
+    ],
+    "reason": "论文实际执行的操作是:在缺 GUI grounding 标注时,利用 HTML 结构/既有 caption 数据自动制造监督并持续预训练。这与原卡‘Manufacture the supervisory signal’的定义(缺真值标签→制造训练信号)及 C08 的‘inverse (artifact→specification) mapper’最接近;差异:信号来源是 DOM/标注而非模型自身输出,且无 C08 要求的质量闸门与迭代,所以 fit=partial,不加分。与 C07(内部状态读数、冻结骨干)、C26(偏好/奖励)不同。"
+   },
+   {
+    "main_id": "controlled_diagnostic_design",
+    "sub_id": null,
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "name one confound & isolate": "partial — ScreenSpot 把‘定位’与规划/执行分离为单步静态测量,并分文本/图标/平台;但未对单一混杂变量做受控变化(C02 步骤 2 未执行)",
+     "independent ground truth": "partial — 人工 bbox 标注独立于被评模型,但 4 名标注者无一致性审计",
+     "report divergence as headline": "met — 暴露 GPT-4V/Qwen-VL 在 GUI 与自然图像 grounding 的巨大差距(E011/E013)"
+    },
+    "success_checks": {
+     "trivial/null baselines": "partial(通用 LVLM 作下限)"
+    },
+    "failure_checks": {
+     "confirmatory only": "not triggered(首个跨平台 grounding 基准的新测量)",
+     "narrow scope with broad claims": "partially triggered(单步英文基准,主张延及下游)"
+    },
+    "evidence_ids": [
+     "E010",
+     "E011",
+     "E013",
+     "E014",
+     "E016"
+    ],
+    "reason": "ScreenSpot 是不同于数据采集的第二种操作(构建仪器),使‘grounding 能力’可单独度量;未对混杂变量做受控变化,故不指定 C02 子卡,fit=partial。"
+   }
+  ],
+  "considered_not_selected": [
+   {
+    "main_id": "unify_into_shared_representation",
+    "sub": "rs:C18",
+    "why": "坐标以文本生成、一模型跨平台(E009/E031)形式上相近,但接口是沿用 Qwen-VL 的现成表示,未独立验证接口贡献、也无统一 vs 单任务以外的消融;统一训练反而略降(E031),故不选。"
+   }
+  ],
+  "reason": "原卡层:primary=self_supervised_signal_engineering(partial);supporting=controlled_diagnostic_design(partial,ScreenSpot)。匹配不加分。",
+  "executes_pattern": {
+   "value": "partial",
+   "reason": "执行了‘自动制造 grounding 监督→持续预训练’,缺 filter/迭代/成分隔离。",
+   "evidence_ids": [
+    "E004",
+    "E005",
+    "E038"
+   ]
+  },
+  "resolves_problem": {
+   "value": "partial",
+   "reason": "ScreenSpot 5.2→53.4 关闭了‘LVLM 完全不会 GUI grounding’,但 icon/桌面/细粒度残差仍大、真实网站离线 Step SR(20.9)显著低于 HTML 方法,不能称问题已解决。",
+   "evidence_ids": [
+    "E010",
+    "E017",
+    "E027",
+    "E028",
+    "E029"
+   ]
+  }
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "planner_grounder_interface",
+    "sub": "C04",
+    "version": "taxonomy_sha256:430aa362…",
+    "fit": "strong",
+    "condition_checks": [
+     {
+      "id": "S3",
+      "kind": "success",
+      "name": "Grounding data from rendered structure, mixed and multi-level",
+      "status": "partial",
+      "evidence_ids": [
+       "E004",
+       "E005",
+       "E038"
+      ],
+      "note": "元素框来自 HTML/标注,混合 web+mobile;无 curation(丢静态文本/均衡采样)报告。"
+     },
+     {
+      "id": "S2",
+      "kind": "success",
+      "name": "Screenshot-only grounder at dynamic high resolution",
+      "status": "partial",
+      "evidence_ids": [
+       "E001",
+       "E042"
+      ],
+      "note": "仅截图(met),但固定 448×448 非动态高分辨率(unmet)。"
+     },
+     {
+      "id": "S4",
+      "kind": "success",
+      "name": "Unified cross-platform action space",
+      "status": "partial",
+      "evidence_ids": [
+       "E033",
+       "E031",
+       "E052"
+      ],
+      "note": "沿用 AITW/Mind2Web 动作定义,联合训练略降。"
+     },
+     {
+      "id": "S1",
+      "kind": "success",
+      "name": "Grounder value shown with a fixed strong planner",
+      "status": "unknown",
+      "evidence_ids": [],
+      "note": "本文无 planner-grounder 拆分;不适用于此论文主张。"
+     },
+     {
+      "id": "F4",
+      "kind": "failure",
+      "name": "Data returns diminish on long-tail icons",
+      "status": "observed",
+      "evidence_ids": [
+       "E010",
+       "E017",
+       "E041"
+      ],
+      "note": "icon/widget 仍为 30–52%;未做数据规模曲线。"
+     },
+     {
+      "id": "F2",
+      "kind": "failure",
+      "name": "Ambiguity and refusal unhandled",
+      "status": "observed",
+      "evidence_ids": [
+       "E014"
+      ],
+      "note": "ScreenSpot 无拒答/不可行项。"
+     },
+     {
+      "id": "F3",
+      "kind": "failure",
+      "name": "Claims on saturated grounding benchmarks only",
+      "status": "not_observed",
+      "evidence_ids": [
+       "E010"
+      ],
+      "note": "ScreenSpot v1 当时未饱和(53.4%);未观察到不等于避免。"
+     }
+    ],
+    "evidence_ids": [
+     "E004",
+     "E005",
+     "E009",
+     "E010",
+     "E038"
+    ],
+    "reason": "操作与 C04 完全对应:无人工标注地从 DOM/captions 采集 (截图, 指代文本, 点/框) 三元组,以文本坐标持续预训练 VLM,推理仅用像素。"
+   },
+   {
+    "main": "online_evaluation_methodology",
+    "sub": "C26",
+    "version": "taxonomy_sha256:430aa362…",
+    "fit": "strong",
+    "condition_checks": [
+     {
+      "id": "S1",
+      "kind": "success",
+      "name": "Validated, de-shortcut task set",
+      "status": "partial",
+      "evidence_ids": [
+       "E015",
+       "E016"
+      ],
+      "note": "声称新颖且非训练资源;无审计/一致性。"
+     },
+     {
+      "id": "F6",
+      "kind": "failure",
+      "name": "Small human-judged live sets or single-reference static proxies",
+      "status": "observed",
+      "evidence_ids": [
+       "E014",
+       "E026"
+      ],
+      "note": "单步静态基准,点-in-框忽略近失;约 1.2k 条英文样本。"
+     }
+    ],
+    "evidence_ids": [
+     "E014",
+     "E016",
+     "E048"
+    ],
+    "reason": "ScreenSpot 即‘按平台与文本/图标分层、以点是否落入框打分’的单步点击基准。"
+   },
+   {
+    "main": "online_evaluation_methodology",
+    "sub": "C23",
+    "version": "taxonomy_sha256:430aa362…",
+    "fit": "weak",
+    "condition_checks": [
+     {
+      "id": "S6",
+      "kind": "success",
+      "name": "Offline and static proxies made multi-reference and checked against online",
+      "status": "unmet",
+      "evidence_ids": [
+       "E026",
+       "E050"
+      ],
+      "note": "AITW/Mind2Web 为单参考离线匹配;AITW 重划分为 instruction-wise(E024),但未多参考也未与在线对照;MiniWob 为唯一在线。"
+     }
+    ],
+    "evidence_ids": [
+     "E024",
+     "E025",
+     "E026",
+     "E050"
+    ],
+    "reason": "本文主要是使用离线 step 评测(AITW、Mind2Web),仅 AITW instruction-wise 重划分属评测设计改动;不作为主要匹配。"
+   }
+  ],
+  "unassigned": [],
+  "secondary_candidates": [],
+  "revision_proposals": [
+   {
+    "note": "领域卡 C04/C26 的 sources 含本文(2401.10935#s1/#s2/#s4),卡片由本文推导,匹配度高有循环性;本席匹配均按自己的阅读复核,未采信卡片内的数值。",
+    "status": "proposal_unchecked"
+   }
+  ]
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "self_supervised_signal_engineering",
+   "rs_sub": "rs:C08",
+   "domain": {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "C04"
+   },
+   "operation_correspondence": "RS C08 的‘逆映射(artifact→specification)+数据工厂’对应 gui:C04 的‘从 DOM/captions 采集元素-框对并持续预训练’:对象=训练数据,信号=HTML 派生标签。",
+   "required_conditions_and_differences": "RS C08 要求质量闸门与迭代;本文缺(无 filter)。gui:C04 不要求此项,所以对领域卡 fit 更强而对原卡仅 partial。映射不是字符串翻译:信号来自结构特权信息而非模型自身。",
+   "evidence_ids": [
+    "E004",
+    "E005",
+    "E038"
+   ]
+  },
+  {
+   "rs_main": "controlled_diagnostic_design",
+   "rs_sub": null,
+   "domain": {
+    "namespace": "gui",
+    "main": "online_evaluation_methodology",
+    "sub": "C26"
+   },
+   "operation_correspondence": "RS 诊断卡‘把被测能力与混杂分离的仪器’对应 gui:C26 的单步点击基准:grounding 与规划/执行分离。",
+   "required_conditions_and_differences": "未对单一混杂做受控变量变化,仅分层;故原卡只 partial。",
+   "evidence_ids": [
+    "E014",
+    "E016"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E03",
+   "version": "profile expectations.json sha 4663f2b4…",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2307.13854#s2(profile)"
+   ],
+   "applies_when": "a claim that a training/planning method improves a web agent on self-hosted sites",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "声称改进 web agent,但在线结果只有 MiniWob(合成)、Mind2Web 为离线;无 WebArena 结果。期望源自后续实践,权重低。",
+   "evidence_ids": [
+    "E019",
+    "E027",
+    "E050"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E15",
+   "version": "profile sha 4663f2b4…",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "profile E15"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": true,
+   "status": "partial",
+   "reason": "AITW/Mind2Web 是离线 step 指标;另有 MiniWob 在线成功率(合成简化环境),但真实网站/移动端无在线成功率,也无离线-在线预测关系。",
+   "evidence_ids": [
+    "E019",
+    "E025",
+    "E026",
+    "E027"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E16",
+   "version": "profile sha 4663f2b4…",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "profile E16"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark where sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "MiniWob 每任务 50 个随机种子(E021),但为单次训练、单模型;无重复运行方差/CI。",
+   "evidence_ids": [
+    "E021"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "profile sha 4663f2b4…",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "profile E17"
+   ],
+   "applies_when": "a comparison where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "SeeClick 自身 MiniWob 上限 30 动作(App C.2),但基线数值取自各自论文(E021 同段),其步数上限是否一致未核。",
+   "evidence_ids": [
+    "E021"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E21",
+   "version": "profile sha 4663f2b4…",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "profile E21"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": true,
+   "status": "partial",
+   "reason": "表中按 Modality 区分 Image 与 HTML+Image(Table 2/4),但无同骨干的 a11y/DOM 增强对照;Mind2Web 观测还有真值位置裁剪(E030)。",
+   "evidence_ids": [
+    "E020",
+    "E028",
+    "E030"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E25",
+   "version": "profile sha 4663f2b4…",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "profile E25"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "ScreenSpot 无不可行/歧义指令;动作空间含 TASK IMPOSSIBLE 但未评测。",
+   "evidence_ids": [
+    "E014",
+    "E052"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E27",
+   "version": "profile sha 4663f2b4…",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "profile E27"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding data improves agents",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "作者给出 checkpoint 级‘grounding↔下游’相关图 Fig 6,但图数值读不到;无按数据量的缩放曲线。",
+   "evidence_ids": [
+    "E032"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E05",
+   "version": "profile sha 4663f2b4…",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "profile E05"
+   ],
+   "applies_when": "a claim that a model or recipe improves screenshot-to-coordinate grounding",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "ScreenSpot-v2/Pro 是本文所引入 ScreenSpot 的后继;要求针对‘v1 已饱和’的情形,本文发表时 53.4% 远未饱和,不据此扣分。",
+   "evidence_ids": [
+    "E010"
+   ],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "profile sha 4663f2b4…",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "profile E06"
+   ],
+   "applies_when": "a claim that a grounding model beats prior GUI grounders",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "UGround/Aguvis/OS-Atlas/UI-TARS 为后续系统;本文与同期 CogAgent、Fuyu、GPT-4V 比较(E010–E013)。",
+   "evidence_ids": [
+    "E012"
+   ],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "profile sha 4663f2b4…",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "profile E02"
+   ],
+   "applies_when": "a claim of improved mobile-agent task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "AndroidWorld(arXiv 2405)晚于本文 v2(2024-02);离线 AITW 的问题由 E15 另行记录,避免重复扣分。",
+   "evidence_ids": [
+    "E025"
+   ],
+   "score_item": null
+  },
+  {
+   "id": "core-E05",
+   "version": "patterns card text (not in profile file)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "patterns/main/planner_grounder_interface.md"
+   ],
+   "applies_when": "next-action prediction on cached Mind2Web pages",
+   "applicable": true,
+   "status": "partial",
+   "reason": "报告了 Ele.Acc/Op.F1/Step SR 三划分并含 MindAct/GPT 基线(E027/E028);SeeAct 为同期未比。",
+   "evidence_ids": [
+    "E027",
+    "E028"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "core-E13",
+   "version": "patterns card text (not in profile file)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "patterns/main/planner_grounder_interface.md"
+   ],
+   "applies_when": "a claim about the action/output representation of a GUI policy (coordinates vs element ids)",
+   "applicable": true,
+   "status": "partial",
+   "reason": "与 HTML 候选选择的 MindAct 比较显示坐标落后(E028/E029),作者如实承认,未做同骨干 coordinate-vs-id 对照。",
+   "evidence_ids": [
+    "E028",
+    "E029"
+   ],
+   "score_item": "E.causality"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "GUI grounding 持续预训练使 ScreenSpot 点击准确率大幅提高(53.4% vs Qwen-VL 5.2%,>CogAgent 47.4%,GPT-4V 16.2%)。",
+   "setting": "零样本 ScreenSpot;基线按官方推荐提示;单次评测",
+   "baseline_control": "Qwen-VL(基座)、CogAgent、Fuyu、GPT-4V、MiniGPT-v2",
+   "selection_vs_test": "未用 ScreenSpot 训练;点/框输出形式在 ScreenSpot 上择优(E040);‘不在训练资源’为声明",
+   "result_denominator": "~1209 项(E048 图读);按平台/文本-图标分层给出,无区间",
+   "evidence_ids": [
+    "E010",
+    "E011",
+    "E012",
+    "E013",
+    "E040",
+    "E048"
+   ],
+   "counterevidence": [
+    "E018",
+    "E017"
+   ],
+   "allowed_conclusion": "在作者构建的 ScreenSpot 上,SeeClick 的单步点击准确率显著高于列出的基线;桌面/网页文本弱于 CogAgent,icon 仍弱。"
+  },
+  {
+   "claim_id": "C2",
+   "text": "预训练在下游 MiniWob/AITW/Mind2Web 上提升同数据微调后的 agent 表现。",
+   "setting": "每基准单独微调;MiniWob 2.8K 轨迹(同任务分布),AITW instruction-wise 自划分,Mind2Web 裁剪截图离线",
+   "baseline_control": "Qwen-VL 同下游数据",
+   "selection_vs_test": "MiniWob 测试种子与训练任务同分布(E022);AITW 为作者重划分(E024);Mind2Web 裁剪用了目标位置(E030)",
+   "result_denominator": "MiniWob 35/45/55 任务×50 种子;AITW 5 子集;Mind2Web 三划分;均单次",
+   "evidence_ids": [
+    "E019",
+    "E025",
+    "E027",
+    "E031"
+   ],
+   "counterevidence": [
+    "E030",
+    "E022",
+    "E026"
+   ],
+   "allowed_conclusion": "同架构同下游数据下,GUI 预训练的 SeeClick 在三个基准的作者测量上都高于 Qwen-VL;MiniWob 为在线判定,AITW/Mind2Web 为离线 step 指标。"
+  },
+  {
+   "claim_id": "C3",
+   "text": "纯视觉 SeeClick 用不到 0.3% 训练数据超过 Pix2Act。",
+   "setting": "MiniWob 重叠 35 任务",
+   "baseline_control": "Pix2Act 1.3M 演示",
+   "selection_vs_test": "基线数值取自原论文",
+   "result_denominator": "67.0% vs 64.6%(Table 2)",
+   "evidence_ids": [
+    "E019",
+    "E023"
+   ],
+   "counterevidence": [
+    "E023"
+   ],
+   "allowed_conclusion": "仅在下游训练数据量上更少;总数据/预训练预算不同,不是预算匹配比较;差值仅 2.4 个点且无方差。"
+  },
+  {
+   "claim_id": "C4",
+   "text": "grounding 能力提升与下游 agent 性能提升‘直接相关’,是下游提升的关键。",
+   "setting": "若干 checkpoint 的 ScreenSpot 与三基准平均改进(Fig 6)",
+   "baseline_control": "无成分消融",
+   "selection_vs_test": "checkpoint 来自同一训练轨迹",
+   "result_denominator": "Fig 6 数值读不到(unknown)",
+   "evidence_ids": [
+    "E002",
+    "E032"
+   ],
+   "counterevidence": [
+    "E038",
+    "E018"
+   ],
+   "allowed_conclusion": "SeeClick vs Qwen-VL 两点对照与 checkpoint 级相关一致,但相关≠因果,且预训练混合含非 grounding 数据;‘key’宜降为‘与之相关’。"
+  },
+  {
+   "claim_id": "C5",
+   "text": "视觉-only 可与文本方法竞争。",
+   "setting": "MiniWob/Mind2Web",
+   "baseline_control": "WebGUM、MindAct、GPT-3.5/4",
+   "selection_vs_test": "—",
+   "result_denominator": "MiniWob 73.6 vs WebGUM-2.8K 65.5(45 任务),但 WebGUM-347K 86.1;Mind2Web Step SR 20.9 vs MindAct ~43",
+   "evidence_ids": [
+    "E020",
+    "E027",
+    "E028",
+    "E029"
+   ],
+   "counterevidence": [
+    "E020",
+    "E028",
+    "E029"
+   ],
+   "allowed_conclusion": "在少量训练数据设定下 MiniWob 超过同量 WebGUM,但整体仍落后全量 WebGUM 与 MindAct;作者已承认。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_note": "MiniWob 为环境内可执行判定的可交互基准(合成简化环境,且与训练同任务分布),因此最高到 online,不到 transfer;ScreenSpot/AITW/Mind2Web 为 offline。",
+  "claim_support": "scoped",
+  "author_claim": "GUI grounding 预训练使视觉 GUI agent 成为可能,且 grounding 提升与下游 agent 性能直接相关(‘key’)。",
+  "strongest_supported_claim": "在作者报告的单次评测中,对 Qwen-VL 做 ~1M 自动采集的 GUI grounding(含 OCR/摘要/通用数据)混合预训练,显著提高 ScreenSpot 点击准确率(5.2→53.4),并使同数据微调后的下游 MiniWob/AITW/Mind2Web 指标普遍高于未预训练基线。",
+  "still_unsupported": [
+   "grounding 数据本身(而非混合中的其他成分)是下游提升的原因",
+   "真实网站/应用的在线任务成功",
+   "Fig 6 的相关性强度",
+   "对 CogAgent 的优势与分辨率/规模的解耦"
+  ],
+  "unresolved": [
+   "Fig 5/6/9 图中数值无法核对(未提供 fulltext-figs)"
+  ],
+  "reproduction": "作者报告,非我们复现。"
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "gap 具体且有来源:结构化文本不可得/冗长/异构(E003),且 LVLM 缺 GUI grounding(基座 Qwen-VL 5.2%、GPT-4V 16.2% ScreenSpot,E011/E013)。残余瓶颈已写明(icon/widget、桌面、细粒度定位,E017/E041/E033)。最近邻 Pix2Act/CogAgent/Fuyu/WebGUM/Mind2Act 在文中定位清楚(E043/E044)。但:CogAgent 与 Pix2Act 原文不在共享 17 篇引用集,谱系只按 SeeClick 自述核对;‘grounding 是关键瓶颈’的前提靠相关性而非隔离实验支持,CogAgent 在文本 grounding 上更强提示分辨率可能同样是瓶颈(E018)。故 3 而非 4。",
+   "evidence_ids": [
+    "E003",
+    "E011",
+    "E013",
+    "E017",
+    "E041",
+    "E043",
+    "E044"
+   ],
+   "counterevidence_ids": [
+    "E018"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "操作-信息-假设可重建:以 HTML 文本/title 元素与反向 widget caption 构造 (screenshot, 指令, 点/框) 监督,坐标以文本生成,持续预训练 Qwen-VL(E004-E009),推理仅截图(E001)。与朴素替代(仅用下游数据微调 Qwen-VL)有可区分预测并被检验(E019/E025/E027)。但 grounding 数据 vs OCR/caption/摘要/LLaVA 数据的贡献未拆分(E038),点优于框的论证来自未展示的预实验(E039),输入分辨率限制(E042)与文本 grounding 的关系只是猜测(E018)。",
+   "evidence_ids": [
+    "E004",
+    "E005",
+    "E009",
+    "E019",
+    "E025",
+    "E027",
+    "E038"
+   ],
+   "counterevidence_ids": [
+    "E039",
+    "E042"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "静态/组件训练论文,按自身主张评价:数据构成与规模(Table 6,E038)、训练配置(E007/E008/E035)、动作空间与 agent prompt 模板(E036 为 v2 PDF 权威补充的 App C.1 Box,E037/E052)、下游每基准的训练划分均可重建。缺口:网页元素抽取后的过滤/去重/采样规则未述(无 curation 阶段);无错误恢复/历史压缩/验证器(仅 4 步动作文本历史);动作空间局限(E033),多步任务需 agent 专用训练(E034),联合训练略降(E031)。生效条件与迁移边界部分清楚。",
+   "evidence_ids": [
+    "E007",
+    "E008",
+    "E035",
+    "E036",
+    "E037",
+    "E038",
+    "E052"
+   ],
+   "counterevidence_ids": [
+    "E031",
+    "E033",
+    "E034"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "ScreenSpot 为 point-in-bbox 的人工标注 grounding 评测(E014),对比基线用官方推荐提示(App B.3)。MiniWob 为环境内可执行判定(E021)。缺口:ScreenSpot 仅 4 名标注者、无一致性/错误审计,‘不在训练资源中’只是声明(E015/E016),点/框形式在 ScreenSpot 上择优(E040);AITW 与 Mind2Web 是离线单参考 step 匹配,会把合法替代路径计错(E026/E050),且 Mind2Web 观测按真值目标位置裁剪(E030),使其与 HTML 基线的数值不严格可比。真实网站/移动端无在线成功率。",
+   "evidence_ids": [
+    "E014",
+    "E021",
+    "E026",
+    "E050"
+   ],
+   "counterevidence_ids": [
+    "E015",
+    "E016",
+    "E030",
+    "E040"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "有关键对照:同架构同下游数据下,Qwen-VL 与 SeeClick 之差隔离了 GUI 预训练的总体效应(MiniWob 48.4→67.0,AITW 54.3→59.3,Mind2Web Step SR 约 12.0→20.9,E019/E025/E027/E031)。缺口:预训练混合(grounding、web OCR、widget caption、UI 摘要、LLaVA,E038)未做成分消融,‘grounding 才是关键’属推断;‘提升与 grounding 相关’的 checkpoint 相关图 Fig 6 数值读不到(E032,unknown),且 checkpoint 级相关不等于因果;分辨率/数据量与 CogAgent 的混杂未拆(E018)。",
+   "evidence_ids": [
+    "E019",
+    "E025",
+    "E027",
+    "E031"
+   ],
+   "counterevidence_ids": [
+    "E032",
+    "E038",
+    "E018"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "ScreenSpot 含预训练未见的 iOS/桌面平台(E014,作者称);Mind2Web 有 cross-task/website/domain 三划分且数值依次变差(E027),说明确有未见域;AITW 作者重划为 instruction-wise 以避免指令泄漏(E024)。缺口:MiniWob 测试种子与训练轨迹同任务(E022),属于分布内;ScreenSpot 非污染仅靠声明(E015),也未审计 Qwen-VL 预训练/Common Crawl 与测试站点的重叠;ScreenSpot 输出形式选择用了测试集结果(E040);无在线真实站点/应用的未见环境成功率,evidence_level 最高到 online(合成 MiniWob)。",
+   "evidence_ids": [
+    "E014",
+    "E024",
+    "E027"
+   ],
+   "counterevidence_ids": [
+    "E015",
+    "E022",
+    "E040"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "单次训练/单模型,未报告重复训练、置信区间或方差(跨种子仅 MiniWob 每任务 50 个任务实例,E021)。ScreenSpot 分母(总 1209 项,E048 图读)按平台/文本-图标分层给出,但无区间。失败分析仅有定性案例与 Fig 9 距离分布(数值未读,E041)。Mind2Web/AITW 为单一数值。",
+   "evidence_ids": [
+    "E021",
+    "E048"
+   ],
+   "counterevidence_ids": [
+    "E041"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "报告训练成本(8×A100 约 24h,10k step,LoRA,E007/E035)、参数量(9.6B vs CogAgent 18B,E010/E012)与数据量(Table 6)。缺口:‘用不到 0.3% 数据超过 Pix2Act’只算了下游训练数据,忽略 Qwen-VL 自身预训练与 1M GUI 预训练,不是预算匹配比较(E023);未报告推理延迟/每任务成本。",
+   "evidence_ids": [
+    "E007",
+    "E035",
+    "E010",
+    "E012"
+   ],
+   "counterevidence_ids": [
+    "E023"
+   ],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 63.75,
+  "display": 63.8,
+  "lower": 63.75,
+  "upper": 63.75,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+ },
+ "status": "reviewed",
+ "status_reason": "按 manifest 绑定的 v2 HTML(r2)全文(含附录)已通读,另读总控更正补充 PDF 与 2 张图;Fig 5/6/9 图内数值读不到,相关结论保持 unknown/scoped。App C.1 prompt Box 取自总控终版 v2 PDF 补充,已计入 X 的依据。",
+ "contamination": "未读另一席/Opus/旧分数/旧 Reel/archive;领域卡 sources 含本文自身(循环性已在 revision_proposals 标注)。"
+}

@@ -1,0 +1,1336 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p4",
+  "attempt_id": "a4",
+  "seat": "sol",
+  "supersedes_note": "a3 material-premise overruled per REQ-2310.04716-1",
+  "supersedes": {
+    "attempt_id": "a3",
+    "reason": "Material premise only supplied by controller; no earlier seat record read."
+  },
+  "paper": {
+    "paper_key": "2310.04716",
+    "paper_id": "2310.04716",
+    "title": "Reinforced UI Instruction Grounding: Towards a Generic UI Task Automation API",
+    "version": "2310.04716v1",
+    "claim_type": "component_training",
+    "central_claim": "A metadata-free screenshot-and-instruction Swin/BART pixel-to-sequence grounder gains spatial grounding accuracy by jointly supervising coordinate-value tokens with bbox IoU policy gradients in addition to token CE, beating same-architecture baselines and contemporary UI grounders and showing potential as a generic UI task automation API."
+  },
+  "provenance": {
+    "input_hash": "93d0dafbc452f91483228d9ad53bd5dcd7df4a98d3d7bdf6af2905c87de6b1ca",
+    "rubric_version": "v2.2; run-frozen with anchor_clarification_r1",
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+    "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+    "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+    "pattern_protocol_hash": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373",
+    "anchor_clarification_hash": "45088cbc445ddc4f1a6aa2d454f4093919e51d3ef920c2436757501b85cb1a76",
+    "model_type": "sonnet",
+    "actual_model": "gpt-6.1-sol",
+    "session_id": null,
+    "receipt_ref": null,
+    "unavailable_reason": "Actual model is environment self-report; SDK session/receipt IDs not exposed. No model probe performed.",
+    "timestamp": "2026-10-22T03:05:10.253992+00:00",
+    "blindness": "Only assigned paper, fixed rules/cards, manifest, calibration protocol, and permitted REQ field were read. No other seat, previous own attempts, other batches, or aggregate ratings were read.",
+    "adjudication_applied": "REQ-2310.04716-1: supplementary=A–E complete; omissions not_reported; same-architecture central comparison; inherited MoTIF split; source table-number errors; author-cited originals nonblocking."
+  },
+  "materials": [
+    {
+      "material_id": "RUIG-v1",
+      "url": "https://arxiv.org/html/2310.04716v1",
+      "version": "2310.04716v1",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2310.04716.txt",
+      "sha256": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "sections_read": [
+        "Abstract",
+        "§1",
+        "§2.1–2.3",
+        "§3.1–3.3, Eqs1–3",
+        "§4.1–4.4, Tables1–5 and figure captions/discussion",
+        "§5",
+        "References",
+        "Appendix A",
+        "Appendix B Table6 and Figure3 discussion",
+        "Appendix C–E"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "reading_note": "Read deduplicated body L96–556 incl all appendices; duplicated flattened HTML blocks L78–94 are not additional sections. Figure claims rely on text/captions, not independent inspection of embedded image pixels. Published A–E accepted as supplementary per ruling."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E01",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L114",
+      "quote": "These methods requires the metadata",
+      "support_explanation": "作者定位既有 UI grounding 依赖 metadata/候选框的部署约束；不是对所有既有方法的独立检索结论。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E02",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L124",
+      "quote": "the model has no awareness of the combinational semantics for a set of tokens.",
+      "support_explanation": "作者将 token CE 与 bbox 几何目标的不匹配作为方法瓶颈；这是动机而非表征不可能性定理。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E03",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L186",
+      "quote": "The decoder predicts the bounding box coordinates of the target UI element in an autoregressive way",
+      "support_explanation": "输入截图与指令，输出四坐标及格式 token，不需要测试时 metadata。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E04",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L220",
+      "quote": "the decoding is autoregressive and the inverse tokenization is not differentiable.",
+      "support_explanation": "直接对解码坐标 IoU 反传存在离散瓶颈，采用期望奖励的 policy gradient。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E05",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L227",
+      "quote": "All tokens in 𝒟 𝒚 n \\mathcal{D}_{\\bm{y}_{n}} share the same reward value.",
+      "support_explanation": "坐标 token 共享 bbox IoU；其余 token 的 RL reward 为零，最终 CE+PG 联合训练。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E06",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L238",
+      "quote": "In the APP unseen setting, there is no APP overlap between the train and test splits.",
+      "support_explanation": "论文明确沿用 Burns/MoTIF 配置且声明 app-disjoint；不能把划分统计未报告误说为没有声明留出。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E07",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L238",
+      "quote": "The data statistics under different settings and the detailed introduction for our web data collection are placed in our supplementary.",
+      "support_explanation": "指向补充的承诺。按 REQ 裁定，已发布 A–E 就是 supplementary；承诺内容在完整版本未报告，不是缺副本。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E08",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L244",
+      "quote": "We use Adam optimizer to train each model for 20 epochs on 8 NVIDIA V100 GPUs.",
+      "support_explanation": "训练预算有 epoch、GPU、分辨率、batch、学习率与 64 次采样等配置，不等于有绝对墙钟。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E09",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L250",
+      "quote": "consider a localization process as correct when this predicted point is within the ground-truth bounding box",
+      "support_explanation": "Acc 是静态中心点入框，mIoU 是几何测量；不是在线任务成功率。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E10",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L263",
+      "quote": "with pre-train | Baseline | 0.52 | 72.23 | 0.42 | 65.03 | 0.45 | 48.69 | 0.41 | 46.46",
+      "support_explanation": "同架构 CE 基线，依次 app seen/unseen、web seen/unseen。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E11",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L264",
+      "quote": "RUIG (Ours) | 0.62 | 81.16 | 0.48 | 73.92 | 0.51 | 61.78 | 0.49 | 59.03",
+      "support_explanation": "Table 1 带预训练 RUIG 结果；四个 Acc 增益是百分点，不是相对百分比。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E12",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L282",
+      "quote": "RUIG-CenterPoint ✓ Point 79.94 71.88 59.39 57.65 RUIG-Vertices ✓ Point 78.92 69.18 56.85 55.49 RUIG-B-box ✓ B-box 81.16 73.92 61.78 59.03",
+      "support_explanation": "point、vertices、bbox 粒度消融支持 bbox 级奖励的局部优势。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E13",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L331",
+      "quote": "Baseline 0.52 72.23 0.42 65.03 RUIG (all tokens) 0.54 76.65 0.43 69.12 RUIG (proposed) 0.62 81.16 0.48 73.92",
+      "support_explanation": "按 caption Table 4 识别 token-mask 消融，不跟随 prose Table 3 的错引。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E14",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L349",
+      "quote": "Spotlight* ( Li & Li, 2022 ) | 76.83 | 68.76",
+      "support_explanation": "Table 5 作者重训 Spotlight* 的比较结果，非我们重现、非原始 Spotlight 论文核验。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E15",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L360",
+      "quote": "where we train Spotlight model using the same training configurations as we use to train our model.",
+      "support_explanation": "作者称重训设置相同；下一行说明 Spotlight* 读所有元素框，故不同方法观察权限不相同。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E16",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L372",
+      "quote": "The cases (5) (6) and (7) indicate the label ambiguity and the case (8) exposes the noisy labels",
+      "support_explanation": "作者承认静态标注歧义与噪声；未给全测试集标注审计率。图像本身未作独立视觉核验。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E17",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L488",
+      "quote": "Here, the tokens corresponding to “ <instruction> { content } </instruction>” are masked out for discarding the supervisions on them, as they are user inputs.",
+      "support_explanation": "Appendix A 补足 teacher forcing、指令 mask、half precision、clip、最大序列长度。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E18",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L510",
+      "quote": "Our RUIG (12 decoder layers) | 0.65 | 83.99 | 0.51 | 77.30 | 0.53 | 65.37 | 0.52 | 65.17",
+      "support_explanation": "Appendix B 扩到 12 decoder layers 仍改进；不是跨模型族验证。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E19",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L516",
+      "quote": "our proposed RUIG model’s training time per epoch is increased by 38% on average, related to the baseline model.",
+      "support_explanation": "相对训练时间开销实测 +38%；64 采样是效率折中，未报告绝对 GPU 小时和部署延迟。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E20",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L532",
+      "quote": "our proposed RUIG model cannot predict aligned outputs with the ground truth results when there are ambiguous instructions or occluded target UI element.",
+      "support_explanation": "Appendix C 报告歧义/遮挡边界而非量化鲁棒性。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E21",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L554",
+      "quote": "We will clarify this in our revision.",
+      "support_explanation": "Appendix E 为版本末尾的 revision 说明，支持材料完整裁定，不是另一个缺失 supplementary 的证据。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E22",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L306",
+      "quote": "As shown in Table 3 , RUIG (all tokens)",
+      "support_explanation": "源内表号错位：该 prose 实际应指 caption Table 4。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E23",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L354",
+      "quote": "As shown in Table 6 , these traditional grounding approaches",
+      "support_explanation": "源内表号错位：传统 grounding 结果是 caption Table 3；真正 Table 6 为 Appendix B scaling。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E24",
+      "material_id": "RUIG-v1",
+      "material_hash": "54cd6d3a4b9658f16cb013c37f4bea00629353c62759340661b067b4382a0508",
+      "locator": "arXiv:2310.04716v1; text L448",
+      "quote": "Tuning computer vision models with task rewards. arXiv preprint arXiv:2302.08242",
+      "support_explanation": "仅 author-cited 邻近工作；未固定其原文/版本，不据此宣布本文首次提出 task reward 或完成 novelty 检索。",
+      "kind": "author_report"
+    }
+  ],
+  "signatures": [
+    {
+      "sig_id": "S1",
+      "object": "Swin encoder/BART decoder metadata-free grounder vs same-architecture CE-only baseline",
+      "information": "Train: screenshots, instructions, target boxes; teacher-forced previous ground-truth tokens. Deploy: screenshot+instruction only; no element enumeration/metadata.",
+      "operation": "Initialize from document-text pretrained model; autoregressively serialize bbox coordinates with tagged prompts; optimize CE + equal-weight sampled bbox-IoU PG, shared only over coordinate-value tokens.",
+      "output": "Four-coordinate bbox; evaluate its center as click prediction.",
+      "conditions": "Accurate instruction-box labels; differentiable log probabilities despite nondifferentiable inverse tokenizer; training/inference conditioning gap remains.",
+      "feedback": "Ground-truth bbox IoU (rule-calculated, not learned judge or environment terminal reward).",
+      "selection_rule": {
+        "data": "RicoSCA+MoTIF partial training; ~37K Common Crawl images/~0.5M generated pairs for desktop separately",
+        "acceptance": "Gradient training, not accepted/rejected reusable tools; checkpoint criterion not reported",
+        "hyperparameter": "MC=64 chosen for training-efficiency tradeoff; independent development split not specified"
+      },
+      "persistence": "Offline learned model weights; no self-modifying agent memory or ongoing selection loop.",
+      "later_use": "Frozen weights infer boxes on later held-out static screenshot-instruction pairs.",
+      "claimed_effect": "Table1 pretrained Acc 72.23/65.03/48.69/46.46 →81.16/73.92/61.78/59.03.",
+      "failure_boundary": "Single-reference box noise, ambiguity, occlusion; no planning/recovery/typing-content execution shown.",
+      "evidence_ids": [
+        "E03",
+        "E05",
+        "E06",
+        "E08",
+        "E09",
+        "E10",
+        "E11",
+        "E17",
+        "E20"
+      ]
+    },
+    {
+      "sig_id": "S2",
+      "object": "Which output tokens and geometric grouping receive RL credit",
+      "information": "Coordinate-token identity and grouped bbox, with supervised template tokens separate.",
+      "operation": "Contrast point/vertices/bbox rewards and all-token vs coordinate-only PG.",
+      "output": "A geometry-specific reward assignment chosen as RUIG design.",
+      "conditions": "Coordinate values jointly determine geometry; template tokens have different semantics.",
+      "feedback": "Acc/mIoU comparisons across configurations.",
+      "selection_rule": {
+        "data": "Reported evaluation tables; no separate development set recorded",
+        "rule": "bbox coordinate-only design selected by reported experiments"
+      },
+      "persistence": "Static training objective/mask in trained model, not per-task retained edits.",
+      "later_use": "Same objective for subsequent training runs and 12-layer replication.",
+      "claimed_effect": "Coordinate-only 81.16/73.92 vs all-token76.65/69.12 mobile Acc.",
+      "failure_boundary": "No gradient-distribution proof; no independent validation of hyperparameter selection.",
+      "evidence_ids": [
+        "E12",
+        "E13",
+        "E17",
+        "E18"
+      ]
+    }
+  ],
+  "gap": {
+    "author_gap": "Metadata-dependent executors constrain generic UI automation; ordinary token-wise CE does not explicitly optimize combined coordinate geometry.",
+    "checked_gap": "Source supports concrete inference-permission limitation and a CE/IoU objective mismatch; does not prove autoregressive models cannot learn geometry or establish novel RL machinery.",
+    "lineage": [
+      {
+        "source": "RUIG-v1 §2/§4.3 references, fixed by this material hash",
+        "ancestor": "Pix2Seq 2022 / UniTAB 2022 sequence interfaces; Donut 2022 pretrained document understanding; REINFORCE/policy-gradient machinery",
+        "nearest": "Spotlight (Li & Li, 2022), author-cited arXiv:2209.14927; Seq2Act ACL2020; Burns/MoTIF ECCV2022",
+        "version_note": "External originals not in this input bundle; bibliographic year/source as cited, no invented version suffix."
+      }
+    ],
+    "closest_adjacent": [
+      {
+        "name": "Spotlight",
+        "source": "RUIG-v1 §4.3/Table5; Li & Li2022, arXiv2209.14927 (author-cited)",
+        "solves": "Region-conditioned UI understanding with pretrained visual-language knowledge.",
+        "residue": "RUIG authors reproduce per-element YES/NO selection using supplied element boxes; direct bbox prediction removes that inference requirement. External architecture details not independently checked."
+      },
+      {
+        "name": "Tuning computer vision models with task rewards",
+        "source": "RUIG-v1 references / Pinto et al2023 arXiv2302.08242 (author-cited only)",
+        "solves": "Adjacent task-reward tuning approach named in related work.",
+        "residue": "Cannot establish first use of policy-gradient task rewards without original; not necessary to verify central controlled RUIG comparison."
+      }
+    ],
+    "residue": "Need a screenshot+instruction grounder whose coordinate learning tracks geometric utility without metadata at inference.",
+    "stakes": "Missing/noisy metadata and dense UI/text layouts constrain executor coverage; offline grounding error directly matters to intended clicking but does not quantify end-to-end task cost.",
+    "method_response": "Reuse image-to-text pretraining, serialize bbox outputs, add MC IoU PG on coordinate tokens only.",
+    "remaining_gap": "Unreported web collection/split accounting and variance; annotation noise; no online agent or cross-platform training-to-test transfer; no external reward/Spotlight fulltext check.",
+    "evidence_ids": [
+      "E01",
+      "E02",
+      "E04",
+      "E05",
+      "E06",
+      "E14",
+      "E15",
+      "E16",
+      "E20",
+      "E24"
+    ],
+    "unresolved": [
+      "External-neighbor novelty/scope uncertainty is nonblocking and not converted to needs_fulltext."
+    ]
+  },
+  "rs_pattern": {
+    "primary": "reframe_as_solvable_object",
+    "supporting": [
+      "heterogeneous_decomposition"
+    ],
+    "matches": [
+      {
+        "main_id": "reframe_as_solvable_object",
+        "sub_id": null,
+        "role": "primary",
+        "fit": "partial",
+        "tactic_steps_checked": [
+          {
+            "step": "native blocker",
+            "status": "met",
+            "reason": "逆 tokenization 不可微，几何目标无法直接经坐标 token 反传",
+            "evidence_ids": [
+              "E04"
+            ]
+          },
+          {
+            "step": "recast and solve",
+            "status": "met",
+            "reason": "把离散序列的 bbox IoU 写为期望奖励，用 MC/score-function 优化",
+            "evidence_ids": [
+              "E05",
+              "E19"
+            ]
+          },
+          {
+            "step": "correspondence and faithfulness",
+            "status": "partial",
+            "reason": "bbox reward 和独立 Acc 同升，但无理论等价保证或真实交互验证；Eq.3 不能当推导证明",
+            "evidence_ids": [
+              "E09",
+              "E11"
+            ]
+          }
+        ],
+        "success_checks": [
+          {
+            "condition": "chosen object dissolves the blocker",
+            "status": "met",
+            "evidence_ids": [
+              "E04",
+              "E05"
+            ]
+          }
+        ],
+        "failure_checks": [
+          {
+            "condition": "mechanical wrapper / known reward machinery",
+            "status": "partial",
+            "reason": "PG 本身既有，贡献是 token 分组与 GUI 几何训练设计；不能冒充新优化定理",
+            "evidence_ids": [
+              "E12",
+              "E13",
+              "E24"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E04",
+          "E05",
+          "E11"
+        ],
+        "reason": "匹配主卡的不可微目标→可优化期望这一操作。C00 为解释/归因测量，C21 为代际传输，C27 为多方博弈，均不贴本训练操作，故 sub=null。"
+      },
+      {
+        "main_id": "heterogeneous_decomposition",
+        "sub_id": null,
+        "role": "supporting",
+        "fit": "strong",
+        "tactic_steps_checked": [
+          {
+            "step": "partition by semantics",
+            "status": "met",
+            "reason": "坐标数值 token 与模板/指令 token 区分；前者有联合几何语义",
+            "evidence_ids": [
+              "E05",
+              "E17"
+            ]
+          },
+          {
+            "step": "tailored treatment",
+            "status": "met",
+            "reason": "CE 监督输出、PG 只监督坐标值，指令输入不受监督",
+            "evidence_ids": [
+              "E05",
+              "E17"
+            ]
+          },
+          {
+            "step": "uniform-treatment control",
+            "status": "met",
+            "reason": "all-token PG 与 coordinate-only PG 比较",
+            "evidence_ids": [
+              "E13"
+            ]
+          }
+        ],
+        "success_checks": [
+          {
+            "condition": "partition load-bearing",
+            "status": "met",
+            "evidence_ids": [
+              "E13"
+            ]
+          }
+        ],
+        "failure_checks": [
+          {
+            "condition": "heterogeneity distribution asserted not measured",
+            "status": "partial",
+            "reason": "语义划分有逻辑与消融，但 prompt 易学等说法无梯度分布实测",
+            "evidence_ids": [
+              "E13",
+              "E22"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E05",
+          "E13",
+          "E17"
+        ],
+        "reason": "真实 token 处理分解，不是多角色分工。原 C04 专指过度参数化工件的异质压缩/误差分解，本文不压缩模型，故不硬贴子卡。"
+      }
+    ],
+    "outside_taxonomy": false,
+    "reason": "Original15+31 overview read; two concrete operations match parent definitions; neither applicable specialized child should be forced.",
+    "executes_pattern": true,
+    "resolves_problem": false
+  },
+  "domain_pattern": {
+    "namespace": "gui",
+    "matches": [
+      {
+        "main": "online_evaluation_methodology",
+        "sub": "C26",
+        "version": "frozen taxonomy/conditions in p4 bundle",
+        "fit": "partial",
+        "condition_checks": [
+          {
+            "id": "S6",
+            "status": "unmet",
+            "reason": "Point-in-box well-defined but no annotation audit/multiple references or offline→online validation.",
+            "evidence_ids": [
+              "E09",
+              "E16",
+              "E20"
+            ]
+          },
+          {
+            "id": "F6",
+            "status": "met",
+            "reason": "Single-step static proxy cannot measure planning; descriptive failure exists, not demonstrated online failure.",
+            "evidence_ids": [
+              "E09"
+            ]
+          },
+          {
+            "id": "S2",
+            "status": "not_applicable",
+            "reason": "No live/resettable multi-step benchmark; do not demand step caps for a grounding component.",
+            "evidence_ids": [
+              "E09"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E06",
+          "E09",
+          "E16",
+          "E20"
+        ]
+      }
+    ],
+    "unassigned": [
+      {
+        "operation": "IoU policy-gradient coordinate training",
+        "reason": "Closest rule_reward_single_step_rl/R01 explicitly requires group-relative GRPO/base-model difficulty filtering; RUIG uses CE+vanilla PG with teacher forcing. Sharing rule reward is insufficient to assert exact R01 execution."
+      },
+      {
+        "operation": "Planner-grounder split",
+        "reason": "LLM planner/API motivation only, not an implemented/evaluated planner loop; no C10 assignment."
+      }
+    ],
+    "revision_proposals": []
+  },
+  "pattern_mapping": [
+    {
+      "rs_main": "reframe_as_solvable_object",
+      "rs_sub": null,
+      "domain": {
+        "namespace": "gui",
+        "main": null,
+        "sub": null
+      },
+      "operation_correspondence": "Nondifferentiable bbox metric becomes policy-gradient expected reward; no exact frozen GUI training subcard matches this older algorithm.",
+      "necessary_conditions": "IoU calculable on sampled coordinate groups and log-probability gradient available.",
+      "differences": "Do not rename PG as GRPO or invent a group-relative baseline.",
+      "evidence_ids": [
+        "E04",
+        "E05",
+        "E17"
+      ]
+    },
+    {
+      "rs_main": "heterogeneous_decomposition",
+      "rs_sub": null,
+      "domain": {
+        "namespace": "gui",
+        "main": null,
+        "sub": null
+      },
+      "operation_correspondence": "Differentiate coordinate-value versus template tokens for reward credit; separate methodological operation from C26 evaluation.",
+      "necessary_conditions": "Shared bbox semantics for coordinates; all-token control isolates masking.",
+      "differences": "Not compression C04, no exact GUI mask-specific subcard.",
+      "evidence_ids": [
+        "E05",
+        "E13"
+      ]
+    },
+    {
+      "rs_main": null,
+      "rs_sub": null,
+      "domain": {
+        "namespace": "gui",
+        "main": "online_evaluation_methodology",
+        "sub": "C26"
+      },
+      "operation_correspondence": "Evaluate bbox center inside reference box over static screenshot-instruction pairs.",
+      "necessary_conditions": "Reference target geometry and declared denominator.",
+      "differences": "GUI evaluation apparatus does not by itself instantiate RS controlled_diagnostic_design: no new confound-isolating benchmark; denominators not supplied.",
+      "evidence_ids": [
+        "E09"
+      ]
+    }
+  ],
+  "expectations": [
+    {
+      "id": "E05",
+      "version": "cua-agents/v1 frozen run bundle",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.14262#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2501.12326",
+          "note": "authors: ScreenSpot v1/v2 may not be robust enough to capture gains at scale"
+        }
+      ],
+      "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "字面 ScreenSpot-v2/Pro 是 2023 后资源；不以未来 benchmark 未使用扣分。适用的一般化问题由 E24 与 holdout 审计回答。",
+      "evidence_ids": [],
+      "score_item": [
+        "E.measurement"
+      ]
+    },
+    {
+      "id": "E06",
+      "version": "cua-agents/v1 frozen run bundle",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s1",
+          "note": "vs UGround"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3",
+          "note": "vs UGround-V1-7B, OS-Atlas-7B, Aguvis"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "vs UI-TARS-7B/72B, UGround-V1-7B, Aguvis, OS-Atlas"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012",
+          "note": "GPT-4o + UGround / Aguvis-7B / Aria-UI baselines"
+        }
+      ],
+      "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "列名 grounders 均为后续工作；本文应与当时 Spotlight/Seq2Act 等比较，不倒灌后世基线。",
+      "evidence_ids": [
+        "E14",
+        "E15"
+      ],
+      "score_item": [
+        "E.causality"
+      ]
+    },
+    {
+      "id": "E08",
+      "version": "cua-agents/v1 frozen run bundle",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2"
+        }
+      ],
+      "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "本文未测固定 planner 的在线任务增益，只给 grounding 组件；不要求虚构 planner swap。",
+      "evidence_ids": [
+        "E03",
+        "E09"
+      ],
+      "score_item": [
+        "E.causality"
+      ]
+    },
+    {
+      "id": "E09",
+      "version": "cua-agents/v1 frozen run bundle",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s3",
+          "note": "vs SFT, Filtered BC, AWR, DigiRL"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2406.11896#s1",
+          "note": "vs Filtered BC, AWR"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1",
+          "note": "vs SFT-only, offline GRPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "vs WebRL, NNetNav SFT"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "vs ORM-based PPO and ARPO"
+        }
+      ],
+      "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+      "applicable": true,
+      "status": "partial",
+      "reason": "应用同数据同骨干 SFT 控制的原则：Table1 已满足；DigiRL/WebRL 名称不适用于 2023，亦非在线 RL。未等墙钟延长 CE。",
+      "evidence_ids": [
+        "E10",
+        "E11",
+        "E19"
+      ],
+      "score_item": [
+        "E.causality",
+        "E.cost"
+      ]
+    },
+    {
+      "id": "E15",
+      "version": "cua-agents/v1 frozen run bundle",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2501.12326",
+          "note": "authors: offline benchmark results may fail to capture online capability"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s3",
+          "note": "SOP R^2=0.934 vs AndroidControl-High 0.470 against AndroidWorld"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2602.09856",
+          "note": "authors: offline evaluation cannot assess alternative valid trajectories or recovery"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2"
+        }
+      ],
+      "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "按原文 API potential 保留外推限制，但中心为静态组件训练增益，不把不存在的整机在线成功当必要证据。",
+      "evidence_ids": [
+        "E09"
+      ],
+      "score_item": [
+        "E.measurement"
+      ]
+    },
+    {
+      "id": "E16",
+      "version": "cua-agents/v1 frozen run bundle",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "3 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "3 runs, std 1.1%"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.10031",
+          "note": "3 repetitions"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2311.08649",
+          "note": "authors: monetary constraints prevented multiple runs"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2411.02337",
+          "note": "authors: random task generation raises variance across seeds"
+        }
+      ],
+      "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "原 applies_when 针对 online/live 随机性，本文离线。E.statistics 的训练重复/分母要求独立由冻结 rubric 适用，不借此免掉。",
+      "evidence_ids": [
+        "E09"
+      ],
+      "score_item": [
+        "E.statistics"
+      ]
+    },
+    {
+      "id": "E21",
+      "version": "cua-agents/v1 frozen run bundle",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        }
+      ],
+      "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+      "applicable": true,
+      "status": "met",
+      "reason": "RUIG 测试 screenshot-only，metadata 用作训练标签与测试真值；传统基线/Spotlight* 的额外元素框权限明确，不能宣称所有 SOTA 控制完全同权限。",
+      "evidence_ids": [
+        "E03",
+        "E09",
+        "E15"
+      ],
+      "score_item": [
+        "X",
+        "E.causality"
+      ]
+    },
+    {
+      "id": "E22",
+      "version": "cua-agents/v1 frozen run bundle",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543",
+          "note": "relative gain 7B +104% vs 32B +37%"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3",
+          "note": "2B/7B/72B"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.02345#s2",
+          "note": "seven backbones"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "7B and 72B"
+        }
+      ],
+      "applies_when": "a claim that a training recipe generalises across policy backbones",
+      "applicable": true,
+      "status": "partial",
+      "reason": "4→12 decoder layers 复验，保持同族视觉 encoder；不是任意 backbone 泛化。",
+      "evidence_ids": [
+        "E18"
+      ],
+      "score_item": [
+        "E.causality"
+      ]
+    },
+    {
+      "id": "E24",
+      "version": "cua-agents/v1 frozen run bundle",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2604.14262#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s3",
+          "note": "knowledge-free re-annotated instructions"
+        }
+      ],
+      "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+      "applicable": true,
+      "status": "partial",
+      "reason": "跨 app/web 名义设置与定性关系/尺度/遮挡例存在，无 matched-pair zoom/layout 实验，不把视觉展示当鲁棒性证明。",
+      "evidence_ids": [
+        "E06",
+        "E20"
+      ],
+      "score_item": [
+        "E.holdout",
+        "E.measurement"
+      ]
+    },
+    {
+      "id": "E25",
+      "version": "cua-agents/v1 frozen run bundle",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "OSWorld-G refusal category"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s1",
+          "note": "infeasible tasks"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.04454",
+          "note": "authors: model cannot indicate uncertainty or refuse"
+        }
+      ],
+      "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+      "applicable": true,
+      "status": "partial",
+      "reason": "已承认 ambiguous instructions 与 noisy labels，却未量化合法多目标/无目标拒绝行为；并非声称具备拒绝能力。",
+      "evidence_ids": [
+        "E16",
+        "E20"
+      ],
+      "score_item": [
+        "X",
+        "E.measurement"
+      ]
+    },
+    {
+      "id": "E28",
+      "version": "cua-agents/v1 frozen run bundle",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "test-query search actions filtered from in-domain data"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1",
+          "note": "only 20 of 833 AndroidControl apps seen in synthesis"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "train on generated sites, evaluate on OSWorld/Online-Mind2Web/MobileWorld"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "OOD GUI-Odyssey and OSWorld"
+        }
+      ],
+      "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+      "applicable": true,
+      "status": "unmet",
+      "reason": "用于自建 web 合成 grounding 对的独立性原则适用；只有 seen/unseen 描述，具体采集/拆分/去重与测试分母未兑现。mobile MoTIF 公开设置仍保留为正事实。",
+      "evidence_ids": [
+        "E06",
+        "E07"
+      ],
+      "score_item": [
+        "E.holdout",
+        "E.statistics"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "text": "IoU PG improves same-architecture pixel-to-sequence grounding with and without pretraining.",
+      "setting": "Mobile MoTIF/RicoSCA and separately trained web-crawl screenshot grounders, seen/unseen settings.",
+      "baseline_control": "Same-architecture CE-only with matched initialization; also no-pretraining factorial comparison.",
+      "selection_vs_test": "Inherited mobile protocol; independent tuning/development split unspecified; web detailed accounting not reported.",
+      "result": {
+        "pretrained_accuracy_baseline": [
+          72.23,
+          65.03,
+          48.69,
+          46.46
+        ],
+        "pretrained_accuracy_RUIG": [
+          81.16,
+          73.92,
+          61.78,
+          59.03
+        ],
+        "gain_percentage_points": [
+          8.93,
+          8.89,
+          13.09,
+          12.57
+        ],
+        "denominator": "Per-setting test-pair count not_reported"
+      },
+      "evidence_ids": [
+        "E06",
+        "E10",
+        "E11"
+      ],
+      "counterevidence": [
+        "No seed/CI or equal-wallclock CE; §4.1 promised split accounting absent."
+      ],
+      "allowed_conclusion": "Author-reported local improvement on these offline settings, not proven generic online execution."
+    },
+    {
+      "claim_id": "C2",
+      "text": "Bbox-level and coordinate-only credit are better targeted than point rewards or all-token PG.",
+      "setting": "Table2 four settings; caption Table4 mobile token ablation.",
+      "baseline_control": "Point/vertices/bbox granularity and all-token vs coordinate-only PG.",
+      "selection_vs_test": "Reported evaluation reused for architectural design; independent selection boundary unreported.",
+      "result": {
+        "coordinate_only_Acc": [
+          81.16,
+          73.92
+        ],
+        "all_token_Acc": [
+          76.65,
+          69.12
+        ],
+        "denominator": "Not reported per split."
+      },
+      "evidence_ids": [
+        "E12",
+        "E13",
+        "E22"
+      ],
+      "counterevidence": [
+        "Source prose Table3 misreferences captionTable4; not evidence of a missing experiment."
+      ],
+      "allowed_conclusion": "Local empirical mask/granularity sensitivity, not theorem on all autoregressive vision tasks."
+    },
+    {
+      "claim_id": "C3",
+      "text": "RUIG exceeds contemporary UI-tailored grounders while requiring no metadata at inference.",
+      "setting": "Table5 MoTIF App Seen/Unseen.",
+      "baseline_control": "Spotlight* author-reproduced with same training configuration but candidate boxes as inputs; other reported metadata-based methods.",
+      "selection_vs_test": "MoTIF protocol adopted, no independent external reproduction.",
+      "result": {
+        "RUIG": [
+          81.16,
+          73.92
+        ],
+        "Spotlight_star": [
+          76.83,
+          68.76
+        ],
+        "gain_percentage_points": [
+          4.33,
+          5.16
+        ],
+        "denominator": "Not reported."
+      },
+      "evidence_ids": [
+        "E14",
+        "E15",
+        "E11"
+      ],
+      "counterevidence": [
+        "Spotlight original not independently read; cross-architecture pretraining/input privilege differ."
+      ],
+      "allowed_conclusion": "Within-author reproduced-baseline comparison only; central causal finding rests on same-architecture Table1."
+    },
+    {
+      "claim_id": "C4",
+      "text": "Potential generic UI execution API and broadly applicable reinforced pixel-to-sequence.",
+      "setting": "Mobile and web screenshots; AppendixB same-family decoder scaling.",
+      "baseline_control": "No LLM-planner online execution or zero-shot cross-platform transfer test.",
+      "selection_vs_test": "Mobile and web have separate training settings, not train-on-one/test-on-another.",
+      "result": {
+        "decoder_layers": [
+          4,
+          12
+        ],
+        "online_task_success": null
+      },
+      "evidence_ids": [
+        "E03",
+        "E09",
+        "E18",
+        "E20"
+      ],
+      "counterevidence": [
+        "No interactive success, recovery/refusal or real cost of mouse/keyboard task completion."
+      ],
+      "allowed_conclusion": "API potential and same-family scaling evidence; not demonstrated online/transfer capability."
+    }
+  ],
+  "assessment": {
+    "evidence_level": "offline",
+    "claim_support": "scoped",
+    "strongest_supported_claim": "Author-reported same-architecture CE+IoU-PG improves static single-step GUI grounding across declared app/web seen/unseen settings, with geometry/token-mask ablations and 4→12-layer replication; no independently reproduced or online task success is claimed by this review.",
+    "unresolved": [
+      "Per-split denominators and web collection/holdout audit absent (not_reported, not missing materials).",
+      "Seed/uncertainty and equal-compute CE control absent.",
+      "External original Spotlight/task-reward literature not fixed; author-cited claims retain explicit uncertainty."
+    ],
+    "reproduction": "No paper code, environment, training or experiments run."
+  },
+  "ratings": {
+    "G": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "具体定位 metadata 依赖与离散坐标序列 CE/几何目标失配，MoTIF/Seq2Act/Spotlight、Pix2Seq、Donut 谱系清楚；但 task-reward 邻近工作仅 author-cited，未独立排除已知 sequence-level reward 思路，泛化 API 需求也未在闭环检验。",
+      "evidence_ids": [
+        "E01",
+        "E02",
+        "E04",
+        "E24"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "M": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "截图+指令→坐标文本，CE 保格式与 token 学习、bbox IoU PG 对准联合几何；mask 与粒度可提出/检验区分预测。不是新 RL 算法证明；Eq.3 排版把 gradient 与 reward-weighted log objective 混在等式中，须按 score-function surrogate 理解，不将印刷式当正确推导。IoU 也不等同真实可点击/任务完成。",
+      "evidence_ids": [
+        "E03",
+        "E04",
+        "E05",
+        "E12",
+        "E13"
+      ],
+      "counterevidence_ids": [
+        "E09"
+      ],
+      "search_scope": []
+    },
+    "X": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "主要组件/权限/训练与部署链可重建：Swin+BART、Donut 初始化、teacher forcing、CE+PG 等权、坐标 mask、MC64、训练预算及两种 decoder 深度。留存是模型权重供后续静态样本调用，不是 agent 自改进。联合采样的 teacher-forcing 条件与推理 rollout 差异、无效框处理、checkpoint/开发集选择和拒绝策略未充分说明，故不到4。",
+      "evidence_ids": [
+        "E03",
+        "E05",
+        "E08",
+        "E17",
+        "E18"
+      ],
+      "counterevidence_ids": [
+        "E20"
+      ],
+      "search_scope": []
+    },
+    "E.measurement": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "中心主张是 component_training，Acc 点入框+mIoU 配合报告，可测静态 grounding 增益，不需强加在线标签。标签来自 metadata，且自报歧义/噪声，未做覆盖性标注/合法替代目标审计；在线 API 潜力只属外推。",
+      "evidence_ids": [
+        "E09",
+        "E10",
+        "E11"
+      ],
+      "counterevidence_ids": [
+        "E16",
+        "E20"
+      ],
+      "search_scope": []
+    },
+    "E.causality": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Table 1 同架构同初始化的 CE vs CE+PG、另列去预训练；Table 2 粒度、caption Table 4 全 token vs 坐标 token、Appendix B 深度复验共同定位训练改动，不把优势归因更强模型。缺等墙钟延长 CE 基线/重复运行，跨架构 SOTA 的 OCR/预训练/权限不能完全控制。",
+      "evidence_ids": [
+        "E10",
+        "E11",
+        "E12",
+        "E13",
+        "E18",
+        "E19"
+      ],
+      "counterevidence_ids": [
+        "E15",
+        "E22",
+        "E23"
+      ],
+      "search_scope": []
+    },
+    "E.holdout": {
+      "status": "not_reported",
+      "rating": 0,
+      "reason": "not_reported 针对支撑跨 app/site 范围所需的可审计划分/网页采集与污染核查，不声称论文没有任何留出：mobile 明确沿用 MoTIF app-disjoint，web 有 seen/unseen 名义。但完整 A–E 未兑现 §4.1 的分组统计、site 划分/去重与采集细节，也未给可核验独立开发/选择边界；按 REQ-2310.04716-1 将这一必要证据缺口计0，不再 needs_fulltext。",
+      "evidence_ids": [
+        "E06",
+        "E07",
+        "E21"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "2310.04716v1 §4.1 Datasets (L238–240): promised split statistics and web collection",
+        "§4.2–4.4 / Tables 1–5: aggregate percentages and qualitative cases only",
+        "Appendix A (L486–490): training implementation, not dataset split counts",
+        "Appendix B (L492–518): decoder scaling and sampling/time cost",
+        "Appendices C–E (L520–556): visualizations and metadata examples; end at revision clarification",
+        "Full deduplicated paper L96–556 searched for split sizes, app/site identities, collection/filtering/dedup, test denominators, seeds, repetitions, confidence/variance; no required detailed accounting found"
+      ]
+    },
+    "E.statistics": {
+      "status": "not_reported",
+      "rating": 0,
+      "reason": "虽有各设置 Acc/mIoU、约37K截图/0.5M合成对及定性失败例，但未报告每个训练/测试划分的具体分母、seed/重训方差或区间，也无定量失败分解；不是复制件丢失。按冻结 r1/REQ 以 not_reported 计0，而非 unknown。",
+      "evidence_ids": [
+        "E07",
+        "E16",
+        "E20"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "2310.04716v1 §4.1 Datasets (L238–240): promised split statistics and web collection",
+        "§4.2–4.4 / Tables 1–5: aggregate percentages and qualitative cases only",
+        "Appendix A (L486–490): training implementation, not dataset split counts",
+        "Appendix B (L492–518): decoder scaling and sampling/time cost",
+        "Appendices C–E (L520–556): visualizations and metadata examples; end at revision clarification",
+        "Full deduplicated paper L96–556 searched for split sizes, app/site identities, collection/filtering/dedup, test denominators, seeds, repetitions, confidence/variance; no required detailed accounting found"
+      ]
+    },
+    "E.cost": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "训练配置具体，报告 MC64 与每 epoch 相对基线 +38% 的实测代价，足以看到收益不免费；没有绝对 GPU-hours、部署延迟/内存、等墙钟 CE 控制或逐设置开销，因此不到4。按组件训练而非长程 agent 步数预算评分。",
+      "evidence_ids": [
+        "E08",
+        "E19"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": []
+    }
+  },
+  "score": {
+    "raw": 63.75,
+    "display": 63.8,
+    "lower": 63.75,
+    "upper": 63.75,
+    "coverage": 1.0,
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "weights": {
+      "G": 15,
+      "M": 25,
+      "X": 20,
+      "E.measurement": 10,
+      "E.causality": 10,
+      "E.holdout": 10,
+      "E.statistics": 5,
+      "E.cost": 5
+    }
+  },
+  "status": "reviewed",
+  "reason": "Complete published body+Appendices A–E reviewed under REQ-2310.04716-1; all eight axes judged; missing reporting is scored rather than blocked.",
+  "source_counterevidence": [
+    {
+      "issue": "table_number_mismatch",
+      "prose": "§4.2 Table3",
+      "caption": "Table4 token mask ablation",
+      "evidence_ids": [
+        "E13",
+        "E22"
+      ]
+    },
+    {
+      "issue": "table_number_mismatch",
+      "prose": "§4.3 Table6",
+      "caption": "Table3 traditional grounding; actual Table6 is decoder scaling",
+      "evidence_ids": [
+        "E18",
+        "E23"
+      ]
+    }
+  ],
+  "readable_rationale": "RUIG 的有效增量是为离散 bbox 坐标加 IoU policy gradient，并以同架构 CE、预训练开关、奖励粒度/坐标 mask 和 decoder 深度对照支撑，而非完整 UI agent。完整 supplementary 已在 A–E 中；§4.1 承诺却未给的划分/采集统计只能作为论文未报告计0，不再挂材料阻塞。证据是离线且带 metadata 真值噪声、独立 holdout 审计和重复统计缺口；代价报告 +38%/epoch 是实质正证据。"
+}

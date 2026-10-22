@@ -1,0 +1,48 @@
+{
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p8",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "assigned": 2,
+ "reviewed": 2,
+ "needs_fulltext": 0,
+ "needs_evidence": 0,
+ "outside_taxonomy": 1,
+ "outside_taxonomy_papers": [
+  "2401.13919"
+ ],
+ "outside_taxonomy_ratio": 0.5,
+ "schema_errors": 0,
+ "model_type": "haiku",
+ "actual_model": "claude-sonnet-5-5[1m]",
+ "session_ref": null,
+ "session_ref_reason": "not exposed to worker",
+ "scores": {
+  "2401.10935": {
+   "raw": 63.75,
+   "display": 63.8
+  },
+  "2401.13919": {
+   "raw": 62.5,
+   "display": 62.5
+  }
+ },
+ "self_checks": [
+  "manifest IDs/versions covered exactly",
+  "material sha256 matched manifest (r2 html, v4 html)",
+  "all non-null evidence quotes machine-matched to material text; image evidence has quote=null",
+  "check_batch.check_record passes on both records (structure only)",
+  "rs ids/parents legal; domain namespace=gui; no unknown ratings"
+ ],
+ "blockers_or_requests_to_controller": [
+  "VERSION BINDING resolved by controller: SeeClick bound to v2; final supplement sha a609f7d2e82d… used; App C.1 prompt Box (E036) is scored v2 content (X evidence). No change to ratings (X stays 3: no filter/curation rules, no recovery/verifier).",
+  "SeeClick Fig 5/6/9 chart values not provided (Fig 6 grounding-vs-agent correlation is the evidence for the central 'directly correlates' claim): kept unknown; claim_support=scoped.",
+  "WebVoyager Fig 5 (GAIA success) not supplied: GAIA outcome stays unknown; E.holdout rated on SeeAct-50 and qualitative only. Fig 8 evaluator prompt now read (pdfpage15): included as W49, ratings unchanged (E.measurement stays 3; note: judge is given no reference answers).",
+  "Nearest-neighbour sources outside the shared 17 references (CogAgent, Pix2Act for SeeClick; SeeAct, Set-of-Mark, AppAgent for WebVoyager) were not read; lineage relies on the papers' own descriptions (marked unresolved, G capped at 3). Request supplement only if both seats should share them.",
+  "Domain-card sources cite both papers themselves (circular); noted in revision_proposals, not acted on."
+ ],
+ "files": [
+  "2401.10935.json",
+  "2401.13919.json"
+ ]
+}

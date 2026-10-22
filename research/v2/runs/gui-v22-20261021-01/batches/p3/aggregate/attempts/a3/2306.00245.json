@@ -1,0 +1,2220 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p3",
+ "attempt_id": "a3",
+ "seat": "aggregate_opus55",
+ "provenance": {
+  "input_bundle_sha256": "37cac126a6041a3d720b9b855d9bac88b70aa47dcfd33a2f89604ee5e3ad0671",
+  "input_material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+  "input_hash_note": "Both seats bind the same input bundle 37cac126... and the same material sha (verified).",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": {
+   "taxonomy": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+   "conditions": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+  },
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "supplementary_expectations_hash": "c0f4b4187dcd0340322bf8afe88930d17d3be2a284d34706941f68410d007ea4",
+  "references_json_sha256": "e6b6d3fd2fed1e48d5ec18c80c9a4a1b6c0690fd72d5803e1960bec97d28f5e0",
+  "aggregate_rules_hash": "1ad0c4f39af2ceb06924fc015d8660711edcd9a6f891444e902b44f79584f4e0",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "evidence_rules_hash": "336e1bcdd149cd485ee5a1f22101ca594997b755b47555447ba6661b23a1fac5",
+  "pattern_protocol_hash": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373",
+  "batch_manifest_sha256": "390fa6dcba95052128bdeca054fa7b3503c824c869f09aa229ead662f5d1cfcc",
+  "timestamp": "2026-10-22T02:54:11+00:00"
+ },
+ "aggregate_model": {
+  "model_type": "fable",
+  "actual_model": "claude-opus-5-5[1m] (Opus 5.5)"
+ },
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_reason": "session id / receipt not exposed to the aggregate worker; no probe",
+ "input_seat_hashes": {
+  "sol": "2ebf4bdd756a08ee9275b90621f45d34c25c8ee4e2091b3f9f7811dadd7bf289",
+  "son55": "af0d988ab2c465f77dde45009940f409cba39ebad9db8e0d5bd79a441328afb8"
+ },
+ "input_seat_paths": {
+  "sol": "research/v2/runs/gui-v22-20261021-01/batches/p3/seats/sol/attempts/a1/2306.00245.json",
+  "son55": "research/v2/runs/gui-v22-20261021-01/batches/p3/seats/son55/attempts/a1/2306.00245.json"
+ },
+ "conflicts_file_sha256": "0f49dab291b201cda2ab98ad9348b271e338483b19c053032d7bc3e8cb2766fc",
+ "supersedes": null,
+ "independence_note": "Aggregation review with both seat inputs; not a third blind review or human gold. The controller brief listed both seats' totals before any reading; the aggregator then read the paper text before opening either seat record.",
+ "paper": {
+  "paper_key": "2306.00245",
+  "paper_id": "2306.00245",
+  "title": "From Pixels to UI Actions: Learning to Follow Instructions via Graphical User Interfaces",
+  "version": "2306.00245v2",
+  "claim_type": "system_method",
+  "central_claim": "An agent using only pixel screenshots and a generic mouse/keyboard action space (Pix2Act: Pix2Struct initialisation, BC on human demonstrations, iterative MCTS policy improvement) outperforms human crowdworkers on MiniWob++ and is comparable to DOM-based SOTA; it establishes the first pixel-only WebShop baseline; screenshot-parsing pretraining is the key ingredient (authors' claim)."
+ },
+ "materials": [
+  {
+   "material_id": "P1",
+   "url": "https://arxiv.org/html/2306.00245v2",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2306.00245.txt",
+   "sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "sections_read": "all: §1-7, App A-C incl. Table 4",
+   "complete": true,
+   "missing_sections": [
+    "Figure 3 / Figure 4 plot values (not in text)"
+   ]
+  },
+  {
+   "material_id": "FIGS",
+   "url": null,
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2306.00245/",
+   "sha256": "bb64f1881244648a9d512b054b716e375221213882649074a7f46d76650952b5",
+   "sections_read": "manifest only (hashes); images read by both seats, no result plots included",
+   "complete": true,
+   "missing_sections": []
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "A01",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§1 para 'Here we present'; txt L368",
+   "quote": "a model that relies solely on pixel-based screenshots as input and selects actions corresponding to basic mouse and keyboard functionalities",
+   "support_explanation": "Runtime observation is pixels only; generic mouse/keyboard action space.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A02",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§2 Actions; txt L428",
+   "quote": "Importantly, the DOM information is not provided by the environment and is therefore not used in any way to define observations or actions.",
+   "support_explanation": "No DOM at runtime; information boundary of the agent.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A03",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§1; txt L363",
+   "quote": "but its performance drops by 75% when the DOM information is removed from the agent",
+   "support_explanation": "Gap premise: CC-Net collapses without DOM (as reported by the authors about CC-Net).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A04",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.2; txt L580",
+   "quote": "we estimate the performance of CC-Net without DOM information by assuming that the drop in performance on the subset of tasks we study was also 75%",
+   "support_explanation": "The 'pixel-only prior work' comparator is an extrapolation, not a measured run.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A05",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§1 contribution 3; txt L396",
+   "quote": "In the behavioral cloning setting, pre-training improves task scores from 17.1 to 66.5 on MiniWob++ and from 1.1 to 46.7 on WebShop.",
+   "support_explanation": "Pretraining ablation (BC) on both benchmarks; also the only in-text WebShop absolute score for Pix2Act (BC is the only WebShop training regime, A18).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A06",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "Table 2; txt L640",
+   "quote": "Greedy | 66.5 | 93.1 | 96.2",
+   "support_explanation": "Same-architecture greedy policy before/after 1 and 2 rounds of tree-search distillation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A07",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "Table 2; txt L641",
+   "quote": "Tree Search | 91.7 | 98.4 | —",
+   "support_explanation": "Inference-time MCTS policy over the same model (uses reward/reset); iteration 2 not run.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A08",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.1 MiniWoB++; txt L566",
+   "quote": "We performed 2 iterations of policy improvement with tree search, collecting a total of 826K episodes across all tasks, and tuning for a further 26K steps.",
+   "support_explanation": "Extra data/compute behind the 96.2 headline.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A09",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App B.2 Policy improvement; txt L982",
+   "quote": "To produce these trajectories, we randomly sample MiniWob++ tasks and seeds, and select actions according to",
+   "support_explanation": "Search episodes come from the same 59 tasks (random seeds); task-level separation absent.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A10",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§4.1 Evaluation; txt L528",
+   "quote": "For each task, we compute the mean over 100 random seeds, and then compute the mean over 59 MiniWob++ tasks.",
+   "support_explanation": "Evaluation denominator: 59 tasks x 100 seeds.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A11",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§4.1 Evaluation; txt L528",
+   "quote": "For episodes that do not complete due to reaching a maximum number of allowed steps, we assume a score of",
+   "support_explanation": "Timeouts counted as failures (score 0); numeric step cap not stated.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A12",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App C.1; txt L1000",
+   "quote": "the standard deviation across these trials was 0.15",
+   "support_explanation": "Evaluation-seed variance for the strongest model (3 trials: 96.2/96.4/96.1); no training-run replicates.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A13",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App A.1; txt L875",
+   "quote": "Note that determining the set of 59 tasks was based solely on the feasibility of conversion to our observation and action format, and not based on model performance.",
+   "support_explanation": "Task-subset selection rationale declared; per-group exclusion lists follow in A.1.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A14",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.3 transfer; txt L616",
+   "quote": "Specifically, we hold out 9 out of 59 tasks and train on the remaining 50.",
+   "support_explanation": "Task-level holdout experiment (BC only).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A15",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.3 footnote 7; txt L616",
+   "quote": "The tasks are click-checkboxes-large , click-color , click-tab-2 , click-tab-2-hard , count-shape , drag-shapes , use-color-wheel-2 , use-slider-2 .",
+   "support_explanation": "Only 8 task names listed for the claimed 9 held-out tasks; tasks manually picked.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A16",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "Table 1; txt L629",
+   "quote": "Yes | 65.5 | 28.3",
+   "support_explanation": "Held-out tasks with Pix2Struct init: 28.3 (vs 65.5 when included).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A17",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "Table 1; txt L630",
+   "quote": "No | 11.0 | 7.6",
+   "support_explanation": "Held-out tasks without pretraining: 7.6.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A18",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.1 WebShop; txt L572",
+   "quote": "We used only the provided human demonstrations to train our model.",
+   "support_explanation": "WebShop policy is BC only (no tree search).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A19",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "Table 4 average row; txt L1072",
+   "quote": "average | 96.2 | 66.5 | 94.3 | 96.3 | 38.7",
+   "support_explanation": "Matched 59-task means: Pix2Act 96.2, BC 66.5, human 94.3, CC-Net 96.3, CC-Net(BC) 38.7.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A20",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§4.1 Human Demonstrations; txt L518",
+   "quote": "This results in different renderings of the same underlying environment state, introducing a shift between the screenshots seen during training and those observed at test time.",
+   "support_explanation": "Harness differs from CC-Net/human X11 environment; cross-environment comparison.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A21",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.3; txt L598",
+   "quote": "Another difference is that CC-Net uses a real time setting, which enables some forms of interaction not supported by our environment",
+   "support_explanation": "Baseline and human numbers come from a different (real-time) harness.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A22",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.3 WebGUM; txt L604",
+   "quote": "WebGUM outperforms Pix2Act when compared on this setting.",
+   "support_explanation": "WebShop: pixel-only Pix2Act trails HTML-based WebGUM; comparator number is figure-only.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A23",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.3 transfer; txt L645",
+   "quote": "results in a drop of 4.0 in Task Score",
+   "support_explanation": "Intermediate MiniWoB++ finetuning helps WebShop by 4.0.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A24",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§7 Tree Search; txt L715",
+   "quote": "we did not perform a detailed comparison relative to other search and RL algorithms in this study",
+   "support_explanation": "No alternative policy-improvement baseline (e.g., filtered self-training, PPO).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A25",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§7 Tree Search; txt L715",
+   "quote": "Our implementation also relied on the ability to reset the environment to an initial state",
+   "support_explanation": "Training-time privilege: resets and reward signals.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A26",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App B.3; txt L992",
+   "quote": "We fine-tuned models using 64 Google Cloud TPU v3 cores.",
+   "support_explanation": "Hardware disclosed; no wall-clock or search cost.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A27",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App B.2 Search policy; txt L952",
+   "quote": "we use a modest number of rounds, K = 16",
+   "support_explanation": "MCTS rounds per step (candidates top-k=8).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A28",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "Table 3 (App B.2); txt L972",
+   "quote": "28.8 | 74.2 | 78.3 | 57.4",
+   "support_explanation": "Leaf-evaluation ablation on 12 hard tasks: greedy 28.8, rollout-only 74.2, mixed 78.3, value-only 57.4.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A29",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.3 Tree search analysis; txt L651",
+   "quote": "The best greedy policy achieves performance close to the best tree search policy, but does not require access to reward signals or additional exploration at inference time.",
+   "support_explanation": "Headline 96.2 is a greedy policy without inference-time privilege; improvement retained in weights.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A30",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§3 Greedy Policy; txt L476",
+   "quote": "we track which actions have been taken for a given observation, and select the highest probability action in the beam that has not previously been taken given the current observation",
+   "support_explanation": "Only recovery mechanism: anti-cycle rule; no reflection/history.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A31",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§3 Input; txt L462",
+   "quote": "In preliminary experiments, we did not observe significant gains from conditioning on past observations for MiniWob++",
+   "support_explanation": "No history in the policy input (MiniWoB++).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A32",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App B.2 Value network; txt L935",
+   "quote": "The model is trained on transitions from the human demonstrations",
+   "support_explanation": "Value network source; fixed during policy improvement.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A33",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.3; txt L598",
+   "quote": "Pix2Act also outperforms CC-Net when each model is trained only with behavioral cloning, as CC-Net performance on this setting drops to 38.7",
+   "support_explanation": "BC-only matched comparison 66.5 vs 38.7 (different harnesses).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A34",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§4.1; txt L522",
+   "quote": "We were able to successfully convert 81% of the remaining demonstrations to our action space.",
+   "support_explanation": "Demonstration conversion yield.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A35",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App C.1; txt L1000",
+   "quote": "For WebShop, there is a standard test set consisting of 500 instances",
+   "support_explanation": "WebShop standard 500-instruction test split (1012/54/500 split stated in §4.2).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A36",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§5.1; txt L560",
+   "quote": "We used the Adafactor optimizer ( Shazeer and Stern, 2018 ) with a learning rate of 0.01.",
+   "support_explanation": "Main-text LR 0.01, inconsistent with App B.2 BC LR 1e-3 -> 5e-4 for MCTS tuning (reporting inconsistency).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A37",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "§7 Broader Impact; txt L721",
+   "quote": "In this paper we have trained and evaluated models only in offline environments.",
+   "support_explanation": "Authors' 'offline' = sandboxed simulators, not static replay; interactive reward-checked evaluation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "A38",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "App B.2 Surrogate reward; txt L929",
+   "quote": "As all tasks can be completed within 30 steps",
+   "support_explanation": "Surrogate-reward bound; not the stated evaluation step cap.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "I01",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "A05 + A18 (+ A23)",
+   "quote": null,
+   "kind": "our_inference",
+   "support_explanation": "WebShop is trained by BC only (A18) and contribution 3 reports the pretrained BC WebShop task score 46.7 (A05); hence Pix2Act's WebShop score is available in text (46.7). Whether 46.7 includes the intermediate MiniWoB++ finetuning (A23) is not stated. Only comparator values (WebGUM, human) are figure-only."
+  },
+  {
+   "evidence_id": "I02",
+   "material_id": "P1",
+   "material_sha256": "ca67cd9a64473570ece5d1a20fb529a91123edd81d45a7a68d848e63a01865ab",
+   "locator": "A14 vs A15",
+   "quote": null,
+   "kind": "our_inference",
+   "support_explanation": "Text claims 9 held-out tasks but footnote names 8; held-out tasks were manually picked to be reasonable to generalize to. Held-out evidence is BC-only and author-selected."
+  },
+  {
+   "evidence_id": "F00",
+   "material_id": "FIGS",
+   "material_sha256": "bb64f1881244648a9d512b054b716e375221213882649074a7f46d76650952b5",
+   "locator": "fulltext-figs/2306.00245/figs.json (12 images)",
+   "quote": null,
+   "kind": "author_report",
+   "support_explanation": "Figure package (episode observations/actions, env rendering comparison) was read by both seats; it contains no result plot. Aggregator did not need it for any rating; Figure 3 (results plot) is not in the package."
+  }
+ ],
+ "initial_evidence_judgment": "Read before opening seat records: system_method; pixel-only agent evaluated in an interactive Selenium MiniWoB++ harness (programmatic reward, 59/104 tasks, feasibility-based selection) and WebShop standard test split. Strong within-paper controls for pretraining (BC) and greedy-vs-search; headline 96.2 vs human 94.3 compares across harnesses; tree-search data come from the evaluated tasks; held-out tasks BC-only (8 named vs 9 claimed); pixel-only prior-work point extrapolated; no training replicates but eval-seed SD 0.15; online, not transfer.",
+ "signatures": [
+  {
+   "sig_id": "SIG1",
+   "object": "policy input/output interface",
+   "information": "screenshot with rendered instruction, cursor and button-state; no DOM (A02)",
+   "operation": "Pix2Struct image-to-text model emits discretised mouse/keyboard tokens; beam top-k with anti-cycle greedy selection",
+   "output": "low-level action",
+   "conditions": "Selenium browser; 32x32 bins for MiniWoB++; last 5 actions rendered for WebShop",
+   "feedback": "next screenshot only (no history, A31)",
+   "selection_rule_data": "BC on converted human demonstrations (81% conversion, A34)",
+   "persistence": "weights",
+   "later_use": "greedy evaluation",
+   "claimed_effect": "human-level MiniWoB++ without DOM",
+   "failure_boundary": "no scroll/copy-paste/animation tasks (A13 list); WebShop below HTML agents (A22)",
+   "evidence_ids": [
+    "A01",
+    "A02",
+    "A30",
+    "A31",
+    "A34",
+    "A13",
+    "A22"
+   ]
+  },
+  {
+   "sig_id": "SIG2",
+   "object": "policy improvement",
+   "information": "environment reset + terminal reward (training-time privilege, A25)",
+   "operation": "MCTS (K=16, top-8 policy prior, value-net/rollout leaf mix) generates episodes on random tasks/seeds; keep raw reward >= 0.8; SFT the policy; repeat 2x",
+   "output": "updated policy weights",
+   "conditions": "deterministic, resettable, procedurally generated MiniWoB++",
+   "feedback": "programmatic reward",
+   "selection_rule_data": "reward >= 0.8 filter; value net fixed (A32)",
+   "persistence": "policy weights",
+   "later_use": "greedy policy without reward/search at inference (A29)",
+   "claimed_effect": "66.5 -> 93.1 -> 96.2 greedy",
+   "failure_boundary": "needs resets/rewards; not compared with other RL/search (A24)",
+   "evidence_ids": [
+    "A06",
+    "A07",
+    "A08",
+    "A09",
+    "A24",
+    "A25",
+    "A27",
+    "A28",
+    "A29",
+    "A32"
+   ]
+  }
+ ],
+ "retention_trace": {
+  "applicable": true,
+  "before": "BC policy, greedy 66.5 (search 91.7)",
+  "candidates": "MCTS episodes on randomly sampled MiniWoB++ tasks/seeds (826K over 2 rounds)",
+  "selection_signal": "environment raw reward >= 0.8",
+  "accepted_rejected": "episodes below threshold discarded; acceptance counts not reported",
+  "persistence": "policy weights via SFT (26K steps per round)",
+  "later_use": "greedy policy on fresh random seeds of the same 59 tasks",
+  "independent_result": "greedy 93.1 (iter 1), 96.2 (iter 2); eval-seed SD 0.15",
+  "verdict": "Retained in-distribution improvement supported (author report): the gain persists in the greedy policy without inference-time reward. No task- or site-level held-out test of the retained change.",
+  "evidence_ids": [
+   "A06",
+   "A08",
+   "A09",
+   "A12",
+   "A29"
+  ]
+ },
+ "gap": {
+  "author_gap": "GUI agents rely on DOM/HTML and task-specific actions that are often unavailable or misaligned; pixel-only generic-action agents performed far worse (CC-Net -75% without DOM).",
+  "checked_gap": "Supported by the paper's own no-pretraining BC result (17.1) and its account of CC-Net; the pixel-only CC-Net comparator is an extrapolation (A04). CC-Net/Pix2Struct originals are not in the fixed reference set.",
+  "lineage": [
+   {
+    "source": "World of Bits / MiniWoB++ (Shi 2017, Liu 2018) as described in P1 §6",
+    "relation": "generic low-level actions with visual+structured input; weak"
+   },
+   {
+    "source": "CC-Net (Humphreys 2022) as described in P1 §1/§5.3/§6",
+    "relation": "pixels+DOM, low-level actions, large demos; human-level; demo source"
+   },
+   {
+    "source": "Pix2Struct (Lee 2023) as described in P1 §3",
+    "relation": "screenshot-parsing pretrained backbone"
+   },
+   {
+    "source": "ReAct / RCI / WebN-T5 / WebGUM as described in P1 §6",
+    "relation": "HTML-based LLM agents (contrast class)"
+   }
+  ],
+  "closest_adjacent": [
+   "CC-Net (DOM + pixels; pixel-only ablation)",
+   "WebGUM (HTML, WebShop)"
+  ],
+  "residue": "interactive control from pixels alone with generic actions",
+  "stakes": "apps/sites without usable structure",
+  "method_response": "pixel-parsing pretraining + generic action tokens + search-distilled policy improvement",
+  "remaining_gap": "45/104 MiniWoB++ tasks unsupported (scroll/copy/animation), WebShop gap to HTML agents, no live sites, training needs resets/rewards",
+  "evidence_ids": [
+   "A03",
+   "A04",
+   "A05",
+   "A13",
+   "A22",
+   "A25"
+  ],
+  "unresolved": [
+   "CC-Net and Pix2Struct primary sources not in fixed references; lineage relies on P1's account."
+  ]
+ },
+ "rs_pattern": {
+  "primary": "unify_into_shared_representation",
+  "supporting": [
+   "self_supervised_signal_engineering"
+  ],
+  "outside_taxonomy": false,
+  "matches": [
+   {
+    "main_id": "unify_into_shared_representation",
+    "sub_id": "rs:C18",
+    "role": "primary",
+    "fit": "partial-to-strong",
+    "tactic_steps_checked": [
+     "1 met: bespoke DOM pipelines + task-specific actions named as blocking assumption",
+     "2 met: interface artifact = rendered screenshot + action-token serialisation (A01, A02)",
+     "3 met: one image-to-text recipe across all tasks/benchmarks",
+     "4 partial: pretraining ablated; generic-vs-specialised interface not isolated on same data",
+     "5 partial: held-out tasks 28.3 (BC only); WebShop still behind HTML agents"
+    ],
+    "success_failure_checks": [
+     {
+      "check": "unification unlocks measured capability",
+      "status": "partial"
+     },
+     {
+      "check": "single backbone / narrow validation",
+      "status": "failure risk present (282M, two web sims)"
+     }
+    ],
+    "evidence_ids": [
+     "A01",
+     "A02",
+     "A05",
+     "A16",
+     "A22"
+    ],
+    "reason": "Concrete serialiser and shared objective, not a label; both seats agree."
+   },
+   {
+    "main_id": "self_supervised_signal_engineering",
+    "sub_id": "rs:C08",
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": [
+     "generator = MCTS guided by policy/value nets",
+     "load-bearing filter = environment reward >= 0.8 (external, not self-judged)",
+     "retrain/iterate 2 rounds",
+     "filter removal and cheaper non-search generator not ablated"
+    ],
+    "success_failure_checks": [
+     {
+      "check": "filter + downstream gain",
+      "status": "partial"
+     },
+     {
+      "check": "cheaper remedy ruled out",
+      "status": "unmet (A24)"
+     }
+    ],
+    "evidence_ids": [
+     "A06",
+     "A08",
+     "A09",
+     "A24"
+    ],
+    "reason": "Generate-filter-retrain loop executed; both seats agree."
+   }
+  ],
+  "reason": "Interface unification is the primary operation; search-data manufacture is a separately evidenced supporting operation.",
+  "executes_pattern": true,
+  "resolves_problem": "partial (MiniWoB++ supported subset only)"
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "version": "taxonomy 430aa362..., conditions a7501743...",
+  "matches": [
+   {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "C12",
+    "fit": "good",
+    "condition_checks": [
+     {
+      "id": "planner_grounder_interface.S4",
+      "status": "met",
+      "reason": "X11 demos and WebShop high-level actions normalised into one low-level schema",
+      "evidence_ids": [
+       "A34",
+       "A01"
+      ]
+     },
+     {
+      "id": "planner_grounder_interface.F5",
+      "status": "observed",
+      "reason": "action coverage loss -> task exclusions",
+      "evidence_ids": [
+       "A13"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "A01",
+     "A13",
+     "A34"
+    ]
+   },
+   {
+    "namespace": "gui",
+    "main": "trajectory_level_policy_training",
+    "sub": null,
+    "fit": "main-level",
+    "condition_checks": [
+     {
+      "id": "trajectory_level_policy_training.S1",
+      "status": "met",
+      "reason": "BC initialisation before search-based improvement",
+      "evidence_ids": [
+       "A06"
+      ]
+     },
+     {
+      "id": "trajectory_level_policy_training.S2",
+      "status": "not_applicable",
+      "reason": "no KL-constrained RL update; SFT on filtered search episodes",
+      "evidence_ids": [
+       "A09"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "A06",
+     "A09",
+     "A32"
+    ],
+    "reason": "K20 rejected (see resolution)."
+   }
+  ],
+  "unassigned": [
+   "pixel-only policy without any structured observation (no domain sub-card covers 'no structure' as a design choice)"
+  ],
+  "revision_proposals": [
+   {
+    "type": "boundary_note",
+    "target": "gui:K20",
+    "text": "Search-distillation (MCTS -> SFT, expert iteration) as K20 boundary case or separate candidate; single full-text case (2306.00245) -> case only per PATTERN_PROTOCOL.",
+    "status": "pending (from son55, endorsed as a note; no card edit)"
+   }
+  ]
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "unify_into_shared_representation",
+   "rs_sub": "rs:C18",
+   "domain": {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "C12"
+   },
+   "operation_correspondence": "Heterogeneous demos (X11 real-time events, WebShop high-level actions) are re-expressed in one declared low-level action schema over screenshots and learned with one SFT recipe.",
+   "necessary_conditions_and_differences": "Needs conversion of demonstrations (81% yield) and coverage of all needed actions; unlike C12's large VLMs, a 282M task-trained model; tasks filtered by convertibility.",
+   "evidence_ids": [
+    "A01",
+    "A13",
+    "A34"
+   ]
+  },
+  {
+   "rs_main": "self_supervised_signal_engineering",
+   "rs_sub": "rs:C08",
+   "domain": {
+    "namespace": "gui",
+    "main": "trajectory_level_policy_training",
+    "sub": null
+   },
+   "operation_correspondence": "Reward-gated search trajectories become later SFT data for the same policy.",
+   "necessary_conditions_and_differences": "Resettable deterministic environment with reward; no advantage-weighted update (hence no K20).",
+   "evidence_ids": [
+    "A06",
+    "A09",
+    "A25"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Report execution-checked success rate on OSWorld (or OSWorld-Verified) for desktop computer-use claims, stating the step budget (15 vs 50 steps) and observation setting",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No desktop claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Report online success on AndroidWorld for mobile-agent claims, not only offline AndroidControl/AITW step metrics",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No mobile claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Report success on WebArena (self-hosted, functional-correctness checkers) for web-agent training or planning claims; if the 165-task WebArena-Lite or a per-template subset is used, say so and justify it",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Self-hosted-site web benchmark (WebArena) postdates the work (v1 June 2023) and is not cited in v2; site-coverage limits are scored under E.holdout instead.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Evaluate live-web agents on Online-Mind2Web (human-validated, start URL given, no search engine) or Mind2Web-Live rather than only WebVoyager, where a naive search-and-click agent already solves 51% of sampled tasks",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No live-website claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Report GUI grounding on ScreenSpot-Pro (high-resolution professional desktop) and ScreenSpot-v2, not only ScreenSpot v1, which saturates (7B and 72B indistinguishable)",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No screenshot-to-coordinate grounding benchmark claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Compare a new grounder against UGround(-V1-7B), Aguvis-7B/72B, OS-Atlas-7B and UI-TARS(-1.5) at matched backbone size",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No standalone grounder.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Compare a native end-to-end GUI policy against UI-TARS(-1.5)-7B (or the same backbone's SFT-only model) and against an agentic framework (GPT-4o/o3 planner + specialised grounder such as UGround, Aria-UI, Jedi, GTA1)",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Trained end-to-end GUI policy with online claim; the same backbone's SFT-only (BC) model is reported (66.5) and pretraining ablated; UI-TARS/GPT-4o agentic comparators postdate the work. Historical pixel-only comparator is extrapolated (A04).",
+   "evidence_ids": [
+    "A06",
+    "A05",
+    "A04"
+   ],
+   "score_item": "E.causality",
+   "decision": "sol"
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "For planner-grounder systems, hold the planner fixed and swap grounders (e.g. GPT-4o + UGround vs + Aguvis vs + Jedi), and report the planner alone",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No planner-grounder split.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Compare GUI online-RL methods against DigiRL, WebRL, filtered BC / AWR and an SFT-only model trained on the same data",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Policy improvement from reward-filtered search trajectories; SFT-only model on human demos is the baseline, but no filtered-BC on non-search rollouts or other RL algorithm (authors concede, A24). DigiRL/WebRL postdate the work.",
+   "evidence_ids": [
+    "A06",
+    "A24"
+   ],
+   "score_item": "E.causality",
+   "decision": "sol"
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Validate an LLM/VLM success judge or outcome reward model against human labels on trajectories from agents not used to build it (agreement/accuracy, plus the resulting success-rate gap)",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No learned success judge.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Report judge reliability separately for positive and negative verdicts (precision and NPV, or precision/recall per class), not only overall accuracy",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No judge reliability claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "When a learned judge or PRM is the RL reward, show downstream policy gain against an alternative reward (rule/script checker, ORM vs PRM, another judge), and address reward hacking or bias",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No learned reward model.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Measure execution checkers (evaluation scripts) two-sidedly: false negatives on alternative valid solutions as well as false positives",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "RL-style pipeline whose filter is the MiniWoB++ checker (raw reward >= 0.8). The checker is benchmark-native and programmatic, but no two-sided audit (valid alternatives scored 0, partial rewards) is reported. Low stakes; no rating change.",
+   "evidence_ids": [
+    "A09"
+   ],
+   "score_item": "E.measurement",
+   "decision": "revised"
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "For PRMs or step-level verifiers, ablate the label source (human vs GPT-4o-generated step labels)",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No PRM.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Do not rest an agent capability claim on offline step accuracy (AndroidControl, Multimodal-Mind2Web, GUI Odyssey) alone; add an online benchmark or show the offline metric predicts online success",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Claim is measured online, not by offline step accuracy.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Three evaluation-seed trials (SD 0.15) for the strongest model only; no training replicates; no spread for WebShop or other configurations.",
+   "evidence_ids": [
+    "A12"
+   ],
+   "score_item": "E.statistics",
+   "decision": "son55"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Evaluation max-step cap is not stated (timeouts score 0, A11; 30 steps appears only as a surrogate-reward bound, A38); no steps-used/budget-exhaustion report; human/CC-Net numbers come from a real-time harness with different budgets (A21). Searched §2-5 and App A-C.",
+   "evidence_ids": [
+    "A11",
+    "A38",
+    "A21"
+   ],
+   "score_item": "E.cost",
+   "decision": "revised"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "For inference-time search or best-of-N (simulated lookahead, verifier reranking), report cost/latency and the number of candidates, and compare against real-execution tree search where reset is possible",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "A secondary result is an inference-time real-execution tree-search policy (91.7, 98.4; A07) with candidate counts (K=16 rounds, top-8) stated (A27) but no latency/cost; the headline 96.2 is greedy (A29). Comparator clause (vs real-execution search) is moot because this is real-execution search.",
+   "evidence_ids": [
+    "A07",
+    "A27",
+    "A29"
+   ],
+   "score_item": "E.cost",
+   "decision": "revised"
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Disclose and validate any modification to an online benchmark harness (re-implemented checkers, changed action implementations, dropped tasks, extra steps)",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Self-built Selenium harness, 59/104 task scope, rendering shift and 81% demo conversion are disclosed (A13, A20, A34); equivalence to the X11 harness used for human/CC-Net numbers is not validated (A21).",
+   "evidence_ids": [
+    "A13",
+    "A20",
+    "A21",
+    "A34"
+   ],
+   "score_item": "E.measurement",
+   "decision": "sol"
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "For live-web results, state the evaluation date and handle site drift (replace outdated tasks, report blocked/CAPTCHA tasks)",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No live websites.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": true,
+   "status": "met",
+   "reason": "Pixel-only results are reported separately from DOM/HTML-based systems and the authors do not present the cross-system comparison as a matched causal test. Same-backbone modality comparison is a different expectation (core-E10).",
+   "evidence_ids": [
+    "A02",
+    "A19",
+    "A22"
+   ],
+   "score_item": "E.measurement",
+   "decision": "sol"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Report results across backbone sizes (e.g. 7B and 32B/72B), since gains from GUI data/RL recipes shrink with model size",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Single backbone size; no cross-backbone generalisation claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Stratify online success by human reference step count (difficulty) and audit failure causes",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No new benchmark or long-horizon claim (tasks average ~3 steps).",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Test grounding robustness under controlled perturbations (zoom, text size, window position/clutter, relational instructions) with matched pairs",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No robustness claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Report refusal / infeasible-task behaviour (instructions with no valid target)",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No infeasible-instruction setting.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Compare a synthetic-trajectory recipe against an instruction-first / task-driven synthesis baseline with the same executor and similar data size",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No task-synthesis recipe comparison claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Show a data-scaling curve (fraction or count of synthetic samples vs downstream score) and say where it saturates",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No synthetic-data scaling claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Search-generated episodes come from the same 59 tasks used for evaluation (random seeds, A09); the task-level holdout tests only the BC model (A14), so the self-generated-data component has no held-out task/site evaluation.",
+   "evidence_ids": [
+    "A09",
+    "A14"
+   ],
+   "score_item": "E.holdout",
+   "decision": "son55"
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Ablate error-correction/reflection data against filtered behaviour cloning at the same iteration count",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No reflection/error-correction data.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Evaluate a GUI world model by downstream agent success and closed-loop (multi-step, autoregressive) rollouts, not only teacher-forced one-step fidelity",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No world model.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Ablate imagination / lookahead horizon, since world-model errors compound beyond 1 (lookahead) or about 5 (training) steps",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No learned-model rollouts (search uses the real simulator).",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "For training in a world model, include sim-only vs real-anchored vs SFT-only arms",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No training in a world model.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "Back world-model or synthetic-environment fidelity scores with a second independent judge, human validation or executable checks, not a VLM judge from the same family as the training reward",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No simulated-environment fidelity judge.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "For a digital twin / simulated app used for training or evaluation, measure its realism and whether it preserves the ranking of agents or checkpoints seen in the real environment",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No digital twin claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1@4663f2b47de5",
+   "namespace": "cua-agents (hash-bound)",
+   "text": "For memory/retrieval agents, show gains on environments other than those the memory was built from",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No experience memory/retrieval.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "core-E07",
+   "version": "cua-agents-core/v1@c0f4b4187dcd",
+   "namespace": "cua-agents-core (supplementary, hash-bound)",
+   "text": "Report run-to-run variance on online benchmarks: multiple seeds or runs with intervals (AndroidWorld seeds, OSWorld average of 3 runs, Pass@k), not a single run or the best of several runs",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a success-rate comparison on an online executable benchmark where differences between systems are a few points",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Headline margin over humans is 1.9 pt; evaluation-seed variance reported (SD 0.15) for the strongest model only; no training replicates.",
+   "evidence_ids": [
+    "A12",
+    "A19"
+   ],
+   "score_item": "E.statistics",
+   "added_by": "aggregate"
+  },
+  {
+   "id": "core-E10",
+   "version": "cua-agents-core/v1@c0f4b4187dcd",
+   "namespace": "cua-agents-core (supplementary, hash-bound)",
+   "text": "Compare observation modalities under the same backbone: accessibility tree / DOM only, screenshot only, screenshot + Set-of-Mark, screenshot + a11y tree",
+   "source_strength": null,
+   "source_refs": [],
+   "applies_when": "a claim that a particular perception input or screen representation improves an agent",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "'Pixel-only matches DOM-based' rests on cross-system comparisons; no same-backbone DOM/HTML arm. The paper's central claim is capability under pixel-only input, so this bounds interpretation rather than the claim itself.",
+   "evidence_ids": [
+    "A19",
+    "A22",
+    "A04"
+   ],
+   "score_item": "E.causality",
+   "added_by": "aggregate"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "CL1",
+   "text": "Pixel-only Pix2Act outperforms human crowdworkers on MiniWob++ (96.2 vs 94.3) and is comparable to DOM-based CC-Net (96.3).",
+   "setting": "59/104 MiniWoB++ tasks, Selenium harness, 100 random seeds/task, greedy policy after 2 search rounds",
+   "baseline_control": "human and CC-Net per-task numbers from Humphreys 2022 (X11 real-time harness), averaged over the same 59 tasks",
+   "selection_vs_test": "search data drawn from the same tasks (random seeds); task subset fixed by feasibility, not performance",
+   "result_denominator": "mean over 59 tasks x 100 seeds; timeouts = 0",
+   "evidence_ids": [
+    "A19",
+    "A10",
+    "A11",
+    "A13",
+    "A12"
+   ],
+   "counterevidence": [
+    "A20",
+    "A21"
+   ],
+   "allowed_conclusion": "On the 59 supported tasks in the authors' harness, the greedy pixel-only policy scores 96.2 (eval-seed SD 0.15), numerically above the human mean and level with CC-Net as measured in a different harness."
+  },
+  {
+   "claim_id": "CL2",
+   "text": "Screenshot-parsing pretraining is the key ingredient.",
+   "setting": "BC only",
+   "baseline_control": "same architecture, random init",
+   "selection_vs_test": "in-task seeds; 8-9 manually picked held-out tasks; WebShop test split",
+   "result_denominator": "MiniWoB++ 17.1 -> 66.5; held-out 7.6 -> 28.3; WebShop 1.1 -> 46.7",
+   "evidence_ids": [
+    "A05",
+    "A16",
+    "A17"
+   ],
+   "counterevidence": [
+    "I02"
+   ],
+   "allowed_conclusion": "Supported for BC across three settings; not tested with tree search."
+  },
+  {
+   "claim_id": "CL3",
+   "text": "First pixel-only WebShop baseline; gap remains to HTML-based WebGUM.",
+   "setting": "WebShop 500 test instructions, BC only, MiniWoB++ intermediate finetuning",
+   "baseline_control": "WebGUM (HTML, Flan-T5-XL) figure-only",
+   "selection_vs_test": "standard split",
+   "result_denominator": "task score 46.7 (text, I01); comparator values figure-only",
+   "evidence_ids": [
+    "A05",
+    "A18",
+    "A22",
+    "A23",
+    "A35",
+    "I01"
+   ],
+   "counterevidence": [],
+   "allowed_conclusion": "Pixel-only BC baseline of 46.7 task score, below HTML-based WebGUM (magnitude not in text)."
+  },
+  {
+   "claim_id": "CL4",
+   "text": "Tree search is a simple effective policy-improvement method on MiniWob++.",
+   "setting": "2 iterations, 826K episodes, reward/reset privilege at training",
+   "baseline_control": "same-model greedy; lambda ablation",
+   "selection_vs_test": "same 59 tasks, random seeds",
+   "result_denominator": "greedy 66.5 -> 93.1 -> 96.2; search 91.7 -> 98.4",
+   "evidence_ids": [
+    "A06",
+    "A07",
+    "A08",
+    "A28",
+    "A29"
+   ],
+   "counterevidence": [
+    "A24"
+   ],
+   "allowed_conclusion": "Iterative search distillation improves and retains in the greedy policy in-distribution; superiority over other RL/self-training not shown."
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_reason": "Interactive simulators with programmatic terminal reward (MiniWoB++, WebShop); both web; generated training episodes come from the evaluated tasks; held-out tasks BC-only -> not transfer (EVIDENCE rules 1-2). Authors' word 'offline' (A37) means sandboxed, not static replay. Both seats agree.",
+  "claim_support": "scoped",
+  "author_claim_kept": "Pixel-only agent outperforms human crowdworkers on MiniWob++ and matches DOM-based SOTA; first pixel-only WebShop baseline; pretraining key; tree search effective.",
+  "strongest_supported_claim": "In the authors' Selenium harness on 59 feasibility-selected MiniWoB++ tasks (100 random seeds each), a 282M pixel-only Pix2Act greedy policy (BC + 2 rounds of reward-filtered MCTS distillation) scores 96.2 (eval-seed SD 0.15), above the human mean (94.3) and level with CC-Net (96.3), both measured in a different X11 harness; pretraining lifts BC from 17.1 to 66.5 (held-out tasks 7.6 -> 28.3; WebShop 1.1 -> 46.7); the pixel-only WebShop score 46.7 is below HTML-based WebGUM.",
+  "cannot_say": [
+   "pixels beat or equal DOM inputs for the same model",
+   "tree search beats other RL/self-training at equal data",
+   "the search-trained policy generalises to unseen tasks/sites",
+   "human superiority under identical harness/budget",
+   "results on the 45 unsupported MiniWoB++ tasks or live sites"
+  ],
+  "flags": {
+   "online": "author_report",
+   "transfer": false,
+   "retained": "in-distribution only (see retention_trace)",
+   "improver": "not_claimed",
+   "our_reproduction": false
+  },
+  "unresolved": [],
+  "our_run": false
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Specific bottleneck: GUI agents depend on DOM/HTML and task-specific actions that are often unavailable; pixel-only generic-action agents were far weaker (CC-Net reported drop without DOM, A03; Pix2Act's own non-pretrained BC 17.1, A05). Lineage (WoB -> DOM-specialised agents -> CC-Net -> Pix2Struct; LLM HTML agents ReAct/RCI/WebGUM) is laid out in §6. Not 4: the closest pixel-only comparator is an extrapolated 75% drop rather than a measured run (A04), and the CC-Net/Pix2Struct originals are not in the fixed reference set, so the residual gap is bounded only by the paper's account. Both seats agree.",
+   "evidence_ids": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05"
+   ],
+   "counterevidence_ids": [
+    "A04"
+   ],
+   "search_scope": [
+    "P1 §1, §5.2, §6, App A"
+   ]
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Operation reconstructable and aimed at the bottleneck: screenshot-parsing pretraining supplies visual UI priors, a generic discretised mouse/keyboard token space removes DOM dependence, MCTS with reward/reset generates better trajectories that are distilled back by SFT. Distinguishable predictions exist (no-pretraining collapse, greedy improves after distillation). Not 4: whether gains come from parsing pretraining vs. scale/data, and search vs. any reward-filtered self-training, is not isolated. Both seats agree.",
+   "evidence_ids": [
+    "A01",
+    "A05",
+    "A06",
+    "A07",
+    "A29"
+   ],
+   "counterevidence_ids": [
+    "A24"
+   ],
+   "search_scope": [
+    "P1 §3, §5.3, App B"
+   ]
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Observation construction (rendered instruction, cursor, button state), action binning, beam/anti-cycle greedy policy, MCTS (K=16, top-8, lambda mixing), value net source, reward filter and 2 SFT rounds are all specified; training-time privileges (reset, reward) are explicit; excluded task families listed with reasons. Not 4: evaluation step cap not stated (A11, A38), LR descriptions inconsistent (A36), held-out list 9 vs 8 names (I02), only anti-cycle recovery and no history (A30, A31). Both seats agree.",
+   "evidence_ids": [
+    "A25",
+    "A27",
+    "A28",
+    "A30",
+    "A31",
+    "A32",
+    "A13",
+    "A36",
+    "I02"
+   ],
+   "counterevidence_ids": [
+    "A36",
+    "I02"
+   ],
+   "search_scope": [
+    "P1 §2-3, §5.1, App A-B"
+   ]
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Programmatic MiniWoB++ reward over 59 tasks x 100 seeds with timeouts scored 0 and a full per-task table; WebShop standard 500-instruction test split with its automatic reward. Not 4: human and CC-Net numbers come from a different real-time X11 harness (A20, A21), the pixel-only prior-work point is extrapolated (A04), and comparator WebShop values are figure-only. Both seats agree.",
+   "evidence_ids": [
+    "A10",
+    "A11",
+    "A19",
+    "A35",
+    "A20",
+    "A21",
+    "A04"
+   ],
+   "counterevidence_ids": [
+    "A04",
+    "A20"
+   ],
+   "search_scope": [
+    "P1 §4, §5, App C"
+   ]
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "The paper's causal claims each have a within-paper control on the same harness: pretraining vs random init under BC on in-task MiniWoB++ (17.1 -> 66.5), held-out tasks (7.6 -> 28.3) and WebShop (1.1 -> 46.7) (A05, A16, A17); same-model greedy vs search and per-iteration greedy gains (A06, A07); leaf-evaluation ablation (A28); intermediate-finetuning ablation (A23). Gains are large relative to the evaluation-seed spread. Residual alternatives: search vs. plain reward-filtered self-training at equal episodes (A24, A08), measured no-DOM baseline (A04), same-backbone DOM arm. These bound the tree-search attribution, not the existence of the improvement; hence 3 rather than 2 (sol) or 4.",
+   "evidence_ids": [
+    "A05",
+    "A06",
+    "A07",
+    "A16",
+    "A17",
+    "A23",
+    "A28",
+    "A29"
+   ],
+   "counterevidence_ids": [
+    "A04",
+    "A08",
+    "A24"
+   ],
+   "search_scope": [
+    "P1 §5.2-5.3, §7, App B.2"
+   ]
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Main evaluation uses fresh random seeds of the same 59 tasks the tree-search data were generated on (A09); task-level holdout exists only for BC and is author-picked (A14, A15, I02); WebShop uses the standard test split (A35). No unseen site/app for the full search-trained policy. Both seats agree.",
+   "evidence_ids": [
+    "A09",
+    "A14",
+    "A15",
+    "A16",
+    "A35",
+    "I02"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": [
+    "P1 §4-5, App A, C"
+   ]
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Denominators are explicit and complete (59 tasks x 100 seeds, timeouts = 0, selection of 59/104 declared as feasibility-based with per-family exclusion lists, A10, A11, A13), a per-task table exposes every weak task, and three evaluation-seed resamplings of the headline model give SD 0.15 (A12), which makes the 1.9-pt margin over the human mean robust to evaluation sampling. Not 4: no training-run replicates, no spread for other configurations or WebShop, human reference from another harness. 3 (sol) rather than 2 (son55): the missing replicates concern training variance, while uncertainty and denominators for the reported comparisons are better covered than the 2-anchor 'key statistical gaps' description.",
+   "evidence_ids": [
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A19"
+   ],
+   "counterevidence_ids": [
+    "A20"
+   ],
+   "search_scope": [
+    "P1 §4.1, App A.1, App C.1-C.2"
+   ]
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Model size (282M), training steps (26K+26K), 826K search episodes, 64 TPUv3 cores and search budget (K=16, top-8) reported (A08, A26, A27); no wall-clock, inference latency, or matched-budget comparison with baselines. Both seats agree.",
+   "evidence_ids": [
+    "A08",
+    "A26",
+    "A27"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": [
+    "P1 §3, §5.1, App B"
+   ]
+  }
+ },
+ "status": "reviewed",
+ "status_reason": "Full HTML text including App A-C read; all eight items resolved; both scoring disagreements resolved from the text; no unresolved core-claim disagreement.",
+ "core_checks": {
+  "version_material": "both seats: same bundle 37cac126..., same material ca67cd9a...; no re-dispatch needed",
+  "rs_15_31_and_domain": "both completed; parents verified; namespace normalised (rs:)",
+  "claim_type": "system_method (both)",
+  "evidence_level": "online (both)",
+  "claim_support": "scoped (both)",
+  "privileged_info": "training-time reset/reward for MCTS; greedy evaluation without it (A25, A29)",
+  "denominators": "59 tasks x 100 seeds, timeouts 0; 59/104 feasibility selection declared",
+  "agreed_ratings_reviewed": "G3 M3 X3 meas3 hold2 cost2 re-checked against P1 and endorsed"
+ },
+ "resolutions": [
+  {
+   "field_path": "rs_pattern.matches[*].sub_id",
+   "conflict_keys": [
+    "rs.matches"
+   ],
+   "sol_value": [
+    "self_supervised_signal_engineering/rs:C08",
+    "unify_into_shared_representation/rs:C18"
+   ],
+   "son55_value": [
+    "self_supervised_signal_engineering/C08",
+    "unify_into_shared_representation/C18"
+   ],
+   "decision": "same_supported_fact",
+   "final_value": [
+    "unify_into_shared_representation/rs:C18 (primary)",
+    "self_supervised_signal_engineering/rs:C08 (supporting)"
+   ],
+   "reason": "Same cards, same roles; son55 wrote bare sub IDs. PATTERN_PROTOCOL requires the rs: prefix for original sub-cards, so the final record uses rs:C18/rs:C08. Parent-child verified in MANIFEST (C18 under unify_into_shared_representation, C08 under self_supervised_signal_engineering).",
+   "evidence_ids": [
+    "A01",
+    "A06",
+    "A09"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "domain_pattern.matches[trajectory_level_policy_training].sub",
+   "conflict_keys": [
+    "domain.matches"
+   ],
+   "sol_value": "trajectory_level_policy_training/None",
+   "son55_value": "trajectory_level_policy_training/K20",
+   "decision": "sol",
+   "final_value": "gui:trajectory_level_policy_training, sub=null",
+   "reason": "K20's operation is training critics and updating the actor only on advantageous/perplexity-filtered data (AWR / KL-regularised off-policy RL). Pix2Act uses the value net only as an MCTS leaf evaluator, keeps it fixed, and distils reward-filtered search episodes by plain SFT (expert iteration) - no advantage-weighted or KL-constrained actor update (A06, A09, A32). Main-level match holds; K20 does not. son55's boundary-note revision proposal (expert iteration as a K20 boundary case) is retained as a pending proposal.",
+   "evidence_ids": [
+    "A06",
+    "A09",
+    "A32"
+   ],
+   "score_impact": "none (pattern matches do not enter the score)"
+  },
+  {
+   "field_path": "ratings.E.causality",
+   "conflict_keys": [
+    "rating.E.causality"
+   ],
+   "sol_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "decision": "son55",
+   "final_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "reason": "The paper's causal claims each have a within-paper control on the same harness: pretraining vs random init under BC on in-task MiniWoB++ (17.1 -> 66.5), held-out tasks (7.6 -> 28.3) and WebShop (1.1 -> 46.7) (A05, A16, A17); same-model greedy vs search and per-iteration greedy gains (A06, A07); leaf-evaluation ablation (A28); intermediate-finetuning ablation (A23). Gains are large relative to the evaluation-seed spread. Residual alternatives: search vs. plain reward-filtered self-training at equal episodes (A24, A08), measured no-DOM baseline (A04), same-backbone DOM arm. These bound the tree-search attribution, not the existence of the improvement; hence 3 rather than 2 (sol) or 4.",
+   "evidence_ids": [
+    "A05",
+    "A06",
+    "A07",
+    "A16",
+    "A17",
+    "A23",
+    "A28",
+    "A29"
+   ],
+   "score_impact": "+10/4 = +2.5 vs sol"
+  },
+  {
+   "field_path": "ratings.E.statistics",
+   "conflict_keys": [
+    "rating.E.statistics"
+   ],
+   "sol_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "sol",
+   "final_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "reason": "Denominators are explicit and complete (59 tasks x 100 seeds, timeouts = 0, selection of 59/104 declared as feasibility-based with per-family exclusion lists, A10, A11, A13), a per-task table exposes every weak task, and three evaluation-seed resamplings of the headline model give SD 0.15 (A12), which makes the 1.9-pt margin over the human mean robust to evaluation sampling. Not 4: no training-run replicates, no spread for other configurations or WebShop, human reference from another harness. 3 (sol) rather than 2 (son55): the missing replicates concern training variance, while uncertainty and denominators for the reported comparisons are better covered than the 2-anchor 'key statistical gaps' description.",
+   "evidence_ids": [
+    "A10",
+    "A11",
+    "A12",
+    "A13",
+    "A19"
+   ],
+   "score_impact": "+5/4 = +1.25 vs son55"
+  },
+  {
+   "field_path": "expectations.E07",
+   "conflict_keys": [
+    "expectation.E07"
+   ],
+   "sol_value": "partial",
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "Trained end-to-end GUI policy with online claim; the same backbone's SFT-only (BC) model is reported (66.5) and pretraining ablated; UI-TARS/GPT-4o agentic comparators postdate the work. Historical pixel-only comparator is extrapolated (A04).",
+   "evidence_ids": [
+    "A06",
+    "A05",
+    "A04"
+   ],
+   "score_impact": "none (expectation statuses inform but do not directly add points)"
+  },
+  {
+   "field_path": "expectations.E09",
+   "conflict_keys": [
+    "expectation.E09"
+   ],
+   "sol_value": "partial",
+   "son55_value": "unmet",
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "Policy improvement from reward-filtered search trajectories; SFT-only model on human demos is the baseline, but no filtered-BC on non-search rollouts or other RL algorithm (authors concede, A24). DigiRL/WebRL postdate the work.",
+   "evidence_ids": [
+    "A06",
+    "A24"
+   ],
+   "score_impact": "none (expectation statuses inform but do not directly add points)"
+  },
+  {
+   "field_path": "expectations.E13",
+   "conflict_keys": [
+    "expectation.E13"
+   ],
+   "sol_value": "partial",
+   "son55_value": "not_applicable",
+   "decision": "revised",
+   "final_value": "unmet",
+   "reason": "RL-style pipeline whose filter is the MiniWoB++ checker (raw reward >= 0.8). The checker is benchmark-native and programmatic, but no two-sided audit (valid alternatives scored 0, partial rewards) is reported. Low stakes; no rating change.",
+   "evidence_ids": [
+    "A09"
+   ],
+   "score_impact": "none (expectation statuses inform but do not directly add points)"
+  },
+  {
+   "field_path": "expectations.E16",
+   "conflict_keys": [
+    "expectation.E16"
+   ],
+   "sol_value": "met",
+   "son55_value": "partial",
+   "decision": "son55",
+   "final_value": "partial",
+   "reason": "Three evaluation-seed trials (SD 0.15) for the strongest model only; no training replicates; no spread for WebShop or other configurations.",
+   "evidence_ids": [
+    "A12"
+   ],
+   "score_impact": "none (expectation statuses inform but do not directly add points)"
+  },
+  {
+   "field_path": "expectations.E17",
+   "conflict_keys": [
+    "expectation.E17"
+   ],
+   "sol_value": "partial",
+   "son55_value": "unknown",
+   "decision": "revised",
+   "final_value": "unmet",
+   "reason": "Evaluation max-step cap is not stated (timeouts score 0, A11; 30 steps appears only as a surrogate-reward bound, A38); no steps-used/budget-exhaustion report; human/CC-Net numbers come from a real-time harness with different budgets (A21). Searched §2-5 and App A-C.",
+   "evidence_ids": [
+    "A11",
+    "A38",
+    "A21"
+   ],
+   "score_impact": "none (expectation statuses inform but do not directly add points)"
+  },
+  {
+   "field_path": "expectations.E18",
+   "conflict_keys": [
+    "expectation.E18"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "revised",
+   "final_value": "partial",
+   "reason": "A secondary result is an inference-time real-execution tree-search policy (91.7, 98.4; A07) with candidate counts (K=16 rounds, top-8) stated (A27) but no latency/cost; the headline 96.2 is greedy (A29). Comparator clause (vs real-execution search) is moot because this is real-execution search.",
+   "evidence_ids": [
+    "A07",
+    "A27",
+    "A29"
+   ],
+   "score_impact": "none (expectation statuses inform but do not directly add points)"
+  },
+  {
+   "field_path": "expectations.E19",
+   "conflict_keys": [
+    "expectation.E19"
+   ],
+   "sol_value": "partial",
+   "son55_value": "met",
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "Self-built Selenium harness, 59/104 task scope, rendering shift and 81% demo conversion are disclosed (A13, A20, A34); equivalence to the X11 harness used for human/CC-Net numbers is not validated (A21).",
+   "evidence_ids": [
+    "A13",
+    "A20",
+    "A21",
+    "A34"
+   ],
+   "score_impact": "none (expectation statuses inform but do not directly add points)"
+  },
+  {
+   "field_path": "expectations.E21",
+   "conflict_keys": [
+    "expectation.E21"
+   ],
+   "sol_value": "met",
+   "son55_value": "partial",
+   "decision": "sol",
+   "final_value": "met",
+   "reason": "Pixel-only results are reported separately from DOM/HTML-based systems and the authors do not present the cross-system comparison as a matched causal test. Same-backbone modality comparison is a different expectation (core-E10).",
+   "evidence_ids": [
+    "A02",
+    "A19",
+    "A22"
+   ],
+   "score_impact": "none (expectation statuses inform but do not directly add points)"
+  },
+  {
+   "field_path": "expectations.E28",
+   "conflict_keys": [
+    "expectation.E28"
+   ],
+   "sol_value": "partial",
+   "son55_value": "unmet",
+   "decision": "son55",
+   "final_value": "unmet",
+   "reason": "Search-generated episodes come from the same 59 tasks used for evaluation (random seeds, A09); the task-level holdout tests only the BC model (A14), so the self-generated-data component has no held-out task/site evaluation.",
+   "evidence_ids": [
+    "A09",
+    "A14"
+   ],
+   "score_impact": "none (expectation statuses inform but do not directly add points)"
+  },
+  {
+   "field_path": "expectations.E01",
+   "conflict_keys": [
+    "expectation.E01"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E02",
+   "conflict_keys": [
+    "expectation.E02"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E03",
+   "conflict_keys": [
+    "expectation.E03"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E04",
+   "conflict_keys": [
+    "expectation.E04"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E05",
+   "conflict_keys": [
+    "expectation.E05"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E05/E06/E08/E15/E22/E29",
+   "conflict_keys": [
+    "expectation.E05/E06/E08/E15/E22/E29"
+   ],
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E06",
+   "conflict_keys": [
+    "expectation.E06"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E08",
+   "conflict_keys": [
+    "expectation.E08"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E10",
+   "conflict_keys": [
+    "expectation.E10"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E11",
+   "conflict_keys": [
+    "expectation.E11"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E12",
+   "conflict_keys": [
+    "expectation.E12"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E14",
+   "conflict_keys": [
+    "expectation.E14"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E15",
+   "conflict_keys": [
+    "expectation.E15"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E20",
+   "conflict_keys": [
+    "expectation.E20"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E22",
+   "conflict_keys": [
+    "expectation.E22"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E23",
+   "conflict_keys": [
+    "expectation.E23"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E24",
+   "conflict_keys": [
+    "expectation.E24"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E25",
+   "conflict_keys": [
+    "expectation.E25"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E26",
+   "conflict_keys": [
+    "expectation.E26"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E27",
+   "conflict_keys": [
+    "expectation.E27"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E29",
+   "conflict_keys": [
+    "expectation.E29"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E30",
+   "conflict_keys": [
+    "expectation.E30"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E31",
+   "conflict_keys": [
+    "expectation.E31"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E32",
+   "conflict_keys": [
+    "expectation.E32"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E33",
+   "conflict_keys": [
+    "expectation.E33"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E34",
+   "conflict_keys": [
+    "expectation.E34"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectations.E35",
+   "conflict_keys": [
+    "expectation.E35"
+   ],
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "same_supported_fact",
+   "final_value": "not_applicable",
+   "reason": "One seat omitted the item (sol lists only applicable items or a grouped N/A line); the other recorded not_applicable. Aggregator re-checked applies_when against the paper's claims and endorses not_applicable (reason in expectations[]).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  }
+ ],
+ "shared_error_corrections": [
+  {
+   "correction_id": "SC1",
+   "field_path": "assessment.unresolved / claims.CL3",
+   "both_seats": "Both treated Pix2Act's WebShop absolute score as figure-only/unknown (son55 unresolved 'WebShop 绝对数值(Figure 3 图像)'; sol gave no value).",
+   "correction": "The text reports the pretrained BC WebShop task score 46.7 (A05), and WebShop is trained only by BC (A18), so Pix2Act's WebShop score is 46.7 in text (I01). Only the comparators (WebGUM, human) are figure-only. Whether 46.7 includes the intermediate MiniWoB++ finetuning (A23) is not stated.",
+   "evidence_ids": [
+    "A05",
+    "A18",
+    "A23",
+    "I01"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "correction_id": "SC2",
+   "field_path": "expectations.E18",
+   "both_seats": "sol omitted E18, son55 marked not_applicable.",
+   "correction": "Table 2 reports an inference-time real-execution tree-search policy (91.7/98.4); E18 applies to that secondary result: candidate counts stated, no latency/cost (status partial). Headline claim uses the greedy policy.",
+   "evidence_ids": [
+    "A07",
+    "A27",
+    "A29"
+   ],
+   "score_impact": "none (E.cost already 2 for missing wall-clock/latency)"
+  }
+ ],
+ "unresolved": [],
+ "aggregate_status": "accepted_final",
+ "aggregate_status_note": "Judgment of this version passed the aggregation procedure; not an independent reproduction. Score uses draft_uncalibrated weights.",
+ "score": {
+  "raw": 71.25,
+  "display": 71.2,
+  "lower": 71.25,
+  "upper": 71.25,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(15G+25M+20X+10meas+10caus+10hold+5stat+5cost)/4 = (45+75+60+30+30+20+15+10)/4 = 285/4",
+  "display_rule": "Python round(raw,1) (half-even), same rule as the controller's mechanical recheck; ranking uses raw",
+  "rubric_status": "draft_uncalibrated; score not usable for production ranking until weights/anchors are frozen"
+ },
+ "final_record_hash": "f86308dca4e346264978578ee1cdee9a2727cca7185b73eb8d9739ee5928aae7"
+}

@@ -1,0 +1,3711 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "re1",
+ "attempt_id": "a1",
+ "seat": "aggregate",
+ "paper": {
+  "paper_key": "2504.14603",
+  "paper_id": "arXiv:2504.14603",
+  "title": "UFO2: The Desktop AgentOS",
+  "version": "2504.14603v2",
+  "claim_type": "system_method",
+  "central_claim": "A deeply OS-integrated multi-agent AgentOS for Windows (HostAgent + application-specialised AppAgents, UIA+vision hybrid control detection, unified GUI-API Puppeteer, retrieval-based knowledge integration, speculative multi-action execution, PiP isolation) outperforms prior CUAs including Operator: even with GPT-4o it reaches 27.9% on WAA and 28.6% on OSWorld-W (vs Operator 20.8/14.3) and cuts steps."
+ },
+ "provenance": {
+  "input_hash": "0c53f80620262543975e422d5296c86482ed960182744018b026378068fb68ec",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "aggregate_rules": "docs/agents/AGGREGATE_OPUS.md",
+  "aggregate_rules_sha256": "1ad0c4f39af2ceb06924fc015d8660711edcd9a6f891444e902b44f79584f4e0",
+  "conflicts_sha256": "fb7e84be29df2986a3ea9c7b71c9d37878cfbcf79d7f5474a73ebedc9f18df3c",
+  "references_sha256": "e6b6d3fd2fed1e48d5ec18c80c9a4a1b6c0690fd72d5803e1960bec97d28f5e0",
+  "model_type": "fable",
+  "actual_model": "claude-opus-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "timestamp": "2026-10-22T03:05:37+00:00",
+  "independence_note": "Aggregation over two seat inputs; the fixed paper text was read before seat scores, but this is not a third blind review or human gold. All results are author reports; nothing was reproduced."
+ },
+ "materials": [
+  {
+   "material_id": "agg:2504.14603",
+   "url": "https://arxiv.org/html/2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2504.14603.txt",
+   "role": "paper",
+   "sections_read": [
+    "full text"
+   ],
+   "complete": true,
+   "missing_sections": []
+  },
+  {
+   "material_id": "sol:main",
+   "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2504.14603.txt",
+   "url": "https://arxiv.org/html/2504.14603v2",
+   "version": "2504.14603v2",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "sections_read": [
+    "Complete scientific material: abstract/introduction; sections2-5 architecture, OS integration, engineering and evaluator; sections6.1-6.10 evaluation and ablations, Tables1-8 and algorithm1; sections7-8 discussion/conclusion. Duplicate renderings ignored. No separate scientific appendix is present; bibliography tail not used."
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "version_note": null
+  },
+  {
+   "material_id": "sol:ref-awm",
+   "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2409.07429.txt",
+   "url": "https://arxiv.org/html/2409.07429",
+   "version": null,
+   "sha256": "3b2c8ce934b2f2808d61d943bc9a44ddc21cecc25b6ff71d5dfb62d5a7d01518",
+   "sections_read": [
+    "Abstract/introduction; methods2.1-2.3 workflow induction and offline/online memory construction"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "Only the stated lineage/method excerpts were required and read; remainder not used as evidence."
+   ],
+   "version_note": "Fixed local snapshot; upstream reference version is not recorded in the supplied unversioned source header. No version inferred."
+  },
+  {
+   "material_id": "sol:ref-skill",
+   "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2504.07079.txt",
+   "url": "https://arxiv.org/html/2504.07079",
+   "version": null,
+   "sha256": "989c6bb80b2c6b5e3dc9875926e44f1051818eb99cc57a04fad57d039c799d1d",
+   "sections_read": [
+    "Abstract/introduction; methods2.1-2.3 skill proposal/practice, reward, API synthesis and unit-test/honing"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "Only the stated lineage/method excerpts were required and read; remainder not used as evidence."
+   ],
+   "version_note": "Fixed local snapshot; upstream reference version is not recorded in the supplied unversioned source header. No version inferred."
+  },
+  {
+   "material_id": "sol:ref-osw",
+   "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2404.07972.txt",
+   "url": "https://arxiv.org/html/2404.07972",
+   "version": null,
+   "sha256": "5907f5ab2f95d036e676d17d701a77fd30850e3eccb55b014183d318520ff9d1",
+   "sections_read": [
+    "Introduction; methods2.2 environment setup and execution-based evaluation, interface/getter/checker construction"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "Only the stated lineage/method excerpts were required and read; remainder not used as evidence."
+   ],
+   "version_note": "Fixed local snapshot; upstream reference version is not recorded in the supplied unversioned source header. No version inferred."
+  },
+  {
+   "material_id": "son55:M-2504.14603",
+   "url": "https://arxiv.org/html/2504.14603v2",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2504.14603.txt",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Background",
+    "3 System Design (3.1-3.7, Algorithm 1 as rendered)",
+    "4 Picture-in-Picture",
+    "5 Implementation (5.1-5.6)",
+    "6 Evaluation (6.1-6.9, Tables 1-8)",
+    "7 Discussion",
+    "8 Related Work",
+    "9 Conclusion"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "Algorithm 1 listing is rendered token-per-line and only partly legible (logic recovered from Sec 3.7 text and Figure 11 caption); no appendix or prompt listings exist in this paper; Figures 2-25 (images) unavailable, including Fig 19 (error breakdown) and Fig 23/25 values; help-document contents and the 12 API implementations are not given."
+   ]
+  },
+  {
+   "material_id": "son55:M-2409.07429",
+   "role": "pinned_reference",
+   "sha256": "3b2c8ce934b2f2808d61d943bc9a44ddc21cecc25b6ff71d5dfb62d5a7d01518",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2409.07429.txt",
+   "sections_read": [
+    "passages cited in evidence only (neighbor check, not a full review)"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not reviewed as a subject paper"
+   ]
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "agg:U-A01",
+   "material_id": "agg:2504.14603",
+   "material_sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.1 Baselines",
+   "quote": "alongside the full implementation of UFO 2 featuring hybrid control detection, combined GUI-API interactions, and continuous knowledge augmentation.",
+   "support_explanation": "The headline 'UFO2' rows include knowledge augmentation, i.e. the benchmark-tailored documents.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:U-A02",
+   "material_id": "agg:2504.14603",
+   "material_sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 6",
+   "quote": "Self-Experience | o1 | 20.8% | 13.79% | 26.5% | 17.7%",
+   "support_explanation": "o1 self-experience lowers WAA SR from 25.3 to 20.8, contradicting the text's 'consistent improvements across both benchmarks'.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:U-A03",
+   "material_id": "agg:2504.14603",
+   "material_sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.8",
+   "quote": "approximately 1 minute per task",
+   "support_explanation": "Reported per-task time is hard to reconcile with ~10 s LLM plus ~10 s non-LLM per step over ~6-12 steps.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U01",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "1 Contributions; text lines 162-162",
+   "quote": "a multiagent AgentOS that deeply embeds within the Windows OS, orchestrating desktop applications through introspection, API access, and fine-grained execution control.",
+   "support_explanation": "Central OS-integration claim; provenance is author report, not demonstrated correctness.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U02",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "3.1; text lines 162-162",
+   "quote": "Upon receiving a user request, HostAgent decomposes it into a series of subtasks, each mapped to the application best suited to fulfill it.",
+   "support_explanation": "Actual split/delegate operation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U03",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "3.2; text lines 162-162",
+   "quote": "CONTINUE: Main execution loop; evaluates which subtasks are ready to launch or resume.",
+   "support_explanation": "Explicit host FSM; neighboring states ASSIGN/PENDING/FINISH/FAIL read.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U04",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "3.2; text lines 162-162",
+   "quote": "Shared Blackboard: A concurrent, append-only memory space that facilitates transparent agent communication by recording key observations, intermediate results, and execution metadata accessible to all AppAgent instances.",
+   "support_explanation": "Shared session state distinguished from learned parameters and retrieved experience.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U05",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "3.4; text lines 162-162",
+   "quote": "Visual detections with Intersection-over-Union (IoU) greater than 10% against any UIA-derived control are discarded.",
+   "support_explanation": "Concrete hybrid control fusion rule; not evidence all discarded controls are redundant.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U06",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "3.4; text lines 162-162",
+   "quote": "Remaining visual-only detections are converted into pseudo-UIA objects using a lightweight UIAWrapper abstraction",
+   "support_explanation": "Grounding interface unifies control representation before annotation/execution.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U07",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "3.7; text lines 162-162",
+   "quote": "For each action, the system consults the Windows UIA API to verify the action’s preconditions ( e.g. , is_enabled() , is_visible() ).",
+   "support_explanation": "Guard verifies availability/interactivity, not recipient/content/task semantics.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U08",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "3.7; text lines 162-162",
+   "quote": "Actions are executed in order, halting immediately if any validation fails due to interface change",
+   "support_explanation": "Early-exit and replan loop, not transaction rollback.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U09",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "3.7; text lines 162-162",
+   "quote": "while preserving the correctness guarantees of per-step validation.",
+   "support_explanation": "Author claim stronger than visible/enabled guards establish.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U10",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "4.1; text lines 162-162",
+   "quote": "Applications launched within the PiP session inherit the user’s identity, credentials, settings, and network context",
+   "support_explanation": "Input/focus isolation does not imply data, permission or side-effect isolation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U11",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "4.3; text lines 162-162",
+   "quote": "Windows Named Pipes, authenticated and encrypted using per-session credentials",
+   "support_explanation": "Claimed IPC security mechanism, not an independently measured security guarantee.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U12",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "5.6; text lines 162-162",
+   "quote": "the evaluator parses session traces—including actions, rationales, and screenshots—and applies CoT reasoning to decompose tasks into evaluation criteria.",
+   "support_explanation": "Experience acceptance uses LLM Task Evaluator, distinct from benchmark script outcomes.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U13",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "5.6; text lines 162-162",
+   "quote": "It assigns partial scores and synthesizes an overall result: success , partial , or failure .",
+   "support_explanation": "Explicit label space and selection feedback.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U14",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.1; text lines 162-162",
+   "quote": "Consists of 154 live automation tasks across 15 commonly used Windows applications",
+   "support_explanation": "WAA denominator and environment breadth.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U15",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.1; text lines 162-162",
+   "quote": "comprising 49 live tasks across office applications, browser interactions, and file-system operations.",
+   "support_explanation": "OSWorld-W denominator, not full OSWorld or Linux transfer.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U16",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.1; text lines 162-162",
+   "quote": "Each task runs independently, and verification strictly follows the original scripts provided by each benchmark.",
+   "support_explanation": "Author nominal script parity.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U17",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.1 Footnote1; text lines 162-162",
+   "quote": "due to corrections in verification scripts and alignment with Windows-specific tasks (OSWorld-W).",
+   "support_explanation": "Footnote qualifies original-script claim; exact changes and parity audit not supplied.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U18",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.1; text lines 162-162",
+   "quote": "each agent is restricted to a maximum of 30 execution steps per task",
+   "support_explanation": "Common stated cap; batching/API granularity differs.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U19",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.1; text lines 162-162",
+   "quote": "API integrations were selectively implemented for three office applications within OSWorld-W as illustrative examples; no APIs were introduced for the WAA tasks.",
+   "support_explanation": "Scope and privileges of API contribution.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U20",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.1 ACS definition; text lines 162-162",
+   "quote": "Measures the average number of LLM-involved action inference steps required per task.",
+   "support_explanation": "ACS is LLM invocation/inference steps, not primitive actions, tokens or dollars.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U21",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table1; text lines 1371-1371",
+   "quote": "Operator | computer-use | 20.8% | 14.3%",
+   "support_explanation": "Baseline engine and two benchmark rates; contradicts general prose allGPT4o.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U22",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table1; text lines 1372-1372",
+   "quote": "UFO 2 -base | GPT-4o | 23.4% | 16.3%",
+   "support_explanation": "Base Table1 rates.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U23",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table1; text lines 1374-1374",
+   "quote": "UFO 2 | GPT-4o | 27.9% | 28.6%",
+   "support_explanation": "FullGPT4o rates, gain vsOperator7.1/14.3pp and vsbase4.5/12.3pp.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U24",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table1; text lines 1375-1375",
+   "quote": "UFO 2 | o1 | 30.5% | 32.7%",
+   "support_explanation": "Full strongest configuration, differs in model fromOperator.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U25",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table2; text lines 1408-1408",
+   "quote": "UFO 2 | GPT-4o | 4.7% | 30.0% | 41.7% | 58.3% | 33.3% | 8.3% | 44.4% | 9.1%",
+   "support_explanation": "Per-category WAAOffice4.7% and OSWcross-app9.1% remain weak.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U26",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table3; text lines 1485-1485",
+   "quote": "UIA | GPT-4o | 23.4% | - | 22.4% | -",
+   "support_explanation": "UIA OSWorld22.4 differs from16.3 inTable1 base; no silent reconciliation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U27",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table3; text lines 1486-1486",
+   "quote": "OmniParser-v2 | GPT-4o | 26.6% | 7.0% | 14.3% | 0%",
+   "support_explanation": "Compare withHybrid: WAA ties26.6, not strict improvement.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U28",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table3; text lines 1487-1487",
+   "quote": "Hybrid | GPT-4o | 26.6% | 9.9% | 22.4% | 12.5%",
+   "support_explanation": "Hybrid GPT4o ties Omni WAA andUIA OSWorld.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U29",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table3; text lines 1490-1490",
+   "quote": "Hybrid | o1 | 27.9% | 9.9% | 28.6% | 25.0%",
+   "support_explanation": "Hybrid o1 improves SR; recovery table has25%, unlike prose up-to9.86.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U30",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.3; text lines 162-162",
+   "quote": "The hybrid method consistently outperforms either UIA-only or OmniParser-only settings",
+   "support_explanation": "Text overstates strict improvements whenTable3 ties.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U31",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.3; text lines 162-162",
+   "quote": "converting up to 9.86% of previously irrecoverable cases into completions.",
+   "support_explanation": "Text/table recovery maximum mismatch retained, not normalized.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U32",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.4; text lines 162-162",
+   "quote": "we focus on the 27 office-related tasks in OSWorld and manually develop 12 APIs",
+   "support_explanation": "Scope/API count assertion. Table4 enumerates10 rows; Table5 rates appear49-based.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U33",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table4; text lines 1513-1522",
+   "quote": "select_text | Word | Select matched text in the document.\nselect_paragraph | Word | Select a paragraph in the document.\nset_font | Word | Set the font size and style of selected text.\nsave_as | Word | Save the current document to a desired format.\ninsert_excel_table | Excel | Insert a table at the desired position.\nselect_table_range | Excel | Select a range within a table.\nreorder_column | Excel | Reorder columns of a table.\nsave_as | Excel | Save the current sheet to a desired format.\nset_background_color | PowerPoint | Set the background color of slide(s).\nsave_as | PowerPoint | Save the current presentation to a desired format.",
+   "support_explanation": "All10 API rows needed to substantiate12-vs10 inventory mismatch; not reconstructed or executed.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U34",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table5; text lines 1529-1529",
+   "quote": "GUI-only | GPT-4o | 16.3% | - | - | - | 13.8",
+   "support_explanation": "GUI-only comparatorSR16.3/ACS13.8.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U35",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table5; text lines 1530-1530",
+   "quote": "GUI+API | GPT-4o | 22.4% | 5.9% | 14.3% | 25.0% | 12.9",
+   "support_explanation": "API-enhancedSR22.4/ACS12.9 on common successes.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U36",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table5; text lines 1531-1531",
+   "quote": "GUI-only | o1 | 16.3% | - | - | - | 16.0",
+   "support_explanation": "o1 GUI-only SR/ACS.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U37",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table5; text lines 1532-1532",
+   "quote": "GUI+API | o1 | 24.5% | 17.7% | 0.0% | 12.5% | 6.6",
+   "support_explanation": "o1 API-enhancedSR24.5/ACS6.6.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U38",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.4; text lines 162-162",
+   "quote": "We calculate ACS on the subset of tasks that both configurations successfully complete, ensuring a fair comparison.",
+   "support_explanation": "API ACS is common-success conditional, not expected cost over all attempts.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U39",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.5; text lines 162-162",
+   "quote": "We create 34 help documents tailored to benchmark tasks, each containing precise step-by-step instructions",
+   "support_explanation": "Knowledge construction is target-task-aware; heldout/future-query isolation unstated.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U40",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.5; text lines 162-162",
+   "quote": "summarizes successful execution trajectories—validated by our Task Evaluator and archives them into a retrievable knowledge database.",
+   "support_explanation": "Persisted self-experience follows fallible LLM evaluation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U41",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.5; text lines 162-162",
+   "quote": "For subsequent tasks, UFO 2 dynamically retrieves up to three relevant past execution logs to guide task planning and execution.",
+   "support_explanation": "Concrete later-task read path; independence of later tasks not specified.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U42",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table6; text lines 1569-1569",
+   "quote": "None | o1 | 25.3% | - | 24.5% | -",
+   "support_explanation": "No-experience baseline25.3WAA/24.5OSWorld.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U43",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table6; text lines 1571-1571",
+   "quote": "Self-Experience | o1 | 20.8% | 13.79% | 26.5% | 17.7%",
+   "support_explanation": "Self-experience WAA declines4.5pp whileOSWorld rises2.0; PRR recovery is not net improvement.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U44",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.5; text lines 162-162",
+   "quote": "self-experience enhancements using the stronger model (o1) achieve consistent improvements across both benchmarks",
+   "support_explanation": "Directly conflicts withTable6 WAA25.3→20.8.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U45",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.5; text lines 162-162",
+   "quote": "it inherently evolves toward higher reliability and improved autonomy",
+   "support_explanation": "Retained-improvement guarantee not established by retrieved-log construction.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U46",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table7; text lines 1597-1597",
+   "quote": "Single | GPT-4o | 23.4% | 10.00 | 30 | 22.4% | 13.30 | 10",
+   "support_explanation": "Speculation comparator rates and common-success counts.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U47",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table7; text lines 1598-1598",
+   "quote": "Speculative | GPT-4o | 23.4% | 8.78 | 24.5% | 7.40",
+   "support_explanation": "GPT4o calls reduce whileSR stays/rises.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U48",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table7; text lines 1599-1599",
+   "quote": "Single | o1 | 25.3% | 9.95 | 32 | 24.5% | 6.80 | 10",
+   "support_explanation": "o1 single control rates/ACS.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U49",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table7; text lines 1600-1600",
+   "quote": "Speculative | o1 | 24.7% | 8.85 | 26.5% | 3.30",
+   "support_explanation": "WAAo1SRdrops0.6pp; OSWorldACS6.8→3.3=51.47% fewer LLM steps.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U50",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.6; text lines 162-162",
+   "quote": "we compute the Average Completion Steps (ACS) only on the subset of tasks that both modes complete successfully.",
+   "support_explanation": "Speculation cost result excludes failures.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U51",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6 Overview; text lines 162-162",
+   "quote": "lowering inference cost by up to 51.5% without compromising reliability.",
+   "support_explanation": "General no-compromise claim is weaker than table: calls not actual total costs, and one SRdeclines.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U52",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.8; text lines 162-162",
+   "quote": "the LLM inference phase dominates total latency, averaging around 10 seconds per inference.",
+   "support_explanation": "Latency disclosed in prose; figure values not inferred.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U53",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.8; text lines 162-162",
+   "quote": "incurring around 10 seconds per step on average.",
+   "support_explanation": "Prose explicitly excludingLLM; ambiguous with~1minute task total.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U54",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "6.8; text lines 162-162",
+   "quote": "approximately 1 minute per task",
+   "support_explanation": "Task-time claim not reconciled with reported multi-step latencies andACS.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U55",
+   "material_id": "sol:main",
+   "material_hash": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "7; text lines 162-162",
+   "quote": "Exploring cross-platform deployments will be an important area of future work",
+   "support_explanation": "Windows-only actual evaluation; Linux/macOS are future extensions.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U56",
+   "material_id": "sol:ref-awm",
+   "material_hash": "3b2c8ce934b2f2808d61d943bc9a44ddc21cecc25b6ff71d5dfb62d5a7d01518",
+   "locator": "1; text lines 106-106",
+   "quote": "AWM induces workflows from agent trajectories by extracting reusable routines, and then integrates these workflows into agent memory to guide future task-solving processes.",
+   "support_explanation": "Prior cross-task workflow memory; UFO2 knowledge retrieval is system integration rather than first experience reuse.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U57",
+   "material_id": "sol:ref-skill",
+   "material_hash": "989c6bb80b2c6b5e3dc9875926e44f1051818eb99cc57a04fad57d039c799d1d",
+   "locator": "2.2; text lines 163-163",
+   "quote": "the subsequent Skill Honing module (Stage III) validates APIs through unit testing and debugging to ensure reliability.",
+   "support_explanation": "Co-eval adjacent API-acquisition/testing mechanism; UFO2 uses manually authoredCOM APIs, not this synthesized API loop.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:U58",
+   "material_id": "sol:ref-osw",
+   "material_hash": "5907f5ab2f95d036e676d17d701a77fd30850e3eccb55b014183d318520ff9d1",
+   "locator": "2.1; text lines 245-245",
+   "quote": "Our benchmark has a total of 134 unique evaluation functions",
+   "support_explanation": "Executable checkers are benchmark lineage, not novel UFO2 evaluator validation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E001",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Abstract",
+   "quote": "most existing CUAs remain conceptual prototypes, hindered by shallow OS integration, fragile screenshot-based interaction, and disruptive execution",
+   "support_explanation": "Author gap.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E002",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 2.3",
+   "quote": "They ignore rich system interfaces such as accessibility APIs, application process state, and native inter-process communication mechanisms",
+   "support_explanation": "Specific missing channels.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E003",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 3.1",
+   "quote": "HostAgent decomposes it into a series of subtasks, each mapped to the application best suited to fulfill it.",
+   "support_explanation": "Manager-worker decomposition.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E004",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 3.2",
+   "quote": "The global execution plan is serialized into a finite state machine (FSM)",
+   "support_explanation": "Explicit FSM controller with CONTINUE/ASSIGN/PENDING/FINISH/FAIL states.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E005",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 3.5",
+   "quote": "If a semantically equivalent API is available, Puppeteer prefers it over GUI automation for reliability and atomicity.",
+   "support_explanation": "API-first routing rule.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E006",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 3.5",
+   "quote": "If an API fails or is unavailable ( e.g. , missing bindings or runtime permission errors), the system gracefully falls back to GUI-based control",
+   "support_explanation": "Fallback rule.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E007",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 3.4",
+   "quote": "Visual detections with Intersection-over-Union (IoU) greater than 10% against any UIA-derived control are discarded.",
+   "support_explanation": "Fusion rule: UIA controls win; remaining visual detections become pseudo-UIA objects.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E008",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 3.6",
+   "quote": "Periodically, these logs are mined offline by a summarization module that distills successful trajectories into reusable Example records.",
+   "support_explanation": "Experience persistence: success logs -> Example DB.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E009",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 3.7",
+   "quote": "(2) Runtime Validation: For each action, the system consults the Windows UIA API to verify the action’s preconditions",
+   "support_explanation": "Speculative batch validated by OS-level checks, not by a model.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E010",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.1",
+   "quote": "Windows Agent Arena (WAA) ( 49 ) : Consists of 154 live automation tasks across 15 commonly used Windows applications",
+   "support_explanation": "WAA scale.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E011",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.1",
+   "quote": "OSWorld-W ( 50 ) : A targeted subset of the OSWorld benchmark specifically tailored for Windows, comprising 49 live tasks",
+   "support_explanation": "OSWorld-W scale: one task = 2.04 points.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E012",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.1 footnote",
+   "quote": "Reported baseline scores in OSWorld differ slightly from prior results focused on Ubuntu due to corrections in verification scripts and alignment with Windows-specific tasks (OSWorld-W).",
+   "support_explanation": "Harness modification note (verification scripts corrected).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E013",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.1",
+   "quote": "each agent is restricted to a maximum of 30 execution steps per task",
+   "support_explanation": "Equal step cap.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E014",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.1",
+   "quote": "API integrations were selectively implemented for three office applications within OSWorld-W as illustrative examples; no APIs were introduced for the WAA tasks.",
+   "support_explanation": "APIs for OSWorld-W Office only.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E015",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 1",
+   "quote": "Operator | computer-use | 20.8% | 14.3%",
+   "support_explanation": "Strongest baseline: WAA 20.8, OSWorld-W 14.3 (7 of 49).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E016",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 1",
+   "quote": "UFO 2 | GPT-4o | 27.9% | 28.6%",
+   "support_explanation": "Headline; OSWorld-W 28.6 = 14 of 49.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E017",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 1",
+   "quote": "UFO 2 -base | GPT-4o | 23.4% | 16.3%",
+   "support_explanation": "Base (UIA, GUI-only, no knowledge) OSWorld-W 16.3.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E018",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.5",
+   "quote": "We create 34 help documents tailored to benchmark tasks, each containing precise step-by-step instructions",
+   "support_explanation": "Test-task-specific help documents authored by the team.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E019",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.5",
+   "quote": "For subsequent tasks, UFO 2 dynamically retrieves up to three relevant past execution logs to guide task planning and execution.",
+   "support_explanation": "Self-experience retrieved for later benchmark tasks; source tasks vs test tasks unspecified.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E020",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.5",
+   "quote": "summarizes successful execution trajectories—validated by our Task Evaluator and archives them into a retrievable knowledge database",
+   "support_explanation": "Success gate is the authors LLM Task Evaluator.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E021",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 5.6",
+   "quote": "includes an automated task evaluation engine based on LLM-as-a-judge",
+   "support_explanation": "LLM judge, no agreement with scripts reported.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E022",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 3",
+   "quote": "UIA | GPT-4o | 23.4% | - | 22.4% | -",
+   "support_explanation": "UIA-only OSWorld-W is 22.4 here but 16.3 as UFO2-base in Table 1.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E023",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 3",
+   "quote": "Hybrid | GPT-4o | 26.6% | 9.9% | 22.4% | 12.5%",
+   "support_explanation": "Hybrid on OSWorld-W equals UIA-only SR (22.4) with GPT-4o although CRR>0.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E024",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 5",
+   "quote": "GUI-only | GPT-4o | 16.3% | - | - | - | 13.8",
+   "support_explanation": "GUI-only OSWorld-W 16.3 (=8/49).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E025",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 5",
+   "quote": "GUI+API | GPT-4o | 22.4% | 5.9% | 14.3% | 25.0% | 12.9",
+   "support_explanation": "GUI+API 22.4 (=11/49); ablation baseline differs from Table 3 UIA row definition.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E026",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 6",
+   "quote": "None | GPT-4o | 23.4% | - | 22.4% | -",
+   "support_explanation": "'None' knowledge row OSWorld-W 22.4 equals GUI+API, not 16.3.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E027",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.4",
+   "quote": "We calculate ACS on the subset of tasks that both configurations successfully complete, ensuring a fair comparison.",
+   "support_explanation": "ACS conditioned on jointly solved tasks (survivorship).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E028",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Table 7",
+   "quote": "Single | GPT-4o | 23.4% | 10.00 | 30 | 22.4% | 13.30 | 10",
+   "support_explanation": "Subset sizes 30 and 10 tasks for step comparison.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E029",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.2",
+   "quote": "more than 62% of failures were attributed to Control Detection Failures",
+   "support_explanation": "Error analysis on WAA for UFO2-base.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E030",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.8",
+   "quote": "Across all configurations, the LLM inference phase dominates total latency, averaging around 10 seconds per inference.",
+   "support_explanation": "Latency profile.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E031",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.8",
+   "quote": "the fully integrated UFO 2 incurs only an additional 1 second per step for its hybrid control detection pipeline",
+   "support_explanation": "Overhead of hybrid detection.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E032",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.7",
+   "quote": "Figure 23 shows that UFO 2 + Operator achieves higher success rates than running Operator alone, particularly on WAA (26.0% vs. 20.8%).",
+   "support_explanation": "HostAgent alone adds +5.2 to Operator.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E033",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 5.2",
+   "quote": "whenever an AppAgent identifies an action matching predefined risk criteria, it transitions into a dedicated PENDING state, pausing execution and actively prompting the user for confirmation",
+   "support_explanation": "Safeguard: risky actions gated by user confirmation (no evaluation).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E034",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 1",
+   "quote": "Even when paired with general-purpose models like GPT-4o, UFO 2 outperforms dedicated CUAs by over 10%",
+   "support_explanation": "Headline claim.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E035",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.1",
+   "quote": "Each task runs independently, and verification strictly follows the original scripts provided by each benchmark.",
+   "support_explanation": "Executable verification via benchmark scripts.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E036",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 5.3",
+   "quote": "We find that even minimal wrappers ( e.g. , for OpenAI Operator ( 12 ) ) lead to tangible performance gains",
+   "support_explanation": "Everything-as-an-AppAgent claim.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E037",
+   "material_id": "son55:M-2409.07429",
+   "sha256": "3b2c8ce934b2f2808d61d943bc9a44ddc21cecc25b6ff71d5dfb62d5a7d01518",
+   "locator": "Pinned AWM abstract",
+   "quote": "a method for inducing commonly reused routines, i.e. , workflows , and selectively providing workflows to the agent to guide subsequent generations",
+   "support_explanation": "Pinned neighbour for experience-derived guidance injection.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E038",
+   "material_id": "son55:M-2504.14603",
+   "sha256": "39d267d133428c41057b72c02c6b49006fa32ab4de232cdccd290dfa17ace376",
+   "locator": "Sec 6.1",
+   "quote": "We evaluate UFO 2 using two established Windows-centric automation benchmarks",
+   "support_explanation": "Benchmarks WAA and OSWorld-W.",
+   "kind": "author_report"
+  }
+ ],
+ "preliminary_evidence_judgment": "Read before seat scores. UFO2 is a Windows multiagent system (HostAgent FSM, per-app AppAgents, UIA+OmniParser fusion, GUI/API Puppeteer, doc/experience RAG, speculative batches with UIA precondition checks, PiP desktop). Evaluation on WAA (154) and OSWorld-W (49, checker scripts corrected) with benchmark scripts and a 30-step cap for all agents. The full UFO2 row includes 'continuous knowledge augmentation', which uses 34 help documents 'tailored to benchmark tasks' with step-by-step instructions, 12 hand-written APIs for the OSWorld-W office tasks, and an experience DB filled from benchmark runs gated by an unvalidated LLM judge, none given to baselines. UFO2-base (no docs/APIs) beats Operator by 4 tasks on WAA. Ablation tables use differing base configurations (OSWorld-W 16.3 vs 22.4, the latter matching GUI+API); text claims o1 self-experience improves both benchmarks while Table 6 shows 25.3 -> 20.8 on WAA. Single runs.",
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "Agent architecture and action interface on Windows: HostAgent (FSM, blackboard) delegating subtasks to per-application AppAgents whose Puppeteer chooses between registered native APIs and GUI actions.",
+   "information": "Screenshots, UIA control metadata, SoM-annotated controls, OS process info; API registry; private and shared blackboard memory.",
+   "operation": "Task decomposition into dependency-ordered subtasks; ReAct loop per AppAgent; API-first with GUI fallback; PENDING state for risky actions.",
+   "output": "GUI event or API call per step.",
+   "conditions": "App APIs exist (COM for Office) — 12 hand-written APIs for Word/Excel/PowerPoint; UIA available or visual fallback.",
+   "feedback": "UIA state checks; execution result/error from API; user confirmation for risky steps.",
+   "selection_rule": "Prefer semantically equivalent API; fallback on failure.",
+   "persistence": "Session memory and blackboard within a session.",
+   "later_use": "within session",
+   "claimed_effect": "GUI+API raises OSWorld-W SR 16.3 -> 22.4 (GPT-4o) and 16.3 -> 24.5 (o1).",
+   "failure_boundary": "Apps without APIs or UIA support (LibreOffice), plan errors on OSWorld-W.",
+   "evidence_ids": [
+    "son55:E003",
+    "son55:E004",
+    "son55:E005",
+    "son55:E006",
+    "son55:E014",
+    "son55:E024",
+    "son55:E025",
+    "son55:E029",
+    "son55:E033"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "Hybrid control detection: UIA controls plus OmniParser-v2 detections merged by IoU deduplication.",
+   "information": "UIA tree + screenshot parsed by YOLOv8/Florence-2.",
+   "operation": "Drop visual boxes with IoU>10% against UIA; wrap the rest as pseudo-UIA controls; SoM annotate.",
+   "output": "Unified control list for the agent.",
+   "conditions": "Custom-rendered UIs",
+   "feedback": "none",
+   "selection_rule": "UIA priority",
+   "persistence": "not_applicable",
+   "later_use": "not_applicable",
+   "claimed_effect": "Control Recovery Ratio 9.9% (WAA), up to 25% (OSWorld-W, o1).",
+   "failure_boundary": "Vision-only worse than UIA on OSWorld-W (14.3 vs 22.4).",
+   "evidence_ids": [
+    "son55:E007",
+    "son55:E022",
+    "son55:E023"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "Knowledge substrate: help-document index and Example DB of summarised successful trajectories, retrieved into prompts.",
+   "information": "34 authored help docs tailored to benchmark tasks; past execution logs validated by an LLM Task Evaluator; retrieval top-1 doc, top-3 logs.",
+   "operation": "Offline summarisation of success logs; embedding retrieval at run time.",
+   "output": "Retrieved guidance in prompt.",
+   "conditions": "Similar tasks repeat; judge reliability.",
+   "feedback": "LLM Task Evaluator verdict (success gate).",
+   "selection_rule": "Keep successful trajectories only.",
+   "persistence": "Application-specific vector store / example DB.",
+   "later_use": "Retrieved for subsequent tasks (E019).",
+   "claimed_effect": "Plan Recovery Ratio up to 17.7%; WAA SR 23.4 -> 26.6.",
+   "failure_boundary": "Benefit varies by model (o1 self-experience WAA 25.3 -> 20.8).",
+   "evidence_ids": [
+    "son55:E008",
+    "son55:E018",
+    "son55:E019",
+    "son55:E020",
+    "son55:E021",
+    "son55:E026"
+   ]
+  },
+  {
+   "sig_id": "S4",
+   "object": "Speculative multi-action execution.",
+   "information": "One LLM call predicts k actions; UIA validates each before execution.",
+   "operation": "Batch predict, validate, execute, early-exit and replan.",
+   "output": "Multiple actions per inference",
+   "conditions": "Predictable UI transitions",
+   "feedback": "UIA preconditions",
+   "selection_rule": "First failed validation halts the batch",
+   "persistence": "not_applicable",
+   "later_use": "not_applicable",
+   "claimed_effect": "ACS -10% (WAA) / -51.5% (OSWorld-W) with similar SR.",
+   "failure_boundary": "ACS measured on jointly solved tasks only (10 tasks on OSWorld-W).",
+   "evidence_ids": [
+    "son55:E009",
+    "son55:E027",
+    "son55:E028"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "CUAs rely on screenshots and simulated input, ignoring accessibility/APIs and process state, and lock the user out of the desktop.",
+  "checked_gap": "Plausible and partially measured: 62% of WAA failures of the UIA-only base are control-detection failures and OSWorld-W errors are plan-heavy (author error analysis). The comparison with baselines is, however, a system-vs-system one with unequal access to APIs and authored knowledge.",
+  "lineage": [
+   "UFO v1 (same group), NAVI/WAA, OmniAgent/OmniParser, Agent S, OpenAI Operator, Claude Computer Use - baselines in Table 1",
+   "AWM (pinned) as experience-derived guidance injection"
+  ],
+  "lineage_note": "The pinned references.json contains no Windows desktop CUA; WAA/OSWorld numbers of baselines come from the paper and cited works; later work (UI-TARS-2, MAI-UI) is current_relevance only.",
+  "closest_adjacent": "UFO v1 (UIA + vision) and Agent S (hierarchy plus experience retrieval).",
+  "residue": "Latency (10 s/step LLM), UIA gaps in third-party apps, human-level gap.",
+  "stakes": "Practical desktop automation with non-disruptive execution.",
+  "method_response": "Make OS interfaces first-class: UIA+vision, APIs, FSM orchestration, retrieval knowledge, PiP.",
+  "remaining_gap": "Which components cause the gain once baselines get the same APIs and documents; test-task leakage in knowledge.",
+  "evidence_ids": [
+   "sol:U56",
+   "sol:U57",
+   "son55:E037"
+  ],
+  "unresolved": [
+   "Equal-information baselines",
+   "Experience DB / test overlap"
+  ],
+  "aggregate_neighbor_check": "Pinned AWM/SkillWeaver show prior induced workflow/skill memory; UFO2's residual is OS-level integration (UIA/API/FSM/PiP), not memory itself."
+ },
+ "rs_pattern": {
+  "primary": "decompose_and_delegate",
+  "supporting": [
+   "adapt_via_conditioning",
+   "unify_into_shared_representation"
+  ],
+  "outside_taxonomy": false,
+  "reason": "",
+  "matches": [
+   {
+    "main_id": "decompose_and_delegate",
+    "sub_id": "C25",
+    "role": "primary",
+    "fit": "good",
+    "tactic_steps_checked": {
+     "1_responsibility_boundary": "met: HostAgent for decomposition/lifecycle, AppAgents for per-app execution, APIs/UIA as exact tools",
+     "2_machine_checkable_artifact": "met: structured subtask plan, FSM states, typed action/API calls, UIA preconditions",
+     "3_close_loop_with_verifiable_signal": "met for speculative batches (UIA precondition checks) and API results/errors; partial for planning (self-declared FINISH)",
+     "4_external_oracle_when_self_eval_unreliable": "partial: OS-level validation replaces model judging for actions, but experience gating uses an LLM evaluator"
+    },
+    "success_checks": "API vs GUI contrast and speculative validation are mechanical.",
+    "failure_checks": "Risk of chaining generic agents; role-removal ablation of HostAgent decomposition only via Operator-as-AppAgent.",
+    "evidence_ids": [
+     "son55:E003",
+     "son55:E004",
+     "son55:E005",
+     "son55:E009",
+     "son55:E032"
+    ],
+    "reason": "The central operation is delegating subtasks to specialised executors and exact OS/API solvers through structured artifacts."
+   },
+   {
+    "main_id": "adapt_via_conditioning",
+    "sub_id": "C03",
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "2_reference_substrate": "met: help-doc index and Example DB",
+     "3_no_parameter_update": "met",
+     "4_category_holdout": "unmet: docs tailored to benchmark tasks; experience DB source unspecified",
+     "5_cheaper_baseline": "unmet"
+    },
+    "success_checks": "On/off knowledge ablation (Table 6).",
+    "failure_checks": "Contamination of substrate with test-task knowledge.",
+    "evidence_ids": [
+     "son55:E008",
+     "son55:E018",
+     "son55:E019",
+     "son55:E026"
+    ],
+    "reason": "Retrieval-conditioned prompts are a separate operation from the decomposition."
+   },
+   {
+    "main_id": "unify_into_shared_representation",
+    "sub_id": "C18",
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "serialize_foreign_signal_into_dominant_interface": "met: visual detections wrapped as pseudo-UIA controls; GUI and API actions in one Puppeteer action space",
+     "ablate_interface_vs_backbone": "partial: Tables 3 and 5",
+     "beat_specialists": "partial: beats Operator under authors setting"
+    },
+    "success_checks": "Unified control graph; mixed GUI-API action space.",
+    "failure_checks": "Vision-only underperforms UIA (E022/E023); unmatched baselines.",
+    "evidence_ids": [
+     "son55:E005",
+     "son55:E007",
+     "son55:E023"
+    ],
+    "reason": "Control fusion and action unification are interface constructions different from decomposition."
+   }
+  ],
+  "executes_pattern": true,
+  "resolves_problem": "partial: the integrated system beats the listed baselines on two Windows benchmarks, but the gain is not shown to be due to OS integration rather than test-tailored APIs and documents.",
+  "aggregate_source_seat": "son55",
+  "aggregate_reason": "Primary decompose_and_delegate/C25 (both seats: HostAgent decomposes and delegates to app-specialised agents and native APIs with typed fallbacks). Supporting adapt_via_conditioning/C03 (both) and unify_into_shared_representation/C18 (son55): visual detections are converted into pseudo-UIA objects so one control-graph recipe serves both sources, a distinct manufactured-substrate operation."
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "namespace": "gui",
+    "main": "agent_loop_context_control",
+    "sub": "C17",
+    "version": "sha256:430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "fit": "strong_operation_partial_evidence",
+    "condition_checks": [
+     {
+      "condition_id": "S1",
+      "status": "partial",
+      "reason": "Base/Operatorwrapper comparison exists but no clean same-observation/tools role-removal factorial.",
+      "evidence_ids": [
+       "sol:U02",
+       "sol:U19",
+       "sol:U22",
+       "sol:U23"
+      ],
+      "condition_name": "Each role removed with the same backbone",
+      "condition_definition": "The paper ablates the progress-summary/planning agent, memory unit, manager or reflector by removing it and reports the drop (SR 88.6 -> 59.1 without the planning agent; instruction SR 56% -> 12% without the manager hub or the reflection agent; subtask SR 76.0 -> 48.1) (2406.01014#s1, 2502.14282#s2, 2502.14282#s3).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "S2",
+      "status": "not_applicable",
+      "reason": "No recent-history truncation method claimed.",
+      "evidence_ids": [],
+      "condition_name": "Recent steps at full fidelity, older steps as text, with the window ablated",
+      "condition_definition": "A few recent screenshots are kept verbatim and older history becomes action text or summaries, with the number of screenshots / history level ablated (three recent screenshots plus L1 action text beats one; L2 text history adds nothing) (2508.09123#s4, 2406.01014#s1).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "S3",
+      "status": "partial",
+      "reason": "FSMsupports replan/FAIL/PENDING; semantic self-check not external proof.",
+      "evidence_ids": [
+       "sol:U03",
+       "sol:U08"
+      ],
+      "condition_name": "Proactive replanning or prunable plan trees",
+      "condition_definition": "The manager replans after every subgoal rather than only on failure (+4.62 / +6.15 points), or the agent maintains a plan tree it can branch and prune (WebArena SR 38.2% -> 43.1%) (2504.00906#s2, 2410.13825#s5).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "S4",
+      "status": "partial",
+      "reason": "Early exit observes invalid controls; valid-but-wrong and irreversible effects remain.",
+      "evidence_ids": [
+       "sol:U07",
+       "sol:U08"
+      ],
+      "condition_name": "Reflection on visible, reversible errors",
+      "condition_definition": "Post-action reflection compares before/after observations in settings where errors show as screen non-change or a recognisably wrong page and are reversible; guidelines plus a post-action success/failure summary lift M3A 19.8% -> 30.6% on AndroidWorld (2401.16158#s3, 2406.01014#s3, 2405.14573#s2).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "S5",
+      "status": "partial",
+      "reason": "GPT4o/o1system results; no cross-backbone isolated hierarchy ablation.",
+      "evidence_ids": [
+       "sol:U23",
+       "sol:U24"
+      ],
+      "condition_name": "Hierarchy benefit shown across backbones",
+      "condition_definition": "Separating planning from action decisions is reported across several backbones (Mobile-Agent-E 75.1 vs 53.0 satisfaction across three backbones) (2501.11733#s1).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "S6",
+      "status": "partial",
+      "reason": "Blackboard retainedcontext andACS given, but no causal relevance/retention study.",
+      "evidence_ids": [
+       "sol:U04",
+       "sol:U20"
+      ],
+      "condition_name": "Agent-nominated retained content with step savings",
+      "condition_definition": "The agent lists pivotal element ids or focus content to keep, and the paper reports both success and steps (WebArena SR 37.1% -> 38.2%, steps 12.0 -> 8.6; removing the focus memory: SR 88.6 -> 77.3) (2410.13825#s4, 2406.01014#s2).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F1",
+      "status": "risk",
+      "reason": "TaskEvaluator/selfstatus may misjudge outcomes; benchmarkscript distinct.",
+      "evidence_ids": [
+       "sol:U12",
+       "sol:U13",
+       "sol:U16"
+      ],
+      "condition_name": "Reflector and self-check accuracy unmeasured",
+      "condition_definition": "Reflection accuracy is as low as 78.8%, executor self-checks and the supervising orchestrator hallucinate, and completion is self-declared without a checker (2406.01014#s3, 2508.03923#s3, 2411.10323#s2, 2312.13771#s3).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F2",
+      "status": "risk",
+      "reason": "Shared summaries can persist inaccurate subtaskstate; not independently measured.",
+      "evidence_ids": [
+       "sol:U04",
+       "sol:U40"
+      ],
+      "condition_name": "Summaries hide errors over long horizons",
+      "condition_definition": "Summaries returning only the final state hide intermediate mistakes from the orchestrator, long-horizon tasks (>30-50 actions) still lose coherent context, and summary error propagation is not measured (2508.03923#s2, 2508.09123#s4, 2406.01014#s1).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F3",
+      "status": "partial",
+      "reason": "Fullsystem tested twoLLMs; decomposition-specific benefit not separated.",
+      "evidence_ids": [
+       "sol:U23",
+       "sol:U24"
+      ],
+      "condition_name": "Decomposition degrades weaker backbones",
+      "condition_definition": "With a weaker backbone the full multi-agent framework falls below its single agent (Qwen2.5-VL) (2502.14282#s2).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F4",
+      "status": "risk",
+      "reason": "Privileges/runtime components confounded; no cleanmanagerremoval with fullcost.",
+      "evidence_ids": [
+       "sol:U19",
+       "sol:U20",
+       "sol:U22",
+       "sol:U23"
+      ],
+      "condition_name": "No role-removal ablation and unreported per-step cost",
+      "condition_definition": "Several systems give no role-removal ablation, so gains cannot be assigned to the hierarchy alone, while each role adds per-step cost (2501.11733#s1, 2402.07939#s1, 2402.07456#s4).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F5",
+      "status": "risk",
+      "reason": "UIAguard not rollback or harmbound;PiPinheritscredentials.",
+      "evidence_ids": [
+       "sol:U07",
+       "sol:U10"
+      ],
+      "condition_name": "Irreversible actions and state-blind replanning",
+      "condition_definition": "Plausible-looking wrong pages and irreversible actions (sending messages) defeat screenshot-diff reflection; plan pruning resets only the agent's context, not the web state (2406.01014#s3, 2401.16158#s3, 2410.13825#s5).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F6",
+      "status": "partial",
+      "reason": "154+49online tasks, with lowcross-app success and no repeats.",
+      "evidence_ids": [
+       "sol:U14",
+       "sol:U15",
+       "sol:U25"
+      ],
+      "condition_name": "Loop pathologies on small, baseline-free suites",
+      "condition_definition": "Repeated actions to the step limit, early stopping triggered by an 'unachievable' hint, loops from caching actions but not outcomes, or retained content that hurts dense single-page tasks, evaluated on small benchmarks without baselines (2307.13854#s4, 2405.14573#s3, 2410.13825#s4, 2401.16158#s2).",
+      "namespace": "gui"
+     }
+    ],
+    "evidence_ids": [
+     "sol:U02",
+     "sol:U03",
+     "sol:U04"
+    ],
+    "reason": "GUI C17 is host-manager/appworker loop. OriginalC17 is a different card; no namespace conflation.",
+    "executes_pattern": true,
+    "resolves_problem": false,
+    "condition_note": "Conditions are claim-appropriate check questions, not a counted scoring denominator. Risk denotes plausible unexcluded failure, not an observed event unless explicitly stated.",
+    "aggregate_source_seat": "sol"
+   },
+   {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "C11",
+    "version": "sha256:430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "fit": "strong_operation_partial_evidence",
+    "condition_checks": [
+     {
+      "condition_id": "S1",
+      "status": "partial",
+      "reason": "UIA/vision/hybrid controls hold GPT4o or o1 fixed. Hybrid GPT4o ties a comparator in each suite, and baseline configurations differ across tables.",
+      "evidence_ids": [
+       "sol:U26",
+       "sol:U27",
+       "sol:U28",
+       "sol:U29"
+      ],
+      "condition_name": "Grounder value shown with a fixed strong planner",
+      "condition_definition": "Holding a strong planner fixed and adding the grounder is reported (o3 23.0 -> 51.0, GPT-4o 5.0 -> 27.0 on OSWorld with Jedi); replacing GPT-4o's own coordinates with a grounding model's triples OSWorld SR (5.03 -> 14.63 with OS-Atlas-7B) (2505.13227#s2, 2410.23218#s3).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "S2",
+      "status": "not_applicable",
+      "reason": "The full interface is not screenshot-only: UIA metadata and native COM APIs are deliberate inputs. No new dynamic-resolution grounder training is proposed.",
+      "evidence_ids": [
+       "sol:U05",
+       "sol:U06",
+       "sol:U19"
+      ],
+      "condition_name": "Screenshot-only grounder at dynamic high resolution",
+      "condition_definition": "The grounder operates on raw screenshots only, trained at dynamic high resolution (2410.05243#s2, 2412.04454#s3).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "S3",
+      "status": "not_applicable",
+      "reason": "Uses existing OmniParser and UIA; does not harvest/mix a rendered grounding-training corpus.",
+      "evidence_ids": [],
+      "condition_name": "Grounding data from rendered structure, mixed and multi-level",
+      "condition_definition": "Exact element boxes are read from rendered DOM/element trees; mixed data types and multiple levels (icon/component/layout) scale without saturation, and web-only data transfers to desktop/mobile; harvested element-box pairs are curated (dropping static text, balanced per-source sampling: 71.2 -> 74.9) rather than only scaled (2505.13227#s1, 2410.05243#s1, 2401.10935#s1, 2411.17465#s4).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "S4",
+      "status": "partial",
+      "reason": "Shared GUI/API dispatch schema is real, but only Windows execution shown; cross-platform zero-shot action normalization is not tested.",
+      "evidence_ids": [
+       "sol:U19",
+       "sol:U55"
+      ],
+      "condition_name": "Unified cross-platform action space",
+      "condition_definition": "A unified pyautogui action space is used, packing multiple pairs per screenshot; normalising heterogeneous datasets into one shared schema (17 -> 10 action types) helps zero-shot OOD transfer (2412.04454#s1, 2410.23218#s2, 2508.09123#s1).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "S5",
+      "status": "partial",
+      "reason": "Element-ID controls use available UIA structure, with pseudo-UIA wrappers for visual fallback; manually registered Office tools match app capability. No context-size/tool-library scaling study.",
+      "evidence_ids": [
+       "sol:U05",
+       "sol:U06",
+       "sol:U19",
+       "sol:U32",
+       "sol:U33"
+      ],
+      "condition_name": "Interface matched to available structure",
+      "condition_definition": "An element-tag interface is used only where a parseable accessibility tree plus OCR exists; an application-specific tool library fits in context (881 tools, 32K) (2410.08164#s3, 2510.17790#s1).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "S6",
+      "status": "partial",
+      "reason": "GUI-only versus GUI+API shown with the same two backbones; no API-only baseline; common-success ACS and ambiguous 27/49 task denominator bound interpretation.",
+      "evidence_ids": [
+       "sol:U32",
+       "sol:U34",
+       "sol:U35",
+       "sol:U36",
+       "sol:U37",
+       "sol:U38"
+      ],
+      "condition_name": "Hybrid GUI + code action space compared with each alone",
+      "condition_definition": "GUI actions are mixed with code/shell/SDK calls and compared against GUI-only and code-only agents on the same benchmark (OSWorld-Verified 60.76% vs 50.68% / 35.73%, with fewer steps per passed task), or the action space is pruned toward what the LLM handles well with each step ablated (WebArena SR 16.5% -> 25.9% -> 31.7%) (2508.03923#s1, 2509.02544#s1, 2410.13825#s1, 2410.13825#s2).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F1",
+      "status": "risk",
+      "reason": "Planning/content mistakes can propagate through a valid control/API interface; availability guards cannot establish semantic correctness.",
+      "evidence_ids": [
+       "sol:U07",
+       "sol:U09",
+       "sol:U25"
+      ],
+      "condition_name": "Planner errors propagate through the NL interface",
+      "condition_definition": "Planning errors (wrong/vague element descriptions) dominate failures and propagate through the natural-language interface; an end-to-end single model is weaker than with a strong external planner; residual failures are dominated by planning in spreadsheet and multi-app tasks (2410.05243#s2, 2505.13227#s2, 2412.04454#s3, 2410.23218#s3, 2504.00906#s3).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F2",
+      "status": "partial",
+      "reason": "Host PENDING provides clarification rather than universally acting, but no ambiguity/refusal accuracy or infeasible-task partition is evaluated.",
+      "evidence_ids": [
+       "sol:U03"
+      ],
+      "condition_name": "Ambiguity and refusal unhandled",
+      "condition_definition": "Models rarely refuse; ambiguous instructions cause ~40% of errors (2505.13227#s1, 2412.04454#s1).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F3",
+      "status": "not_applicable",
+      "reason": "Claims use executable online task SR, not only saturated offline grounding metrics.",
+      "evidence_ids": [
+       "sol:U14",
+       "sol:U15",
+       "sol:U16"
+      ],
+      "condition_name": "Claims on saturated grounding benchmarks only",
+      "condition_definition": "ScreenSpot v1/v2 saturate and there is an offline-online gap (2501.12326#s3).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F4",
+      "status": "partial",
+      "reason": "Custom-control coverage motivates visual fallback; long-tail-icon learning saturation is not measured and no new grounding data scaling claim is made.",
+      "evidence_ids": [
+       "sol:U05",
+       "sol:U06"
+      ],
+      "condition_name": "Data returns diminish on long-tail icons",
+      "condition_definition": "Diminishing returns after ~100K screenshots; long-tail and idiosyncratic icons cause grounding errors on mobile/desktop (2410.05243#s1, 2410.05243#s2).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F5",
+      "status": "risk",
+      "reason": "COM selection APIs circumvent some coarse GUI actions; the IoU discard and pseudo-UIA representation may still lose fine targets. No independent sub-element granularity audit.",
+      "evidence_ids": [
+       "sol:U05",
+       "sol:U06",
+       "sol:U33"
+      ],
+      "condition_name": "Interface granularity too coarse",
+      "condition_definition": "Element-ID grounding cannot target sub-element positions (grounding errors in 53% of failures); pruned or compressed action spaces drop actions other sites need (hover/press/tabs untested) or lose fine-grained actions (letter-level drag-select) (2410.08164#s3, 2410.13825#s1, 2508.09123#s1).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F6",
+      "status": "partial",
+      "reason": "GPT4o/o1 use tools, but no small/open-backbone tool-use study or API-only coverage control; limited three-app manual APIs prevent general tool robustness inference.",
+      "evidence_ids": [
+       "sol:U19",
+       "sol:U34",
+       "sol:U35",
+       "sol:U36",
+       "sol:U37"
+      ],
+      "condition_name": "Tool interface unused by small models",
+      "condition_definition": "Tool gains are modest at 7B (+1.9); small models rarely call tools and make harmful tool calls before RL; hybrid code actions need a strong reasoning orchestrator (o4-mini drops to 43.43%) and code-only cannot handle apps without scripting access (2510.17790#s1, 2508.03923#s1, 2402.07456#s1).",
+      "namespace": "gui"
+     }
+    ],
+    "evidence_ids": [
+     "sol:U05",
+     "sol:U06",
+     "sol:U19",
+     "sol:U32",
+     "sol:U34",
+     "sol:U35",
+     "sol:U36",
+     "sol:U37"
+    ],
+    "reason": "C11 unifiesGUI/nativeAPI execution. StaticAPIbindings are not learned or synthesizedskillimprovement. Nofourthmain added forhybridobservation.",
+    "executes_pattern": true,
+    "resolves_problem": false,
+    "condition_note": "Conditions are claim-appropriate check questions, not a counted scoring denominator. Risk denotes plausible unexcluded failure, not an observed event unless explicitly stated.",
+    "aggregate_source_seat": "sol"
+   },
+   {
+    "namespace": "gui",
+    "main": "experience_memory_retrieval",
+    "sub": "K27",
+    "version": "sha256:430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "fit": "strong_operation_partial_evidence",
+    "condition_checks": [
+     {
+      "condition_id": "S1",
+      "status": "met_with_scope_limit",
+      "reason": "Knowledge is tailored to benchmark environments/apps and includes successful local runs. Same-environment construction is an applicability affordance, not proof of held-out generalization.",
+      "evidence_ids": [
+       "sol:U39",
+       "sol:U40",
+       "sol:U41"
+      ],
+      "condition_name": "Experience from the same environments",
+      "condition_definition": "Memory is built from the same applications/environments (self-supervised exploration on benchmark initial states) (2410.08164#s2).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "S2",
+      "status": "partial",
+      "reason": "Successful trajectories are summarized by the Task Evaluator pipeline and a no-knowledge control is given. No raw-log versus summary-only ablation.",
+      "evidence_ids": [
+       "sol:U12",
+       "sol:U40",
+       "sol:U42",
+       "sol:U43"
+      ],
+      "condition_name": "Summaries rather than raw trajectories, with ablation",
+      "condition_definition": "Stored experience is summarised by a self-evaluator, and removing the summaries is ablated (26.15 -> 18.46) (2410.08164#s2).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "S3",
+      "status": "unmet",
+      "reason": "A fixed cap of three retrieved logs is stated, but no memory-library-size or retrieved-count scaling study is reported in the complete knowledge evaluation.",
+      "evidence_ids": [
+       "sol:U41"
+      ],
+      "condition_name": "Memory-size scaling reported",
+      "condition_definition": "Scaling with memory size is reported: continuous (Q-Former) memory scales log-linearly where text memory degrades beyond ~10 items (2510.09038#s1).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "S4",
+      "status": "partial",
+      "reason": "Host/app hierarchy and retrieved documentation/logs guide subtasks, but this is not the full web-search+narrative-queue mechanism of K28 and is not claimed as such.",
+      "evidence_ids": [
+       "sol:U02",
+       "sol:U03",
+       "sol:U39",
+       "sol:U41"
+      ],
+      "condition_name": "Hierarchical planning with retrieved knowledge",
+      "condition_definition": "A manager fuses web search and narrative memory into a subtask queue executed by workers, with replanning on failure; requires a proprietary MLLM, web search and an accessibility tree (2410.08164#s1).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "S5",
+      "status": "partial",
+      "reason": "Own successful runs are distilled for later use and compared with no library. Applicability/precondition checks are not independently audited; o1 WAA regresses.",
+      "evidence_ids": [
+       "sol:U40",
+       "sol:U41",
+       "sol:U42",
+       "sol:U43"
+      ],
+      "condition_name": "Distilled, reusable knowledge from own runs",
+      "condition_definition": "What worked is distilled into element-function documents, tips, precondition-guarded shortcuts or code tools and injected into later tasks, with the gain reported against no library (AppAgent SR 48.9% -> 73.3% with stable element ids; Mobile-Agent-E SS 75.1 -> 86.9; SheetCopilot tasks 0% -> 60%) (2312.13771#s2, 2501.11733#s3, 2402.07456#s3).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F1",
+      "status": "unknown",
+      "reason": "No isolated OOD memory gain or layout-shift retrieval audit; this is missing generalization evidence, not an observed retrieval-drift rate.",
+      "evidence_ids": [
+       "sol:U39",
+       "sol:U41"
+      ],
+      "condition_name": "Small out-of-distribution gain",
+      "condition_definition": "OOD gains are small (OSWorld 26.40 -> 26.73) and retrieval drifts under UI shifts (2510.09038#s1).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F2",
+      "status": "risk",
+      "reason": "LLM Task Evaluator success labels gate storage; no independent false-accept/reject agreement measurement.",
+      "evidence_ids": [
+       "sol:U12",
+       "sol:U13",
+       "sol:U40"
+      ],
+      "condition_name": "Self-evaluator / reflector not validated",
+      "condition_definition": "Self-evaluator correctness is unmeasured; reflector labels disagree with humans ~25% (2410.08164#s2, 2311.08649#s2).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F3",
+      "status": "risk",
+      "reason": "No explicit memory-build versus held-out-environment isolation.",
+      "evidence_ids": [
+       "sol:U39",
+       "sol:U40",
+       "sol:U41"
+      ],
+      "condition_name": "Held-out environment gains not isolated",
+      "condition_definition": "Gains on environments other than those the memory was built from are not isolated (2410.08164#s2).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F4",
+      "status": "partial",
+      "reason": "Table6 ablation exists, but without repeats; PRR measures recovered failures and does not establish net SR improvement. Execution-error prevalence is not invented.",
+      "evidence_ids": [
+       "sol:U42",
+       "sol:U43"
+      ],
+      "condition_name": "Thin ablations and execution-dominated failures",
+      "condition_definition": "Ablations on 65 tasks with a single run; execution errors account for 79.59% of failures (2410.08164#s1).",
+      "namespace": "gui"
+     },
+     {
+      "condition_id": "F5",
+      "status": "risk",
+      "reason": "Task-tailored documents and unspecified archive chronology leave future-query leakage/error propagation unresolved. The o1 WAA regression is observed counterevidence, not proof of leakage.",
+      "evidence_ids": [
+       "sol:U39",
+       "sol:U40",
+       "sol:U41",
+       "sol:U42",
+       "sol:U43",
+       "sol:U44"
+      ],
+      "condition_name": "Distilled knowledge leaks test queries or propagates errors",
+      "condition_definition": "Reflectors saw future queries or learning explores the same benchmark's dev set; shortcuts are misused on misperceived preconditions and flawed shortcuts propagate errors; the gain is small or absent with another backbone (Gemini-1.5-pro) (2501.11733#s3, 2402.07456#s3, 2312.13771#s2).",
+      "namespace": "gui"
+     }
+    ],
+    "evidence_ids": [
+     "sol:U12",
+     "sol:U13",
+     "sol:U39",
+     "sol:U40",
+     "sol:U41",
+     "sol:U42",
+     "sol:U43"
+    ],
+    "reason": "K27 tightly fits retrieved summarizedsuccesslogs;GUI C19 own-run distilledknowledge is adjacent but notasecondmain. OriginalC19belongsassumption_audit_and_pivot, notthisnamespace.",
+    "executes_pattern": true,
+    "resolves_problem": false,
+    "condition_note": "Conditions are claim-appropriate check questions, not a counted scoring denominator. Risk denotes plausible unexcluded failure, not an observed event unless explicitly stated.",
+    "aggregate_source_seat": "sol"
+   },
+   {
+    "main": "structured_screen_observation",
+    "sub": "C02",
+    "version": "patterns@2026-10 (cua-agents-core C02)",
+    "fit": "good",
+    "condition_checks": {
+     "detector_trained_on_UI_elements": "met: OmniParser-v2",
+     "fusion_benefit_model_dependent": "seen: o1 vs GPT-4o differ (Table 3)",
+     "parser_cost_reported": "met: +1 s per step",
+     "duplicate_icons_handling": "IoU dedup only against UIA"
+    },
+    "evidence_ids": [
+     "son55:E007",
+     "son55:E022",
+     "son55:E023",
+     "son55:E031"
+    ],
+    "reason": "Pixel parser outputs fused with UIA elements as an indexed control list.",
+    "namespace": "gui",
+    "aggregate_source_seat": "son55"
+   }
+  ],
+  "unassigned": [
+   "Knowledge substrate maps to experience_memory_retrieval (C19) and the PENDING safeguard to injection_defense_isolation (C35); neither selected among the top three but both are scored through expectations."
+  ],
+  "revision_proposals": [],
+  "aggregate_note": "Union: manager-worker hierarchy (C17), hybrid GUI/API actions (C11), doc/experience retrieval (K27), pixel-parsed element list fused with UIA (C02)."
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": "C25",
+   "domain_namespace": "gui",
+   "domain_main": "agent_loop_context_control",
+   "domain_sub": "C17",
+   "operation_correspondence": "RS: decompose and delegate to specialised solvers via structured artifacts; gui: manager decomposes, workers act and report.",
+   "required_conditions_and_differences": "gui C17 asks for role-removal ablations; RS C25 asks mechanical checks: UIA preconditions supply them for speculative actions only.",
+   "evidence_ids": [
+    "son55:E003",
+    "son55:E004",
+    "son55:E009"
+   ]
+  },
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": "C25",
+   "domain_namespace": "gui",
+   "domain_main": "planner_grounder_interface",
+   "domain_sub": "C11",
+   "operation_correspondence": "RS: route to exact solver; gui: API calls beside GUI actions in one space.",
+   "required_conditions_and_differences": "APIs handwritten for three Office apps; availability condition of C11 is explicit.",
+   "evidence_ids": [
+    "son55:E005",
+    "son55:E014"
+   ]
+  },
+  {
+   "rs_main": "unify_into_shared_representation",
+   "rs_sub": "C18",
+   "domain_namespace": "gui",
+   "domain_main": "structured_screen_observation",
+   "domain_sub": "C02",
+   "operation_correspondence": "RS: wrap foreign modality into the dominant interface; gui: pixel detections converted to UIA-like controls.",
+   "required_conditions_and_differences": "Interface contribution not isolated from backbone (no detector-only ablation separate from model change).",
+   "evidence_ids": [
+    "son55:E007",
+    "son55:E022",
+    "son55:E023"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E01"
+   ],
+   "applies_when": "desktop computer-use success claim",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Windows benchmarks WAA and OSWorld-W (a 49-task Windows subset of OSWorld, scripts corrected) rather than OSWorld/OSWorld-Verified proper; step cap 30 stated; observation setting (UIA+SoM) stated.",
+   "evidence_ids": [
+    "son55:E010",
+    "son55:E011",
+    "son55:E012",
+    "son55:E013",
+    "son55:E038"
+   ],
+   "score_item": "E.measurement",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E16"
+   ],
+   "applies_when": "online benchmark comparison",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Single run per configuration; OSWorld-W steps of 2.04 points.",
+   "evidence_ids": [
+    "son55:E011",
+    "son55:E016",
+    "son55:E015"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2501.12326#s1",
+     "note": "reports both 15 and 50 steps"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2410.13232#s2",
+     "note": "5 actions vs 30 for some baselines (condition)"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2504.01382#s2",
+     "note": "differing step caps; efficiency stratified"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2609.07712#s3",
+     "note": "budget exhaustion"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2510.17790#s1",
+     "note": "average steps reported"
+    }
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Common30stepcapreported;LLMinferencestepsareunequalprimitive-actionswhenAPIandbatchingactive.",
+   "evidence_ids": [
+    "sol:U18",
+    "sol:U19",
+    "sol:U20",
+    "sol:U50"
+   ],
+   "score_item": [
+    "E.cost",
+    "E.causality"
+   ],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E19"
+   ],
+   "applies_when": "modified/re-engineered harness",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Footnote discloses corrected verification scripts and Windows-adapted OSWorld-W; no validation shown; baselines run by authors or taken from sources not detailed.",
+   "evidence_ids": [
+    "son55:E012",
+    "son55:E035"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E28"
+   ],
+   "applies_when": "memory/documents improve benchmark success",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Help documents are tailored to benchmark tasks and the self-experience store is filled by runs on the same benchmark; no held-out apps or tasks.",
+   "evidence_ids": [
+    "son55:E018",
+    "son55:E019"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "expectations.json#E35"
+   ],
+   "applies_when": "memory/retrieval claim",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "No gains shown on environments other than those the memory was built from.",
+   "evidence_ids": [
+    "son55:E019",
+    "son55:E026"
+   ],
+   "score_item": "E.holdout",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E10"
+   ],
+   "applies_when": "LLM judge labelling trajectory success (filtering)",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Task Evaluator (LLM-as-a-judge) gates the experience DB; agreement with benchmark scripts not reported.",
+   "evidence_ids": [
+    "son55:E020",
+    "son55:E021"
+   ],
+   "score_item": "E.measurement",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "expectations.json#E21"
+   ],
+   "applies_when": "observation spaces differ between compared agents",
+   "applicable": true,
+   "status": "partial",
+   "reason": "UIA-only, vision-only and hybrid observation compared (Table 3); baselines have different observation modalities (Operator screenshots) and not reported separately.",
+   "evidence_ids": [
+    "son55:E022",
+    "son55:E023",
+    "son55:E015"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "core-E08",
+   "version": "patterns/main/agent_loop_context_control.md",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "patterns/main/agent_loop_context_control.md#reviewer-expectations"
+   ],
+   "applies_when": "planner-executor/manager-worker decomposition claim",
+   "applicable": true,
+   "status": "partial",
+   "reason": "No HostAgent removal with the same backbone; Operator-as-AppAgent (26.0 vs 20.8) is the only role contrast.",
+   "evidence_ids": [
+    "son55:E032",
+    "son55:E036"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "core-E21",
+   "version": "patterns/main/agent_loop_context_control.md",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "patterns/main/agent_loop_context_control.md#reviewer-expectations"
+   ],
+   "applies_when": "architecture adding model calls per step",
+   "applicable": true,
+   "status": "met",
+   "reason": "Step counts, LLM time per step (~10 s) and +1 s for hybrid detection are reported.",
+   "evidence_ids": [
+    "son55:E030",
+    "son55:E031",
+    "son55:E027"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2410.05243#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.04454#s3"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.19723#s1"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2501.12326#s3"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2506.08012#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2509.11543#s1"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2509.23738#s1"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2602.09856#s2"
+    }
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "NotamobileAndroidagentstudy.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2410.13232#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2411.02337#s3"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2410.02907#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2601.22149#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2602.14721#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.19723#s1"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2411.02337",
+     "note": "authors concede evaluation on 165-task WebArena-Lite subset due to cost"
+    }
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "DesktopOSautomation, notaself-hostedweb-agentclaimdespitebrowsersincluded.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2504.01382#s2",
+     "note": "constructs Online-Mind2Web; WebVoyager overstates competence"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2411.06559#s1",
+     "note": "Online-Mind2Web and Mind2Web-Live"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2601.04126#s2",
+     "note": "Online-Mind2Web as transfer benchmark"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2410.05243#s2",
+     "note": "Mind2Web-Live"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.04454#s3",
+     "note": "Mind2Web-Live"
+    }
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Noexplicitlivesitegeneralizationclaimdistinctfromdesktopbenchmarkapps.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2501.12326#s3"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2505.13227#s1"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2509.11543"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2604.14262#s2"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2501.12326",
+     "note": "authors: ScreenSpot v1/v2 may not be robust enough to capture gains at scale"
+    }
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "HybridUIA/visioncontrolcoverage, nottraininganewscreen-coordinategroundermodel.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2412.04454#s1",
+     "note": "vs UGround"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2501.12326#s3",
+     "note": "vs UGround-V1-7B, OS-Atlas-7B, Aguvis"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2505.13227#s1",
+     "note": "vs UI-TARS-7B/72B, UGround-V1-7B, Aguvis, OS-Atlas"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2506.08012",
+     "note": "GPT-4o + UGround / Aguvis-7B / Aria-UI baselines"
+    }
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "NonewGUIgroundermodel/datarecipe.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2509.11543#s1",
+     "note": "vs UI-TARS-7B, SFT-only, offline RL"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2506.08012#s2",
+     "note": "vs UI-TARS-7B/72B, GPT-4o+Aria-UI"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2509.23738#s1",
+     "note": "UI-TARS-1.5-7B base"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2510.17790#s1",
+     "note": "UI-TARS-1.5-7B, GTA1-7B+o3"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2601.04126#s2",
+     "note": "UI-TARS-1.5-7B base"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2602.00575#s2",
+     "note": "UI-TARS-1.5-7B base"
+    }
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Systemmethodwithoff-the-shelfLLMs, nottrainedend-to-endGUIpolicymodel.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2410.05243#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.04454#s3"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2505.13227#s2"
+    }
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Actualonlinehybrid/UIA/visioncomparison;fixedplannersperrowbuttiesandunexplainedbaselineconfigurationslimitcausality.",
+   "evidence_ids": [
+    "sol:U26",
+    "sol:U27",
+    "sol:U28",
+    "sol:U29",
+    "sol:U30"
+   ],
+   "score_item": [
+    "E.causality"
+   ],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2411.02337#s3",
+     "note": "vs SFT, Filtered BC, AWR, DigiRL"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2406.11896#s1",
+     "note": "vs Filtered BC, AWR"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2509.11543#s1",
+     "note": "vs SFT-only, offline GRPO"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2601.22149#s2",
+     "note": "vs WebRL, NNetNav SFT"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2509.23738#s1",
+     "note": "vs ORM-based PPO and ARPO"
+    }
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "NoRLalgorithmcontribution.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2510.18596#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2504.01382#s1",
+     "note": "precision on AgentRewardBench; low recall noted"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2602.00575#s1",
+     "note": "F1 under class imbalance"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2504.01382",
+     "note": "authors concede o4-mini WebJudge is overly conservative with low recall"
+    }
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "TaskEvaluatorusedforreliability-bearingacceptancebutnometrichuman/stateoracleagreementorfalseaccept/rejectreportlocatedin5.6/6.5andremainingexperimentsections.",
+   "evidence_ids": [
+    "sol:U12",
+    "sol:U13",
+    "sol:U40"
+   ],
+   "score_item": [
+    "E.measurement",
+    "E.causality"
+   ],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2509.23738#s1",
+     "note": "PRM-PPO vs ORM-PPO vs ARPO"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2602.00575#s2",
+     "note": "VAGEN reward vs ProRe reward"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2510.18596",
+     "note": "authors: UPE not validated inside RL; abstention may bias kept samples"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2605.06732#s3",
+     "note": "theory: systematic reward bias is not removed by more rollouts"
+    }
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "LLMjudgefiltersmemory, notlearnedrewardmodeltrainingGUIRL.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_limitation",
+     "ref": "2404.07972",
+     "note": "authors: more red-teaming could reduce remaining false positives/negatives"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2602.00575",
+     "note": "authors: OSWorld-Verified scripts produce false negatives (multiple solutions)"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2609.07712#s2",
+     "note": "reviewer audit on correct and deliberate-failure trajectories"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2610.05001#s2",
+     "note": "detection rate plus non-rejection rate on legal alternatives"
+    }
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Inheritedbenchmarkcheckersexist;footnoteadmitscorrections, withouttwo-sidedvalidationofactualmodifiedscripts.",
+   "evidence_ids": [
+    "sol:U16",
+    "sol:U17",
+    "sol:U58"
+   ],
+   "score_item": [
+    "E.measurement"
+   ],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2509.23738#s2"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2509.23738",
+     "note": "authors: GPT-4o labels show significant gap to human experts"
+    }
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "NoPRMforRL/best-of-N.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_limitation",
+     "ref": "2501.12326",
+     "note": "authors: offline benchmark results may fail to capture online capability"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2509.11543#s3",
+     "note": "SOP R^2=0.934 vs AndroidControl-High 0.470 against AndroidWorld"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2602.09856",
+     "note": "authors: offline evaluation cannot assess alternative valid trajectories or recovery"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2504.01382#s2"
+    }
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Capabilitymeasuredonline,notteacher-forcedofflinestepmetrics.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2410.13232#s2",
+     "note": "$ and seconds vs tree search"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2411.06559#s1",
+     "note": "wall-clock vs tree search"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2509.23738#s2",
+     "note": "gain vs N, plateau"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2602.00575#s2",
+     "note": "best-of-N vs N"
+    }
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Speculationbatchesactionsandsyntacticallyguards,notbest-of-Nsemanticselection;noaccuracyclaimforalearnedlookaheadselector.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_limitation",
+     "ref": "2504.01382",
+     "note": "authors: websites evolve so tasks must be replaced"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2406.11896",
+     "note": "authors: frozen policies degrade over time due to site/app changes"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2510.09038",
+     "note": "authors: evolving websites complicate reproducibility"
+    }
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": true,
+   "status": "partial",
+   "reason": "WindowsVMCPU/RAM/A100andmodelendpointsdescribed;fullappversions,seed/timestampandrepeatsnotlisted.",
+   "evidence_ids": [
+    "sol:U14",
+    "sol:U15",
+    "sol:U52"
+   ],
+   "score_item": [
+    "E.holdout",
+    "E.cost"
+   ],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2509.11543",
+     "note": "relative gain 7B +104% vs 32B +37%"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2501.12326#s3",
+     "note": "2B/7B/72B"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2604.02345#s2",
+     "note": "seven backbones"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.04454#s3",
+     "note": "7B and 72B"
+    }
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Twobackbonesforsystemcomponents,butnotrainingrecipegeneralizationclaim.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2504.01382#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2609.07712#s3"
+    }
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "applicable": true,
+   "status": "partial",
+   "reason": "End-to-endappcategoryresultsandfailuretypes;cross-appSRonly9.1%,noindependenthorizon-stratifiedrepeats.",
+   "evidence_ids": [
+    "sol:U14",
+    "sol:U15",
+    "sol:U25"
+   ],
+   "score_item": [
+    "G",
+    "E.statistics"
+   ],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2604.14262#s1"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2404.07972#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2505.13227#s3",
+     "note": "knowledge-free re-annotated instructions"
+    }
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Custom/nonstandardcontrolfallbackevaluated;nonewheldoutvisual-layouttestoradversarialshiftuncertainty.",
+   "evidence_ids": [
+    "sol:U05",
+    "sol:U06",
+    "sol:U26",
+    "sol:U28",
+    "sol:U29"
+   ],
+   "score_item": [
+    "E.holdout"
+   ],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2505.13227#s1",
+     "note": "OSWorld-G refusal category"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2404.07972#s1",
+     "note": "infeasible tasks"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2412.04454",
+     "note": "authors: model cannot indicate uncertainty or refuse"
+    }
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": true,
+   "status": "partial",
+   "reason": "PENDINGuserclarificationandFAILstatesexist;benchmarkambiguity/infeasibilityauditnotseparatelyreported.",
+   "evidence_ids": [
+    "sol:U03"
+   ],
+   "score_item": [
+    "E.measurement"
+   ],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2410.02907#s3"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.19723#s1"
+    }
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Noexploration-first/reverse/world-modeldata-synthesisrecipe.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2410.05243#s1",
+     "note": "diminishing after ~100K screenshots"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2505.13227#s1",
+     "note": "10%-100% no saturation"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2412.19723",
+     "note": "authors: performance saturates at larger data scales"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2604.02345#s1",
+     "note": "log-linear"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2510.09038#s1",
+     "note": "memory-size scaling"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2608.05891",
+     "note": "authors: returns saturate after 20K rollouts"
+    }
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No syntheticGUItrainingdatacontribution.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2506.08012#s1"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2506.08012#s2"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2506.08012",
+     "note": "authors: reflection data covers visual/grounding errors, not high-level planning"
+    }
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Noisolatedreflection/first-errortrainingdataimprovementclaim;ordinaryReActstatusandguardreplanhandledunderloopconditions.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2609.00048#s1"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2411.06559#s2",
+     "note": "intrinsic accuracy correlated with Mind2Web-Live SR"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2602.09856#s2",
+     "note": "AndroidWorld SR with lookahead"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2410.13232#s1",
+     "note": "downstream SR ablation"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2601.22149#s2"
+    }
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No learnedGUIworldmodel.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2411.06559#s1",
+     "note": "H=1 best"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2601.22149#s2",
+     "note": "dream length 4-5 best"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2410.13232",
+     "note": "authors: errors accumulate with search depth"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2402.01086",
+     "note": "authors: autoregressive error accumulation (robotics)"
+    }
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No learned-modelmulti-stepplanningrollouts.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2601.22149#s2",
+     "note": "0% real underperforms SFT"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2608.05891",
+     "note": "authors: world-model-only data lowers ATP below base"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2403.03949#s3",
+     "note": "real co-training 2-3.5x over sim co-training (robotics)"
+    }
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "No worldmodelpolicytraining.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_limitation",
+     "ref": "2609.00048",
+     "note": "authors: VLM judges miss fine-grained task-state errors; more human-validated checks needed"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2602.14721#s1",
+     "note": "ranking checked under a second (Claude-Opus-4.1) judge"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2411.06559#s2",
+     "note": "intrinsic metric correlated with executed SR"
+    }
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "TaskEvaluatorjudgesrealexecutedtraces,notsimulatedfidelity.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2609.07712#s1",
+     "note": "blind A/B realism; placeholder residual"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2504.03597#s1",
+     "note": "checkpoint ranking preserved vs real"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2403.03949#s1",
+     "note": "targeted twin vs generic assets"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2507.07067",
+     "note": "authors: residual sim-to-real gap is unavoidable after calibration"
+    }
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "PiPisanactualWindowsRDPsession,notasimulated-appreplacementclaim.",
+   "evidence_ids": [],
+   "score_item": [],
+   "source_note": "Practice/limitation-derived expectation, not an actual reviewer quotation.",
+   "aggregate_source_seat": "sol (son55 did not list)"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "UFO 2 outperforms Operator and other CUAs: WAA 27.9 vs 20.8; OSWorld-W 28.6 vs 14.3 (GPT-4o), 30.5/32.7 with o1.",
+   "setting": "WAA 154 tasks, OSWorld-W 49 tasks, 30 steps, benchmark scripts",
+   "baseline_control": "Five CUAs; baselines GPT-4o except Operator; UFO2 full includes 12 handwritten Office APIs (OSWorld-W), 34 task-tailored help docs and experience DB",
+   "selection_vs_test": "Knowledge and APIs authored for/derived from the evaluation tasks",
+   "result_denominator": "WAA 154; OSWorld-W 49 (14 vs 7 solved)",
+   "evidence_ids": [
+    "son55:E010",
+    "son55:E011",
+    "son55:E013",
+    "son55:E014",
+    "son55:E015",
+    "son55:E016",
+    "son55:E018",
+    "son55:E019",
+    "son55:E034"
+   ],
+   "counterevidence": "UFO2-base (no APIs, no docs) beats Operator by 2.6 (WAA) and 2.0 (OSWorld-W, one task); ablation baselines are inconsistent across tables.",
+   "allowed_conclusion": "UFO2 (authors configuration) scores higher than listed baselines on these two Windows benchmarks; the part attributable to OS integration as opposed to test-tailored resources is not separated."
+  },
+  {
+   "claim_id": "C2",
+   "text": "GUI+API raises success and reduces steps; hybrid detection recovers failures; knowledge integration reduces plan errors; speculation cuts steps by up to 51.5%.",
+   "setting": "OSWorld-W 49 tasks (APIs for 27 Office tasks) and WAA",
+   "baseline_control": "component on/off",
+   "selection_vs_test": "same tasks",
+   "result_denominator": "49 and 154 tasks; ACS on subsets of 10-34 jointly solved tasks",
+   "evidence_ids": [
+    "son55:E022",
+    "son55:E023",
+    "son55:E024",
+    "son55:E025",
+    "son55:E026",
+    "son55:E027",
+    "son55:E028"
+   ],
+   "counterevidence": "OSWorld-W UIA-only baselines are 22.4 (Tables 3, 6, 7) and 16.3 (Tables 1, 5); hybrid equals UIA SR for GPT-4o on OSWorld-W; o1 self-experience lowers WAA SR (25.3 -> 20.8).",
+   "allowed_conclusion": "Directionally plausible component benefits; magnitudes are not reliable."
+  },
+  {
+   "claim_id": "C3",
+   "text": "PiP isolation lets users work concurrently.",
+   "setting": "system description",
+   "baseline_control": "none",
+   "selection_vs_test": "n/a",
+   "result_denominator": "no user study or measurement",
+   "evidence_ids": [
+    "son55:E033"
+   ],
+   "counterevidence": "No evaluation of PiP or safeguard.",
+   "allowed_conclusion": "Design claim only."
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_reason": "WAA and OSWorld-W live tasks scored by the benchmarks' verification scripts (OSWorld-W scripts corrected by the authors); single platform (Windows), knowledge tailored to benchmark tasks, so not transfer.",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "Author-reported single runs with a common 30-step cap: UFO2-base (UIA, GUI-only, no knowledge) slightly exceeds Operator and other GPT-4o CUAs on WAA (23.4 vs 20.8); full UFO2 reaches 27.9/28.6 with GPT-4o, but its margin includes benchmark-tailored help documents and hand-built APIs unavailable to baselines; per-module tables show small gains (often 1-4 tasks) and reduced steps on jointly solved subsets.",
+  "not_supported": [
+   "Architecture-attributable superiority of full UFO2 over baselines under equal information",
+   "Self-experience improving o1 on both benchmarks (Table 6 contradicts)",
+   "Generalisation to unseen apps or other OSes"
+  ],
+  "unresolved": [
+   "Temporal separation of the experience DB from test tasks",
+   "Validation of corrected OSWorld-W scripts"
+  ],
+  "retention_trace": "before: base agent -> candidates: successful benchmark trajectories -> selection: unvalidated LLM Task Evaluator -> persisted: per-app example DB -> later use: retrieved (top-3) for benchmark tasks -> measured: Table 6 (mixed). No temporal/test separation stated, so retained improvement is not established.",
+  "author_report_only": true,
+  "our_run": false
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Both seats: concrete systems gap (no accessibility/API state, disruptive control) tied to a measured failure breakdown; broad continuous-improvement rhetoric outpaces residual proof.",
+   "evidence_ids": [
+    "sol:U01",
+    "son55:E001",
+    "son55:E029"
+   ],
+   "counterevidence_ids": [
+    "sol:U45"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Both seats: each module has a mechanism and a checkable signal (UIA preconditions, API-first routing, IoU fusion, FSM states); bundle-level problem-fit only partly tested.",
+   "evidence_ids": [
+    "sol:U05",
+    "sol:U07",
+    "son55:E005",
+    "son55:E009"
+   ],
+   "counterevidence_ids": [
+    "sol:U09"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Both seats: architecture, FSMs, fusion rule, API registry, retrieval and speculation loop reconstructable; full-configuration composition per benchmark and API/GUI selection policy underspecified.",
+   "evidence_ids": [
+    "sol:U02",
+    "sol:U06",
+    "son55:E004",
+    "son55:E007"
+   ],
+   "counterevidence_ids": [
+    "sol:U32"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Success is decided by the benchmarks' own verification scripts under a common 30-step cap, the right instrument for the online claim. Deductions: OSWorld-W scripts were corrected without validation, ablation tables silently use different base configurations (OSWorld-W 16.3 vs 22.4, the latter equal to GUI+API), and the text misstates Table 6. These are reporting/scope issues around a sound checker, consistent with the 3 given to RCI's MiniWoB++ reward with copied baselines, not anchor 2.",
+   "evidence_ids": [
+    "sol:U16",
+    "son55:E035",
+    "son55:E013",
+    "sol:U18"
+   ],
+   "counterevidence_ids": [
+    "sol:U17",
+    "son55:E012",
+    "son55:E022",
+    "agg:U-A02"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Both seats: per-module on/off tables and Operator-as-AppAgent, but baselines receive neither APIs nor tailored docs, base configurations differ across tables, gains of 1-3 tasks.",
+   "evidence_ids": [
+    "sol:U26",
+    "sol:U35",
+    "son55:E024",
+    "son55:E032"
+   ],
+   "counterevidence_ids": [
+    "agg:U-A01",
+    "sol:U39"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Both seats: help documents tailored to benchmark tasks, APIs built for the benchmark office tasks, experience DB filled from benchmark runs without stated separation; no unseen apps/OS.",
+   "evidence_ids": [
+    "sol:U14",
+    "sol:U15",
+    "son55:E018",
+    "son55:E019"
+   ],
+   "counterevidence_ids": [
+    "agg:U-A01",
+    "sol:U39"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Both seats: single runs, 2-point OSWorld-W increments are single tasks, joint-success subsets of 7-34 tasks, error-type percentages without denominators.",
+   "evidence_ids": [
+    "sol:U46",
+    "son55:E028",
+    "son55:E011"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Common 30-step cap, step counts on jointly solved subsets, per-stage latency (LLM ~10 s per call, +1 s hybrid detection) and hardware are reported. Not 3: the manual engineering budget (34 benchmark-tailored documents, 12 APIs) that the full system receives and baselines do not is unaccounted, token/dollar and failure-inclusive costs are missing, and the ~1 minute per task figure does not reconcile with the per-step latencies.",
+   "evidence_ids": [
+    "sol:U18",
+    "sol:U20",
+    "sol:U52",
+    "son55:E030",
+    "son55:E031"
+   ],
+   "counterevidence_ids": [
+    "agg:U-A03",
+    "sol:U53",
+    "son55:E018"
+   ],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 63.75,
+  "display": 63.8,
+  "lower": 63.75,
+  "upper": 63.75,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(15G+25M+20X+10Emeas+10Ecaus+10Ehold+5Estat+5Ecost)/4; unknown -> L uses 0, U uses 4; raw=null while any unknown"
+ },
+ "status": "reviewed",
+ "status_reason": "Full fixed HTML text (and the authoritative PDF supplement where pinned) read by the aggregator; all eight items resolved.",
+ "input_seat_hashes": {
+  "sol": "4185781ca65a0144cf0e2549b9f8eeec7fa1c5897f6c9c42dd6e61970a44e930",
+  "son55": "697fcf133be73cdb1d4bb2712a9639d1f8abcad260d2c4fb8615fb4a253f0843"
+ },
+ "aggregate_model": "fable",
+ "aggregate_actual_model": "claude-opus-5-5[1m]",
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_note": "Configured model type fable (upstream claude-opus-5-5[1m]) per batch manifest model_types.opus55; no session id or invocation receipt is exposed to this agent.",
+ "seat_integrity_check": {
+  "sol": {
+   "file_sha256": "4185781ca65a0144cf0e2549b9f8eeec7fa1c5897f6c9c42dd6e61970a44e930",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "attempt": "a3",
+   "material_sha_matches_manifest": true,
+   "primary_material_complete": true,
+   "pdf_supplement_read": null,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "sonnet",
+   "actual_model": "gpt-6.1-sol"
+  },
+  "son55": {
+   "file_sha256": "697fcf133be73cdb1d4bb2712a9639d1f8abcad260d2c4fb8615fb4a253f0843",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "attempt": "a1",
+   "material_sha_matches_manifest": true,
+   "primary_material_complete": false,
+   "pdf_supplement_read": null,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "haiku",
+   "actual_model": "claude-sonnet-5-5[1m] (self-reported by system prompt: Sonnet 5.5)"
+  }
+ },
+ "resolutions": [
+  {
+   "field_path": "rs.supporting",
+   "sol_value": [
+    "adapt_via_conditioning"
+   ],
+   "son55_value": [
+    "adapt_via_conditioning",
+    "unify_into_shared_representation"
+   ],
+   "decision": "son55",
+   "final_value": [
+    "adapt_via_conditioning",
+    "unify_into_shared_representation"
+   ],
+   "reason": "Pseudo-UIA conversion of visual detections is a manufactured-substrate operation (C18), distinct from retrieval conditioning.",
+   "evidence_ids": [
+    "sol:U06",
+    "son55:E007"
+   ],
+   "score_impact": "none (pattern matches are not scored)"
+  },
+  {
+   "field_path": "rs.matches",
+   "sol_value": [
+    "adapt_via_conditioning/C03",
+    "decompose_and_delegate/C25"
+   ],
+   "son55_value": [
+    "adapt_via_conditioning/C03",
+    "decompose_and_delegate/C25",
+    "unify_into_shared_representation/C18"
+   ],
+   "decision": "son55",
+   "final_value": [
+    "adapt_via_conditioning/C03",
+    "decompose_and_delegate/C25",
+    "unify_into_shared_representation/C18"
+   ],
+   "reason": "All under correct parents.",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "domain.matches",
+   "sol_value": [
+    "agent_loop_context_control/C17",
+    "experience_memory_retrieval/K27",
+    "planner_grounder_interface/C11"
+   ],
+   "son55_value": [
+    "agent_loop_context_control/C17",
+    "planner_grounder_interface/C11",
+    "structured_screen_observation/C02"
+   ],
+   "decision": "revised",
+   "final_value": "C17 + C11 + K27 + C02",
+   "reason": "Union of distinct real operations; no score effect.",
+   "evidence_ids": [
+    "sol:U02",
+    "son55:E007",
+    "son55:E019"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "rating.E.measurement",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "decision": "son55",
+   "final_value": 3,
+   "reason": "Benchmark verification scripts with a common cap are the right instrument; the configuration/reporting inconsistencies are explainable (GUI+API base) and are reflected in causality/statistics, not enough to drop the instrument to anchor 2.",
+   "evidence_ids": [
+    "son55:E035",
+    "sol:U16",
+    "son55:E022"
+   ],
+   "score_impact": "vs sol +2.5; vs son55 0"
+  },
+  {
+   "field_path": "rating.E.cost",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "decision": "sol",
+   "final_value": 2,
+   "reason": "Unaccounted manual knowledge/API budget given only to UFO2, missing token/dollar/failure-inclusive cost and an unreconciled per-task time keep it at anchor 2.",
+   "evidence_ids": [
+    "agg:U-A03",
+    "sol:U53",
+    "son55:E018"
+   ],
+   "score_impact": "vs sol 0; vs son55 -1.25"
+  },
+  {
+   "field_path": "expectation.E01",
+   "sol_value": "met",
+   "son55_value": "partial",
+   "decision": "son55",
+   "final_value": "partial",
+   "reason": "OSWorld-W is a Windows subset with corrected scripts, not OSWorld/OSWorld-Verified proper; step cap and observation setting stated.",
+   "evidence_ids": [
+    "son55:E011",
+    "son55:E012"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E02",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E02 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: NotamobileAndroidagentstudy.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E03",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E03 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: DesktopOSautomation, notaself-hostedweb-agentclaimdespitebrowsersincluded.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E04",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E04 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: Noexplicitlivesitegeneralizationclaimdistinctfromdesktopbenchmarkapps.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E05",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E05 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: HybridUIA/visioncontrolcoverage, nottraininganewscreen-coordinategroundermodel.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E06",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E06 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: NonewGUIgroundermodel/datarecipe.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E07",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E07 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: Systemmethodwithoff-the-shelfLLMs, nottrainedend-to-endGUIpolicymodel.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E08",
+   "sol_value": "partial",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "Only sol assessed E08 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'partial' with sol's reason: Actualonlinehybrid/UIA/visioncomparison;fixedplannersperrowbuttiesandunexplainedbaselineconfigurationslimitcausality.",
+   "evidence_ids": [
+    "sol:U26",
+    "sol:U27",
+    "sol:U28",
+    "sol:U29",
+    "sol:U30"
+   ],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E09",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E09 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: NoRLalgorithmcontribution.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E10",
+   "sol_value": "partial",
+   "son55_value": "unmet",
+   "decision": "son55",
+   "final_value": "unmet",
+   "reason": "The LLM Task Evaluator gates the experience DB and no agreement with scripts or humans is reported anywhere in the complete text.",
+   "evidence_ids": [
+    "son55:E020",
+    "son55:E021"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E11",
+   "sol_value": "unmet",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "unmet",
+   "reason": "Only sol assessed E11 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'unmet' with sol's reason: TaskEvaluatorusedforreliability-bearingacceptancebutnometrichuman/stateoracleagreementorfalseaccept/rejectreportlocatedin5.6/6.5andremainingexperimentsections.",
+   "evidence_ids": [
+    "sol:U12",
+    "sol:U13",
+    "sol:U40"
+   ],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E12",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E12 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: LLMjudgefiltersmemory, notlearnedrewardmodeltrainingGUIRL.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E13",
+   "sol_value": "partial",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "Only sol assessed E13 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'partial' with sol's reason: Inheritedbenchmarkcheckersexist;footnoteadmitscorrections, withouttwo-sidedvalidationofactualmodifiedscripts.",
+   "evidence_ids": [
+    "sol:U16",
+    "sol:U17",
+    "sol:U58"
+   ],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E14",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E14 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: NoPRMforRL/best-of-N.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E15",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E15 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: Capabilitymeasuredonline,notteacher-forcedofflinestepmetrics.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E17",
+   "sol_value": "partial",
+   "son55_value": "met",
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "Common 30-step cap stated; budget exhaustion not reported and API/batched steps change step granularity.",
+   "evidence_ids": [
+    "sol:U18",
+    "sol:U20"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E18",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E18 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: Speculationbatchesactionsandsyntacticallyguards,notbest-of-Nsemanticselection;noaccuracyclaimforalearnedlookaheadselector.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E20",
+   "sol_value": "partial",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "Only sol assessed E20 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'partial' with sol's reason: WindowsVMCPU/RAM/A100andmodelendpointsdescribed;fullappversions,seed/timestampandrepeatsnotlisted.",
+   "evidence_ids": [
+    "sol:U14",
+    "sol:U15",
+    "sol:U52"
+   ],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E22",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E22 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: Twobackbonesforsystemcomponents,butnotrainingrecipegeneralizationclaim.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E23",
+   "sol_value": "partial",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "Only sol assessed E23 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'partial' with sol's reason: End-to-endappcategoryresultsandfailuretypes;cross-appSRonly9.1%,noindependenthorizon-stratifiedrepeats.",
+   "evidence_ids": [
+    "sol:U14",
+    "sol:U15",
+    "sol:U25"
+   ],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E24",
+   "sol_value": "partial",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "Only sol assessed E24 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'partial' with sol's reason: Custom/nonstandardcontrolfallbackevaluated;nonewheldoutvisual-layouttestoradversarialshiftuncertainty.",
+   "evidence_ids": [
+    "sol:U05",
+    "sol:U06",
+    "sol:U26",
+    "sol:U28",
+    "sol:U29"
+   ],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E25",
+   "sol_value": "partial",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "Only sol assessed E25 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'partial' with sol's reason: PENDINGuserclarificationandFAILstatesexist;benchmarkambiguity/infeasibilityauditnotseparatelyreported.",
+   "evidence_ids": [
+    "sol:U03"
+   ],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E26",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E26 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: Noexploration-first/reverse/world-modeldata-synthesisrecipe.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E27",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E27 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: No syntheticGUItrainingdatacontribution.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E29",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E29 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: Noisolatedreflection/first-errortrainingdataimprovementclaim;ordinaryReActstatusandguardreplanhandledunderloopconditions.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E30",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E30 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: No learnedGUIworldmodel.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E31",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E31 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: No learned-modelmulti-stepplanningrollouts.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E32",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E32 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: No worldmodelpolicytraining.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E33",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E33 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: TaskEvaluatorjudgesrealexecutedtraces,notsimulatedfidelity.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E34",
+   "sol_value": "not_applicable",
+   "son55_value": null,
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Only sol assessed E34 (son55 did not list it). The aggregator checked its applies_when against this paper's central claim and the fixed text and accepts status 'not_applicable' with sol's reason: PiPisanactualWindowsRDPsession,notasimulated-appreplacementclaim.",
+   "evidence_ids": [],
+   "score_impact": "none (expectations are mapped, not scored)"
+  },
+  {
+   "field_path": "expectation.E35",
+   "sol_value": "partial",
+   "son55_value": "unmet",
+   "decision": "son55",
+   "final_value": "unmet",
+   "reason": "Experience and documents come from/for the benchmark tasks; no gains on other environments are shown.",
+   "evidence_ids": [
+    "son55:E018",
+    "son55:E019"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.core-E08",
+   "sol_value": null,
+   "son55_value": "partial",
+   "decision": "son55",
+   "final_value": "partial",
+   "reason": "No same-backbone HostAgent removal; Operator-as-AppAgent is the only role contrast.",
+   "evidence_ids": [
+    "son55:E032"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.core-E21",
+   "sol_value": null,
+   "son55_value": "met",
+   "decision": "son55",
+   "final_value": "met",
+   "reason": "Per-step LLM time and the +1 s hybrid detection overhead are reported (token/dollar costs are not, see E.cost).",
+   "evidence_ids": [
+    "son55:E030",
+    "son55:E031"
+   ],
+   "score_impact": "none"
+  }
+ ],
+ "shared_error_corrections": [],
+ "aggregate_status": "accepted_final",
+ "aggregate_status_reason": "All 38 differences resolved (36 are expectation coverage differences); same material for both seats; no scoring unknowns.",
+ "final_record_hash": "1a3d80d36f7cf1a74a374dd03fedb013b41fcc0c068b1e4d77ca89f127fd264b"
+}

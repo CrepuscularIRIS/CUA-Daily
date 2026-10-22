@@ -1,0 +1,2363 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p7",
+  "attempt_id": "a1",
+  "seat": "sol",
+  "paper": {
+    "paper_key": "2401.01614",
+    "paper_id": "2401.01614",
+    "title": "GPT-4V(ision) is a Generalist Web Agent, if Grounded",
+    "version": "2401.01614v2",
+    "claim_type": "system_method",
+    "central_claim": "GPT-4V can act as a generalist web agent when its screenshot-derived action intentions are correctly grounded; SeeAct separates generation from grounding, compares grounding methods and shows live-web success beyond text-only baselines.",
+    "central_claim_evidence_ids": [
+      "E01",
+      "E04",
+      "E10",
+      "E11"
+    ]
+  },
+  "provenance": {
+    "input_hash": "c008c83118f7c46d9b214c8ba01fe21e92c3748bb3365b7b8e4117a2b155d901",
+    "rubric_version": "v2.2",
+    "rubric_status": "draft_uncalibrated",
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+    "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+    "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+    "model_type": "sonnet",
+    "actual_model": "gpt-6.1-sol",
+    "session_id": "681194da-49f5-4ad4-8eb4-573b45384076",
+    "receipt_ref": null,
+    "receipt_reason": "No separate upstream signed receipt supplied; actual model from invocation environment.",
+    "timestamp": "2026-10-22T02:42:49.447206+00:00",
+    "blind_boundary": "No other-seat, aggregation, retired scores or archive content read.",
+    "supplemental_materials": "Controller supplied shared fulltext-figs; per-image hashes verified. Core input bundle hash retained, supplements separately bound. No claim that rubric is frozen."
+  },
+  "materials": [
+    {
+      "material_id": "fulltext",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2401.01614.txt",
+      "sections_read": [
+        "identity/abstract",
+        "Sections1-5",
+        "Tables1-5",
+        "AppendicesA-I including complete prompt Tables6-9",
+        "reference list used for lineage identification"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "limitations": [
+        "Duplicated HTML render; clean body and appendix read. Figure3 numerical bars absent; caption/prose and all principal tables readable."
+      ]
+    },
+    {
+      "material_id": "mind2web",
+      "url": "https://arxiv.org/html/2306.06070",
+      "sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2306.06070.txt",
+      "sections_read": [
+        "Sections3.2-4.3 lines207-306; method, metrics and splits"
+      ],
+      "complete": false,
+      "missing_sections": [
+        "Other sections not needed for this narrow lineage comparison"
+      ],
+      "version_note": "Fixed references.json render/hash; source version not asserted beyond fixed file."
+    },
+    {
+      "material_id": "fig:teaser_v4.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "8266b11946337615df3c650ac95e2252cc162461a5fbe132de7316d15b01017a",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/teaser_v4.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    },
+    {
+      "material_id": "fig:figure2_v7.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "1090d2c43e73782d0fe4f1fb47a40d9fea9e373a49720a9a17c46a969ac0aff9",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/figure2_v7.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    },
+    {
+      "material_id": "fig:example_element_attributes.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "51ab2e1304390d46b32039679bd95ac46284ef122388498596c219a55efc5651",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/example_element_attributes.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    },
+    {
+      "material_id": "fig:example_text_1.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "00c3a593494d982e1e94de97f6e46506b7404ad32de9a401840c2fc688a27a42",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/example_text_1.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    },
+    {
+      "material_id": "fig:example_image_annotation.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "37c6e97d8a13f27874fb02316bc30ac174b7fa7083ec2f3a76096fd1a738425f",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/example_image_annotation.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    },
+    {
+      "material_id": "fig:example_makeup_1.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "f65fbb37bac1a89d223a5bd7fb2946623fcb713aa873252f15906ec125169c70",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/example_makeup_1.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    },
+    {
+      "material_id": "fig:example_makeup_2.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "50c810ce6cbc87f2c4ae9104145473429e4119d98c6a6eb680921818b0c6b66b",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/example_makeup_2.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    },
+    {
+      "material_id": "fig:example_link_1.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "c3a86da7647f0498e75740a6770ca0c07b25d63c700f6a9a640d1bc64686072e",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/example_link_1.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    },
+    {
+      "material_id": "fig:example_link_2.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "db7b6bb0d3f54546f467f90d2ef40e49a12bf4fe5d50c8d849058d2d9a25ebdf",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/example_link_2.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    },
+    {
+      "material_id": "fig:example_link_3.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "c0e3549f009911a5c0ee3cd91bc04ad2f6c7a7d95b69a59e1e74e7ce0742e35a",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/example_link_3.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    },
+    {
+      "material_id": "fig:example_planning.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "abc662c8a09186d1941e88be623bc7d1ded9dd64d3b80aacaee467b8f569cb67",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/example_planning.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    },
+    {
+      "material_id": "fig:example_identical.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "c52d12f4fe51a4522ca4356d45a1dfd896a2cdcdffefb67567548a82e67b1603",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/example_identical.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    },
+    {
+      "material_id": "fig:example_knowledge_1.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "bc85f2c79ea5d3991544cd3b0b4e40cd0460b8cac2cb626fa5012c3f35227e2e",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/example_knowledge_1.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    },
+    {
+      "material_id": "fig:example_knowledge_2.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "27a44ccbcc0e11c291ce16af06b4490ed100618017b50a31fa0d44b05d55c3e5",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/example_knowledge_2.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    },
+    {
+      "material_id": "fig:example_path.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "a8b7868facd9791a7d3adffcb8b5ef195a7665a496cbd2576aeb6e192accbbc6",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/example_path.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    },
+    {
+      "material_id": "fig:example_awareness_error.png",
+      "url": "https://arxiv.org/html/2401.01614v2",
+      "sha256": "d5133d275687dc1e603f32a6e6bbf9acf6ba55493705b35d896f45fcce39d7a4",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext-figs/2401.01614/example_awareness_error.png",
+      "sections_read": [
+        "Entire supplied image visually inspected"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "inspection_note": "Qualitative illustration only; figure2_v7 is grounding-method schematic, not difficulty result Figure3. No chart value inferred from filename."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E01",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 393-393",
+      "quote": "We take the screenshot image i i as the visual context without utilizing the HTML document h h for action generation.",
+      "support_explanation": "Screenshot/task/history are visible for free-form intention generation; HTML is withheld at this stage.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E02",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 417-417",
+      "quote": "Alternatively, we provide the model with textual representations of elements as choices to facilitate grounding, which has already been proven effective in MindAct ( Deng et al., 2023 ) .",
+      "support_explanation": "Ranked DOM-choice grounding is explicitly inherited from MindAct.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E03",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 460-460",
+      "quote": "we first employ the DeBERTa-base cross-encoder from MindAct ( Deng et al., 2023 ) to rank the top 50 elements for better comparison with its text-only counterparts. Then, we cluster elements into groups of 17 17 options for inference.",
+      "support_explanation": "Same DeBERTa-base top50 ranker with groups of17; group size differs from MindAct.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E04",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 427-427",
+      "quote": "Here we approximate the oracle grounding method by asking human annotators to identify the model’s intended actions.",
+      "support_explanation": "Oracle grounding is human annotation, not an autonomous component.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E05",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 439-439",
+      "quote": "The Cross-Domain setting assesses agent performance on tasks in two top-level domains held out from the training data.",
+      "support_explanation": "Structural task/site/domain splits exist; construction-time independence of all development choices is a separate question.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E06",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 443-444",
+      "quote": "We align each HTML document in the dataset with its corresponding webpage screenshot image from the Mind2Web raw dump, which undergoes human verification to confirm element visibility and correct rendering for action prediction.",
+      "support_explanation": "Screenshots are aligned to HTML and human-verified for visibility/rendering.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E07",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 453-456",
+      "quote": "Train | 1 , 009 1,009 | 17 17 | 73 73 | 7.7 7.7 | 4 , 240 4,240 | 602 602 | 128 , 827 128,827\nCross-Domain | 694 694 | 13 13 | 53 53 | 5.9 5.9 | 4 , 314 4,314 | 494 494 | 91 , 163 91,163\nCross-Task | 177 177 | 17 17 | 64 64 | 7.6 7.6 | 4 , 172 4,172 | 607 607 | 123 , 274 123,274\nCross-Website | 142 142 | 9 9 | 10 10 | 7.2 7.2 | 4 , 653 4,653 | 612 612 | 114 , 358 114,358",
+      "support_explanation": "Full offline split task denominators, not the oracle or live subset.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E08",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 478-478",
+      "quote": "Step Success Rate (Step SR) measures the success of each action step. A step is successful only if the selected element and the predicted operation are correct. We report macro averages across tasks for these step-wise metrics.",
+      "support_explanation": "Offline Step SR is reference element+operation agreement and macro-averaged by task; not exploration-enabled task success.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E09",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 484-485",
+      "quote": "We develop a new online evaluation tool using Playwright 3 3 3 https://playwright.dev/ to evaluate web agents on live websites (instead of cached websites in offline evaluation). Our tool can efficiently tunnel multimodal inputs from the browser to the agent and convert the predicted action ( e , o , v ) (e,o,v) into a browser event for execution.\nTo adhere to ethical standards, our experiments are restricted to non-login tasks in compliance with user agreements, and we closely monitor agent activities during online evaluation to prevent any actions that have potentially harmful impacts, like placing an order or modifying the user profile.",
+      "support_explanation": "Live browser execution exists with ethical restrictions and human monitoring.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E10",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 525-531",
+      "quote": "Table 3: Step success rate (%) of GPT-4V on a subset of 30 tasks for each task split with different grounding methods. “Attributes”, “Choices”, “Annotation”, and “Oracle” refer to element grounding via Element Attributes, Textual Choices, Image Annotation, and Human Annotation, respectively, as described in subsection 2.3 .\n\n | Grounding | Cross-Task | Cross-Website | Cross-Domain\nSeeAct Attribute | 16.1 16.1 | 12.1 12.1 | 19.0 19.0\n | SeeAct Annotation | 20.3 20.3 | 13.9 13.9 | 23.7 23.7\n | SeeAct Choice | 39.1 39.1 | 32.7 32.7 | 42.0 42.0\n | SeeAct Oracle | 61.9 61.9 | 65.0 65.0 | 62.1 62.1",
+      "support_explanation": "Grounding alternatives on30 tasks per split; fixed GPT4V favors choices, human oracle higher.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E11",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 563-569",
+      "quote": "Table 4: Whole task success rate (%) under both offline and online evaluation. Offline 0 and Offline 1 refer to no tolerance for error at any step and allowing for error at one step, respectively.\n\n | Offline 0 | Offline 1 | Online\nFLAN-T5-XL | 4.4 4.4 | 24.4 24.4 | 8.9 8.9\nGPT-4 | 1.1 1.1 | 12.2 12.2 | 13.3 13.3\nSeeAct Choice | 3.3 3.3 | 12.2 12.2 | 37.8 37.8\nSeeAct Oracle | 13.3 13.3 | 27.8 27.8 | 51.1 51.1",
+      "support_explanation": "Whole-task live outcomes differ from cached reference all-step matching; human oracle separate.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E12",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 585-586",
+      "quote": "In online evaluation, we pair a web agent with a human annotator, where the human was tasked to monitor agent actions that may change real-world states and determine whether each task was successfully completed. For comparative analysis, we include success rates from offline evaluation, denoted as Offline 0 (allowing zero wrong action) and Offline 1 (allowing one wrong action).\nFor a fair comparison between offline and online evaluations, we only re-write time-sensitive tasks to ensure they are still valid when the evaluation is conducted. For instance, we update the dates for flight-related tasks. Finally, we conduct the online evaluation on the same subset of total 90 90 tasks from the three test splits. For tasks invalidated due to website change, we resample from the corresponding test split.",
+      "support_explanation": "90 live tasks, human success judgment, date rewrites and replacement of invalid tasks.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E13",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 605-605",
+      "quote": "Figure 3: Whole task success rate across task difficulty levels. We categorize tasks based on the number of actions to complete, i.e., Easy: 1 1 - 4 4 , Medium: 5 5 - 9 9 , and Hard: 10 10 - 18 18 , with 37 37 , 35 35 , and 18 18 tasks in each group, respectively.",
+      "support_explanation": "Difficulty thresholds and group denominators are readable, but chart values are not in supplied figure assets.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E14",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 607-610",
+      "quote": "Online Success Rate by Task Difficulty. We investigate the performance of web agents on tasks across different difficulty levels. We estimate the task difficulty based on the number of actions taken by annotators during action trace annotation.\nAs shown in Figure 3 , the whole task success rate is negatively correlated with the number of actions—it decreases as the number of actions increases across all four methods. SeeAct Oracle consistently outperforms other methods across all difficulty levels.\nInterestingly, the gap between SeeAct Oracle and SeeAct Choice enlarges on longer-horizon tasks.\nThis is understandable because grounding errors cascade to later steps; nonetheless, it further shows the challenge of grounding for GPT-4V and the need for better grounding methods.",
+      "support_explanation": "Prose supports decreasing success with horizon, not exact subgroup percentages.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E15",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 617-618",
+      "quote": "To analyze the reasons behind the failures, we randomly sample 100 100 action predictions with correct action generation but wrong grounding results.",
+      "support_explanation": "Grounding error audit is conditional on correct generation and incorrect grounding.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E16",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 623-623",
+      "quote": "Our analysis reveals that 54 54 % of the errors can be attributed to GPT-4V ’s tendency of visual illusion",
+      "support_explanation": "Conditional100-error split:54% hallucinated mark and46% wrong association; not all-task error frequencies.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E17",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 889-898",
+      "quote": "Table 5: Grounding via Image Annotation with different markup types and locations. Method with * mark means the annotated image is used in action generation.\n\nLabel | Location | Ele. Acc | Op. F1 | Step SR\nNumber | Bottom-Left | 27.0 27.0 | 73.7 73.7 | 24.3 24.3\nBottom-Center | 23.0 23.0 | 76.4 76.4 | 21.8 21.8\nSingle Letter | Bottom-Left | 19.4 19.4 | 81.0 81.0 | 17.2 17.2\nBottom-Center | 19.7 19.7 | 78.8 78.8 | 19.7 19.7\nDouble Letter | Bottom-Left | 19.8 19.8 | 68.3 68.3 | 18.3 18.3\nBottom-Center | 22.4 22.4 | 74.6 74.6 | 22.4 22.4\nNumber* | Bottom-Left* | 26.6 26.6 | 73.9 73.9 | 22.3 22.3",
+      "support_explanation": "Markup variants compared; a separate tuning split is not identified here.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E18",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 902-902",
+      "quote": "We develop an online evaluation tool using Playwright to load webpages, acquire textual representation of interactive elements, and perform operations generated by web agents. We manually monitor each step of the model and assess whether it finishes the tasks. Attempts to log in, make final submissions, or perform other potentially harmful actions are prohibited to avoid negative consequences.",
+      "support_explanation": "Human monitoring and prohibited actions restrict online autonomy and task scope.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E19",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 910-910",
+      "quote": "SeeAct Oracle . In the oracle setting, we manually implement the model’s intended actions. The action history is automatically generated by the model, with an added requirement to summarize actions in the \"Element\", \"Operation\", \"Value\" format in another turn conversation. To avoid overly long screenshots, we use screenshots of current views, and hence allow intentions of scrolling.",
+      "support_explanation": "Oracle uses human implementation, extra summary turn and viewport scrolling; not a clean deployed grounder swap.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E20",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 914-914",
+      "quote": "SeeAct Choice . For a relatively fair comparison, we still adopt the ranker and top- 50 50 candidate setting, batching them into three option groups as described in offline experiments. We enable PRESS ENTER and TERMINATE for the model to make confirmation or stop the process.",
+      "support_explanation": "Choice adds ENTER and TERMINATE, so action spaces are not fully fixed versus MindAct.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E21",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 918-918",
+      "quote": "During our tests, pop-up ads on webpages were manually closed.",
+      "support_explanation": "Manual closing of advertisements is an intervention shared with browser trials.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E22",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 934-938",
+      "quote": " | (Current Webpage Identification) Firstly, think about what the current webpage is.\n | (Previous Action Analysis) Secondly, combined with the screenshot, analyze each step of the previous action history and their intention one by one. Particularly, pay more attention to the last step, which may be more related to what you should do now as the next step.\n | (Screenshot Details Analysis) Closely examine the screenshot to check the status of every part of the webpage to understand what you can operate with and what has been set or completed. You should closely examine the screenshot details to see what steps have been completed by previous actions even though you are given the textual previous actions. Because the textual history may not clearly and sufficiently record some effects of previous actions, you should closely evaluate the status of every part of the webpage to understand what you have done.\n | (Next Action Based on Webpage and Analysis) Then, based on your analysis, in conjunction with human web browsing habits and the logic of web design, decide on the following action. And clearly outline which element in the webpage users will operate with as the first next target element, its detailed location, and the corresponding operation.\n | To be successful, it is important to follow the following rules: 1. You should only issue a valid action given the current observation. 2. You should only issue one action at a time.",
+      "support_explanation": "Explicit static page/history/status/one-action reasoning prompt; no learned persistent improvement.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E23",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 964-970",
+      "quote": "Referring Description | (Reiteration) First, reiterate your next target element, its detailed location, and the corresponding operation.\n | (Multichoice Question) Below is a multi-choice question, where the choices are elements in the webpage. From the screenshot, find out where and what each one is on the webpage. Then, determine whether one matches your target element. Please examine the choices one by one. Choose the matching one. If multiple options match your answer, choose the most likely one by re-examining the screenshot, the choices, and your further reasoning.\n | If none of these elements match your target element, please select [None of the other options match the correct element]. A. [CHOICE A] B. [CHOICE B] …\nFormat Answer | (Final Answer) Finally, conclude your answer using the format below. Ensure your answer is strictly adhering to the format provided below. Please do not leave any explanation in your answers of the final standardized format part, and this final part should be clear and certain. The element choice, action, and value should be in three separate lines.\n | Format:\n | ELEMENT: The uppercase letter of your choice.\n | ACTION: Choose an action from {CLICK, TYPE, SELECT}.",
+      "support_explanation": "Choice matching includes none and a structured action interface, not a correctness certificate.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E24",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 982-982",
+      "quote": " | (Verification with the Screenshot) Then, please closely re-examine the screenshot to find whether your target element is marked by a red bounding box and has a white number on a black background at the bottom left corner of the bounding box, which is positioned closely next to the bounding box. If yes, use that number for your final answer. If not, please do not make them up. If it is not marked, please output \"NA\" as your target element in the following final answer part.",
+      "support_explanation": "Annotation prompt explicitly asks NA rather than fabricated labels; failures remain despite instruction.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E25",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 637-637",
+      "quote": "World Model (for Websites). GPT-4V exhibits the potential of a \"world model\" for websites. As shown in Appendix F , GPT-4V can predict the state transitions on a website (e.g., what would happen if I clicked this button). Based on its awareness of website state transitions, GPT-4V can conduct speculative planning involving a sequence of subsequent actions in the future to complete the given task.",
+      "support_explanation": "World-model wording denotes qualitative speculative planning rather than an explicit trained transition simulator.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E26",
+      "material_id": "fulltext",
+      "material_hash": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "sha256": "957f2253cb5813037ecbe90c84d8803ce4e2a925f26819db79cc8b7e698ba7f1",
+      "locator": "lines 641-641",
+      "quote": "Error Correction Awareness. GPT-4V also exhibits the awareness of error correction in the previous actions. In the example in Appendix I , it realizes that the mobile phone number is invalid due to the wrong format and generates the description of the action to correct this error. This highlights the model’s potential for adaptation in online settings, where actions may not always follow pre-defined, ideal paths as in offline evaluations. This capability paves the way for adding robustness and reasonable dynamic planning.",
+      "support_explanation": "Correction awareness is a qualitative example, not a recovery benchmark.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E27",
+      "material_id": "mind2web",
+      "material_hash": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+      "sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+      "locator": "lines 221-230",
+      "quote": "After obtaining the top- k k candidates, we utilize the candidate set to prune the webpage snapshot and construct snippets that only include the selected candidates and their neighbours as inputs to an LLM.",
+      "support_explanation": "Mind2Web/MindAct already performs top-k pruning and multiple-choice element selection; no novelty credit for inventing rank-then-choose.",
+      "kind": "author_report"
+    }
+  ],
+  "signatures": [
+    {
+      "sig_id": "S1",
+      "object": "Next browser action intent",
+      "information": "Task/current screenshot/action history; no HTML during generation.",
+      "operation": "Static GPT4V page-identification, history and screenshot-status reasoning emits one natural-language next-action description.",
+      "output": "Intended element/operation/value description",
+      "conditions": "Screenshot faithfully rendered; enough visible details and history",
+      "feedback": "New screenshot after execution; no learned correctness feedback",
+      "selection_rule": "One prompted next action, not sampled search or learned acceptance",
+      "selection_data": "Current task/history",
+      "persistence": "Static prompts; in-task action history only. No cross-task selected change or retained learning.",
+      "later_use": "Next step reads action history, not a persistent skill bank.",
+      "claimed_effect": "Visual reasoning can identify useful actions even when grounding fails.",
+      "failure_boundary": "Ambiguous/repeated elements and absent target; qualitative planning is not validated simulation.",
+      "evidence_ids": [
+        "E01",
+        "E22",
+        "E25",
+        "E26"
+      ]
+    },
+    {
+      "sig_id": "S2",
+      "object": "Ground textual intent to executable DOM action",
+      "information": "Intent plus top50 DOM candidates; annotation alternative additionally exposes marked screenshot. Human oracle has privileged interpretation.",
+      "operation": "Compare heuristic attribute matching, ranked textual choices, visual labels, and human grounding.",
+      "output": "Element ID plus CLICK/TYPE/SELECT and value; Playwright event",
+      "conditions": "Candidate recall; DOM/screenshot alignment; parseable answer; human oracle not deployable",
+      "feedback": "Offline reference match and live observed page",
+      "selection_rule": "Choose among17-option groups including NONE; final candidate maps to DOM. Human identifies intended action for oracle.",
+      "selection_data": "MindAct ranker; evaluation subset; markup development/test separation not established.",
+      "persistence": "Fixed ranker/prompts/markup configuration, not adaptive retention.",
+      "later_use": "Same static configuration across tasks.",
+      "claimed_effect": "Choice beats other automatic grounding; oracle exposes residual grounding gap.",
+      "failure_boundary": "Mark hallucination and label association; top50 misses; oracle is conditional upper-bound proxy.",
+      "evidence_ids": [
+        "E02",
+        "E03",
+        "E04",
+        "E10",
+        "E15",
+        "E17",
+        "E23",
+        "E24"
+      ]
+    },
+    {
+      "sig_id": "S3",
+      "object": "Online evaluation under public-site constraints",
+      "information": "Current real page and model history; human monitors safety and completion.",
+      "operation": "Execute browser actions on90 tasks with date rewrites/resampling; compare offline all-reference-step score.",
+      "output": "Human-judged live whole-task success",
+      "conditions": "Non-login/non-harmful scope; manual pop-up closure; differing action interfaces",
+      "feedback": "Actual page transitions and human task judgment",
+      "selection_rule": "Resample invalid tasks within corresponding split, not automatic accepted model improvement.",
+      "selection_data": "30 tasks per split;90 total",
+      "persistence": "Evaluation outcomes only; no method update retained.",
+      "later_use": "Not applicable: no later-task training from trial results reported.",
+      "claimed_effect": "Live exploration/path flexibility is missed by offline exact reference paths.",
+      "failure_boundary": "Date/site drift, human intervention, no repeatability/common step-budget accounting.",
+      "evidence_ids": [
+        "E09",
+        "E11",
+        "E12",
+        "E18",
+        "E19",
+        "E20",
+        "E21"
+      ]
+    }
+  ],
+  "gap": {
+    "author_gap": "Strong multimodal models can describe intended web actions but fail to ground them; text-only HTML agents miss visual semantics and offline all-path matching undervalues interaction.",
+    "checked_gap": "Same-GPT4V30-per-split experiments show automatic grounding32.7-42.0 stepSR for choices versus61.9-65.0 human-oracle. Real90-task choice success37.8 differs greatly from offline3.3. This supports a residual grounding/evaluation bottleneck, not unconstrained general autonomy.",
+    "lineage": [
+      {
+        "source": "Mind2Web/MindAct",
+        "paper_id": "2306.06070",
+        "version": "fixed references.json SHA256 87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+        "evidence_ids": [
+          "E27"
+        ],
+        "relationship": "Pre-existing DOM ranker, top-k pruning and multiple-choice element selection; explicitly borrowed."
+      },
+      {
+        "source": "GPT4V",
+        "version": "author-specified model revisions in AppendixA",
+        "relationship": "Off-the-shelf backbone, not trained here.",
+        "evidence_ids": [
+          "E01"
+        ]
+      }
+    ],
+    "closest_adjacent": "MindAct with the same ranker; marked-image grounding as an alternative; oracle as diagnosis rather than competitor.",
+    "residue": "Screenshot-only intent generation before DOM grounding, cleaned multimodal alignment and live-vs-static evaluation, with automatic grounding still substantially below privileged oracle.",
+    "stakes": "Wrong elements cascade over long tasks; cached-reference task metrics can reject valid alternate paths.",
+    "method_response": "Expose generation and grounding as separate observable stages; compare automatic grounding and approximate oracle; execute on live pages.",
+    "remaining_gap": "Autonomous grounding, fair action/compute budgets, repeatability, robust refusal, unassisted safety and construction-heldout online validation.",
+    "evidence_ids": [
+      "E01",
+      "E02",
+      "E03",
+      "E10",
+      "E11",
+      "E14",
+      "E27"
+    ],
+    "unresolved": [
+      "Not an exhaustive historical novelty search.",
+      "Markup selection/dev-test separation and exact live evaluation date not reported in inspected protocol."
+    ]
+  },
+  "rs_pattern": {
+    "primary": "controlled_diagnostic_design",
+    "supporting": [],
+    "matches": [
+      {
+        "main_id": "controlled_diagnostic_design",
+        "sub_id": "C02",
+        "role": "primary",
+        "fit": "partial",
+        "tactic_steps_checked": [
+          {
+            "step": 1,
+            "status": "met",
+            "reason": "Name generation-versus-grounding confound; intention interface makes it observable."
+          },
+          {
+            "step": 2,
+            "status": "partial",
+            "reason": "Hold GPT4V fixed while changing grounding; online oracle has extra privileges and action differences."
+          },
+          {
+            "step": 3,
+            "status": "met",
+            "reason": "Reference element/action metrics and human outcome judgment give external comparison."
+          },
+          {
+            "step": 4,
+            "status": "partial",
+            "reason": "Multiple alternatives and conditional error audit; no independent inter-rater reliability or repeated live trials."
+          },
+          {
+            "step": 5,
+            "status": "partial",
+            "reason": "Shows deconfounded divergence, but does not establish generalist autonomous sufficiency."
+          }
+        ],
+        "success_failure_checks": [
+          {
+            "condition": "Controlled axis and independent outcome",
+            "status": "partial",
+            "reason": "Offline comparisons are cleaner than live oracle comparison.",
+            "evidence_ids": [
+              "E10",
+              "E12",
+              "E19"
+            ]
+          },
+          {
+            "condition": "Failure diagnoses not selection-conditioned prevalence",
+            "status": "partial",
+            "reason": "100 errors are selected after correct generation; retain that denominator.",
+            "evidence_ids": [
+              "E15",
+              "E16"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E01",
+          "E04",
+          "E10",
+          "E11",
+          "E15",
+          "E19"
+        ],
+        "reason": "The contribution actually intervenes on grounding while preserving the intention-producing backbone, not merely mentioning evaluation."
+      }
+    ],
+    "outside_taxonomy": false,
+    "reason": "Original C02 diagnostic operation is a partial fit. Rejected decompose_and_delegate/C25: sequential LMM calls and fallible ranker are not a sound solver with a checked certificate; no removal test of certified delegation. No original world-model or structural-prior card inferred from qualitative language.",
+    "executes_pattern": true,
+    "resolves_problem": false
+  },
+  "domain_pattern": {
+    "namespace": "gui",
+    "matches": [
+      {
+        "main": "structured_screen_observation",
+        "sub": "C03",
+        "version": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+        "fit": "strong",
+        "condition_checks": [
+          {
+            "condition": "Rank elements then select from typed textual candidates",
+            "status": "met",
+            "reason": "DeBERTa top50/groups17; intent generated before choice.",
+            "evidence_ids": [
+              "E02",
+              "E03",
+              "E23"
+            ]
+          },
+          {
+            "condition": "Observation setting and candidate failure boundary exposed",
+            "status": "partial",
+            "reason": "Screenshot/DOM roles explicit; live candidate recall and misses not fully audited.",
+            "evidence_ids": [
+              "E01",
+              "E03",
+              "E15"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E01",
+          "E02",
+          "E03",
+          "E23"
+        ]
+      },
+      {
+        "main": "planner_grounder_interface",
+        "sub": "C10",
+        "version": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+        "fit": "partial",
+        "condition_checks": [
+          {
+            "condition": "Separate intent from localization",
+            "status": "met",
+            "reason": "Generation then grounding exposed.",
+            "evidence_ids": [
+              "E01",
+              "E04"
+            ]
+          },
+          {
+            "condition": "Specialist screenshot-coordinate grounder",
+            "status": "unmet",
+            "reason": "Same GPT4V is prompted with DOM choices; no separately trained coordinate specialist.",
+            "evidence_ids": [
+              "E03",
+              "E23"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E01",
+          "E03",
+          "E04"
+        ]
+      },
+      {
+        "main": "agent_loop_context_control",
+        "sub": "C20",
+        "version": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+        "fit": "strong",
+        "condition_checks": [
+          {
+            "condition": "Observe/history-reason-one-action prompt",
+            "status": "met",
+            "reason": "AppendixD explicitly describes each fixed reasoning stage.",
+            "evidence_ids": [
+              "E22"
+            ]
+          },
+          {
+            "condition": "Recovery benefit independently measured",
+            "status": "unmet",
+            "reason": "Only qualitative correction illustration; no recovery-controlled success rate.",
+            "evidence_ids": [
+              "E26"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E22",
+          "E26"
+        ]
+      }
+    ],
+    "unassigned": [
+      "No learned world-model, persistent memory, RL or self-improvement mechanism."
+    ],
+    "revision_proposals": []
+  },
+  "pattern_mapping": [
+    {
+      "rs_main": "controlled_diagnostic_design",
+      "rs_sub": "C02",
+      "domain_namespace": "gui",
+      "domain_main": "structured_screen_observation",
+      "domain_sub": "C03",
+      "operation_correspondence": "Preserve screenshot intention, intervene on executable grounding representation, compare choices/attributes/marks/oracle.",
+      "necessary_conditions": "Same generator and independently assessable target/outcome.",
+      "differences": "C03 describes an agent mechanism; original C02 captures experimental diagnosis, not a taxonomy synonym.",
+      "evidence_ids": [
+        "E01",
+        "E10",
+        "E23"
+      ]
+    },
+    {
+      "rs_main": "controlled_diagnostic_design",
+      "rs_sub": "C02",
+      "domain_namespace": "gui",
+      "domain_main": "planner_grounder_interface",
+      "domain_sub": "C10",
+      "operation_correspondence": "Exposed intention interface allows localization bottleneck comparison.",
+      "necessary_conditions": "Grounding outcome separable from intended action.",
+      "differences": "Human oracle and same-model DOM choices do not implement a separately trained coordinate grounder.",
+      "evidence_ids": [
+        "E04",
+        "E10",
+        "E19"
+      ]
+    },
+    {
+      "rs_main": null,
+      "rs_sub": null,
+      "domain_namespace": "gui",
+      "domain_main": "agent_loop_context_control",
+      "domain_sub": "C20",
+      "operation_correspondence": "Static observation/history/status/action prompt supports the tested system.",
+      "necessary_conditions": "Fresh observation and prior action history.",
+      "differences": "This supporting loop is not independently an original C02 diagnostic tactic.",
+      "evidence_ids": [
+        "E22"
+      ]
+    }
+  ],
+  "expectations": [
+    {
+      "id": "E01",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s1",
+          "note": "defines execution-based per-task checkers"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "OSWorld at 15 and 50 steps, averaged over 3 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2",
+          "note": "OSWorld planner+grounder success"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "OSWorld-Verified 15 steps, averaged over 4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "OSWorld-Verified (15 steps) as transfer target"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "OSWorld-Verified success after GRPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.08164#s1",
+          "note": "OSWorld full set"
+        }
+      ],
+      "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a desktop/mobile training, RL, learned-judge, synthetic-data, persistent-memory or explicit learned-world-model claim; do not impose a different claim type.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E02",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.09856#s2"
+        }
+      ],
+      "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a desktop/mobile training, RL, learned-judge, synthetic-data, persistent-memory or explicit learned-world-model claim; do not impose a different claim type.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E03",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.02907#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.14721#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2411.02337",
+          "note": "authors concede evaluation on 165-task WebArena-Lite subset due to cost"
+        }
+      ],
+      "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Live public-web system, not a self-hosted-site training claim; live success audited by E04/E15 instead.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E04",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2",
+          "note": "constructs Online-Mind2Web; WebVoyager overstates competence"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s1",
+          "note": "Online-Mind2Web and Mind2Web-Live"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "Online-Mind2Web as transfer benchmark"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2",
+          "note": "Mind2Web-Live"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "Mind2Web-Live"
+        }
+      ],
+      "applies_when": "a claim about web-agent success on real, live websites",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Actual live90-task human-judged evaluation satisfies the underlying live-web question. Later Online-Mind2Web names are not historical baseline requirements. Safety/ad interventions and resampling narrow comparability.",
+      "evidence_ids": [
+        "E09",
+        "E11",
+        "E12",
+        "E18",
+        "E21"
+      ],
+      "score_item": [
+        "E.measurement",
+        "E.holdout"
+      ]
+    },
+    {
+      "id": "E05",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.14262#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2501.12326",
+          "note": "authors: ScreenSpot v1/v2 may not be robust enough to capture gains at scale"
+        }
+      ],
+      "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Studies GPT4V DOM/mark grounding rather than a new trained screenshot-coordinate grounder; later ScreenSpot/model names are not contemporaneous requirements.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E06",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s1",
+          "note": "vs UGround"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3",
+          "note": "vs UGround-V1-7B, OS-Atlas-7B, Aguvis"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "vs UI-TARS-7B/72B, UGround-V1-7B, Aguvis, OS-Atlas"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012",
+          "note": "GPT-4o + UGround / Aguvis-7B / Aria-UI baselines"
+        }
+      ],
+      "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Studies GPT4V DOM/mark grounding rather than a new trained screenshot-coordinate grounder; later ScreenSpot/model names are not contemporaneous requirements.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E07",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1",
+          "note": "vs UI-TARS-7B, SFT-only, offline RL"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2",
+          "note": "vs UI-TARS-7B/72B, GPT-4o+Aria-UI"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "UI-TARS-1.5-7B base"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "UI-TARS-1.5-7B, GTA1-7B+o3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "UI-TARS-1.5-7B base"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "UI-TARS-1.5-7B base"
+        }
+      ],
+      "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a desktop/mobile training, RL, learned-judge, synthetic-data, persistent-memory or explicit learned-world-model claim; do not impose a different claim type.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E08",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2"
+        }
+      ],
+      "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+      "applicable": true,
+      "status": "partial",
+      "reason": "GPT4V is held as generator while attribute, annotation, choice and human-oracle grounding vary. The offline comparison is informative; oracle privilege and online action differences prevent a pure autonomous grounder swap.",
+      "evidence_ids": [
+        "E01",
+        "E03",
+        "E04",
+        "E10",
+        "E19",
+        "E20"
+      ],
+      "score_item": [
+        "M",
+        "E.causality"
+      ]
+    },
+    {
+      "id": "E09",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s3",
+          "note": "vs SFT, Filtered BC, AWR, DigiRL"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2406.11896#s1",
+          "note": "vs Filtered BC, AWR"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1",
+          "note": "vs SFT-only, offline GRPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "vs WebRL, NNetNav SFT"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "vs ORM-based PPO and ARPO"
+        }
+      ],
+      "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a desktop/mobile training, RL, learned-judge, synthetic-data, persistent-memory or explicit learned-world-model claim; do not impose a different claim type.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E10",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2406.11896#s2",
+          "note": "2.8% error vs human"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s2",
+          "note": "79.4% on 100 manually labelled rollouts"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "agreement with human labels; held-out agents"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s1",
+          "note": "accuracy vs human-corrected labels"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s2",
+          "note": "Spearman with human labels"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2311.08649#s2",
+          "note": "F1 0.74 vs manual labels"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.09038",
+          "note": "authors concede VLM judges can admit failures or reject valid successes; no precision reported"
+        }
+      ],
+      "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a desktop/mobile training, RL, learned-judge, synthetic-data, persistent-memory or explicit learned-world-model claim; do not impose a different claim type.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E11",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2510.18596#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "precision on AgentRewardBench; low recall noted"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s1",
+          "note": "F1 under class imbalance"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2504.01382",
+          "note": "authors concede o4-mini WebJudge is overly conservative with low recall"
+        }
+      ],
+      "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a desktop/mobile training, RL, learned-judge, synthetic-data, persistent-memory or explicit learned-world-model claim; do not impose a different claim type.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E12",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "PRM-PPO vs ORM-PPO vs ARPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "VAGEN reward vs ProRe reward"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.18596",
+          "note": "authors: UPE not validated inside RL; abstention may bias kept samples"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2605.06732#s3",
+          "note": "theory: systematic reward bias is not removed by more rollouts"
+        }
+      ],
+      "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a desktop/mobile training, RL, learned-judge, synthetic-data, persistent-memory or explicit learned-world-model claim; do not impose a different claim type.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E13",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2404.07972",
+          "note": "authors: more red-teaming could reduce remaining false positives/negatives"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2602.00575",
+          "note": "authors: OSWorld-Verified scripts produce false negatives (multiple solutions)"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s2",
+          "note": "reviewer audit on correct and deliberate-failure trajectories"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2610.05001#s2",
+          "note": "detection rate plus non-rejection rate on legal alternatives"
+        }
+      ],
+      "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a desktop/mobile training, RL, learned-judge, synthetic-data, persistent-memory or explicit learned-world-model claim; do not impose a different claim type.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E14",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2509.23738",
+          "note": "authors: GPT-4o labels show significant gap to human experts"
+        }
+      ],
+      "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a desktop/mobile training, RL, learned-judge, synthetic-data, persistent-memory or explicit learned-world-model claim; do not impose a different claim type.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E15",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2501.12326",
+          "note": "authors: offline benchmark results may fail to capture online capability"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s3",
+          "note": "SOP R^2=0.934 vs AndroidControl-High 0.470 against AndroidWorld"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2602.09856",
+          "note": "authors: offline evaluation cannot assess alternative valid trajectories or recovery"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2"
+        }
+      ],
+      "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+      "applicable": true,
+      "status": "met",
+      "reason": "Adds actual live execution and compares offline0/offline1 with online; explicitly explains multiple valid routes. Does not equate step accuracy with live completion.",
+      "evidence_ids": [
+        "E08",
+        "E11",
+        "E12"
+      ],
+      "score_item": [
+        "E.measurement"
+      ]
+    },
+    {
+      "id": "E16",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "3 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "3 runs, std 1.1%"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.10031",
+          "note": "3 repetitions"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2311.08649",
+          "note": "authors: monetary constraints prevented multiple runs"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2411.02337",
+          "note": "authors: random task generation raises variance across seeds"
+        }
+      ],
+      "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+      "applicable": true,
+      "status": "unmet",
+      "reason": "No repeated live runs, run variance or confidence intervals found in experiments or online appendix. Known90-task denominator does not establish repeatability.",
+      "evidence_ids": [
+        "E11",
+        "E12"
+      ],
+      "score_item": [
+        "E.statistics"
+      ]
+    },
+    {
+      "id": "E17",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "reports both 15 and 50 steps"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2",
+          "note": "5 actions vs 30 for some baselines (condition)"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2",
+          "note": "differing step caps; efficiency stratified"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s3",
+          "note": "budget exhaustion"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "average steps reported"
+        }
+      ],
+      "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+      "applicable": true,
+      "status": "unmet",
+      "reason": "No common max-step cap, per-method steps used or exhaustion breakdown found in live protocol; ENTER/TERMINATE and oracle scrolling also differ.",
+      "evidence_ids": [
+        "E19",
+        "E20"
+      ],
+      "score_item": [
+        "E.causality",
+        "E.cost"
+      ]
+    },
+    {
+      "id": "E18",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2",
+          "note": "$ and seconds vs tree search"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s1",
+          "note": "wall-clock vs tree search"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s2",
+          "note": "gain vs N, plateau"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "best-of-N vs N"
+        }
+      ],
+      "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a desktop/mobile training, RL, learned-judge, synthetic-data, persistent-memory or explicit learned-world-model claim; do not impose a different claim type.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E19",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2509.23738",
+          "note": "authors: AndroidWorld re-engineered; validated only by matching 32.8 baseline"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2",
+          "note": "modified scroll/type and +5 max steps disclosed"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.19723",
+          "note": "authors: 112 of 116 AndroidWorld tasks; one WebArena task per template"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "unscorable network/reCAPTCHA tasks disclosed"
+        }
+      ],
+      "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Custom Playwright harness, prohibitions, manual pop-up removal and task replacement disclosed; no ablation validating resulting ranking robustness.",
+      "evidence_ids": [
+        "E09",
+        "E12",
+        "E18",
+        "E20",
+        "E21"
+      ],
+      "score_item": [
+        "E.measurement",
+        "E.causality"
+      ]
+    },
+    {
+      "id": "E20",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2504.01382",
+          "note": "authors: websites evolve so tasks must be replaced"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2406.11896",
+          "note": "authors: frozen policies degrade over time due to site/app changes"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.09038",
+          "note": "authors: evolving websites complicate reproducibility"
+        }
+      ],
+      "applies_when": "a claim measured on live websites or live apps",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Date-sensitive task rewrites and website-change resampling disclosed; exact evaluation dates and blocked/CAPTCHA/task-flow accounting not found.",
+      "evidence_ids": [
+        "E12"
+      ],
+      "score_item": [
+        "E.holdout",
+        "E.statistics"
+      ]
+    },
+    {
+      "id": "E21",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        }
+      ],
+      "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+      "applicable": true,
+      "status": "met",
+      "reason": "Generation screenshot-only is explicitly distinct from DOM-augmented grounding; alternatives are separately reported. The overall deployed choice agent is not screenshot-only.",
+      "evidence_ids": [
+        "E01",
+        "E03",
+        "E10"
+      ],
+      "score_item": [
+        "X",
+        "E.causality"
+      ]
+    },
+    {
+      "id": "E22",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543",
+          "note": "relative gain 7B +104% vs 32B +37%"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3",
+          "note": "2B/7B/72B"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.02345#s2",
+          "note": "seven backbones"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "7B and 72B"
+        }
+      ],
+      "applies_when": "a claim that a training recipe generalises across policy backbones",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No training recipe claimed to generalize across backbone sizes; additional backbones are informative but not a separate scale-generalization assertion.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E23",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s3"
+        }
+      ],
+      "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Difficulty bins37/35/18 and qualitative horizon trend reported; supplied material lacks Figure3 bar values. Conditional100-error audit supports failure taxonomy, not global error prevalence.",
+      "evidence_ids": [
+        "E13",
+        "E14",
+        "E15",
+        "E16"
+      ],
+      "score_item": [
+        "E.statistics",
+        "X"
+      ]
+    },
+    {
+      "id": "E24",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2604.14262#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s3",
+          "note": "knowledge-free re-annotated instructions"
+        }
+      ],
+      "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Cross-site generalist evaluation is not an explicit controlled visual-perturbation robustness claim; layout robustness remains unestablished, not silently credited.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E25",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "OSWorld-G refusal category"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s1",
+          "note": "infeasible tasks"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.04454",
+          "note": "authors: model cannot indicate uncertainty or refuse"
+        }
+      ],
+      "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Grounding NONE/NA and task TERMINATE appear, but no infeasible-task refusal accuracy or false-rejection denominator. Candidate absence is not task impossibility.",
+      "evidence_ids": [
+        "E20",
+        "E23",
+        "E24"
+      ],
+      "score_item": [
+        "X",
+        "E.measurement"
+      ]
+    },
+    {
+      "id": "E26",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.02907#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        }
+      ],
+      "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a desktop/mobile training, RL, learned-judge, synthetic-data, persistent-memory or explicit learned-world-model claim; do not impose a different claim type.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E27",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s1",
+          "note": "diminishing after ~100K screenshots"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "10%-100% no saturation"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.19723",
+          "note": "authors: performance saturates at larger data scales"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.02345#s1",
+          "note": "log-linear"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "memory-size scaling"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2608.05891",
+          "note": "authors: returns saturate after 20K rollouts"
+        }
+      ],
+      "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a desktop/mobile training, RL, learned-judge, synthetic-data, persistent-memory or explicit learned-world-model claim; do not impose a different claim type.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E28",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "test-query search actions filtered from in-domain data"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1",
+          "note": "only 20 of 833 AndroidControl apps seen in synthesis"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "train on generated sites, evaluate on OSWorld/Online-Mind2Web/MobileWorld"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "OOD GUI-Odyssey and OSWorld"
+        }
+      ],
+      "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a desktop/mobile training, RL, learned-judge, synthetic-data, persistent-memory or explicit learned-world-model claim; do not impose a different claim type.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E29",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2506.08012",
+          "note": "authors: reflection data covers visual/grounding errors, not high-level planning"
+        }
+      ],
+      "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a desktop/mobile training, RL, learned-judge, synthetic-data, persistent-memory or explicit learned-world-model claim; do not impose a different claim type.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E30",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2609.00048#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "intrinsic accuracy correlated with Mind2Web-Live SR"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.09856#s2",
+          "note": "AndroidWorld SR with lookahead"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s1",
+          "note": "downstream SR ablation"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2"
+        }
+      ],
+      "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Qualitative website world-model analogy does not instantiate a trained simulator, rollout selector or simulator-training pipeline.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E31",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s1",
+          "note": "H=1 best"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "dream length 4-5 best"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2410.13232",
+          "note": "authors: errors accumulate with search depth"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2402.01086",
+          "note": "authors: autoregressive error accumulation (robotics)"
+        }
+      ],
+      "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Qualitative website world-model analogy does not instantiate a trained simulator, rollout selector or simulator-training pipeline.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E32",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "0% real underperforms SFT"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2608.05891",
+          "note": "authors: world-model-only data lowers ATP below base"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2403.03949#s3",
+          "note": "real co-training 2-3.5x over sim co-training (robotics)"
+        }
+      ],
+      "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Qualitative website world-model analogy does not instantiate a trained simulator, rollout selector or simulator-training pipeline.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E33",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2609.00048",
+          "note": "authors: VLM judges miss fine-grained task-state errors; more human-validated checks needed"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.14721#s1",
+          "note": "ranking checked under a second (Claude-Opus-4.1) judge"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "intrinsic metric correlated with executed SR"
+        }
+      ],
+      "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Qualitative website world-model analogy does not instantiate a trained simulator, rollout selector or simulator-training pipeline.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E34",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s1",
+          "note": "blind A/B realism; placeholder residual"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.03597#s1",
+          "note": "checkpoint ranking preserved vs real"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2403.03949#s1",
+          "note": "targeted twin vs generic assets"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2507.07067",
+          "note": "authors: residual sim-to-real gap is unavoidable after calibration"
+        }
+      ],
+      "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Qualitative website world-model analogy does not instantiate a trained simulator, rollout selector or simulator-training pipeline.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E35",
+      "version": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "OOD gains small"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.08164#s2"
+        }
+      ],
+      "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a desktop/mobile training, RL, learned-judge, synthetic-data, persistent-memory or explicit learned-world-model claim; do not impose a different claim type.",
+      "evidence_ids": [],
+      "score_item": []
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "text": "Grounding is a major bottleneck for screenshot-derived GPT4V intent.",
+      "setting": "GPT4V; offline30 tasks each cross-task/site/domain",
+      "baseline_control": "Attributes/annotation/choices versus human oracle; same backbone, differing grounding inputs.",
+      "selection_vs_test": "Shared30-per-split subset; markup type chosen by ablation, development/test separation unspecified.",
+      "result": {
+        "choice_step_sr_pct": [
+          39.1,
+          32.7,
+          42.0
+        ],
+        "oracle_step_sr_pct": [
+          61.9,
+          65.0,
+          62.1
+        ]
+      },
+      "denominator": "30 tasks per split; macro per-task step metrics, not90 online tasks per split.",
+      "budget": "Top50 candidates for choice/annotation, groups17; human oracle privileged.",
+      "evidence_ids": [
+        "E03",
+        "E04",
+        "E08",
+        "E10"
+      ],
+      "counterevidence": [
+        "Oracle correct interpretation is not a deployable solver; candidate/filter and generation changes not all factored."
+      ],
+      "allowed_conclusion": "Automatic grounding limits this tested configuration; no proof that grounding alone solves generalist web automation."
+    },
+    {
+      "claim_id": "C2",
+      "text": "SeeAct achieves better real-web whole-task success than text-only baselines.",
+      "setting": "Live public web,90 tasks, non-login and prohibited consequential actions.",
+      "baseline_control": "FLAN-T5-XL8.9%;GPT4 13.3%;Choice37.8%;Oracle51.1%.",
+      "selection_vs_test": "Date rewrites/resampling preserve split provenance; no independent development lock disclosed.",
+      "result": {
+        "online_success_pct": {
+          "FLAN-T5-XL": 8.9,
+          "GPT4": 13.3,
+          "Choice": 37.8,
+          "Oracle": 51.1
+        },
+        "offline0_choice_pct": 3.3
+      },
+      "denominator": "90 tasks aggregate across three30-task splits; no subgroup transfer SR inferred.",
+      "budget": "Oracle manual execution/scrolling/extra summary; Choice ENTER/TERMINATE; manual pop-up removal; equal caps and cost not given.",
+      "evidence_ids": [
+        "E09",
+        "E11",
+        "E12",
+        "E18",
+        "E19",
+        "E20",
+        "E21"
+      ],
+      "counterevidence": [
+        "Backbones/observations/action spaces differ; human-safety monitor is not unattended autonomy; no repeat trials."
+      ],
+      "allowed_conclusion": "Author-reported monitored live result on this restricted sample, not our replication or intervention-free general success."
+    },
+    {
+      "claim_id": "C3",
+      "text": "Long horizons worsen grounding, and GPT4V can sometimes plan or correct errors.",
+      "setting": "Difficulty37/35/18 tasks; conditional100 grounding errors; appendix cases.",
+      "baseline_control": "Four live methods by difficulty; no randomized recovery intervention.",
+      "selection_vs_test": "Illustrative case selection; conditional error sample.",
+      "result": {
+        "difficulty_bar_percentages": null,
+        "conditional_error_sample": 100,
+        "hallucinated_mark_pct": 54,
+        "wrong_association_pct": 46
+      },
+      "denominator": "100 correct-generation/wrong-grounding predictions, not100 general tasks.",
+      "evidence_ids": [
+        "E13",
+        "E14",
+        "E15",
+        "E16",
+        "E25",
+        "E26"
+      ],
+      "counterevidence": [
+        "Actual Figure3 numeric bars missing; illustrations cannot establish learned simulator fidelity or systematic recovery effect."
+      ],
+      "allowed_conclusion": "Text supports qualitative horizon trend and conditional error categories only."
+    }
+  ],
+  "assessment": {
+    "evidence_level": "online",
+    "claim_support": "scoped",
+    "strongest_supported_claim": "Author-reported human-monitored live90-task results show37.8% choice-grounded success and51.1% with human oracle, alongside fixed-backbone offline evidence that grounding restricts GPT4V intentions. Live execution supports more than reference-step matching, but does not establish unassisted generalist sufficiency.",
+    "unresolved": [
+      "Exact Figure3 subgroup numeric results remain unknown; supplied figure2_v7 is a methods diagram.",
+      "Construction-time isolation of live heldout sites from prompt/markup development is not established; choose online conservatively rather than promote to transfer from split names alone.",
+      "Common step caps, live evaluation dates, repeated runs, intervention counts and full cost are unavailable."
+    ],
+    "replication_status": "author_report_only; no code or agent experiments run",
+    "retained_assessment": "Not applicable to static prompted system; within-task action history is not retained cross-task improvement.",
+    "rubric_warning": "Provisional independent seat assessment against fixed draft_uncalibrated v2.2; not frozen calibration or accepted final."
+  },
+  "ratings": {
+    "G": {
+      "status": "resolved",
+      "rating": 4,
+      "reason": "Concrete grounded-intent versus executable-element bottleneck is important and empirically separated. Independent MindAct source confirms inherited rank/choose lineage; residue is screenshot-informed generation plus diagnostic and live/offline discrepancy, not invention of multiple choice.",
+      "evidence_ids": [
+        "E01",
+        "E02",
+        "E10",
+        "E11",
+        "E27"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "M": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Reconstructable information split predicts a human-grounding upper bound and different automatic grounding performance. Alternatives are meaningful, but human oracle does not specify an autonomous solution, and ranker candidate recall/markup tuning remain prerequisites.",
+      "evidence_ids": [
+        "E01",
+        "E03",
+        "E04",
+        "E10",
+        "E23"
+      ],
+      "counterevidence_ids": [
+        "E17",
+        "E19"
+      ],
+      "search_scope": []
+    },
+    "X": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Prompt templates, DOM-choice parsing, candidate budgets, action execution and human-intervention boundaries are documented. Static loop is operationally clear; common stopping budget and systematic recovery validation remain absent. No retained improver fabricated.",
+      "evidence_ids": [
+        "E03",
+        "E18",
+        "E20",
+        "E22",
+        "E23",
+        "E24"
+      ],
+      "counterevidence_ids": [
+        "E19",
+        "E21",
+        "E26"
+      ],
+      "search_scope": []
+    },
+    "E.measurement": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Human-monitored live90-task task success plus explicit offline metric definitions are stronger than step accuracy alone. Choice37.8 and oracle51.1 are distinct; no independent judge agreement, intervention-free replay or executable success audit.",
+      "evidence_ids": [
+        "E08",
+        "E09",
+        "E11",
+        "E12"
+      ],
+      "counterevidence_ids": [
+        "E18",
+        "E21"
+      ],
+      "search_scope": []
+    },
+    "E.causality": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "Same-generator offline grounding interventions support bottleneck attribution. Text-only backbones, grouping5vs17, human oracle, scrolling/ENTER differences and manual interventions prevent isolating all live gains to vision or decomposition.",
+      "evidence_ids": [
+        "E03",
+        "E10",
+        "E11"
+      ],
+      "counterevidence_ids": [
+        "E19",
+        "E20",
+        "E21"
+      ],
+      "search_scope": []
+    },
+    "E.holdout": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "Named cross-task/site/domain splits and visibility-verified screenshots support benchmark generalization coverage. Online subset preserves split sampling, but development/markup-selection independence and base-model contamination are not established; live aggregate is not per-heldout-site transfer evidence.",
+      "evidence_ids": [
+        "E05",
+        "E06",
+        "E07",
+        "E12"
+      ],
+      "counterevidence_ids": [
+        "E17"
+      ],
+      "search_scope": []
+    },
+    "E.statistics": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "Known full split denominators,90 live tasks and conditional100-error audit; difficulty bins are disclosed. No repeat runs/intervals or unconditional failure census; Figure3 subgroup values unknown rather than reconstructed.",
+      "evidence_ids": [
+        "E07",
+        "E12",
+        "E13",
+        "E15",
+        "E16"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Sections3-4 Tables1-4",
+        "AppendicesA-C and E-I",
+        "Supplied16 image assets; Figure3 bars unavailable"
+      ]
+    },
+    "E.cost": {
+      "status": "resolved",
+      "rating": 1,
+      "reason": "Top50,17-option groups and approximate visual input tokens are reported, but no end-to-end per-task latency/API cost, human labor budget, equal step cap or failure-cost accounting. This is partial budget evidence, not zero-cost proof.",
+      "evidence_ids": [
+        "E03",
+        "E07"
+      ],
+      "counterevidence_ids": [
+        "E19",
+        "E21"
+      ],
+      "search_scope": [
+        "Sections3.2-4.3; Table1 token statistics; AppendicesA-D including online details"
+      ]
+    }
+  },
+  "score": {
+    "raw": 70.0,
+    "display": 70.0,
+    "lower": 70.0,
+    "upper": 70.0,
+    "coverage": 1.0,
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "weights": {
+      "G": 15,
+      "M": 25,
+      "X": 20,
+      "E.measurement": 10,
+      "E.causality": 10,
+      "E.holdout": 10,
+      "E.statistics": 5,
+      "E.cost": 5
+    }
+  },
+  "status": "reviewed",
+  "reason": "Full substantive text, prompts, tables and supplied appendix figures reviewed; missing Figure3 numbers are nonessential to the overall metric judgments and remain explicitly unknown. Original broad claim retained and scoped, not silently narrowed.",
+  "readable_rationale": "A useful early decomposition and diagnostic of screenshot intent versus actual grounding, with unusually informative offline-versus-live comparison and a directly checked MindAct ancestor. The strongest evidence is for a monitored restricted browser system and a grounding bottleneck, not a solved autonomous generalist agent. Human oracle privileges, action-space differences, markup selection and missing repeat/budget details limit causal and transfer claims."
+}

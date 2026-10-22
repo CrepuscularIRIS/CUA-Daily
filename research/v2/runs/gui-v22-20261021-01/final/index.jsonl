@@ -20,3 +20,15 @@
 {"arxiv": "2610.23857", "title": "Web Agent Agentic Reinforcement Learning Decision Model Under Multi-Cost and Failure Risk", "version": "2610.23857v1", "batch": "c1", "attempt": "a2", "score_raw": 32.5, "claim_type": "system_method", "evidence_level": "offline", "claim_support": "scoped", "final_record_hash": "a448a9ad74fdd22e62f4b0865c69f139e77b5454730cf5bc7780bc23b7bc7e60"}
 {"arxiv": "2505.13909", "batch": "c2", "attempt": "a1", "score_raw": 67.5, "final_record_hash": "5e2ef34542f4e9f9ae2d33dee98dac8f4e0740aae38d099eac4dc16af7ddca4f"}
 {"arxiv": "2506.03095", "batch": "c2", "attempt": "a1", "score_raw": 42.5, "final_record_hash": "af8beaebaffefda1e1807cb1f2a6dbc80cbe3165721da32f43355118cdafe2bd"}
+{"arxiv": "2308.15272", "batch": "p4", "attempt": "a1", "score_raw": 60.0, "final_record_hash": "bd4affd2ca3a5b19290394a8ea5341c4aeb777fe9c0e674ea8bd409a92cbf8ff"}
+{"arxiv": "2309.08172", "batch": "p4", "attempt": "a1", "score_raw": 62.5, "final_record_hash": "89da9dfceab7af7f5ac299d520122c4a3a2491a1e4fdb79a8815e3d896330321"}
+{"arxiv": "2309.11436", "batch": "p4", "attempt": "a1", "score_raw": 48.75, "final_record_hash": "a300f5020fa32ceaad42aafb6e8549cdfa611483ae0a3ace72369c7f8c34b44a"}
+{"arxiv": "2310.03720", "batch": "p4", "attempt": "a1", "score_raw": 71.25, "final_record_hash": "60ad68de33c0ce2bf32c7dbb6fcc2ff0f7c1a5b2c883e4c8ea511a9f245aadb5"}
+{"arxiv": "2307.12856", "batch": "p3", "attempt": "a2b", "score_raw": 60.0, "final_record_hash": "9a34f30b262d14d255ac20d1dc04e8411e6694a72c7f05989fae4044edc1f7bd"}
+{"arxiv": "2209.08655", "batch": "re1", "attempt": "a1", "score_raw": 63.75, "final_record_hash": "ac756d4fbe1bc66b9357826da181b95fb6b2c92cf5cbb7f8f6f4464cc907b1d1"}
+{"arxiv": "2303.17491", "batch": "re1", "attempt": "a1", "score_raw": 62.5, "final_record_hash": "3067abbb5901c25c312d8383c703b82c1c711444cef0c7b64d934a1d3e23c405"}
+{"arxiv": "2504.14603", "batch": "re1", "attempt": "a1", "score_raw": 63.75, "final_record_hash": "1a3d80d36f7cf1a74a374dd03fedb013b41fcc0c068b1e4d77ca89f127fd264b"}
+{"arxiv": "2509.00366", "batch": "re1", "attempt": "a1", "score_raw": 41.25, "final_record_hash": "ba2e514a393f0797466884e901fbaeb0522ce20993250b997ef950d602154bf9"}
+{"arxiv": "2306.00245", "batch": "p3", "attempt": "a3", "score_raw": 71.25, "final_record_hash": "f86308dca4e346264978578ee1cdee9a2727cca7185b73eb8d9739ee5928aae7"}
+{"arxiv": "2306.01242", "batch": "p3", "attempt": "a3", "score_raw": 40.0, "final_record_hash": "cfa4e2e01b8318e148fd75f8a69b6c6866755a5f64bdab92195541958de94838"}
+{"arxiv": "2306.07863", "batch": "p3", "attempt": "a3", "score_raw": 66.25, "final_record_hash": "52de55c4ccefe63417cf7014e9fd63f405576e3103dee6c8fa0ab964a1293ca5"}

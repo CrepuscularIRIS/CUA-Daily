@@ -19,7 +19,12 @@ def main() -> None:
     mat = {}
     for line in open(ROOT / "research" / "fulltext" / "review-runs" / run_id / "materials.jsonl"):
         r = json.loads(line)
-        mat[r["arxiv"]] = r
+        # later lines win; "#rN" revision ids map back to the bare id (latest revision)
+        key = r["arxiv"].split("#")[0]
+        cur = mat.get(key)
+        rev = lambda a: int(a.split("#r")[1]) if "#r" in a else 0
+        if cur is None or rev(r["arxiv"]) >= rev(cur["arxiv"]):
+            mat[key] = r
 
     corpus = {r["arxiv"]: r for r in map(json.loads, open(ROOT / "research" / "corpus.jsonl"))}
     papers = []
@@ -27,10 +32,12 @@ def main() -> None:
         m = mat.get(a)
         if m is None:
             sys.exit(f"{a}: no material record — fetch first")
+        # revision records "id#rN" live in "id.rN.txt"
+        mat_file = m["arxiv"].replace("#", ".")
         papers.append({
             "paper_key": a, "arxiv": a,
             "title": corpus[a]["title"], "version": corpus[a]["latest_version"],
-            "fulltext_path": f"research/fulltext/review-runs/{run_id}/fulltext/{a}.txt"
+            "fulltext_path": f"research/fulltext/review-runs/{run_id}/fulltext/{mat_file}.txt"
             if m["status"] == "html" else None,
             "material_status": m["status"], "material_sha256": m["sha256"],
         })

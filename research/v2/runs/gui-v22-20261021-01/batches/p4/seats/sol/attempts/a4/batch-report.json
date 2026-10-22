@@ -1,0 +1,44 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p4",
+  "attempt_id": "a4",
+  "seat": "sol",
+  "assigned": [
+    "2310.04716"
+  ],
+  "assigned_count": 1,
+  "reviewed": 1,
+  "needs_fulltext": 0,
+  "needs_evidence": 0,
+  "out_of_scope": 0,
+  "outside_taxonomy": 0,
+  "outside_taxonomy_rate": 0.0,
+  "schema_errors": [],
+  "model_type": "sonnet",
+  "actual_model": "gpt-6.1-sol",
+  "session_id": null,
+  "receipt_ref": null,
+  "unavailable_reason": "Session/receipt IDs not exposed; model ID from environment, not a probe.",
+  "input_hash": "93d0dafbc452f91483228d9ad53bd5dcd7df4a98d3d7bdf6af2905c87de6b1ca",
+  "status": "completed",
+  "results": [
+    {
+      "paper_key": "2310.04716",
+      "status": "reviewed",
+      "raw": 63.75,
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p4/seats/sol/attempts/a4/2310.04716.json"
+    }
+  ],
+  "supersedes_note": "a3 material-premise overruled per REQ-2310.04716-1",
+  "validation": {
+    "required_record_fields": "passed existing check_record",
+    "all_8_flat_ratings": "passed",
+    "arithmetic": "63.75 raw; 63.8 display; L=U=63.75; coverage=1",
+    "material_sha256": "matches manifest",
+    "all_quotes_continuous_in_declared_line": "passed; 24 evidence entries",
+    "blindness": "No earlier seat records or aggregate judgments read; permitted REQ field only"
+  },
+  "blocking_items": [],
+  "timestamp": "2026-10-22T03:05:10.254319+00:00"
+}
