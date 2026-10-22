@@ -129,6 +129,7 @@ paper_id	tier	q3	families	cards	evidence	audit	title
 2504.07981	P3	capability	F3,F0	main/high_resolution_target_localisation,main/planner_grounder_interface	confirmed	-	ScreenSpot-Pro: GUI Grounding for Professional High-Resolution Computer Use
 2504.08942	P3	judgment	F2	main/learned_outcome_and_process_judges,main/verifiable_execution_reward	confirmed	-	AgentRewardBench: Evaluating Automatic Evaluations of Web Agent Trajectories
 2504.10445	P3	capability	F0,F3	main/agent_loop_context_control,main/online_evaluation_methodology	confirmed	-	RealWebAssist: A Benchmark for Long-Horizon Web Assistance with Real-World Users
+2504.11257	P3	judgment	F3,F1	main/planner_grounder_interface,main/high_resolution_target_localisation,main/online_evaluation_methodology	confirmed	-	UI-E2I-Synth: Advancing GUI Grounding with Large-Scale Instruction Synthesis
 2504.13936	P3	capability	F0,F2	main/learn_and_train_in_gui_world_model,main/simulated_lookahead_selection	confirmed	-	ViMo: A Generative Visual GUI World Model for App Agents
 2504.14603	P3	capability	F0	main/planner_grounder_interface,main/structured_screen_observation	confirmed	-	UFO2: The Desktop AgentOS
 2504.18575	P3	judgment	F4,F2	main/environmental_injection_attacks	confirmed	-	WASP: Benchmarking Web Agent Security Against Prompt Injection Attacks
@@ -311,6 +312,7 @@ paper_id	tier	q3	families	cards	evidence	audit	title
 2603.25864	P3	capability	F0,F4	main/agent_initiated_user_interaction	confirmed	-	GUIDE: A Benchmark for Understanding and Assisting Users in Open-Ended GUI Tasks
 2603.26041	P3	judgment	F1,F5	main/high_resolution_target_localisation,main/agent_loop_context_control	confirmed	-	Where and How to Prune: An Empirical Study of Visual Token Pruning for GUI Agent Navigation
 2603.29020	P3	judgment	F2,F1	main/online_evaluation_methodology	confirmed	-	Emergence WebVoyager: Toward Consistent and Transparent Evaluation of (Web) Agents in The Wild
+2604.00073	P3	judgment	F1,F0	main/planner_grounder_interface	confirmed	-	Terminal Agents Suffice for Enterprise Automation
 2604.00986	P3	judgment	F4,F2	main/online_evaluation_methodology,main/verifiable_execution_reward	confirmed	-	Do Phone-Use Agents Respect Your Privacy?
 2604.01535	P3	judgment	F5,F3	main/structured_screen_observation,main/agent_loop_context_control	confirmed	-	Read More, Think More: Revisiting Observation Reduction for Web Agents
 2604.02345	P3	judgment	F1,F3	main/learn_and_train_in_gui_world_model	confirmed	-	UI-Oceanus: Scaling GUI Agents with Synthetic Environmental Dynamics
@@ -517,6 +519,7 @@ paper_id	tier	q3	families	cards	evidence	audit	title
 2610.01787	P3	judgment	F3,F1	main/experience_memory_retrieval,main/trajectory_level_policy_training	confirmed	-	Not All Experience Belongs in the Weights: Component Routing for Self-Improving GUI Agents
 2610.02320	P3	capability	F3,F0	main/high_resolution_target_localisation,main/planner_grounder_interface	confirmed	-	DeskForge: Dense Supervision from Desktop Environments for Computer-Use Agents
 2610.03089	P3	capability	F4,F2	main/injection_defense_isolation,main/environmental_injection_attacks	confirmed	-	Securing Computer-Use Agents Against Branch Steering Attacks
+2610.03574	P3	judgment	F0,F1	main/online_evaluation_methodology,main/learned_outcome_and_process_judges	confirmed	-	HyperBrowseComp: A Multilingual and Multimodal Stress Test for Web-Browsing Agents
 2610.03818	P3	capability	F2,F4	main/learned_outcome_and_process_judges,main/injection_defense_isolation	confirmed	-	Control OSWorld: An AI Control Environment for GUI Computer Use Agents
 2610.05861	P3	judgment	F3,F2	main/learn_and_train_in_gui_world_model	confirmed	-	Imagine to Act: High-Fidelity Data Synthesis via Image Editing World Model for Scalable GUI Agent Training
 2610.07118	P3	capability	F0	main/agent_loop_context_control	confirmed	-	AMBER: Training Long-Horizon Web Agents through Append-Only Memory
@@ -541,6 +544,7 @@ paper_id	tier	q3	families	cards	evidence	audit	title
 2610.17710	P3	capability	F2,F1	main/learned_outcome_and_process_judges,main/trajectory_level_policy_training	confirmed	-	Adaptive-Group Process Rewards for GUI Agents
 2610.17895	P3	judgment	F2	main/learned_outcome_and_process_judges,main/online_evaluation_methodology	confirmed	-	Interaction-as-a-Judge
 2610.17928	P3	judgment	F0	main/experience_memory_retrieval	confirmed	-	Learning How to Remember: Memory Modality Selection for GUI Agents
+2610.18067	P3	capability	F2,F1	main/verifiable_execution_reward	confirmed	-	WorkRover: Scaling Long-Horizon Cowork Agent Training Via Recursive Environment Evolution
 2610.18508	P3	capability	F4	main/injection_defense_isolation	confirmed	-	Towards Safe Autonomy for Computer Use
 2610.20100	P3	capability	F0,F2	main/agent_loop_context_control,main/verifiable_execution_reward	confirmed	-	Task-State Governance: A Virtual Machine for Verifiable and Recoverable GUI Agent Execution
 2610.20107	P3	judgment	F0,F1	main/high_resolution_target_localisation,main/planner_grounder_interface	confirmed	-	Why Generate a Click? Plug-in Decision Heads for Web Agents
@@ -557,11 +561,13 @@ paper_id	tier	q3	families	cards	evidence	audit	title
 2610.26469	P3	capability	F2,F3	main/learned_outcome_and_process_judges,main/verifiable_execution_reward	confirmed	-	VeriCUA: Learning Proactive Verification for Reliable GUI Agent Rewards
 2610.26503	P3	judgment	F1,F5	main/experience_memory_retrieval,main/agent_loop_context_control	confirmed	-	ScopeMem: Latent Memory That Learns Where to Revise Frozen GUI Agents
 2610.29609	P3	judgment	F2,F4	main/learned_outcome_and_process_judges	confirmed	-	Who Verifies the Agent's Success Claim? Self-Report Leakage in GUI-Agent Completion Judging
+2610.30108	P3	judgment	F2	main/online_evaluation_methodology	confirmed	-	Multimodal Embodied Agents: A Unified Capability-centric Perspective from Computer-Use to Robot-Use
 2307.13854	P2	judgment	F2,F3	main/online_evaluation_methodology,main/verifiable_execution_reward	confirmed	-	WebArena: A Realistic Web Environment for Building Autonomous Agents
 2402.04476	P2	incremental	F0	main/structured_screen_observation	confirmed	-	Dual-View Visual Contextualization for Web Navigation
 2406.11317	P2	incremental	F0	main/high_resolution_target_localisation,main/planner_grounder_interface	confirmed	-	GUICourse: From General Vision Language Models to Versatile GUI Agents
 2407.17490	P2	incremental	F0,F1	main/structured_screen_observation,main/planner_grounder_interface	confirmed	-	AMEX: Android Multi-annotation Expo Dataset for Mobile GUI Agents
 2503.03196	P2	incremental	F0	main/high_resolution_target_localisation,main/planner_grounder_interface	confirmed	-	SpiritSight Agent: Advanced GUI Agent with One Look
+2503.21620	P2	incremental	F1,F5	main/rule_reward_single_step_rl	confirmed	-	UI-R1: Enhancing Efficient Action Prediction of GUI Agents by Reinforcement Learning
 2505.12632	P2	incremental	F0,F3	main/mine_human_screen_videos	confirmed	-	Scalable Video-to-Dataset Generation for Cross-Platform Mobile Agents
 2505.15277	P2	incremental	F2	main/learned_outcome_and_process_judges,main/simulated_lookahead_selection	confirmed	-	Web-Shepherd: Advancing PRMs for Reinforcing Web Agents
 2509.04243	P2	incremental	F0	main/high_resolution_target_localisation	confirmed	-	Learning Active Perception via Self-Evolving Preference Optimization for GUI Grounding
@@ -579,6 +585,7 @@ paper_id	tier	q3	families	cards	evidence	audit	title
 2605.00642	P2	incremental	F2,F4	main/rule_reward_single_step_rl,main/high_resolution_target_localisation	confirmed	-	Learn where to Click from Yourself: On-Policy Self-Distillation for GUI Grounding
 2605.21470	P2	incremental	F0	main/planner_grounder_interface,main/agent_loop_context_control	confirmed	-	Agent JIT Compilation for Latency-Optimizing Web Agent Planning and Scheduling
 2606.22948	P2	incremental	F1,F3	main/trajectory_level_policy_training,main/verifiable_execution_reward	confirmed	-	ENVS: Environment-Native Verified Search for Long-Horizon GUI Agents
+2607.11185	P2	incremental	F0,F5	main/verifiable_execution_reward,main/trajectory_level_policy_training	confirmed	-	SCALECUA: Scaling Computer Use Agents with Verifiable Task Synthesis and Efficient Online RL
 2610.05185	P2	incremental	F0,F1	main/high_resolution_target_localisation	confirmed	-	Recurrent Latent Visual Search for GUI Grounding
 2610.17792	P2	incremental	F0,F2	main/high_resolution_target_localisation,main/simulated_lookahead_selection	confirmed	-	MHVF: Training-Free GUI Grounding via Verification-Guided Multi-Hypothesis Search
 2610.20390	P2	incremental	F5,F3	main/high_resolution_target_localisation	confirmed	-	STP-GUI: Spatially-Aware Token Pruning for Efficient Web-GUI Agents
