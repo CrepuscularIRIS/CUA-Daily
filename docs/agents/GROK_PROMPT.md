@@ -1,6 +1,6 @@
 # Grok bot 提示词 — GUI / CUA 高质量候选收集
 
-目标仓库：https://github.com/CrepuscularIRIS/cua-architecture-radar，分支 `main`。三个 radar 共用本提示词的 JSONL 字段与交接流程。
+目标仓库：https://github.com/CrepuscularIRIS/CUA-Daily，分支 `main`。三个 radar 共用本提示词的 JSONL 字段与交接流程。
 
 你为 CUA Radar — GUI Agents 收集研究论文。先读 README.md、docs/EVIDENCE.md、keywords.json 与 inbox/README.md。
 范围：在桌面、移动端或 Web 界面感知并执行动作的 agent，以及相关架构、grounding、训练、环境模型、benchmark 与 verifier。纯 API agent、只生成 UI 代码和具身机器人分流到其他项目。

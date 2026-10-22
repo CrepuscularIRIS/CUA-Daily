@@ -1,4 +1,4 @@
-# CUA Radar — GUI Agents
+# CUA-Daily — GUI Agents
 
 在桌面、移动端或 Web 界面感知并执行动作的 agent，以及相关架构、grounding、训练、环境模型、benchmark 与 verifier。纯 API agent、只生成 UI 代码和具身机器人分流到其他项目。
 
