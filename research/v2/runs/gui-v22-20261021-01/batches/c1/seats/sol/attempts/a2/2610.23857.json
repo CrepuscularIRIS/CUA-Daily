@@ -1,0 +1,2683 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "c1",
+  "attempt_id": "a2",
+  "seat": "sol",
+  "paper": {
+    "paper_key": "2610.23857",
+    "paper_id": "2610.23857",
+    "title": "Web Agent Agentic Reinforcement Learning Decision Model Under Multi-Cost and Failure Risk",
+    "version": "2610.23857v1",
+    "claim_type": "system_method",
+    "central_claim": "将请求、延迟和失败成本的CMDP约束、Lagrange双向优化与CVaR尾风险控制结合于Web Actor–Critic，在30–70模板、800–1500端到端任务、20–120步/30–200工具场景下，等完成率时C-PS下降22%–31%、高惩罚失败率下降18%–26%，固定预算完成率提高10%–16%，并提升异构任务/页面的泛化和稳定性。",
+    "claim_type_reason": "虽改变训练目标，但核心声称完整DOM/API/navigation系统的多步任务成功与部署成本，不是仅离线训练组件指标。",
+    "extracted_title_note": "Text line6 adds “Constraints”; supplied manifest/user title preserved without changing paper identity."
+  },
+  "provenance": {
+    "input_hash": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+    "input_hash_scope": "User-authorized unique upgraded target material SHA-256; assets separately bound. Not a claim that the old batch bundle was regenerated.",
+    "original_input_bundle_sha256": "28c0cca3c5e43fc35f3a1a269b63a8f0a4506d44fbaaa27257dca80bfabb6390",
+    "input_manifest": "research/v2/runs/gui-v22-20261021-01/batches/c1/manifest.json",
+    "input_binding_status": "authorized_material_override",
+    "input_override": {
+      "attempt_id": "a2",
+      "paper_key": "2610.23857",
+      "version": "2610.23857v1",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "reason": "Shared manifest predates upgrade (attempt a1, no_html/null). User explicitly authorized this PDF-text a2; shared manifest not modified. Controller must fix a common upgraded bundle before dual-input acceptance.",
+      "declared_size_bytes": 32872,
+      "actual_size_bytes": 33201,
+      "size_resolution": "ExpectedSHA-256matches exactly; preserve byte-count discrepancy rather than infer different content."
+    },
+    "rubric_version": "v2.2 draft_uncalibrated (2026-10-21)",
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+    "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "domain_cards_hash_scope": "taxonomy.json; conditions and individual read cards additionally bound below",
+    "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+    "asset_bindings": {
+      "rubric": {
+        "path": "research/SCORE_SPEC.md",
+        "sha256": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+      },
+      "pattern_protocol": {
+        "path": "research/PATTERN_PROTOCOL.md",
+        "sha256": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373"
+      },
+      "batch_contract": {
+        "path": "research/BATCH_CONTRACT.md",
+        "sha256": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275"
+      },
+      "review_worksheet": {
+        "path": "research/REVIEW_WORKSHEET.md",
+        "sha256": "b0ca3ac92a458c934894aee62c88d6de8ab53901047326e0c8abdfd1a0d3219e"
+      },
+      "evidence_rules": {
+        "path": "docs/EVIDENCE.md",
+        "sha256": "336e1bcdd149cd485ee5a1f22101ca594997b755b47555447ba6661b23a1fac5"
+      },
+      "rs_cards_manifest": {
+        "path": "research/reference/researchstudio-15-31/MANIFEST.tsv",
+        "sha256": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32"
+      },
+      "domain_taxonomy": {
+        "path": "research/patterns/taxonomy.json",
+        "sha256": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21"
+      },
+      "domain_conditions": {
+        "path": "research/patterns/conditions.json",
+        "sha256": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+      },
+      "expectations": {
+        "path": ".forge/domains/cua-agents/v1/profile/expectations.json",
+        "sha256": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67"
+      }
+    },
+    "reference_inventory_hash": "d15550c3cb35fe623636c849a1bdf24e652afaccf7385bb3c38750de2fde26c8",
+    "model_type": "sonnet",
+    "actual_model": "gpt-6.1-sol",
+    "actual_model_source": "Provided session environment; no model probing/reconfiguration.",
+    "session_id": null,
+    "receipt_ref": null,
+    "missing_runtime_identifiers_reason": "No verifiable worker session UUID or model receipt exposed in supplied task context; parent transcript path is not assumed to be this worker ID.",
+    "timestamp": "2026-10-21T17:19:29.781523+00:00",
+    "blindness": {
+      "a1_directories_read": false,
+      "other_seat_read": false,
+      "aggregate_read": false,
+      "old_judgment_read": false,
+      "contamination": false
+    },
+    "code_execution": "Only local stdlib hash/search/JSON checks; no collected paper implementation, simulator or external fetch run.",
+    "read_card_hashes": {
+      "research/reference/researchstudio-15-31/ideation-patterns/overview.md": "20014a5167c41a0a71b492bb4b20e25947b4cf30c7f86234c020e8d45f7450b2",
+      "research/reference/researchstudio-15-31/ideation-sub-patterns/overview.md": "bef036e8aed185e598f98caf45984b2444b47a45e3f35babe3bb038ff006a8fa",
+      "research/reference/researchstudio-15-31/PARENTS.tsv": "aa8c4eabb1641c4acb72c887046b116495365134f27d2021d2e3b46e91db543b",
+      "research/reference/researchstudio-15-31/ideation-patterns/reframe_as_solvable_object.md": "a0876cbb5670f0b99d46279079066119a5c795be42aa438aa793be34f7e89dfc",
+      "research/reference/researchstudio-15-31/ideation-sub-patterns/C00.md": "0bc790076bc61bc5a902094b3b1326375b20a2210540b9665c97728f8a869d56",
+      "research/reference/researchstudio-15-31/ideation-sub-patterns/C21.md": "5f37f2da95b53bfc32fa8a257293cbf549dc1959a45e933949e04bad4b65e89f",
+      "research/reference/researchstudio-15-31/ideation-sub-patterns/C27.md": "1c6a3b88c1c50aab2841681e9eeea8e6279409b02f4221eca7aa8e3059795bf4",
+      "patterns/main/trajectory_level_policy_training.md": "316da634ac899be008a216d581ae5bb838d8b95fcf63bee025292c2ded979c8c",
+      "patterns/sub/K20.md": "3f93b21abf8b6664edeb5a4cf0d5cfabd7ae3acb8e19a0518160dcfd8eaa9614",
+      "patterns/main/structured_screen_observation.md": "1f8b8caa5de306b02798894710bd0465d600b402bb1b6b9e55c7b2322174a9df",
+      "patterns/sub/C01.md": "64707de8c71a311a9ecef2d70794ab73efe7db24dbf90381a343357402bd37de"
+    }
+  },
+  "supersedes": {
+    "attempt_id": "a1",
+    "paper_key": "2610.23857",
+    "seat": "sol",
+    "prior_disposition": "needs_fulltext",
+    "reason": "Material-upgrade reassessment: user-authorized complete extracted PDF text replaces unavailable-fulltext condition. No a1 paper/batch directory opened; no ratings inherited.",
+    "prior_record_read": false
+  },
+  "materials": [
+    {
+      "material_id": "target",
+      "paper_id": "2610.23857",
+      "version": "2610.23857v1",
+      "url": "https://arxiv.org/pdf/2610.23857v1",
+      "sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2610.23857.txt",
+      "sections_read": [
+        "Abstract",
+        "Introduction",
+        "Related Work §§2.1–2.3",
+        "Overview",
+        "Methods §§3.1–3.4 including all extracted equations",
+        "Experiments §§4.1–4.4, readable table and figure captions/prose",
+        "Conclusion",
+        "References [1]–[16]"
+      ],
+      "complete": false,
+      "missing_sections": [
+        "Equations have degraded layout/sign conventions; exact intended updates unknown.",
+        "Figures 1 architecture, 2, 3 and 5 lack embedded graphic content in text; captions/prose are available.",
+        "No appendix is present in supplied text; no external appendix assumed to exist."
+      ],
+      "completeness_note": "All 391 lines read, including complete extracted methods, experiments and references; not abstract-only or deliberately cropped. complete=false denotes visual/equation fidelity limitations, not absence of the methods/experiments text."
+    },
+    {
+      "material_id": "mind2web",
+      "paper_id": "2306.06070",
+      "version": null,
+      "url": "https://arxiv.org/html/2306.06070",
+      "sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2306.06070.txt",
+      "sections_read": [
+        "Full supplied text: abstract, §§1–7, references, Appendices A–D"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "completeness_note": "Entire fixed text read; header lacks an arXiv version suffix, so version is null rather than inferred. Material identity is bound by shared inventory SHA-256."
+    },
+    {
+      "material_id": "webarena",
+      "paper_id": "2307.13854",
+      "version": null,
+      "url": "https://arxiv.org/html/2307.13854",
+      "sha256": "896882a2c125ec2595dc2ed78f638950bc0b0a7c04c187bafa82c8174d7ecc62",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2307.13854.txt",
+      "sections_read": [
+        "Full supplied text: abstract, §§1–7, references, Appendix A.1–A.10"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "completeness_note": "Entire fixed text read; header lacks an arXiv version suffix, so version is null rather than inferred. Material identity is bound by shared inventory SHA-256."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E001",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 20–38",
+      "line_start": 20,
+      "line_end": 38,
+      "quote": "Intelligent agent interactions in real-world web environments are commonly constrained by request budgets,\ntime delays, anti-crawling restrictions, and operational failure risks. Strategies solely optimizing task success\nrates often exhibit unusable phenomena such as \"high success but high cost\" or \"low risk but conservative\nfailure.\"This paper proposes a constrained Agentic reinforcement learning model for Web Agents, unifying\npage access, search requests, and external API calls into a unified long-term decision-making framework with\nassociated costs. It simultaneously incorporates cost budget constraints and tail risk control into the\noptimization objective: constructing a multidimensional cost vector comprising cumulative request count,\ntotal latency, and failure penalties to achieve budget compliance via Lagrange dual updates;while employing a\nCVaR risk term to suppress excessive exploration of high-failure-probability paths, thereby achieving\nadaptive balance among \"completion rate, cost, and risk.\"Experiments were conducted across 30–70\nsite/page templates and 800–1,500 end-to-end web tasks (including information extraction, price\ncomparison, form submission, and cross-page navigation). Interaction sequences spanned 20–120 steps with\ntool scales of 30–200. Performance was benchmarked against unconstrained RL, budget-constrained RL, and\nrule-based/scripted web agents, quantifying task completion rates, cost-per-success, failure rates, and policy\nstability.scripted web agents. We quantified task completion rates, cost-per-success, failure rates, and policy\nstability.Results demonstrate that at equivalent completion rates, our method reduces C-PS by 22%–31% and\nlowers failure rates by 18%–26% under high failure penalties. Under fixed budgets, task completion rates\nincrease by 10%–16%, highlighting the necessity and effectiveness of constraint modeling for practical Web\nAgent deployment.",
+      "support_explanation": "作者原始中心主张与完整范围：多成本、CVaR、长交互，等完成率成本下降、失败率下降和固定预算成功提升。不是本席复现。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E002",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 56–70",
+      "line_start": 56,
+      "line_end": 70,
+      "quote": "\nIn recent years, agentic systems for web agents have progressively integrated mechanisms for coordinating\nreasoning and actions. Yao et al. (2022) introduced the ReAct model, pioneering the linkage between\nlanguage model inference trajectories and environmental actions]; Schick et al. (2024) developed Toolformer,\nenabling LLMs to autonomously learn tool usage ; Deng et al. (2023) established the Mind2Web universal\nWeb Agent benchmark system; Qiu et al. (2024) extended LLM-driven agent systems to the medical domain,\nvalidating their stability in complex scenarios. However, these approaches generally neglect explicit modeling\nof cost budgeting, delay accumulation, and operation failures. In contrast, Altman (1999) proposed the\nConstrained Markov Decision Process (CMDP), providing a theoretical framework for policy generation under\nresource constraints in reinforcement learning. Building upon this, this paper introduces a CVaR tail risk\nmodeling mechanism into the CMDP structure, proposing a Web Agent decision framework that integrates\nmulti-cost budgeting and failure suppression strategies. The main contributions of this paper include: 1)\nConstructing a unified Agentic reinforcement learning model under multi-cost constraints; 2) Incorporating\nLagrange dual optimization and CVaR risk suppression mechanisms during policy training; 3) Conducting\nlarge-scale empirical validation on heterogeneous web task sets, significantly enhancing the policy's",
+      "support_explanation": "作者把 Web agent 的预算/风险问题接到已有 CMDP、Lagrange 和 CVaR；这里的邻近工作缺陷只是作者陈述，不能据此认定全部先行研究无此机制。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E003",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 127–133",
+      "line_start": 127,
+      "line_end": 133,
+      "quote": "Constraints\n3.1 Task Modeling and State Space Construction\nWithin the reinforcement learning framework, the web task is modeled as a constrained Markov decision\nprocess (MDP-C). The state space s encompasses page structural features, historical interaction trajectories,\nand tool cooling states, with dimensions ranging from 120 to 320. The action space A represents executable\nDOM operations and API trigger events, totaling between 30 and 200.Environment dynamics are supported\n                            (      )",
+      "support_explanation": "明确 DOM/API 动作、历史和冷却信息；对应 Web GUI 操作面，而非纯 API agent。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E004",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 165–171",
+      "line_start": 165,
+      "line_end": 171,
+      "quote": "                                                                  i       i            i\n                                                           i =1                                        (2)\nwhere θ represents the policy network parameters, λi denotes the Lagrange multipliers corresponding to\nthe i cost category, and bi is the adjustable budget upper limit. These are respectively set as the request\ncount upper limit b1 = 12 , the average delay upper limit b2 = 600ms , and the maximum failure cost\n b3 = 3.0 . Bidirectional optimization iteration of the policy is achieved through joint gradient descent\nupdates θ and ascent updates λi .Figure 1 illustrates the multi-cost constrained reinforcement learning",
+      "support_explanation": "存在三类预算及双向更新的文字描述；12/600ms/3.0 与实验设定不同。符号与升降方向不能凭此恢复为正确算法。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E005",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 173–185",
+      "line_start": 173,
+      "line_end": 185,
+      "quote": "scheduling, state sampling, and loss feedback processes to ensure the policy evolves within cost boundaries.\n\f         Figure 1: Schematic of Multi-Cost Lagrange Constrained Reinforcement Learning Architecture\n3.3 Risk Mitigation Strategy and CVaR Loss Embedding\nDuring multi-step web interactions, failure events often exhibit low frequency but high cost characteristics,\nsuch as interrupted consecutive page transitions, failed form submissions, or anti-crawler triggers. Their\ncumulative impact cannot be fully captured by expected cost alone[9, 11]. To suppress excessive exploration\nof high-failure-probability trajectories, conditional value at risk (CVaR) is introduced on top of the multi-cost\nconstraint to characterize tail risk[9, 10].Let the loss per failed trajectory be a random variable Z (τ ) ,\ncomposed of the number of failed steps, failure type weights, and recovery costs, typically ranging from [0,10].\n                                                  [               ]\nUnder a given risk confidence level β ∈ 0.8,0,95 , CVaR is defined as\n                                           CVaR β ( Z ) = IE[Z∣Z ≥ VaR β ( Z )]",
+      "support_explanation": "失败轨迹损失含失败步数、类型权重和恢复成本；CVaR 意图是尾部失败控制。β 范围文本损坏，精确取值 unknown。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E006",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 201–205",
+      "line_start": 201,
+      "line_end": 205,
+      "quote": "                             J (θ ) = IE[R (τ )] +    ∑ λ (IE[C (τ )] − b ) + μ ⋅ CVaR (Z )\n                                                              i       i          i                  β\n                                                       i =1                                                (5)\nAmong these, θ represents the policy parameter, R (τ ) denotes the task reward, Ci (τ ) indicates cost\ncomponents such as request count, latency, and failure cost, bi corresponds to the budget threshold, λi is",
+      "support_explanation": "风险系数范围和预算/尾风险目的可读，但并未消除式(2)/(5)及更新方向的含义歧义。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E007",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 206–217",
+      "line_start": 206,
+      "line_end": 217,
+      "quote": "the Lagrange multiplier, and µ serves as the risk suppression coefficient (with a value range of 0.1–1.0). This\ndesign enables policy updates to satisfy cost budgets while explicitly compressing the tail region of the failure\nloss distribution, providing risk-aware capabilities for stable decision-making in complex web scenarios.\n3.4 Policy Network Architecture and Training Process\nThe policy network architecture adopts a parameter-sharing dual-channel Actor-Critic framework to enhance\npolicy stability and generalization in high-dimensional state spaces[14] . The input layer receives a joint state\n                 [              ]                d                                                  d\nvector st = f DOM , ht ,τ t , where f DOM ∈ IR 1 represents current page DOM features, ht ∈ IR 2 denotes\n                                            d3\nhistorical action embeddings, and τ t ∈ IR     indicates tool cooling duration vectors. Typical dimensionality\nis configured as d1 = 128, d 2 = 64, d 3 = 32 . The policy branch outputs action probability distributions\n   (     )",
+      "support_explanation": "共享 Actor–Critic 与 DOM/history/cooldown 特征维度被描述，未把它解释成 screenshot-only 或大型语言模型基座。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E008",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 231–239",
+      "line_start": 231,
+      "line_end": 239,
+      "quote": "                                                                                         \n                         Lπ = IE st ~ D  π θ (a st )(Qφ (st , a ) − λc C (a ) − βR (a ) )\n                                       ∑                                                                  (7)\n                                         a                                               \nwhere C ( a ) ∈ IR denotes the unit request cost of an action, R ( a ) ∈ IR represents its failure risk metric,\nand λc and β are the control coefficients for the cost and risk terms, respectively (experimental settings\nrange from λc ∈ [0.1,1.5] and β ∈ [0.1,1.0] ).Empirical replay is employed during training to mitigate\n                                                                   5\nsample correlation. The Replay Buffer is set to a length of 10 , with a batch size of 64. The Adam optimizer",
+      "support_explanation": "经验回放、buffer、batch、Adam、更新频率等配置存在；不是成功过滤/AWR/KL replay 的证据。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E009",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 262–270",
+      "line_start": 262,
+      "line_end": 270,
+      "quote": "patterns. These advantages collectively differentiate our model as a practical, scalable, and risk-aware\nreinforcement learning solution for long-horizon Web Agent decision-making under real-world constraints.\n4 Experimental Results and Analysis\n4.1 Experimental Setup\nExperiments were conducted across 30 to 70 deployed heterogeneous site templates, covering four typical\nscenarios: information extraction, price comparison analysis, form submission, and cross-page navigation.\nThe total number of task samples ranged from 812 to 1,472.Task interaction sequences ranged from 20 to 120\nsteps, with actions dynamically selected from a toolset of 30 to 200 types, including DOM manipulations, API\ncalls, and navigation behaviors. Each interaction uniformly collected three metrics: request count, response",
+      "support_explanation": "实验是部署站点模板上的交互报告，任务/模板/工具数均为范围；每步记录成本和失败标签，但未说明标签判定器。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E010",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 284–299",
+      "line_start": 284,
+      "line_end": 299,
+      "quote": "high failure penalties, the Web Agent effectively suppresses excessive exploration of failure paths via the CVaR\nrisk term, thereby stabilizing completion rates and significantly reducing cost-per-success while maintaining\nequivalent task completion levels.Experimental data on policy performance under multiple constraints\ndemonstrate that constrained policies achieve a superior balance between success rates and costs compared\nto unconstrained reinforcement learning models, as illustrated in Figure 1.\n         Figure 1: Web Agent strategy performance evaluation data under different constraint settings\n                       Requests          Page         Failure          Task\n    Constraint                                                                    Cost-per-Succe       Failure\n                       per Task        Latency       Penalty       Completion\n     Setting                                                                             ss             Rate\n                     (times/task)       (ms)          Factor          Rate\n Unconstrained           10–12        500–600         1.0–1.5        72.30%             0.45           18.20%\n      Budget\n                          8–10        600–700         1.2–2.0        74.80%             0.43           16.10%\n constraint only\n     Budget +",
+      "support_explanation": "可读表格报告四个约束设置的成功/成本/失败率；同时各行失败惩罚和延迟范围改变，不能视为固定条件消融。原始视觉表格未复核。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E011",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 300–305",
+      "line_start": 300,
+      "line_end": 305,
+      "quote": "   Failure Risk            7–9        500–650         1.5–2.5        77.10%             0.38           14.40%\n    Constraint\n       CVaR\n                           6–8        550–650         2.0–3.5        80.50%             0.32           12.50%\n    Constraint\nBased on experimental data under different constraints, task completion rates significantly improved after",
+      "support_explanation": "作者将端点提升称为8.2%，又报告18.2%–26%的失败下降；与可读表端点的相对失败降幅不可直接对应。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E012",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 307–318",
+      "line_start": 307,
+      "line_end": 318,
+      "quote": "increased by 8.2%, while the unit cost per success decreased by 22% to 31% compared to the unconstrained\nstrategy.Under settings with higher failure penalties, the failure rate showed a significant decrease, reducing\nby 18.2% to 26% in the optimal case. The data in this table provides detailed quantitative evidence of the\nmodel's performance in practical tasks, demonstrating the positive impact of multi-dimensional constraints\non optimizing Web Agent strategies.\n4.3 Analysis of Cost Efficiency and Risk Control Effects\nUnder multi-cost and risk control constraints, the Web Agent strategy demonstrates significant cost efficiency\nand risk mitigation effects. By incorporating the CVaR risk term, the strategy effectively suppresses excessive\nexploration of paths with high failure probabilities, thereby achieving effective cost control while optimizing\ntask success rates.Experimental results demonstrate that, at equivalent task completion rates, incorporating\ncost and failure risk constraints significantly reduces the cost-per-success by approximately 22% to 31%.\nParticularly under high failure penalty constraints, the strategy effectively compresses the distribution of",
+      "support_explanation": "等成功率成本下降22%–31%、失败率下降18%–26%的匹配协议和分组数据不在此段，只能视为作者报告。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E013",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 327–338",
+      "line_start": 327,
+      "line_end": 338,
+      "quote": "constraint conditions.Under the unconstrained reinforcement learning model, higher completion rates\ncorrelate with higher cost-per-success, indicating that while the strategy achieves high success rates, it comes\nat a significant cost. Introducing a budget constraint significantly reduces the cost-per-success while slightly\nimproving the task completion rate. When employing the CVaR risk control strategy, the task completion rate\nfurther increases, the cost-per-success continues to decrease, and an optimal balance is achieved at a lower\nfailure penalty coefficient.\n4.4 Strategy Stability and Generalization Capability\nIn complex environments involving multiple tasks and pages, the stability and generalization capability of the\nWeb Agent strategy are key design objectives. By incorporating multi-cost and failure risk constraints, the\nstrategy demonstrates high stability. Particularly under fixed budget conditions, task completion rates\nimproved by 10%–16%, indicating that the constrained model enhances task success rates without altering\nthe budget.Furthermore, the model's generalization capability is significantly enhanced. When confronted",
+      "support_explanation": "固定预算10%–16%和泛化/稳定性主张明确保留，不能以改窄后的主张重新评分。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E014",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 343–352",
+      "line_start": 343,
+      "line_end": 352,
+      "quote": "generalization across multiple task scenarios, showing that the constrained optimization strategy maintains\nhigh task completion rates and low failure risks in diverse environments.\n\n\n\n\n  Figure 5: Stability and Generalization of Task Completion Rate and Failure Risk Under Different Constraints\nFigure 5 demonstrates the stability and generalization capability of the Web Agent strategy across 20 task\nscenarios under different constraints.Without constraints, the average task completion rate was 72.3%.\n\f",
+      "support_explanation": "20个场景与汇总成功率不能证明站点或任务留出；图像数据缺失，精细分组与误差条 unknown。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E015",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 353–363",
+      "line_start": 353,
+      "line_end": 363,
+      "quote": "Introducing budget constraints increased the completion rate to 74.8%, demonstrating the positive impact of\nbudget optimization on success rates. Further incorporating failure risk control (CVaR constraints) raised the\ncompletion rate to 80.5% while reducing failure rates by 18% to 26%.Under fixed budget conditions, the\nstrategy demonstrated enhanced adaptability across different task environments, with task completion rate\nimprovements stabilizing between 10% and 16%, highlighting the effectiveness of multi-cost and risk\nconstraints. Additionally, as the failure penalty coefficient increased, the strategy effectively compressed the\ndistribution of failure paths, enhancing stability and decision consistency.\n5 Conclusions\nConstructing a Web Agent decision mechanism under multi-cost and failure-risk constraints effectively\nalleviates the practical challenges of traditional reinforcement learning in high-cost, high-failure-rate tasks. By\nincorporating Lagrange dual optimization and CVaR tail risk modeling, the approach achieves adaptive",
+      "support_explanation": "作者承认稀疏奖励与超长路径的收敛缓慢、风险估计偏差；不是审稿人结论。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E016",
+      "material_id": "target",
+      "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "locator": "lines 373–385",
+      "line_start": 373,
+      "line_end": 385,
+      "quote": "Neural Information Processing Systems (NeurIPS), 2022.\n[2] T. Schick, J. Dwivedi-Yu, R. Dessı̀, et al., “Toolformer: Language Models Can Teach Themselves to Use Tools,”\nNeurIPS, 2024.\n[3] X. Deng, Y. Gu, K. Zhou, et al., “Mind2Web: Towards a Generalist Agent for the Web,” NeurIPS (Datasets and\nBenchmarks), 2023.\n[4] J. Qiu, K. Lam, G. Li, et al., “LLM-based Agentic Systems in Medicine and Healthcare,” Nature Machine\nIntelligence, 2024.\n[5] E. Altman, Constrained Markov Decision Processes, CRC Press, 1999.\n[6] J. Achiam, D. Held, A. Tamar, and P. Abbeel, “Constrained Policy Optimization,” International Conference on\nMachine Learning (ICML), 2017.\n[7] J. Garcı́a and F. Ferná ndez, “A Comprehensive Survey on Safe Reinforcement Learning,” Journal of Machine\nLearning Research, 2015.\n[8] A. Wachi, X. Shen, and Y. Sui, “A Survey of Constraint Formulations in Safe Reinforcement Learning,” IJCAI,",
+      "support_explanation": "CMDP/CPO/CVaR/risk-constrained RL 的明确引用谱系；未取得这些原始文本，不能把引用表当独立验证。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E017",
+      "material_id": "mind2web",
+      "material_sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+      "locator": "lines 238–250",
+      "line_start": 238,
+      "line_end": 250,
+      "quote": "The diversity of Mind2Web provides a unique opportunity to evaluate an agent’s generalizability at different levels.\nWe seek to understand how well an agent can generalize across domains, websites, and tasks: Test Cross-Domain ,\nfor which we hold out two top-level domains, Information and Service , with 912 912 tasks from 73 73 websites. Here, the model is expected to generalize to an entirely new domain without having seen any websites or tasks associated with that domain during training. Test Cross-Website ,\nwith 10 10 websites from each remaining top-level domain, containing 177 177 tasks. In this setting, the model is never exposed to the test websites during training. However, it has been trained on websites from the same domain and possibly with similar tasks.\nThis setup allows us to assess an agent’s ability to adapt to entirely new websites, yet within familiar domains and task contexts. Test Cross-Task ,\nwhere we randomly split 20 20 % of the remaining data, regardless of domains and websites, resulting in 252 252 tasks from 69 69 websites. In this setting, the model has been exposed to webpages from the same website during training and has likely encountered similar tasks.\nThe rest of data is used for training, which contains 1 , 009 1,009 tasks from 73 73 websites.\n\n### 4.2 Data Preprocessing and Evaluation\n\nWe apply simple heuristics to clean the raw HTML documents, keeping only elements that are visible and carry substantial semantic meaning, as determined by their attributes, textual content, and neighboring elements. This effectively reduces the average number of elements from 1 , 135 1,135 to 580 580 , while still maintaining an overall recall of 94.7 94.7 % for the target element in the training data.\n\nFor evaluation, we first calculate Element Accuracy that compares the selected element with all acceptable elements, and Operation F1 that calculates token-level F1 score for the predicted operation. This is the same as accuracy for Click , but considers the correctness of the input value for Type and Select Option . Each step of the task is evaluated independently with the ground truth action history provided. We then define Step Success Rate and Success Rate (for the whole task). A step is regarded as successful only if both the selected element and the predicted operation are correct. A task is regarded successful only if all steps have succeeded. It is therefore a stringent metric. For step-wise metrics, we report macro average across tasks.",
+      "support_explanation": "固定邻近来源明确给出跨域/跨站/跨任务划分和 teacher-forced 评价；可说明 holdout 与评测方式必须具体区分。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E018",
+      "material_id": "mind2web",
+      "material_sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+      "locator": "lines 341–346",
+      "line_start": 341,
+      "line_end": 346,
+      "quote": "Evaluation with Offline/Online Environments. Following recent works [ 35 , 5 ] , we evaluate the system with cached offline environments, which allows us to test using snapshots of complex real-world websites.\nHowever, a downside to this is that the task will fail immediately if an action was not cached during data collection, potentially leading to false negatives due to the existence of multiple paths for completing the same task.\nAs described in Appendix C.1 , we normalize the actions to address equivalent elements within the same page.\nIn addition, we include complete network traffic in the dataset, presenting possibilities for future research to enable some degree of replay and exploration within the cached environment.\nGiven that Mind2Web faithfully replicates real-world webpages, systems trained on the dataset should be readily transferable to live websites.\nConducting end-to-end live evaluation on real websites with human assistance is a very promising direction that is worth exploration.",
+      "support_explanation": "Mind2Web 作者明确承认 cached offline 环境及替代路径 false negative；本篇引用 Mind2Web 不能自动获得 online/transfer 证据。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E019",
+      "material_id": "webarena",
+      "material_sha256": "896882a2c125ec2595dc2ed78f638950bc0b0a7c04c187bafa82c8174d7ecc62",
+      "locator": "lines 122–126",
+      "line_start": 122,
+      "line_end": 126,
+      "quote": "Along with WebArena , we release a ready-to-use benchmark with 812 long-horizon web-based tasks (§ 3 ).\nEach task is described as a high-level natural language intent, emulating the abstract language usage patterns typically employed by humans ( Bisk et al., 2019 ) . Two example intents are shown in the upper left of Figure 1 .\nWe focus on evaluating the functional correctness of these tasks, i.e., does the result of the execution actually achieve the desired goal (§ 3.2 ).\nFor instance, to evaluate the example in Figure 2 , our evaluation method verifies the concrete contents in the designated repository.\nThis evaluation is not only more reliable ( Zhong et al., 2017 ; Chen et al., 2021 ; Wang et al., 2022 ) than comparing the textual surface-form action sequences ( Puig et al., 2018 ; Deng et al., 2023 ) but also accommodate a range of potential valid paths to achieve the same goal, which is a ubiquitous phenomenon in sufficiently complex tasks.",
+      "support_explanation": "WebArena 是812任务、以执行结果功能正确性评估的固定邻近参照；不将目标812–1472范围的巧合当成使用WebArena的证据。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E020",
+      "material_id": "webarena",
+      "material_sha256": "896882a2c125ec2595dc2ed78f638950bc0b0a7c04c187bafa82c8174d7ecc62",
+      "locator": "lines 287–298",
+      "line_start": 287,
+      "line_end": 298,
+      "quote": "#### Evaluating Site Navigation and Content & Config Tasks\n\nThe tasks in these categories require accessing web pages that meet certain conditions or performing operations that modify the underlying data storage of the respective websites.\nTo assess these, we establish reward functions r prog ​ ( 𝐬 ) r_{\\textrm{prog}}(\\mathbf{s}) that programmatically examine the intermediate states 𝐬 \\mathbf{s} within an execution trajectory to ascertain whether the outcome aligns with the intended result.\nThese intermediate states are often the underlying databases of the websites, the status, and the content of a web page at each step of the execution.\n\nEvaluating each instance involves two components. First, we provide a locator , tasked with retrieving the critical content pertinent to each intent.\nThe implementation of this locator varies from a database query, a website-supported API call, to a JavaScript element selection on the relevant web page, depending on implementation feasibility.\nFor example, the evaluation process for the intent of the fifth example in Table 1 , first obtains the URL of the latest post by examining the last state in the state sequence 𝐬 \\mathbf{s} . Then it navigates to the corresponding post page and obtains the post’s content by running the Javascript “ document.querySelector(‘.submission__inner’).outerText ”.\n\nSubsequently, we annotate keywords that need to exist within the located content. For example, the evaluation verifies if the post is correctly posted in the “nyc” subreddit by examining the URL of the post and if the post contains the requested content by examining the post content.\nWe reuse the exact_match and must_include functions from information-seeking tasks for this purpose.",
+      "support_explanation": "功能正确性以数据库/网页状态、locator和内容条件落实，给出本篇缺失的可重建结果检查接口的具体参照。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E021",
+      "material_id": "webarena",
+      "material_sha256": "896882a2c125ec2595dc2ed78f638950bc0b0a7c04c187bafa82c8174d7ecc62",
+      "locator": "lines 729–734",
+      "line_start": 729,
+      "line_end": 734,
+      "quote": "### A.6 Experiment Configurations\n\nWe experiment with GPT-3.5-turbo-16k-0613 , GPT-4-0613 , and text-bison-001 with a temperature of 1.0 1.0 and a top- p p parameter of 0.9 0.9 . The maximum number of state transitions is set to 30.\nWe halt execution if the same action is repeated more than three times on the same observation or if the agent generates three consecutive invalid actions. These situations typically indicate a high likelihood of execution failure and hence warrant early termination. For text-bison-001 , we additionally allow ten retries until it generates a valid action.\n\nPrimarily, we use a high temperature of 1.0 to encourage the exploration . To aid replicating the results, we provide the results of GPT-3.5-turbo-16k-0613 with temperature 0.0 in Table 5 and the execution trajectories in our code repository.",
+      "support_explanation": "WebArena 指定模型版本、30次状态转移上限和重复/无效动作停机规则；这不是本篇已经采用同协议的证据。",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E022",
+      "material_id": "mind2web",
+      "material_sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+      "locator": "lines 199–205",
+      "line_start": 199,
+      "line_end": 205,
+      "quote": "## 3 Method: MindAct\n\nEmploying the data from Mind2Web , we introduce an exploratory framework, MindAct , for our task, leveraging the power of LLMs.\nRaw HTML documents, which could consist of thousands of elements, are either infeasible or cost-prohibitive to be directly fed into LLMs.\nWe propose a two-stage process that synergizes the strength of small and large LMs, as shown in Figure 4 .\nIn the first stage, a fine-tuned small LM is used to rank the elements present on a webpage, yielding a small pool of promising candidates.\nIn the second stage, these candidate elements are consolidated to form a representative snippet of the webpage, which is then processed by an LLM to predict the final action, including predicting both the element for interaction and the corresponding operation.",
+      "support_explanation": "MindAct 是候选排序后动作预测，不是 CMDP+CVaR；用于限定比较，不能声称已战胜其RL变体或取代最近风险RL祖先。",
+      "kind": "author_report"
+    }
+  ],
+  "signatures": [
+    {
+      "sig_id": "S1",
+      "object": "Web navigation, DOM operations and API-trigger trajectories",
+      "information": "Current DOM features, previous action embeddings, tool cooldowns; environment provides cost and failure logs during training. No privileged teacher or exact observation encoder is specified.",
+      "operation": "Model a multi-cost CMDP with request, delay and failure budgets and train a policy using Lagrangian dual updates.",
+      "output": "Policy distribution over 30–200 actions and cost/reward value estimate.",
+      "conditions": [
+        "Costs and rewards must correspond to actual task outcomes.",
+        "A history-derived state must be adequate for the decision model.",
+        "Budget units and optimization direction must be consistently defined."
+      ],
+      "feedback": "Per-interaction request count, response latency, failure label and a success reward. Checker implementation unknown.",
+      "selection_rule": "Gradient optimization under cost constraints, not discrete accept/reject of retained edits. Exact θ/λ directions and reward-loss convention are unknown in degraded extraction.",
+      "selection_data": "Environment interaction trajectories; no training/development/test split reported in readable text.",
+      "persistence": "Policy/critic weights and replay buffer during training; checkpoint-selection rule not reported.",
+      "later_use": "Trained weights choose subsequent actions. No demonstrated memory library or cross-task self-improvement acceptance loop.",
+      "claimed_effect": "Completion–cost–risk balance under budget constraints.",
+      "failure_boundary": "12 requests/3.0 failure-cost method example differs from experimental35/7.0; total vs average delay also needs disambiguation.",
+      "evidence_ids": [
+        "E003",
+        "E004",
+        "E007",
+        "E009"
+      ]
+    },
+    {
+      "sig_id": "S2",
+      "object": "Trajectory failure loss Z comprising failed steps, failure-type weights and recovery costs",
+      "information": "Observed trajectory losses; no measured ground-truth tail-distribution oracle is claimed.",
+      "operation": "Add a CVaR tail-risk term with auxiliary η to constrained policy optimization.",
+      "output": "Risk-aware policy intended to avoid rare high-loss trajectories.",
+      "conditions": [
+        "Tail samples adequate for stable risk estimation.",
+        "CVaR confidence and budget threshold roles must be distinguished.",
+        "Reward maximization and cost minimization must be consistently signed."
+      ],
+      "feedback": "Failure trajectory losses and recovery costs; empirical risk-estimator implementation unknown.",
+      "selection_rule": "Penalty-weighted policy updates; μ=.1–1.0 stated, exact confidence interval string and sign convention unreadable/ambiguous.",
+      "selection_data": "Trajectory samples from replay; no explicit tail subsampling, η update or held-out risk validation protocol found in readable methods.",
+      "persistence": "Trained parameters, not a retained textual rule or skill.",
+      "later_use": "Subsequent action choices suppress proposed high-risk paths.",
+      "claimed_effect": "18%–26% lower failure rate and lower cost-per-success.",
+      "failure_boundary": "Sparse rewards and ultra-long trajectories cause slow convergence/risk-estimation bias; realized safety guarantees are not established.",
+      "evidence_ids": [
+        "E005",
+        "E006",
+        "E012",
+        "E015"
+      ]
+    },
+    {
+      "sig_id": "S3",
+      "object": "Shared-parameter Actor–Critic policy and replay buffer",
+      "information": "DOM/history/cooldown feature channels with nominal dimensions128/64/32; training transition/reward samples.",
+      "operation": "Experience replay with buffer10^5, batch64, Adam3e-4, policy/critic updates every1000 steps, soft update.",
+      "output": "Updated policy and critic.",
+      "conditions": [
+        "Action validity and available DOM/API mapping must be implemented.",
+        "Replay must support stable risk-aware updates."
+      ],
+      "feedback": "Immediate cost-penalized reward and bootstrapped value estimate; exact math in Eq6/7 remains uncertain.",
+      "selection_rule": "Generic replay sampling and gradient update; advantageous-only/perplexity filtering/KL-success replay not specified.",
+      "selection_data": "Collected interaction transitions; SFT initialization, same-data supervised controls and buffer composition not specified.",
+      "persistence": "Model weights and bounded replay buffer; no checkpoint-selection or later held-out reuse evidence.",
+      "later_use": "Policy inference on reported web scenarios; cross-site holdout not established.",
+      "claimed_effect": "Policy stability and generalization.",
+      "failure_boundary": "No action-mask/cooldown invalidation, recovery rollback, or stopping interface can be reconstructed from supplied description. This is not proof those operations never occur.",
+      "evidence_ids": [
+        "E007",
+        "E008",
+        "E009",
+        "E013",
+        "E015"
+      ]
+    }
+  ],
+  "gap": {
+    "author_gap": "现有Web策略偏重成功率，忽略累积请求/延迟和低频高损失失败；既有CRL/CVaR较少用于多工具长程Web。",
+    "checked_gap": "资源和尾部风险是具体部署目标；固定Mind2Web原文体现离线缓存/动作匹配边界，WebArena体现可执行任务检查。它们没有证明全部既有Web/RL方法均忽略成本；约束/风险RL本身已由目标引用为成熟祖先。",
+    "lineage/closest_adjacent": [
+      {
+        "work": "Mind2Web/MindAct",
+        "version": "Fixed2306.06070 text; arXiv version suffix not supplied",
+        "material_id": "mind2web",
+        "role": "Directly cited Web-agent benchmark/method adjacent, not closest constrained-RL ancestor",
+        "shared_operation": "Web observation→action grounded in DOM",
+        "difference": "Candidate ranking+teacher-forced supervised action evaluation vs targetcost/CVaR RL",
+        "evidence_ids": [
+          "E017",
+          "E018",
+          "E022"
+        ]
+      },
+      {
+        "work": "WebArena",
+        "version": "Fixed2307.13854 text; arXiv version suffix not supplied",
+        "material_id": "webarena",
+        "role": "Execution-evaluation adjacent, not a risk-RL method",
+        "shared_operation": "Multi-step web interaction and task outcomes",
+        "difference": "Explicit executable evaluation/harness vs target unspecified checkers",
+        "evidence_ids": [
+          "E019",
+          "E020",
+          "E021"
+        ]
+      },
+      {
+        "work": "Altman1999 CMDP; Achiam2017 CPO; Rockafellar–Uryasev2000; Tamar2015; Chow2018",
+        "version": "Bibliography of2610.23857v1 only",
+        "material_id": "target",
+        "role": "Author-acknowledged mathematical ancestors; originals unavailable in fixed14-reference package",
+        "shared_operation": "Constrained policy optimization and CVaR risk control",
+        "difference": "Target adapts cost dimensions and state/actions toWeb; novelty over closest multi-constraint riskRL not independently established",
+        "evidence_ids": [
+          "E002",
+          "E016"
+        ],
+        "verification_status": "author_report_only"
+      }
+    ],
+    "residue": "在真实可检查Web任务上，多维预算约束与尾风险控制能否在同模型/同数据/同交互预算下优于朴素标量惩罚和成熟GUI-RL，并保持未见站点风险。",
+    "stakes": "过多请求、延迟、失败恢复和不可逆错误会使高名义成功率不可部署；具体业务代价/尾部损失分布尚未测清。",
+    "method_response": "将异构操作记为CMDP成本，双向预算乘子调节均值约束，CVaR惩罚高损失尾部，再以Actor–Critic/replay学习策略。",
+    "remaining_gap": [
+      "结果检查器/失败标签和成本单位不可重建。",
+      "最邻近约束/风险RL原文不在固定参考包，不能独立认定方法新颖性。",
+      "更新公式/置信参数失真；不宣称已证明符号错误。",
+      "固定预算/等完成率比较、独立站点留出、统计尾部可靠性未建立。"
+    ],
+    "evidence_ids": [
+      "E002",
+      "E003",
+      "E004",
+      "E005",
+      "E009",
+      "E010",
+      "E015",
+      "E016",
+      "E017",
+      "E018",
+      "E019",
+      "E020"
+    ],
+    "unresolved": [
+      "Request controller to add common fixed versions of closestCMDP/CVaR/WebRL original sources if stronger novelty judgment is needed; no unilateral source expansion."
+    ]
+  },
+  "rs_pattern": {
+    "primary": "reframe_as_solvable_object",
+    "supporting": [],
+    "matches": [
+      {
+        "main_id": "reframe_as_solvable_object",
+        "sub_id": null,
+        "role": "primary",
+        "fit": "partial",
+        "tactic_steps_checked": [
+          {
+            "step": "Identify native deployment failure",
+            "status": "met",
+            "evidence_ids": [
+              "E001",
+              "E002"
+            ]
+          },
+          {
+            "step": "Cast as mature constrained/risk optimization object",
+            "status": "met",
+            "evidence_ids": [
+              "E003",
+              "E004",
+              "E005"
+            ]
+          },
+          {
+            "step": "Solve with imported machinery",
+            "status": "partial",
+            "evidence_ids": [
+              "E004",
+              "E006",
+              "E007",
+              "E008"
+            ]
+          },
+          {
+            "step": "Check original C00/C21/C27 tactics under this parent",
+            "status": "not_matched",
+            "reason": "C00 concerns fixed-model interpretability/uncertainty;C21 requires supervised/generative conversion/manufactured supervision;C27 requires multi-agent utilities/game/equilibrium. OrdinaryLagrange multipliers are not enough forC27; genericRL is notC21."
+          }
+        ],
+        "success_checks": [
+          {
+            "condition": "Recast the native decision problem as a mature mathematical object and apply its solver",
+            "status": "partial",
+            "finding": "Web interactions→multi-cost CMDP→Lagrange/CVaR Actor–Critic is explicit. It imports constraint/risk machinery, but no native intractability or new equivalence is established.",
+            "evidence_ids": [
+              "E002",
+              "E003",
+              "E004",
+              "E005"
+            ]
+          },
+          {
+            "condition": "Correspondence and structural assumptions",
+            "status": "unmet",
+            "finding": "No task-outcome/constraint equivalence, Markov sufficiency argument for DOM/history/cooldown features, or feasibility/convergence guarantee appears in readable methods. A formal reduction theorem is not mandatory merely because an original card discusses it; here the applicable question is faithfulness of the proxy and objective.",
+            "evidence_ids": [
+              "E003",
+              "E004",
+              "E005"
+            ],
+            "search_scope": [
+              {
+                "material_id": "target",
+                "sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+                "scope": "Entire supplied text lines 1–391, all methods §§3.1–3.4, experiments §§4.1–4.4, conclusion and references; no appendix present. Full manual reading plus case-insensitive lexical checks.",
+                "queries": [
+                  "split",
+                  "held-out",
+                  "holdout",
+                  "unseen",
+                  "train/test",
+                  "test set",
+                  "contamination",
+                  "seed",
+                  "standard deviation",
+                  "confidence interval",
+                  "repetitions",
+                  "repeat",
+                  "variance",
+                  "checker",
+                  "validator",
+                  "ground truth",
+                  "human",
+                  "evaluation script",
+                  "WebArena",
+                  "WebRL",
+                  "DigiRL",
+                  "AWR",
+                  "SFT"
+                ],
+                "results": "All listed lexical queries returned no matches. Manual reading found interaction/task ranges, four aggregate comparison rows, captions and generalization prose, but no explicit development/test split, seed count, checker implementation, named GUI-RL baseline implementation or exact per-row denominator. This negative search is limited to readable text: inaccessible figures/equation layout are not evidence of non-reporting."
+              }
+            ]
+          },
+          {
+            "condition": "Deletes a mandatory component",
+            "status": "not_applicable",
+            "finding": "This paper claims an augmented objective, not a component-eliminating equivalence; no automatic penalty for not following that tactic.",
+            "evidence_ids": [
+              "E002"
+            ]
+          },
+          {
+            "condition": "Faithfulness to deployed task outcome",
+            "status": "unknown",
+            "finding": "Success/failure labels and execution-check semantics are unspecified; graphically presented quantitative detail cannot be inspected.",
+            "evidence_ids": [
+              "E009",
+              "E010",
+              "E014"
+            ]
+          },
+          {
+            "condition": "Scalability and failure boundary",
+            "status": "partial",
+            "finding": "20–120-step and 30–200-tool ranges plus sparse-reward/ultra-long limitations are given, without scale curve or runtime.",
+            "evidence_ids": [
+              "E009",
+              "E015"
+            ]
+          }
+        ],
+        "failure_checks": [
+          {
+            "condition": "Mechanical wrapper without identifying structure",
+            "status": "risk_not_proven",
+            "finding": "Applying matureCMDP/CVaR toWeb is explicit, but independent closest-ancestor comparison is unavailable; do not infer novelty failure from absence alone.",
+            "evidence_ids": [
+              "E002",
+              "E016"
+            ]
+          },
+          {
+            "condition": "Informal central construct/proxy mismatch",
+            "status": "partial",
+            "finding": "Failure loss components specified, checker and penalty calibration not; faithfulness not verified.",
+            "evidence_ids": [
+              "E005",
+              "E009"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E002",
+          "E003",
+          "E004",
+          "E005",
+          "E007",
+          "E008"
+        ],
+        "reason": "实际执行Web决策→CMDP/CVaR→成熟优化器的重述，不是只在标题说约束。原卡“不可解→等价对象”的强条件未建立，故仅partial，原子卡均不强配。"
+      }
+    ],
+    "outside_taxonomy": false,
+    "reason": "原15主卡和31子卡overview及父子表已读；打开reframe主卡及其C00/C21/C27，保留最贴近的部分主卡匹配。卡数/旧录用对比不加分。",
+    "executes_pattern": "partial",
+    "resolves_problem": "unresolved"
+  },
+  "domain_pattern": {
+    "namespace": "gui",
+    "version": "cua-agents/v1 fixed taxonomy/conditions",
+    "matches": [],
+    "unassigned": true,
+    "reason": "成本CMDP/CVaR训练不满足已读GUI细战术的必要操作链，保留不强塞。",
+    "candidate_checks": [
+      {
+        "main_id": "trajectory_level_policy_training",
+        "sub_id": "K20",
+        "fit": "partial_not_assigned",
+        "condition_checks": [
+          {
+            "operation": "Actor–Critic with replay",
+            "status": "met",
+            "evidence_ids": [
+              "E007",
+              "E008"
+            ]
+          },
+          {
+            "operation": "SFT initialization,step/instruction critics,mixedTD/MC,advantage/perplexity filtering orKL-success replay",
+            "status": "not_established",
+            "reason": "Generic replay and cost constraints are not these data-selection/update operations. Lagrange budget constraints are notKL constraints.",
+            "evidence_ids": [
+              "E008"
+            ]
+          },
+          {
+            "operation": "First-error correction,reasoning augmentation,offline-proxy validation",
+            "status": "not_applicable",
+            "reason": "Not this paper’s mechanism; do not demand all sibling-card tactics."
+          }
+        ]
+      },
+      {
+        "main_id": "structured_screen_observation",
+        "sub_id": "C01",
+        "fit": "not_assigned",
+        "condition_checks": [
+          {
+            "operation": "DOM features",
+            "status": "met",
+            "evidence_ids": [
+              "E003",
+              "E007"
+            ]
+          },
+          {
+            "operation": "Enumerated interactive elements with IDs andID-indexed actions/candidate pruning",
+            "status": "not_established",
+            "reason": "Text saysDOM features/operations,not indexed-element construction; cannot inferC01 fromDOM vocabulary.",
+            "evidence_ids": [
+              "E003",
+              "E007"
+            ]
+          }
+        ]
+      }
+    ],
+    "revision_proposals": []
+  },
+  "pattern_mapping": [
+    {
+      "rs_main": "reframe_as_solvable_object",
+      "rs_sub": null,
+      "domain_namespace": "gui",
+      "domain_main": null,
+      "domain_sub": null,
+      "operation_correspondence": "Web decisions→CMDP/CVaR imports optimization machinery. GUItraining candidate shares rollouts and parameter updates only, notfiltered/corrected replay orsupervised initialization;DOMcandidate shares information source only, notenumeration/IDaction construction.",
+      "necessary_conditions/differences": "No originalC21 supervised-conversion orC27 game; noGUIK20 mixedadvantages/filteredsuccess replay; noGUIC01 indexing. Original andGUI namespaces remain separate.",
+      "evidence_ids": [
+        "E003",
+        "E004",
+        "E005",
+        "E007",
+        "E008"
+      ]
+    }
+  ],
+  "expectations": [
+    {
+      "id": "E01",
+      "version": "cua-agents/v1",
+      "text": "Report execution-checked success rate on OSWorld (or OSWorld-Verified) for desktop computer-use claims, stating the step budget (15 vs 50 steps) and observation setting",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2404.07972#s1",
+        "2501.12326#s1",
+        "2505.13227#s2",
+        "2510.17790#s1",
+        "2601.04126#s2",
+        "2602.00575#s2",
+        "2410.08164#s1"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s1",
+          "note": "defines execution-based per-task checkers"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "OSWorld at 15 and 50 steps, averaged over 3 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2",
+          "note": "OSWorld planner+grounder success"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "OSWorld-Verified 15 steps, averaged over 4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "OSWorld-Verified (15 steps) as transfer target"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "OSWorld-Verified success after GRPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.08164#s1",
+          "note": "OSWorld full set"
+        }
+      ],
+      "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "无桌面Ubuntu/Windows任务主张。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E02",
+      "version": "cua-agents/v1",
+      "text": "Report online success on AndroidWorld for mobile-agent claims, not only offline AndroidControl/AITW step metrics",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2410.05243#s2",
+        "2412.04454#s3",
+        "2412.19723#s1",
+        "2501.12326#s3",
+        "2506.08012#s2",
+        "2509.11543#s1",
+        "2509.23738#s1",
+        "2602.09856#s2"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.09856#s2"
+        }
+      ],
+      "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "无Android/mobile任务主张。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E03",
+      "version": "cua-agents/v1",
+      "text": "Report success on WebArena (self-hosted, functional-correctness checkers) for web-agent training or planning claims; if the 165-task WebArena-Lite or a per-template subset is used, say so and justify it",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2410.13232#s2",
+        "2411.02337#s3",
+        "2410.02907#s2",
+        "2601.22149#s2",
+        "2602.14721#s2",
+        "2412.19723#s1",
+        "2411.02337"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.02907#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.14721#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2411.02337",
+          "note": "authors concede evaluation on 165-task WebArena-Lite subset due to cost"
+        }
+      ],
+      "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+      "applicable": true,
+      "status": "unmet",
+      "reason": "部署模板上的Web训练主张适用；未说明WebArena或具名等价协议/子集，812这个下界不能证明来源。自建任务可合理，但未给可审计功能检查和选择理由。",
+      "evidence_ids": [
+        "E009",
+        "E019",
+        "E020"
+      ],
+      "score_item": [
+        "E.measurement",
+        "E.holdout"
+      ],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E04",
+      "version": "cua-agents/v1",
+      "text": "Evaluate live-web agents on Online-Mind2Web (human-validated, start URL given, no search engine) or Mind2Web-Live rather than only WebVoyager, where a naive search-and-click agent already solves 51% of sampled tasks",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2504.01382#s2",
+        "2411.06559#s1",
+        "2601.04126#s2",
+        "2410.05243#s2",
+        "2412.04454#s3"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2",
+          "note": "constructs Online-Mind2Web; WebVoyager overstates competence"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s1",
+          "note": "Online-Mind2Web and Mind2Web-Live"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "Online-Mind2Web as transfer benchmark"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2",
+          "note": "Mind2Web-Live"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "Mind2Web-Live"
+        }
+      ],
+      "applies_when": "a claim about web-agent success on real, live websites",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "实验证据称部署模板而非明确的live公开站点；real-world措辞不证明live设定。若总控补证确认live，应重新应用本项。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E05",
+      "version": "cua-agents/v1",
+      "text": "Report GUI grounding on ScreenSpot-Pro (high-resolution professional desktop) and ScreenSpot-v2, not only ScreenSpot v1, which saturates (7B and 72B indistinguishable)",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2501.12326#s3",
+        "2505.13227#s1",
+        "2509.11543",
+        "2604.14262#s2",
+        "2501.12326"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.14262#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2501.12326",
+          "note": "authors: ScreenSpot v1/v2 may not be robust enough to capture gains at scale"
+        }
+      ],
+      "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "不提出截图到坐标grounder。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E06",
+      "version": "cua-agents/v1",
+      "text": "Compare a new grounder against UGround(-V1-7B), Aguvis-7B/72B, OS-Atlas-7B and UI-TARS(-1.5) at matched backbone size",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2412.04454#s1",
+        "2501.12326#s3",
+        "2505.13227#s1",
+        "2506.08012"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s1",
+          "note": "vs UGround"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3",
+          "note": "vs UGround-V1-7B, OS-Atlas-7B, Aguvis"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "vs UI-TARS-7B/72B, UGround-V1-7B, Aguvis, OS-Atlas"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012",
+          "note": "GPT-4o + UGround / Aguvis-7B / Aria-UI baselines"
+        }
+      ],
+      "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "不比较grounding模型。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E07",
+      "version": "cua-agents/v1",
+      "text": "Compare a native end-to-end GUI policy against UI-TARS(-1.5)-7B (or the same backbone's SFT-only model) and against an agentic framework (GPT-4o/o3 planner + specialised grounder such as UGround, Aria-UI, Jedi, GTA1)",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2509.11543#s1",
+        "2506.08012#s2",
+        "2509.23738#s1",
+        "2510.17790#s1",
+        "2601.04126#s2",
+        "2602.00575#s2"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1",
+          "note": "vs UI-TARS-7B, SFT-only, offline RL"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2",
+          "note": "vs UI-TARS-7B/72B, GPT-4o+Aria-UI"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "UI-TARS-1.5-7B base"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "UI-TARS-1.5-7B, GTA1-7B+o3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "UI-TARS-1.5-7B base"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "UI-TARS-1.5-7B base"
+        }
+      ],
+      "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+      "applicable": true,
+      "status": "unmet",
+      "reason": "本篇确有训练策略带来端到端成功的主张；应有同策略/同数据的SFT或可比系统控制。UI-TARS等像素动作基线并非必须原样套到DOM/API空间，但没有可核查的同观察/动作空间基线实现。",
+      "evidence_ids": [
+        "E001",
+        "E007",
+        "E010"
+      ],
+      "score_item": [
+        "E.causality"
+      ],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E08",
+      "version": "cua-agents/v1",
+      "text": "For planner-grounder systems, hold the planner fixed and swap grounders (e.g. GPT-4o + UGround vs + Aguvis vs + Jedi), and report the planner alone",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2410.05243#s2",
+        "2412.04454#s3",
+        "2505.13227#s2"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2"
+        }
+      ],
+      "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "无planner–grounder组件交换主张。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E09",
+      "version": "cua-agents/v1",
+      "text": "Compare GUI online-RL methods against DigiRL, WebRL, filtered BC / AWR and an SFT-only model trained on the same data",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2411.02337#s3",
+        "2406.11896#s1",
+        "2509.11543#s1",
+        "2601.22149#s2",
+        "2509.23738#s1"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s3",
+          "note": "vs SFT, Filtered BC, AWR, DigiRL"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2406.11896#s1",
+          "note": "vs Filtered BC, AWR"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1",
+          "note": "vs SFT-only, offline GRPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "vs WebRL, NNetNav SFT"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "vs ORM-based PPO and ARPO"
+        }
+      ],
+      "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+      "applicable": true,
+      "status": "unmet",
+      "reason": "比较无约束RL、预算RL等类别，但未提供DigiRL/WebRL、filtered BC/AWR、同数据SFT的可核查结果；不能把类名比较视为同数据/同基座控制。",
+      "evidence_ids": [
+        "E001",
+        "E010"
+      ],
+      "score_item": [
+        "G",
+        "E.causality"
+      ],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E10",
+      "version": "cua-agents/v1",
+      "text": "Validate an LLM/VLM success judge or outcome reward model against human labels on trajectories from agents not used to build it (agreement/accuracy, plus the resulting success-rate gap)",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2406.11896#s2",
+        "2411.02337#s2",
+        "2504.01382#s1",
+        "2602.00575#s1",
+        "2412.19723#s2",
+        "2311.08649#s2",
+        "2510.09038"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2406.11896#s2",
+          "note": "2.8% error vs human"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s2",
+          "note": "79.4% on 100 manually labelled rollouts"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "agreement with human labels; held-out agents"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s1",
+          "note": "accuracy vs human-corrected labels"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s2",
+          "note": "Spearman with human labels"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2311.08649#s2",
+          "note": "F1 0.74 vs manual labels"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.09038",
+          "note": "authors concede VLM judges can admit failures or reject valid successes; no precision reported"
+        }
+      ],
+      "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "没有识别出LLM/VLM judge、ORM或reflector；成功标签接口unknown，不能凭缺失假定某种learned judge。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E11",
+      "version": "cua-agents/v1",
+      "text": "Report judge reliability separately for positive and negative verdicts (precision and NPV, or precision/recall per class), not only overall accuracy",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2510.18596#s2",
+        "2504.01382#s1",
+        "2602.00575#s1",
+        "2504.01382"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2510.18596#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "precision on AgentRewardBench; low recall noted"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s1",
+          "note": "F1 under class imbalance"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2504.01382",
+          "note": "authors concede o4-mini WebJudge is overly conservative with low recall"
+        }
+      ],
+      "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "不声称训练一个可靠judge/PRM/ORM。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E12",
+      "version": "cua-agents/v1",
+      "text": "When a learned judge or PRM is the RL reward, show downstream policy gain against an alternative reward (rule/script checker, ORM vs PRM, another judge), and address reward hacking or bias",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2509.23738#s1",
+        "2602.00575#s2",
+        "2510.18596",
+        "2605.06732#s3"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "PRM-PPO vs ORM-PPO vs ARPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "VAGEN reward vs ProRe reward"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.18596",
+          "note": "authors: UPE not validated inside RL; abstention may bias kept samples"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2605.06732#s3",
+          "note": "theory: systematic reward bias is not removed by more rollouts"
+        }
+      ],
+      "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "不提出learned verifier/reward模型改进。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E13",
+      "version": "cua-agents/v1",
+      "text": "Measure execution checkers (evaluation scripts) two-sidedly: false negatives on alternative valid solutions as well as false positives",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2404.07972",
+        "2602.00575",
+        "2609.07712#s2",
+        "2610.05001#s2"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2404.07972",
+          "note": "authors: more red-teaming could reduce remaining false positives/negatives"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2602.00575",
+          "note": "authors: OSWorld-Verified scripts produce false negatives (multiple solutions)"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s2",
+          "note": "reviewer audit on correct and deliberate-failure trajectories"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2610.05001#s2",
+          "note": "detection rate plus non-rejection rate on legal alternatives"
+        }
+      ],
+      "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "未说明成功信号是否来自逐任务execution checker；checker身份unknown，不能伪造其存在再判其误差审计。一般结果可验证性仍在E.measurement评价。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E14",
+      "version": "cua-agents/v1",
+      "text": "For PRMs or step-level verifiers, ablate the label source (human vs GPT-4o-generated step labels)",
+      "source_strength": "single_source",
+      "source_refs": [
+        "2509.23738#s2",
+        "2509.23738"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2509.23738",
+          "note": "authors: GPT-4o labels show significant gap to human experts"
+        }
+      ],
+      "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "无PRM/step-label来源比较。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E15",
+      "version": "cua-agents/v1",
+      "text": "Do not rest an agent capability claim on offline step accuracy (AndroidControl, Multimodal-Mind2Web, GUI Odyssey) alone; add an online benchmark or show the offline metric predicts online success",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2501.12326",
+        "2509.11543#s3",
+        "2602.09856",
+        "2504.01382#s2"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2501.12326",
+          "note": "authors: offline benchmark results may fail to capture online capability"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s3",
+          "note": "SOP R^2=0.934 vs AndroidControl-High 0.470 against AndroidWorld"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2602.09856",
+          "note": "authors: offline evaluation cannot assess alternative valid trajectories or recovery"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2"
+        }
+      ],
+      "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "不是以teacher-forced单步准确率作为实验指标；端到端自称仍须独立验证。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E16",
+      "version": "cua-agents/v1",
+      "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2501.12326#s1",
+        "2505.13227#s2",
+        "2510.17790#s1",
+        "2504.01382#s1",
+        "2609.10031",
+        "2311.08649",
+        "2411.02337"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "3 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "3 runs, std 1.1%"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.10031",
+          "note": "3 repetitions"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2311.08649",
+          "note": "authors: monetary constraints prevented multiple runs"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2411.02337",
+          "note": "authors: random task generation raises variance across seeds"
+        }
+      ],
+      "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+      "applicable": true,
+      "status": "unknown",
+      "reason": "交互RL有采样噪声，应给重复运行/CI。全文可读文字无seed或spread；图像未保留，不能断言原图绝无误差条。",
+      "evidence_ids": [
+        "E009",
+        "E010",
+        "E014"
+      ],
+      "score_item": [
+        "E.statistics"
+      ],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E17",
+      "version": "cua-agents/v1",
+      "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2501.12326#s1",
+        "2410.13232#s2",
+        "2504.01382#s2",
+        "2609.07712#s3",
+        "2510.17790#s1"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "reports both 15 and 50 steps"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2",
+          "note": "5 actions vs 30 for some baselines (condition)"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2",
+          "note": "differing step caps; efficiency stratified"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s3",
+          "note": "budget exhaustion"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "average steps reported"
+        }
+      ],
+      "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+      "applicable": true,
+      "status": "partial",
+      "reason": "有20–120步范围和请求预算，却无各方法统一最大步数、耗尽/重试规则及分母；方法与实验预算不同，固定预算结果未给配对协议。",
+      "evidence_ids": [
+        "E004",
+        "E009",
+        "E010",
+        "E013",
+        "E021"
+      ],
+      "score_item": [
+        "E.cost",
+        "E.causality"
+      ],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E18",
+      "version": "cua-agents/v1",
+      "text": "For inference-time search or best-of-N (simulated lookahead, verifier reranking), report cost/latency and the number of candidates, and compare against real-execution tree search where reset is possible",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2410.13232#s2",
+        "2411.06559#s1",
+        "2509.23738#s2",
+        "2602.00575#s2"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2",
+          "note": "$ and seconds vs tree search"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s1",
+          "note": "wall-clock vs tree search"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s2",
+          "note": "gain vs N, plateau"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "best-of-N vs N"
+        }
+      ],
+      "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "无inference-time搜索或best-of-N。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E19",
+      "version": "cua-agents/v1",
+      "text": "Disclose and validate any modification to an online benchmark harness (re-implemented checkers, changed action implementations, dropped tasks, extra steps)",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2509.23738",
+        "2506.08012#s2",
+        "2412.19723",
+        "2412.04454#s3"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2509.23738",
+          "note": "authors: AndroidWorld re-engineered; validated only by matching 32.8 baseline"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2",
+          "note": "modified scroll/type and +5 max steps disclosed"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.19723",
+          "note": "authors: 112 of 116 AndroidWorld tasks; one WebArena task per template"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "unscorable network/reCAPTCHA tasks disclosed"
+        }
+      ],
+      "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "未声称使用或修改具名benchmark harness；不把812任务范围当成WebArena改造。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E20",
+      "version": "cua-agents/v1",
+      "text": "For live-web results, state the evaluation date and handle site drift (replace outdated tasks, report blocked/CAPTCHA tasks)",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2504.01382",
+        "2406.11896",
+        "2510.09038"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2504.01382",
+          "note": "authors: websites evolve so tasks must be replaced"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2406.11896",
+          "note": "authors: frozen policies degrade over time due to site/app changes"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.09038",
+          "note": "authors: evolving websites complicate reproducibility"
+        }
+      ],
+      "applies_when": "a claim measured on live websites or live apps",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "未明确live站点实验；FETCHED日期不是实验日期。若确认live需补充date/drift评估。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E21",
+      "version": "cua-agents/v1",
+      "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2404.07972#s2",
+        "2410.05243#s2",
+        "2412.04454#s3"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        }
+      ],
+      "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+      "applicable": true,
+      "status": "partial",
+      "reason": "目标说明DOM/history/cooldown输入，不是纯截图；基线观察权限及DOM/API可见性匹配不明确。",
+      "evidence_ids": [
+        "E003",
+        "E007",
+        "E010"
+      ],
+      "score_item": [
+        "X",
+        "E.causality"
+      ],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E22",
+      "version": "cua-agents/v1",
+      "text": "Report results across backbone sizes (e.g. 7B and 32B/72B), since gains from GUI data/RL recipes shrink with model size",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2509.11543",
+        "2501.12326#s3",
+        "2604.02345#s2",
+        "2412.04454#s3"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543",
+          "note": "relative gain 7B +104% vs 32B +37%"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3",
+          "note": "2B/7B/72B"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.02345#s2",
+          "note": "seven backbones"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "7B and 72B"
+        }
+      ],
+      "applies_when": "a claim that a training recipe generalises across policy backbones",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "泛化说的是任务和页面，不是跨backbone规模；不能把通用稳定性措辞外推为模型族主张。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E23",
+      "version": "cua-agents/v1",
+      "text": "Stratify online success by human reference step count (difficulty) and audit failure causes",
+      "source_strength": "single_source",
+      "source_refs": [
+        "2504.01382#s2",
+        "2609.07712#s3"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s3"
+        }
+      ],
+      "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+      "applicable": true,
+      "status": "unknown",
+      "reason": "20–120步的长程主张应按难度分层并审计失败原因。文字只列失败类型和整体率；图5有20场景但原曲线缺失，分层信息不可核实。",
+      "evidence_ids": [
+        "E005",
+        "E009",
+        "E014",
+        "E015"
+      ],
+      "score_item": [
+        "E.measurement",
+        "E.statistics"
+      ],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E24",
+      "version": "cua-agents/v1",
+      "text": "Test grounding robustness under controlled perturbations (zoom, text size, window position/clutter, relational instructions) with matched pairs",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2604.14262#s1",
+        "2404.07972#s2",
+        "2505.13227#s3"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2604.14262#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s3",
+          "note": "knowledge-free re-annotated instructions"
+        }
+      ],
+      "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "没有独立视觉扰动/zoom鲁棒性主张；页面多样性不足以推出该特定评测前提。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E25",
+      "version": "cua-agents/v1",
+      "text": "Report refusal / infeasible-task behaviour (instructions with no valid target)",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2505.13227#s1",
+        "2404.07972#s1",
+        "2412.04454"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "OSWorld-G refusal category"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s1",
+          "note": "infeasible tasks"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.04454",
+          "note": "authors: model cannot indicate uncertainty or refuse"
+        }
+      ],
+      "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "无明确不可行/歧义任务子集或refusal主张；失败风险不能与拒绝能力等同。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E26",
+      "version": "cua-agents/v1",
+      "text": "Compare a synthetic-trajectory recipe against an instruction-first / task-driven synthesis baseline with the same executor and similar data size",
+      "source_strength": "single_source",
+      "source_refs": [
+        "2410.02907#s3",
+        "2412.19723#s1"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.02907#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        }
+      ],
+      "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "无合成轨迹数据recipe。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E27",
+      "version": "cua-agents/v1",
+      "text": "Show a data-scaling curve (fraction or count of synthetic samples vs downstream score) and say where it saturates",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2410.05243#s1",
+        "2505.13227#s1",
+        "2412.19723",
+        "2604.02345#s1",
+        "2510.09038#s1",
+        "2608.05891"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s1",
+          "note": "diminishing after ~100K screenshots"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "10%-100% no saturation"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.19723",
+          "note": "authors: performance saturates at larger data scales"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.02345#s1",
+          "note": "log-linear"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "memory-size scaling"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2608.05891",
+          "note": "authors: returns saturate after 20K rollouts"
+        }
+      ],
+      "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "无合成数据扩规模主张。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E28",
+      "version": "cua-agents/v1",
+      "text": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2411.06559#s2",
+        "2412.19723#s1",
+        "2601.04126#s2",
+        "2510.09038#s1"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "test-query search actions filtered from in-domain data"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1",
+          "note": "only 20 of 833 AndroidControl apps seen in synthesis"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "train on generated sites, evaluate on OSWorld/Online-Mind2Web/MobileWorld"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "OOD GUI-Odyssey and OSWorld"
+        }
+      ],
+      "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "无self-generated task、memory或合成环境收益主张；训练/测试隔离问题仍在E.holdout独立评价。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E29",
+      "version": "cua-agents/v1",
+      "text": "Ablate error-correction/reflection data against filtered behaviour cloning at the same iteration count",
+      "source_strength": "single_source",
+      "source_refs": [
+        "2506.08012#s1",
+        "2506.08012#s2",
+        "2506.08012"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2506.08012",
+          "note": "authors: reflection data covers visual/grounding errors, not high-level planning"
+        }
+      ],
+      "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "无反思/first-error纠错数据机制。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E30",
+      "version": "cua-agents/v1",
+      "text": "Evaluate a GUI world model by downstream agent success and closed-loop (multi-step, autoregressive) rollouts, not only teacher-forced one-step fidelity",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2609.00048#s1",
+        "2411.06559#s2",
+        "2602.09856#s2",
+        "2410.13232#s1",
+        "2601.22149#s2"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2609.00048#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "intrinsic accuracy correlated with Mind2Web-Live SR"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.09856#s2",
+          "note": "AndroidWorld SR with lookahead"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s1",
+          "note": "downstream SR ablation"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2"
+        }
+      ],
+      "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "无learned world model。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E31",
+      "version": "cua-agents/v1",
+      "text": "Ablate imagination / lookahead horizon, since world-model errors compound beyond 1 (lookahead) or about 5 (training) steps",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2411.06559#s1",
+        "2601.22149#s2",
+        "2410.13232",
+        "2402.01086"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s1",
+          "note": "H=1 best"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "dream length 4-5 best"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2410.13232",
+          "note": "authors: errors accumulate with search depth"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2402.01086",
+          "note": "authors: autoregressive error accumulation (robotics)"
+        }
+      ],
+      "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "无learned-model imagination rollout。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E32",
+      "version": "cua-agents/v1",
+      "text": "For training in a world model, include sim-only vs real-anchored vs SFT-only arms",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2601.22149#s2",
+        "2608.05891",
+        "2403.03949#s3"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "0% real underperforms SFT"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2608.05891",
+          "note": "authors: world-model-only data lowers ATP below base"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2403.03949#s3",
+          "note": "real co-training 2-3.5x over sim co-training (robotics)"
+        }
+      ],
+      "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "无world-model policy training。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E33",
+      "version": "cua-agents/v1",
+      "text": "Back world-model or synthetic-environment fidelity scores with a second independent judge, human validation or executable checks, not a VLM judge from the same family as the training reward",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2609.00048",
+        "2602.14721#s1",
+        "2411.06559#s2"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2609.00048",
+          "note": "authors: VLM judges miss fine-grained task-state errors; more human-validated checks needed"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.14721#s1",
+          "note": "ranking checked under a second (Claude-Opus-4.1) judge"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "intrinsic metric correlated with executed SR"
+        }
+      ],
+      "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "无world-model/simulated-app fidelity judge。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E34",
+      "version": "cua-agents/v1",
+      "text": "For a digital twin / simulated app used for training or evaluation, measure its realism and whether it preserves the ranking of agents or checkpoints seen in the real environment",
+      "source_strength": "common_practice",
+      "source_refs": [
+        "2609.07712#s1",
+        "2504.03597#s1",
+        "2403.03949#s1",
+        "2507.07067"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s1",
+          "note": "blind A/B realism; placeholder residual"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.03597#s1",
+          "note": "checkpoint ranking preserved vs real"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2403.03949#s1",
+          "note": "targeted twin vs generic assets"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2507.07067",
+          "note": "authors: residual sim-to-real gap is unavoidable after calibration"
+        }
+      ],
+      "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "未提出数字孪生替代真实环境或agent排名保持主张；部署模板本身不等于这种主张。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    },
+    {
+      "id": "E35",
+      "version": "cua-agents/v1",
+      "text": "For memory/retrieval agents, show gains on environments other than those the memory was built from",
+      "source_strength": "single_source",
+      "source_refs": [
+        "2510.09038#s1",
+        "2410.08164#s2"
+      ],
+      "source_evidence": [
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "OOD gains small"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.08164#s2"
+        }
+      ],
+      "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "普通训练replay buffer不是部署时检索经验记忆机制。",
+      "evidence_ids": [],
+      "score_item": [],
+      "source_caveat": "来自固定领域实践/局限归纳，非本篇真实review或录用因果。"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "text": "在等完成率下C-PS下降22%–31%，高惩罚下失败率下降18%–26%。",
+      "setting": {
+        "environment": "30–70部署站点/页面模板，四类Web任务",
+        "observation": "DOM/history/cooldown features",
+        "backbone": "Shared Actor–Critic; no named language-model backbone",
+        "tasks": "812–1472 samples, exact evaluation denominator unknown",
+        "actions": "DOM/API/navigation,30–200 types",
+        "horizon": "20–120 steps, exact cap/stopping unknown",
+        "budgets": "Methods12/600ms/3.0; experiments35/600ms/7.0; alignment unknown"
+      },
+      "baseline/control": "Unconstrained, budget-only, budget+risk and CVaR category rows; abstract also claims scripted agents but readable table has no distinct named script baseline.",
+      "selection_vs_test": "No development/test or checkpoint-selection separation specified in readable material.",
+      "result/denominator": {
+        "author_report": "22%–31% C-PS and18%–26% failure reductions",
+        "readable_table": {
+          "unconstrained": {
+            "completion_pct": 72.3,
+            "cps": 0.45,
+            "failure_pct": 18.2
+          },
+          "budget_only": {
+            "completion_pct": 74.8,
+            "cps": 0.43,
+            "failure_pct": 16.1
+          },
+          "budget_plus_risk": {
+            "completion_pct": 77.1,
+            "cps": 0.38,
+            "failure_pct": 14.4
+          },
+          "cvar": {
+            "completion_pct": 80.5,
+            "cps": 0.32,
+            "failure_pct": 12.5
+          }
+        },
+        "exact_per_row_n": null,
+        "metric_definitions": "Success/failure checker and C-PS weights/normalization unknown."
+      },
+      "evidence_ids": [
+        "E001",
+        "E009",
+        "E010",
+        "E011",
+        "E012"
+      ],
+      "counterevidence": [
+        "Rows differ in penalty and latency ranges; not an identifiable equal-completion matched comparison.",
+        "The arithmetic .45→.32 yields28.89% relative decrease, but endpoints have different success rates.",
+        "18.2→12.5 yields31.32% relative decrease, not18%–26%; different subgroup comparisons could explain the difference but are not recoverable. This is unresolved, not proof of fabrication."
+      ],
+      "allowed_conclusion": "可读表支持作者报告的聚合方向相关性；不能确证等完成率、因果归因或这些条件化百分比。",
+      "claim_support": "unresolved"
+    },
+    {
+      "claim_id": "C2",
+      "text": "固定预算下完成率提高10%–16%。",
+      "setting": {
+        "budgets": "Paper states fixed budgets; exact method-by-method paired allocation unknown",
+        "max_steps": "20–120 range not equal max-step declaration",
+        "costs": "Requests, latency and failure penalties"
+      },
+      "baseline/control": "Unconstrained/budget constrained categories; no matched test-task IDs, baseline architecture or training spend.",
+      "selection_vs_test": "No specified held-out test task set or selection protocol.",
+      "result/denominator": {
+        "author_report": "10%–16% improvement, percentage points vs relative not stated",
+        "table_endpoint_delta_pp": 8.2,
+        "table_endpoint_relative_gain_pct": 11.34163208852006,
+        "denominator": null
+      },
+      "evidence_ids": [
+        "E004",
+        "E009",
+        "E010",
+        "E013",
+        "E014"
+      ],
+      "counterevidence": [
+        "A20–120-step range is not proof that all policies got equal interaction limits.",
+        "The readable table endpoints have changing penalty coefficients; the fixed-budget result is not cleanly recoverable."
+      ],
+      "allowed_conclusion": "作者声称固定预算收益；不足以从可读材料重建对等预算实验。",
+      "claim_support": "unresolved"
+    },
+    {
+      "claim_id": "C3",
+      "text": "共享Actor–Critic结合Lagrange和CVaR提高异构任务/页面泛化和稳定性。",
+      "setting": {
+        "task_scenarios": 20,
+        "templates": "30–70",
+        "state_dim": "120–320 overall; typical channels128+64+32",
+        "split": "No named unseen-site/task holdout"
+      },
+      "baseline/control": "Four constraint-setting categories; no controlled shared-network vs unshared-network ablation.",
+      "selection_vs_test": "Training scenarios vs independent deployment scenarios not separated.",
+      "result/denominator": {
+        "generalization": "Prose and figure5 caption only; no explicit out-of-environment holdout",
+        "runs": null,
+        "uncertainty": null
+      },
+      "evidence_ids": [
+        "E007",
+        "E008",
+        "E013",
+        "E014",
+        "E015",
+        "E017"
+      ],
+      "counterevidence": [
+        "Diversity across scenarios is not transfer or a contamination audit.",
+        "Original graphic not available, so potential spread/stratification is unknown rather than asserted absent."
+      ],
+      "allowed_conclusion": "机制的输入/训练配置有部分文字依据，泛化及统计稳定性未被独立留出/重复证据建立。",
+      "claim_support": "unsupported"
+    }
+  ],
+  "assessment": {
+    "evidence_level": null,
+    "evidence_level_status": "unknown",
+    "author_claimed_evidence_level": "End-to-end deployedweb interaction; stronggeneralization",
+    "evidence_level_reason": "可交互模板上的结果是作者报告，但未说明成功由执行结果检查判定；不能按自称赋online。也不能把它误判offline，因为实验并非明确的静态步匹配。transfer更未建立；暂null请求checker证据。",
+    "claim_support": "unresolved",
+    "strongest_supported_claim": "作者提出了可识别的多成本CMDP+CVaR Actor–Critic/replay框架；可读四行聚合表报告约束增强时完成率72.3→80.5、C-PS .45→.32和失败率18.2→12.5的共同变化。它是未独立验证、存在条件变化的作者结果，不足以建立原始等完成率/固定预算因果收益或泛化稳定性。",
+    "narrow_conclusion_does_not_replace_original_claim": true,
+    "unresolved": [
+      "准确更新方程与CVaR置信/阈值参数（PDF提取歧义）。",
+      "原始图形数值/误差表示与分组结果。",
+      "可执行成功/失败检查器及标签可靠性。",
+      "等完成率/固定预算的配对控制、精确分母/重试/停机规则。",
+      "未见站点/任务测试隔离与独立统计稳定性。",
+      "最邻近约束风险RL全文尚不在共同固定包。"
+    ],
+    "our_run": false,
+    "retained_or_improver_claim": "not_applicable: policytraining weights are not a demonstrated iterative retainedself-improvement mechanism"
+  },
+  "ratings": {
+    "G": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "有明确部署瓶颈：请求/延迟/失败尾部不能只按成功率优化。Mind2Web/WebArena固定原文能核实交互/功能检查与留出问题；CMDP/CVaR原始祖先仅有引用，尚未独立比较最邻近风险RL，作者“既有方法通常忽略”不能当已核实新颖性。符合有真实局限但谱系/残余范围不完整的2档。",
+      "evidence_ids": [
+        "E002",
+        "E003",
+        "E005",
+        "E016",
+        "E017",
+        "E018",
+        "E019"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "M": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "多成本约束与CVaR分别对准均值预算和尾部失败，DOM/history/cooldown到policy/value分支有可检验机制。仅依据清楚的文字判部分problem-fit，不替作者修复奖励/损失符号；Markov充分性、尾估计和cost单位仍弱，未达可重建且假设清楚的4档。",
+      "evidence_ids": [
+        "E003",
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E015"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "X": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "训练组件与若干超参可读，但Eq2/5/6/7及θ/λ方向、β置信水平字符串和实验α阈值角色不能无猜测地重建。它们影响关键预算/风险更新是否真正实现；图像也未保留操作链细节。因此此轴unknown，而不是把PDF失真视为论文算法错误或计0。",
+      "evidence_ids": [
+        "E004",
+        "E005",
+        "E006",
+        "E007",
+        "E008",
+        "E009"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "E.measurement": {
+      "status": "resolved",
+      "rating": 1,
+      "reason": "有端到端任务完成率、成本和失败率聚合数字，优于没有相关测量；但成功/失败判据、C-PS单位/归一化、精确分母和尾风险实测缺少可审计定义。online所需执行结果检查不能从自称推出；图数据不可核验，不宣称无结果。",
+      "evidence_ids": [
+        "E009",
+        "E010",
+        "E011",
+        "E012",
+        "E019",
+        "E020"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": []
+    },
+    "E.causality": {
+      "status": "resolved",
+      "rating": 1,
+      "reason": "四设置呈方向一致的比较，提供很弱的关联证据；失败惩罚/延迟范围同时改变，架构/数据/训练预算一致性不明，缺同数据SFT/GUI-RL控制。不能孤立CVaR/Lagrange/共享Actor–Critic的独立作用。",
+      "evidence_ids": [
+        "E001",
+        "E004",
+        "E009",
+        "E010",
+        "E013"
+      ],
+      "counterevidence_ids": [
+        "E010"
+      ],
+      "search_scope": []
+    },
+    "E.holdout": {
+      "status": "not_reported",
+      "rating": 0,
+      "reason": "完整可读方法/实验/结论没有训练–开发–测试、未见站点/模板隔离或污染检查协议。任务数量范围和20场景的多样性不建立原主张的泛化边界。缺失的是文字协议，不据不可见图像作负面推断；保留原始泛化主张评分。",
+      "evidence_ids": [
+        "E009",
+        "E013",
+        "E014",
+        "E017"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        {
+          "material_id": "target",
+          "sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+          "scope": "Entire supplied text lines 1–391, all methods §§3.1–3.4, experiments §§4.1–4.4, conclusion and references; no appendix present. Full manual reading plus case-insensitive lexical checks.",
+          "queries": [
+            "split",
+            "held-out",
+            "holdout",
+            "unseen",
+            "train/test",
+            "test set",
+            "contamination",
+            "seed",
+            "standard deviation",
+            "confidence interval",
+            "repetitions",
+            "repeat",
+            "variance",
+            "checker",
+            "validator",
+            "ground truth",
+            "human",
+            "evaluation script",
+            "WebArena",
+            "WebRL",
+            "DigiRL",
+            "AWR",
+            "SFT"
+          ],
+          "results": "All listed lexical queries returned no matches. Manual reading found interaction/task ranges, four aggregate comparison rows, captions and generalization prose, but no explicit development/test split, seed count, checker implementation, named GUI-RL baseline implementation or exact per-row denominator. This negative search is limited to readable text: inaccessible figures/equation layout are not evidence of non-reporting."
+        }
+      ]
+    },
+    "E.statistics": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "没有可读的重复次数、seed、CI或精确失败分母；但PDF提取未保留图形，原图是否含误差条/分组统计未知。明确区分未检出统计文字与完整统计材料缺失，不能擅自将本项not_reported计0。",
+      "evidence_ids": [
+        "E009",
+        "E010",
+        "E014",
+        "E015"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        {
+          "material_id": "target",
+          "sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+          "scope": "Entire supplied text lines 1–391, all methods §§3.1–3.4, experiments §§4.1–4.4, conclusion and references; no appendix present. Full manual reading plus case-insensitive lexical checks.",
+          "queries": [
+            "split",
+            "held-out",
+            "holdout",
+            "unseen",
+            "train/test",
+            "test set",
+            "contamination",
+            "seed",
+            "standard deviation",
+            "confidence interval",
+            "repetitions",
+            "repeat",
+            "variance",
+            "checker",
+            "validator",
+            "ground truth",
+            "human",
+            "evaluation script",
+            "WebArena",
+            "WebRL",
+            "DigiRL",
+            "AWR",
+            "SFT"
+          ],
+          "results": "All listed lexical queries returned no matches. Manual reading found interaction/task ranges, four aggregate comparison rows, captions and generalization prose, but no explicit development/test split, seed count, checker implementation, named GUI-RL baseline implementation or exact per-row denominator. This negative search is limited to readable text: inaccessible figures/equation layout are not evidence of non-reporting."
+        }
+      ]
+    },
+    "E.cost": {
+      "status": "resolved",
+      "rating": 1,
+      "reason": "请求、ms延迟、失败预算及C-PS直接与主张相关，提供最低限成本信息；但C-PS权重单位、统一max-step和耗尽/重试规则、训练算力/耗时、配对等预算协议缺失，方法/实验预算不同且表行条件变化。不能以“研究成本”主题自动奖励完整公平成本证据。",
+      "evidence_ids": [
+        "E004",
+        "E008",
+        "E009",
+        "E010",
+        "E012",
+        "E013",
+        "E021"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": []
+    }
+  },
+  "score": {
+    "raw": null,
+    "display": null,
+    "lower": 26.25,
+    "upper": 51.25,
+    "coverage": 0.75,
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "weights": {
+      "G": 15,
+      "M": 25,
+      "X": 20,
+      "E.measurement": 10,
+      "E.causality": 10,
+      "E.holdout": 10,
+      "E.statistics": 5,
+      "E.cost": 5
+    },
+    "reason": "X andE.statistics remainunknown; no midpoint/pointscore/ranking. Bounds are mechanical only; rubric isdraft_uncalibrated."
+  },
+  "status": "needs_evidence",
+  "reason": "材料升级使完整提取方法/实验可评，不再沿用a1的needs_fulltext；但关键公式与图形失真及执行判定接口未明，不能完成机制执行/统计和online等级判断。已提交完整独立条件化评审及L/U，不以缺证据强出低点分。",
+  "search_scope": [
+    {
+      "material_id": "target",
+      "sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+      "scope": "Entire supplied text lines 1–391, all methods §§3.1–3.4, experiments §§4.1–4.4, conclusion and references; no appendix present. Full manual reading plus case-insensitive lexical checks.",
+      "queries": [
+        "split",
+        "held-out",
+        "holdout",
+        "unseen",
+        "train/test",
+        "test set",
+        "contamination",
+        "seed",
+        "standard deviation",
+        "confidence interval",
+        "repetitions",
+        "repeat",
+        "variance",
+        "checker",
+        "validator",
+        "ground truth",
+        "human",
+        "evaluation script",
+        "WebArena",
+        "WebRL",
+        "DigiRL",
+        "AWR",
+        "SFT"
+      ],
+      "results": "All listed lexical queries returned no matches. Manual reading found interaction/task ranges, four aggregate comparison rows, captions and generalization prose, but no explicit development/test split, seed count, checker implementation, named GUI-RL baseline implementation or exact per-row denominator. This negative search is limited to readable text: inaccessible figures/equation layout are not evidence of non-reporting."
+    }
+  ]
+}

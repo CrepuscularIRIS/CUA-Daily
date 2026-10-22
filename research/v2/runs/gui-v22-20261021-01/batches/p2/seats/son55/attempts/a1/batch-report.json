@@ -1,0 +1,124 @@
+{
+ "schema_version": "radar-review-v2.2/batch-report",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p2",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "assigned": 5,
+ "reviewed": 5,
+ "needs_fulltext": 0,
+ "needs_evidence": 0,
+ "outside_taxonomy": 0,
+ "out_of_scope": 0,
+ "outside_taxonomy_ratio": 0.0,
+ "schema_errors": 0,
+ "schema_errors_note": "Checked with a local ad-hoc validator (/tmp/son55/validate.py): required fields, 35 expectations per record, 8 ratings keys, status/rating consistency, score recomputation, parent-child checks against PARENTS.tsv and taxonomy.json, evidence quote presence, dangling evidence ids. This is structure/arithmetic only, not a semantic check and not the official validator.",
+ "input_drift": {
+  "count": 2,
+  "papers": {
+   "2209.08655": {
+    "manifest_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+    "disk_sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823"
+   },
+   "2303.17491": {
+    "manifest_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+    "disk_sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141"
+   }
+  },
+  "detail": "fulltext files for these papers were replaced on disk at 13:16 EDT (after the 12:15 manifest); materials.jsonl was updated with new hashes. Records remain bound to the manifest hash that was read; see materials[0].input_drift in each record."
+ },
+ "model": {
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m] (self-reported from system prompt: Sonnet 5.5)"
+ },
+ "session_ref": null,
+ "session_ref_note": "No session id/receipt is exposed to this subagent.",
+ "contamination": {
+  "read_other_seat": false,
+  "read_aggregate": false,
+  "read_old_scores_or_reel_or_archive": false,
+  "read_other_batch_outputs": false,
+  "note": "Only fixed fulltext, the 13 shared reference fulltexts (a handful of lines of 2306.06070, 2401.10935, 2404.07972, 2405.14573, 2501.12326, 2307.13854 used as fact sources), manifest, rules, cards, taxonomy/conditions and expectations were read. Same-batch papers were cross-referenced only for lineage/baseline numbers (no scores)."
+ },
+ "material_hashes_verified_before_review": true,
+ "papers": [
+  {
+   "paper_key": "2202.08137",
+   "status": "reviewed",
+   "claim_type": "system_method",
+   "score_raw": 68.75,
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "rs_primary": "unify_into_shared_representation",
+   "rs_sub": null,
+   "domain_main": [
+    "trajectory_level_policy_training",
+    "planner_grounder_interface"
+   ]
+  },
+  {
+   "paper_key": "2209.08655",
+   "status": "reviewed",
+   "claim_type": "component_training",
+   "score_raw": 51.25,
+   "evidence_level": "offline",
+   "claim_support": "scoped",
+   "rs_primary": "adapt_via_conditioning",
+   "rs_sub": "C03",
+   "domain_main": [
+    "structured_screen_observation",
+    "structured_screen_observation"
+   ]
+  },
+  {
+   "paper_key": "2303.17491",
+   "status": "reviewed",
+   "claim_type": "system_method",
+   "score_raw": 53.75,
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "rs_primary": "decompose_and_delegate",
+   "rs_sub": "C25",
+   "domain_main": [
+    "agent_loop_context_control",
+    "planner_grounder_interface"
+   ]
+  },
+  {
+   "paper_key": "2304.07061",
+   "status": "reviewed",
+   "claim_type": "system_method",
+   "score_raw": 36.25,
+   "evidence_level": "offline",
+   "claim_support": "scoped",
+   "rs_primary": "adapt_via_conditioning",
+   "rs_sub": null,
+   "domain_main": [
+    "structured_screen_observation",
+    "structured_screen_observation"
+   ]
+  },
+  {
+   "paper_key": "2305.11854",
+   "status": "reviewed",
+   "claim_type": "system_method",
+   "score_raw": 66.25,
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "rs_primary": "unify_into_shared_representation",
+   "rs_sub": "C18",
+   "domain_main": [
+    "trajectory_level_policy_training",
+    "structured_screen_observation"
+   ]
+  }
+ ],
+ "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+ "input_bundle_sha256": "fed6b4a2d84803fc93183b9a9669ad578f4b1611b203548221a83913612b045e",
+ "timestamp": "2026-10-21T17:25:15Z",
+ "caveats": [
+  "Ratings use the draft_uncalibrated rubric; no anchors were frozen. Scores are mechanical sums of the eight ratings.",
+  "Evidence level / claim_support are independent judgements; all numbers are author-reported (our_inference only where recomputed from the author tables; no our_run).",
+  "Original sources of several nearest neighbours (WGE, DOM-Q-NET, World of Bits, WebN-T5, Synapse, AdaPlanner, Seq2Act, Screen2Words, ReAct, Reflexion, Self-Refine) are not in the pinned bundle; lineage statements about them are author-relayed."
+ ]
+}

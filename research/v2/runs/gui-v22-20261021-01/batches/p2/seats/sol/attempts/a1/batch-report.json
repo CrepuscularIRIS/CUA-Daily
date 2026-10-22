@@ -1,0 +1,85 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p2",
+  "attempt_id": "a1",
+  "seat": "sol",
+  "assigned": 5,
+  "reviewed": 3,
+  "needs_fulltext": 2,
+  "needs_evidence": 0,
+  "outside_taxonomy": 0,
+  "schema_errors": [],
+  "model_type": "sonnet",
+  "actual_model": "gpt-6.1-sol",
+  "actual_model_source": "runtime-supplied",
+  "session_id": null,
+  "session_id_reason": "No independently exposed worker session ID.",
+  "receipt_ref": null,
+  "receipt_ref_reason": "Provider receipt unavailable.",
+  "input_hash": "fed6b4a2d84803fc93183b9a9669ad578f4b1611b203548221a83913612b045e",
+  "asset_hashes_verified": true,
+  "initial_paper_hashes_verified": true,
+  "final_material_integrity": "3 reviewed target hashes still match;2blocked paths changed after initial verification",
+  "material_integrity_errors": [
+    {
+      "paper_key": "2209.08655",
+      "type": "frozen_material_path_changed",
+      "expected_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+      "current_sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+      "reason": "Shared source path replaced after initial full read/hash verification; original a1 material not reavailable at this path. No upgraded-content scientific review performed."
+    },
+    {
+      "paper_key": "2303.17491",
+      "type": "frozen_material_path_changed",
+      "expected_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+      "current_sha256": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+      "reason": "Shared source path replaced after initial full read/hash verification; original a1 material not reavailable at this path. No upgraded-content scientific review performed."
+    }
+  ],
+  "blockers": [
+    {
+      "paper_key": "2209.08655",
+      "status": "needs_fulltext",
+      "reason": "Renderer-v1 substantive listing omission;old material subsequently overwritten and unrecoverable, but old SHA and original exact seat quotes preserved. Coordinator directs skipping a1 aggregation and both-seat a2 review of separately saved repaired materials.",
+      "next_disposition": "material_upgraded_a2_pending"
+    },
+    {
+      "paper_key": "2303.17491",
+      "status": "needs_fulltext",
+      "reason": "Renderer-v1 substantive listing omission;old material subsequently overwritten and unrecoverable, but old SHA and original exact seat quotes preserved. Coordinator directs skipping a1 aggregation and both-seat a2 review of separately saved repaired materials.",
+      "next_disposition": "material_upgraded_a2_pending"
+    }
+  ],
+  "blind_boundary": "No other seat,aggregate,archive,old score/Reel or other-batch output read. No git/paper code execution or unilateral external material fetch.",
+  "checks": [
+    "All manifest IDs/versions covered exactly once.",
+    "All input asset hashes recomputed successfully; all5paper hashes initially matched.",
+    "3reviewed records:exact source/hash quote verification;35expectations each;1–3signatures;8ratings with reasons/evidence.",
+    "2blocked records:8unknown,null raw/display,0–100bounds,0coverage; neither judged from upgraded contents.",
+    "Deterministic score/raw/display/bounds/coverage and original/GUI parent relationships checked.",
+    "All JSON written atomically; structural checks do not certify scientific correctness."
+  ],
+  "limitations": [
+    "Historical algorithm ancestors absent from fixed reference pack:target-cited lineage marked indirect, priority not certified.",
+    "Reference manifest actually lists14 entries; relevant Mind2Web/AndroidWorld factual sections read only and hashes verified.",
+    "Rubric remains draft_uncalibrated, used as assigned; no aggregation/calibration/reproduction/publication claimed."
+  ],
+  "record_hashes": {
+    "2202.08137": "508b24567210c5a59f3af190c74dd77df438d15ddd52f12040b3bc84c3d409fb",
+    "2209.08655": "0b4f045570f81723d39be56f6b352633b45bff75f95db7bf40c36d0ef3f391b1",
+    "2303.17491": "18fcb42d59c279d8b8795e2c0a01d97045c3b9511f67f114a510166048292383",
+    "2304.07061": "c6e78494cc97e1895c1f6a5cb2a18d25df0424398e4ab5229a12a657bfe63931",
+    "2305.11854": "b8b45e0931277615c1c4c3a222166c0123f54ce9df46338ebbb064ddd1a8d333"
+  },
+  "timestamp": "2026-10-21T17:24:34.991249+00:00",
+  "coordinator_resolution": {
+    "old_material_unrecoverable": true,
+    "incident_reference": "notes.jsonl material_incident (coordinator-reported; not inspected)",
+    "old_hash_traceability": "materials.jsonl and a1 manifests; original exact quotes remain in a1 seat records",
+    "a1_aggregation_for_blocked_papers": "skip",
+    "next_disposition": "material_upgraded_a2_pending",
+    "next_action": "Shared repaired inputs separately saved;both seats a2 review",
+    "fetch_policy": "never overwrite, per coordinator"
+  }
+}

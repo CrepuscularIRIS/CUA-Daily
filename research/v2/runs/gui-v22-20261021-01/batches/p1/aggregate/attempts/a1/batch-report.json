@@ -1,0 +1,254 @@
+{
+ "schema_version": "radar-batch-report-v2.2",
+ "kind": "aggregate-batch-report",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p1",
+ "attempt_id": "a1",
+ "seat": "aggregate",
+ "input_hash": "27c3d4f26b56f3943ebb73731665de7b845b179ab70d27f6dcfa94cb495e6822",
+ "conflicts_sha256": "b57c4ea59328539c158d4ce02c97e004686627cc33539432f6d49f452d21ab01",
+ "aggregate_model": "fable",
+ "aggregate_actual_model": "claude-opus-5-5[1m]",
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_note": "Configured model type fable (upstream claude-opus-5-5[1m]) per batch manifest model_types.opus55; no session id or invocation receipt is exposed to this agent.",
+ "assigned": 5,
+ "accepted_final": 5,
+ "needs_revision": 0,
+ "needs_evidence": 0,
+ "needs_fulltext": 0,
+ "out_of_scope": 0,
+ "scored": 5,
+ "blocked": 0,
+ "outside_taxonomy_ratio_of_reviewed": "0/5",
+ "totals": {
+  "mechanical_conflicts": 63,
+  "rating_conflicts": 11,
+  "resolutions": 63,
+  "shared_error_corrections": 1,
+  "unresolved": 0
+ },
+ "records": [
+  {
+   "paper_key": "1802.08802",
+   "version": "1802.08802v1",
+   "aggregate_status": "accepted_final",
+   "claim_type": "system_method",
+   "scope": {
+    "in_scope": true,
+    "inclusion_type": "A",
+    "edge": false,
+    "reason": "Web-interface agent acting on DOM elements (click/type) in interactive MiniWoB environments; training method for the policy."
+   },
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "raw_score": 65.0,
+   "display_score": 65.0,
+   "seat_raw_scores": {
+    "sol": 63.75,
+    "son55": 65.0
+   },
+   "n_mechanical_conflicts": 12,
+   "n_resolutions": 12,
+   "resolution_decisions": {
+    "sol": 2,
+    "son55": 8,
+    "revised": 2,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_rating_conflicts": 2,
+   "n_shared_error_corrections": 0,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p1/aggregate/attempts/a1/1802.08802.json",
+   "file_sha256": "68c8d8d9ad3243043fb6b8a15264bf67c4e20506228fef218f2853a70e36c1fb",
+   "final_record_hash": "672896b8c8ffcdf6c2f99f76ebf071a82fc2c80d0240ffd96a7a3b907e2a5071",
+   "input_seat_hashes": {
+    "sol": "1e3f16c831eeff25ad79723f67f2c74a4fe5e09d3cf40e8a5188c99832518424",
+    "son55": "2879c11c14597bc3f9f50a806021c899981f3ab9729893b2150876cafcbfe5ac"
+   }
+  },
+  {
+   "paper_key": "1909.00031",
+   "version": "1909.00031v2",
+   "aggregate_status": "accepted_final",
+   "claim_type": "system_method",
+   "scope": {
+    "in_scope": true,
+    "inclusion_type": "A",
+    "edge": true,
+    "reason": "Final scope decision (edge): Pumice is an agent that perceives app GUIs through the Android accessibility tree and executes recorded/generalised procedures on real third-party apps; its contribution changes the instruction/clarification and knowledge part of the loop (concept grounding via GUI demonstration and agent-initiated questions). It is not pure API, UI-code generation or robotics, so it meets EVIDENCE.md scope. It is an edge case because evidence is an HCI usability study of human+agent authoring rather than autonomous task success; claim_type system_method is kept and E items are judged against that usability claim."
+   },
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "raw_score": 58.75,
+   "display_score": 58.8,
+   "seat_raw_scores": {
+    "sol": 60.0,
+    "son55": 58.75
+   },
+   "n_mechanical_conflicts": 11,
+   "n_resolutions": 11,
+   "resolution_decisions": {
+    "sol": 2,
+    "son55": 9,
+    "revised": 0,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_rating_conflicts": 3,
+   "n_shared_error_corrections": 0,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p1/aggregate/attempts/a1/1909.00031.json",
+   "file_sha256": "cb9b1998547bc2488bedc1823d1673e28ed071eb734c509f507164871143f359",
+   "final_record_hash": "fcfbb7037844605fe5ff0f58cd5a5e6d7dc1e4c0ec4cc007401bd3bc95686e94",
+   "input_seat_hashes": {
+    "sol": "00979512e2bc07c49d77a0748a2832f8046cfadbd4313087f2457c2977925dc1",
+    "son55": "1c87c2753ae98bc88341ffb6fbb6fdec3853542527dac22bb046c43afd08dc61"
+   }
+  },
+  {
+   "paper_key": "2005.03776",
+   "version": "2005.03776v2",
+   "aggregate_status": "accepted_final",
+   "claim_type": "component_training",
+   "scope": {
+    "in_scope": true,
+    "inclusion_type": "B",
+    "edge": false,
+    "reason": "Mobile GUI instruction grounding model and datasets usable as a CUA component; offline evaluation."
+   },
+   "evidence_level": "offline",
+   "claim_support": "scoped",
+   "raw_score": 61.25,
+   "display_score": 61.2,
+   "seat_raw_scores": {
+    "sol": 61.25,
+    "son55": 65.0
+   },
+   "n_mechanical_conflicts": 14,
+   "n_resolutions": 14,
+   "resolution_decisions": {
+    "sol": 6,
+    "son55": 5,
+    "revised": 3,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_rating_conflicts": 2,
+   "n_shared_error_corrections": 1,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p1/aggregate/attempts/a1/2005.03776.json",
+   "file_sha256": "07cfe7043dd527bbda0317f3a728aeeca839b5cca69d2f723f04ae158760219a",
+   "final_record_hash": "a15ab8d65ec93ff38b9bae20f25117e9dbbc22858acdf6438b77816f6148690b",
+   "input_seat_hashes": {
+    "sol": "a8c04347660aa1c8dacabbb438dc35b083745f32ebf852e8b532449230c9941f",
+    "son55": "c3a36b97129bbbd229b36625af8b3993a94299eed3c650685a360e07337d5569"
+   }
+  },
+  {
+   "paper_key": "2103.16057",
+   "version": "2103.16057v2",
+   "aggregate_status": "accepted_final",
+   "claim_type": "system_method",
+   "scope": {
+    "in_scope": true,
+    "inclusion_type": "A",
+    "edge": false,
+    "reason": "Web agent that grounds instructions to DOM element actions and executes them in a browser runtime."
+   },
+   "evidence_level": "offline",
+   "claim_support": "scoped",
+   "raw_score": 55.0,
+   "display_score": 55.0,
+   "seat_raw_scores": {
+    "sol": 55.0,
+    "son55": 58.75
+   },
+   "n_mechanical_conflicts": 11,
+   "n_resolutions": 11,
+   "resolution_decisions": {
+    "sol": 6,
+    "son55": 1,
+    "revised": 4,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_rating_conflicts": 1,
+   "n_shared_error_corrections": 0,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p1/aggregate/attempts/a1/2103.16057.json",
+   "file_sha256": "c46f73a249ae1d6235611c7a9afb631e7e22b9830d424265a265a7940579a7a2",
+   "final_record_hash": "74516949e233cace1beeb386c89a3320519f116b93372d78037015214c6db97e",
+   "input_seat_hashes": {
+    "sol": "772b00402c851db3f38b4cc6b4ce4dddcc0a0ac0c8ae8aa9a12fb26f016563fa",
+    "son55": "51b687cbde32f12ba7cf8807318ef623365760dfd33e8f3a9e72ce9b234f5b25"
+   }
+  },
+  {
+   "paper_key": "2112.09332",
+   "version": "2112.09332v3",
+   "aggregate_status": "accepted_final",
+   "claim_type": "system_method",
+   "scope": {
+    "in_scope": true,
+    "inclusion_type": "A",
+    "edge": true,
+    "reason": "Final scope decision (edge, kept): the policy observes a text rendering of live web pages and issues sequential browser commands (search, click link IDs, find, scroll, back, quote; agg:G-A07). That is a browser operation surface, so it is not excluded as a pure API/function-calling agent, and the contribution (environment + BC/RM/RL/best-of-n training of the browsing policy) is an agent training method evaluated in an interactive environment. Edge because the task is read-only QA (agg:G-A08) and outcomes are human-preference judgments, not execution-checked task completion; claim_type system_method is kept. Its score must not be read as evidence of GUI task-execution competence."
+   },
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "raw_score": 76.25,
+   "display_score": 76.2,
+   "seat_raw_scores": {
+    "sol": 70.0,
+    "son55": 78.75
+   },
+   "n_mechanical_conflicts": 15,
+   "n_resolutions": 15,
+   "resolution_decisions": {
+    "sol": 6,
+    "son55": 7,
+    "revised": 2,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_rating_conflicts": 3,
+   "n_shared_error_corrections": 0,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p1/aggregate/attempts/a1/2112.09332.json",
+   "file_sha256": "35cfe4b3ac2dffa24aa268064fa40c9eee074782cdb8b6d1a888a492416335f9",
+   "final_record_hash": "93bfa7050ff2739b0e419466fb5e0ca7ca10ef488d7ad19d77b038e541b1513d",
+   "input_seat_hashes": {
+    "sol": "fcbb6f75227bbdd8165ae89da41e113e5df0787dff1bd29ea756648a8b86b0d5",
+    "son55": "5fe06cc22c2a5caabdafb7e8a46511818548e7ecc75bd2ee653ab91ef98c0eb3"
+   }
+  }
+ ],
+ "validation": {
+  "seat_set_equals_manifest": true,
+  "seat_versions_input_hash_target_material_sha_checked": "both seats, all 5 papers: version, input_bundle_sha256 and target material sha256 equal the batch manifest; seat reference-library materials are separate entries",
+  "seat_rs_parent_and_domain_namespace_checked": "PARENTS.tsv + taxonomy.json, both seats, all papers: no errors",
+  "every_mechanical_conflict_has_resolution": true,
+  "final_values_match_resolutions": "ratings, expectation statuses, claim_type, evidence_level, rs primary/supporting/matches and domain matches asserted equal to resolution final_value",
+  "final_rs_parent_and_domain_checks": true,
+  "evidence_reference_integrity": "every evidence_id referenced in a final record exists in its evidence list; seat IDs namespaced sol:/son55:, own evidence agg:",
+  "agg_quote_substring_check": "each agg quote is an exact substring of the cited fixed text",
+  "score_recomputed": "S=(15G+25M+20X+10Em+10Ec+10Eh+5Es+5Ecost)/4; weights sum 100, E sum 40; recomputed after write and equal to the hand-computed expected values",
+  "final_record_hash_recomputed_after_write": true,
+  "hash_rule": "sha256 of json.dumps(record minus final_record_hash, sort_keys=True, ensure_ascii=False, separators=(',',':')) in UTF-8",
+  "atomic_writes": "tmp file + os.replace",
+  "limitations": [
+   "Structural/arithmetic/quote checks do not establish semantic correctness or scientific validity; nothing reproduced.",
+   "Figure images are not rendered in the fixed HTML texts (1802.08802 Fig 3/4 main MiniWoB and sample-efficiency results; 2112.09332 Fig 2-8; 1909.00031 Fig 5; 2103.16057 Fig 7-8); judgements use text, tables and captions only.",
+   "Historical nearest neighbours (Shi17/World of Bits, Sugilite/Appinite, PhraseNode, Krishna21, Stiennon20) are not in the fixed pack; lineage stays author-attributed with uncertainty notes, following both seats. Only in-batch papers (2005.03776 for 2103.16057) were used as verified neighbour text.",
+   "No session id or invocation receipt is available to this agent; the sol seat's receipt_ref points to the controller session transcript (sol was dispatched from it), recorded as-is."
+  ]
+ },
+ "requests_to_controller": [
+  "None blocking. Optional: rendered figure values for 1802.08802 Fig 3/4 and 2112.09332 Fig 2 (with denominators) would allow re-checking E.measurement/E.statistics; current values do not depend on them.",
+  "Scope: 2112.09332 (read-only text-browser QA, human-preference outcome) and 1909.00031 (end-user programming by demonstration, usability study) are kept in scope as edge cases (see each record's scope_decision); selection should not read their scores as evidence of execution-checked GUI task competence."
+ ],
+ "boundaries": "No publication, no Reel selection, no rubric/card/seat/input edits, no git operations. Scores are draft_uncalibrated v2.2 provisional values pending controller verification.",
+ "timestamp": "2026-10-21T17:52:06+00:00"
+}

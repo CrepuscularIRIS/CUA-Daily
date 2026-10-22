@@ -1,0 +1,2256 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p1",
+  "attempt_id": "a1",
+  "seat": "sol",
+  "paper": {
+    "paper_key": "2112.09332",
+    "paper_id": "2112.09332",
+    "title": "WebGPT: Browser-assisted question-answering with human feedback",
+    "version": "2112.09332v3",
+    "claim_type": "system_method",
+    "central_claim": "Fine-tuning GPT-3 to search and navigate a text-based web browser, collect references, and optimize human answer preferences yields human-competitive long-form QA: best BC plus reward-model rejection sampling is preferred56% to same-browser human demonstrators and69% to highest-voted ELI5 answers; references facilitate factual evaluation and TruthfulQA improves versus GPT-3 but remains below humans."
+  },
+  "provenance": {
+    "input_hash": "27c3d4f26b56f3943ebb73731665de7b845b179ab70d27f6dcfa94cb495e6822",
+    "rubric_version": "radar-review-v2.2 draft_uncalibrated",
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+    "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+    "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+    "pattern_protocol_hash": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373",
+    "model_type": "sonnet",
+    "actual_model": "gpt-6.1-sol",
+    "actual_model_source": "Environment explicitly reports gpt-6.1-sol; no model probing performed.",
+    "session_id": "681194da-49f5-4ad4-8eb4-573b45384076",
+    "receipt_ref": "/home/lingxufeng/.claude-kimi/projects/-home-lingxufeng-GUI/681194da-49f5-4ad4-8eb4-573b45384076.jsonl",
+    "timestamp": "2026-10-21T17:31:18.523113+00:00",
+    "rubric_caveat": "Supplied SCORE_SPEC remains draft_uncalibrated. Controller directs parallel calibration/production with these hash-bound weights; any changed anchors require affected papers to be reviewed under a new version.",
+    "material_version_caveat": "SHA256 matches assigned manifest. Source header is unversioned arXiv HTML; manifest version retained, exact HTML-to-version correspondence not independently established.",
+    "local_contract_check_timestamp": "2026-10-21T17:33:20.251878+00:00",
+    "local_contract_check_note": "Open-attempt final check normalized documented expectation enums, completed required semantic field names, made condition statuses explicit and corrected historical attribution. No score/rating changed; all replacements are atomic and restricted to this seat attempt."
+  },
+  "materials": [
+    {
+      "material_id": "2112.09332v3",
+      "url": "https://arxiv.org/abs/2112.09332v3",
+      "version": "2112.09332v3",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt",
+      "sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "sections_read": [
+        "Abstract",
+        "1–8 complete body, textual tables, figure captions",
+        "9–10 contributions and acknowledgments; References",
+        "Appendices A–K including environment, datasets/labeling, surveys, hyperparameters, minimal protocol, TriviaQA, bias, estimator, full example references and release details"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "visual_asset_caveat": "Text render contains captions and tables; plotted/diagrammed images were not independently viewed. Unrendered numerical values are not inferred.",
+      "version_verified": false,
+      "source_url": "https://arxiv.org/html/2112.09332"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E001",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L86-L86",
+      "quote": "This model’s answers are preferred by humans 56% of the time to those of our human demonstrators, and 69% of the time to the highest-voted answer from Reddit.",
+      "support_explanation": "Central reported preference comparisons, not universal truth or executable GUI completion rates.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E002",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L176-L176",
+      "quote": "This process is then repeated with a fresh context (hence, the only memory of previous steps is what is recorded in the summary).",
+      "support_explanation": "Explicit within-episode state summary; not durable experience memory.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E003",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L192-L192",
+      "quote": "as long as there is at least one reference, the model is prompted with the question and the references, and must compose its final answer.",
+      "support_explanation": "Quote-gated transition from browsing to answer synthesis.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E004",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L226-L226",
+      "quote": "the reward represents an Elo score, scaled such that the difference between two scores represents the logit of the probability that one will be preferred to the other by the human labelers.",
+      "support_explanation": "Human-preference scalar, not binary task-success or factual-truth judge.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E005",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L230-L230",
+      "quote": "we took the reward model score at the end of each episode, and added this to a KL penalty from the BC model at each token to mitigate overoptimization of the reward model.",
+      "support_explanation": "PPO reward and regularization source.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E006",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L234-L234",
+      "quote": "We sampled a fixed number of answers (4, 16 or 64) from either the BC model or the RL model (if left unspecified, we used the BC model), and selected the one that was ranked highest by the reward model.",
+      "support_explanation": "Whole-answer candidate generation and direct reward ranking without simulated next-state prediction.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E007",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L238-L238",
+      "quote": "We used mutually disjoint sets of questions for each of BC, RM and RL.",
+      "support_explanation": "Reported question separation, not proof of held-out websites or pretraining decontamination.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E008",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L242-L242",
+      "quote": "Our final reward models were trained on around 16,000 comparisons, the remaining 5,500 being used for evaluation only.",
+      "support_explanation": "RM training/evaluation counts; not the denominator of the headline ELI5 test preferences.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E009",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L244-L244",
+      "quote": "at the end of each episode we inserted 15 additional answering-only episodes using the same references as the previous episode.",
+      "support_explanation": "Training-only sample-efficiency reuse, not persistent cross-task memory.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E010",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L250-L250",
+      "quote": "We excluded RL for simplicity, since it did not provide significant benefit when combined with rejection sampling",
+      "support_explanation": "Best main models are BC plus best-of-N; do not attribute headline result to PPO.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E011",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L252-L252",
+      "quote": "We evaluated all WebGPT models using a sampling temperature of 0.8, which was tuned using human evaluations, and with a maximum number of browsing actions of 100.",
+      "support_explanation": "Evaluation budget and human-assisted hyperparameter selection.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E012",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L262-L262",
+      "quote": "we stripped all citations and references from the model-generated answers, hired new contractors who were not familiar with our detailed instructions, and gave them a much more minimal set of instructions",
+      "support_explanation": "Reddit comparison attempts to reduce citation/style/instruction confounds; not perfect blinding.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E013",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L292-L292",
+      "quote": "Error bars represent ± 1 \\pm 1 standard error.",
+      "support_explanation": "Intervals explicitly reported in captions; numerical bars not inferred from absent image values.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E014",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L300-L300",
+      "quote": "For WebGPT, we used human evaluation, since WebGPT’s answers are out-of-distribution for the automated metric.",
+      "support_explanation": "Avoids inappropriate automatic truth judge on shifted answer style.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E015",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L300-L300",
+      "quote": "This affected 74 answers in total, around 3% of answers.",
+      "support_explanation": "Truncation produced empty answers scored true but uninformative; different denominator from ELI5 preferences.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E016",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L312-L312",
+      "quote": "Rejection sampling provides a substantial benefit, with the 175B best-of-64 BC model being preferred 68% of the time to the 175B BC model. Meanwhile, RL provides a smaller benefit, with the 175B RL model being preferred 58% of the time to the 175B BC model.",
+      "support_explanation": "Matched-base training/selection comparisons; extra inference compute remains a real causal factor.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E017",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L334-L334",
+      "quote": "This alone closed much of the gap we originally saw between BC and RL.",
+      "support_explanation": "Tuning BC epochs and temperature is a load-bearing baseline control.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E018",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L342-L342",
+      "quote": "we used the score of a 175B “validation” reward model (trained on a separate dataset split) for these experiments.",
+      "support_explanation": "Scaling curves use a held-out same-family proxy rather than independent human truth labels.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E019",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L346-L346",
+      "quote": "the 760M best-of-4 model, the 13B best-of-16 model, and the 175B best-of-64 model.",
+      "support_explanation": "Compute-efficient frontier combines size and N; headline size comparison does not hold N fixed.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E020",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L372-L372",
+      "quote": "We did not test this hypothesis directly, since we found that it was challenging for labelers to spot subtle hallucinations.",
+      "support_explanation": "Lower non-imitative hallucination is explicitly a hypothesis, not directly established.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E021",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L421-L421",
+      "quote": "the only interactions with the outside world allowed by the environment are sending queries to the Bing API and following links that already exist on the web",
+      "support_explanation": "Read-only text-browser boundary: no forms or general GUI modification, but stateful page navigation is present.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E022",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L579-L579",
+      "quote": "fetches the HTML of the web page and simplifies it using Mozilla’s Readability.js",
+      "support_explanation": "Hand-engineered textual observation privilege and lossy page reduction.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E023",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L587-L587",
+      "quote": "the link ID is the index of the link on the page, which is also used for the link-clicking command.",
+      "support_explanation": "Stable action target representation within current serialized page; not coordinate grounding.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E024",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L603-L603",
+      "quote": "We censor any pages that contain a 10-gram overlap with the question (or reference answer, if provided) to prevent the model from cheating",
+      "support_explanation": "Explicit live-retrieval copying control, not exhaustive contamination audit.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E025",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L672-L672",
+      "quote": "Total | 6,209 | 21,548",
+      "support_explanation": "Collected demonstration/comparison denominators; distinct from 19,578 released comparisons and test denominators.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E026",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L680-L680",
+      "quote": "we measured a final researcher-labeler agreement rate of 74%, and a labeler-labeler agreement rate of 73%.",
+      "support_explanation": "Label quality audit with neutral/non-neutral counted half; not model precision/NPV.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E027",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L734-L734",
+      "quote": "we asked contractors to judge whether claims in the answer are supported , i.e., either backed up by a reliable reference, or common knowledge.",
+      "support_explanation": "Support judgment differs from independent factual research.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E028",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L92-L92",
+      "quote": "we outsource document retrieval to the Microsoft Bing Web Search API",
+      "support_explanation": "Author explicitly inherits retrieval and focuses on faithful training objectives instead of a new search engine.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E029",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L399-L399",
+      "quote": "This was previously suggested by Metzler et al. (2021)",
+      "support_explanation": "Author-attributed predecessor of reference-assisted evaluation; original not supplied.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "E030",
+      "material_id": "2112.09332v3",
+      "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+      "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt:L108-L108",
+      "quote": "Our model’s answers are true 75% of the time, and are both true and informative 54% of the time",
+      "support_explanation": "Explicit headline TruthfulQA proportions; distinct from ELI5 preference and empty-answer counts.",
+      "kind": "author_report"
+    }
+  ],
+  "scope": {
+    "in_scope": true,
+    "reason": "Peripheral read-only web-interface agent: despite Bing API retrieval, policy observes page/cursor state and issues sequential link, find, scroll, back and quote actions. Not pure API orchestration, not screenshot GUI grounding and not arbitrary form/editing automation.",
+    "boundary": "Only search queries and following existing links affect outside world; QA is the end task."
+  },
+  "signatures": [
+    {
+      "sig_id": "S1",
+      "object": "Structured web navigation and evidence-conditioned answer generation",
+      "information": "Question,current simplified page at cursor,indexed links,quotes,past-action summary,remaining cap; no pixels or hidden page semantics. Bing/Readability provide privileges.",
+      "operation": "Serialize page/browser state to text; GPT-3 emits command; runtime fetches/scrolls/finds/quotes; refresh prompt; synthesize from question plus quotes after stop.",
+      "output": "A real browsing trajectory and reference-bearing answer.",
+      "conditions": "Restricted read-only actions; at least one reference for answering; invalid commands consume cap;100evaluation actions and reference cap.",
+      "feedback": "Real fetched page text/errors and human command demonstrations during BC.",
+      "selection_rule": "Policy token sampling selects actions; quote command must match page text; stop on explicit End/caps.",
+      "selection_data": "Real fetched page text/errors and human command demonstrations during BC.",
+      "persistence": "Quotes and summary stored for current episode; learned BC weights retained across tasks.",
+      "later_use": "Answer phase consumes episode quotes; subsequent questions reuse weights, not a retrieved memory bank.",
+      "claimed_effect": "Make external information available to a pretrained LM and make output support inspectable.",
+      "failure_boundary": "Readability/alttext discard visual information; source credibility and synthesis remain fallible; no autonomous retained-improvement cycle.",
+      "evidence_ids": [
+        "E002",
+        "E003",
+        "E011",
+        "E021",
+        "E022",
+        "E023"
+      ]
+    },
+    {
+      "sig_id": "S2",
+      "object": "Whole-browsing-run candidate answer selection",
+      "information": "Question, each complete candidate answer with its collected references; learned preference RM, no oracle factual outcome.",
+      "operation": "Generate N independent browsing-and-answer episodes, score each terminal answer/reference bundle, submit argmax.",
+      "output": "One selected reference-bearing answer fromN=4/16/64.",
+      "conditions": "BC main models760M/13B/175B paired with N4/16/64; real browsing, not state simulation; read-only environment allows independent runs.",
+      "feedback": "RM trained from human pairwise overall usefulness labels; final human comparisons assess selected answers.",
+      "selection_rule": "Argmax scalar RM score over full candidate answer bundles; ranking not binary success verification.",
+      "selection_data": "RM trained from human pairwise overall usefulness labels; final human comparisons assess selected answers.",
+      "persistence": "Selected answer retained for current output only; ranking does not update policy or create reusable skills.",
+      "later_use": "End user receives selected answer; future questions start fresh with fixed policy/RM.",
+      "claimed_effect": "175Bbest64 preferred68% versus175BBC; headline56/69% preferences.",
+      "failure_boundary": "Compute grows with whole-rollout candidates, possible shared-RM overoptimization/cherry-picking; no matched random-N/alternative judge causal arm.",
+      "evidence_ids": [
+        "E001",
+        "E004",
+        "E006",
+        "E010",
+        "E016",
+        "E018",
+        "E019"
+      ]
+    },
+    {
+      "sig_id": "S3",
+      "object": "Human-supervised policy and preference-model weights",
+      "information": "6209human demos,21548collected comparisons; RM inputquestion/answer/references; disjoint BC/RM/RLquestion sets; no true task-success oracle.",
+      "operation": "BC action-token imitation; train pairwise Elo RM; optionally PPO terminal RM plus per-token KL; reuse15answer-only episodes per browsing episode.",
+      "output": "Static fine-tuned policy and preference scorer; main chosen systemBC+bestN rather thanRL.",
+      "conditions": "Three GPT-3 sizes; RM16Ktrain/5.5Keval comparisons, held-outBCvalidation and early stopping; live retrieval in training.",
+      "feedback": "Human supported-useful/coherent preference; additional PPO samples obtain RM scores.",
+      "selection_rule": "Validation accuracy/RMscore plus human tuning select stopping/temperature; fixed weights deployed.",
+      "selection_data": "Human supported-useful/coherent preference; additional PPO samples obtain RM scores.",
+      "persistence": "Saved trained model parameters; not accepted autonomous modifications selected on later independent tasks.",
+      "later_use": "Weights serve subsequent questions; same-episode quote reuse is training efficiency only.",
+      "claimed_effect": "RL58%preference versusBC, less than bestN gain; added answer episodes about2×sample efficiency according to authors.",
+      "failure_boundary": "Preference/support proxy can be biased and hacked, citations can induce overreliance, independent truth not guaranteed.",
+      "evidence_ids": [
+        "E004",
+        "E005",
+        "E007",
+        "E008",
+        "E009",
+        "E010",
+        "E016",
+        "E017",
+        "E025",
+        "E026",
+        "E027"
+      ]
+    }
+  ],
+  "gap": {
+    "publication_time": "2021",
+    "author_gap": "LFQA retrieval/synthesis exist but ordinary language modeling and overlap metrics do not directly optimize supported useful answer quality or faithfully evaluate factual claims.",
+    "checked_gap": "Paper documents mismatch of ROUGE-like metrics and subjective truth evaluation; interactive evidence acquisition plus reference-assisted human preferences is a concrete contemporary response. Does not prove first-ever browsing, RLHF, retrieval QA or citations.",
+    "prior_work": [
+      {
+        "name": "GPT-3 Brown2020; Stiennon2020 human-feedback summarization",
+        "relationship": "Inherited pretrained synthesis and BC→preferenceRM→PPO/ranking recipe; extend to evidence-collecting browsing for LFQA.",
+        "verification": "author_attributed_only; cited originals not supplied; versions not independently fixed"
+      },
+      {
+        "name": "REALM Guu2020; RAG Lewis2020; Krishna2021 LFQA",
+        "relationship": "Differentiable retrieval/generation and LFQA human-evaluation gap; WebGPT uses non-differentiable Bing plus iterative browsing and preference optimization.",
+        "verification": "author_attributed_only; originals unavailable in fixed bundle; paper Section7 read"
+      },
+      {
+        "name": "Yuan2019 interactive reading; Adolphs2021 search RL; Metzler2021 references",
+        "relationship": "Precedents for search/scroll control and reference-assisted judgments; change is integrated LFQA browser plus reference-conditioned human-feedback pipeline, not first search RL.",
+        "verification": "author_attributed_only; original text/version absent; no external fetching"
+      },
+      {
+        "name": "Liu et al.2018 workflow-guided exploration,1802.08802v1",
+        "relationship": "Independently read adjacent browser BC/RL sparse-reward automation, not a claim WebGPT explicitly cites WGE. WebGPT Section7 cites Shi2017/Gur2018 as distinct browser-control work, whose originals were not independently audited.",
+        "verification": "assigned1802.08802v1 read independently; no earlier score used as anchor"
+      }
+    ],
+    "delta": "A restricted text-browser interface plus human data/protocol integrates existing search, pretrained synthesis and preference learning; best-of-N selects complete reference-bearing answers.",
+    "residue": "Independent truth, adversarial or subjective evidence, source selection bias, expensive labeling and inference; live drift and unseen-site robustness not closed.",
+    "stakes": "A persuasive but unsupported answer can misinform users; references aid checking but can also increase automation bias.",
+    "method_response": "Expose real evidence through browser actions, collect quote artifacts, train preference reward and select candidates; compare actual generated answers with humans.",
+    "remaining_gap": "No isolating interface/reference ablation or independent search-space truth oracle; page snapshots and OOD source reliability remain open.",
+    "evidence_ids": [
+      "E001",
+      "E004",
+      "E020",
+      "E021",
+      "E027",
+      "E028",
+      "E029"
+    ],
+    "unresolved": [
+      "Exact historical nearest-neighbor priority not independently verified because original sources/versions missing."
+    ],
+    "current_relevance": "Precursor to evidence-seeking text-browser agents; later GUI benchmark checklists cannot retroactively invalidate the2021LFQA gap. General screenshot/action automation is outside demonstrated boundary.",
+    "lineage": [
+      {
+        "name": "GPT-3 Brown2020; Stiennon2020 human-feedback summarization",
+        "relationship": "Inherited pretrained synthesis and BC→preferenceRM→PPO/ranking recipe; extend to evidence-collecting browsing for LFQA.",
+        "verification": "author_attributed_only; cited originals not supplied; versions not independently fixed",
+        "version": "Publication-year source as named; original version not independently fixed unless assigned fulltext explicitly identified."
+      },
+      {
+        "name": "REALM Guu2020; RAG Lewis2020; Krishna2021 LFQA",
+        "relationship": "Differentiable retrieval/generation and LFQA human-evaluation gap; WebGPT uses non-differentiable Bing plus iterative browsing and preference optimization.",
+        "verification": "author_attributed_only; originals unavailable in fixed bundle; paper Section7 read",
+        "version": "Publication-year source as named; original version not independently fixed unless assigned fulltext explicitly identified."
+      },
+      {
+        "name": "Yuan2019 interactive reading; Adolphs2021 search RL; Metzler2021 references",
+        "relationship": "Precedents for search/scroll control and reference-assisted judgments; change is integrated LFQA browser plus reference-conditioned human-feedback pipeline, not first search RL.",
+        "verification": "author_attributed_only; original text/version absent; no external fetching",
+        "version": "Publication-year source as named; original version not independently fixed unless assigned fulltext explicitly identified."
+      },
+      {
+        "name": "Liu et al.2018 workflow-guided exploration,1802.08802v1",
+        "relationship": "Independently read adjacent browser BC/RL sparse-reward automation, not a claim WebGPT explicitly cites WGE. WebGPT Section7 cites Shi2017/Gur2018 as distinct browser-control work, whose originals were not independently audited.",
+        "verification": "assigned1802.08802v1 read independently; no earlier score used as anchor",
+        "version": "Publication-year source as named; original version not independently fixed unless assigned fulltext explicitly identified."
+      }
+    ],
+    "closest_adjacent": [
+      {
+        "name": "GPT-3 Brown2020; Stiennon2020 human-feedback summarization",
+        "relationship": "Inherited pretrained synthesis and BC→preferenceRM→PPO/ranking recipe; extend to evidence-collecting browsing for LFQA.",
+        "verification": "author_attributed_only; cited originals not supplied; versions not independently fixed",
+        "version": "Publication-year source as named; original version not independently fixed unless assigned fulltext explicitly identified."
+      },
+      {
+        "name": "REALM Guu2020; RAG Lewis2020; Krishna2021 LFQA",
+        "relationship": "Differentiable retrieval/generation and LFQA human-evaluation gap; WebGPT uses non-differentiable Bing plus iterative browsing and preference optimization.",
+        "verification": "author_attributed_only; originals unavailable in fixed bundle; paper Section7 read",
+        "version": "Publication-year source as named; original version not independently fixed unless assigned fulltext explicitly identified."
+      },
+      {
+        "name": "Yuan2019 interactive reading; Adolphs2021 search RL; Metzler2021 references",
+        "relationship": "Precedents for search/scroll control and reference-assisted judgments; change is integrated LFQA browser plus reference-conditioned human-feedback pipeline, not first search RL.",
+        "verification": "author_attributed_only; original text/version absent; no external fetching",
+        "version": "Publication-year source as named; original version not independently fixed unless assigned fulltext explicitly identified."
+      },
+      {
+        "name": "Liu et al.2018 workflow-guided exploration,1802.08802v1",
+        "relationship": "Independently read adjacent browser BC/RL sparse-reward automation, not a claim WebGPT explicitly cites WGE. WebGPT Section7 cites Shi2017/Gur2018 as distinct browser-control work, whose originals were not independently audited.",
+        "verification": "assigned1802.08802v1 read independently; no earlier score used as anchor",
+        "version": "Publication-year source as named; original version not independently fixed unless assigned fulltext explicitly identified."
+      }
+    ]
+  },
+  "rs_pattern": {
+    "outside_taxonomy": false,
+    "primary": "unify_into_shared_representation",
+    "supporting": [],
+    "matches": [
+      {
+        "main_id": "unify_into_shared_representation",
+        "sub_id": "C18",
+        "role": "primary",
+        "fit": "partial",
+        "tactic_steps_checked": [
+          "Manufacture text substrate from structured browser states, page links, PDF/HTML text and commands.",
+          "Use one GPT-3 next-token policy for browse commands and answer text, with human command demonstrations.",
+          "The interface artifact changes access to external evidence; it is not merely concatenating another natural-language prompt."
+        ],
+        "success_failure_checks": [
+          {
+            "condition": "Check1",
+            "status": "met",
+            "reason": "C18 serialization operation and parent heterogeneous-to-shared-text definition are present.",
+            "evidence_ids": [
+              "E002",
+              "E003",
+              "E022",
+              "E023",
+              "E028"
+            ]
+          },
+          {
+            "condition": "Check2",
+            "status": "unmet",
+            "reason": "No independent semantic-interface probe or controlled remove-serializer/backbone-matched ablation; success conditions not fully met.",
+            "evidence_ids": [
+              "E002",
+              "E003",
+              "E022",
+              "E023",
+              "E028"
+            ]
+          },
+          {
+            "condition": "Check3",
+            "status": "partial",
+            "reason": "Readability and alt-text discard visual/layout information; no universal multimodal capability.",
+            "evidence_ids": [
+              "E002",
+              "E003",
+              "E022",
+              "E023",
+              "E028"
+            ]
+          },
+          {
+            "condition": "Check4",
+            "status": "partial",
+            "reason": "Three scales of one GPT-3 family, not architecture-family transfer; human-preference RM objective is a separate head and prevents a fully uniform-objective claim.",
+            "evidence_ids": [
+              "E002",
+              "E003",
+              "E022",
+              "E023",
+              "E028"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E002",
+          "E003",
+          "E022",
+          "E023",
+          "E028"
+        ],
+        "reason": "Partial C18 is a concrete structured-web-to-text serializer enabling pretrained next-token control. It does not establish that unification itself caused gains; RLHF and best-of-N are not automatically self-supervised signal engineering or differentiable design search."
+      }
+    ],
+    "reason": "C18 partial captures manufactured text substrate, not all RLHF/ranking machinery. Original15+31 overviews and full parent/child consulted before GUI mapping.",
+    "executes_pattern": "Serializes heterogeneous web/document/browser state into one next-token policy interface.",
+    "resolves_problem": "Only partial: feasible browser QA and preference gains, no controlled demonstration that the serializer alone closes the gap."
+  },
+  "domain_pattern": {
+    "namespace": "gui",
+    "matches": [
+      {
+        "main": "simulated_lookahead_selection",
+        "sub": "K02",
+        "version": "manifest-bound-2026-10-21",
+        "fit": "strong",
+        "condition_checks": [
+          {
+            "condition": "Check1",
+            "status": "met",
+            "reason": "Whole-run candidates and separately trained human-preference scorer implement direct reranking.",
+            "evidence_ids": [
+              "E004",
+              "E006",
+              "E016",
+              "E019"
+            ]
+          },
+          {
+            "condition": "Check2",
+            "status": "partial",
+            "reason": "No simulation: per-candidate quotes/answer preserved; final-state GUI success is not being checked.",
+            "evidence_ids": [
+              "E004",
+              "E006",
+              "E016",
+              "E019"
+            ]
+          },
+          {
+            "condition": "Check3",
+            "status": "partial",
+            "reason": "N and compute frontier stated, no full latency or equal-cost scorer control.",
+            "evidence_ids": [
+              "E004",
+              "E006",
+              "E016",
+              "E019"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E004",
+          "E006",
+          "E016",
+          "E019"
+        ]
+      },
+      {
+        "main": "learned_outcome_and_process_judges",
+        "sub": "K16",
+        "version": "manifest-bound-2026-10-21",
+        "fit": "partial",
+        "condition_checks": [
+          {
+            "condition": "Check1",
+            "status": "met",
+            "reason": "Terminal graded score is used for PPO/ranking.",
+            "evidence_ids": [
+              "E004",
+              "E005",
+              "E008",
+              "E026",
+              "E027"
+            ]
+          },
+          {
+            "condition": "Check2",
+            "status": "challenged_with_evidence",
+            "reason": "Input answer/reference bundle and human-preference target differ from GUI-success screenshot verdict; do not claim binary verifier reliability.",
+            "evidence_ids": [
+              "E004",
+              "E005",
+              "E008",
+              "E026",
+              "E027"
+            ]
+          },
+          {
+            "condition": "Check3",
+            "status": "partial",
+            "reason": "Held-out comparison evaluation and human audits present; no unseen-agent success precision/NPV.",
+            "evidence_ids": [
+              "E004",
+              "E005",
+              "E008",
+              "E026",
+              "E027"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E004",
+          "E005",
+          "E008",
+          "E026",
+          "E027"
+        ]
+      },
+      {
+        "main": "structured_screen_observation",
+        "sub": "C01",
+        "version": "manifest-bound-2026-10-21",
+        "fit": "strong",
+        "condition_checks": [
+          {
+            "condition": "Check1",
+            "status": "met",
+            "reason": "SimplifiedHTML/PDF/text and indexed link targets explicitly replace screen pixels.",
+            "evidence_ids": [
+              "E002",
+              "E022",
+              "E023"
+            ]
+          },
+          {
+            "condition": "Check2",
+            "status": "met",
+            "reason": "Observation privileges and loss of layout/images are stated; not equivalent to pixel-grounding skill.",
+            "evidence_ids": [
+              "E002",
+              "E022",
+              "E023"
+            ]
+          }
+        ],
+        "evidence_ids": [
+          "E002",
+          "E022",
+          "E023"
+        ]
+      }
+    ],
+    "unassigned": [],
+    "revision_proposals": []
+  },
+  "pattern_mapping": [
+    {
+      "rs_main": "unify_into_shared_representation",
+      "rs_sub": "C18",
+      "domain_namespace": "gui",
+      "domain_main": "structured_screen_observation",
+      "domain_sub": "C01",
+      "operation_correspondence": "Serializer manufactures dominant text substrate; indexed links simultaneously define observation and action grounding.",
+      "conditions_and_differences": "RS general cross-substrate tactic versus GUI-specific text/DOM observation. Text-browser serialization is real but lacks isolation ablation; no one-to-one taxonomy equivalence.",
+      "evidence_ids": [
+        "E002",
+        "E022",
+        "E023"
+      ],
+      "necessary_conditions_differences": "RS general cross-substrate tactic versus GUI-specific text/DOM observation. Text-browser serialization is real but lacks isolation ablation; no one-to-one taxonomy equivalence."
+    },
+    {
+      "rs_main": null,
+      "rs_sub": null,
+      "domain_namespace": "gui",
+      "domain_main": "simulated_lookahead_selection",
+      "domain_sub": "K02",
+      "operation_correspondence": "Full-answer RM argmax reranking is an additional GUI mechanism, not forced into an originalRSclass.",
+      "conditions_and_differences": "Human preference RM and real independent browsing; no learned dynamics or correctness guarantee.",
+      "evidence_ids": [
+        "E004",
+        "E006"
+      ],
+      "necessary_conditions_differences": "Human preference RM and real independent browsing; no learned dynamics or correctness guarantee."
+    }
+  ],
+  "expectations": [
+    {
+      "id": "E01",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s1",
+          "note": "defines execution-based per-task checkers"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "OSWorld at 15 and 50 steps, averaged over 3 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2",
+          "note": "OSWorld planner+grounder success"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "OSWorld-Verified 15 steps, averaged over 4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "OSWorld-Verified (15 steps) as transfer target"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "OSWorld-Verified success after GRPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.08164#s1",
+          "note": "OSWorld full set"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No Ubuntu/Windows desktop agent or desktop task-success claim.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E02",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.09856#s2"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No Android/mobile UI agent or mobile action execution.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E03",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.02907#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.14721#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2411.02337",
+          "note": "authors concede evaluation on 165-task WebArena-Lite subset due to cost"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Environment retrieves live web content; it is not a self-hosted functional web task suite.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E04",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2",
+          "note": "constructs Online-Mind2Web; WebVoyager overstates competence"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s1",
+          "note": "Online-Mind2Web and Mind2Web-Live"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "Online-Mind2Web as transfer benchmark"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2",
+          "note": "Mind2Web-Live"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "Mind2Web-Live"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim about web-agent success on real, live websites",
+      "applicable": true,
+      "status": "challenged_with_evidence",
+      "reason": "The 2021 live-web claim is LFQA answer quality under a read-only text browser, not form/task completion. Online-Mind2Web/Mind2Web-Live did not exist at publication and solve a different target; live browsing plus human final-answer comparison is the relevant contemporary outcome. This does not establish general website task success.",
+      "evidence_ids": [
+        "E001",
+        "E003",
+        "E021"
+      ],
+      "score_item": "E.measurement"
+    },
+    {
+      "id": "E05",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.14262#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2501.12326",
+          "note": "authors: ScreenSpot v1/v2 may not be robust enough to capture gains at scale"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No screenshot-to-coordinate model: indexed text links are given directly.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E06",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s1",
+          "note": "vs UGround"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3",
+          "note": "vs UGround-V1-7B, OS-Atlas-7B, Aguvis"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "vs UI-TARS-7B/72B, UGround-V1-7B, Aguvis, OS-Atlas"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012",
+          "note": "GPT-4o + UGround / Aguvis-7B / Aria-UI baselines"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No claim to beat GUI element/coordinate grounders; retrieval-and-answer training is the contribution.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E07",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1",
+          "note": "vs UI-TARS-7B, SFT-only, offline RL"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2",
+          "note": "vs UI-TARS-7B/72B, GPT-4o+Aria-UI"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "UI-TARS-1.5-7B base"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "UI-TARS-1.5-7B, GTA1-7B+o3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "UI-TARS-1.5-7B base"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "UI-TARS-1.5-7B base"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+      "applicable": true,
+      "status": "challenged_with_evidence",
+      "reason": "End-to-end training improves a browser-based QA policy, but final utility is a human-preference outcome rather than an executable GUI success predicate. Human evaluation is an appropriate alternative for the original claim; no arbitrary GUI automation conclusion follows.",
+      "evidence_ids": [
+        "E001",
+        "E004",
+        "E016",
+        "E027"
+      ],
+      "score_item": "E.measurement"
+    },
+    {
+      "id": "E08",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No independently swapped planner/grounder success claim; shared text-browser policy is evaluated as a QA system.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E09",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s3",
+          "note": "vs SFT, Filtered BC, AWR, DigiRL"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2406.11896#s1",
+          "note": "vs Filtered BC, AWR"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1",
+          "note": "vs SFT-only, offline GRPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "vs WebRL, NNetNav SFT"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "vs ORM-based PPO and ARPO"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+      "applicable": true,
+      "status": "partial",
+      "reason": "PPO is inherited rather than a newly claimed RL algorithm. The paper compares tuned same-base BC, RL, best-of-N and their combination; the BC tuning substantially closes apparent RL gain. No hindsight requirement for later GUI RL baselines, and no strong claim that PPO is best.",
+      "evidence_ids": [
+        "E005",
+        "E010",
+        "E016",
+        "E017"
+      ],
+      "score_item": "E.causality"
+    },
+    {
+      "id": "E10",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2406.11896#s2",
+          "note": "2.8% error vs human"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s2",
+          "note": "79.4% on 100 manually labelled rollouts"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "agreement with human labels; held-out agents"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s1",
+          "note": "accuracy vs human-corrected labels"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s2",
+          "note": "Spearman with human labels"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2311.08649#s2",
+          "note": "F1 0.74 vs manual labels"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.09038",
+          "note": "authors concede VLM judges can admit failures or reject valid successes; no precision reported"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+      "applicable": true,
+      "status": "challenged_with_evidence",
+      "reason": "The RM predicts pairwise answer preference from question/answer/references, not trajectory-success labels. Held-out comparisons and separate human tests are reported, but agent-disjoint trajectory SR-gap validation is absent and cannot be substituted by preference accuracy. Challenge the binary-success formulation for this objective rather than call it satisfied.",
+      "evidence_ids": [
+        "E004",
+        "E008",
+        "E018",
+        "E027"
+      ],
+      "score_item": "E.measurement"
+    },
+    {
+      "id": "E11",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2510.18596#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "precision on AgentRewardBench; low recall noted"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s1",
+          "note": "F1 under class imbalance"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2504.01382",
+          "note": "authors concede o4-mini WebJudge is overly conservative with low recall"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+      "applicable": true,
+      "status": "challenged_with_evidence",
+      "reason": "Precision/NPV of binary success are not defined for the Elo preference RM. Human agreement73/74% and held-out preference accuracy/scaling are relevant but do not certify a factual-success classifier or calibrated safety judge.",
+      "evidence_ids": [
+        "E004",
+        "E026",
+        "E027"
+      ],
+      "score_item": "E.measurement"
+    },
+    {
+      "id": "E12",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "PRM-PPO vs ORM-PPO vs ARPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "VAGEN reward vs ProRe reward"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.18596",
+          "note": "authors: UPE not validated inside RL; abstention may bias kept samples"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2605.06732#s3",
+          "note": "theory: systematic reward bias is not removed by more rollouts"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+      "applicable": true,
+      "status": "partial",
+      "reason": "KL-regularized reward optimization, independent human comparisons and overoptimization/bias discussion are present; no matched alternative reward or independent checker arm isolates learned reward design. Main chosen method avoids PPO.",
+      "evidence_ids": [
+        "E005",
+        "E010",
+        "E016",
+        "E018",
+        "E020"
+      ],
+      "score_item": "E.causality"
+    },
+    {
+      "id": "E13",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2404.07972",
+          "note": "authors: more red-teaming could reduce remaining false positives/negatives"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2602.00575",
+          "note": "authors: OSWorld-Verified scripts produce false negatives (multiple solutions)"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s2",
+          "note": "reviewer audit on correct and deliberate-failure trajectories"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2610.05001#s2",
+          "note": "detection rate plus non-rejection rate on legal alternatives"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No task-specific executable correctness checker supplies reward; human preference RM is the stated signal.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E14",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2509.23738",
+          "note": "authors: GPT-4o labels show significant gap to human experts"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No human/GPT-labelled GUI process-reward model: PPO value function is not a step-success verifier.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E15",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2501.12326",
+          "note": "authors: offline benchmark results may fail to capture online capability"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s3",
+          "note": "SOP R^2=0.934 vs AndroidControl-High 0.470 against AndroidWorld"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2602.09856",
+          "note": "authors: offline evaluation cannot assess alternative valid trajectories or recovery"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Final answers are generated after actual browsing and evaluated by humans; not teacher-forced offline step accuracy.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E16",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "3 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "3 runs, std 1.1%"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.10031",
+          "note": "3 repetitions"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2311.08649",
+          "note": "authors: monetary constraints prevented multiple runs"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2411.02337",
+          "note": "authors: random task generation raises variance across seeds"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Preference plots state ±1SE and labeler agreement is audited. Supplied complete text does not disclose exact ELI5 human-test question/comparison denominator or repeated training seeds; plots were not independently read for bar heights.",
+      "evidence_ids": [
+        "E013",
+        "E026"
+      ],
+      "score_item": "E.statistics"
+    },
+    {
+      "id": "E17",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "reports both 15 and 50 steps"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2",
+          "note": "5 actions vs 30 for some baselines (condition)"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2",
+          "note": "differing step caps; efficiency stratified"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s3",
+          "note": "budget exhaustion"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "average steps reported"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+      "applicable": true,
+      "status": "partial",
+      "reason": "All evaluated WebGPT policies cap browsing100actions and use temperature.8, but N differs by size and humans are not compute/time matched. These are reported preference/cost tradeoffs, not equal-budget universal policy comparisons.",
+      "evidence_ids": [
+        "E011",
+        "E019"
+      ],
+      "score_item": "E.cost"
+    },
+    {
+      "id": "E18",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2",
+          "note": "$ and seconds vs tree search"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s1",
+          "note": "wall-clock vs tree search"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s2",
+          "note": "gain vs N, plateau"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "best-of-N vs N"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Whole-run N=4/16/64 and inference-compute/Pareto curves are reported. Missing end-to-end latency, API/dollar costs and matched random-N/alternative-scorer controls. Real-execution tree search is not the natural terminal-state control for read-only retrieval and answer submission, but best-of64 still uses64 complete browsing runs.",
+      "evidence_ids": [
+        "E006",
+        "E016",
+        "E018",
+        "E019"
+      ],
+      "score_item": "E.cost"
+    },
+    {
+      "id": "E19",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2509.23738",
+          "note": "authors: AndroidWorld re-engineered; validated only by matching 32.8 baseline"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2",
+          "note": "modified scroll/type and +5 max steps disclosed"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.19723",
+          "note": "authors: 112 of 116 AndroidWorld tasks; one WebArena task per template"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "unscorable network/reCAPTCHA tasks disclosed"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No modified AndroidWorld/WebArena/Mind2Web-Live/OSWorld harness, all later than this2021paper.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E20",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2504.01382",
+          "note": "authors: websites evolve so tasks must be replaced"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2406.11896",
+          "note": "authors: frozen policies degrade over time due to site/app changes"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.09038",
+          "note": "authors: evolving websites complicate reproducibility"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim measured on live websites or live apps",
+      "applicable": true,
+      "status": "unmet",
+      "reason": "Live web access is explicit. No reproducible page snapshots, complete collection-date range, repeated-date/drift audit or frozen search corpus was found across full text and A–K; paper year is not a site-state version.",
+      "evidence_ids": [
+        "E021",
+        "E022",
+        "E024"
+      ],
+      "score_item": "E.holdout"
+    },
+    {
+      "id": "E21",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+      "applicable": true,
+      "status": "met",
+      "reason": "Observation/action privilege is disclosed: simplified text and indexed links, live search, quotes and past-action summary. Human interface is substantially matched with stated memory/scroll differences; static GPT-3/Reddit controls do not isolate retrieval from training. No screenshot-equivalence claim.",
+      "evidence_ids": [
+        "E002",
+        "E021",
+        "E022",
+        "E023"
+      ],
+      "score_item": "X"
+    },
+    {
+      "id": "E22",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543",
+          "note": "relative gain 7B +104% vs 32B +37%"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3",
+          "note": "2B/7B/72B"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.02345#s2",
+          "note": "seven backbones"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "7B and 72B"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that a training recipe generalises across policy backbones",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Training/selection studied at760M,13B,175B and data/N curves separate some scale effects, but only GPT-3 family and main frontier models change N with size. No architecture-family generality established.",
+      "evidence_ids": [
+        "E018",
+        "E019"
+      ],
+      "score_item": "E.holdout"
+    },
+    {
+      "id": "E23",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s3"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Long-form QA describes answer length, not a claimed long-horizon GUI benchmark;100action cap is documented separately.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E24",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2604.14262#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s3",
+          "note": "knowledge-free re-annotated instructions"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No claim of visual layout robustness: Readability strips layout and images become alt text.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E25",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "OSWorld-G refusal category"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s1",
+          "note": "infeasible tasks"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.04454",
+          "note": "authors: model cannot indicate uncertainty or refuse"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+      "applicable": true,
+      "status": "partial",
+      "reason": "End Nonsense/Controversial and question flags acknowledge unanswerable/inappropriate inputs; TruthfulQA and bias probes test false-premise risk. No calibrated refusal/ambiguity task split or comprehensive infeasible-task benchmark; empty answers from truncation count true/uninformative.",
+      "evidence_ids": [
+        "E014",
+        "E015",
+        "E020",
+        "E027"
+      ],
+      "score_item": "E.measurement"
+    },
+    {
+      "id": "E26",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.02907#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Human demonstrations/comparisons, not exploration-first reverse-task synthesis or learned world-model generation.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E27",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s1",
+          "note": "diminishing after ~100K screenshots"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "10%-100% no saturation"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.19723",
+          "note": "authors: performance saturates at larger data scales"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.02345#s1",
+          "note": "log-linear"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "memory-size scaling"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2608.05891",
+          "note": "authors: returns saturate after 20K rollouts"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No synthetic GUI grounding/transition/trajectory data-improvement claim; policy sampling for preference training is not the specified recipe.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E28",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "test-query search actions filtered from in-domain data"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1",
+          "note": "only 20 of 833 AndroidControl apps seen in synthesis"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "train on generated sites, evaluate on OSWorld/Online-Mind2Web/MobileWorld"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "OOD GUI-Odyssey and OSWorld"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No self-generated task/environment or retained experience-memory benchmark-gain claim; extra answer episodes reuse same question quotes only during training.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E29",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2506.08012",
+          "note": "authors: reflection data covers visual/grounding errors, not high-level planning"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No reflection/self-correction/recovery dataset versus BC claim.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E30",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2609.00048#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "intrinsic accuracy correlated with Mind2Web-Live SR"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.09856#s2",
+          "note": "AndroidWorld SR with lookahead"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s1",
+          "note": "downstream SR ablation"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No learned GUI next-state world model; browser fetches real pages.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E31",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s1",
+          "note": "H=1 best"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "dream length 4-5 best"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2410.13232",
+          "note": "authors: errors accumulate with search depth"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2402.01086",
+          "note": "authors: autoregressive error accumulation (robotics)"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Best-of-N uses real browsing, not imagined multi-step simulator rollouts.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E32",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "0% real underperforms SFT"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2608.05891",
+          "note": "authors: world-model-only data lowers ATP below base"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2403.03949#s3",
+          "note": "real co-training 2-3.5x over sim co-training (robotics)"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Training occurs against live browser content, not world-model/simulated GUI transitions.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E33",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2609.00048",
+          "note": "authors: VLM judges miss fine-grained task-state errors; more human-validated checks needed"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.14721#s1",
+          "note": "ranking checked under a second (Claude-Opus-4.1) judge"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "intrinsic metric correlated with executed SR"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No simulated-app/world-model fidelity judged by an LLM.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E34",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s1",
+          "note": "blind A/B realism; placeholder residual"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.03597#s1",
+          "note": "checkpoint ranking preserved vs real"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2403.03949#s1",
+          "note": "targeted twin vs generic assets"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2507.07067",
+          "note": "authors: residual sim-to-real gap is unavoidable after calibration"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Text-based browser is a restricted real-content interface, not a claimed digital twin substituting for a real app.",
+      "evidence_ids": [],
+      "score_item": "X"
+    },
+    {
+      "id": "E35",
+      "version": "manifest-bound-2026-10-21",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "OOD gains small"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.08164#s2"
+        }
+      ],
+      "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+      "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Quotes and summary persist within one episode only; no cross-task retrieved experience skill-memory claim.",
+      "evidence_ids": [],
+      "score_item": "X"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "text": "Best model outperforms human demonstrators and Reddit answers on ELI5.",
+      "setting": "175BBCbest64 with live text-browser and references, held-outELI5questions.",
+      "baseline_control": "Same-browser trained human demonstrators; separately highest-voted Reddit answers with citations stripped and new minimally instructed labelers.",
+      "selection_vs_test": "Disjoint train question sets and ELI5test named; temperature/N/stopping selected with human/RM development; live web overlap copying filters.",
+      "result": "56%preference versus demonstrators;69%versusReddit; ties count.5.",
+      "denominator": "Exact evaluation question/pair counts not stated in supplied text;6209/21548are training collection counts, not evaluation denominators.",
+      "evidence_ids": [
+        "E001",
+        "E007",
+        "E011",
+        "E012",
+        "E013",
+        "E024",
+        "E025"
+      ],
+      "counterevidence": [
+        "Preference not truth or universal GUI completion.",
+        "Human effort/style/reference access and best64compute differ.",
+        "Limited blinding/ecological-validity caveats remain."
+      ],
+      "allowed_conclusion": "Human-rater preference advantage for restricted held-outLFQA under stated protocols; not general human superiority or proven factual accuracy."
+    },
+    {
+      "claim_id": "C2",
+      "text": "Human feedback improves browser QA; rejection sampling is more effective than PPO in the tested regime.",
+      "setting": "Same175BBC initialization, optionalPPO,RMbestN and combination.",
+      "baseline_control": "Carefully tuned175BBC; RL; best64BC; combination.",
+      "selection_vs_test": "RMtrain≈16K/eval≈5.5K; same-family validationRM for scaling; shared scorer optimization risks acknowledged.",
+      "result": "Best64BC preferred68%versusBC; RL58%; no substantial addedRLbenefit atbestN.",
+      "denominator": "Human comparison pair counts not stated;N64wholebrowsingepisodes versus oneBCepisode.",
+      "evidence_ids": [
+        "E004",
+        "E005",
+        "E006",
+        "E008",
+        "E010",
+        "E016",
+        "E017",
+        "E018"
+      ],
+      "counterevidence": [
+        "N adds compute; no randomN/matched alternative ranker or remove-reference control.",
+        "Validation reward proxy shares biases; reward overoptimization acknowledged."
+      ],
+      "allowed_conclusion": "Reward-directed selection improves human preference relative to testedBC under higher inference compute; no proof PPO is necessary or serializer/reference design alone causes gain."
+    },
+    {
+      "claim_id": "C3",
+      "text": "WebGPT improves truthfulness relative to GPT-3, but still falls short of humans.",
+      "setting": "TruthfulQAadversarialshortquestions;WebGPTanswers truncated50tokens/removepartialsentence.",
+      "baseline_control": "GPT-3QA/helpfulprompts evaluated by calibrated automated metric; WebGPT human evaluated because answerstyleOOD.",
+      "selection_vs_test": "Question-distribution shift, not a withheld GUIenvironment transfer benchmark; not a pretraining-decontamination proof.",
+      "result": "75%true and54%true+informative forbestmodel stated in Introduction.",
+      "denominator": "74emptyanswers≈3%acrossWebGPToutputs aftertruncation; exact per-model denominator not inferred from absent figure.",
+      "evidence_ids": [
+        "E014",
+        "E015",
+        "E020",
+        "E027",
+        "E030"
+      ],
+      "counterevidence": [
+        "Mixed human/automated metrics and truncation complicate effect attribution.",
+        "Cited unreliable sources and paraphrase errors persist.",
+        "Reduced non-imitative hallucination was not directly tested."
+      ],
+      "allowed_conclusion": "Promising human-assessed truthfulness on this shiftedQAset, not a general truth or safety guarantee."
+    }
+  ],
+  "assessment": {
+    "evidence_level": "online",
+    "claim_support": "scoped",
+    "strongest_supported_claim": "Author-reported real text-browser execution followed by human evaluation supports held-outELI5preference gains and boundedTruthfulQAimprovement; best result usesBC+best64, not PPO.",
+    "metric_scope": "Online labels refer to actual read-only browsing with externally assessed final answers. QuestionOOD is not GUIenvironment transfer; no own reproduction.",
+    "retained_improvement": "No autonomous accepted-and-retained modification loop. BC/RM/PPOweights are training artifacts; episode quotes/summary and repeated answering episodes are not cross-task experience memory.",
+    "unresolved": [
+      "Historical original priority author-attributed only.",
+      "HeadlineELI5evaluation pair/question counts unavailable in supplied text.",
+      "ExactHTML-to-manifestversion identity not independently proven."
+    ],
+    "limitations": [
+      "Preference and support are not independently researched truth; factual hallucination reduction not directly tested.",
+      "References may cherry-pick and increase apparent authority; restricted actions are a safety argument, not an empirical attack-resistance audit.",
+      "No screenshot, form-filling, editing or general GUIcompetence demonstrated.",
+      "Training hyperparameters and inference-size/N tradeoffs disclosed, but live-page versions, latency/cost distributions, seed variance and isolatedinterface/referencecausality absent.",
+      "TruthfulQAtruncation creates true-but-uninformative emptyanswers;TriviaQAauxiliaryexperiment uses additional answer-extractor training and is not zero-shot.",
+      "Figures read via captions only; numerical curves not reconstructed."
+    ],
+    "reproduction": "Author reports only; no paper code, models, benchmark or browser environment executed by this seat."
+  },
+  "ratings": {
+    "G": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Important2021bottleneck is the mismatch between LFQAquality/factualsupport and ordinary training/automaticmetrics, with explicitly inherited retrieval,RLHF and earlier search-control lineage. Concrete residual and stakes clear, but nearest originals are author-attributed only, so not a fully independently established frontier/priority judgment.",
+      "evidence_ids": [
+        "E027",
+        "E028",
+        "E029"
+      ],
+      "counterevidence_ids": [
+        "E020"
+      ],
+      "search_scope": [
+        "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt: entire textual body, experiments, limitations, references and available appendices"
+      ]
+    },
+    "M": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Reconstructable observe–act–quote–answer loop plus preference reward and whole-run ranking fits evidence-seekingQA. It yields testable distinctions betweenBC,RL andbestN; assumption that preference/support reliably captures truth remains weak, and no isolating interface/referencecounterfactual.",
+      "evidence_ids": [
+        "E002",
+        "E003",
+        "E004",
+        "E005",
+        "E006"
+      ],
+      "counterevidence_ids": [
+        "E020",
+        "E027"
+      ],
+      "search_scope": [
+        "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt: entire textual body, experiments, limitations, references and available appendices"
+      ]
+    },
+    "X": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "State summary,restrictedcommands,serialization,indexedtargets,referencegate,selection,persistence and stopping are explicit. Human instructions,three scales and failure boundaries disclosed. Limited read-only scope is honest, but loss of page semantics, invalid-command/recovery handling and preference scorer generalization leave conditions unresolved rather than a full universal chain.",
+      "evidence_ids": [
+        "E002",
+        "E003",
+        "E006",
+        "E011",
+        "E021",
+        "E022",
+        "E023"
+      ],
+      "counterevidence_ids": [
+        "E020"
+      ],
+      "search_scope": [
+        "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt: entire textual body, experiments, limitations, references and available appendices"
+      ]
+    },
+    "E.measurement": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Actual browsing followed by relevant human preference judgments,question/referenceprotocols,agreementaudit andhumanTruthfulQAscoring provide credible measurements of the original QA target. Not4because reference-supported preference is not independent truth, exact headline denominators absent and comparisonblinding/truncation caveats remain.",
+      "evidence_ids": [
+        "E001",
+        "E012",
+        "E013",
+        "E014",
+        "E026",
+        "E027",
+        "E030"
+      ],
+      "counterevidence_ids": [
+        "E015",
+        "E020"
+      ],
+      "search_scope": [
+        "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt: entire textual body, experiments, limitations, references and available appendices"
+      ]
+    },
+    "E.causality": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "Same-base tunedBC versusRL/bestN/combination separates some algorithm effects;BCtuning control is substantive. No matchedalternative reward/randomN/no-reference or remove-browser ablations; extra browsingcompute and sourceaccess plausibly explain part of gain. SharedRMscalingproxy cannot close causal attribution.",
+      "evidence_ids": [
+        "E016",
+        "E017"
+      ],
+      "counterevidence_ids": [
+        "E006",
+        "E018",
+        "E019"
+      ],
+      "search_scope": [
+        "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt: entire textual body, experiments, limitations, references and available appendices"
+      ]
+    },
+    "E.holdout": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "QuestiondisjointBC/RM/RL,held-outcomparisons andELI5test,explicit copyingfilters andOODTruthfulQA constrain leakage/scope. These are meaningfulholdouts forQA,not environmenttransfer; prebcontamination andliveweboverlap/siteversioncontrol remain unproved.",
+      "evidence_ids": [
+        "E007",
+        "E008",
+        "E014",
+        "E024"
+      ],
+      "counterevidence_ids": [
+        "E021"
+      ],
+      "search_scope": [
+        "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt: entire textual body, experiments, limitations, references and available appendices"
+      ]
+    },
+    "E.statistics": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "±1SE captions,agreement73/74%,data counts andtruncationfailuredenominator support partial statistical transparency. ExactELI5testpair/question counts andtrainingseedvariance absent across suppliedfulltext/appendices; no numericalcurvevalues inferred.",
+      "evidence_ids": [
+        "E013",
+        "E015",
+        "E025",
+        "E026"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt: entire textual body, experiments, limitations, references and available appendices"
+      ]
+    },
+    "E.cost": {
+      "status": "resolved",
+      "rating": 2,
+      "reason": "N4/16/64,100actioncap,threeparameter scales,hyperparameters andcomputePareto accounting state majorbudgetdrivers; labelingtakes≈15min/demo,10min/comparison. No fullwallclock/API/dollarcost/latencydistribution or equal-computehuman comparison, and N changeswithsize in mainfrontier.",
+      "evidence_ids": [
+        "E006",
+        "E011",
+        "E019",
+        "E025"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt: entire textual body, experiments, limitations, references and available appendices"
+      ]
+    }
+  },
+  "score": {
+    "raw": 70.0,
+    "display": 70.0,
+    "lower": 70.0,
+    "upper": 70.0,
+    "coverage": 1.0,
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "interpretation": "Independent seat judgment under the assigned hash-bound draft v2.2 weights; calibration changes require a new rubric version and affected-paper re-review."
+  },
+  "status": "reviewed",
+  "reason": "Complete supplied textual paper reviewed independently; evidence is scoped and author-reported, not a reproduction. Rubric version is hash-bound."
+}

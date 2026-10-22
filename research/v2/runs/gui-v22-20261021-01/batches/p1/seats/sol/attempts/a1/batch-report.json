@@ -1,0 +1,129 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p1",
+  "attempt_id": "a1",
+  "seat": "sol",
+  "assigned": 5,
+  "reviewed": 5,
+  "needs_fulltext": 0,
+  "needs_evidence": 0,
+  "out_of_scope": 0,
+  "outside_taxonomy": 0,
+  "schema_errors": [],
+  "schema_error_count": 0,
+  "model_type": "sonnet",
+  "actual_model": "gpt-6.1-sol",
+  "session_id": "681194da-49f5-4ad4-8eb4-573b45384076",
+  "receipt_ref": "/home/lingxufeng/.claude-kimi/projects/-home-lingxufeng-GUI/681194da-49f5-4ad4-8eb4-573b45384076.jsonl",
+  "input_hash": "27c3d4f26b56f3943ebb73731665de7b845b179ab70d27f6dcfa94cb495e6822",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "output_dir": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p1/seats/sol/attempts/a1",
+  "timestamp": "2026-10-21T17:34:38.654768+00:00",
+  "blockers": [],
+  "blind_review": {
+    "contamination": false,
+    "other_seat_or_aggregate_read": false,
+    "retired_judgments_read": false,
+    "other_batch_outputs_read": false
+  },
+  "records": [
+    {
+      "paper_key": "1802.08802",
+      "version": "1802.08802v1",
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p1/seats/sol/attempts/a1/1802.08802.json",
+      "sha256": "1e3f16c831eeff25ad79723f67f2c74a4fe5e09d3cf40e8a5188c99832518424",
+      "status": "reviewed"
+    },
+    {
+      "paper_key": "1909.00031",
+      "version": "1909.00031v2",
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p1/seats/sol/attempts/a1/1909.00031.json",
+      "sha256": "00979512e2bc07c49d77a0748a2832f8046cfadbd4313087f2457c2977925dc1",
+      "status": "reviewed"
+    },
+    {
+      "paper_key": "2005.03776",
+      "version": "2005.03776v2",
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p1/seats/sol/attempts/a1/2005.03776.json",
+      "sha256": "a8c04347660aa1c8dacabbb438dc35b083745f32ebf852e8b532449230c9941f",
+      "status": "reviewed"
+    },
+    {
+      "paper_key": "2103.16057",
+      "version": "2103.16057v2",
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p1/seats/sol/attempts/a1/2103.16057.json",
+      "sha256": "772b00402c851db3f38b4cc6b4ce4dddcc0a0ac0c8ae8aa9a12fb26f016563fa",
+      "status": "reviewed"
+    },
+    {
+      "paper_key": "2112.09332",
+      "version": "2112.09332v3",
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/p1/seats/sol/attempts/a1/2112.09332.json",
+      "sha256": "fcbb6f75227bbdd8165ae89da41e113e5df0787dff1bd29ea756648a8b86b0d5",
+      "status": "reviewed"
+    }
+  ],
+  "validation": {
+    "scope": "Attempt-local structural, source-binding and arithmetic checks only; no official external validator exists per BATCH_CONTRACT. Does not certify semantic truth, reproduce paper experiments or substitute for independent Opus aggregation.",
+    "all_input_asset_hashes_match": true,
+    "all_five_material_hashes_match": true,
+    "quoted_locator_bindings_checked": true,
+    "expectations_per_paper": 35,
+    "rating_items_per_paper": 8,
+    "weights_sum": 100,
+    "exact_manifest_set": true,
+    "rounding": "Python deterministic round(raw,1), nearest ties-to-even; internal raw unchanged. Spec specifies one decimal without a half-up convention.",
+    "negative_fixtures": [
+      {
+        "case": "wrong_original_parent",
+        "result": "rejected"
+      },
+      {
+        "case": "wrong_namespace",
+        "result": "rejected"
+      },
+      {
+        "case": "missing_expectation",
+        "result": "rejected"
+      },
+      {
+        "case": "unknown_with_point_score",
+        "result": "rejected"
+      },
+      {
+        "case": "nonexistent_quote",
+        "result": "rejected"
+      },
+      {
+        "case": "wrong_material_hash",
+        "result": "rejected"
+      },
+      {
+        "case": "wrong_model_seat",
+        "result": "rejected"
+      },
+      {
+        "case": "wrong_expectation_enum",
+        "result": "rejected"
+      },
+      {
+        "case": "wrong_score",
+        "result": "rejected"
+      }
+    ],
+    "aggregation_status": "not_performed; independent aggregate seat owns subsequent audit"
+  },
+  "limitations": [
+    "Manifest versions retained, but source headers are unversioned arXivHTML; exactHTML-to-version identity not independently verified. Source URL and version_verified=false preserved per paper.",
+    "Complete supplied textual papers read, including available appendices. Images/plots not independently inspected; numeric plot values never inferred.",
+    "Seq2Act AppendixBAlgorithm1–3 pseudocode bodies absent from render. Core equations, methods, datasets/results/training available; noncentral implementation limitation explicitly saved, not treated as evidence paper omitted them.",
+    "Historical nearest originals outside fixed bundle not fetched; author-attributed lineage and G-axis uncertainty recorded.",
+    "All empirical results author_report; no paper code, models, online benchmark or emulator executed.",
+    "Hash-bound draft_uncalibrated rubric used under controller clarification of parallel calibration/production. Changed anchors require new rubric version and affected-paper rereview."
+  ],
+  "local_corrections": [
+    "Before attempt close, atomically normalized challenged→challenged_with_evidence, completed required semantic field names and explicit condition statuses, and corrected WebGPT/WGE author attribution. No rating/score changed."
+  ],
+  "attempt_status": "complete"
+}

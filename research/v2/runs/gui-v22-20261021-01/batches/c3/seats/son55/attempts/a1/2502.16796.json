@@ -1,0 +1,1577 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c3",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "paper": {
+  "paper_key": "2502.16796",
+  "paper_id": "arXiv:2502.16796",
+  "title": "MobileSteward: Integrating Multiple App-Oriented Agents with Self-Evolution to Automate Cross-App Instructions",
+  "version": "2502.16796v1",
+  "claim_type": "system_method",
+  "central_claim": "提出自演化多智能体框架 MobileSteward：中心 StewardAgent（Dynamic Recruitment 生成调度图、Adjusted Evaluation 反思/传递信息）+ 多个 App 专属 StaffAgent（Assigned Execution），并以 Memory-based Self-evolution 从成功执行中累积 Staff Expertise / Task Guideline 记忆；在新建 CAPBench(500 条跨 App 指令)上优于单/多智能体基线。"
+ },
+ "provenance": {
+  "input_hash": "3a53a9b05139dc558c16026d9c92aba6c603593cded48db189b7c3080ebc16fb",
+  "rubric_version": "SCORE_SPEC v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": {
+   "taxonomy": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+   "conditions": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+  },
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_receipt_note": "worker has no session/receipt handle exposed; model name taken from system prompt",
+  "timestamp": "2026-10-21",
+  "blind_boundary_note": "No seat/aggregate/archive/old score read. research/patterns/assignments.jsonl was only grepped as a queue hint (truncated lines for 5 of 6 papers were displayed); its fit notes were not used as evidence and all pattern calls below were made from full text."
+ },
+ "materials": [
+  {
+   "material_id": "2502.16796",
+   "url": "https://arxiv.org/html/2502.16796v1",
+   "sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2502.16796.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Abstract",
+    "§1-§5",
+    "Tables 1-7",
+    "Algorithm 1 (header only)",
+    "References (skimmed)"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Figures (captions only); Fig. 5/6 numbers not in text",
+    "No appendix; prompts not included"
+   ]
+  },
+  {
+   "material_id": "2409.07429",
+   "url": "https://arxiv.org/html/2409.07429",
+   "sha256": "3b2c8ce934b2f2808d61d943bc9a44ddc21cecc25b6ff71d5dfb62d5a7d01518",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2409.07429.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Abstract/§1 grep for workflow induction; lineage only"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "reference paper read only by targeted grep for gap/lineage; not a full review"
+   ]
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "S001",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "Abstract",
+   "quote": "existing procedure-oriented agents struggle with cross-app instructions, due to the following challenges: (1) complex task relationships, (2) diverse app environment, and (3) error propagation and information loss in multi-step execution.",
+   "support_explanation": "作者 gap：跨 App 指令的三类困难",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S002",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§1",
+   "quote": "Although MobileAgent-v2 ( 51 ) follows the procedure-oriented idea to combine the Planning Agent, Decision Agent, and Reflection Agent at each execution step, its performance in solving cross-app instructions is still unsatisfactory.",
+   "support_explanation": "最近邻 MobileAgent-v2 及其局限（作者陈述）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S003",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§1",
+   "quote": "StewardAgent splits the instruction into app-oriented tasks and recruits related StaffAgents, then establishes the information flow among tasks to generate the scheduling graph.",
+   "support_explanation": "Dynamic Recruitment：按 App 分解+信息流调度图",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S004",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§3.5",
+   "quote": "The scheduling graph generated in the Dynamic Recruitment phase is a DAG, so we use topological sorting on the scheduling graph to assign tasks",
+   "support_explanation": "调度图为 DAG，拓扑排序执行",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S005",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§3.3",
+   "quote": "We adopt the AppAgent ( 25 ) to build StaffAgent, simplifying the action space as shown in the Table 1 .",
+   "support_explanation": "StaffAgent 基于 AppAgent（XML+截图标记）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S006",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§3.3",
+   "quote": "we emphasize its proficiency in that app and add a app description in the role-playing prompt",
+   "support_explanation": "App 专属化主要靠角色提示+记忆",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S007",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§1",
+   "quote": "StewardAgent evaluates the StaffAgent’s execution, provides reflection tips for errors or summarizes the results of correct execution to deliver the information and adjust the subsequent schedule.",
+   "support_explanation": "Adjusted Evaluation：Steward 对执行历史做评估/反思/结果传递",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S008",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§1",
+   "quote": "After StaffAgent successfully completes an assigned task, StewardAgent will summarize the execution process, extract the staff expertise and task guidelines, and update the memory.",
+   "support_explanation": "记忆写入仅在 Steward 判定成功后",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S009",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§4.1",
+   "quote": "In total, we constructed 500 cross-app instructions",
+   "support_explanation": "CAPBench 规模",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S010",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§4.1",
+   "quote": "we randomly select 2-4 apps from the candidate apps, and then prompt GPT-4 with the app information to analyze the existence of reasonable task associations and information transfer among the apps",
+   "support_explanation": "CAPBench 由模板+GPT-4 组装",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S011",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§4.1",
+   "quote": "We then ask the annotators to perform a human evaluation, eliminating invalid instructions.",
+   "support_explanation": "人工剔除无效指令",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S012",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§4.2.3",
+   "quote": "we sample 50 instructions from each complexity split of CAPBench for test and use the remaining instructions for prior self-evolution, we also update the memories during the test.",
+   "support_explanation": "记忆由同基准其余指令预演化并在测试期继续更新",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S013",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§4.2.3",
+   "quote": "we use the same base model to build StewardAgent and StaffAgents",
+   "support_explanation": "同一基座",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S014",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§4.2.3",
+   "quote": "to 80 for all of the baselines.",
+   "support_explanation": "基线总步数上限 80（MobileSteward 每个 StaffAgent 20，重试 3）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S015",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§4.2.2",
+   "quote": "Success Rate : To evaluate whether the instruction is completed.",
+   "support_explanation": "成功率仅给定义，未说明由谁/什么判定",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S016",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§4.1",
+   "quote": "we built a simulation environment with Pixel 8 Pro in Android Studio and used ADB to complete the interaction with the simulator.",
+   "support_explanation": "模拟器环境",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S017",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "Table 2",
+   "quote": "AppAgent ( 25 ) | GPT-4v | 0.00 | 0.11 | 0.31 | 0.50 | 0.62 | 0.88",
+   "support_explanation": "基线 AppAgent",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S018",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "Table 2",
+   "quote": "MobileAgent-v2 ( 51 ) | GPT-4o | 0.21 | 0.37 | 0.67 | 0.64 | 0.74 | 0.98",
+   "support_explanation": "最强基线",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S019",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "Table 2",
+   "quote": "MobileSteward | GPT-4o | 0.59 | 0.79 | 1.00 | 0.78 | 0.87 | 1.00",
+   "support_explanation": "本方法（GPT-4o）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S020",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "Table 2",
+   "quote": "MobileSteward | GPT-4v | 0.55 | 0.76 | 0.99 | 0.76 | 0.81 | 0.98",
+   "support_explanation": "本方法（GPT-4v）：SR 0.55 / Task 0.76",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S021",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "Table 3",
+   "quote": "MobileSteward | 0.55 | 0.81 | 0.99",
+   "support_explanation": "消融表的“完整”行：SR 0.55 但 Task Rate 0.81（与 Table 2 的 GPT-4v 行 0.76 不一致）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S022",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "Table 3",
+   "quote": "w/o Self-Evolution | 0.50 | 0.77 | 0.94",
+   "support_explanation": "去自演化",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S023",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "Table 3",
+   "quote": "w/o Assigned Execution | 0.44 | 0.71 | 0.98",
+   "support_explanation": "去分配执行（定义未说明）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S024",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "Table 3",
+   "quote": "w/o Adjusted Evaluation | 0.36 | 0.68 | 0.94",
+   "support_explanation": "去调整评估",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S025",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "Table 5",
+   "quote": "GPT-4o | - | 0.72 | 0.58 | 0.48",
+   "support_explanation": "Dynamic Recruitment 随 App 数的 SR（GPT-4o）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S026",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "Table 5",
+   "quote": "MobileSteward | Qwen-Vl | 9.6B | 0.28 | 0.12 | 0.06",
+   "support_explanation": "弱基座下 3/4 App 劣于 MobileAgent-v2(GPT-4o)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S027",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§4.5.4",
+   "quote": "the self-evolving staff expertise can achieve comparable results with hand-crafted",
+   "support_explanation": "自演化专长≈手写专长（图6，数值不在正文）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S028",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "Table 4",
+   "quote": "MobileSteward | 0.58 | 1.24 | 2249.09 | 0.40 | 0.11",
+   "support_explanation": "MobileAgentBench：SR 0.58 但 IOT 最高",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S029",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "Table 4",
+   "quote": "AppAgent † ( 25 ) | 0.40 | 1.29 | 1505.09 | 0.17 | 0.40",
+   "support_explanation": "基线数值取自外部论文（†）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S030",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "Table 6",
+   "quote": "MobileSteward | 22.06 | 9.13 | 2687.37",
+   "support_explanation": "效率：每任务动作/每动作 token",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S031",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "Table 6",
+   "quote": "MobileAgent-v2 | 39.60 | 11.52 | 3194.23",
+   "support_explanation": "对照",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S032",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§4.5.6",
+   "quote": "We evaluate MobileSteward on 50 tasks provided by 10 online users",
+   "support_explanation": "真人指令 50 条",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S033",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "§4.2.1",
+   "quote": "We add a home() action to complete the cross-app instructions.",
+   "support_explanation": "对基线的改动（披露）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "S034",
+   "material_id": "2502.16796",
+   "material_sha256": "103bb1db3c349fe7d9c37aa5a6b99ed1dfe6097e9f86d6fd053ee0651cead6ed",
+   "locator": "full text (no appendix)",
+   "quote": null,
+   "support_explanation": "全文查找：成功判定者/检查器、Steward 评估准确率、提示词、多次运行/置信区间、记忆内容示例与大小、App 描述是否手写——均未报告；材料无附录",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "S035",
+   "material_id": "2409.07429",
+   "material_sha256": "3b2c8ce934b2f2808d61d943bc9a44ddc21cecc25b6ff71d5dfb62d5a7d01518",
+   "locator": "Abstract/§2",
+   "quote": "AWM starts with a basic set of built-in actions and solves new tasks in a streaming manner, continuously in",
+   "support_explanation": "固定最近邻：Agent Workflow Memory 从成功经验归纳工作流入记忆（在线/离线），先于本文；本文未引用/比较",
+   "kind": "author_report"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "跨 App 指令的分解与调度（Dynamic Recruitment）",
+   "information": "Steward 仅见指令+Staff Expertise Memory(App 描述/专长)；不见屏幕",
+   "operation": "拆成 App 子任务，分析信息流，输出带数据依赖边的 DAG 调度图，按拓扑序分配",
+   "output": "DAG + 每节点任务",
+   "conditions": "需 App 描述与专长列表（手写或自演化）",
+   "feedback": "Adjusted Evaluation 可调整后续任务",
+   "selection_rule/data": "LLM 一次生成；2-shot 提示",
+   "persistence": "Staff Expertise Memory M_E",
+   "later_use": "后续指令的分解与招募",
+   "claimed_effect": "App Rate 由基线 ~0.3-0.67 提至 0.99-1.00；4-App 下 SR 0.48 vs MobileAgent-v2 0.14",
+   "failure_boundary": "弱基座（9.6B）在 3/4 App 下低于 MobileAgent-v2(GPT-4o)；歧义指令导致 App 选错",
+   "evidence_ids": [
+    "S003",
+    "S004",
+    "S025",
+    "S026",
+    "S032"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "App 专属执行与评估循环（Assigned Execution + Adjusted Evaluation）",
+   "information": "StaffAgent 见截图+XML、上游结果 R_j、反思提示 t_j、BM25 top-3 任务指南；Steward 见精简执行历史",
+   "operation": "StaffAgent 规划→逐步预测动作→摘要；Steward 评估成功/失败，失败给反思提示重试（最多 3 次），成功抽取结果并写入后续任务",
+   "output": "执行历史 H_j、结果信息 r_j",
+   "conditions": "动作空间 click/input/swipe/back/FINISH；每 StaffAgent 最多 20 步",
+   "feedback": "Steward 的评估（LLM，无外部真值）",
+   "selection_rule/data": "成功/失败由 Steward LLM 判定",
+   "persistence": "Task Guideline Memory M_G",
+   "later_use": "同 App 后续任务检索",
+   "claimed_effect": "w/o Assigned Execution SR 0.44，w/o Adjusted Evaluation 0.36（对 0.55）",
+   "failure_boundary": "Steward 评估准确率未测；“w/o” 的具体定义未给",
+   "evidence_ids": [
+    "S005",
+    "S006",
+    "S007",
+    "S022",
+    "S023",
+    "S024",
+    "S034"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "基于记忆的自演化",
+   "information": "Steward 对成功执行的总结",
+   "operation": "抽取 staff expertise m_e 与 task guideline m_g；Steward 决定是否更新 M_E；(T_j, m_g) 入 M_G",
+   "output": "更新的两个记忆",
+   "conditions": "仅当 Steward 判成功",
+   "feedback": "Steward 自评",
+   "selection_rule/data": "自评成功即写入；无外部验证、无淘汰规则说明",
+   "persistence": "M_E / M_G（大小与内容未示）",
+   "later_use": "350 条预演化指令 + 测试期持续更新（150 条测试）",
+   "claimed_effect": "SR 0.50→0.55；自演化专长≈手写专长",
+   "failure_boundary": "同基准同模板同 App；自评误判会写入错误指南",
+   "evidence_ids": [
+    "S008",
+    "S012",
+    "S022",
+    "S027",
+    "S034"
+   ]
+  }
+ ],
+ "retention_trace": {
+  "applicable": true,
+  "before": "空/手写的 Staff Expertise Memory 与 Task Guideline Memory（初始内容未说明）",
+  "proposed_change": "每个成功任务后抽取 (m_e, m_g)",
+  "selection_data_rule": "Steward LLM 的 SUCCESS 判定（无外部检查器/人工）；是否更新 M_E 由 Steward 决定",
+  "persisted_change": "M_E、M_G（BM25 检索 top-3）",
+  "later_tasks": "同 CAPBench 其余 350 条指令预演化 + 150 条测试指令（测试期仍更新）",
+  "measured_gain": "SR 0.50→0.55，Task 0.77→0.81，App 0.94→0.99（单次）",
+  "verdict": "仅为同分布 task improvement；retained improvement 未与“测试期更新”“同模板记忆泄漏”分离；无独立 improver 评测；基线未获同类记忆。"
+ },
+ "gap": {
+  "author_gap": "现有手机 agent 擅长单 App，跨 App 指令因任务关系复杂、App 环境多样、多步误差传播/信息丢失而失败（S001）。",
+  "checked_gap": "缺口存在且由基线在新基准上的近零 SR（AppAgent 0.00、MobileAgent 0.01，S017）体现，但基准由作者构建，缺口大小依赖 CAPBench 设计。最近邻 MobileAgent-v2 被比较；记忆演化近邻（MobileGPT、AutoDroid、AppAgent 文档）被提及，固定最近邻 AWM（先于本文，S035）从成功经验归纳工作流入记忆，本文未引用/比较。",
+  "lineage": {
+   "ancestors": [
+    "AppAgent（StaffAgent 基座）",
+    "MobileAgent / MobileAgent-v2（过程式多智能体）",
+    "AutoDroid/MobileGPT（经验记忆）",
+    "ChatDev/MetaGPT（角色分工）"
+   ],
+   "closest_adjacent": "MobileAgent-v2（流程导向）；AWM (2409.07429) 的工作流归纳记忆。",
+   "source_versions": {
+    "2409.07429": "html fixed sha256 3b2c8ce9..."
+   }
+  },
+  "residue": "跨 App 长程任务的信息传递与恢复在基线上几乎为 0；残余在于评估可靠性与记忆的泛化。",
+  "stakes": "用户跨 App 请求是真实刚需；错误评估会污染记忆。",
+  "method_response": "按 App 对象化分工、显式信息流 DAG、阶段性评估与记忆。",
+  "remaining_gap": "Steward 评估准确率；记忆跨 App/跨基准泛化；与带记忆基线（如 AWM 类）的公平对比；弱模型下的退化。",
+  "evidence_ids": [
+   "S001",
+   "S002",
+   "S017",
+   "S035",
+   "S034"
+  ],
+  "unresolved": [
+   "成功判定方式；CAPBench 与其他基准的重叠；AWM 类基线未比较"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "decompose_and_delegate",
+  "supporting": [
+   "adapt_via_conditioning"
+  ],
+  "matches": [
+   {
+    "main_id": "decompose_and_delegate",
+    "sub_id": "rs:C25",
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "1 在求解器能力换挡处划线": "按 App 划线（子任务由 App 专属 agent 完成）；“求解器”仍是 LLM/VLM，不是可验证的外部求解器",
+     "2 交接为类型化可验证工件": "DAG 调度图+结果文本；无外部可验证性，评估靠 LLM",
+     "3 单一载重机制+回落消融": "消融三个模块但未定义“回落到何基线”；调度图本身未消融",
+     "4 失败归因于结构原因": "三类困难与模块一一对应",
+     "5 复用资本/可获信号闭环": "有（记忆）；信号为自评"
+    },
+    "success/failure_checks": "success：结构性诊断；failure：全为 LLM 组件、无成本-边际对比、提示手工调向单一基准（部分命中）",
+    "evidence_ids": [
+     "S003",
+     "S004",
+     "S007",
+     "S022",
+     "S023",
+     "S024",
+     "S034"
+    ],
+    "reason": "操作为“分解→按 App 专才委派→结构化交接→评估回路”，与 decompose_and_delegate 相符；但交接工件无外部可验证性，故 partial，且不得因匹配加分。"
+   },
+   {
+    "main_id": "adapt_via_conditioning",
+    "sub_id": null,
+    "role": "supporting",
+    "fit": "weak",
+    "tactic_steps_checked": {
+     "以检索实例作条件，无参数更新": "BM25 top-3 任务指南作为演示注入 StaffAgent 提示"
+    },
+    "success/failure_checks": "无 C03 的统一上游调优；不选子卡",
+    "evidence_ids": [
+     "S008",
+     "S012"
+    ],
+    "reason": "记忆即上下文条件；弱。"
+   }
+  ],
+  "outside_taxonomy": false,
+  "reason": "最近原卡为 decompose_and_delegate（C25）。",
+  "executes_pattern": {
+   "decompose_and_delegate/rs:C25": "partial"
+  },
+  "resolves_problem": {
+   "cross-app instruction failure": "shown_in_authors_benchmark_only",
+   "error propagation": "not_isolated"
+  }
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "version": "taxonomy@sha256:430aa36290ec",
+  "matches": [
+   {
+    "namespace": "gui",
+    "main": "agent_loop_context_control",
+    "sub": "gui:C17",
+    "version": "taxonomy@sha256:430aa36290ec",
+    "fit": "good",
+    "condition_checks": [
+     {
+      "cond": "S1 每个角色在同基座下被移除",
+      "status": "partial",
+      "note": "去自演化/分配执行/调整评估已做；去 Steward 与调度图未做",
+      "evidence_ids": [
+       "S022",
+       "S023",
+       "S024"
+      ]
+     },
+     {
+      "cond": "S5 跨基座的层级收益",
+      "status": "partial",
+      "note": "Table 5 为招募随基座变化，未对每基座比较单体",
+      "evidence_ids": [
+       "S025",
+       "S026"
+      ]
+     },
+     {
+      "cond": "F1 反思/自检准确率未测、自宣告完成",
+      "status": "present",
+      "note": "Steward 评估无准确率",
+      "evidence_ids": [
+       "S034"
+      ]
+     },
+     {
+      "cond": "F3 弱基座退化",
+      "status": "present",
+      "note": "9.6B 下 3/4-App 低于 MobileAgent-v2(GPT-4o)，但基座不同",
+      "evidence_ids": [
+       "S026"
+      ]
+     },
+     {
+      "cond": "F4 每步成本未报告",
+      "status": "partial",
+      "note": "Table 6/4 有 A/T、T/A、IOT",
+      "evidence_ids": [
+       "S030",
+       "S031",
+       "S028"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "S003",
+     "S004",
+     "S022"
+    ],
+    "reason": "manager/worker + DAG 的通信中枢，操作一致。"
+   },
+   {
+    "namespace": "gui",
+    "main": "agent_loop_context_control",
+    "sub": "gui:C18",
+    "version": "taxonomy@sha256:430aa36290ec",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "cond": "S4 可见且可逆错误上的反思",
+      "status": "unknown",
+      "note": "未区分错误类型",
+      "evidence_ids": []
+     },
+     {
+      "cond": "F1 反思准确率",
+      "status": "present",
+      "note": "未测",
+      "evidence_ids": [
+       "S034"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "S007",
+     "S024"
+    ],
+    "reason": "Steward 对每个子任务执行历史评估并给反思；但为任务级而非动作级前后对比。"
+   },
+   {
+    "namespace": "gui",
+    "main": "experience_memory_retrieval",
+    "sub": "gui:C19",
+    "version": "taxonomy@sha256:430aa36290ec",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "cond": "F3 其他环境收益未隔离",
+      "status": "present",
+      "note": "记忆自同基准同 App 构建",
+      "evidence_ids": [
+       "S012"
+      ]
+     },
+     {
+      "cond": "F2 自评器未验证",
+      "status": "present",
+      "note": "Steward 自评成功才写入",
+      "evidence_ids": [
+       "S008",
+       "S034"
+      ]
+     },
+     {
+      "cond": "F5 蒸馏知识泄漏测试查询",
+      "status": "unknown",
+      "note": "测试期更新 + 同模板；泄漏程度未量化",
+      "evidence_ids": [
+       "S010",
+       "S012"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "S008",
+     "S012"
+    ],
+    "reason": "成功经验→指南/专长→检索注入；条件弱。"
+   }
+  ],
+  "unassigned": [],
+  "revision_proposals": []
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": "rs:C25",
+   "domain": {
+    "namespace": "gui",
+    "main": "agent_loop_context_control",
+    "sub": "gui:C17"
+   },
+   "operation_correspondence": "RS 的“分解→委派→结构化交接”↔ 领域 C17 的“manager 规划子目标、worker 执行并回报”。",
+   "required_conditions_and_differences": "RS 要求可验证工件，C17 同样指出 worker 自宣告完成是弱点；本文全用 LLM 评估。",
+   "evidence_ids": [
+    "S003",
+    "S004",
+    "S007",
+    "S034"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report execution-checked success rate on OSWorld (or OSWorld-Verified) for desktop computer-use claims, stating the step budget (15 vs 50 steps) and observation setting",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无桌面 OSWorld 主张。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report online success on AndroidWorld for mobile-agent claims, not only offline AndroidControl/AITW step metrics",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": true,
+   "status": "partial",
+   "reason": "使用真实 Android 模拟器上的在线交互评测（自建 CAPBench、SAPBench、MobileAgentBench），但未报告 AndroidWorld。",
+   "evidence_ids": [
+    "S016",
+    "S019",
+    "S028"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E03",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report success on WebArena (self-hosted, functional-correctness checkers) for web-agent training or planning claims; if the 165-task WebArena-Lite or a per-template subset is used, say so and justify it",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Evaluate live-web agents on Online-Mind2Web (human-validated, start URL given, no search engine) or Mind2Web-Live rather than only WebVoyager, where a naive search-and-click agent already solves 51% of sampled tasks",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report GUI grounding on ScreenSpot-Pro (high-resolution professional desktop) and ScreenSpot-v2, not only ScreenSpot v1, which saturates (7B and 72B indistinguishable)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare a new grounder against UGround(-V1-7B), Aguvis-7B/72B, OS-Atlas-7B and UI-TARS(-1.5) at matched backbone size",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare a native end-to-end GUI policy against UI-TARS(-1.5)-7B (or the same backbone's SFT-only model) and against an agentic framework (GPT-4o/o3 planner + specialised grounder such as UGround, Aria-UI, Jedi, GTA1)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E08",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For planner-grounder systems, hold the planner fixed and swap grounders (e.g. GPT-4o + UGround vs + Aguvis vs + Jedi), and report the planner alone",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare GUI online-RL methods against DigiRL, WebRL, filtered BC / AWR and an SFT-only model trained on the same data",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E10",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Validate an LLM/VLM success judge or outcome reward model against human labels on trajectories from agents not used to build it (agreement/accuracy, plus the resulting success-rate gap)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Steward LLM 对 StaffAgent 执行做成功/失败判定，用于重试与记忆写入；未与人工标签校验准确率。",
+   "evidence_ids": [
+    "S007",
+    "S008",
+    "S034"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E11",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report judge reliability separately for positive and negative verdicts (precision and NPV, or precision/recall per class), not only overall accuracy",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "无评估器正/负判决的分别可靠性。",
+   "evidence_ids": [
+    "S034"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E12",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "When a learned judge or PRM is the RL reward, show downstream policy gain against an alternative reward (rule/script checker, ORM vs PRM, another judge), and address reward hacking or bias",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Measure execution checkers (evaluation scripts) two-sidedly: false negatives on alternative valid solutions as well as false positives",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For PRMs or step-level verifiers, ablate the label source (human vs GPT-4o-generated step labels)",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Do not rest an agent capability claim on offline step accuracy (AndroidControl, Multimodal-Mind2Web, GUI Odyssey) alone; add an online benchmark or show the offline metric predicts online success",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "主指标为在线成功率；Step Rate 仅作辅助。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E16",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "温度 0 的单次运行，无多种子/置信区间；测试集 150 条。",
+   "evidence_ids": [
+    "S012",
+    "S034"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "partial",
+   "reason": "声明了步数上限，但不等：MobileSteward 每 StaffAgent 20 步/最多重试 3 次，基线总计 80 步；仅与 MobileAgent-v2 报告每任务动作数。",
+   "evidence_ids": [
+    "S014",
+    "S030",
+    "S031"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E18",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For inference-time search or best-of-N (simulated lookahead, verifier reranking), report cost/latency and the number of candidates, and compare against real-execution tree search where reset is possible",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Disclose and validate any modification to an online benchmark harness (re-implemented checkers, changed action implementations, dropped tasks, extra steps)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "applicable": true,
+   "status": "partial",
+   "reason": "披露对基线加 home() 动作；MobileAgentBench 基线数值为外部报告（†）；SAPBench 取自前人工作；CAPBench 评分由作者自建。",
+   "evidence_ids": [
+    "S033",
+    "S029"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E20",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For live-web results, state the evaluation date and handle site drift (replace outdated tasks, report blocked/CAPTCHA tasks)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "StaffAgent 用截图+XML，基线观测设置各异（AutoDroid 文本、AppAgent XML+截图等），未分开报告。",
+   "evidence_ids": [
+    "S005",
+    "S017"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E22",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report results across backbone sizes (e.g. 7B and 32B/72B), since gains from GUI data/RL recipes shrink with model size",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无训练配方；基座扫描见 Table 5（记入 C17 F3）。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E23",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Stratify online success by human reference step count (difficulty) and audit failure causes",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "applicable": true,
+   "status": "partial",
+   "reason": "按 App 数 2/3/4 分层报告 SR（图5/Table 5），但无失败原因审计。",
+   "evidence_ids": [
+    "S025"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E24",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Test grounding robustness under controlled perturbations (zoom, text size, window position/clutter, relational instructions) with matched pairs",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report refusal / infeasible-task behaviour (instructions with no valid target)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare a synthetic-trajectory recipe against an instruction-first / task-driven synthesis baseline with the same executor and similar data size",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Show a data-scaling curve (fraction or count of synthetic samples vs downstream score) and say where it saturates",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "记忆用同基准其余 350 条指令（同 14 个 App、同模板）构建，并在测试期继续更新；无不相交 App 的留出。",
+   "evidence_ids": [
+    "S010",
+    "S012"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E29",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Ablate error-correction/reflection data against filtered behaviour cloning at the same iteration count",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Evaluate a GUI world model by downstream agent success and closed-loop (multi-step, autoregressive) rollouts, not only teacher-forced one-step fidelity",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Ablate imagination / lookahead horizon, since world-model errors compound beyond 1 (lookahead) or about 5 (training) steps",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For training in a world model, include sim-only vs real-anchored vs SFT-only arms",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Back world-model or synthetic-environment fidelity scores with a second independent judge, human validation or executable checks, not a VLM judge from the same family as the training reward",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For a digital twin / simulated app used for training or evaluation, measure its realism and whether it preserves the ranking of agents or checkpoints seen in the real environment",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是提示式多智能体系统（无训练/合成数据/世界模型/RL），未提出该期望所针对的主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For memory/retrieval agents, show gains on environments other than those the memory was built from",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "MobileAgentBench 与在线用户指令上记忆是否启用、是否与构建环境重叠未说明。",
+   "evidence_ids": [
+    "S028",
+    "S032"
+   ],
+   "score_item": "E.holdout"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "MobileSteward 在 CAPBench 上显著优于单/多智能体基线（SR 0.59 vs MobileAgent-v2 0.21、AppAgent 0.00）",
+   "setting": "Pixel 8 Pro 模拟器；150 条测试（每个复杂度 50）；GPT-4o/4v；温度 0",
+   "baseline/control": "AutoDroid、AppAgent、MobileAgent、MobileAgent-v2（总步数 80；无同类记忆）",
+   "selection_vs_test": "记忆由同基准其余指令预演化+测试期更新；基线无",
+   "result/denominator": "0.59 vs 0.21（约 88 vs 32/150）；单次",
+   "evidence_ids": [
+    "S012",
+    "S014",
+    "S017",
+    "S018",
+    "S019",
+    "S020"
+   ],
+   "counterevidence": [
+    "S015",
+    "S034"
+   ],
+   "allowed_conclusion": "作者报告：在其自建基准上，带记忆的 MobileSteward 成功数远高于未获同类记忆的基线；归因于“App 对象化”还是“基准内记忆”无法分离。"
+  },
+  {
+   "claim_id": "C2",
+   "text": "三个模块与自演化均有贡献（去自演化 0.50、去分配执行 0.44、去调整评估 0.36，对 0.55）",
+   "setting": "CAPBench，GPT-4v",
+   "baseline/control": "各模块被移除（定义未说明）",
+   "selection_vs_test": "同 150 测试",
+   "result/denominator": "差距 5/11/19 个百分点（≈7/16/28 个任务）；单次",
+   "evidence_ids": [
+    "S021",
+    "S022",
+    "S023",
+    "S024"
+   ],
+   "counterevidence": [
+    "S020",
+    "S021"
+   ],
+   "allowed_conclusion": "方向一致的消融；但表3“完整”行 Task Rate 0.81 与表2 GPT-4v 行 0.76 不符，“w/o”含义不明。"
+  },
+  {
+   "claim_id": "C3",
+   "text": "自演化专长可与手写专长相当",
+   "setting": "图6（数值不在正文）",
+   "baseline/control": "手写专长",
+   "selection_vs_test": "同 CAPBench",
+   "result/denominator": "仅文字陈述",
+   "evidence_ids": [
+    "S027"
+   ],
+   "counterevidence": [
+    "S034"
+   ],
+   "allowed_conclusion": "仅为作者文字陈述，无可核对数值。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_note": "真实模拟器上的在线交互；但成功判定方式未报告→等级为暂定；记忆构建与评测同基准同 App，不可 transfer。",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "作者报告：在作者自建 CAPBench 的 150 条测试上，配备同基准记忆的 MobileSteward 成功数远高于未配记忆的基线；模块消融方向一致。",
+  "cannot_claim": [
+   "“app-oriented”设计本身带来增益（与记忆混杂）",
+   "自演化的留存/独立收益",
+   "Steward 评估可靠",
+   "对未见 App 的泛化"
+  ],
+  "unresolved": [
+   "成功判定者/检查器",
+   "Table2/3 Task Rate 不符",
+   "“w/o” 定义",
+   "步预算不等的影响"
+  ],
+  "reproduction_note": "全部为作者报告；本席仅核对表内算术。"
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "跨 App 指令是真实且未解的缺口，三类困难清楚，并以基线近零 SR 体现（S017）；最近邻 MobileAgent-v2 被比较，经验记忆近邻被提及。扣分：缺口量级依赖作者自建基准；固定近邻 AWM 的记忆归纳路线未被讨论（S035）；与 Mobile-Agent-E 等同期近邻未涉及。介于 2 与 4。",
+   "evidence_ids": [
+    "S001",
+    "S002",
+    "S017",
+    "S035"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "对象化分工（按 App）、显式信息流 DAG、阶段性评估、成功经验入记忆，与三类困难一一对位（S003/S004/S007/S008），且给出可检验预测（App 数增加时优势扩大，S025）。扣分：App 专属化主要靠提示+记忆而非不同能力；评估依赖未经验证的 LLM 自评；弱基座反例（S026）。逻辑可检验、假设未验证。=3。",
+   "evidence_ids": [
+    "S003",
+    "S004",
+    "S007",
+    "S008",
+    "S025",
+    "S026"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "算法与动作空间、参数（N_try=3、20 步）、检索（BM25 top-3）已给出；但无附录/提示词、App 描述与专长初始内容、记忆更新准则（“是否更新”如何判）、记忆淘汰与容量、失败时的回退/停止条件细节均缺（S034）。=2。",
+   "evidence_ids": [
+    "S005",
+    "S008",
+    "S012",
+    "S034"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "成功率/Task/App Rate 有定义，但“指令是否完成”由谁判定、如何判定在全文无报告（S015/S034），CAPBench 真值由作者模板+GPT-4+人工筛选；他人基准数值为外部转引（S029）。无法评估验证器可信度。=1。",
+   "evidence_ids": [
+    "S009",
+    "S010",
+    "S011",
+    "S015"
+   ],
+   "counterevidence_ids": [
+    "S034"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "有模块消融（S022-S024）且方向一致，招募随 App 数/基座的分析（S025）。但：基线无同类记忆且步预算/基座不一（S014、S018、S020）；表3“完整行”与表2 不一致（S020/S021）；“w/o”定义缺；调度图本身未被消融；自演化专长≈手写仅文字陈述（S027）。替代解释未排除。=2。",
+   "evidence_ids": [
+    "S022",
+    "S023",
+    "S024",
+    "S025"
+   ],
+   "counterevidence_ids": [
+    "S014",
+    "S021"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "记忆由同基准、同 14 个 App、同模板的其余指令构建，且测试期继续更新（S010/S012）；无不相交 App 或跨基准的留出；MobileAgentBench/在线用户集的记忆状态不明。=1。",
+   "evidence_ids": [
+    "S012",
+    "S032"
+   ],
+   "counterevidence_ids": [
+    "S010"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "给出测试分母（150）、复杂度分层；单次温度 0 运行，无方差；消融差距仅 7-28 个任务；无失败原因分层。=1。",
+   "evidence_ids": [
+    "S012",
+    "S025"
+   ],
+   "counterevidence_ids": [
+    "S034"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "报告每任务动作数与每动作 token 对 MobileAgent-v2 更低（S030/S031）；但在 MobileAgentBench 上 IOT 为表内最高（S028），无墙钟/美元，基线预算不等。=2。",
+   "evidence_ids": [
+    "S030",
+    "S031",
+    "S028"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 53.75,
+  "display": 53.8,
+  "lower": 53.75,
+  "upper": 53.75,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+ },
+ "status": {
+  "state": "reviewed",
+  "reason": "全文完整（无附录）；成功判定方式缺失作为 E.measurement 低分处理，不阻塞。"
+ },
+ "outside_taxonomy": false,
+ "readable_rationale": "MobileSteward 提出按 App 对象化的 Steward/Staff 多智能体与成功经验记忆；设计与跨 App 缺口对位清楚，作者自建基准上结果悬殊（0.59 vs 0.21）。但成功判定方式未报告，记忆由同基准同模板预演化且测试期仍更新、基线无记忆且步预算不等，Task Rate 在表2/表3 不一致，单次运行。故 claim_support=scoped，原始分 53.75（未校准草案）。"
+}

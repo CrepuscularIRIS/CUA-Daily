@@ -1,0 +1,1815 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p2",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "paper": {
+  "paper_key": "2303.17491",
+  "paper_id": "arXiv:2303.17491",
+  "title": "Language Models can Solve Computer Tasks",
+  "version": "2303.17491v3",
+  "claim_type": "system_method",
+  "claim_type_note": "提示式 LLM agent：在 MiniWoB++ 上闭环执行动作；另有推理任务实验作为辅助主张。",
+  "scope_note": null,
+  "central_claim": "预训练 LLM 通过“递归批评并改进(RCI)”的简单提示方案，并将动作采样分解为 task/state/agent 三层 grounding，只用每任务 2–3 个示例、无任务特定奖励，就能在 MiniWoB++ 上超过先前 LLM 方法，并超过 SL、RL 的聚合 SotA（仅次于使用字典输入的 CC-Net，且超过无字典 CC-Net 6%）；RCI 在有外部反馈时还提升推理任务。",
+  "central_claim_scope": "MiniWoB++ 约 54–55 个被选任务（排除 HTML 过长任务、未评拖拽/复制粘贴任务，且对 social-media/email 做了缩小）；闭源 gpt-3.5-turbo(主)/gpt-4(部分)；温度 0；每任务 2–3 个示例与逐任务提示定制；成功=环境正奖励；推理任务实验用真值标签停止循环。"
+ },
+ "provenance": {
+  "input_hash": "fed6b4a2d84803fc93183b9a9669ad578f4b1611b203548221a83913612b045e",
+  "rubric_version": "radar-score-v2.2 (draft_uncalibrated)",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "pattern_protocol_hash": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_cards_hash_note": "domain_cards_hash = sha256 of research/patterns/taxonomy.json (manifest asset domain_taxonomy); conditions hash given separately",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "corpus_hash": "ab81004336f12af0464893fc548cb5eba57552028d6a2431c2db1014ecf52cbc",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m] (self-reported from system prompt: Sonnet 5.5)",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_receipt_note": "No session id or receipt reference is exposed to this subagent; null by contract.",
+  "timestamp": "2026-10-21T17:18:30Z",
+  "input_drift_flag": true
+ },
+ "materials": [
+  {
+   "material_id": "M-2303.17491v3",
+   "url": "https://arxiv.org/html/2303.17491",
+   "version": "2303.17491v3",
+   "sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2303.17491.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Methods",
+    "3 Evaluation (3.1, 3.2.1-3.2.5)",
+    "4 Limitations",
+    "5 Discussion",
+    "Appendix B, C, D, E, F, G (Tables 5-18)"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Appendix D Listing 1 (regular expressions) and the bodies of the task/state/agent-grounding prompt templates are partially stripped in the text extraction (only fragments of Tables 6-9 remain)",
+    "Figures 1-10 are images; Figure 4/5/6 bars are not in text; numeric values taken only from stated text and Tables 1, 2, 17, 18"
+   ],
+   "note": "Complete for the argument; prompt bodies/regexes partially missing.",
+   "input_drift": {
+    "manifest_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+    "disk_sha256_at_report_time": "815acf33e253ec8359d8eaa0916a3374b84cb575ace2e089adafe603d07ac141",
+    "note": "The review was performed on the text whose sha256 equals the manifest value (verified by sha256sum before reading). After the review the file at fulltext_path was replaced (mtime 13:16 EDT; materials.jsonl now lists a new hash and a versioned URL). The refreshed render appears to include the Appendix prompt listings and duplicated paragraphs; it was NOT read in full and NOT used for any judgement. All evidence quotes in this record were re-checked and still occur verbatim in the refreshed file. The records stay bound to the manifest hash; the controller must re-pin the manifest (and give both seats the same input) or order a new attempt if the refreshed text is authoritative."
+   }
+  },
+  {
+   "material_id": "M-2305.11854v4",
+   "url": "https://arxiv.org/html/2305.11854",
+   "version": "2305.11854v4",
+   "sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2305.11854.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Sec 5 line 225; Appendix G Table 8 Average row"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "reviewed separately as its own paper"
+   ],
+   "note": "same-batch cross-reference (independent recomputation of RCI average; lineage)"
+  },
+  {
+   "material_id": "R-2307.13854",
+   "url": "https://arxiv.org/html/2307.13854",
+   "version": null,
+   "sha256": "896882a2c125ec2595dc2ed78f638950bc0b0a7c04c187bafa82c8174d7ecc62",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2307.13854.txt",
+   "material_status": "html",
+   "sections_read": [
+    "reference list line 522"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; consulted only for the listed lines (fact source for lineage/baseline cross-check, not judgement)"
+   ],
+   "role": "nearest_neighbor_reference",
+   "purpose": "later benchmark cites this paper"
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "E001",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Abstract; fulltext line 106",
+   "quote": "The RCI approach significantly outperforms existing LLM methods for automating computer tasks and surpasses supervised learning (SL) and reinforcement learning (RL) approaches on the MiniWoB++ benchmark.",
+   "support_explanation": "作者中心主张：RCI 优于已有 LLM 方法并超过 SL/RL（MiniWoB++）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E002",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Abstract; fulltext line 107",
+   "quote": "using only a handful of demonstrations per task rather than tens of thousands, and without a task-specific reward function",
+   "support_explanation": "作者主张：少量示例、无任务特定奖励。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E003",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Abstract; fulltext line 108",
+   "quote": "outperforming chain of thought (CoT) prompting with external feedback",
+   "support_explanation": "推理任务主张自带“with external feedback”限定。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E004",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 1; fulltext line 109",
+   "quote": "such as ensuring that generated actions are task-appropriate (task grounding)",
+   "support_explanation": "问题定位：LLM 键鼠动作需要任务/状态/agent 三种 grounding。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E005",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 1; fulltext line 109",
+   "quote": "admissible to be executed (agent grounding)",
+   "support_explanation": "三类 grounding 之三：agent grounding（可执行性）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E006",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 1; fulltext line 109",
+   "quote": "it requires expert data and a reward function for every task, it has not been shown to generalize to novel tasks in a few-shot setting",
+   "support_explanation": "作者 gap：SL+RL 需每任务专家数据与奖励。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E007",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 1; fulltext line 109",
+   "quote": "RCI works by first having the LLM generate an output based on zero-shot prompting. Then, RCI prompts the LLM to identify problems with the given output.",
+   "support_explanation": "RCI 定义：生成→批评→改进。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E008",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 1; fulltext line 109",
+   "quote": "we find that critiquing the state-grounding step is only necessary once",
+   "support_explanation": "状态 grounding 批评仅需一次（经验）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E009",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 2.1; fulltext line 115",
+   "quote": "The iterative process of RCI can be continued until specific conditions are satisfied, which could include receiving feedback from the environment",
+   "support_explanation": "迭代可由环境反馈等停止条件控制。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E010",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 2.2.1; fulltext line 124",
+   "quote": "we propose decomposing this action sampling into three reasoning steps each of which considers task grounding, state grounding, and agent grounding",
+   "support_explanation": "核心操作：把动作采样分解为三步 grounding。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E011",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 2.2.2; fulltext line 145",
+   "quote": "The implicit RCI is repeatedly run until the resulting action is executable, with a maximum loop count set to limit the number of iterations.",
+   "support_explanation": "agent grounding：循环直到动作可执行(正则校验)，上限 3。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E012",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 2.2.2; fulltext line 146",
+   "quote": "Empirical analysis on MiniWoB++ tasks suggests that setting the loop count to 3 yields optimal performance.",
+   "support_explanation": "循环次数 3 是在 MiniWoB++ 上调出来的。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E013",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.1; fulltext line 152",
+   "quote": "We observed that in the absence of this external feedback mechanism, the RCI process is prone to false negative critics, subsequently leading to a decrease in performance.",
+   "support_explanation": "推理任务：无外部反馈时 RCI 性能下降。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E014",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.1; fulltext line 152",
+   "quote": "terminating the loop once the output aligns with the ground-truth data",
+   "support_explanation": "推理任务：用真值标签决定停止（特权信息）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E015",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Appendix C.2; fulltext line 417",
+   "quote": "we use the correct label to decide when to stop the RCI loop",
+   "support_explanation": "附录再次确认标签反馈。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E016",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Table 1; fulltext line 987",
+   "quote": "Zero-Shot + RCI | 85.43 | 97.64 | 89.76 | 84.65 | 94.49 | 67.32 | 68.11 | 61.81",
+   "support_explanation": "带标签停止时 RCI 在八个推理数据集上的准确率。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E017",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Table 17; fulltext line 2011",
+   "quote": "Zero-Shot + RCI | 72.83 | 86.61 | 83.07 | 79.13 | 83.07 | 59.84 | 46.06 | 48.81",
+   "support_explanation": "无外部反馈时 RCI 在同八个数据集上更低（GSM8K 72.83 vs 零样本 77.95）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E018",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Table 17; fulltext line 2010",
+   "quote": "Zero-Shot | 77.95 | 94.48 | 88.58 | 80.70 | 86.61 | 60.23 | 64.56 | 48.42",
+   "support_explanation": "Table 17 零样本行：StrategyQA 48.42，而 Table 1 零样本行为 48.81（两处不一致）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E019",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Table 2; fulltext line 1004",
+   "quote": "Zero-Shot | 78.35 | 96.06 | 85.83 | 78.35 | 91.34",
+   "support_explanation": "Table 2 的零样本行与 Table 1 的不同（78.35 vs 77.95 等），论文未解释两个零样本基线的差异。",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E020",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.2.1; fulltext line 179",
+   "quote": "We employ a set of 55 tasks to enable fair comparisons with baselines",
+   "support_explanation": "选取 55 个任务（逐任务表中有值的是 54 个）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E021",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.2.1; fulltext line 181",
+   "quote": "certain commonly evaluated tasks in prior works are excluded due to the excessive length of HTML code for some UI components",
+   "support_explanation": "排除 HTML 过长任务（book-flight、choose-date 等）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E022",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Appendix C.3; fulltext line 423",
+   "quote": "While our agent has not been evaluated on tasks that necessitate additional actions, such as drag and copy & paste",
+   "support_explanation": "未评估需要拖拽/复制粘贴的任务，CC-Net 的 104 任务均值与之不可直接比较。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E023",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Appendix C.5; fulltext line 424",
+   "quote": "The quantity of randomly generated emails has been restricted to a range of three to six.",
+   "support_explanation": "对 social-media/email-inbox 任务做了缩小数量的修改以适配上下文长度。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E024",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.2.1; fulltext line 184",
+   "quote": "When the agent generates an unexecutable action following the implicit RCI step, it fails immediately.",
+   "support_explanation": "不可执行动作立刻判失败。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E025",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.2.2; fulltext line 191",
+   "quote": "However, a direct comparison with CC-Net is not possible since it uses dictionary-based typing actions.",
+   "support_explanation": "与 CC-Net 因字典输入不可直接比较。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E026",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.2.2; fulltext line 193",
+   "quote": "Thus, CC-Net (without dictionary-based action) in Figure 4(a) serves as our appropriate comparison and we outperform it by 6%.",
+   "support_explanation": "“超 CC-Net(无字典) 6%”的比较，数值取自 CC-Net 论文消融节。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E027",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.2.2; fulltext line 194",
+   "quote": "The performance data for CC-Net (with no dictionary-based action) is obtained from the ablation study section in their paper",
+   "support_explanation": "该对照数据取自 CC-Net 论文的消融，而非同任务集重跑。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E028",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.2.2; fulltext line 190",
+   "quote": "The sole model that surpasses our agent is the CC-Net",
+   "support_explanation": "承认 CC-Net 更高。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E029",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.2.2; fulltext line 202",
+   "quote": "We observed three main failure modes of our agent",
+   "support_explanation": "作者给出三类失败模式（长时程、多步推理、视觉渲染）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E030",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.2.3; fulltext line 208",
+   "quote": "requiring 120x fewer samples than WebN-T5-3B and 11,000x fewer samples than CC-Net",
+   "support_explanation": "样本量对比：示例数 120x/11000x 更少。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E031",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.2.3; fulltext line 206",
+   "quote": "our approach involves integrating two to three demonstrations into the prompt for in-context learning",
+   "support_explanation": "每任务 2–3 个示例入提示。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E032",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.2.4; fulltext line 212",
+   "quote": "We conducted a task grounding ablation by eliminating the plan sampling stage.",
+   "support_explanation": "消融方式：移除整个阶段而非仅移除“批评”。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E033",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.2.4; fulltext line 217",
+   "quote": "Our results indicate that each grounding contribution is essential to solving computer tasks, with each contributing almost equally to the overall success rate.",
+   "support_explanation": "三类 grounding 各自必要且贡献相近。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E034",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Appendix C.4; fulltext line 423",
+   "quote": "In ablation studies, we categorize the tasks based on the success rate achieved by our agent with gpt-3.5-turbo",
+   "support_explanation": "消融任务按 agent 自身成功率分三档共 9 个任务（用被测系统结果选任务）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E035",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Appendix C.1; fulltext line 411",
+   "quote": "a maximum token length of 256 and a temperature value of 0, indicating greedy decoding, are used",
+   "support_explanation": "贪心解码，温度 0。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E036",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Appendix C.1; fulltext line 412",
+   "quote": "All models are accessed through the OpenAI API between January 2023 and March 2023.",
+   "support_explanation": "闭源 API 访问时间窗，可复现性受限。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E037",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Appendix F.1; fulltext line 426",
+   "quote": "Consequently, we opt to exclude the state grounding step for this particular task.",
+   "support_explanation": "对 click-dialog-2 去掉 state grounding：逐任务提示/流程定制。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E038",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Appendix F.2; fulltext line 426",
+   "quote": "We find that including explanatory trajectories in the few-shot examples can significantly reduce the number of required few-shot examples.",
+   "support_explanation": "click-menu 通过“解释性示例”降低所需示例数：逐任务提示工程。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E039",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 5; fulltext line 238",
+   "quote": "Also, RCI is more expensive to run compared to approaches that just sample once from the LLM.",
+   "support_explanation": "作者承认 RCI 更贵；未量化。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E040",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 4; fulltext line 232",
+   "quote": "leaving the generalization ability of RCI to other models unexplored",
+   "support_explanation": "局限：仅在 InstructGPT-3+RLHF 系列模型上。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E041",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 4; fulltext line 236",
+   "quote": "The agent’s focus on short-term decisions overlooks the necessity for long-term strategy",
+   "support_explanation": "局限：长时程。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E042",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Appendix B.3; fulltext line 400",
+   "quote": "may not scale as effortlessly as ours because it requires task-specific success feedback",
+   "support_explanation": "作者对 Reflexion 的区分：RCI 不需要任务成功反馈。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E043",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Appendix B.3; fulltext line 407",
+   "quote": "our work is, to the best of our knowledge, the first to demonstrate the self-critiquing capability of LLMs only with implicit feedback",
+   "support_explanation": "“仅用隐式反馈的自批评”首创主张——与 Table 17 的表现矛盾。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E044",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Appendix Table 18; fulltext line 2023",
+   "quote": "TASK | Ours | Ours (w/ GPT-4) | WebN-T5-3B | CC-Net (SL + RL) | CC-Net (RL) | CC-Net (SL)",
+   "support_explanation": "逐任务表；本席据此重算：Ours(gpt-3.5) 在有值的 54 任务均值 0.906，CC-Net(SL+RL) 同任务 0.936；Ours 对有 GPT-4 的子集混合均值 0.940。",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E045",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix G Table 8 (WebGUM, same batch); fulltext line 1130",
+   "quote": "Average | 0.985 | 0.935 | 0.929 | 0.906 | 0.940 | 0.935 | 0.305 | 0.646 | 0.484 | 0.887 | 0.942",
+   "support_explanation": "同批 WebGUM 表的 Average 行独立复现 RCI 均值 0.906(gpt-3.5)/0.940(gpt-4)，且 Synapse 0.985 更高；任务集不同(54/63/…)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E046",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 5 (WebGUM, same batch); fulltext line 225",
+   "quote": "Moreover, WebGUM surpasses humans and recent LLM-based agents, such as RCI ( Kim et al., 2023 ) and AdaPlanner ( Sun et al., 2023 ) , even with GPT-4 ( OpenAI, 2023 ) .",
+   "support_explanation": "后继工作把 RCI(含 GPT-4) 当 ICL 基线（谱系，现实相关性）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E047",
+   "material_id": "R-2307.13854",
+   "material_sha256": "896882a2c125ec2595dc2ed78f638950bc0b0a7c04c187bafa82c8174d7ecc62",
+   "locator": "Sec 7 (WebArena references); fulltext line 522",
+   "quote": "Language models can solve computer tasks.",
+   "support_explanation": "WebArena 引用本文，作为后续 LLM web agent 前置。",
+   "kind": "author_report"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "动作采样流程：task grounding(计划) → state grounding(隐式 RCI) → agent grounding(隐式 RCI 循环至可执行)",
+   "information": "输入=任务文本、当前 HTML 状态、已执行指令历史、计划；2–3 个任务示例；无截图；无任务奖励；agent 规格以正则给出。",
+   "operation": "(1) 采样分步计划并做一次显式 RCI（批评-改进）；(2) 基于计划+状态采样“task-grounded”动作，再做一次隐式 RCI 得 state-grounded 动作；(3) 若动作不匹配正则，则隐式 RCI 循环直至匹配(上限 3)。",
+   "output": "符合正则的自然语言指令 → 由指令执行器转为键鼠。",
+   "conditions": "HTML 能放进上下文；任务多为短时程；闭源指令微调 LLM。",
+   "feedback": "仅 agent grounding 有外部可核查信号(正则可执行性)；task/state 的批评是模型自评，无外部验证。",
+   "selection_rule/data": "无候选选择；顺序迭代；循环次数/RCI 次数在 MiniWoB++ 上调出。",
+   "persistence": {
+    "status": "not_applicable",
+    "reason": "计划只作为回合内记忆(提示的一部分)，不跨回合保存，无改动留存。"
+   },
+   "later_use": {
+    "status": "not_applicable",
+    "reason": "同上"
+   },
+   "claimed_effect": "MiniWoB++ 54/55 任务均值 0.906(gpt-3.5)，GPT-4 部分任务更高；每个 grounding 都必要。",
+   "failure_boundary": "长时程(guess-number)、多步推理(tic-tac-toe)、视觉渲染(count-shape)、弹窗关闭；state grounding 在 click-dialog-2 有害；长 HTML 任务被排除。",
+   "evidence_ids": [
+    "E010",
+    "E011",
+    "E012",
+    "E008",
+    "E029",
+    "E037",
+    "E021"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "推理任务上的 RCI：批评-改进最多两轮，以真值标签决定停止",
+   "information": "特权信息：真值答案（标签反馈）决定循环是否结束。",
+   "operation": "零样本/CoT 回答 → 批评 → 改进（最多 2 次），标签匹配即停。",
+   "output": "最终答案",
+   "conditions": "需要外部反馈才能避免“假阴性批评”。",
+   "feedback": "真值标签（oracle）。",
+   "selection_rule/data": "输出与真值一致即停。",
+   "persistence": {
+    "status": "not_applicable",
+    "reason": "单题内循环。"
+   },
+   "later_use": {
+    "status": "not_applicable",
+    "reason": "同上"
+   },
+   "claimed_effect": "GSM8K 77.95→85.43 等八个数据集全面提升；与 CoT 有协同。",
+   "failure_boundary": "无标签时 RCI ≤ 零样本（GSM8K 72.83）；",
+   "evidence_ids": [
+    "E013",
+    "E014",
+    "E015",
+    "E016",
+    "E017"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "情境化：每任务 2–3 个示例 + 逐任务提示/流程定制",
+   "information": "示例来自同一任务模板；包含解释性示例（click-menu）。",
+   "operation": "示例置于提示；个别任务关闭 state grounding 或加解释。",
+   "output": "提示。",
+   "conditions": "任务模板已知。",
+   "feedback": {
+    "status": "not_applicable",
+    "reason": "提示设计"
+   },
+   "selection_rule/data": "作者人工选定，细节(选哪几个示例、何时定制)未系统说明。",
+   "persistence": {
+    "status": "not_applicable",
+    "reason": "提示设计"
+   },
+   "later_use": {
+    "status": "not_applicable",
+    "reason": "提示设计"
+   },
+   "claimed_effect": "极低样本复杂度（120× / 11000× 更少样本）。",
+   "failure_boundary": "示例与测试同任务模板，泛化到未见任务未测。",
+   "evidence_ids": [
+    "E031",
+    "E030",
+    "E038",
+    "E037"
+   ]
+  }
+ ],
+ "retention_trace": {
+  "applicable": false,
+  "reason": "没有跨回合/跨任务留存；plan 只是回合内提示的一部分；RCI 的批评-改进不更新任何持久状态，故 before→selection→persistence→later 链不适用。"
+ },
+ "gap": {
+  "author_gap": "先前最好的键鼠动作方法是需要大量专家演示和任务奖励的 SL/RL；LLM 直接产生键鼠动作困难，因为动作要同时满足任务相关、状态可行与可执行。",
+  "checked_gap": "CC-Net 的数据量(2.4M 演示、6300 小时)在同批 P1 原文中核实；因此“SL+RL 需要海量数据”成立。WebN-T5(12K 演示微调)、ReAct、Reflexion、Self-Refine、SayCan 等的原文不在固定包内，只能用作者描述。作者强调“仅用隐式反馈的自批评首创”，但其 Table 17 显示无标签时 RCI 在推理任务上不优于零样本，这削弱了该新颖性主张；计算机任务上的“隐式反馈”由正则可执行性提供外部校验。",
+  "lineage": [
+   "WebN-T5(Gur 2022，LLM 微调 12K 演示) / CC-Net(2202.08137，同批) → RCI(本文，提示式) → WebGUM(2305.11854，同批，微调多模态 Flan-T5) 与 AdaPlanner/Synapse 提示式后继。"
+  ],
+  "closest_adjacent": [
+   {
+    "work": "CC-Net (BC+RL)",
+    "source_version": "2202.08137v2 (same batch, pinned)",
+    "solved": "104 任务人类均值 0.935",
+    "residual": "2.4M 演示+字典输入",
+    "evidence_ids": [
+     "E025",
+     "E028",
+     "E030"
+    ]
+   },
+   {
+    "work": "WebN-T5-3B (LLM fine-tune)",
+    "source_version": "numbers via 2303.17491v3 Table 18; original not in pinned bundle",
+    "solved": "12K 演示微调",
+    "residual": "需要演示微调",
+    "evidence_ids": [
+     "E030"
+    ]
+   },
+   {
+    "work": "Reflexion / Self-Refine / ReAct",
+    "source_version": "as described in 2303.17491v3 App B.3; originals not in pinned bundle",
+    "solved": "需要任务成功反馈或不同反馈形式",
+    "residual": "作者的区分点(隐式反馈)被自身 Table 17 削弱",
+    "evidence_ids": [
+     "E042",
+     "E043",
+     "E017"
+    ]
+   }
+  ],
+  "residue": "长时程、多步推理、视觉渲染、长 HTML 上下文、动作空间窄(点击+键入)、闭源模型依赖、成本。",
+  "stakes": "证明无需训练/任务奖励的 LLM 可在 MiniWoB++ 上逼近 SL+RL，使原型成本大幅降低；但 benchmark 为合成小部件，且有逐任务提示定制。",
+  "method_response": "三层 grounding + 针对性 RCI，使 LLM 的开放生成动作满足任务、状态、可执行性；示例极少。",
+  "remaining_gap": "(1) 与 CC-Net(SL+RL) 同任务仍低 3 个百分点；(2) 自评型批评的可靠性未解（无标签时降级）；(3) 逐任务定制的泛化；(4) 长时程。",
+  "current_relevance": "后继工作(WebGUM)在更宽任务集上把 RCI 作为 ICL 基线；WebArena 引用本文。这是谱系位置。",
+  "evidence_ids": [
+   "E006",
+   "E004",
+   "E005",
+   "E025",
+   "E028",
+   "E042",
+   "E043",
+   "E017",
+   "E046",
+   "E047"
+  ],
+  "unresolved": [
+   "WebN-T5/ReAct/Reflexion/Self-Refine 原文不在固定包内；“首创”主张无独立查新。"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "decompose_and_delegate",
+  "supporting": [
+   "adapt_via_conditioning"
+  ],
+  "sub_pattern": "C25",
+  "outside_taxonomy": false,
+  "reason": "核心操作是把单次动作采样拆为 task/state/agent 三步，各步用不同提示与上一步产物作为结构化中间物，并在最后一步用正则可执行性这一外部可核查信号闭环(循环至可执行)，对应 decompose_and_delegate/C25“中间物 + 回到模型自身 verify-and-revise 环”。匹配为 partial：委托对象仍是同一个 LLM，只有 agent grounding 有机器可检查的信号；task/state 批评是模型自评；C25 强调的“外部 solver/可检验成果”不足，且推理任务的结果恰好说明自评不可靠。",
+  "matches": [
+   {
+    "main_id": "decompose_and_delegate",
+    "sub_id": "C25",
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "1_name_structural_bottleneck_and_responsibility_boundary": "partial(三类 grounding 失败被命名，但“可靠 solver”边界只在可执行性)",
+     "2_machine_checkable_artifact": "partial(动作文本可用正则检查；计划/状态动作不可机检)",
+     "3_close_loop_with_verifiable_signal_mid_construction": "partial(agent grounding 的正则环 ✓；task/state 无外部信号)",
+     "4_ablate_verification_to_show_load_bearing": "partial(分别去掉三类 grounding，9 个任务；未单独去掉“批评”内容)",
+     "5_account_for_cost_and_privileged_signal": "partial(推理任务诚实披露标签反馈；成本未量化)"
+    },
+    "success_checks": {
+     "boundary_at_seam_of_solver_competence": "partial",
+     "typed_verifiable_handoff": "partial(仅最后一步)",
+     "single_load_bearing_mechanism_isolated": "partial",
+     "baseline_failure_named_structurally": "met(task/state/agent grounding)",
+     "by_products_accumulated": "absent",
+     "feedback_from_obtainable_signals": "partial(可执行性 ✓；推理任务用 oracle 标签)"
+    },
+    "failure_checks": {
+     "assembly_of_off_the_shelf_prompts": "partial",
+     "hand_tailored_to_narrow_benchmark": "present(逐任务关闭/加解释/缩小任务)",
+     "delegated_cost_unmeasured": "present(成本不量化)",
+     "no_ablation_isolating_mechanism": "partial",
+     "marginal_over_end_to_end": "not_present(显著高于 LLM 直接生成基线，作者报告)"
+    },
+    "evidence_ids": [
+     "E010",
+     "E011",
+     "E032",
+     "E033",
+     "E014",
+     "E039"
+    ],
+    "reason": "三层 grounding 作为分解，最后一层外部可检查，但委托不彻底。"
+   },
+   {
+    "main_id": "adapt_via_conditioning",
+    "sub_id": null,
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "C03_note": "C03 是 canonical conditioning schema 跨异构任务 + 上游阶段或检索 substrate；RCI 的示例是逐任务 2–3 个同模板示例，无统一 schema 跨任务训练、无检索、无类别级留出，所以不选 C03 子卡。"
+    },
+    "success_checks": {
+     "structural_holdout": "unmet",
+     "conditioning_ablation": "unmet(未比较无示例/不同示例)",
+     "cheaper_baseline": "partial(与 LLM 直接生成对比，但不含更长上下文/最近邻)"
+    },
+    "failure_checks": {
+     "claims_no_training_while_exposed": "unknown(MiniWoB 公开，GPT 预训练可能见过)",
+     "recipe_not_generic": "present(逐任务定制)"
+    },
+    "evidence_ids": [
+     "E031",
+     "E030",
+     "E038"
+    ],
+    "reason": "用 2–3 个示例在推理时替代微调，是 adapt_via_conditioning 的核心卖点（样本复杂度），但不是 RCI 的新贡献。"
+   }
+  ],
+  "considered_not_chosen": [
+   {
+    "main_id": "self_supervised_signal_engineering",
+    "why_not": "RCI 的批评是推理时自评，不生成训练信号或数据。"
+   },
+   {
+    "main_id": "assumption_audit_and_pivot",
+    "why_not": "没有对形式化假设的 pivot。"
+   }
+  ],
+  "executes_pattern": {
+   "value": "partial",
+   "reason": "分解与最后一层外部可核查闭环执行；分解的“委托”仍是同一 LLM，且缺少把批评内容与阶段拆分分开的消融。"
+  },
+  "resolves_problem": {
+   "value": "partial",
+   "reason": "在被选 54 个 MiniWoB++ 任务上，LLM 键鼠 agent 接近 SL+RL（0.906 vs 0.936 同任务），部分关闭了“LLM 难以做键鼠动作”问题；对“隐式自批评可靠”这一核心主张，Table 17 反证；对未见任务的泛化未测。",
+   "evidence_ids": [
+    "E044",
+    "E028",
+    "E017",
+    "E021"
+   ]
+  }
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "agent_loop_context_control",
+    "sub": "C20",
+    "version": "taxonomy@430aa362",
+    "fit": "partial",
+    "operation": "每步固定的多阶段提示模式（计划→状态接地动作→格式接地动作，带批评），结合历史指令作为上下文；与 C20(observe-think-act)相近，但 RCI 的批评发生在执行前，且不使用动作后观察反馈。",
+    "condition_checks": [
+     {
+      "id": "S1",
+      "status": "partial",
+      "note": "各 grounding 阶段被移除并报告下降，但只在 9 个任务/gpt-3.5 上",
+      "evidence_ids": [
+       "E032",
+       "E033",
+       "E034"
+      ]
+     },
+     {
+      "id": "S2",
+      "status": "unmet",
+      "note": "历史以全量指令列表给出，没有窗口/保真度消融",
+      "evidence_ids": [
+       "E031"
+      ]
+     },
+     {
+      "id": "S4",
+      "status": "unmet",
+      "note": "没有基于前后观察的动作后反思；批评发生在执行前",
+      "evidence_ids": [
+       "E010"
+      ]
+     },
+     {
+      "id": "F1",
+      "status": "present",
+      "note": "批评/自检准确率未测；推理任务显示“假阴性批评”",
+      "evidence_ids": [
+       "E013",
+       "E017"
+      ]
+     },
+     {
+      "id": "F4",
+      "status": "partial",
+      "note": "有阶段移除消融，但每步成本(调用数/token)未报告",
+      "evidence_ids": [
+       "E039"
+      ]
+     },
+     {
+      "id": "F6",
+      "status": "present",
+      "note": "在 guess-number、tic-tac-toe 上出现循环/不会前瞻失败，评测为小规模合成套件",
+      "evidence_ids": [
+       "E029",
+       "E041"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E010",
+     "E033",
+     "E029"
+    ]
+   },
+   {
+    "main": "planner_grounder_interface",
+    "sub": "C14",
+    "version": "taxonomy@430aa362",
+    "fit": "weak",
+    "operation": "以正则定义 5 类自然语言动作(type/press/clickoption/movemouse/clickxpath)，要求输出匹配后才执行；C14 是“简化提示式 agent 动作空间”，但本文并未做动作裁剪与前后对照。",
+    "condition_checks": [
+     {
+      "id": "S5",
+      "status": "partial",
+      "note": "接口匹配 HTML 可用结构(XPath)，但无与坐标/元素 id 动作对比",
+      "evidence_ids": [
+       "E010"
+      ]
+     },
+     {
+      "id": "F5",
+      "status": "present",
+      "note": "动作空间仅限点击与键入，无拖拽/复制粘贴；作者承认限制",
+      "evidence_ids": [
+       "E022",
+       "E040"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E011",
+     "E022"
+    ]
+   }
+  ],
+  "unassigned": [
+   "执行前自批评-改进环(RCI)：批评由同一模型产生，无外部信号——不在现有领域卡内（最近的 C18 要求前后观察）。"
+  ],
+  "revision_proposals": [
+   {
+    "status": "case_candidate_not_checked",
+    "note": "“执行前递归自批评+可执行性正则闸”可记为 agent_loop_context_control 下的 case 候选；目前仅 RCI 一篇，需第二篇独立全文才能升级。"
+   }
+  ]
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": "C25",
+   "domain": {
+    "namespace": "gui",
+    "main": "agent_loop_context_control",
+    "sub": "C20"
+   },
+   "operation_correspondence": "RS：分解为子问题，以结构化中间物交接，并回到模型自身 verify-and-revise；GUI：计划→动作→格式化动作的每步固定链。",
+   "conditions_and_differences": "领域卡 C20 的成功条件(阶段移除消融、历史窗口消融)部分满足；C25 的外部可检验中间物仅最后一级。",
+   "evidence_ids": [
+    "E010",
+    "E011",
+    "E033"
+   ]
+  },
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": "C25",
+   "domain": {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "C14"
+   },
+   "operation_correspondence": "RS 中间物可检验 ↔ GUI 正则定义的受限动作空间使输出可检验。",
+   "conditions_and_differences": "C14 要求证明动作空间简化的收益；本文无简化前后对照。",
+   "evidence_ids": [
+    "E011",
+    "E022"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "text": "Report execution-checked success rate on OSWorld (or OSWorld-Verified) for desktop computer-use claims, stating the step budget (15 vs 50 steps) and observation setting",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「桌面(Ubuntu/Windows)端到端 computer-use 成功率主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "text": "Report online success on AndroidWorld for mobile-agent claims, not only offline AndroidControl/AITW step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「Android/移动 GUI agent 任务成功率主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "text": "Report success on WebArena (self-hosted, functional-correctness checkers) for web-agent training or planning claims; if the 165-task WebArena-Lite or a per-template subset is used, say so and justify it",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「训练/数据合成/规划方法在自托管站点(WebArena 类)上提升 web agent」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。（补充：MiniWoB++ 为合成小部件，WebArena 晚于本文；本文也是提示方法而非训练主张。）",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "text": "Evaluate live-web agents on Online-Mind2Web (human-validated, start URL given, no search engine) or Mind2Web-Live rather than only WebVoyager, where a naive search-and-click agent already solves 51% of sampled tasks",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「真实 live-web 站点上的 web agent 成功率主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "text": "Report GUI grounding on ScreenSpot-Pro (high-resolution professional desktop) and ScreenSpot-v2, not only ScreenSpot v1, which saturates (7B and 72B indistinguishable)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「截图到坐标的 GUI grounding 模型/数据配方主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "text": "Compare a new grounder against UGround(-V1-7B), Aguvis-7B/72B, OS-Atlas-7B and UI-TARS(-1.5) at matched backbone size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「新 grounder 优于已有 GUI grounder 的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "text": "Compare a native end-to-end GUI policy against UI-TARS(-1.5)-7B (or the same backbone's SFT-only model) and against an agentic framework (GPT-4o/o3 planner + specialised grounder such as UGround, Aria-UI, Jedi, GTA1)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「训练的端到端 GUI agent 模型在线成功率提升主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "text": "For planner-grounder systems, hold the planner fixed and swap grounders (e.g. GPT-4o + UGround vs + Aguvis vs + Jedi), and report the planner alone",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「接地组件(或 planner–grounder 拆分)提升 agent 任务成功的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "text": "Compare GUI online-RL methods against DigiRL, WebRL, filtered BC / AWR and an SFT-only model trained on the same data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「RL 算法(在线/离线转在线/半在线/基于模型)提升 GUI/web agent 的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "text": "Validate an LLM/VLM success judge or outcome reward model against human labels on trajectories from agents not used to build it (agreement/accuracy, plus the resulting success-rate gap)",
+   "applicable": true,
+   "status": "partial",
+   "reason": "RCI 的“批评”本质是模型自评(反射器)；其可靠性只通过 Table 17 间接显示(无标签时更差)，没有与人类/真值对批评准确率的直接校验。",
+   "evidence_ids": [
+    "E013",
+    "E017"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "text": "Report judge reliability separately for positive and negative verdicts (precision and NPV, or precision/recall per class), not only overall accuracy",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「GUI agent judge/PRM/ORM 足够可靠可作奖励或评测的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "text": "When a learned judge or PRM is the RL reward, show downstream policy gain against an alternative reward (rule/script checker, ORM vs PRM, another judge), and address reward hacking or bias",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「学习型奖励模型/验证器改进 GUI agent RL 训练的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "text": "Measure execution checkers (evaluation scripts) two-sidedly: false negatives on alternative valid solutions as well as false positives",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「奖励来自逐任务执行检查器/评测脚本的 benchmark、合成环境或 RL 流水线」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "text": "For PRMs or step-level verifiers, ablate the label source (human vs GPT-4o-generated step labels)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「GUI 步级 PRM 改进 RL 或 best-of-N 的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "text": "Do not rest an agent capability claim on offline step accuracy (AndroidControl, Multimodal-Mind2Web, GUI Odyssey) alone; add an online benchmark or show the offline metric predicts online success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「以离线 teacher-forced 步级指标衡量 agent 能力提升的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "未报告每任务回合数、均值散布或置信区间，温度 0 但环境随机。",
+   "evidence_ids": [
+    "E035"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "正文与附录未给出最大步数；与 CC-Net 等基线的步数上限是否一致无法核查。",
+   "evidence_ids": [],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "text": "For inference-time search or best-of-N (simulated lookahead, verifier reranking), report cost/latency and the number of candidates, and compare against real-execution tree search where reset is possible",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "RCI 是推理时多次调用的迭代改进(批评+改进+最多 3 次循环)，但调用次数/token/延迟未报告，也无与简单重采样的成本-收益对比；作者仅承认更贵。",
+   "evidence_ids": [
+    "E039",
+    "E011"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "text": "Disclose and validate any modification to an online benchmark harness (re-implemented checkers, changed action implementations, dropped tasks, extra steps)",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Appendix C.5 披露了对 social-media/email-inbox 的缩小修改，Appendix C.3 披露排除任务；但基线未在修改版上重跑，也未验证修改不改变难度。",
+   "evidence_ids": [
+    "E023",
+    "E021"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "text": "For live-web results, state the evaluation date and handle site drift (replace outdated tasks, report blocked/CAPTCHA tasks)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在 live 网站或 live 应用上测得的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+   "applicable": true,
+   "status": "partial",
+   "reason": "本文只用 HTML 状态；对比的 CC-Net 用像素+DOM。文中说明了字典输入的差异，但未讨论或分离观察空间差异。",
+   "evidence_ids": [
+    "E025"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "text": "Report results across backbone sizes (e.g. 7B and 32B/72B), since gains from GUI data/RL recipes shrink with model size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「训练配方可跨策略 backbone 泛化的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "text": "Stratify online success by human reference step count (difficulty) and audit failure causes",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「新 benchmark 或关于长时程 GUI 任务能力的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "text": "Test grounding robustness under controlled perturbations (zoom, text size, window position/clutter, relational instructions) with matched pairs",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「grounder/agent 对布局、缩放、杂乱等视觉扰动鲁棒或可泛化的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "text": "Report refusal / infeasible-task behaviour (instructions with no valid target)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「含歧义或不可行指令的 grounding/agent benchmark 主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "text": "Compare a synthetic-trajectory recipe against an instruction-first / task-driven synthesis baseline with the same executor and similar data size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「探索优先/反向/世界模型式数据合成产出更好 GUI 训练数据的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "text": "Show a data-scaling curve (fraction or count of synthetic samples vs downstream score) and say where it saturates",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「合成 GUI grounding/转移/轨迹数据提升 agent 的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "text": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「自生成任务、探索转移、记忆或合成环境提升 benchmark 成功率的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "text": "Ablate error-correction/reflection data against filtered behaviour cloning at the same iteration count",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「反思/自纠错/首错恢复数据提升 GUI agent 的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "text": "Evaluate a GUI world model by downstream agent success and closed-loop (multi-step, autoregressive) rollouts, not only teacher-forced one-step fidelity",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「GUI/web 世界模型(文本、代码或图像下一状态预测器)准确或有用的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "text": "Ablate imagination / lookahead horizon, since world-model errors compound beyond 1 (lookahead) or about 5 (training) steps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在学习得到的 GUI 世界模型内做多步 rollout 规划或训练」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "text": "For training in a world model, include sim-only vs real-anchored vs SFT-only arms",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在世界模型或模拟 GUI rollout 中训练策略的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "text": "Back world-model or synthetic-environment fidelity scores with a second independent judge, human validation or executable checks, not a VLM judge from the same family as the training reward",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「用 LLM/VLM judge 度量 GUI 世界模型或模拟应用保真度的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "text": "For a digital twin / simulated app used for training or evaluation, measure its realism and whether it preserves the ranking of agents or checkpoints seen in the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「模拟应用/合成站点/数字孪生可替代真实环境的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "text": "For memory/retrieval agents, show gains on environments other than those the memory was built from",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「经验记忆/检索轨迹改进 GUI agent 的主张」；本文中心主张范围为「MiniWoB++ 被选 54–55 任务上的提示式 LLM agent（RCI），外加有标签反馈的推理任务实验」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "RCI 在 MiniWoB++ 上显著优于已有 LLM 方法并超过聚合 SL/RL SotA",
+   "setting": "被选约 54–55 任务；gpt-3.5-turbo(主)+gpt-4(部分)；温度 0；每任务 2–3 示例；仅 HTML；成功=正奖励；不可执行动作即失败",
+   "baseline/control": "WebN-T5-3B、CC-Net(SL+RL / RL / SL)、聚合 SotA（各论文每任务最佳）、SotA LLM 方法",
+   "selection_vs_test": "提示与循环次数在 MiniWoB++ 任务上调（loop=3），评测在同一任务；示例来自同一任务模板",
+   "result/denominator": "本席重算：Ours(gpt-3.5) 54 任务 0.906；CC-Net(SL+RL) 同任务 0.936；Ours 对有 GPT-4 子集 0.940；同批 WebGUM 表的 Average 行也给出 RCI 0.906/0.940",
+   "evidence_ids": [
+    "E001",
+    "E044",
+    "E045",
+    "E020",
+    "E028"
+   ],
+   "counterevidence": [
+    "E021",
+    "E022",
+    "E023",
+    "E037",
+    "E025"
+   ],
+   "counter_note": "任务被选择(排除长 HTML/拖拽/复制粘贴任务，且部分任务被缩小)；逐任务提示定制；每任务回合数与方差未报；与 CC-Net 的可比性受字典输入限制，“超过无字典 CC-Net 6%”取自对方论文消融。",
+   "allowed_conclusion": "作者报告：在其选定的 54 个 MiniWoB++ 任务上，提示式 LLM agent 平均 90.6%（gpt-3.5），低于 CC-Net(SL+RL) 同任务 93.6%，高于 WebN-T5 等；不得外推到未选任务。"
+  },
+  {
+   "claim_id": "C2",
+   "text": "样本复杂度最低：比 WebN-T5-3B 少 120×、比 CC-Net 少 11,000× 样本",
+   "setting": "每任务 2–3 个示例入提示",
+   "baseline/control": "WebN-T5-3B 12K 演示；CC-Net 2.4M 演示",
+   "selection_vs_test": "示例与测试同任务模板；提示可能经过逐任务调试",
+   "result/denominator": "示例数对比，不含提示工程与 API 调用成本",
+   "evidence_ids": [
+    "E031",
+    "E030"
+   ],
+   "counterevidence": [
+    "E038",
+    "E037",
+    "E039"
+   ],
+   "counter_note": "“样本”口径不同（提示示例 vs 训练演示）；提示工程与推理成本未计入。",
+   "allowed_conclusion": "作者报告：训练数据需求远低；但提示设计、逐任务调整、推理开销没有计入。"
+  },
+  {
+   "claim_id": "C3",
+   "text": "三层 grounding（task/state/agent）各自必要",
+   "setting": "gpt-3.5-turbo；9 个任务按 agent 自身成功率分 easy/medium/hard",
+   "baseline/control": "分别移除计划采样、state grounding、agent grounding 的 RCI",
+   "selection_vs_test": "消融任务以被测 agent 的成功率选取",
+   "result/denominator": "图 5 条形（正文只给定性描述：agent grounding 在简单任务上移除后成功率下降 60%）",
+   "evidence_ids": [
+    "E032",
+    "E033",
+    "E034"
+   ],
+   "counterevidence": [
+    "E037"
+   ],
+   "counter_note": "只有 9 个任务、单模型；移除整阶段而非仅移除“批评内容”，无法分离“阶段分解”与“自我批评”；state grounding 在 click-dialog-2 有害。",
+   "allowed_conclusion": "在这 9 个任务上，移除任一阶段都降低成功率；不能说明“自批评”本身是增益来源。"
+  },
+  {
+   "claim_id": "C4",
+   "text": "RCI 在推理任务上优于零样本并与 CoT 协同",
+   "setting": "8 个推理数据集；最多 2 轮 RCI；用真值标签决定停止",
+   "baseline/control": "零样本、零样本 CoT、少样本 CoT（单次）",
+   "selection_vs_test": "标准数据集",
+   "result/denominator": "Table 1/2：有标签时 +0.0~+12.99 个点；Table 17：无标签时 RCI ≤ 零样本（GSM8K 72.83 vs 77.95）",
+   "evidence_ids": [
+    "E016",
+    "E017",
+    "E014",
+    "E015",
+    "E003"
+   ],
+   "counterevidence": [
+    "E013",
+    "E018",
+    "E019"
+   ],
+   "counter_note": "有 oracle 标签的 pass@2 式比较，不对称；Table 1 与 Table 17、Table 2 的零样本基线数字不一致且未解释。",
+   "allowed_conclusion": "带真值反馈的重试能提高准确率；不能说“隐式自批评”提升推理。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_reason": "MiniWoB++ 以环境正奖励在线判定；训练与评测任务模板相同、提示在同一任务上调参，无构建期未见环境，因此不是 transfer。",
+  "author_claimed_level": "作者自称：SOTA、可泛化到新任务（few-shot）",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "作者报告：在作者选定的 54 个 MiniWoB++ 任务上，用 2–3 个示例的 RCI 提示式 agent（gpt-3.5）平均成功率约 90.6%，GPT-4 在部分任务更高；低于 CC-Net(SL+RL) 的同任务均值，优于 WebN-T5-3B 等。三层 grounding 在 9 个消融任务上均必要。",
+  "cannot_say": [
+   "不能说优于 CC-Net（SL+RL）",
+   "不能说 RCI 的隐式自批评可靠（Table 17）",
+   "不能说泛化到未见任务/真实网站",
+   "不能说成本更低（未量化）"
+  ],
+  "reproduction_note": "全部数值为作者报告；本席仅重算表内均值。",
+  "unresolved": [
+   "每任务回合数/方差未报",
+   "提示正文与正则部分缺失于固定文本",
+   "逐任务提示定制的完整清单未给"
+  ]
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "问题具体：SL/RL 需海量示范与任务奖励，而 LLM 直接产出键鼠动作缺乏 task/state/agent 三类 grounding；CC-Net 的规模由同批原文核实。扣分：多数最近邻(WebN-T5、ReAct、Reflexion、Self-Refine)原文不在固定包内；“仅隐式反馈自批评”的新颖性被其 Table 17 削弱。",
+   "evidence_ids": [
+    "E006",
+    "E004",
+    "E025",
+    "E028",
+    "E042"
+   ],
+   "counterevidence_ids": [
+    "E017",
+    "E043"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "分解为三层 grounding 的机制具体，且有逐阶段消融；但中心假设“LLM 能无外部反馈自批评并改进”在推理任务被反证，计算机任务上的收益无法分离“阶段拆分”与“批评内容”；缺少与“重采样/不加批评的多阶段提示”这一朴素替代的可区分检验。",
+   "evidence_ids": [
+    "E010",
+    "E033"
+   ],
+   "counterevidence_ids": [
+    "E017",
+    "E013"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "操作链清楚（计划→状态动作→格式动作；RCI 次数、循环上限、温度、token 上限、动作正则、失败判定），失败模式与局限在附录 F 和 Sec 4 明示。扣分：提示正文与正则在固定文本中不全，示例选取与逐任务定制清单不系统，回合数未声明。",
+   "evidence_ids": [
+    "E010",
+    "E011",
+    "E035",
+    "E029",
+    "E040",
+    "E037"
+   ],
+   "counterevidence_ids": [
+    "E038"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "成功=MiniWoB 脚本正奖励，逐任务表完整；但任务集被选择(排除长 HTML/拖拽/复制粘贴，部分任务缩小)，与 CC-Net 因字典输入不可直接比较，“超 6%”取自对方消融；推理实验用真值标签停止，Table 1/17/2 的零样本基线数字互不一致；每任务回合数未报。",
+   "evidence_ids": [
+    "E044",
+    "E045",
+    "E024"
+   ],
+   "counterevidence_ids": [
+    "E021",
+    "E022",
+    "E023",
+    "E027",
+    "E018",
+    "E019"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "有三层 grounding 的移除消融与语言模型消融，足以说明各阶段有用；但消融仅 9 个任务且任务按被测系统成功率选取；无法分离“阶段拆分/示例/批评内容”；推理实验为 oracle 重试，对基线不对称，且无标签时更差。",
+   "evidence_ids": [
+    "E033",
+    "E032"
+   ],
+   "counterevidence_ids": [
+    "E034",
+    "E017",
+    "E013"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "评测任务与示例同模板、循环次数等在这些任务上调参（loop=3 “yields optimal performance”）、逐任务提示定制；未做留出任务/网站，GPT 预训练是否见过公开的 MiniWoB 未审计；“泛化到新任务”的措辞没有实验支持。",
+   "evidence_ids": [
+    "E012"
+   ],
+   "counterevidence_ids": [
+    "E031",
+    "E037",
+    "E038"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "未报告每任务回合数、方差或置信区间，温度 0 但环境随机；失败模式在附录 F 逐任务描述，局限明示，但没有失败分母。",
+   "evidence_ids": [
+    "E029"
+   ],
+   "counterevidence_ids": [
+    "E035"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "报告样本复杂度(示例数)，承认 RCI 更贵，但没有 token/调用次数/延迟/费用，不含提示工程成本；闭源 API 且时间窗口固定，复现受限。",
+   "evidence_ids": [
+    "E030",
+    "E039"
+   ],
+   "counterevidence_ids": [
+    "E036"
+   ],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 53.75,
+  "display": 53.8,
+  "lower": 53.75,
+  "upper": 53.75,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(15*G+25*M+20*X+10*E.measurement+10*E.causality+10*E.holdout+5*E.statistics+5*E.cost)/4; display = half-up one decimal"
+ },
+ "status": "reviewed",
+ "status_reason": "正文方法/实验/附录基本完整（提示正文部分缺失已标注）；可评。",
+ "rationale": {
+  "summary": "RCI 把键鼠 LLM agent 拆成三层 grounding 并给出逐阶段消融和逐任务失败分析，贡献清晰、诚实地列出局限；但“超过 SL/RL”的比较建立在被选任务集与字典差异上，同任务 CC-Net(SL+RL) 反而更高；自批评新颖性被自身 Table 17 削弱；提示逐任务调参、无方差、无成本。",
+  "G": "问题具体，多数最近邻原文缺。",
+  "M": "机制具体，核心假设被自身反证一部分。",
+  "X": "流程清楚，提示正文缺。",
+  "E": "测量有脚本奖励但任务被选；因果为阶段移除；无留出；无统计；无成本。"
+ }
+}

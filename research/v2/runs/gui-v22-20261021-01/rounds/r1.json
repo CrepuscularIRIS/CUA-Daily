@@ -1,0 +1,27 @@
+{
+  "round_id": "r1",
+  "date": "2026-10-21",
+  "scope": "calibration c1 (dev 6) + c2/c3 (holdout 12) in flight; production p1/p2 launched in parallel under explicit user authorization (draft weights frozen by manifest hash; re-eval on new asset version if calibration revises anchors)",
+  "completed": {
+    "c1/a1 dual seats": "sol 5 reviewed + 1 needs_fulltext; son55 5 reviewed + 1 needs_fulltext; mechanical check passed (coverage, schema, rs parents, rating legality); seat scores all verified by recompute",
+    "c1/a1 aggregate": "5 accepted_final, 1 needs_fulltext; 57 resolutions, 5 shared-error corrections, 0 unresolved; final_record_hash + input_seat_hashes + score all recomputed and verified by controller",
+    "c1 accepted scores": {
+      "2605.23939": 61.2, "2504.12679": 47.5, "2610.23307": 53.8,
+      "2610.23303": 53.8, "2505.18829": 25.0
+    }
+  },
+  "in_flight": ["c2/a1 seats", "c3/a1 seats", "p1/a1 seats", "p2/a1 seats", "c1/2610.23857 a2 seats (pdf material upgrade)"],
+  "material_events": [
+    "v1 render dropped ltx_listing (base64 data URIs) — renderer fixed; p3/p4 re-fetched on fixed render; in-flight bundles stay frozen",
+    "re_eval_list: 2209.08655, 2303.17491, 2509.00366, 2606.07027 (two-seat a2 after batches close)",
+    "2610.23857: no arxiv HTML; PDF fetched + pdftotext, a2 dispatched to both seats",
+    "later batches use versioned arxiv html URLs"
+  ],
+  "ready_not_dispatched": ["p3", "p4 (fixed-render material, bundles 37cac126a604 / 94d0dafbc452)"],
+  "next": [
+    "c2/c3 close -> agreement.py on holdout 12 (pre-aggregation)",
+    "opus aggregate c2/c3 -> calibration freeze report",
+    "p1/p2 close -> check + aggregate",
+    "a2 re-evals on upgraded material"
+  ]
+}

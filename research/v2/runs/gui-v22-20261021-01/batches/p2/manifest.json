@@ -1,0 +1,102 @@
+{
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p2",
+ "attempt": "a1",
+ "papers": [
+  {
+   "paper_key": "2202.08137",
+   "arxiv": "2202.08137",
+   "title": "A data-driven approach for learning to control computers",
+   "version": "2202.08137v2",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2202.08137.txt",
+   "material_status": "html",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83"
+  },
+  {
+   "paper_key": "2209.08655",
+   "arxiv": "2209.08655",
+   "title": "Enabling Conversational Interaction with Mobile UI using Large Language Models",
+   "version": "2209.08655v2",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2209.08655.txt",
+   "material_status": "html",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7"
+  },
+  {
+   "paper_key": "2303.17491",
+   "arxiv": "2303.17491",
+   "title": "Language Models can Solve Computer Tasks",
+   "version": "2303.17491v3",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2303.17491.txt",
+   "material_status": "html",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0"
+  },
+  {
+   "paper_key": "2304.07061",
+   "arxiv": "2304.07061",
+   "title": "DroidBot-GPT: GPT-powered UI Automation for Android",
+   "version": "2304.07061v5",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2304.07061.txt",
+   "material_status": "html",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5"
+  },
+  {
+   "paper_key": "2305.11854",
+   "arxiv": "2305.11854",
+   "title": "Multimodal Web Navigation with Instruction-Finetuned Foundation Models",
+   "version": "2305.11854v4",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2305.11854.txt",
+   "material_status": "html",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53"
+  }
+ ],
+ "asset_hashes": {
+  "corpus": {
+   "path": "research/corpus.jsonl",
+   "sha256": "ab81004336f12af0464893fc548cb5eba57552028d6a2431c2db1014ecf52cbc"
+  },
+  "rubric": {
+   "path": "research/SCORE_SPEC.md",
+   "sha256": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+  },
+  "pattern_protocol": {
+   "path": "research/PATTERN_PROTOCOL.md",
+   "sha256": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373"
+  },
+  "batch_contract": {
+   "path": "research/BATCH_CONTRACT.md",
+   "sha256": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275"
+  },
+  "review_worksheet": {
+   "path": "research/REVIEW_WORKSHEET.md",
+   "sha256": "b0ca3ac92a458c934894aee62c88d6de8ab53901047326e0c8abdfd1a0d3219e"
+  },
+  "evidence_rules": {
+   "path": "docs/EVIDENCE.md",
+   "sha256": "336e1bcdd149cd485ee5a1f22101ca594997b755b47555447ba6661b23a1fac5"
+  },
+  "rs_cards_manifest": {
+   "path": "research/reference/researchstudio-15-31/MANIFEST.tsv",
+   "sha256": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32"
+  },
+  "domain_taxonomy": {
+   "path": "research/patterns/taxonomy.json",
+   "sha256": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21"
+  },
+  "domain_conditions": {
+   "path": "research/patterns/conditions.json",
+   "sha256": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+  },
+  "expectations": {
+   "path": ".forge/domains/cua-agents/v1/profile/expectations.json",
+   "sha256": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67"
+  }
+ },
+ "model_types": {
+  "controller": "opus (glm-5.3[1m], this session)",
+  "sol": "sonnet (upstream gpt-6.1-sol)",
+  "son55": "haiku (upstream recorded as claude-sonnet-5-5 by the 2026-10-21 reset notes; actual upstream self-reported per worker)",
+  "opus55": "fable (upstream claude-opus-5-5[1m])",
+  "reel": "opus (upstream glm-5.3[1m]), selected papers only"
+ },
+ "input_bundle_sha256": "fed6b4a2d84803fc93183b9a9669ad578f4b1611b203548221a83913612b045e"
+}

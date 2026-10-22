@@ -1,0 +1,137 @@
+{
+  "schema_version": "radar-batch-report-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "c1",
+  "attempt_id": "a1",
+  "seat": "sol",
+  "input_hash": "28c0cca3c5e43fc35f3a1a269b63a8f0a4506d44fbaaa27257dca80bfabb6390",
+  "assigned": 6,
+  "reviewed": 5,
+  "needs_fulltext": 1,
+  "needs_evidence": 0,
+  "out_of_scope": 0,
+  "outside_taxonomy": 0,
+  "schema_errors": 0,
+  "scored": 5,
+  "blocked": 1,
+  "model_type": "sonnet",
+  "actual_model": "gpt-6.1-sol",
+  "session_id": null,
+  "receipt_ref": null,
+  "unavailable_reason": "Session identifier and invocation receipt are not exposed as authoritative worker metadata; actual model is supplied by the session environment.",
+  "available_run_references": {
+    "batch_manifest": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c1/manifest.json",
+    "output_directory": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c1/seats/sol/attempts/a1",
+    "local_session_transcript_reference": "/home/lingxufeng/.claude-kimi/projects/-home-lingxufeng-GUI/681194da-49f5-4ad4-8eb4-573b45384076.jsonl",
+    "session_reference_note": "Transcript path provided in continuation context; not an invocation receipt and not used as evidence."
+  },
+  "records": [
+    {
+      "paper_key": "2605.23939",
+      "version": "2605.23939v1",
+      "status": "reviewed",
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c1/seats/sol/attempts/a1/2605.23939.json",
+      "sha256": "f7563d725d6ad4609404324044bbe7541d47251713f85617f8bcf227db06d54f",
+      "raw_score": 65.0,
+      "revisions": 2
+    },
+    {
+      "paper_key": "2505.18829",
+      "version": "2505.18829v2",
+      "status": "reviewed",
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c1/seats/sol/attempts/a1/2505.18829.json",
+      "sha256": "e9a1e744bef5ea1c23904697b84cf4c47f89af8d1b26f5db37b31878795e19ef",
+      "raw_score": 48.75,
+      "revisions": 2
+    },
+    {
+      "paper_key": "2504.12679",
+      "version": "2504.12679v4",
+      "status": "reviewed",
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c1/seats/sol/attempts/a1/2504.12679.json",
+      "sha256": "0a8494f0a46f51ff8ac348e1b52a48fd9361476fab7a2cbe90c58333226cf764",
+      "raw_score": 58.75,
+      "revisions": 2
+    },
+    {
+      "paper_key": "2610.23857",
+      "version": "2610.23857v1",
+      "status": "needs_fulltext",
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c1/seats/sol/attempts/a1/2610.23857.json",
+      "sha256": "d5a04dc5b57e0b834df5c6dbe928b0e5890ec5e4c501d6229c2556af8cdd1ece",
+      "raw_score": null,
+      "revisions": 0
+    },
+    {
+      "paper_key": "2610.23307",
+      "version": "2610.23307v1",
+      "status": "reviewed",
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c1/seats/sol/attempts/a1/2610.23307.json",
+      "sha256": "63c1988d424211f99988ce1e4a039ed9838e73d48aba8a8775bfcd01bb14fc8c",
+      "raw_score": 50.0,
+      "revisions": 2
+    },
+    {
+      "paper_key": "2610.23303",
+      "version": "2610.23303v1",
+      "status": "reviewed",
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c1/seats/sol/attempts/a1/2610.23303.json",
+      "sha256": "5b2f720bf94426326b2e6c31918454a314632adeff1944f53dd13c7b44ebe4db",
+      "raw_score": 57.5,
+      "revisions": 2
+    }
+  ],
+  "validation": {
+    "scope": "Own seat only; local contract-field, provenance, source-text and arithmetic checks. No shared queue/index modification.",
+    "paper_set_exact": true,
+    "fixed_asset_hashes_checked": 10,
+    "rs_manifest_entries_checked": 51,
+    "continuous_quote_locator_hash_matching": true,
+    "nested_evidence_references_checked": true,
+    "rs_15_main_31_sub_parents_checked": true,
+    "gui_namespace_and_parent_checks": true,
+    "expectations_per_reviewed_record": 35,
+    "eight_rating_and_score_recomputation": true,
+    "no_html_all_unknown_score_null": true,
+    "no_html_bounds": {
+      "lower": 0,
+      "upper": 100,
+      "coverage": 0
+    },
+    "temporary_files_remaining": 0,
+    "adversarial_fixtures_rejected": [
+      "wrong RS parent",
+      "mixed namespace",
+      "unknown with numeric rating",
+      "nonexistent nested evidence ID",
+      "changed material hash",
+      "wrong actual model",
+      "wrong score arithmetic",
+      "missing claim-matrix context"
+    ],
+    "limitations": [
+      "Local inline checks are not an official comprehensive schema validator.",
+      "Quote matching and structural validity do not establish semantic correctness, scientific validity or independent reproduction.",
+      "Cross-seat completeness/conflict resolution, aggregate audit and final acceptance belong to the controller and were not checked.",
+      "Full relevant fixed texts read for five reviewed papers; figure pixels not available in plain-text exports cannot be reconstructed."
+    ]
+  },
+  "blockers": [
+    {
+      "paper_key": "2610.23857",
+      "kind": "needs_fulltext",
+      "reason": "Fixed manifest has material_status=no_html and null fulltext path/hash; no abstract-only evaluation performed."
+    },
+    {
+      "kind": "draft_rubric",
+      "reason": "v2.2 draft_uncalibrated: scores are independent provisional calibration assessments,not production ranking or accepted_final."
+    },
+    {
+      "kind": "pending_aggregate_scientific_audit",
+      "reason": "No independent reproduction; all reported experimental findings are author_report. Other seat and aggregate were not read."
+    }
+  ],
+  "revision_note": "Five open-attempt records received explicit prior-content SHA256 revision entries for contract-field normalization/provenance details. Ratings and numeric scores unchanged; corrections completed before this batch report.",
+  "status": "seat_complete",
+  "timestamp": "2026-10-21T16:51:28.867707+00:00"
+}

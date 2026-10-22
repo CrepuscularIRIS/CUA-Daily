@@ -1,0 +1,2076 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c3",
+ "attempt_id": "a1",
+ "seat": "aggregate",
+ "paper": {
+  "paper_key": "2510.16051",
+  "paper_id": "2510.16051",
+  "title": "GUIrilla: A Scalable Framework for Automated Desktop UI Exploration",
+  "version": "2510.16051v2",
+  "claim_type": "component_training",
+  "central_claim": "提出 GUIrilla：基于 macOS Accessibility API 的自动化桌面 UI 探索/爬取框架（含 handlers 与 GPT-4 辅助 agent），产出层级 MacApp Trees 与 GUIrilla-Task（27,171 任务/1,108 应用/4.2K 屏）；在其上微调的 GUIrilla-See(0.7B/3B/7B) 以仅 4.2K 屏幕在 ScreenSpot-v2/Pro 上达到有竞争力的 macOS 精度（7B：94.73/35.36）。作者强调这是数据爬取框架，不是自主 agent。"
+ },
+ "provenance": {
+  "input_hash": "3a53a9b05139dc558c16026d9c92aba6c603593cded48db189b7c3080ebc16fb",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "aggregate_rules": "docs/agents/AGGREGATE_OPUS.md",
+  "aggregate_rules_sha256": "1ad0c4f39af2ceb06924fc015d8660711edcd9a6f891444e902b44f79584f4e0",
+  "conflicts_sha256": "0e72316b8c7336dc2746822a29f690d8a7e0d67cdcdb043414644d8bb363bc9d",
+  "references_sha256": "ed9d577bd9b2fc25073d44f2506dda757688a30d4528fe3872527a0134fccfbc",
+  "model_type": "fable",
+  "actual_model": "claude-opus-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "timestamp": "2026-10-21T17:49:45+00:00",
+  "independence_note": "Aggregation over two seat inputs; each fixed paper text was read before the seat scores, but this is not a third blind review or human gold. All results are author reports; nothing was reproduced."
+ },
+ "materials": [
+  {
+   "material_id": "agg:2510.16051",
+   "url": "https://arxiv.org/html/2510.16051",
+   "sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2510.16051.txt",
+   "role": "paper",
+   "sections_read": [
+    "full text"
+   ],
+   "complete": true,
+   "missing_sections": []
+  },
+  {
+   "material_id": "sol:paper:2510.16051v2",
+   "url": "https://arxiv.org/html/2510.16051v2",
+   "version": "2510.16051v2",
+   "sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2510.16051.txt",
+   "sections_read": [
+    "Entirecachedprimary1–934includingallappendicesA.1–A.10;A.3Promptsheadingpresentbutbodyabsent"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "A.3 has a Prompts heading but no exposed prompt body in the cached render. Core methods and experiments are available; the missing exact prompts were not claimed read."
+   ],
+   "version_binding": "Manifestassignedprimaryversion;exactcachedbytesverified."
+  },
+  {
+   "material_id": "sol:reference:2410.23218:cache",
+   "url": "https://arxiv.org/html/2410.23218",
+   "version": null,
+   "sha256": "05fe672e13d9e0be620e3c93a9f28fcb6ac755eddffc10b94b4d325a621dfaee",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2410.23218.txt",
+   "sections_read": [
+    "§3.1–§3.2lines156–204"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "Uncitedreferenceremaindernotread"
+   ],
+   "version_binding": "Referencecacheversionunspecified;identity/hashbound,notinventedv1."
+  },
+  {
+   "material_id": "son55:2510.16051",
+   "url": "https://arxiv.org/html/2510.16051v2",
+   "sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2510.16051.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Abstract",
+    "§1-§6",
+    "Appendix A.1-A.10",
+    "Tables 1-11",
+    "References (skimmed)"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Appendix A.3 Prompts (empty in material)",
+    "Figure images (captions only)"
+   ]
+  },
+  {
+   "material_id": "son55:2410.23218",
+   "url": "https://arxiv.org/html/2410.23218",
+   "sha256": "05fe672e13d9e0be620e3c93a9f28fcb6ac755eddffc10b94b4d325a621dfaee",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2410.23218.txt",
+   "material_status": "html",
+   "sections_read": [
+    "grep for macOS/toolkit claims; lineage only"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "reference paper read only by targeted grep for gap/lineage; not a full review"
+   ]
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "agg:GR-A01",
+   "material_id": "agg:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.3 heading",
+   "quote": "### A.3 Prompts\n\n### A.4 Training Setup",
+   "support_explanation": "The prompts section is empty in the fixed text; GPT-agent behaviour cannot be reproduced exactly.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:GR-A02",
+   "material_id": "agg:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Sec 1 contributions",
+   "quote": "GUIrilla-Gold (1,283 human-verified tasks)",
+   "support_explanation": "Gold size as stated in the contributions.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:GR-A03",
+   "material_id": "agg:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.9.1",
+   "quote": "From the 1319 original English language-based tasks",
+   "support_explanation": "A different audited count; 84.3% of 1,319 doable is about 1,112, matching neither 1,283 nor the 1,565-task test split.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:GR-A04",
+   "material_id": "agg:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.1",
+   "quote": "applications with 1,565",
+   "support_explanation": "Test split size (1,565 tasks over 227 apps).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:GR-A05",
+   "material_id": "agg:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.5.1",
+   "quote": "from 90.41% -> 90.33%",
+   "support_explanation": "Leakage-adjusted ScreenSpot-v2 score; Table 6 reports 94.73% (7B) and 89.54% (3B), neither 90.41 nor 90.33.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:GR-A06",
+   "material_id": "agg:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Table 6",
+   "quote": "| 4.2K | 94.73%",
+   "support_explanation": "GUIrilla-See-7B ScreenSpot-v2 accuracy as tabulated.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:GR-A07",
+   "material_id": "agg:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Sec 1",
+   "quote": "GUIrilla remains a data crawler whose output is intended to train and stabilize downstream models",
+   "support_explanation": "Self-description supporting the component_training type.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E01",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline155",
+   "quote": "- • GUIrilla-Task dataset. A macOS, full-desktop corpus of 27,171 tasks across 1,108 applications and  4.2K unique screens. We also release GUIrilla-Gold (1,283 human-verified tasks) with a 90.26% human baseline.",
+   "support_explanation": "Originalresource/Goldclaims1283tasks90.26%humanbaseline.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E02",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline216",
+   "quote": "Within the crawler’s core (highlighted in blue), multiple handlers address the common parsing challenges: Pop-up handler manages transient modal content, Invisible elements handler filters off-screen components present in accessibility, Unrolling menu items handler processes dynamically generated navigation elements, and Empty elements handler resolves placeholder elements with missing metadata. This multi-handler approach enables robust extraction of actionable interface information despite the underlying data quality issues.",
+   "support_explanation": "Concretehandlersforpopups,invisibleelements,menus,emptylabels.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E03",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline220",
+   "quote": "1. The Input Agent : This agent generates contextually appropriate input strings based on the accessibility tree, ensuring relevant text is entered into form fields and search boxes.",
+   "support_explanation": "OptionalGPTinputagentusesprivilegedAXmetadata.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E04",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline222",
+   "quote": "2. The Order and Login Agent : Given a hierarchical list of on-screen elements, the agent determines an safest interaction sequence starting with elements that cause minimal UI changes and progressing to those with potentially significant effects (e.g., \"Delete\" buttons). Login pages are treated as a special case, requiring human input. This agent enhances the security and safety of the exploration process by avoiding random or destructive actions.",
+   "support_explanation": "Actionordering/loginagent;loginneeds human,notformal safetyproof.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E05",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline224",
+   "quote": "3. The Task Agents : After the uninstallation phase, these agents refine the resulting output tree, cleaning up duplicates, and transforming the structured data into a readable list of natural language tasks. Their inclusion enables both refinement and generation of more complex and natural language task descriptions.",
+   "support_explanation": "Post-explorationdedupandfunction-tasklabeling.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E06",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline226",
+   "quote": "While our framework leverages GPT-based agents to enable robust and secure interaction, both the application trees and task data can also be collected deterministically without GPT-4 requests by following a fixed element processing order and using default input string values. However, incorporating GPT-based reasoning significantly improves the safety and contextual relevance of interactions. A detailed comparison between deterministic and GPT-guided exploration is provided in Appendix A.8.2 .",
+   "support_explanation": "Deterministicfixed-order/default-inputmode;GPToptional.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E07",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline240",
+   "quote": "- • Actions : A list of actions that can be executed without causing significant changes to the UI. We define a significant change as the addition or removal of more than 10 UI elements following an interaction.",
+   "support_explanation": "Statechangecriterion>10elements;graphstatecompressionheuristic.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E08",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline262",
+   "quote": "As an application of the collected MacApp Trees, we derive a task-oriented dataset, GUIrilla-Task , by extracting function-centric interactions from tree edges. We deployed the GUIrilla crawler on 12,298 macOS applications using an open Mac App Store dataset ( Sergii Kryvoblotskyi, 2025 ) . Out of these, 1,108 applications supported the macOS Accessibility framework and yielded valid interaction trees.",
+   "support_explanation": "12298attemptedapps,1108validAXtrees;~9.01%yield.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E09",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline274",
+   "quote": "We report task success rates based on action accuracy. For click tasks, success requires the predicted coordinates to fall within the target element’s bounding box. Input tasks additionally require exact text matches.",
+   "support_explanation": "Successmeanspoint-inboxandexactinputtext,notexecutedtaskoutcome.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E10",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline284",
+   "quote": "Accessibility metadata often reduces to generic labels like \"button\" or \"text\" without capturing functional intent. In contrast, GPT-generated descriptions understand visual context and explicit purpose. When UI screens contain similar elements, accessibility labels create ambiguous supervision signals that hinder target identification. Florence-0.7B achieved 53.55% accuracy on GPT-generated tasks versus 40.35% on accessibility-based tasks—a 13-point gap demonstrating that functional supervision outperforms surface-level properties for training UI agents.",
+   "support_explanation": "SameFlorencebackbone GPTfunctionlabels53.55vsAX40.35;notfulldatafactorial.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E11",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline300",
+   "quote": "- • Local-Only Operation : All collection, replay, and annotation occur entirely locally without requiring data transmission to third parties",
+   "support_explanation": "Unqualifiedlocal-onlyclaimconflictswithoptionalGPTcalls;scope todeterministicmode.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E12",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline419",
+   "quote": "The collected tasks were split into train and test subsets, such that the applications in test did not appear in train, and test applications contained larger, more complicated accessibility trees. There are 881 881 applications with 25,606 25,606 entries in train and 227 227 applications with 1,565 1,565 task entries in test.",
+   "support_explanation": "Appdisjoint881train/227test,25606/1565entries;testAXtreeslarger.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E13",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline558",
+   "quote": "- • Epochs: 4; total wall-clock time ≈ \\approx 10 hours.",
+   "support_explanation": "Florencetraining4epochs~10h;partialcost.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E14",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline639",
+   "quote": "OneNote appears in train data (macOS app) and in ScreenSpot-v2 (Windows). This app has 1 task in the benchmark, and the login screen looks identical, so the leakage may have affected the result. We adjusted the score to account for it from 90.41% -> 90.33%. This doesn’t influence the ranking, yet we adjusted the score for fairness.",
+   "support_explanation": "OneNoteoverlapauditclaims90.41→90.33;notreconciledwithTable694.73.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E15",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline719",
+   "quote": "GUIrilla-See (7B) | macOS | Synthetic | 4.2K | 94.73% | 35.36% | 41.39%",
+   "support_explanation": "7BScreenSpotv294.73,Pro35.36,macPro41.39;offline,notonline.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E16",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline805",
+   "quote": "Task Quality . From the 1319 original English language-based tasks, 84.3% of tasks were marked as DOABLE after manual verification. Comparing GPT strings to human edits, 91% required no change. The 109 edited cases showed 97% similarity to originals (Ratcliff/Obershelp), confirming minor edits. We release manully edited dataset as GUIrilla-Gold 7 7 7 https://huggingface.co/datasets/GUIrilla/GUIrilla-Gold/ .",
+   "support_explanation": "Humanoriginal1319tasks84.3%doable;109edits;denominatorsdifferfromGoldintro.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E17",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline808",
+   "quote": "Accessibility metadata quality varies significantly: 64% of screens received GOOD ratings, 24% MEDIUM, and 12% BAD. At the element level, only 40% have correct role and description pairs, while 49% contain role information only, and 11% are mislabeled. Bounding boxes are accurate for 80% of elements, though 10% extend outside the visible window.",
+   "support_explanation": "AXaudit64%good24%medium12%bad;80%boxesaccurate,10%offscreen.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E18",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline838",
+   "quote": "- • Multi-step Tasks: Mark as NOT DOABLE if requiring multiple distinct actions",
+   "support_explanation": "Goldexplicitlyexcludesmultisteptasks.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E19",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline890",
+   "quote": "To assess performance variability, we re-evaluated all models using stochastic decoding with parameters: num_beams=3 , do_sample=True , temperature=0.3 . For each model, we conducted three independent runs and computed mean ± standard deviation of success rates.",
+   "support_explanation": "Threesampleddecodingruns,mean±sd;nottrainingseedvariance.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E20",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline914",
+   "quote": "GUIrilla-See-7B | 75.59 | 75.85 ± 0.06",
+   "support_explanation": "7B75.59deterministic→75.85±.06sampled.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E21",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline913",
+   "quote": "GUIrilla-See-3B | 73.48 | 73.90 ± 0.03",
+   "support_explanation": "3B73.48→73.90±.03.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E22",
+   "material_id": "sol:paper:2510.16051v2",
+   "material_hash": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Cachedfulltextline912",
+   "quote": "GUIrilla-See-0.7B | 53.55 | 53.48 ± 0.32",
+   "support_explanation": ".7B53.55→53.48±.32.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E23",
+   "material_id": "sol:reference:2410.23218:cache",
+   "material_hash": "05fe672e13d9e0be620e3c93a9f28fcb6ac755eddffc10b94b4d325a621dfaee",
+   "locator": "§3.2cachedline199",
+   "quote": "Due to the differences in A11y tree APIs and tools supported by each operating system, we utilize pyatspi to access the A11y tree on Ubuntu, pywinauto on Windows, and ApplicationServices on macOS. We then simulate human-computer interactions by sampling actions from the obtained A11y tree. In our simulation environment, we employ two different exploration methods: Depth-First Search (DFS) and Random Walk.",
+   "support_explanation": "OS-AtlasalreadyusesApplicationServicesmacOSA11ytreesandDFS/randomwalkphysicalmachineexploration;GUIrillanotfirstAXcrawler.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U001",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Abstract",
+   "quote": "GUIRILLA is not an autonomous agent; instead, it systematically collects realistic interaction traces and accessibility metadata",
+   "support_explanation": "作者自我定位：数据爬取框架，不是 agent",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U002",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "§1 flaw 3",
+   "quote": "macOS interfaces comprise only 0.06% of all samples in OS-Atlas",
+   "support_explanation": "作者 gap：macOS 在既有语料中占比极低",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U003",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "§2",
+   "quote": "the end-to-end crawler implementation is not publicly released, limiting reproducibility and reuse",
+   "support_explanation": "作者对 OS-Atlas 的批评（与 OS-Atlas 自述冲突，见 U004）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U004",
+   "material_id": "son55:2410.23218",
+   "material_sha256": "05fe672e13d9e0be620e3c93a9f28fcb6ac755eddffc10b94b4d325a621dfaee",
+   "locator": "§1 contributions",
+   "quote": "We have developed and released the first multi-platform GUI grounding data synthesis toolkit.",
+   "support_explanation": "固定最近邻 OS-Atlas 自称已发布多平台合成工具包（含 macOS）；其中是否含完整 macOS 爬虫无法由文本核实",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U005",
+   "material_id": "son55:2410.23218",
+   "material_sha256": "05fe672e13d9e0be620e3c93a9f28fcb6ac755eddffc10b94b4d325a621dfaee",
+   "locator": "§3 data collection",
+   "quote": "we utilize pyatspi to access the A11y tree on Ubuntu, pywinauto on Windows, and ApplicationServices on macOS",
+   "support_explanation": "OS-Atlas 已用 a11y 在 macOS 采集",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U006",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "§3.2",
+   "quote": "To enable meaningful interaction with applications, the parsing is supported by three GPT4-based agents",
+   "support_explanation": "探索由 3 个 GPT-4 agent 辅助（输入、排序/登录、任务）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U007",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "§3.2",
+   "quote": "both the application trees and task data can also be collected deterministically without GPT-4 requests by following a fixed element processing order and using default input string values",
+   "support_explanation": "可纯确定性采集",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U008",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "§3.2",
+   "quote": "Login pages are treated as a special case, requiring human input.",
+   "support_explanation": "登录页需人工",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U009",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "§4.1",
+   "quote": "Out of these, 1,108 applications supported the macOS Accessibility framework and yielded valid interaction trees.",
+   "support_explanation": "12,298 个应用中仅 1,108 (≈9.0%) 产生有效树",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U010",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "§4.1",
+   "quote": "GUIrilla-Task contains 27,171 tasks across 23 application genres, derived from approximately 4.2K unique full-desktop screens.",
+   "support_explanation": "数据规模",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U011",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.1",
+   "quote": "such that the applications in test did not appear in train, and test applications contained larger, more complicated accessibility trees",
+   "support_explanation": "训练/测试应用互不相交",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U012",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.9.1 AX Quality",
+   "quote": "At the element level, only 40% have correct role and description pairs, while 49% contain role information only, and 11% are mislabeled.",
+   "support_explanation": "a11y 元数据质量差",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U013",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.9.1 AX Quality",
+   "quote": "Bounding boxes are accurate for 80% of elements, though 10% extend outside the visible window.",
+   "support_explanation": "真值框 80% 准确 → 自有测试集的标签噪声",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U014",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.9.1 Task Quality",
+   "quote": "From the 1319 original English language-based tasks, 84.3% of tasks were marked as DOABLE after manual verification.",
+   "support_explanation": "Gold 的人工校验规模：1319",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U015",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "§1 contributions",
+   "quote": "GUIrilla-Gold (1,283 human-verified tasks)",
+   "support_explanation": "与 A.1 的测试集 1,565 条、A.9 的 1,319 条三个数字不一致，且“90.26% human baseline”正文无定义",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U016",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.9.3",
+   "quote": "Multi-step Tasks: Mark as NOT DOABLE if requiring multiple distinct actions",
+   "support_explanation": "任务为单步（点击/输入）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U017",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Table 2 (A.4.3)",
+   "quote": "Qwen 2.5 VL (7B) | 35.78 | 75.59",
+   "support_explanation": "自测集上的微调前后",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U018",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Table 6 (A.6.1)",
+   "quote": "Qwen 2.5 VL (7B) | Multi-OS | Real + Synthetic | - | 87.5% | 27.13% | 34.27%",
+   "support_explanation": "基座在 ScreenSpot-v2/Pro/macOS 子集",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U019",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Table 6 (A.6.1)",
+   "quote": "GUIrilla-See (7B) | macOS | Synthetic | 4.2K | 94.73% | 35.36% | 41.39%",
+   "support_explanation": "微调后：外部基准 +7.2/+8.2/+7.1",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U020",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Table 6 (A.6.1)",
+   "quote": "UI-TARS (72B) | Multi-OS | Real + Synthetic | ∼ \\sim 20M (est.) | 90.3% | 38.1% | 40.0%",
+   "support_explanation": "对照：UI-TARS-72B 的 SS-Pro 38.1 高于 GUIrilla-See-7B 35.36",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U021",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.5.1",
+   "quote": "We adjusted the score to account for it from 90.41% -> 90.33%.",
+   "support_explanation": "泄漏调整数字与 Table 6 的任何数值（89.54/94.73）都对不上",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U022",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.5.1",
+   "quote": "found that our data only includes a login flow and never actually opens the main app and its functionality",
+   "support_explanation": "Excel 重叠核查（人工、按应用名）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U023",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "§4.2",
+   "quote": "We report task success rates based on action accuracy.",
+   "support_explanation": "“agentic”成功率=单步动作准确率",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U024",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Table 8 (A.6.3)",
+   "quote": "OpenAI Computer Use | 8.04 | 68.75 | 64.41",
+   "support_explanation": "专有模型在自测集上的单步准确率",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U025",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.8.1",
+   "quote": "Number of Tasks | 162 | 32",
+   "support_explanation": "Stocks：handler 爬虫 162 vs 随机 32 任务",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U026",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.8.1",
+   "quote": "Number of Tasks | 73 | 73",
+   "support_explanation": "Weather：二者相同（正文未提）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U027",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "§4.3",
+   "quote": "Florence-0.7B achieved 53.55% accuracy on GPT-generated tasks versus 40.35% on accessibility-based tasks",
+   "support_explanation": "GPT 描述 vs a11y 标签监督（仅正文数字，Table 10 只有示例）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U028",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.7",
+   "quote": "OS-Atlas was trained on nearly 300× more data, yet our model achieves higher accuracy: +1.34% in average and +2.02% on the macOS subset of ScreenSpot-Pro.",
+   "support_explanation": "同骨干对比的数字（无表）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U029",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.10.2",
+   "quote": "Fine-tuned GUIrilla-See models demonstrate remarkable consistency across decoding strategies, with standard deviations below 0.32% in all cases.",
+   "support_explanation": "解码重复运行方差",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U030",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.10.1",
+   "quote": "For each model, we conducted three independent runs and computed mean ± standard deviation of success rates.",
+   "support_explanation": "3 次运行仅为解码采样，不是训练种子",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U031",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "§4.1",
+   "quote": "Data collection was performed on a cluster of four M1 Mac Mini machines (16 GB RAM) running macOS 14.7.5, as well as two MacBook Pros",
+   "support_explanation": "采集硬件；总墙钟/GPT-4 费用未给",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U032",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.6.2",
+   "quote": "icon-dense engineering tools such as Vivado",
+   "support_explanation": "作者承认的失败域",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U033",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Appendix A.3",
+   "quote": null,
+   "support_explanation": "A.3 Prompts 标题下为空，三个 GPT-4 agent 的提示词在材料中缺失",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "son55:U034",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Table 3 (A.5)",
+   "quote": "GUIrilla-See-7B | 30.10 | 31.96 | 26.82 | 47.64 | 53.04 | 35.36",
+   "support_explanation": "SS-Pro 分应用类别",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:U035",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "full text",
+   "quote": null,
+   "support_explanation": "全文含附录查找：探索覆盖度指标（相对应用功能/状态空间）、多步/在线任务评测、LLM 任务生成质量的定量校验（除 91% 未改）、训练种子方差、爬取总成本——均未报告",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "son55:U036",
+   "material_id": "son55:2510.16051",
+   "material_sha256": "066b280f70f5cf6b89d97789d84f72f7d92b7c54fe6e04031c685b6ee7275a05",
+   "locator": "Table 5 (A.6.1)",
+   "quote": "GUIrilla-See 7B | 65.5% | 74.9% | 70.5% | 79.2% | 78.8% | 81.0% | 65.2% | 70.8% | 60.8% | 87.3% | 78.9% | 75.59%",
+   "support_explanation": "自测集上分功能类别",
+   "kind": "author_report"
+  }
+ ],
+ "preliminary_evidence_judgment": "Read before seat scores. GUIrilla crawls 12,298 macOS apps through the Accessibility API (handlers for pop-ups, invisible/empty elements, menus; optional GPT-4 input/order/login/task agents), yielding MacApp Trees for 1,108 apps and 27,171 single-step click/type tasks on about 4.2K screens; app-disjoint split (881/227 apps). Trained grounders (Florence-0.7B, Qwen2.5-VL-3B/7B) improve on the in-house app-disjoint test and on ScreenSpot-v2/Pro (7B: 87.5->94.73, 27.13->35.36). Problems: A.3 'Prompts' section is empty; Gold count stated as 1,283 vs 1,319 audited vs 1,565 test tasks; leakage adjustment 90.41->90.33 matches no Table 6 value; 'agentic' Table 8 is single-step accuracy; handler ablation on 3 apps; no data-scaling curve or equal-size alternative corpus. The paper calls itself a data crawler whose output trains downstream models, so component_training applies. Applicable: gui K14/K23/C01; E05, E06, E26, E27, E28.",
+ "agreed_items_review": "Agreed items G=2, X=2, E.measurement=2, E.causality=2, E.holdout=3, E.statistics=2, E.cost=2, evidence_level offline, claim_support scoped were re-checked; the three known reporting inconsistencies (A.3, Gold counts, leakage figure) are confirmed and already deducted.",
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "桌面应用的探索/爬取（a11y 树→状态节点、动作边的 MacApp Tree）",
+   "information": "macOS Accessibility 树 + 全屏截图；无应用源码或后端状态；登录页需人工",
+   "operation": "handlers（弹窗/不可见/展开菜单/空元素）+ GPT-4 输入/排序/登录 agent；按“引起最小 UI 变化优先”排序；点击/移动/输入/回车",
+   "output": "状态节点(含 a11y 树+截图)与动作边(1:1 映射 pyautogui)",
+   "conditions": "应用须暴露 a11y（12,298 中 1,108 有效）；元数据质量参差",
+   "feedback": "UI 元素数变化>10 视为显著变化",
+   "selection_rule/data": "确定性或 LLM 排序；无覆盖度目标/回溯价值",
+   "persistence": "树与截图（561GB）",
+   "later_use": "任务派生、检索、测试、训练",
+   "claimed_effect": "handlers 使 Stocks 任务发现 5×、Maps 3×（3 应用，无重复）",
+   "failure_boundary": "依赖开发者 a11y 质量；无登录/付费/验证码；盲区（画布、专业软件）",
+   "evidence_ids": [
+    "son55:U006",
+    "son55:U007",
+    "son55:U008",
+    "son55:U009",
+    "son55:U012",
+    "son55:U025",
+    "son55:U026",
+    "son55:U032"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "树边→功能中心任务（GUIrilla-Task）及人审 Gold",
+   "information": "动作元素的 a11y 元数据 + 截图/裁剪，GPT-4 改写成自然语言任务",
+   "operation": "Task Agent 清理去重并生成任务描述；分类 22 任务类、16 元素类；测试集由 5 名标注者复核/改写",
+   "output": "27,171 条单步（点击/输入）任务+坐标",
+   "conditions": "多步任务被判不可做",
+   "feedback": "not_applicable",
+   "selection_rule/data": "应用级训练/测试划分；测试应用更复杂；Gold 91% 无需改写",
+   "persistence": "数据集",
+   "later_use": "微调 grounding 模型",
+   "claimed_effect": "函数级监督优于描述监督/a11y 标签监督（Florence 53.55 vs 40.35）",
+   "failure_boundary": "真值框 80% 准确；任务为单步；Gold 计数不一致",
+   "evidence_ids": [
+    "son55:U010",
+    "son55:U011",
+    "son55:U013",
+    "son55:U014",
+    "son55:U015",
+    "son55:U016",
+    "son55:U027"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "grounding 模型微调（Florence-2 0.7B、Qwen2.5-VL 3B/7B 的 LoRA SFT）",
+   "information": "全屏截图+指令→点/框",
+   "operation": "监督微调（4.2K 屏）",
+   "output": "GUIrilla-See 三个检查点",
+   "conditions": "仅 macOS 数据",
+   "feedback": "not_applicable",
+   "selection_rule/data": "自测集 + ScreenSpot-v2/Pro 评测；泄漏人工按应用名核查",
+   "persistence": "模型权重",
+   "later_use": "基准评测",
+   "claimed_effect": "SS-v2 94.73、SS-Pro 35.36（7B）；跨 OS 迁移",
+   "failure_boundary": "图标密集/创作软件失败",
+   "evidence_ids": [
+    "son55:U017",
+    "son55:U018",
+    "son55:U019",
+    "son55:U020",
+    "son55:U021",
+    "son55:U022",
+    "son55:U032",
+    "son55:U034"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "macOS 数据稀缺、人工标注不可扩展、单窗口 UI 误代表真实使用、自动采集需平台专属工程（U002 等）。",
+  "checked_gap": "macOS 稀少的论据来自对 OS-Atlas 占比的引述；但 OS-Atlas 全文称其合成工具包已发布并含 macOS（U004/U005），故“end-to-end crawler 未公开”这一对比点无法由固定原文确认（可能指 macOS 爬虫部分未单独发布）。真正可核的残余缺口是：可复现的 macOS 爬虫与按应用划分的数据集。",
+  "lineage": {
+   "ancestors": [
+    "GUI ripping/Android 自动化测试(Memon, DinoDroid)",
+    "OS-Atlas 合成工具包(a11y DFS/Random Walk)",
+    "OmniACT/ScreenSpot 手工基准",
+    "UI-E2I-Synth/OS-Genesis"
+   ],
+   "closest_adjacent": "OS-Atlas（2410.23218，macOS a11y 采集 + 13M 实例）；GUIrilla 的差异：全屏、函数级任务、树结构与按应用划分、公开 macOS 爬虫。",
+   "source_versions": {
+    "2410.23218": "html fixed sha256 05fe672e..."
+   }
+  },
+  "residue": "探索质量（覆盖）未被度量；任务仅单步 grounding，非桌面多步 agent 数据。",
+  "stakes": "若覆盖与任务质量未量化，则 4.2K 屏上的收益难以与“数据选择/微调配方”区分。",
+  "method_response": "handlers+LLM agent 的探索，树→任务，开放数据与代码。",
+  "remaining_gap": "覆盖度/状态空间度量；多步轨迹；在线 agent 评测；不依赖 a11y 的视觉解析；与 OS-Atlas 同预算对比。",
+  "evidence_ids": [
+   "son55:U003",
+   "son55:U004"
+  ],
+  "unresolved": [
+   "OS-Atlas 是否公开了完整 macOS 爬虫",
+   "“0.06%”来自 OS-Atlas 哪个统计口径"
+  ],
+  "aggregate_neighbor_check": "No further reference needed; both seats bound the residual against OS-Atlas (AX-based macOS collection exists; son55 notes the 'crawler not released' contrast conflicts with OS-Atlas's own account)."
+ },
+ "rs_pattern": {
+  "primary": "self_supervised_signal_engineering",
+  "supporting": [],
+  "matches": [
+   {
+    "main_id": "self_supervised_signal_engineering",
+    "sub_id": "rs:C08",
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "1 瓶颈是训练语料且排除廉价替代": "是（macOS 数据稀缺）；未与“更多人工标注/OS-Atlas 数据”同预算对照",
+     "2 可控生成器触达缺口": "爬虫+LLM 任务改写（探索支持域扩展无覆盖度证明）",
+     "3 单一载重过滤": "无明确单一过滤；handlers 去重+人工 Gold（只作评测）",
+     "4 迭代回灌": "无",
+     "5 真实目标迁移 + 廉价基线": "有外部基准迁移（强项）；无廉价替代基线"
+    },
+    "success/failure_checks": "success：目标迁移（ScreenSpot）；failure：缺载重过滤与廉价基线（命中）",
+    "evidence_ids": [
+     "son55:U006",
+     "son55:U019",
+     "son55:U035"
+    ],
+    "reason": "“爬虫=数据工厂+LLM 改写”与 C08 同构，但闸门与迭代缺失；partial。"
+   }
+  ],
+  "outside_taxonomy": false,
+  "reason": "最近原卡为信号工程 C08。",
+  "executes_pattern": {
+   "self_supervised_signal_engineering/rs:C08": "partial"
+  },
+  "resolves_problem": {
+   "macOS grounding data scarcity": "partially_shown (offline grounding)",
+   "desktop agent long-horizon data": "not_shown"
+  },
+  "aggregate_source_seat": "son55",
+  "aggregate_reason": "self_supervised_signal_engineering / rs:C08 partial: crawler + functional relabelling is an inverse artifact->specification mapper producing training instances, with the weak gate and missing cheap baseline recorded as failure checks. Consistent with both seats' treatment of MONDAY."
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "exploration_driven_task_synthesis",
+    "sub": "gui:K14",
+    "version": "cua-agents-core/v1",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "condition": "Interactfirstthenretrospectivelylabeltask",
+      "status": "met",
+      "reason": "AXcrawl→edges→functioninstruction→SFT"
+     },
+     {
+      "condition": "Same-executorinstructionfirstbaselineandvalidatedqualityselection",
+      "status": "unmet",
+      "reason": "Noequal-sizeinstructionfirstcontrol;humanGoldauditnotuniversaltraininggate"
+     },
+     {
+      "condition": "Unseenconstructionappholdout",
+      "status": "met",
+      "reason": "881/227appdisjointsplit"
+     }
+    ],
+    "evidence_ids": [
+     "sol:E05",
+     "sol:E08",
+     "sol:E10",
+     "sol:E12",
+     "sol:E17"
+    ],
+    "namespace": "gui",
+    "aggregate_source_seat": "sol"
+   },
+   {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "gui:K23",
+    "version": "taxonomy@sha256:430aa36290ec",
+    "fit": "good",
+    "condition_checks": [
+     {
+      "cond": "S3 渲染结构读取精确框、混合多层级",
+      "status": "partial",
+      "note": "读 a11y 框（80% 准确），仅函数级单层任务",
+      "evidence_ids": [
+       "son55:U012",
+       "son55:U013",
+       "son55:U016"
+      ]
+     },
+     {
+      "cond": "F3 仅饱和基准上宣称",
+      "status": "absent",
+      "note": "含 ScreenSpot-Pro 与 macOS 子集",
+      "evidence_ids": [
+       "son55:U019"
+      ]
+     },
+     {
+      "cond": "F4 长尾图标回报递减",
+      "status": "present",
+      "note": "Vivado/创作软件失败",
+      "evidence_ids": [
+       "son55:U032"
+      ]
+     },
+     {
+      "cond": "F2 歧义/拒答未处理",
+      "status": "present",
+      "note": "NOT DOABLE 任务未做拒答评测",
+      "evidence_ids": [
+       "son55:U014"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "son55:U010",
+     "son55:U019",
+     "son55:U012"
+    ],
+    "reason": "操作同构（读树框→合成指令→训练坐标 grounder），数据源为 a11y 而非 DOM。",
+    "aggregate_source_seat": "son55"
+   },
+   {
+    "namespace": "gui",
+    "main": "structured_screen_observation",
+    "sub": "gui:C01",
+    "version": "taxonomy@sha256:430aa36290ec",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "cond": "S1 目标由结构视图暴露",
+      "status": "partial",
+      "note": "仅 9% 应用有效；40% 元素角色/描述正确",
+      "evidence_ids": [
+       "son55:U009",
+       "son55:U012"
+      ]
+     },
+     {
+      "cond": "F1 目标缺失于结构",
+      "status": "present",
+      "note": "同上",
+      "evidence_ids": [
+       "son55:U009"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "son55:U007",
+     "son55:U009",
+     "son55:U012"
+    ],
+    "reason": "爬虫侧 LLM agent 以 a11y 元素为动作单元；模型侧仍为截图 grounding。",
+    "aggregate_source_seat": "son55"
+   }
+  ],
+  "unassigned": [],
+  "revision_proposals": [],
+  "aggregate_note": "Union: retroactive instruction labelling of explored edges (K14), grounding data synthesised from rendered AX structure (K23), crawler acting over enumerated AX elements (C01, partial: the trained model itself is screenshot-only)."
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "self_supervised_signal_engineering",
+   "rs_sub": "rs:C08",
+   "domain": {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "gui:K23"
+   },
+   "operation_correspondence": "RS C08 的“可控生成+过滤的数据工厂”↔ K23 的“渲染结构→精确框→合成指令→训练 grounder”。",
+   "required_conditions_and_differences": "K23 需精确框（此处 80%）；C08 需载重闸门（缺）。",
+   "evidence_ids": [
+    "son55:U006",
+    "son55:U010",
+    "son55:U013"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report execution-checked success rate on OSWorld (or OSWorld-Verified) for desktop computer-use claims, stating the step budget (15 vs 50 steps) and observation setting",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无端到端桌面任务成功率主张（作者明确“不是 agent”）；Table 8 为单步准确率。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report online success on AndroidWorld for mobile-agent claims, not only offline AndroidControl/AITW step metrics",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report success on WebArena (self-hosted, functional-correctness checkers) for web-agent training or planning claims; if the 165-task WebArena-Lite or a per-template subset is used, say so and justify it",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Evaluate live-web agents on Online-Mind2Web (human-validated, start URL given, no search engine) or Mind2Web-Live rather than only WebVoyager, where a naive search-and-click agent already solves 51% of sampled tasks",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report GUI grounding on ScreenSpot-Pro (high-resolution professional desktop) and ScreenSpot-v2, not only ScreenSpot v1, which saturates (7B and 72B indistinguishable)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": true,
+   "status": "met",
+   "reason": "同时报告 ScreenSpot-v2 与 ScreenSpot-Pro（并给 macOS 子集），不止 v1。",
+   "evidence_ids": [
+    "son55:U019",
+    "son55:U034"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E06",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare a new grounder against UGround(-V1-7B), Aguvis-7B/72B, OS-Atlas-7B and UI-TARS(-1.5) at matched backbone size",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": true,
+   "status": "partial",
+   "reason": "对照含 UGround、OS-Atlas、UI-TARS(2B/7B/72B)、ShowUI、CogAgent；无 Aguvis；跨表混合规模/数据量，同骨干对比仅在附录 A.7 以文字给出且无表。",
+   "evidence_ids": [
+    "son55:U019",
+    "son55:U020",
+    "son55:U028"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E07",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare a native end-to-end GUI policy against UI-TARS(-1.5)-7B (or the same backbone's SFT-only model) and against an agentic framework (GPT-4o/o3 planner + specialised grounder such as UGround, Aria-UI, Jedi, GTA1)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E08",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For planner-grounder systems, hold the planner fixed and swap grounders (e.g. GPT-4o + UGround vs + Aguvis vs + Jedi), and report the planner alone",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare GUI online-RL methods against DigiRL, WebRL, filtered BC / AWR and an SFT-only model trained on the same data",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E10",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Validate an LLM/VLM success judge or outcome reward model against human labels on trajectories from agents not used to build it (agreement/accuracy, plus the resulting success-rate gap)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E11",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report judge reliability separately for positive and negative verdicts (precision and NPV, or precision/recall per class), not only overall accuracy",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E12",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "When a learned judge or PRM is the RL reward, show downstream policy gain against an alternative reward (rule/script checker, ORM vs PRM, another judge), and address reward hacking or bias",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Measure execution checkers (evaluation scripts) two-sidedly: false negatives on alternative valid solutions as well as false positives",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For PRMs or step-level verifiers, ablate the label source (human vs GPT-4o-generated step labels)",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Do not rest an agent capability claim on offline step accuracy (AndroidControl, Multimodal-Mind2Web, GUI Odyssey) alone; add an online benchmark or show the offline metric predicts online success",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": true,
+   "status": "partial",
+   "reason": "作者将贡献限定在 grounding/理解基准；但 Table 8 标为“Agentic Success Rate”的其实是单步动作准确率，易被读成 agent 能力。",
+   "evidence_ids": [
+    "son55:U023",
+    "son55:U024",
+    "son55:U001"
+   ],
+   "score_item": "E.measurement",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E16",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E17",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E18",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For inference-time search or best-of-N (simulated lookahead, verifier reranking), report cost/latency and the number of candidates, and compare against real-execution tree search where reset is possible",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Disclose and validate any modification to an online benchmark harness (re-implemented checkers, changed action implementations, dropped tasks, extra steps)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E20",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For live-web results, state the evaluation date and handle site drift (replace outdated tasks, report blocked/CAPTCHA tasks)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "各评测模型均为截图输入；a11y 仅用于数据采集。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2509.11543",
+     "note": "relative gain 7B +104% vs 32B +37%"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2501.12326#s3",
+     "note": "2B/7B/72B"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2604.02345#s2",
+     "note": "seven backbones"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.04454#s3",
+     "note": "7B and 72B"
+    }
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": true,
+   "status": "partial",
+   "reason": ".7B, 3B and 7B variants are tested, with different families and training budgets rather than clean size scaling.",
+   "evidence_ids": [
+    "sol:E13",
+    "sol:E20",
+    "sol:E21",
+    "sol:E22"
+   ],
+   "score_item": [
+    "E.holdout"
+   ],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E23",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Stratify online success by human reference step count (difficulty) and audit failure causes",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2604.14262#s1"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2404.07972#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2505.13227#s3",
+     "note": "knowledge-free re-annotated instructions"
+    }
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Full-desktop and cross-platform tests do not replace controlled zoom/clutter/window-position pairs.",
+   "evidence_ids": [
+    "sol:E15"
+   ],
+   "score_item": [
+    "E.holdout"
+   ],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E25",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report refusal / infeasible-task behaviour (instructions with no valid target)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "测试集含约 15.7% NOT DOABLE 任务，未评测拒答/不可行行为。",
+   "evidence_ids": [
+    "son55:U014"
+   ],
+   "score_item": "E.holdout",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E26",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare a synthetic-trajectory recipe against an instruction-first / task-driven synthesis baseline with the same executor and similar data size",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "未将“探索优先”与“指令优先”合成在同执行器同规模下对比；handler vs 随机爬虫不是该对比。",
+   "evidence_ids": [
+    "son55:U025",
+    "son55:U035"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E27",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Show a data-scaling curve (fraction or count of synthetic samples vs downstream score) and say where it saturates",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "无数据规模—性能曲线；仅以“比对手数据少数百倍”作效率叙述。",
+   "evidence_ids": [
+    "son55:U028",
+    "son55:U035"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E28",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "applicable": true,
+   "status": "met",
+   "reason": "训练/测试应用互不相交；ScreenSpot 外部基准；人工做重叠核查（但泄漏调整数字前后不一致，见 U021）。",
+   "evidence_ids": [
+    "son55:U011",
+    "son55:U021",
+    "son55:U022"
+   ],
+   "score_item": "E.holdout",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E29",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Ablate error-correction/reflection data against filtered behaviour cloning at the same iteration count",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Evaluate a GUI world model by downstream agent success and closed-loop (multi-step, autoregressive) rollouts, not only teacher-forced one-step fidelity",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Ablate imagination / lookahead horizon, since world-model errors compound beyond 1 (lookahead) or about 5 (training) steps",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For training in a world model, include sim-only vs real-anchored vs SFT-only arms",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Back world-model or synthetic-environment fidelity scores with a second independent judge, human validation or executable checks, not a VLM judge from the same family as the training reward",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For a digital twin / simulated app used for training or evaluation, measure its realism and whether it preserves the ranking of agents or checkpoints seen in the real environment",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For memory/retrieval agents, show gains on environments other than those the memory was built from",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是桌面数据爬取+grounding 微调组件，未提出该期望所针对的端到端成功率/RL/世界模型/记忆等主张；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "在 4.2K 屏幕的 macOS 数据上微调，7B 模型 SS-v2 94.73、SS-Pro 35.36（macOS 子集 41.39），显示数据高效与跨 OS 迁移",
+   "setting": "Qwen2.5-VL-3B/7B、Florence-2 LoRA SFT；贪心解码",
+   "baseline/control": "未微调基座（87.5/27.13/34.27）及 UI-TARS/OS-Atlas/UGround 等发布模型（不同骨干与数据）",
+   "selection_vs_test": "训练/测试应用不相交；外部基准人工按应用名查重叠",
+   "result/denominator": "+7.2/+8.2/+7.1 相对基座；SS-Pro 低于 UI-TARS-72B(38.1)",
+   "evidence_ids": [
+    "son55:U018",
+    "son55:U019",
+    "son55:U020",
+    "son55:U021",
+    "son55:U022",
+    "son55:U028"
+   ],
+   "counterevidence": [
+    "son55:U020",
+    "son55:U021",
+    "agg:GR-A05",
+    "agg:GR-A06"
+   ],
+   "allowed_conclusion": "作者报告：该 macOS 数据微调相对其基座在外部 grounding 基准上提升 7-8 点；“数据效率”对比混杂骨干/配方，无规模曲线。",
+   "aggregate_note": "Leakage-adjusted SS-v2 90.41->90.33 matches no Table 6 entry."
+  },
+  {
+   "claim_id": "C2",
+   "text": "探索 handlers 显著提升发现的任务数（Stocks 5×、Maps 3×）并减少重复",
+   "setting": "3 个应用（Stocks/Maps/Weather），“随机爬虫”基线未定义",
+   "baseline/control": "Random Crawler",
+   "selection_vs_test": "not_applicable",
+   "result/denominator": "162 vs 32；107 vs 36；Weather 73 vs 73",
+   "evidence_ids": [
+    "son55:U025",
+    "son55:U026"
+   ],
+   "counterevidence": [
+    "son55:U026",
+    "son55:U035"
+   ],
+   "allowed_conclusion": "三个应用的单次运行显示 2/3 个应用上任务数更多；无覆盖度度量，Weather 无差异。"
+  },
+  {
+   "claim_id": "C3",
+   "text": "GPT 生成的功能描述比 a11y 标签监督更好（Florence-0.7B 53.55 vs 40.35）",
+   "setting": "单一骨干",
+   "baseline/control": "确定性 a11y 元数据监督",
+   "selection_vs_test": "自测集",
+   "result/denominator": "+13.2 点；仅正文数字",
+   "evidence_ids": [
+    "son55:U027"
+   ],
+   "counterevidence": [
+    "son55:U035"
+   ],
+   "allowed_conclusion": "单一小模型上的单次比较；Table 10 只有示例，数字无表支撑。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "offline",
+  "evidence_level_note": "Static grounding and single-step action accuracy only; ScreenSpot is external but offline.",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "Author-reported: LoRA fine-tuning on about 4.2K macOS screens / 25.6K crawler-derived tasks raises Qwen2.5-VL-3B/7B grounding on an app-disjoint macOS test and on ScreenSpot-v2/Pro by roughly 7-8 points (7B: 94.73 / 35.36), and functional task descriptions train better than raw AX labels (Florence 53.55 vs 40.35); the crawler can run without GPT.",
+  "not_supported": [
+   "Desktop agent / online task success ('agentic' Table 8 is single-step accuracy)",
+   "Exploration coverage or quality",
+   "Data-efficiency superiority over OS-Atlas under matched conditions (A.7 has no table)",
+   "Leakage-adjusted ScreenSpot-v2 figure (does not reconcile)"
+  ],
+  "unresolved": [
+   "A.3 prompts missing",
+   "Gold count 1,283 vs 1,319 vs 1,565",
+   "90.41->90.33 vs Table 6"
+  ],
+  "author_report_only": true,
+  "our_run": false
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "macOS data scarcity and non-scalable manual annotation are real, but OS-Atlas already automates AX-based macOS collection and the 'crawler not released' contrast is disputed; the residual (handlers, functional labels, full-desktop trees) is only partly measured.",
+   "evidence_ids": [
+    "sol:E08",
+    "sol:E23",
+    "son55:U002",
+    "son55:U003",
+    "son55:U005"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Handlers and functional relabelling respond directly to observed AX failures and give distinguishable, tested predictions (handler vs random crawler; functional vs AX-label supervision 53.55 vs 40.35). Weak points: 80%-accurate boxes as training targets and single-step tasks framed toward desktop automation.",
+   "evidence_ids": [
+    "sol:E02",
+    "sol:E05",
+    "sol:E10",
+    "son55:U027"
+   ],
+   "counterevidence_ids": [
+    "son55:U012",
+    "son55:U013",
+    "son55:U016"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Crawler modules, parameters, tree schema, split and training settings are described; the GPT-agent prompts are absent (A.3 empty), the random-crawler baseline is undefined, retry/stop rules and collection cost are missing, and Gold counts are inconsistent.",
+   "evidence_ids": [
+    "son55:U006",
+    "son55:U007",
+    "son55:U011",
+    "sol:E07"
+   ],
+   "counterevidence_ids": [
+    "agg:GR-A01",
+    "agg:GR-A02",
+    "agg:GR-A03"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "External ScreenSpot-v2/Pro use human labels and clear point-in-box judging; the in-house test uses AX boxes (80% accurate) and GPT task strings, Table 8 'Success Rate' is single-step accuracy, and the leakage-adjusted figure does not reconcile with Table 6.",
+   "evidence_ids": [
+    "son55:U013",
+    "son55:U014",
+    "son55:U019",
+    "sol:E14"
+   ],
+   "counterevidence_ids": [
+    "agg:GR-A05",
+    "agg:GR-A06",
+    "son55:U023"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Clean base-vs-tuned controls on the same backbones and two small ablations; data-efficiency claims vs OS-Atlas/UGround mix backbone, data and recipe, and A.7's same-backbone claim has no table.",
+   "evidence_ids": [
+    "son55:U017",
+    "son55:U018",
+    "son55:U019",
+    "sol:E10"
+   ],
+   "counterevidence_ids": [
+    "son55:U020",
+    "son55:U026"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "App-disjoint 881/227 split with harder test apps, external ScreenSpot benchmarks and a manual overlap audit (OneNote/Excel disclosed); the adjusted score does not reconcile and everything is offline.",
+   "evidence_ids": [
+    "son55:U011",
+    "son55:U022",
+    "sol:E12"
+   ],
+   "counterevidence_ids": [
+    "agg:GR-A05"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Denominators given; three stochastic-decoding runs with SD (inference noise, not training seeds); handler ablation on 3 apps single-run; Gold denominators inconsistent.",
+   "evidence_ids": [
+    "son55:U029",
+    "son55:U030",
+    "sol:E16"
+   ],
+   "counterevidence_ids": [
+    "agg:GR-A03"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Collection hardware, parallelism, training hours and GPUs are reported; GPT-4 API cost, total crawl time and any cost comparison with manual annotation or OS-Atlas are missing.",
+   "evidence_ids": [
+    "son55:U031",
+    "sol:E08",
+    "sol:E13"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 58.75,
+  "display": 58.8,
+  "lower": 58.75,
+  "upper": 58.75,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(15G+25M+20X+10Emeas+10Ecaus+10Ehold+5Estat+5Ecost)/4; unknown -> L uses 0, U uses 4; raw=null while any unknown"
+ },
+ "status": "reviewed",
+ "status_reason": "Full fixed HTML text available and read; all eight items resolved.",
+ "input_seat_hashes": {
+  "sol": "0cc8c457627f8a55156daf8da06bad4980850b0277492eea2c10e057d02b3af1",
+  "son55": "f97136730ea3fea5b53885232a6151397eb70537d7d83bf441e5a95b2509368d"
+ },
+ "aggregate_model": "fable",
+ "aggregate_actual_model": "claude-opus-5-5[1m]",
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_note": "Configured model type fable (upstream claude-opus-5-5[1m]) per batch manifest model_types.opus55; no session id or invocation receipt is exposed to this agent.",
+ "seat_integrity_check": {
+  "sol": {
+   "file_sha256": "0cc8c457627f8a55156daf8da06bad4980850b0277492eea2c10e057d02b3af1",
+   "status": "reviewed",
+   "status_field_shape": "str",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "sonnet",
+   "actual_model": "gpt-6.1-sol"
+  },
+  "son55": {
+   "file_sha256": "f97136730ea3fea5b53885232a6151397eb70537d7d83bf441e5a95b2509368d",
+   "status": "reviewed",
+   "status_field_shape": "dict (contract expects string; value read from .state)",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "haiku",
+   "actual_model": "claude-sonnet-5-5[1m]"
+  }
+ },
+ "resolutions": [
+  {
+   "field_path": "claim_type",
+   "sol_value": "evaluation_resource",
+   "son55_value": "component_training",
+   "decision": "son55",
+   "final_value": "component_training",
+   "reason": "The paper calls GUIrilla a data crawler whose output trains downstream models (agg:GR-A07) and its main evidence is training grounders and testing transfer; GUIrilla-Gold is a secondary evaluation artifact.",
+   "evidence_ids": [
+    "agg:GR-A07",
+    "son55:U019"
+   ],
+   "score_impact": "none directly; ratings read under component_training"
+  },
+  {
+   "field_path": "rs.matches",
+   "sol_value": [
+    "self_supervised_signal_engineering/None"
+   ],
+   "son55_value": [
+    "self_supervised_signal_engineering/rs:C08"
+   ],
+   "decision": "son55",
+   "final_value": "self_supervised_signal_engineering/rs:C08 (partial)",
+   "reason": "Explored edges -> GPT functional task strings is an inverse artifact->specification mapping producing new training instances (C08 step 2); the weak gate and missing cheap baseline are recorded as failure checks, the same treatment both seats gave MONDAY.",
+   "evidence_ids": [
+    "son55:U006",
+    "son55:U019"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "domain.matches",
+   "sol_value": [
+    "exploration_driven_task_synthesis/K14"
+   ],
+   "son55_value": [
+    "exploration_driven_task_synthesis/gui:K14",
+    "planner_grounder_interface/gui:K23",
+    "structured_screen_observation/gui:C01"
+   ],
+   "decision": "revised",
+   "final_value": "gui:K14 + gui:K23 + gui:C01(partial)",
+   "reason": "son55's K23 (grounding data from rendered UI structure) is the closest fit for the training data itself; K14 and C01 describe the crawl/relabel and AX-action operations. IDs normalised to gui:.",
+   "evidence_ids": [
+    "son55:U010",
+    "sol:E05"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "rating.M",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "sol",
+   "final_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "reason": "The method makes two distinguishing predictions that are tested (handlers vs random crawl; functional vs AX-label supervision). son55's deductions about long-horizon framing and exploration-quality measurement concern claim scope and evidence (E items), not whether the operation fits the stated data bottleneck.",
+   "evidence_ids": [
+    "sol:E10",
+    "son55:U027"
+   ],
+   "score_impact": "+6.25 vs son55"
+  },
+  {
+   "field_path": "expectation.E15",
+   "sol_value": "unmet",
+   "son55_value": "partial",
+   "decision": "son55",
+   "final_value": "partial",
+   "reason": "The authors mostly confine claims to grounding/understanding, but Table 8 is labelled 'agentic Success Rate' while being single-step accuracy, inviting an agent-capability reading.",
+   "evidence_ids": [
+    "son55:U023"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E22",
+   "sol_value": "partial",
+   "son55_value": "met",
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "Results cover 0.7B, 3B and 7B but stop at 7B; E22 asks for larger backbones (32B/72B) because gains shrink with size.",
+   "evidence_ids": [
+    "sol:E10"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E24",
+   "sol_value": "partial",
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "Cross-OS transfer (Windows subset of ScreenSpot-Pro) is claimed, which is a layout-generalization claim; no controlled perturbation pairs. son55's not_applicable missed the cross-OS claim.",
+   "evidence_ids": [
+    "sol:E14"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E25",
+   "sol_value": "partial",
+   "son55_value": "unmet",
+   "decision": "son55",
+   "final_value": "unmet",
+   "reason": "About 15.7% of audited test tasks are NOT DOABLE, but no model refusal/infeasible behaviour is reported; labelling infeasible tasks in the audit does not meet the requirement.",
+   "evidence_ids": [
+    "son55:U014"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E28",
+   "sol_value": "partial",
+   "son55_value": "met",
+   "decision": "son55",
+   "final_value": "met",
+   "reason": "Exploration apps and evaluation apps are disjoint, external OOD benchmarks are reported, and overlap is audited; the unreconciled adjusted score is recorded under E.holdout/E.measurement.",
+   "evidence_ids": [
+    "son55:U011",
+    "son55:U022"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  }
+ ],
+ "shared_error_corrections": [],
+ "aggregate_status": "accepted_final",
+ "aggregate_status_reason": "All 9 mechanical conflicts resolved from the fixed text; no scoring unknowns.",
+ "final_record_hash": "ee5b6471b6d7dbac58f4ceb68fbeef2606731ef7b62f8c907c04cee79f5cab40"
+}

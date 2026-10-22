@@ -1,0 +1,1763 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p2",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "paper": {
+  "paper_key": "2209.08655",
+  "paper_id": "arXiv:2209.08655",
+  "title": "Enabling Conversational Interaction with Mobile UI using Large Language Models",
+  "version": "2209.08655v2",
+  "claim_type": "component_training",
+  "claim_type_note": "无训练；贡献是“把 view hierarchy 转成 HTML 文本 + few-shot 提示”这一接口/表示组件，并用四个离线建模任务评估可行性。按冻结类型解释取 component_training：评价接口与组件效果，不要求在线成功标签；在 scope 里注明与训练无关。",
+  "scope_note": "收录边界：四项任务中仅一项为动作预测，其余为屏幕理解；按 EVIDENCE 的 B 类(可用于 CUA 的组件/方法学：屏幕表示)保留评审，不判 out_of_scope，但在证据等级上只算 offline。",
+  "central_claim": "单个预训练 LLM 通过把 Android view hierarchy 转成 HTML 的屏幕表示和少量(≤2)exemplar 提示，无需专用数据集和训练，就能在屏幕问题生成、屏幕摘要、屏幕问答、指令→UI元素映射四个任务上取得“有竞争力”的表现，从而可行地支持移动 UI 的对话式交互。",
+  "central_claim_scope": "PaLM 一个模型；RICO/Screen2Words/PixelHelp 公开离线数据；单轮、单屏“unit conversation”；仅用 view hierarchy(无像素)；评价为离线人评/字符串匹配/步级元素序列匹配；只有第 4 个任务(指令→元素)接近 agent 动作预测，且是在金标屏幕上逐步预测，不闭环执行。"
+ },
+ "provenance": {
+  "input_hash": "fed6b4a2d84803fc93183b9a9669ad578f4b1611b203548221a83913612b045e",
+  "rubric_version": "radar-score-v2.2 (draft_uncalibrated)",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "pattern_protocol_hash": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_cards_hash_note": "domain_cards_hash = sha256 of research/patterns/taxonomy.json (manifest asset domain_taxonomy); conditions hash given separately",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "corpus_hash": "ab81004336f12af0464893fc548cb5eba57552028d6a2431c2db1014ecf52cbc",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m] (self-reported from system prompt: Sonnet 5.5)",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_receipt_note": "No session id or receipt reference is exposed to this subagent; null by contract.",
+  "timestamp": "2026-10-21T17:16:28Z",
+  "input_drift_flag": true
+ },
+ "materials": [
+  {
+   "material_id": "M-2209.08655v2",
+   "url": "https://arxiv.org/html/2209.08655",
+   "version": "2209.08655v2",
+   "sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2209.08655.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Related Work",
+    "3 Conversation framework",
+    "4 Prompting (4.1-4.3)",
+    "5 Feasibility Experiments (5.1-5.4)",
+    "6 Discussion (6.1-6.7)",
+    "7 Conclusion",
+    "Appendix A (headings only)"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Appendix A Listings 1-4 (the actual prompt texts) are not rendered in the pinned text; only their headings and the description in Sec 5/App A intro are available",
+    "Figures 1-7 are images (captions only)"
+   ],
+   "note": "Complete for method/experiments; prompt listing bodies absent in the text extraction.",
+   "input_drift": {
+    "manifest_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+    "disk_sha256_at_report_time": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+    "note": "The review was performed on the text whose sha256 equals the manifest value (verified by sha256sum before reading). After the review the file at fulltext_path was replaced (mtime 13:16 EDT; materials.jsonl now lists a new hash and a versioned URL). The refreshed render appears to include the Appendix prompt listings and duplicated paragraphs; it was NOT read in full and NOT used for any judgement. All evidence quotes in this record were re-checked and still occur verbatim in the refreshed file. The records stay bound to the manifest hash; the controller must re-pin the manifest (and give both seats the same input) or order a new attempt if the refreshed text is authoritative."
+   }
+  },
+  {
+   "material_id": "R-2405.14573",
+   "url": "https://arxiv.org/html/2405.14573",
+   "version": null,
+   "sha256": "d745a9085e86a2ea357a27f08bb1c0fd1918ff9040ef9885c5db387c456a56cc",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2405.14573.txt",
+   "material_status": "html",
+   "sections_read": [
+    "line 180"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; consulted only for the listed lines (fact source for lineage/baseline cross-check, not judgement)"
+   ],
+   "role": "nearest_neighbor_reference",
+   "purpose": "later benchmark places this paper in the ICL-on-mobile lineage"
+  },
+  {
+   "material_id": "R-2501.12326",
+   "url": "https://arxiv.org/html/2501.12326",
+   "version": null,
+   "sha256": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2501.12326.txt",
+   "material_status": "html",
+   "sections_read": [
+    "line 1120"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; consulted only for the listed lines (fact source for lineage/baseline cross-check, not judgement)"
+   ],
+   "role": "nearest_neighbor_reference",
+   "purpose": "later model paper cites this paper"
+  },
+  {
+   "material_id": "M-2304.07061v5",
+   "url": "https://arxiv.org/html/2304.07061",
+   "version": "2304.07061v5",
+   "sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2304.07061.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Sec 5 Conclusion only"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "reviewed separately"
+   ],
+   "note": "cross-reference to concurrent same-batch paper"
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "E001",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Abstract; fulltext line 126",
+   "quote": "This paper investigates the feasibility of enabling versatile conversational interactions with mobile UIs using a single LLM.",
+   "support_explanation": "作者中心主张的范围：“可行性”，单个 LLM、移动 UI。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E002",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Abstract; fulltext line 126",
+   "quote": "Our method achieved competitive performance on these challenging tasks without requiring dedicated datasets and training",
+   "support_explanation": "作者声称“有竞争力”、无需专用数据与训练。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E003",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 1; fulltext line 128",
+   "quote": "each of them only addresses a limited aspect of conversational interaction and requires considerable effort in curating large-scale datasets and training dedicated models",
+   "support_explanation": "作者 gap：每个任务各需大数据集与专用模型。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E004",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 1; fulltext line 128",
+   "quote": "Notably, our work is the first to investigate methods to enable the Screen Question-Generation and Screen Question-Answering tasks in literature",
+   "support_explanation": "“首次”主张（QG 与 QA）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E005",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 4.1.1; fulltext line 128",
+   "quote": "we represent a mobile UI in texts by converting its view hierarchy data into HTML syntax",
+   "support_explanation": "核心操作：view hierarchy → HTML 文本。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E006",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 4.1.1; fulltext line 128",
+   "quote": "a perfect one-to-one conversion does not exist",
+   "support_explanation": "转换有损（作者承认）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E007",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 4.3; fulltext line 128",
+   "quote": "we only show the leaf nodes visible to the users",
+   "support_explanation": "提示中只保留用户可见的叶子节点（剪枝）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E008",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 4.1.5; fulltext line 128",
+   "quote": "we insert numeric indexes to each element as the",
+   "support_explanation": "给每个元素加数字 id，供模型用 id 引用。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E009",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 4.2; fulltext line 128",
+   "quote": "In our early investigations, we found that this technique does not improve performance for tasks where the output can be directly obtained from the input screen HTML.",
+   "support_explanation": "CoT 仅用于 QG，其余任务“早期发现无效”(无数据)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E010",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 5; fulltext line 128",
+   "quote": "we limit the number of exemplars in a prompt to be two at most",
+   "support_explanation": "受 PaLM 输入上限 1920 tokens 所限，最多 2 个 exemplar。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E011",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 5; fulltext line 128",
+   "quote": "All the studies were conducted with the PaLM model",
+   "support_explanation": "全部实验仅用一个 LLM(PaLM)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E012",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 5.1.2; fulltext line 128",
+   "quote": "The input field counts were fed with a ground truth count extracted from the screen HTML.",
+   "support_explanation": "QG 的 CoT 中输入框计数直接来自屏幕 HTML 的真值提取，使“覆盖率”指标部分被提示给定。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E013",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 5.1.3; fulltext line 128",
+   "quote": "We randomly sampled 400 test screens from the RICO dataset",
+   "support_explanation": "QG：400 个 RICO 屏，人类评分。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E014",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 5.1.4; fulltext line 128",
+   "quote": "Three different human raters examined each question to obtain aggregated scores.",
+   "support_explanation": "QG：每题 3 名评分员；未报告评分员间一致性。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E015",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 5.1.4; fulltext line 128",
+   "quote": "Our approach achieves an almost perfect average score of 4.98 on grammar correctness, while the rule-based approach receives a 3.6 average rating.",
+   "support_explanation": "QG 结果：语法 4.98 vs 模板 3.60；相关性 92.8% vs 84.1%；覆盖 F1 95.9%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E016",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Table 1; fulltext line 1056",
+   "quote": "LLM | 4.98",
+   "support_explanation": "Table 1 LLM 行：4.98 / 92.8% / 95.9%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E017",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Table 2; fulltext line 1070",
+   "quote": "Screen2Words ( Wang et al., 2021 ) | 65.5 | 45.8 | 32.4 | 25.1 | 61.3 | 48.6 | 29.5",
+   "support_explanation": "摘要：Screen2Words BLEU-4 25.1、CIDEr 61.3。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E018",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Table 2; fulltext line 1069",
+   "quote": "2-shot LLM | 45.0 | 25.1 | 17.6 | 14.1 | 39.9 | 33.0 | 17.7",
+   "support_explanation": "摘要：2-shot LLM BLEU-4 14.1、CIDEr 39.9，自动指标低于专用模型。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E019",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 5.2.4; fulltext line 129",
+   "quote": "When evaluating these models against automatic metrics, LLM generally scored less than the benchmark model.",
+   "support_explanation": "自动指标全面低于 Screen2Words。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E020",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 5.2.4; fulltext line 129",
+   "quote": "Among all the human annotations, 63.5% of them rated LLM summaries as more accurate, while 28.6% voted for benchmark model summaries.",
+   "support_explanation": "摘要人评：63.5% 偏好 LLM。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E021",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 5.2.3; fulltext line 129",
+   "quote": "We recruited 37 annotators",
+   "support_explanation": "摘要人评 37 名标注者，每屏 3 评。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E022",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 5.3.3; fulltext line 131",
+   "quote": "In the remaining 288 question-answer pairs, 57 ground truth answers are not present in the view hierarchy data.",
+   "support_explanation": "QA：57/288 真值答案不在 view hierarchy 中（约 20%）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E023",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 5.3.3; fulltext line 131",
+   "quote": "we focus on the answers that are present in the view hierarchy data",
+   "support_explanation": "QA 只在 VH 可答的子集上评测，分母收窄。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E024",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Table 3; fulltext line 1113",
+   "quote": "2-shot LLM | 66.7% | 12.6% | 5.2% | 64.8%",
+   "support_explanation": "QA 2-shot：精确匹配 66.7%，Micro-F1 64.8%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E025",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Table 3; fulltext line 1114",
+   "quote": "DistilBERT ( Sanh et al., 2019 ) | 36.0% | 8.5% | 9.9% | 37.2%",
+   "support_explanation": "QA 基线仅为现成 DistilBERT(SQuAD)，作者自述其对 HTML 差。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E026",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 5.3.3; fulltext line 131",
+   "quote": "However, our metrics, which rely on string matching, may not detect these aliases and could result in under-reported scores for our approach.",
+   "support_explanation": "字符串匹配指标可能低估。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E027",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 5.4.3; fulltext line 132",
+   "quote": "We conducted experiments under two conditions: 1) in-app and 2) cross-app.",
+   "support_explanation": "指令映射：in-app 与 cross-app 两种 exemplar 条件。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E028",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Table 4; fulltext line 1183",
+   "quote": "2-shot LLM (cross-app) | 75.28 | 34.44",
+   "support_explanation": "跨 app exemplar：partial 75.28 / complete 34.44。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E029",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Table 4; fulltext line 1185",
+   "quote": "2-shot LLM (in-app) | 80.36 | 45.00",
+   "support_explanation": "in-app exemplar：partial 80.36 / complete 45.00。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E030",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Table 4; fulltext line 1186",
+   "quote": "Seq2Act ( Li et al., 2020b ) | 89.21 | 70.59",
+   "support_explanation": "专用模型 Seq2Act：89.21 / 70.59。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E031",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 5.4.4; fulltext line 132",
+   "quote": "Our approach underperforms the benchmark results from the Seq2Act model",
+   "support_explanation": "作者承认低于 Seq2Act。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E032",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 6.2; fulltext line 132",
+   "quote": "One possible reason for the underperformance is that LLMs are trained to generate text instead of selecting (predicting) an element id",
+   "support_explanation": "作者对指令映射落后原因的猜测（未检验）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E033",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 6.1; fulltext line 132",
+   "quote": "prototyping novel language interactions on mobile UIs can be as easy as designing a data exemplar",
+   "support_explanation": "作者推论：原型设计只需设计 exemplar（未检验）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E034",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 6.3; fulltext line 133",
+   "quote": "our current approach would likely select one of them directly without clarifying with the users",
+   "support_explanation": "歧义指令未处理：直接选一个，不会澄清。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E035",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 6.5; fulltext line 133",
+   "quote": "they could fail in cases requiring information not present in the view hierarchy but available as pixels",
+   "support_explanation": "边界：依赖 view hierarchy，像素信息缺失时失败。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E036",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 6.6; fulltext line 133",
+   "quote": "Our current method does not explicitly address this issue.",
+   "support_explanation": "幻觉/可靠性未处理。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E037",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 5.4.3; fulltext line 132",
+   "quote": "We randomly sampled one screen from each unique app package in the dataset as prompt modules.",
+   "support_explanation": "exemplar 随机抽取，未做不同抽样的方差分析。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E038",
+   "material_id": "R-2405.14573",
+   "material_sha256": "d745a9085e86a2ea357a27f08bb1c0fd1918ff9040ef9885c5db387c456a56cc",
+   "locator": "Sec 1 related (AndroidWorld); fulltext line 180",
+   "quote": "with in-context learning (ICL) and fine-tuning applied to mobile ( Rawles et al., 2023 ; Hong et al., 2023 ; Wang et al., 2023a",
+   "support_explanation": "后来 benchmark 把本文归入“基础模型+ICL 用于移动端”这一谱系（现实相关性）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E039",
+   "material_id": "R-2501.12326",
+   "material_sha256": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "locator": "References (UI-TARS); fulltext line 1120",
+   "quote": "Enabling conversational interaction with mobile UI using large language models.",
+   "support_explanation": "UI-TARS 参考文献含本文（后续谱系引用）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E040",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 3 (DroidBot-GPT, same batch); fulltext line 166",
+   "quote": "DroidBot-GPT, the first Android app automator guided by a large language model",
+   "support_explanation": "同批 DroidBot-GPT 同期做 LLM+view hierarchy 的移动端自动化，自称“首个”；两篇各自的“首个”主张互相不下结论。",
+   "kind": "author_report"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "屏幕表示：Android view hierarchy → HTML 文本（供冻结 LLM 读取）",
+   "information": "输入=view hierarchy（class/text/resource_id/content_desc/bounds…）；使用其中 4 个文本相关属性；不使用像素；resource_id 含开发者命名（特权结构信息）。",
+   "operation": "DFS 遍历；class 映射 TextView→p、Button→button、ImageView→img、EditText→input、其余→div；text 放标签内；resource_name 词放入 class；content_desc 放入 alt；每个元素加 DFS 序号 id；提示中仅保留用户可见叶子节点。",
+   "output": "约 <1920 token 的 HTML 文本屏幕。",
+   "conditions": "屏幕有可靠的 view hierarchy 且文本信息足够；无大量无 alt 的图标；HTML 长度可放入上下文。",
+   "feedback": {
+    "status": "not_applicable",
+    "reason": "单次无反馈。"
+   },
+   "selection_rule/data": "无选择；表示规则人工设计（映射启发式）。",
+   "persistence": {
+    "status": "not_applicable",
+    "reason": "推理时提示构造，无持久化。"
+   },
+   "later_use": {
+    "status": "not_applicable",
+    "reason": "同上"
+   },
+   "claimed_effect": "“更靠近 LLM 训练分布”故 few-shot 更有效（未做表示消融）。",
+   "failure_boundary": "无文本/无 alt 的图标与图像、canvas、需要像素的应用失败；VH 不准确（57/288 QA 答案不在 VH 中）。",
+   "evidence_ids": [
+    "E005",
+    "E006",
+    "E007",
+    "E008",
+    "E022",
+    "E035"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "少样本提示协议：preamble + ≤2 个 (屏幕HTML, [CoT], 输出) exemplar + 测试屏幕；输出用起止标签",
+   "information": "exemplar 由作者从同数据集随机抽取；QG 的 CoT 含三步(输入框计数、屏幕摘要、输入枚举)，计数由 HTML 真值提取并喂入。",
+   "operation": "四类任务共用同一格式，只换 preamble 与 exemplar；0/1/2-shot 比较。",
+   "output": "带分隔标签的文本答案（问题/摘要/答案/元素 id）。",
+   "conditions": "≤2 exemplar 受 1920 token 限制；CoT 只用于 QG。",
+   "feedback": {
+    "status": "not_applicable",
+    "reason": "单次无反馈。"
+   },
+   "selection_rule/data": "exemplar 随机抽取；PixelHelp 另分 in-app 与 cross-app 两种 exemplar 条件。",
+   "persistence": {
+    "status": "not_applicable",
+    "reason": "推理时条件化，无参数更新。"
+   },
+   "later_use": {
+    "status": "not_applicable",
+    "reason": "同上"
+   },
+   "claimed_effect": "第一个 exemplar 带来大部分增益，第二个边际提升；0-shot 基本不可用(摘要/指令映射)。",
+   "failure_boundary": "歧义指令只选一个、幻觉未处理、exemplar 与测试 app 不一致时指令映射下降。",
+   "evidence_ids": [
+    "E010",
+    "E012",
+    "E009",
+    "E027",
+    "E028",
+    "E029",
+    "E034",
+    "E036"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "任务框架：按 initiative × purpose 划分四类 unit conversation，并据此选 4 个建模任务",
+   "information": "概念框架，无信息权限问题。",
+   "operation": "把对话分为 agent/user 主动 × 请求/提供信息。",
+   "output": "四个评测任务的选择。",
+   "conditions": "单轮单屏。",
+   "feedback": {
+    "status": "not_applicable",
+    "reason": "概念框架"
+   },
+   "selection_rule/data": "无",
+   "persistence": {
+    "status": "not_applicable",
+    "reason": "概念框架"
+   },
+   "later_use": {
+    "status": "not_applicable",
+    "reason": "概念框架"
+   },
+   "claimed_effect": "为任务选择提供依据。",
+   "failure_boundary": "多轮/多屏被明确排除。",
+   "evidence_ids": [
+    "E001",
+    "E034"
+   ]
+  }
+ ],
+ "retention_trace": {
+  "applicable": false,
+  "reason": "无任何跨回合保存的改动；提示在推理时构造，没有选择/留存/后续任务读取。"
+ },
+ "gap": {
+  "author_gap": "对话式移动 UI 交互需要多个任务，各需专用大数据集与专用模型，成本高；LLM few-shot 能否用于 GUI 尚不清楚。",
+  "checked_gap": "正文确实描述了 Screen2Words、Seq2Act/PixelHelp、widget captioning 等需大数据集专用模型的路线（c_gap），并用 PaLM 少样本去逼近。本席核对：落后差距在数据中是真的——指令→元素 complete 45.0 vs Seq2Act 70.59、摘要 BLEU-4 14.1 vs 25.1；因此“无需专用数据即可达到 competitive”只在 QG/QA/人评摘要成立，不是全部任务。Screen2Words/Seq2Act/PixelHelp 的原文不在固定包内，仅用作者给出的基线数字。",
+  "lineage": [
+   "widget captioning / Screen Recognition / Screen2Words / Seq2Act(PixelHelp) 专用模型 → 本文：GPT-3/PaLM few-shot 提示 + CoT 做 GUI 对话任务；后续：DroidBot-GPT(2304.07061，同批) → AndroidWorld 把二者归为 ICL-on-mobile。"
+  ],
+  "closest_adjacent": [
+   {
+    "work": "Screen2Words (summarization)",
+    "source_version": "numbers as reported in 2209.08655v2 Table 2; original not in pinned bundle",
+    "solved": "专用训练的屏幕摘要",
+    "residual": "摘要偏通用/高频词，自动指标高但人评劣于 LLM(本文)",
+    "evidence_ids": [
+     "E017",
+     "E020"
+    ]
+   },
+   {
+    "work": "Seq2Act (instruction→UI action)",
+    "source_version": "numbers as reported in 2209.08655v2 Table 4",
+    "solved": "70.59 complete on PixelHelp",
+    "residual": "需数十万示例",
+    "evidence_ids": [
+     "E030",
+     "E031"
+    ]
+   },
+   {
+    "work": "DroidBot-GPT (concurrent, same batch)",
+    "source_version": "2304.07061v5",
+    "solved": "把 view hierarchy 转自然语言让 ChatGPT 选动作",
+    "residual": "与本文同属 LLM+VH 文本表示；无互相比较",
+    "evidence_ids": [
+     "E040"
+    ]
+   }
+  ],
+  "residue": "单屏单轮；无像素；歧义/多轮/可靠性未解；表示设计与 CoT 的贡献未被消融；无与“微调同一 LLM”或“更长上下文/检索 exemplar”的对照。",
+  "stakes": "若 view hierarchy→文本表示+few-shot 在小数据下可用，则降低移动 UI 语言交互的原型成本；但落后专用模型的任务仍有明显影响（动作预测）。",
+  "method_response": "用 HTML 化的屏幕表示降低 LLM 的分布外程度，并用 exemplar 条件化 + 任务特定 CoT 完成四项任务。",
+  "remaining_gap": "相对专用模型的差距(指令映射)；像素缺失；多屏多轮；可靠性；表示设计的因果贡献未验证。",
+  "current_relevance": "后续 benchmark 把本文归为 ICL 用于移动端的早期工作（c_aw、c_uitars）；这是谱系位置，不改变发表时 gap 的成立。",
+  "evidence_ids": [
+   "E003",
+   "E004",
+   "E017",
+   "E030",
+   "E038",
+   "E039",
+   "E040"
+  ],
+  "unresolved": [
+   "Screen2Words/Seq2Act/PixelHelp/RICO 原文不在固定包；“首次”主张只能按作者表述，不能作为查新证据。"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "adapt_via_conditioning",
+  "supporting": [
+   "unify_into_shared_representation"
+  ],
+  "sub_pattern": "C03",
+  "outside_taxonomy": false,
+  "reason": "操作是：用 exemplar(+CoT)与统一提示格式把新任务表达为条件输入，在推理时求解而不更新参数，对应 adapt_via_conditioning 的 signature；四个异构 UI 任务共用同一 canonical 提示模式，对应子卡 C03 的“canonical conditioning schema”部分。但 C03 的上游阶段(让模型学会解析该 schema)与按类别留出/去污染未被执行，另一半(检索 reference substrate)仅是 1-2 个随机 exemplar；因此是 partial 而非 strong。",
+  "matches": [
+   {
+    "main_id": "adapt_via_conditioning",
+    "sub_id": "C03",
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "1_canonical_schema": "met(统一 preamble+exemplar+标签输出，覆盖四个任务)",
+     "2_reference_substrate": "partial(仅 1-2 个随机 exemplar，无检索库)",
+     "3_upstream_phase_teaching_the_format": "absent(冻结 PaLM，无上游调优)",
+     "4_category_level_holdout_and_overlap_audit": "absent(随机抽 exemplar；未审计 PaLM 预训练与 RICO/Screen2Words 重叠)",
+     "5_adversarial_cheaper_baseline": "partial(基线是模板/Screen2Words/DistilBERT/Seq2Act；缺“更长上下文/最近邻 exemplar/微调同一 LLM”)"
+    },
+    "success_checks": {
+     "structural_holdout": "unmet",
+     "conditioning_channel_first_class": "unmet(未训练)",
+     "single_structural_quantity_isolated": "unmet",
+     "regime_characterised": "partial(0/1/2-shot；in-app vs cross-app)",
+     "mechanism_ablation": "unmet(无表示/CoT 消融)"
+    },
+    "failure_checks": {
+     "claims_no_adaptation_while_exposed": "unknown(PaLM 预训练是否见过 RICO 等未审计)",
+     "port_without_theory_and_cheap_baseline": "present(无更长上下文/最近邻对照)",
+     "single_task_recipe": "not_present(四任务)",
+     "shallow_ablation": "present(几乎无消融)"
+    },
+    "evidence_ids": [
+     "E010",
+     "E027",
+     "E028",
+     "E029",
+     "E012"
+    ],
+    "reason": "统一提示格式 + exemplar 条件化完成四个任务；但没有 C03 要求的留出/对照，Fit=partial。"
+   },
+   {
+    "main_id": "unify_into_shared_representation",
+    "sub_id": "C18",
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "2_interface_artifact": "met(把 view hierarchy 序列化为 mature modality 的表面形式 HTML)",
+     "2b_validate_semantic_structure": "unmet(无表示有效性验证)",
+     "3_apply_recipe_uniformly": "met(四任务同一模型同一格式)",
+     "4_ablation_vs_naive_baseline": "absent(无与拼接文本/纯文本描述的对照)",
+     "5_matches_specialists": "unmet(指令映射与摘要自动指标落后专用模型)"
+    },
+    "success_checks": {
+     "capability_unlocked": "partial(QG/QA 首次 benchmark 数值)",
+     "beats_specialists": "partial(仅人评摘要)"
+    },
+    "failure_checks": {
+     "off_the_shelf_swap_no_ablation": "present",
+     "lossy_proxy": "present(无 alt 图标、像素缺失)",
+     "underperforms_specialists": "present(指令映射)"
+    },
+    "evidence_ids": [
+     "E005",
+     "E006",
+     "E035",
+     "E031"
+    ],
+    "reason": "“序列化成 HTML 让现有 LLM 无需改架构读取 GUI”正对应 C18 的 serializer 战术，但缺少把接口贡献与骨干贡献分开的消融。"
+   }
+  ],
+  "considered_not_chosen": [
+   {
+    "main_id": "architectural_operator_substitution",
+    "why_not": "虽然替换了屏幕表示，但没有“证明保持关键性质”的步骤，且更贴近 serializer 而非 operator 替换。"
+   },
+   {
+    "main_id": "decompose_and_delegate",
+    "why_not": "QG 的 CoT 是单次生成内的多步中间结果，没有外部 solver 或可验证中间物（计数由规则抽取，是例外但不构成委托）。"
+   }
+  ],
+  "executes_pattern": {
+   "value": "partial",
+   "reason": "执行了“统一提示+exemplar 条件化、不更新参数”；未执行留出类别/污染审计/机制消融这些成功条件。"
+  },
+  "resolves_problem": {
+   "value": "partial",
+   "reason": "对 QG、QA、人评摘要，“无需专用训练即可有竞争力”得到作者结果支持；对指令→元素动作映射，差距 25.6 个百分点(complete)并未关闭，作者也承认。",
+   "evidence_ids": [
+    "E015",
+    "E020",
+    "E024",
+    "E028",
+    "E029",
+    "E030",
+    "E031"
+   ]
+  }
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "structured_screen_observation",
+    "sub": "C01",
+    "version": "taxonomy@430aa362",
+    "fit": "partial",
+    "operation": "枚举 view hierarchy 元素、给 DFS id、模型输出 id（任务4）；与 C01 的差别：本文不在截图上画 mark，选择仅在离线金标屏上单步评测，其他三个任务不做 id 动作。",
+    "condition_checks": [
+     {
+      "id": "S1",
+      "status": "partial",
+      "note": "RICO 有 view hierarchy，但 57/288 QA 答案不在 VH 中，作者引用 VH 不准确",
+      "evidence_ids": [
+       "E022"
+      ]
+     },
+     {
+      "id": "S4",
+      "status": "unmet",
+      "note": "只用 HTML 文本，没有与截图/多模态在同骨干下对比",
+      "evidence_ids": [
+       "E035"
+      ]
+     },
+     {
+      "id": "F1",
+      "status": "present",
+      "note": "无文本/无 alt 的图标及像素信息缺失导致不可寻址",
+      "evidence_ids": [
+       "E035"
+      ]
+     },
+     {
+      "id": "F2",
+      "status": "present",
+      "note": "重复元素(同发件人邮件)的歧义直接被选一个",
+      "evidence_ids": [
+       "E034"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E005",
+     "E008",
+     "E035",
+     "E034"
+    ]
+   },
+   {
+    "main": "structured_screen_observation",
+    "sub": "C13",
+    "version": "taxonomy@430aa362",
+    "fit": "partial",
+    "operation": "只保留用户可见叶子节点、仅用 4 个属性、resource_name 并入 class——是 C13 的“剪枝/重构文本观察”，但无规则剪枝的 token 节省与成功率消融。",
+    "condition_checks": [
+     {
+      "id": "S5",
+      "status": "unmet",
+      "note": "未报告 token 数与成功率权衡；仅以 1920 上限为由",
+      "evidence_ids": [
+       "E007",
+       "E010"
+      ]
+     },
+     {
+      "id": "F6",
+      "status": "present",
+      "note": "剪枝损失(如丢失非叶容器信息)未分任务报告",
+      "evidence_ids": [
+       "E007"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E007",
+     "E010"
+    ]
+   }
+  ],
+  "unassigned": [
+   "“agent 主动生成问向用户的问题(Screen QG)”——最接近 agent_initiated_user_interaction，但该主卡(R02)关注“何时求助”的决策，本文只生成问句，二者不同，故未匹配。",
+   "“屏幕摘要/屏幕问答”这类面向无障碍的屏幕理解任务不在现有领域卡内。"
+  ],
+  "revision_proposals": [
+   {
+    "status": "not_collected",
+    "note": "若后续有 ≥2 篇独立全文支持“屏幕理解对话任务(摘要/QA)作为 CUA 前置能力”，可考虑 case 卡；单篇不提议。"
+   }
+  ]
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "adapt_via_conditioning",
+   "rs_sub": "C03",
+   "domain": {
+    "namespace": "gui",
+    "main": "structured_screen_observation",
+    "sub": "C01"
+   },
+   "operation_correspondence": "RS：canonical 条件格式 + 少量参照例 → 任务求解；GUI：HTML 化屏幕 + exemplar → 元素 id/文本输出。对应的是“条件化格式”，领域卡 C01 强调的是元素 id 动作与结构可寻址性。",
+   "conditions_and_differences": "C01 的 when-it-works(元素可寻址、骨干能读 id)在 RICO 上部分成立；C03 的上游阶段/留出缺失；两层匹配彼此独立，不是同一事实的两次计分。",
+   "evidence_ids": [
+    "E005",
+    "E008",
+    "E027"
+   ]
+  },
+  {
+   "rs_main": "unify_into_shared_representation",
+   "rs_sub": "C18",
+   "domain": {
+    "namespace": "gui",
+    "main": "structured_screen_observation",
+    "sub": "C13"
+   },
+   "operation_correspondence": "RS C18：序列化结构化信号为成熟模态；GUI C13：对文本观察做剪枝/重构。",
+   "conditions_and_differences": "本文剪枝是工程启发式，C13 要求报告 token 节省与成功率，本文未报告。",
+   "evidence_ids": [
+    "E007",
+    "E006"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "text": "Report execution-checked success rate on OSWorld (or OSWorld-Verified) for desktop computer-use claims, stating the step budget (15 vs 50 steps) and observation setting",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「桌面(Ubuntu/Windows)端到端 computer-use 成功率主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "text": "Report online success on AndroidWorld for mobile-agent claims, not only offline AndroidControl/AITW step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「Android/移动 GUI agent 任务成功率主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "text": "Report success on WebArena (self-hosted, functional-correctness checkers) for web-agent training or planning claims; if the 165-task WebArena-Lite or a per-template subset is used, say so and justify it",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「训练/数据合成/规划方法在自托管站点(WebArena 类)上提升 web agent」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "text": "Evaluate live-web agents on Online-Mind2Web (human-validated, start URL given, no search engine) or Mind2Web-Live rather than only WebVoyager, where a naive search-and-click agent already solves 51% of sampled tasks",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「真实 live-web 站点上的 web agent 成功率主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "text": "Report GUI grounding on ScreenSpot-Pro (high-resolution professional desktop) and ScreenSpot-v2, not only ScreenSpot v1, which saturates (7B and 72B indistinguishable)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「截图到坐标的 GUI grounding 模型/数据配方主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "text": "Compare a new grounder against UGround(-V1-7B), Aguvis-7B/72B, OS-Atlas-7B and UI-TARS(-1.5) at matched backbone size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「新 grounder 优于已有 GUI grounder 的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "text": "Compare a native end-to-end GUI policy against UI-TARS(-1.5)-7B (or the same backbone's SFT-only model) and against an agentic framework (GPT-4o/o3 planner + specialised grounder such as UGround, Aria-UI, Jedi, GTA1)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「训练的端到端 GUI agent 模型在线成功率提升主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "text": "For planner-grounder systems, hold the planner fixed and swap grounders (e.g. GPT-4o + UGround vs + Aguvis vs + Jedi), and report the planner alone",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「接地组件(或 planner–grounder 拆分)提升 agent 任务成功的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "text": "Compare GUI online-RL methods against DigiRL, WebRL, filtered BC / AWR and an SFT-only model trained on the same data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「RL 算法(在线/离线转在线/半在线/基于模型)提升 GUI/web agent 的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "text": "Validate an LLM/VLM success judge or outcome reward model against human labels on trajectories from agents not used to build it (agreement/accuracy, plus the resulting success-rate gap)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「用 LLM/VLM judge、ORM 或 reflector 为评测/过滤/奖励标注轨迹成败」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "text": "Report judge reliability separately for positive and negative verdicts (precision and NPV, or precision/recall per class), not only overall accuracy",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「GUI agent judge/PRM/ORM 足够可靠可作奖励或评测的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "text": "When a learned judge or PRM is the RL reward, show downstream policy gain against an alternative reward (rule/script checker, ORM vs PRM, another judge), and address reward hacking or bias",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「学习型奖励模型/验证器改进 GUI agent RL 训练的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "text": "Measure execution checkers (evaluation scripts) two-sidedly: false negatives on alternative valid solutions as well as false positives",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「奖励来自逐任务执行检查器/评测脚本的 benchmark、合成环境或 RL 流水线」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "text": "For PRMs or step-level verifiers, ablate the label source (human vs GPT-4o-generated step labels)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「GUI 步级 PRM 改进 RL 或 best-of-N 的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "text": "Do not rest an agent capability claim on offline step accuracy (AndroidControl, Multimodal-Mind2Web, GUI Odyssey) alone; add an online benchmark or show the offline metric predicts online success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "全部能力结论来自离线人评/字符串匹配/金标屏逐步预测；作者将主张限定为“可行性”，并把闭环 agent 留作未来工作，故判 partial 而非 unmet。",
+   "evidence_ids": [
+    "E001",
+    "E028",
+    "E029"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在线/live benchmark 上的经验比较(LLM 采样与环境噪声使多次运行有差异)」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「方法或基线可能使用不同 step cap 的成功率比较」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "text": "For inference-time search or best-of-N (simulated lookahead, verifier reranking), report cost/latency and the number of candidates, and compare against real-execution tree search where reset is possible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「推理时选择/搜索(世界模型 lookahead、verifier 重排、best-of-N)提升成功率的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "text": "Disclose and validate any modification to an online benchmark harness (re-implemented checkers, changed action implementations, dropped tasks, extra steps)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在 AndroidWorld/WebArena/Mind2Web-Live/OSWorld 的重构或修改 harness 中取得的结果」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "text": "For live-web results, state the evaluation date and handle site drift (replace outdated tasks, report blocked/CAPTCHA tasks)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在 live 网站或 live 应用上测得的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「观察空间可能不同的 GUI agent 之间的比较」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "text": "Report results across backbone sizes (e.g. 7B and 32B/72B), since gains from GUI data/RL recipes shrink with model size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「训练配方可跨策略 backbone 泛化的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "text": "Stratify online success by human reference step count (difficulty) and audit failure causes",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「新 benchmark 或关于长时程 GUI 任务能力的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "text": "Test grounding robustness under controlled perturbations (zoom, text size, window position/clutter, relational instructions) with matched pairs",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「grounder/agent 对布局、缩放、杂乱等视觉扰动鲁棒或可泛化的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "text": "Report refusal / infeasible-task behaviour (instructions with no valid target)",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "作者在 Sec 6.3 承认歧义指令会被直接选一个，但没有歧义/不可行指令的评测或拒答度量。",
+   "evidence_ids": [
+    "E034"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "text": "Compare a synthetic-trajectory recipe against an instruction-first / task-driven synthesis baseline with the same executor and similar data size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「探索优先/反向/世界模型式数据合成产出更好 GUI 训练数据的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "text": "Show a data-scaling curve (fraction or count of synthetic samples vs downstream score) and say where it saturates",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「合成 GUI grounding/转移/轨迹数据提升 agent 的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "text": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「自生成任务、探索转移、记忆或合成环境提升 benchmark 成功率的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "text": "Ablate error-correction/reflection data against filtered behaviour cloning at the same iteration count",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「反思/自纠错/首错恢复数据提升 GUI agent 的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "text": "Evaluate a GUI world model by downstream agent success and closed-loop (multi-step, autoregressive) rollouts, not only teacher-forced one-step fidelity",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「GUI/web 世界模型(文本、代码或图像下一状态预测器)准确或有用的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "text": "Ablate imagination / lookahead horizon, since world-model errors compound beyond 1 (lookahead) or about 5 (training) steps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在学习得到的 GUI 世界模型内做多步 rollout 规划或训练」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "text": "For training in a world model, include sim-only vs real-anchored vs SFT-only arms",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在世界模型或模拟 GUI rollout 中训练策略的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "text": "Back world-model or synthetic-environment fidelity scores with a second independent judge, human validation or executable checks, not a VLM judge from the same family as the training reward",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「用 LLM/VLM judge 度量 GUI 世界模型或模拟应用保真度的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "text": "For a digital twin / simulated app used for training or evaluation, measure its realism and whether it preserves the ranking of agents or checkpoints seen in the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「模拟应用/合成站点/数字孪生可替代真实环境的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "text": "For memory/retrieval agents, show gains on environments other than those the memory was built from",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「经验记忆/检索轨迹改进 GUI agent 的主张」；本文中心主张范围为「移动 UI 屏幕表示+少样本提示的离线可行性研究（QG/摘要/QA/指令→元素），不是端到端任务成功率或训练主张」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "LLM 少样本提示能为屏幕问题生成提供比模板更好的问题",
+   "setting": "400 个 RICO 屏；2 个随机 exemplar（含 CoT 与问题合并 exemplar）；17 名评分员，每题 3 评",
+   "baseline/control": "规则模板 What is {res_tokens}?",
+   "selection_vs_test": "测试屏随机抽样；exemplar 另抽两屏",
+   "result/denominator": "931 问题：语法 4.98 vs 3.60(MWU p<0.0001)；相关 92.8% vs 84.1%；覆盖 F1 95.9%(模板天然 100%)",
+   "evidence_ids": [
+    "E015",
+    "E016",
+    "E014",
+    "E013"
+   ],
+   "counterevidence": [
+    "E012"
+   ],
+   "counter_note": "输入框计数由 HTML 真值提取喂入 CoT，覆盖率指标因此偏乐观；基线是弱模板；评分员间一致性未报告。",
+   "allowed_conclusion": "作者报告：在 RICO 随机屏上，LLM 生成的问题语法与相关性优于简单模板；覆盖率指标不能作为独立能力证据。"
+  },
+  {
+   "claim_id": "C2",
+   "text": "屏幕摘要：LLM 摘要人评更准确于 Screen2Words",
+   "setting": "Screen2Words 测试集 4310 屏；2-shot",
+   "baseline/control": "Screen2Words 专用模型",
+   "selection_vs_test": "官方测试集；exemplar 随机取 2 屏",
+   "result/denominator": "自动指标全面更低(BLEU-4 14.1 vs 25.1)；人评 63.5% vs 28.6%(37 名标注者×每屏 3)",
+   "evidence_ids": [
+    "E020",
+    "E018",
+    "E017",
+    "E019",
+    "E021"
+   ],
+   "counterevidence": [
+    "E019"
+   ],
+   "counter_note": "人评为成对偏好“更准确”，评分口径未经校验；LLM 摘要更长(7.15 vs 6.64 词)可能影响偏好；仅文本屏。",
+   "allowed_conclusion": "作者报告：人评偏好 LLM，但自动指标落后；不是对专用模型的一般性超越。"
+  },
+  {
+   "claim_id": "C3",
+   "text": "屏幕 QA：LLM 显著优于现成 QA 模型",
+   "setting": "300 条 QA(121 屏)的初步数据集；只评测答案在 VH 中的子集；1/2-shot",
+   "baseline/control": "现成 DistilBERT(SQuAD 抽取式)",
+   "selection_vs_test": "3 屏留作 exemplar；其余测试",
+   "result/denominator": "2-shot 精确匹配 66.7% vs 36.0%；Micro-F1 64.8% vs 37.2%；57/288 条真值答案不在 VH，被排除出评测焦点",
+   "evidence_ids": [
+    "E024",
+    "E025",
+    "E022",
+    "E023"
+   ],
+   "counterevidence": [
+    "E026",
+    "E022"
+   ],
+   "counter_note": "基线弱且作者承认其不适配 HTML；评测子集收窄；字符串匹配度量可能低估或高估。",
+   "allowed_conclusion": "作者报告：在 VH 可答子集上，少样本 LLM 明显优于该现成抽取式模型。"
+  },
+  {
+   "claim_id": "C4",
+   "text": "指令→UI 元素映射：仅 2 个示例即可有竞争力",
+   "setting": "PixelHelp 187 条多步指令，金标屏逐步预测元素 id；in-app / cross-app exemplar",
+   "baseline/control": "Seq2Act（在大数据集上训练）",
+   "selection_vs_test": "每个 app 抽一屏作 prompt module；测试屏",
+   "result/denominator": "cross-app 2-shot：75.28/34.44；in-app：80.36/45.00；Seq2Act：89.21/70.59",
+   "evidence_ids": [
+    "E028",
+    "E029",
+    "E030",
+    "E031",
+    "E027"
+   ],
+   "counterevidence": [
+    "E031",
+    "E032"
+   ],
+   "counter_note": "落后 25.6 个百分点(complete)；非闭环；未与“检索最相似 exemplar”对比。",
+   "allowed_conclusion": "作者报告：2-shot 约能获得专用模型 ~half 的 complete 匹配；不能称“competitive”于该任务。"
+  },
+  {
+   "claim_id": "C5",
+   "text": "新的屏幕表示（HTML 化）是使 LLM 能处理移动 UI 的关键",
+   "setting": "全程使用同一表示",
+   "baseline/control": "无",
+   "selection_vs_test": "—",
+   "result/denominator": "无表示消融",
+   "evidence_ids": [
+    "E005",
+    "E033"
+   ],
+   "counterevidence": [
+    "E006"
+   ],
+   "counter_note": "没有任何替代表示(纯文本拼接、自然语言描述)的对照，表示的因果贡献未检验。",
+   "allowed_conclusion": "该表示足以让 PaLM 在 2-shot 下完成任务，但“关键”无证据。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "offline",
+  "evidence_level_reason": "全部为离线人评/字符串匹配/金标屏逐步预测；无闭环执行与在线成败检查。",
+  "author_claimed_level": "作者自称 feasibility",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "作者报告：在 RICO/Screen2Words/PixelHelp 离线数据上，PaLM + view-hierarchy→HTML 表示 + ≤2 个 exemplar 能在 QG、QA 上优于弱基线，摘要人评偏好 LLM；在指令→元素映射上明显落后专用模型。",
+  "cannot_say": [
+   "不能说表示设计或 CoT 是增益来源（无消融）",
+   "不能说可用于多轮/多屏/闭环 agent",
+   "不能说与专用模型在动作预测上 competitive",
+   "不能说 PaLM 预训练未接触测试数据（未审计）"
+  ],
+  "reproduction_note": "全部数值为作者报告；本席无复现。",
+  "unresolved": [
+   "提示全文在附录 listing 中未随文本给出",
+   "QA 数据集为作者间传递的 preliminary 数据，未核验标注质量"
+  ]
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "问题真实（每任务专用数据集成本高、LLM few-shot 能否用于 GUI 不明），但最近邻(Screen2Words/Seq2Act/PixelHelp)原文不在固定包内，只能凭作者数字；对“首次”主张无独立查证；任务落后专用模型的差距(尤其动作预测)使“gap 已被填上”不完整。",
+   "evidence_ids": [
+    "E003",
+    "E004",
+    "E030",
+    "E031"
+   ],
+   "counterevidence_ids": [
+    "E031"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "机制具体(HTML 化表示+exemplar+CoT)，“贴近预训练分布”的解释合理但未检验；任何关键设计(叶子剪枝、resource_name、alt、id、CoT)都没有消融；与朴素替代(自然语言描述、拼接文本、检索 exemplar)没有可区分预测。",
+   "evidence_ids": [
+    "E005",
+    "E007",
+    "E008"
+   ],
+   "counterevidence_ids": [
+    "E009",
+    "E033"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "转换规则、提示结构、exemplar 数量、输出分隔符、任务设置与评测协议均清楚，失败边界(像素、无 alt 图标、歧义、幻觉)在讨论中明示。扣分：附录提示正文不在固定文本；exemplar 为随机抽取，超长屏的处理未说明。",
+   "evidence_ids": [
+    "E005",
+    "E007",
+    "E010",
+    "E009",
+    "E035",
+    "E034",
+    "E036"
+   ],
+   "counterevidence_ids": [
+    "E037"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "QG 与摘要有较规范的人评(17/37 名评分员、每项 3 评)，PixelHelp 用既有 partial/complete 匹配；但 QG 覆盖率因计数提示而部分泄漏，QA 限定在 VH 可答子集并用易失配的字符串度量，评分员一致性/judge 校验未报告，且四项均为代理指标，不是任务成败。",
+   "evidence_ids": [
+    "E015",
+    "E014",
+    "E021",
+    "E028"
+   ],
+   "counterevidence_ids": [
+    "E012",
+    "E023",
+    "E026"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "有 0/1/2-shot 与 in/cross-app 比较，说明 exemplar 有用；但中心主张所称的“表示+提示技术”没有表示/CoT 消融，基线弱(模板、SQuAD 抽取式)，缺更长上下文/最近邻 exemplar/微调同一 LLM 的对照。",
+   "evidence_ids": [
+    "E027",
+    "E028",
+    "E029"
+   ],
+   "counterevidence_ids": [
+    "E009",
+    "E025",
+    "E033"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "使用官方/公开测试集并留出 exemplar 屏，且报告 cross-app 条件；但未审计 PaLM 预训练与 RICO/Screen2Words 的重叠，没有未见 app/站点，评测完全离线，范围已被作者限定为可行性。",
+   "evidence_ids": [
+    "E013",
+    "E027",
+    "E028"
+   ],
+   "counterevidence_ids": [
+    "E037"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "样本量与分母基本报告(931 问题/4310 屏/288 QA/187 指令)，QG 有显著性检验(Mann-Whitney)，失败边界在讨论中说明；但 exemplar 抽样只有一次、无方差，其余比较无区间，QA 排除 57 条。",
+   "evidence_ids": [
+    "E015",
+    "E022"
+   ],
+   "counterevidence_ids": [
+    "E037"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "报告了数据成本(≤2 个 exemplar vs 数万条训练示例)与输入长度上限，但无推理 token/延迟/费用，也未与微调成本比较；作者只提到蒸馏的未来方向。",
+   "evidence_ids": [
+    "E010",
+    "E002"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 51.25,
+  "display": 51.3,
+  "lower": 51.25,
+  "upper": 51.25,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(15*G+25*M+20*X+10*E.measurement+10*E.causality+10*E.holdout+5*E.statistics+5*E.cost)/4; display = half-up one decimal"
+ },
+ "status": "reviewed",
+ "status_reason": "正文方法/实验/讨论完整；附录 prompt listing 正文在固定文本中缺失，不影响主要论断的核对，已在 materials 标注。",
+ "rationale": {
+  "summary": "一篇早期、清晰的“LLM 少样本 + HTML 化 view hierarchy”可行性研究：任务框架与屏幕表示可复用，且诚实承认动作预测落后专用模型。弱点是对核心设计(表示、CoT、剪枝)没有任何消融，基线偏弱，评测全部离线代理指标，覆盖率指标因 GT 计数而部分泄漏。",
+  "G": "真实但最近邻原文缺，部分任务差距仍在。",
+  "M": "机制合理，无消融。",
+  "X": "规则清楚，附录提示正文缺。",
+  "E": "人评较规范但代理；因果对照弱；离线；无成本。"
+ }
+}

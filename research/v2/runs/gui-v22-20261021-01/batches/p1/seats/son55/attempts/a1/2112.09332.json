@@ -1,0 +1,1863 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p1",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "paper": {
+  "paper_key": "2112.09332",
+  "paper_id": "arXiv:2112.09332",
+  "version": "2112.09332v3",
+  "title": "WebGPT: Browser-assisted question-answering with human feedback",
+  "claim_type": "system_method",
+  "central_claim": "把 GPT-3 微调为可操作文本化网页浏览环境（Bing 搜索、点击、滚动、引用）的长问答 agent：先用人类示范做行为克隆，再用人类比较训练奖励模型，并对奖励模型做拒绝采样；答案须附带浏览中收集的引用以便人类评估事实性。最佳模型（175B BC + best-of-64）的答案在 ELI5 上被偏好于人类示范者的 56%、Reddit 最高票回答的 69%，在 TruthfulQA 上 75% 为真、54% 为真且有信息。"
+ },
+ "provenance": {
+  "input_hash": "27c3d4f26b56f3943ebb73731665de7b845b179ab70d27f6dcfa94cb495e6822",
+  "rubric_version": "SCORE_SPEC v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": {
+   "taxonomy_sha256": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+   "conditions_sha256": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+   "note": "patterns/main and patterns/sub card files read as-is; no card sha in manifest"
+  },
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "protocol_hashes": {
+   "pattern_protocol": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373",
+   "batch_contract": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+   "review_worksheet": "b0ca3ac92a458c934894aee62c88d6de8ab53901047326e0c8abdfd1a0d3219e",
+   "evidence_rules": "336e1bcdd149cd485ee5a1f22101ca594997b755b47555447ba6661b23a1fac5",
+   "corpus": "ab81004336f12af0464893fc548cb5eba57552028d6a2431c2db1014ecf52cbc"
+  },
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_receipt_note": "worker subagent context exposes no session id / receipt; model name from own system prompt (Sonnet 5.5, claude-sonnet-5-5[1m])",
+  "timestamp": "2026-10-21T17:24:12Z"
+ },
+ "materials": [
+  {
+   "material_id": "M-2112.09332-v3",
+   "role": "target_fulltext",
+   "url": "https://arxiv.org/abs/2112.09332v3",
+   "source_url": "https://arxiv.org/html/2112.09332",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2112.09332.txt",
+   "sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "material_status": "html",
+   "sections_read": [
+    "Abstract",
+    "1",
+    "2",
+    "3.1-3.2",
+    "4.1-4.3",
+    "5.1-5.2",
+    "6.1-6.5",
+    "7",
+    "8",
+    "Appendix A-K (hyperparameters, instructions, tables skimmed)"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Figures 2-12 (image-only numeric curves)",
+    "Appendix F/Table 10 question list (skimmed, not analyzed)"
+   ],
+   "note": "v3；文本与表格齐全，主要图（Figures 2–8）数值只在图中，文本里给出的百分比已引用。"
+  },
+  {
+   "material_id": "MR-2412.09605",
+   "role": "shared_reference_fact_only",
+   "url": "https://arxiv.org/abs/2412.09605",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2412.09605.txt",
+   "sha256": "ff0d81b000884775c3d21cacef43eb7db8eb5f0286152dd3fb0f1df0e9fd65bd",
+   "name": "AgentTrek",
+   "sections_read": [
+    "single introduction line located by grep"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; used only for the located lines listed in evidence[]"
+   ],
+   "note": "shared fixed reference (references.json); used for current_relevance facts only, not as judgment"
+  },
+  {
+   "material_id": "MR-2307.13854",
+   "role": "shared_reference_fact_only",
+   "url": "https://arxiv.org/abs/2307.13854",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2307.13854.txt",
+   "sha256": "896882a2c125ec2595dc2ed78f638950bc0b0a7c04c187bafa82c8174d7ecc62",
+   "name": "WebArena",
+   "sections_read": [
+    "Related Work line located by grep"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; used only for the located lines listed in evidence[]"
+   ],
+   "note": "shared fixed reference (references.json); used for current_relevance facts only, not as judgment"
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "EV01",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "Abstract; fulltext line 86",
+   "quote": "Our best model is obtained by fine-tuning GPT-3 using behavior cloning, and then performing rejection sampling against a reward model trained to predict human preferences.",
+   "support_explanation": "中心方法：BC + 对奖励模型的拒绝采样。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV02",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "Abstract; fulltext line 86",
+   "quote": "answers are preferred by humans 56% of the time to those of our human demonstrators, and 69% of the time to the highest-voted answer from Reddit.",
+   "support_explanation": "中心结果：56% 优于人类示范者，69% 优于 Reddit 最高票回答。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV03",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "1 Introduction; fulltext line 92",
+   "quote": "we outsource document retrieval to the Microsoft Bing Web Search API",
+   "support_explanation": "检索外包给 Bing；模型只负责浏览决策与综合。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV04",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "2 Environment design; fulltext line 176",
+   "quote": "The language model is prompted with a written summary of the current state of the environment",
+   "support_explanation": "观测为文本摘要：问题、当前页文本、动作剩余次数等（Figure 1b）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV05",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "2 Environment design; fulltext line 176",
+   "quote": "the only memory of previous steps is what is recorded in the summary",
+   "support_explanation": "历史压缩：每步新上下文，唯一记忆是摘要中的“past actions”。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV06",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "2 Environment design; fulltext line 178",
+   "quote": "If a model generates any other text, it is considered to be an invalid action.",
+   "support_explanation": "动作空间：Table 1 的 10 条文本命令；非法输出计入步数上限但被忽略。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV07",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "2 Environment design; fulltext line 192",
+   "quote": "While the model is browsing, one of the actions it can take is to quote an extract from the current page.",
+   "support_explanation": "Quote 动作产生引用（references），用于后续回答与人工核查。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV08",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "3.1 Data collection; fulltext line 202",
+   "quote": "In total, we collected around 6,000 demonstrations, 92% of which were for questions from ELI5, and around 21,500 comparisons, 98% of which were for questions from ELI5.",
+   "support_explanation": "数据规模：约 6,000 示范、21,500 比较，主要来自 ELI5。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV09",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "3.2 Training; fulltext line 238",
+   "quote": "We used mutually disjoint sets of questions for each of BC, RM and RL.",
+   "support_explanation": "BC/RM/RL 使用互不相交的问题集。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV10",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "3.2 Training; fulltext line 242",
+   "quote": "Our final reward models were trained on around 16,000 comparisons, the remaining 5,500 being used for evaluation only.",
+   "support_explanation": "RM 用约 16,000 条比较训练，另 5,500 条仅作评估。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV11",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "3.2 Training; fulltext line 242",
+   "quote": "we sampled answers for the comparison datasets in an ad-hoc manner",
+   "support_explanation": "比较数据的候选回答由多种模型、方法与超参临时混合生成。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV12",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "3.2 Training; fulltext line 244",
+   "quote": "we inserted 15 additional answering-only episodes using the same references as the previous episode",
+   "support_explanation": "RL 的样本效率技巧：每个浏览 episode 后追加 15 个只回答 episode。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV13",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "4 Evaluation; fulltext line 250",
+   "quote": "We excluded RL for simplicity, since it did not provide significant benefit when combined with rejection sampling",
+   "support_explanation": "主评估模型排除 RL：BC + 拒绝采样（760M best-of-4、13B best-of-16、175B best-of-64）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV14",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "4 Evaluation; fulltext line 252",
+   "quote": "We evaluated all WebGPT models using a sampling temperature of 0.8, which was tuned using human evaluations",
+   "support_explanation": "温度 0.8 由人工评估调参；最大浏览动作 100。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV15",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "4.1 ELI5; fulltext line 262",
+   "quote": "we stripped all citations and references from the model-generated answers, hired new contractors who were not familiar with our detailed instructions",
+   "support_explanation": "对 Reddit 比较：去引用、新承包商、最小指令（缓解盲法与生态效度）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV16",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "4.1 ELI5; fulltext line 280",
+   "quote": "WebGPT composes answers that are different in style to Reddit answers, making the comparisons less blinded.",
+   "support_explanation": "作者承认对 Reddit 回答的比较盲法不足。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV17",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "4.1 ELI5; fulltext line 270",
+   "quote": "we believe that the evaluations against human demonstrations are more meaningful",
+   "support_explanation": "作者认为对人类示范者的比较更有意义（带引用、同标准）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV18",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "4.1 ELI5; fulltext line 268",
+   "quote": "whose best model’s answers are preferred 23% of the time to the reference answers, although they use substantially less compute than even our smallest model.",
+   "support_explanation": "对 Krishna et al. 2021 的比较是 69% vs 23%，作者承认对方算力远小于己方最小模型。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV19",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "4.2 TruthfulQA; fulltext line 302",
+   "quote": "All WebGPT models outperform all GPT-3 models (with both prompts) on both the percentage of truthful answers",
+   "support_explanation": "TruthfulQA：WebGPT 全面优于 GPT-3；人工评估。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV20",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "4.2 TruthfulQA; fulltext line 300",
+   "quote": "This affected 74 answers in total, around 3% of answers.",
+   "support_explanation": "TruthfulQA 回答被截断到 50 token，约 3% 为空答案并计为“真但无信息”。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV21",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "5.1 Comparison of training methods; fulltext line 312",
+   "quote": "Rejection sampling provides a substantial benefit, with the 175B best-of-64 BC model being preferred 68% of the time to the 175B BC model.",
+   "support_explanation": "拒绝采样 vs BC：68% 偏好。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV22",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "5.1 Comparison of training methods; fulltext line 312",
+   "quote": "RL provides a smaller benefit, with the 175B RL model being preferred 58% of the time to the 175B BC model.",
+   "support_explanation": "RL vs BC：58% 偏好；RL 与拒绝采样组合无额外收益。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV23",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "5.1 Comparison of training methods; fulltext line 334",
+   "quote": "It is also worth highlighting the importance of carefully tuning the BC baseline for these comparisons.",
+   "support_explanation": "作者强调认真调优 BC 基线才缩小了与 RL 的差距。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV24",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "5.1 Comparison of training methods; fulltext line 316",
+   "quote": "It may help to have many answering attempts, simply to make use of more inference-time compute.",
+   "support_explanation": "作者列出拒绝采样胜 RL 的可能原因（含推理算力更多），未隔离。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV25",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "5.2 Scaling experiments; fulltext line 342",
+   "quote": "we used the score of a 175B “validation” reward model (trained on a separate dataset split) for these experiments",
+   "support_explanation": "缩放实验用单独训练的验证 RM 分数代替人工评估。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV26",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "5.2 Scaling experiments; fulltext line 346",
+   "quote": "it is generally compute-efficient to use some amount of rejection sampling, but not too much",
+   "support_explanation": "推理算力—采样数—参数量的 Pareto 取舍（Figure 8）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV27",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "6.1 Truthfulness of WebGPT; fulltext line 372",
+   "quote": "We did not test this hypothesis directly, since we found that it was challenging for labelers to spot subtle hallucinations.",
+   "support_explanation": "非模仿性虚假陈述未直接检验：标注者难以发现细微幻觉。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV28",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "6.1 Truthfulness of WebGPT; fulltext line 370",
+   "quote": "WebGPT still sometimes quotes from highly unreliable sources in response to TruthfulQA questions.",
+   "support_explanation": "失败：在 TruthfulQA 上有时引用高度不可靠来源。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV29",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "6.2 Perceived truthfulness; fulltext line 387",
+   "quote": "WebGPT can make more mistakes than humans on out-of-distribution questions.",
+   "support_explanation": "作者承认在分布外问题上错误多于人类。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV30",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "6.4 Using references; fulltext line 413",
+   "quote": "Our current procedure incentivizes models to cherry-pick references that they expect labelers to find convincing",
+   "support_explanation": "奖励利用风险：挑选让标注者信服的引用。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV31",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "6.5 Risks of live web access; fulltext line 421",
+   "quote": "the risk posed by WebGPT exploiting real-world side-effects of its actions is very low",
+   "support_explanation": "安全边界：仅允许 Bing 查询与已有链接，无表单/编辑类写操作。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV32",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "7 Related work; fulltext line 437",
+   "quote": "They find that automated metrics like ROUGE-L are not meaningful, which motivates our choice to use human comparisons as the main metric.",
+   "support_explanation": "度量选择依据：自动指标不可用，因此以人工比较为主。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV33",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "7 Related work; fulltext line 443",
+   "quote": "Finally, there is another body of work that uses BC and RL to control web browsers, for automating other tasks besides question-answering",
+   "support_explanation": "谱系：Shi et al. 2017、Gur et al. 2018 的网页 BC/RL 控制工作（对应本批 1802.08802）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV34",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "Appendix A; fulltext line 583",
+   "quote": "We remove any search results or links to reddit.com or quora.com",
+   "support_explanation": "防作弊：移除 reddit/quora，并对与问题/参考答案有 10-gram 重叠的页面设为错误。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV35",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "Appendix A; fulltext line 603",
+   "quote": "We censor any pages that contain a 10-gram overlap with the question",
+   "support_explanation": "10-gram 重叠检查。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV36",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "Appendix C; fulltext line 680",
+   "quote": "we measured a final researcher-labeler agreement rate of 74%, and a labeler-labeler agreement rate of 73%.",
+   "support_explanation": "比较标注一致率：研究者–标注者 74%、标注者–标注者 73%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV37",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "Appendix C; fulltext line 676",
+   "quote": "The top 5 contractors provided around 50% of the data.",
+   "support_explanation": "数据集中度：前 5 名承包商提供约 50% 的数据。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV38",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "Appendix C; fulltext line 762",
+   "quote": "Despite the complexity of this procedure, we only used the final comparison rating in training",
+   "support_explanation": "训练仅使用最终总体比较评分。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV39",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "Appendix E; fulltext line 835",
+   "quote": "We used human evaluations sparingly, since they were noisy and expensive",
+   "support_explanation": "超参/早停主要靠 RM 分数与少量人工评估。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV40",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "Appendix G; fulltext line 1023",
+   "quote": "Note that we use far more compute than UnitedQA",
+   "support_explanation": "TriviaQA 对比：算力远大于 UnitedQA，且使用实时网页。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV41",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "Appendix I; fulltext line 1096",
+   "quote": "although we expect it to overestimate human preference for sufficiently large n",
+   "support_explanation": "验证 RM 对大 n 下人类偏好会高估（过优化）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV42",
+   "material_id": "M-2112.09332-v3",
+   "material_sha256": "08ebebf471523ab07e0c4782481c787bde2e670e820ebdfe3ce11ae54d283b89",
+   "locator": "3.1 Data collection; fulltext line 204",
+   "quote": "To make it easier for humans to provide demonstrations, we designed a graphical user interface for the environment",
+   "support_explanation": "示范者通过 GUI 使用同一环境；是 Web 浏览环境，而非图形界面直接操作 agent。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV43",
+   "material_id": "MR-2412.09605",
+   "material_sha256": "ff0d81b000884775c3d21cacef43eb7db8eb5f0286152dd3fb0f1df0e9fd65bd",
+   "locator": "AgentTrek Introduction; fulltext line 406",
+   "quote": "enabling them to interpret natural language instructions and execute complex tasks across web ( Nakano et al., 2021 )",
+   "support_explanation": "后续 GUI-agent 论文把 WebGPT 作为 Web agent 的早期引用（current_relevance）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV44",
+   "material_id": "MR-2307.13854",
+   "material_sha256": "896882a2c125ec2595dc2ed78f638950bc0b0a7c04c187bafa82c8174d7ecc62",
+   "locator": "WebArena Related Work; fulltext line 425",
+   "quote": "Nakano et al. (2021) introduce WebGPT which searches the web and reads the search results to answer questions.",
+   "support_explanation": "WebArena 的相关工作把 WebGPT 归为“搜索并读取结果以回答问题”（current_relevance）。",
+   "kind": "author_report"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "文本化网页浏览环境与动作接口（相对基线：可微检索 RAG/REALM；Krishna 2021 的 ELI5 检索系统）",
+   "information": "问题、当前页简化文本（Readability.js→html2text，链接编码为 【id†text†domain】）、搜索结果页、剩余动作数、已引用片段、过去动作摘要；不可见：页面样式/图像（图像仅替换为 alt 文本）。",
+   "operation": "模型每步输出 10 种文本命令之一（Search/Click/Find/Quote/Scroll/Back/Top/End…）；以 Bing 为检索；浏览结束后基于引用生成最终回答。",
+   "output": "带引用的长文本回答。",
+   "conditions": "最多 100 次浏览动作（评估）；移除 reddit/quora，并屏蔽与问题/参考答案 10-gram 重叠的页面；只读（无表单提交）。",
+   "feedback": "页面文本（不可预测的实时网页）；奖励模型分数仅在回答阶段。",
+   "selection_rule": "not_applicable（环境设计）",
+   "selection_data": "not_applicable",
+   "persistence": "不跨问题保存；会话内摘要。",
+   "later_use": "not_applicable",
+   "claimed_effect": "使 BC/RM/RL 等通用方法可直接优化检索与综合；回答带引用便于人类核查。",
+   "failure_boundary": "分布外问题、不可靠来源、引用挑选偏向、偏见放大；只读环境。",
+   "retained_trace": {
+    "applicable": false,
+    "reason": "静态训练/接口设计，无留存或自我改进声称。"
+   },
+   "evidence_ids": [
+    "EV03",
+    "EV04",
+    "EV05",
+    "EV06",
+    "EV07",
+    "EV31",
+    "EV34",
+    "EV35"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "用人类偏好奖励模型优化浏览+回答：BC → RM → 对 RM 的拒绝采样（及可选 PPO RL）",
+   "information": "示范者看到与模型相同的信息（仅少数界面差异）；比较者看到问题、回答与引用；比较时不要求独立调研。",
+   "operation": "BC 于约 6,000 示范；RM 于约 16,000 比较（最终总体评分，平局为 50% 软标签）；评估时采样 n（4/16/64）个完整 episode，取 RM 最高者；RL 用 PPO + 每 token KL 惩罚。",
+   "output": "最终回答与引用。",
+   "conditions": "互不相交的 BC/RM/RL 问题集；BC 早停用 RM 分数；温度 0.8。",
+   "feedback": "人类偏好（离线收集）→ RM；RL 阶段 RM 作为奖励。",
+   "selection_rule": "best-of-n：按 RM 分数选最高；RL 早停按 RM 分数与 KL 预算。",
+   "selection_data": "RM 训练 16k 比较；验证 RM 在独立划分上训练用于缩放实验。",
+   "persistence": "模型权重、公开比较数据集（19,578 条）。",
+   "later_use": "推理时每个问题独立采样。",
+   "claimed_effect": "175B best-of-64：56%（对示范者）、69%（对 Reddit）；best-of-64 BC 对 BC 68%；RL 对 BC 58%；组合 RL+拒绝采样无收益。",
+   "failure_boundary": "RM 在大 n 过优化；对挑选引用的激励；标注者难以发现细微幻觉。",
+   "retained_trace": {
+    "applicable": false,
+    "reason": "离线人类反馈训练，不是自我改进闭环；选择只在推理时发生（best-of-n），不改变持久策略。"
+   },
+   "evidence_ids": [
+    "EV01",
+    "EV02",
+    "EV08",
+    "EV09",
+    "EV10",
+    "EV12",
+    "EV13",
+    "EV21",
+    "EV22",
+    "EV25",
+    "EV30",
+    "EV41"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "长问答（LFQA）系统落后于人类；已有工作聚焦检索与综合各自改进。人类难以独立核查事实，使得以事实性为目标的反馈数据昂贵且主观。",
+  "checked_gap": "文内部分证据：Krishna 2021 的最佳模型仅 23% 优于参考答案(EV18)；自动指标（ROUGE-L）不可靠(EV32)；标注者发现细微幻觉很难(EV27)。“LFQA 落后于人类”及 Krishna 的数字来自引用，原文不在固定包；因此是“部分核实”。",
+  "lineage": [
+   {
+    "name": "REALM / RAG / DPR（可微检索+生成）",
+    "source_version": "经本文 §7",
+    "solved": "短答案基准上的检索增强",
+    "left": "无法使用不可微的搜索引擎；可解释性低"
+   },
+   {
+    "name": "Krishna et al. 2021（ELI5 检索式 LFQA）",
+    "source_version": "经本文 §4.1/§7",
+    "solved": "首个 ELI5 检索系统",
+    "left": "偏好率仅 23%；自动指标不可靠"
+   },
+   {
+    "name": "Stiennon et al. 2020（摘要的人类反馈）",
+    "source_version": "经本文 §1、§3.2",
+    "solved": "RM + PPO 的流程",
+    "left": "非浏览环境；本文移植并扩展到交互环境"
+   },
+   {
+    "name": "Yuan 2019 / Adolphs 2021（搜索式 RL）",
+    "source_version": "经本文 §7",
+    "solved": "搜索/滚动的 RL 化",
+    "left": "短答案或阅读理解；非网页级 LFQA"
+   },
+   {
+    "name": "Shi 2017（World of Bits）、Gur 2018 等网页 BC/RL",
+    "source_version": "经本文 §7；对应本批 1802.08802 类工作",
+    "solved": "网页控制的 BC/RL",
+    "left": "针对任务自动化，非问答"
+   }
+  ],
+  "closest_adjacent": "Krishna 2021（同任务同数据，算力远小）与 Adolphs 2021（搜索 agent 的 BC/RL）；二者原文不在固定包，故仅作自述核对。",
+  "residue": "事实性评估依赖引用而非独立调研；奖励利用（挑选引用）、偏见、分布外错误。",
+  "stakes": "LFQA 可能成为学习获取信息的主要方式；错误会被带引用的“权威感”放大(EV29,EV30)。",
+  "method_response": "构建人类可执行的文本化浏览环境，使模仿学习和人类反馈可直接用于检索+综合；以模型收集的引用降低人类事实核查难度。",
+  "remaining_gap": "引用不等于事实核查，可能被利用；分布外（TruthfulQA）仍弱；环境只读且为文本；未与无浏览的 GPT-3 在 ELI5 上对照；推理算力对比未对齐。",
+  "evidence_ids": [
+   "EV18",
+   "EV27",
+   "EV28",
+   "EV29",
+   "EV30",
+   "EV32",
+   "EV33"
+  ],
+  "unresolved": [
+   "Krishna/RAG 等原文不在固定包",
+   "主要结果图的数值"
+  ],
+  "current_relevance": {
+   "note": "仅记录后续发展",
+   "facts": [
+    "后续 GUI-agent 论文将 WebGPT 作为早期 Web agent（AgentTrek 引言）",
+    "WebArena 将其归入“搜索并读取结果”的交互式 agent 工作"
+   ],
+   "evidence_ids": [
+    "EV43",
+    "EV44"
+   ]
+  }
+ },
+ "rs_pattern": {
+  "primary": "unify_into_shared_representation",
+  "supporting": [
+   "decompose_and_delegate"
+  ],
+  "matches": [
+   {
+    "main_id": "unify_into_shared_representation",
+    "sub_id": "C18",
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": [
+     {
+      "step": 1,
+      "status": "met",
+      "note": "检索与综合原本由各自定制的管线负责(RAG/REALM、专门检索器)(EV03)"
+     },
+     {
+      "step": 2,
+      "status": "met",
+      "note": "把浏览器序列化为文本接口（简化文本+特殊链接记号+命令词表），让 LM 配方可迁移(EV04,EV06)；未独立验证该接口“携带语义”"
+     },
+     {
+      "step": 3,
+      "status": "met",
+      "note": "同一 GPT-3 以 BC/RM/RL 统一目标处理浏览与回答(EV01)"
+     },
+     {
+      "step": 4,
+      "status": "unmet",
+      "note": "无与“固定检索+生成”或“去掉浏览”的受控对照来分离接口贡献"
+     },
+     {
+      "step": 5,
+      "status": "partial",
+      "note": "超过人类示范者的偏好和 TruthfulQA 提升，但对手算力不对等(EV18,EV19)"
+     }
+    ],
+    "success_checks": [
+     {
+      "id": "interface_ablation",
+      "status": "unmet",
+      "note": ""
+     },
+     {
+      "id": "beats_specialists",
+      "status": "partial",
+      "note": "对 Krishna 2021 与 UnitedQA 有对比但算力差异大(EV18,EV40)"
+     }
+    ],
+    "failure_checks": [
+     {
+      "id": "missing_skeptic_baseline",
+      "status": "present",
+      "note": "缺“同算力 RAG”或“无浏览 GPT-3 on ELI5”对照"
+     }
+    ],
+    "evidence_ids": [
+     "EV01",
+     "EV03",
+     "EV04",
+     "EV06",
+     "EV18",
+     "EV19",
+     "EV40"
+    ],
+    "reason": "最贴近的原卡操作：把网页浏览序列化成 LM 可用的文本接口，使统一配方端到端优化检索与综合。奖励模型/拒绝采样这一人类反馈流程在 15+31 中没有直接对应（C26 的信号来源是“非人类”），所以只选这一操作；fit=partial。"
+   },
+   {
+    "main_id": "decompose_and_delegate",
+    "sub_id": null,
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": [
+     {
+      "step": "boundary_at_comparative_advantage",
+      "status": "met",
+      "note": "检索交给 Bing；LM 负责浏览决策与综合(EV03)"
+     },
+     {
+      "step": "typed_intermediate_artifact",
+      "status": "met",
+      "note": "引用片段（页面标题、域名、摘录）是可由人类核查的结构化中间物(EV07)"
+     },
+     {
+      "step": "verification_feedback_loop",
+      "status": "partial",
+      "note": "验证者是人类偏好训练的 RM，而非 sound solver(EV10)"
+     },
+     {
+      "step": "ablation_of_load_bearing_step",
+      "status": "unmet",
+      "note": "无去掉引用/检索的消融"
+     },
+     {
+      "step": "cost_and_transfer",
+      "status": "met",
+      "note": "推理算力 Pareto 与 TruthfulQA/TriviaQA 迁移(EV26,EV19,EV40)"
+     }
+    ],
+    "success_checks": [
+     {
+      "id": "typed_handoff",
+      "status": "met",
+      "note": ""
+     }
+    ],
+    "failure_checks": [
+     {
+      "id": "verifier_unreliable",
+      "status": "present",
+      "note": "RM 可被过优化、引用可被挑选(EV30,EV41)"
+     }
+    ],
+    "evidence_ids": [
+     "EV03",
+     "EV07",
+     "EV10",
+     "EV26",
+     "EV30",
+     "EV41"
+    ],
+    "reason": "“Bing 外包+引用交接”是独立的第二项操作，因它改变的是责任边界与可验证中间物，而不是统一接口；因验证者是学习的 RM，fit=partial。"
+   }
+  ],
+  "outside_taxonomy": false,
+  "reason": "接口序列化与委托边界两项操作可映射；人类反馈 RM + 拒绝采样没有对应原卡，已在 reason 中注明未被覆盖。",
+  "executes_pattern": {
+   "value": "partial",
+   "note": "统一接口与委托均执行，但缺接口消融与同算力对照"
+  },
+  "resolves_problem": {
+   "value": "partial",
+   "note": "对示范者/Reddit 的人工偏好领先，但事实性/分布外问题未关闭；作者自述仍弱于人类。",
+   "evidence_ids": [
+    "EV02",
+    "EV28",
+    "EV29"
+   ]
+  }
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "simulated_lookahead_selection",
+    "sub": "K02",
+    "version": "taxonomy@430aa36290ec",
+    "fit": "strong",
+    "condition_checks": [
+     {
+      "id": "S4",
+      "status": "partial",
+      "note": "RM 用人类标注训练(16k)，一致率 73–74%，但未报告 RM 准确率数值(EV10,EV36)"
+     },
+     {
+      "id": "S5",
+      "status": "partial",
+      "note": "Web 不可重置；报告候选数与算力 Pareto，但无与真实执行树搜索的对比(EV26)"
+     },
+     {
+      "id": "F4",
+      "status": "partial",
+      "note": "增益随 n 增大且算力线性增长；确认“some but not too much”(EV26)；大 n 过优化(EV41)"
+     }
+    ],
+    "evidence_ids": [
+     "EV10",
+     "EV21",
+     "EV26",
+     "EV36",
+     "EV41"
+    ],
+    "reason": "采样 n 条完整 episode → 学习的验证者打分 → 取最高，与 K02 轨迹级重排完全同构；人类标注训练的 RM 与 K02 “好验证者用人类标签”的 works-when 一致。",
+    "executes_pattern": "yes",
+    "resolves_problem": "not_claimed"
+   },
+   {
+    "main": "planner_grounder_interface",
+    "sub": "K29",
+    "version": "taxonomy@430aa36290ec",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "id": "S5",
+      "status": "met",
+      "note": "接口匹配可得结构：简化文本+链接 ID，不需要像素(EV04,EV06)"
+     },
+     {
+      "id": "F5",
+      "status": "present",
+      "note": "粒度粗：无表单/图像/点击坐标，只读环境(EV31,EV42)"
+     }
+    ],
+    "evidence_ids": [
+     "EV04",
+     "EV06",
+     "EV31",
+     "EV42"
+    ],
+    "reason": "重新定义了 LM 与浏览器之间的动作抽象（10 条文本命令、链接 ID 动作）——K29 的“改动作接口”；它不是桌面/移动 GUI 操作而是只读信息检索浏览。",
+    "executes_pattern": "yes",
+    "resolves_problem": "not_claimed"
+   },
+   {
+    "main": "trajectory_level_policy_training",
+    "sub": "K20",
+    "version": "taxonomy@430aa36290ec",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "id": "S1",
+      "status": "met",
+      "note": "RL 从 BC 模型初始化(EV22)"
+     },
+     {
+      "id": "S2",
+      "status": "met",
+      "note": "每 token KL 惩罚；早停按 RM 分数与 KL 预算"
+     },
+     {
+      "id": "F3",
+      "status": "present",
+      "note": "RL 仅作次要实验，主结果不采用(EV13)"
+     }
+    ],
+    "evidence_ids": [
+     "EV12",
+     "EV13",
+     "EV22",
+     "EV23"
+    ],
+    "reason": "RL 部分：BC 初始化 + 终端 RM 奖励 + KL 约束，对应 K20；但奖励来自人类偏好 RM（非可执行判据），且 RL 对 BC 仅 58% 并在最终系统中被舍弃。",
+    "executes_pattern": "partial",
+    "resolves_problem": "not_claimed"
+   },
+   {
+    "main": "learned_outcome_and_process_judges",
+    "sub": "K16",
+    "version": "taxonomy@430aa36290ec",
+    "fit": "weak",
+    "condition_checks": [
+     {
+      "id": "S1",
+      "status": "partial",
+      "note": "RM 以人类比较标注，未单独汇报 RM 对人类的准确率(EV10)"
+     },
+     {
+      "id": "F4",
+      "status": "present",
+      "note": "奖励利用部分分析：KL、挑选引用、过优化(EV30,EV41)"
+     }
+    ],
+    "evidence_ids": [
+     "EV10",
+     "EV30",
+     "EV41"
+    ],
+    "reason": "RM 判断的是答案质量（偏好），非任务成功；与 K16 的“结果判官”只在机制上相似，故 weak，不主张执行该模式。",
+    "executes_pattern": "weak",
+    "resolves_problem": "not_claimed"
+   }
+  ],
+  "unassigned": [],
+  "revision_proposals": [
+   {
+    "proposal": "无新卡建议：K02/K29 已覆盖；WebGPT 属范围边缘（只读问答浏览），建议仅作为来源增补。",
+    "support": "单篇；本批不修改卡片",
+    "status": "pending_not_applied"
+   }
+  ]
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "unify_into_shared_representation",
+   "rs_sub": "C18",
+   "domain": {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "K29"
+   },
+   "operation_correspondence": "C18 的“把非原生模态序列化进主流 LM 配方”对应 WebGPT 的文本化浏览接口；K29 的“重新定义模型与计算机间的动作抽象”是同一操作在浏览器域的实例。",
+   "necessary_conditions_and_differences": "C18 要求接口消融；WebGPT 无。K29 面向 GUI 操作，WebGPT 为只读信息检索。",
+   "evidence_ids": [
+    "EV04",
+    "EV06",
+    "EV31"
+   ]
+  },
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": null,
+   "domain": {
+    "namespace": "gui",
+    "main": "simulated_lookahead_selection",
+    "sub": "K02"
+   },
+   "operation_correspondence": "“把验证交给独立验证者、选择最高分”的 RS 闭环（弱）对应 K02 的轨迹级验证重排。",
+   "necessary_conditions_and_differences": "RS 骨架要求 sound/机器可检验的验证；K02 的验证者可学习，但需要精度显著高于 50%。WebGPT 的 RM 精度未直接报告。",
+   "evidence_ids": [
+    "EV10",
+    "EV21",
+    "EV36",
+    "EV41"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "kind": "dataset",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。 另：该期望依赖的基准/基线（OSWorld、AndroidWorld、WebArena 等）晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "kind": "dataset",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“an empirical claim that a method improves task success of an Android/mobile GUI agent”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。 另：该期望依赖的基准/基线（OSWorld、AndroidWorld、WebArena 等）晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "kind": "dataset",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。 另：该期望依赖的基准/基线（OSWorld、AndroidWorld、WebArena 等）晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "kind": "dataset",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim about web-agent success on real, live websites”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。 另：该期望依赖的基准/基线（OSWorld、AndroidWorld、WebArena 等）晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "kind": "dataset",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。 另：该期望依赖的基准/基线（OSWorld、AndroidWorld、WebArena 等）晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "kind": "baseline",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a grounding model or grounding-data recipe beats prior GUI grounders”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。 另：该期望依赖的基准/基线（OSWorld、AndroidWorld、WebArena 等）晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "kind": "baseline",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a trained end-to-end GUI agent model improves online task success”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。 另：该期望依赖的基准/基线（OSWorld、AndroidWorld、WebArena 等）晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a grounding component (or the planner-grounder split itself) improves agent task success”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。 另：该期望依赖的基准/基线（OSWorld、AndroidWorld、WebArena 等）晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "kind": "baseline",
+   "applicable": true,
+   "status": "partial",
+   "reason": "主张含 RL 与拒绝采样对网页 agent 的收益。DigiRL/WebRL/AWR 晚于本文；时点等价对照是同数据、仔细调优的 BC(含早停与温度调参)，已有 RL vs BC、RS vs BC、RL+RS；但算力不等（RS 用 n 倍推理）。",
+   "evidence_ids": [
+    "EV21",
+    "EV22",
+    "EV23",
+    "EV24"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "kind": "metric",
+   "applicable": true,
+   "status": "partial",
+   "reason": "RM 以人类比较训练，并在“验证 RM 预测人类偏好”上检验（RS 场景下预测较好，Figure 5，RL 下不可靠）；标注者间一致率 73%、研究者–标注者 74%。没有报告 RM 对新 agent 轨迹的准确率数值。",
+   "evidence_ids": [
+    "EV10",
+    "EV25",
+    "EV36",
+    "EV41"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "kind": "metric",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "RM/评判可靠性只给整体一致率，未分正负判定的精确度/NPV；偏好比较本质上是相对判断，仍应报告如“无支持信息”判定的单边误差。",
+   "evidence_ids": [
+    "EV36"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "kind": "ablation",
+   "applicable": true,
+   "status": "partial",
+   "reason": "RM 用作 RL 奖励时：与 BC、拒绝采样对比，RL 仅 58% 且不加拒绝采样无增益；讨论了奖励过优化、KL 惩罚与引用挑选风险；但无不同奖励源（规则/脚本）对比，也没有量化 hacking。",
+   "evidence_ids": [
+    "EV22",
+    "EV30",
+    "EV41"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a process reward model for GUI steps improves RL or best-of-N”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim of improved agent capability measured with offline, teacher-forced step metrics”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。 无离线步骤准确率声称。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "kind": "reproducibility",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "前提是在线基准数字的重复运行。人工评估图中报告 ±1 标准误，但训练种子/重复训练、评估样本数在文本中未给；单次训练。",
+   "evidence_ids": [
+    "EV14"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "kind": "other",
+   "applicable": true,
+   "status": "partial",
+   "reason": "评估统一最大浏览动作 100，并比较了 4/16/64 采样的算力 Pareto；但基线（BC/人类/Krishna）预算不同，且 RL 训练里随机 20–100 步。",
+   "evidence_ids": [
+    "EV14",
+    "EV18",
+    "EV26"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "kind": "baseline",
+   "applicable": true,
+   "status": "partial",
+   "reason": "best-of-n：报告候选数 n(4/16/64)与推理算力—参数量 Pareto，并指出过多采样不划算、RM 过优化；Web 不可重置，故“与真实执行树搜索对比”不适用。",
+   "evidence_ids": [
+    "EV21",
+    "EV26",
+    "EV41"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "kind": "reproducibility",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "kind": "reproducibility",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "结果测于实时网页（Bing + 实时页面），文中未给评估日期、页面漂移与被拦截页面的处理；仅屏蔽 reddit/quora 并对 10-gram 重叠页面报错。",
+   "evidence_ids": [
+    "EV34",
+    "EV35"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "kind": "other",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a comparison of GUI agents whose observation spaces may differ”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。 观测仅为简化文本，未比较不同观测设置。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "kind": "scale",
+   "applicable": true,
+   "status": "met",
+   "reason": "训练配方在 760M/13B/175B 三个规模上评估，并给出示范数/参数/RM 缩放趋势，提升在规模间保持（均优于对应 GPT-3 基线）。",
+   "evidence_ids": [
+    "EV13",
+    "EV19",
+    "EV25",
+    "EV26"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a new benchmark or a claim about long-horizon GUI task capability”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "kind": "other",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a grounder or agent is robust or generalises across visual layouts”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a grounding or agent benchmark claim where some instructions are ambiguous or infeasible”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "kind": "baseline",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "kind": "scale",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that synthetic GUI grounding, transition or trajectory data improves agents”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。 数据为人类示范/比较而非合成 GUI 数据；缩放趋势见 E22 的证据。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "kind": "other",
+   "applicable": true,
+   "status": "partial",
+   "reason": "训练问题与评测问题互不相交（ELI5 测试集），TruthfulQA 为分布外；BC/RM/RL 问题集互斥。但 TriviaQA 有 143 条示范进入训练，且实时网页不能保证与评测无泄露（仅 10-gram 过滤）。",
+   "evidence_ids": [
+    "EV09",
+    "EV19",
+    "EV34",
+    "EV35"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that reflection, self-correction or first-error recovery data improves GUI agents”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a method that plans or trains with multi-step rollouts inside a learned GUI world model”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that policy training on world-model or simulated GUI rollouts improves agents”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "kind": "other",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a simulated app, synthetic site or digital twin substitutes for the real environment”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "kind": "other",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that experience memory or retrieved trajectories improve GUI agents”；本文中心主张是带人类反馈的文本化网页浏览问答 agent（BC + 奖励模型 + 拒绝采样；人工偏好评估，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "175B best-of-64 的答案在 ELI5 测试集被偏好于人类示范者答案的 56%。",
+   "setting": "同标准、带引用的成对人工比较；新增答案来自模型 vs 示范者（使用同一浏览环境）",
+   "baseline_control": "人类示范者答案",
+   "selection_vs_test": "ELI5 测试集问题；BC/RM/RL 问题集互斥；采样 n 与温度在人工评估中选出",
+   "result_denominator": "Figure 2（仅图）；平局计 50%；±1 标准误；样本数文本未给",
+   "evidence_ids": [
+    "EV02",
+    "EV09",
+    "EV13",
+    "EV14",
+    "EV17",
+    "EV36"
+   ],
+   "counterevidence": [
+    "EV27",
+    "EV30"
+   ],
+   "allowed_conclusion": "作者报告：在作者的比较规程下，带引用的模型答案略多于人类示范者答案被偏好；判断者难以发现细微幻觉，因此不等同于“事实性更高”。"
+  },
+  {
+   "claim_id": "C2",
+   "text": "答案在 ELI5 上被偏好于 Reddit 最高票回答的 69%（对比 Krishna 2021 的 23%）。",
+   "setting": "去引用，新承包商，最小指令；Reddit 回答风格不同",
+   "baseline_control": "Reddit 最高票回答；Krishna 2021（引用数字）",
+   "selection_vs_test": "ELI5 测试集",
+   "result_denominator": "Figure 2；样本数未给",
+   "evidence_ids": [
+    "EV02",
+    "EV15",
+    "EV16",
+    "EV18"
+   ],
+   "counterevidence": [
+    "EV16",
+    "EV18"
+   ],
+   "allowed_conclusion": "作者报告 69%；盲法不足且与 Krishna 的对比算力不对等；作者自己认为对示范者的比较更有意义。"
+  },
+  {
+   "claim_id": "C3",
+   "text": "TruthfulQA：WebGPT 回答 75% 为真、54% 为真且有信息，优于 GPT-3。",
+   "setting": "回答截断为 50 token，人工评估；GPT-3 用自动指标",
+   "baseline_control": "GPT-3（QA prompt 与 helpful prompt）",
+   "selection_vs_test": "OOD（未用于训练）",
+   "result_denominator": "Figure 3；约 3% 空答案记为“真但无信息”",
+   "evidence_ids": [
+    "EV19",
+    "EV20",
+    "EV28",
+    "EV29"
+   ],
+   "counterevidence": [
+    "EV20",
+    "EV28",
+    "EV29"
+   ],
+   "allowed_conclusion": "WebGPT 在该集上比 GPT-3 更真实，但仍弱于人类，并会引用不可靠来源；评估方法在两个系统间不一致（人工 vs 自动）。"
+  },
+  {
+   "claim_id": "C4",
+   "text": "拒绝采样优于 RL，二者组合无额外收益；增益随示范数、参数量、采样数增长（有推理算力的 Pareto 取舍）。",
+   "setting": "175B；RM 缩放实验以验证 RM 为代理",
+   "baseline_control": "调优后的 BC；RL；RL+RS",
+   "selection_vs_test": "缩放用验证 RM 分数；主比较用人工",
+   "result_denominator": "Figures 4–8 仅图",
+   "evidence_ids": [
+    "EV21",
+    "EV22",
+    "EV23",
+    "EV24",
+    "EV25",
+    "EV26",
+    "EV41"
+   ],
+   "counterevidence": [
+    "EV24",
+    "EV41"
+   ],
+   "allowed_conclusion": "在作者配置下，RS 以更多推理算力换来比 RL 更大的偏好增益；RL 的调参空间与 RM 过优化是未隔离的混杂因素。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_note": "模型在实时 Bing/网页环境中交互；但判定是人类偏好/人工事实性评估，没有可执行判据，也不是 GUI 操作任务成功率。TruthfulQA 为未见问题分布，但仍是同一环境，因此不判 transfer。",
+  "claim_support": "scoped",
+  "author_claim_kept": true,
+  "strongest_supported_claim": "作者报告：在作者的人工比较规程下，BC+拒绝采样的 175B 模型在 ELI5 上被偏好于人类示范者的 56% 与 Reddit 最高票回答的 69%；在 TruthfulQA 上比 GPT-3 更真实；拒绝采样比 RL 带来更大偏好增益，并有可复述的推理算力取舍。",
+  "cannot_say": [
+   "答案更事实正确（标注者难以发现细微幻觉；引用可被挑选）",
+   "浏览能力来自环境设计（缺无浏览/同算力 RAG 对照）",
+   "“人类水平的浏览”（只测答案偏好）",
+   "对 GUI 操作或写操作场景的泛化"
+  ],
+  "unresolved": [
+   "Figures 2–8 的样本数与区间",
+   "评估日期与实时网页漂移",
+   "RM 的绝对准确率"
+  ],
+  "reproduction_status": "作者结果，我们未复现；未运行任何代码；比较数据集为公开发布但未使用",
+  "retention": {
+   "task_improvement": "reported(author, human-judged)",
+   "retained_improvement": "not_applicable",
+   "improver_improvement": "not_applicable"
+  }
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "问题具体(LFQA 落后于人类、事实性评估难)，近邻列举充分(REALM/RAG、Krishna、Stiennon、Adolphs、网页 BC/RL)并写明残余(引用挑选、偏见、OOD)。扣分：近邻原文不在固定包；“浏览环境是必要的”这一前提未与无浏览基线对照。",
+   "evidence_ids": [
+    "EV18",
+    "EV27",
+    "EV29",
+    "EV30",
+    "EV32",
+    "EV33"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "“人类可执行的接口 → 通用 BC/RM/RL 可用；引用降低评估难度”的因果链清晰，并对 RS 胜 RL 给出几个可检验的假设(EV24)；但假设(引用足以代替事实核查)被作者自己在 §6.4 质疑，也缺区分性预测的消融。",
+   "evidence_ids": [
+    "EV03",
+    "EV04",
+    "EV07",
+    "EV24",
+    "EV30"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 4,
+   "reason": "操作链可重建：环境（简化、链接编码、10 条命令）、示范界面差异、数据规模与标注流程、RM/RL/BC/RS 的步骤与超参、早停与过滤防作弊(Appendix A–E)、信息权限和写操作限制均写明；失败边界(OOD、引用不可靠、过优化、偏见)交代清楚。",
+   "evidence_ids": [
+    "EV04",
+    "EV05",
+    "EV06",
+    "EV08",
+    "EV09",
+    "EV10",
+    "EV12",
+    "EV31",
+    "EV34",
+    "EV35",
+    "EV39"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "人工比较流程细致(分项评分、可靠性评估、一致率 73–74%、第二次盲法评估)，并清楚指出局限(难发现细微幻觉、风格不同)；无执行判据，TruthfulQA 对两系统用不同评估方式，主结果样本数仅在图中。",
+   "evidence_ids": [
+    "EV15",
+    "EV16",
+    "EV20",
+    "EV27",
+    "EV36"
+   ],
+   "counterevidence_ids": [
+    "EV16",
+    "EV27"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "有 BC/RL/RS/RL+RS、示范/比较/参数/采样数缩放等受控比较，并强调调优 BC 基线；缺无浏览或固定检索的 ELI5 对照，RS 的算力优势与 RL 调参混杂，对 Krishna 的比较算力不对等。",
+   "evidence_ids": [
+    "EV21",
+    "EV22",
+    "EV23",
+    "EV24",
+    "EV25",
+    "EV18"
+   ],
+   "counterevidence_ids": [
+    "EV18",
+    "EV24"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "BC/RM/RL 问题集互斥，ELI5 测试与 TruthfulQA(OOD)评估，使用 reddit/quora 屏蔽与 10-gram 页面屏蔽防作弊；但实时网页难保证无泄露，TriviaQA 有示范混入，训练与第一轮评估标准相同。",
+   "evidence_ids": [
+    "EV09",
+    "EV19",
+    "EV34",
+    "EV35"
+   ],
+   "counterevidence_ids": [
+    "EV16"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "人工评估图含 ±1 标准误，平局计 50%，空答案占比被披露；但训练种子、测试样本数、显著性检验在文本中缺失，缩放实验以代理 RM 分数代替人工。",
+   "evidence_ids": [
+    "EV14",
+    "EV20",
+    "EV25"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "明确讨论推理算力—模型规模—采样数的 Pareto，选择计算高效点；披露标注工时(示范约 15 分钟、比较约 10 分钟)与承包商结构；未给总训练算力与成本，且与 Krishna 对比时算力不对等。",
+   "evidence_ids": [
+    "EV18",
+    "EV26",
+    "EV37"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 78.75,
+  "display": 78.8,
+  "lower": 78.75,
+  "upper": 78.75,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(sum w_i*r_i)/4, weights G15 M25 X20 E.meas10 E.caus10 E.hold10 E.stat5 E.cost5"
+ },
+ "status": {
+  "value": "reviewed",
+  "reason": "全文与附录齐全。范围边缘：Web 浏览环境中的文本化 agent（搜索/点击/滚动/引用），任务为只读问答，无 GUI 写操作；与收录标准“浏览器 agent”相符，未判为 out_of_scope。"
+ },
+ "rationale": "WebGPT 是 2021 年里程碑式的系统方法论文：把浏览器变成文本接口，GPT-3 用 BC + 人类比较 RM + 拒绝采样优化长问答。方法记录极为清晰（X=4），消融与缩放扎实，并诚实写出事实性评估、引用挑选与 OOD 的局限。但它的任务是只读信息检索问答，评测靠人工偏好而非执行判据，没有“无浏览/同算力 RAG”对照，对 Krishna 的比较算力不对等。属 Web 浏览 agent 的范围边缘（有点击/滚动/搜索动作，无写操作或 GUI 完成判据），仍保留评审，结论按 scoped。",
+ "scope_note": "borderline: read-only text browser QA agent; kept in scope as a browser agent with click/scroll/search action surface; no execution-checked task success."
+}

@@ -1,0 +1,1568 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p2",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "paper": {
+  "paper_key": "2304.07061",
+  "paper_id": "arXiv:2304.07061",
+  "title": "DroidBot-GPT: GPT-powered UI Automation for Android",
+  "version": "2304.07061v5",
+  "claim_type": "system_method",
+  "claim_type_note": "完整 Android 自动化工具：抽取 UI → 提示 ChatGPT → 在手机上执行动作。成功判据是动作序列匹配，不是执行状态检查（见 evidence_level_reason）。",
+  "scope_note": null,
+  "central_claim": "DroidBot-GPT 把 Android GUI 状态与可用动作转成自然语言提示，让 ChatGPT 选择动作并在手机上执行，无需修改 app 与模型、无需训练，即可自动完成自然语言任务；在作者自建 33 个任务(17 个 F-Droid 应用)上完全完成 39.39%，平均进度 66.76%。",
+  "central_claim_scope": "ChatGPT(版本未报)；F-Droid 17 个开源应用；33 个作者手工设计的 2–13 步任务；一次运行；成功=生成动作序列与单一参考序列的前缀匹配进度；无基线、无消融。"
+ },
+ "provenance": {
+  "input_hash": "fed6b4a2d84803fc93183b9a9669ad578f4b1611b203548221a83913612b045e",
+  "rubric_version": "radar-score-v2.2 (draft_uncalibrated)",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "pattern_protocol_hash": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_cards_hash_note": "domain_cards_hash = sha256 of research/patterns/taxonomy.json (manifest asset domain_taxonomy); conditions hash given separately",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "corpus_hash": "ab81004336f12af0464893fc548cb5eba57552028d6a2431c2db1014ecf52cbc",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m] (self-reported from system prompt: Sonnet 5.5)",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_receipt_note": "No session id or receipt reference is exposed to this subagent; null by contract.",
+  "timestamp": "2026-10-21T17:20:26Z"
+ },
+ "materials": [
+  {
+   "material_id": "M-2304.07061v5",
+   "url": "https://arxiv.org/html/2304.07061",
+   "version": "2304.07061v5",
+   "sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2304.07061.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Method (2.1-2.3)",
+    "3 Evaluation (3.1, 3.2)",
+    "4 Related work",
+    "5 Conclusion",
+    "Tables 1-3",
+    "Figure captions"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Figures 1-5 are images (captions only)"
+   ],
+   "note": "全文较短，已读完。"
+  },
+  {
+   "material_id": "M-2209.08655v2",
+   "url": "https://arxiv.org/html/2209.08655",
+   "version": "2209.08655v2",
+   "sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2209.08655.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Sec 2.3 line 166"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "reviewed separately"
+   ],
+   "note": "same-batch cross-reference (earlier LLM+view-hierarchy work)"
+  },
+  {
+   "material_id": "R-2501.12326",
+   "url": "https://arxiv.org/html/2501.12326",
+   "version": null,
+   "sha256": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2501.12326.txt",
+   "material_status": "html",
+   "sections_read": [
+    "reference list line 1140"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; consulted only for the listed lines (fact source for lineage/baseline cross-check, not judgement)"
+   ],
+   "role": "nearest_neighbor_reference",
+   "purpose": "later model paper cites this paper"
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "E001",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Abstract; fulltext line 33",
+   "quote": "We evaluate DroidBot-GPT with a self-created dataset that contains 33 tasks collected from 17 Android applications spanning 10 categories.",
+   "support_explanation": "评测集：作者自建 33 任务/17 应用/10 类别。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E002",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Abstract; fulltext line 33",
+   "quote": "It can successfully complete 39.39% of the tasks, and the average partial completion progress is about 66.76%.",
+   "support_explanation": "作者头条结果：完全完成 39.39%，平均进度 66.76%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E003",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Abstract; fulltext line 33",
+   "quote": "Given the fact that our method is fully unsupervised (no modification required from both the app and the LLM)",
+   "support_explanation": "设计前提：无训练、不改 app 和 LLM。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E004",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 1; fulltext line 41",
+   "quote": "how to support the automation of diverse applications with little or no development effort remains a challenging problem",
+   "support_explanation": "作者 gap：以低开发成本自动化多样应用。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E005",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 1; fulltext line 52",
+   "quote": "we are the first to investigate how pre-trained language models can be applied to app automation without app and model modifications",
+   "support_explanation": "“首个”主张（见下：同批 2209.08655 更早做过 LLM+VH 提示，但任务不同、离线）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E006",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 1; fulltext line 45",
+   "quote": "we leverage DroidBot [ 8 ] to extract structured information, translate it into a natural language prompt, query an LLM with the prompt to generate the next action, and execute the actions on the smartphone",
+   "support_explanation": "流程：DroidBot 抽取 → 自然语言提示 → LLM → 执行。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E007",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 2; fulltext line 64",
+   "quote": "combines the state information, the action history, and the task into a prompt, and sends it to ChatGPT",
+   "support_explanation": "模型只写作 ChatGPT，版本/温度/最大步数未报。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E008",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 2; fulltext line 64",
+   "quote": "DroidBot-GPT sends operations to be executed on the phone",
+   "support_explanation": "动作实际在手机上执行（闭环）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E009",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 2.1; fulltext line 68",
+   "quote": "this method tends to present thousands of words, which frequently contain useless information and surpasses the length limit",
+   "support_explanation": "不直接输入 GUI 树：太长且冗余。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E010",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 2.1; fulltext line 70",
+   "quote": "we first extract all the user-visible elements and check their properties",
+   "support_explanation": "只抽取用户可见元素。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E011",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 2.2; fulltext line 76",
+   "quote": "In the prompts that describe the elements in a GUI, we add a number behind it, which we utilize ChatGPT to choose from.",
+   "support_explanation": "给元素加编号让 ChatGPT 选择。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E012",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 2.2; fulltext line 78",
+   "quote": "we design a two-step solution",
+   "support_explanation": "编辑动作的两步法。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E013",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 2.2; fulltext line 78",
+   "quote": "it may return a sentence instead of a choice, in which case DroidBot-GPT will extract the first choice it contains",
+   "support_explanation": "解析鲁棒性：取第一个选项。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E014",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 2.3; fulltext line 82",
+   "quote": "the prompt should also include a history action sequence to avoid repetition",
+   "support_explanation": "提示包含动作历史。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E015",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 3; fulltext line 90",
+   "quote": "we have established a maximum text length of 20 words based on our experiments",
+   "support_explanation": "每元素文本截断 20 词，依据“我们的实验”（未说明数据）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E016",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 3; fulltext line 88",
+   "quote": "We evaluate our system on 17 broadly used Android applications downloaded from F-Droid",
+   "support_explanation": "应用来自 F-Droid。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E017",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 3.1; fulltext line 113",
+   "quote": "DroidBot-GPT fully completes 13 out of 33 tasks, and the average completion progress of all tasks is 66.76%.",
+   "support_explanation": "正文头条数字：13/33，66.76%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E018",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Table 2; fulltext line 121",
+   "quote": "Task complexity | Number | Average completion progress | Fully completion rate",
+   "support_explanation": "Table 2 按步数分档（2–3、4–5、6–13 步）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E019",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Table 2; fulltext line 125",
+   "quote": "Total | 33 | 66.76% | 39.39%",
+   "support_explanation": "Table 2 合计行；本席按 10/13/10 任务的分档均值 73.33/63.46/66.97 加权得 67.51，按 Table 3 十个类别加权得 68.28，均与 66.76 不一致。",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E020",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Table 3; fulltext line 139",
+   "quote": "Tools | 6 | 70.67% | 50.00%",
+   "support_explanation": "Table 3 类别表：每类仅 2–6 个任务。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E021",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 3.1; fulltext line 115",
+   "quote": "because these tasks often include a lot of typing actions, and our system can miss the right place to input due to the ambiguous GUI element relationship",
+   "support_explanation": "Record/Life 类低：打字多、元素关系含糊。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E022",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 3.1; fulltext line 117",
+   "quote": "DroidBot-GPT does not require further GUI training data and can efficiently generalize tasks across a larger array of categories",
+   "support_explanation": "作者的泛化主张（无留出、无基线）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E023",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 3.2; fulltext line 143",
+   "quote": "The failures can be categorized into three types: early termination, redundant operation",
+   "support_explanation": "失败三类（早停、冗余、响应格式不符）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E024",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Fig 5 caption; fulltext line 145",
+   "quote": "The unnamed check mark button in the bottom right, which is required to save the operations, is absent in the action space due to its absence in the GUI tree, ultimately resulting in failure.",
+   "support_explanation": "无名元素不在 GUI 树→不在动作空间→任务失败（表示的结构性失败边界）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E025",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 3.2; fulltext line 151",
+   "quote": "when repeating a task that DroidBot-GPT can complete multiple times, the order of operations may vary slightly, which can potentially result in redundancy or even failure",
+   "support_explanation": "重复运行结果不稳定（作者承认，但评测是单次运行）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E026",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 3.2; fulltext line 153",
+   "quote": "We will try to fix the aforementioned problems by fine-tuning LLM and using machine-learning methods to recognize unnamed elements.",
+   "support_explanation": "作者的后续改进方向。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E027",
+   "material_id": "M-2304.07061v5",
+   "material_sha256": "dfbb8a96e4e3ed76fa5da4fb0e456bcf4531a04301b08a5b580b7486c3acc2f5",
+   "locator": "Sec 4; fulltext line 162",
+   "quote": "Unlike these works, DroidBot-GPT introduces a large language model-powered method to interact with UIs, which has greater flexibility and scalability",
+   "support_explanation": "相关工作仅作定性区分，无任何基线对比。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E028",
+   "material_id": "R-2501.12326",
+   "material_sha256": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "locator": "References (UI-TARS); fulltext line 1140",
+   "quote": "Droidbot-gpt: Gpt-powered ui automation for android.",
+   "support_explanation": "UI-TARS 参考文献含本文（后续谱系引用）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E029",
+   "material_id": "M-2209.08655v2",
+   "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+   "locator": "Sec 2.3 (2209.08655, same batch); fulltext line 128",
+   "quote": "Our work represents the first contribution of applying LLMs to enable conversational interactions on mobile UIs.",
+   "support_explanation": "同批 2209.08655 早于本文，亦用 LLM + view hierarchy 文本表示做移动 UI 任务（含指令→元素）；本文参考文献未引用它（本席 grep 核对）。",
+   "kind": "author_report"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "GUI 状态的自然语言化：把用户可见元素与其可用动作拼成句子（“A view <name> that can …”）+ 动作编号",
+   "information": "DroidBot 抽取的 view hierarchy；仅用户可见元素；属性（editable/clicked/selected）与可用动作（click/long click/check/edit/scroll）；不使用像素；无名元素若不在 GUI 树则不可见。",
+   "operation": "逐元素生成描述句，拼接成状态段，元素文本截断到 20 词；为每个动作附整数编号。",
+   "output": "一个长提示段。",
+   "conditions": "元素在 GUI 树中且有文本/名称；单元素文本不过长。",
+   "feedback": {
+    "status": "not_applicable",
+    "reason": "状态描述为一次性构造。"
+   },
+   "selection_rule/data": "无；规则人工设计，截断阈值 20 词“基于我们的实验”。",
+   "persistence": {
+    "status": "not_applicable",
+    "reason": "无留存"
+   },
+   "later_use": {
+    "status": "not_applicable",
+    "reason": "无留存"
+   },
+   "claimed_effect": "ChatGPT 可据此选出合理动作。",
+   "failure_boundary": "无名元素（如对勾按钮）、元素关系含糊、截断导致信息丢失。",
+   "evidence_ids": [
+    "E006",
+    "E009",
+    "E010",
+    "E011",
+    "E015",
+    "E024"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "动作选择与文本输入的两步法",
+   "information": "ChatGPT 返回编号；若选 edit，再追加提示“What should I enter … Just return the text and nothing else.”。",
+   "operation": "选择→（必要时）二次提示取输入文本；响应不规范时取其中第一个选项。",
+   "output": "可由 DroidBot 执行的动作。",
+   "conditions": "LLM 响应遵循格式。",
+   "feedback": {
+    "status": "not_applicable",
+    "reason": "无自检；仅格式容错"
+   },
+   "selection_rule/data": "取首个有效选择；无候选重排。",
+   "persistence": {
+    "status": "not_applicable",
+    "reason": "无"
+   },
+   "later_use": {
+    "status": "not_applicable",
+    "reason": "无"
+   },
+   "claimed_effect": "可完成需输入的任务。",
+   "failure_boundary": "输入位置判断错误（Record/Life 类低）；响应格式不符是三类失败之一。",
+   "evidence_ids": [
+    "E012",
+    "E013",
+    "E021",
+    "E023"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "提示合成：任务 + GUI 元素及动作 + 动作历史 + 输出要求",
+   "information": "包含历史动作以避免重复；没有终止判据说明。",
+   "operation": "拼接并发送到 ChatGPT，逐步执行。",
+   "output": "下一动作。",
+   "conditions": "历史长度不超限（未说明）。",
+   "feedback": {
+    "status": "not_applicable",
+    "reason": "无显式验证/反思"
+   },
+   "selection_rule/data": "无",
+   "persistence": {
+    "status": "not_applicable",
+    "reason": "提示内历史，不跨任务"
+   },
+   "later_use": {
+    "status": "not_applicable",
+    "reason": "同上"
+   },
+   "claimed_effect": "减少重复动作。",
+   "failure_boundary": "早停、冗余操作；重复运行顺序可能变化。",
+   "evidence_ids": [
+    "E014",
+    "E007",
+    "E008",
+    "E025"
+   ]
+  }
+ ],
+ "retention_trace": {
+  "applicable": false,
+  "reason": "零样本提示式工具，无任何跨任务/跨回合留存；动作历史只在单个任务提示内。"
+ },
+ "gap": {
+  "author_gap": "以很少或不需要开发成本支持多样应用的自然语言自动化仍然困难；现有助手靠 API 绑定，学习式方法需要数据。",
+  "checked_gap": "问题陈述合理，但论文没有比较任何最近邻：相关工作只作定性区分(c_unlike)，没有基线（随机/DroidBot 本身/LLM-free/其他 NL→UI 方法）。Li 2020(Seq2Act)、MOTIF 等原文不在固定包内。本席核对：同批 2209.08655（更早）已用 LLM+view hierarchy 文本表示做移动 UI 任务（含指令→元素预测），DroidBot-GPT 的参考文献未引用它，因此“首个”主张只能当作者表述。",
+  "lineage": [
+   "DroidBot(UI-guided test input generator) + Seq2Act/MOTIF(数据集+专用模型) → 2209.08655(同批，离线、PaLM) → DroidBot-GPT(本文，ChatGPT，实机执行) → AndroidWorld/UI-TARS 等后续。"
+  ],
+  "closest_adjacent": [
+   {
+    "work": "2209.08655 (LLM + HTML-ized view hierarchy)",
+    "source_version": "2209.08655v2 pinned",
+    "solved": "离线单步 UI 任务 few-shot",
+    "residual": "无闭环执行、无多步",
+    "evidence_ids": [
+     "E029"
+    ]
+   },
+   {
+    "work": "Seq2Act / MOTIF (NL → UI action sequences)",
+    "source_version": "as cited in 2304.07061v5 Sec 4; originals not in pinned bundle",
+    "solved": "专用数据集上的映射",
+    "residual": "需要标注数据",
+    "evidence_ids": [
+     "E027"
+    ]
+   }
+  ],
+  "residue": "无名元素、含糊关系、动作不确定性；无基线、无评测规范；成功判据弱。",
+  "stakes": "若可行，则极大降低移动自然语言自动化的开发成本；但本文仅在 33 个自建任务上给出初步证据。",
+  "method_response": "用 DroidBot 提取+自然语言化，把 GUI 决策变成 LLM 选择题，并加历史。",
+  "remaining_gap": "可靠性（单次运行不稳定）、未命名元素、基线缺失、评测协议、成本。",
+  "current_relevance": "UI-TARS 把本文列入先前 LLM-on-Android 工作（谱系位置）。",
+  "evidence_ids": [
+   "E004",
+   "E005",
+   "E027",
+   "E029",
+   "E028"
+  ],
+  "unresolved": [
+   "Seq2Act/MOTIF/DroidBot 原文不在固定包内；“首个”无独立查新。"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "adapt_via_conditioning",
+  "supporting": [
+   "unify_into_shared_representation"
+  ],
+  "sub_pattern": null,
+  "outside_taxonomy": false,
+  "reason": "操作是把“新任务”(自然语言目标)与当前 GUI 状态一起作为条件，直接让冻结的 ChatGPT 零样本选动作，无参数更新，对应 adapt_via_conditioning 的定义；但没有示例/检索、没有统一 schema 跨异构任务训练，C03 的要点(canonical schema + 上游阶段或检索 substrate + 类别留出)基本缺失，因此 sub_id=null、fit=partial。第二个相关操作是把结构化 GUI 序列化成自然语言(C18 战术)。",
+  "matches": [
+   {
+    "main_id": "adapt_via_conditioning",
+    "sub_id": null,
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "C03_note": "C03 步骤：(1) canonical schema——有(任务+GUI+历史+输出要求)但仅一类任务；(2) reference substrate——无示例/检索；(3) 上游阶段——无；(4) 类别级留出/污染审计——无；(5) 与更长上下文/最近邻等对照——无。因此不选 C03。"
+    },
+    "success_checks": {
+     "structural_holdout": "unmet",
+     "conditioning_ablation": "unmet(无提示组件消融)",
+     "cheaper_baseline": "unmet(无任何基线)"
+    },
+    "failure_checks": {
+     "claims_no_training_while_exposed": "unknown(ChatGPT 是否见过这些 F-Droid app 文档/how-to 未审计)",
+     "recipe_single_task": "present",
+     "shallow_ablation": "present(无消融)"
+    },
+    "evidence_ids": [
+     "E003",
+     "E006",
+     "E007"
+    ],
+    "reason": "零样本条件化完成 GUI 决策；缺少 pattern 要求的留出与对照。"
+   },
+   {
+    "main_id": "unify_into_shared_representation",
+    "sub_id": "C18",
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "2_serializer": "met(GUI 树→自然语言句子，仅取可见元素)",
+     "2b_validate_semantics": "unmet",
+     "4_ablation_vs_naive": "absent(无与原始树/其他序列化对照；仅陈述“树太长”)",
+     "5_beat_specialists": "unmet(无对比)"
+    },
+    "success_checks": {
+     "capability_unlocked": "partial(零样本、无需 app 修改)"
+    },
+    "failure_checks": {
+     "lossy_proxy": "present(无名元素不在动作空间)",
+     "underperform_specialists": "unknown(无对比)"
+    },
+    "evidence_ids": [
+     "E009",
+     "E010",
+     "E024"
+    ],
+    "reason": "把结构化 GUI 序列化为成熟模态(自然语言)是核心实现，但缺少接口贡献的消融。"
+   }
+  ],
+  "considered_not_chosen": [
+   {
+    "main_id": "decompose_and_delegate",
+    "why_not": "没有分阶段或外部 solver；动作选择是单次提示。"
+   }
+  ],
+  "executes_pattern": {
+   "value": "partial",
+   "reason": "执行了“零样本条件化+序列化”，未执行留出/对照/消融。"
+  },
+  "resolves_problem": {
+   "value": "no",
+   "reason": "39.39% 完全完成率、单次运行、无基线；没有证据说明“低开发成本多样应用自动化”已被关闭，只说明概念可行。",
+   "evidence_ids": [
+    "E002",
+    "E025",
+    "E027"
+   ]
+  }
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "structured_screen_observation",
+    "sub": "C01",
+    "version": "taxonomy@430aa362",
+    "fit": "strong",
+    "operation": "用 DroidBot 从 Android view hierarchy 枚举可交互元素，赋整数编号，动作限定为 id 索引（click/long click/check/edit/scroll），LLM 以编号回答——与 C01 的操作一致；差异：用文本列表而非截图标记，无像素通道。",
+    "condition_checks": [
+     {
+      "id": "S1",
+      "status": "partial",
+      "note": "F-Droid 应用暴露 view hierarchy；未报告“原始 API→元素索引”的切换对比",
+      "evidence_ids": [
+       "E016",
+       "E006"
+      ]
+     },
+     {
+      "id": "S4",
+      "status": "unmet",
+      "note": "未比较观察模态(截图/树/混合)",
+      "evidence_ids": []
+     },
+     {
+      "id": "F1",
+      "status": "present",
+      "note": "无名对勾按钮不在 GUI 树 → 不在动作空间 → 失败",
+      "evidence_ids": [
+       "E024"
+      ]
+     },
+     {
+      "id": "F2",
+      "status": "present",
+      "note": "无文本/无名元素使选择失败或早停",
+      "evidence_ids": [
+       "E023",
+       "E024"
+      ]
+     },
+     {
+      "id": "F5",
+      "status": "partial",
+      "note": "元素关系含糊导致冗余/错误操作（不属 swap 实验，但属结构错误继承）",
+      "evidence_ids": [
+       "E021"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E006",
+     "E011",
+     "E024"
+    ]
+   },
+   {
+    "main": "structured_screen_observation",
+    "sub": "C13",
+    "version": "taxonomy@430aa362",
+    "fit": "partial",
+    "operation": "只保留用户可见元素并把文本截到 20 词——文本观察剪枝，但无 token 节省与成功率的报告。",
+    "condition_checks": [
+     {
+      "id": "S5",
+      "status": "unmet",
+      "note": "没有报告 token 或成功率因剪枝的变化",
+      "evidence_ids": [
+       "E015",
+       "E010"
+      ]
+     },
+     {
+      "id": "F6",
+      "status": "present",
+      "note": "剪枝损失（截断导致信息丢失）按类别未报告",
+      "evidence_ids": [
+       "E015"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E015",
+     "E010"
+    ]
+   }
+  ],
+  "unassigned": [
+   "动作历史作为防重复机制——agent_loop_context_control 的 C15 要求压缩历史且报告窗口消融，本文仅简单拼接，未匹配。"
+  ],
+  "revision_proposals": []
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "adapt_via_conditioning",
+   "rs_sub": null,
+   "domain": {
+    "namespace": "gui",
+    "main": "structured_screen_observation",
+    "sub": "C01"
+   },
+   "operation_correspondence": "RS：把任务与上下文表达为条件，冻结模型直接求解；GUI：任务 + 编号化的元素列表 + 历史 → ChatGPT 选编号。",
+   "conditions_and_differences": "C01 的 when-it-fails(结构缺失元素/无名元素)在本文被观察到；RS 的类别留出与对照缺失。",
+   "evidence_ids": [
+    "E006",
+    "E011",
+    "E024"
+   ]
+  },
+  {
+   "rs_main": "unify_into_shared_representation",
+   "rs_sub": "C18",
+   "domain": {
+    "namespace": "gui",
+    "main": "structured_screen_observation",
+    "sub": "C13"
+   },
+   "operation_correspondence": "RS C18：序列化为成熟模态；GUI C13：可见元素+截断的文本观察。",
+   "conditions_and_differences": "领域卡 C13 要求报告 token 节省；本文无。",
+   "evidence_ids": [
+    "E009",
+    "E010",
+    "E015"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "text": "Report execution-checked success rate on OSWorld (or OSWorld-Verified) for desktop computer-use claims, stating the step budget (15 vs 50 steps) and observation setting",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「桌面(Ubuntu/Windows)端到端 computer-use 成功率主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "text": "Report online success on AndroidWorld for mobile-agent claims, not only offline AndroidControl/AITW step metrics",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "主张 Android 应用自动化的任务成功；未在任何公开在线基准上报告（AndroidWorld 晚于本文，不据此苛责，但“独立公开基准+执行检查”这一目的未满足），仅有作者自建 33 任务并以动作序列匹配计分。",
+   "evidence_ids": [
+    "E001",
+    "E017"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "text": "Report success on WebArena (self-hosted, functional-correctness checkers) for web-agent training or planning claims; if the 165-task WebArena-Lite or a per-template subset is used, say so and justify it",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「训练/数据合成/规划方法在自托管站点(WebArena 类)上提升 web agent」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "text": "Evaluate live-web agents on Online-Mind2Web (human-validated, start URL given, no search engine) or Mind2Web-Live rather than only WebVoyager, where a naive search-and-click agent already solves 51% of sampled tasks",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「真实 live-web 站点上的 web agent 成功率主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "text": "Report GUI grounding on ScreenSpot-Pro (high-resolution professional desktop) and ScreenSpot-v2, not only ScreenSpot v1, which saturates (7B and 72B indistinguishable)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「截图到坐标的 GUI grounding 模型/数据配方主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "text": "Compare a new grounder against UGround(-V1-7B), Aguvis-7B/72B, OS-Atlas-7B and UI-TARS(-1.5) at matched backbone size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「新 grounder 优于已有 GUI grounder 的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "text": "Compare a native end-to-end GUI policy against UI-TARS(-1.5)-7B (or the same backbone's SFT-only model) and against an agentic framework (GPT-4o/o3 planner + specialised grounder such as UGround, Aria-UI, Jedi, GTA1)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「训练的端到端 GUI agent 模型在线成功率提升主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "text": "For planner-grounder systems, hold the planner fixed and swap grounders (e.g. GPT-4o + UGround vs + Aguvis vs + Jedi), and report the planner alone",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「接地组件(或 planner–grounder 拆分)提升 agent 任务成功的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "text": "Compare GUI online-RL methods against DigiRL, WebRL, filtered BC / AWR and an SFT-only model trained on the same data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「RL 算法(在线/离线转在线/半在线/基于模型)提升 GUI/web agent 的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "text": "Validate an LLM/VLM success judge or outcome reward model against human labels on trajectories from agents not used to build it (agreement/accuracy, plus the resulting success-rate gap)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「用 LLM/VLM judge、ORM 或 reflector 为评测/过滤/奖励标注轨迹成败」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "text": "Report judge reliability separately for positive and negative verdicts (precision and NPV, or precision/recall per class), not only overall accuracy",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「GUI agent judge/PRM/ORM 足够可靠可作奖励或评测的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "text": "When a learned judge or PRM is the RL reward, show downstream policy gain against an alternative reward (rule/script checker, ORM vs PRM, another judge), and address reward hacking or bias",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「学习型奖励模型/验证器改进 GUI agent RL 训练的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "text": "Measure execution checkers (evaluation scripts) two-sidedly: false negatives on alternative valid solutions as well as false positives",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「奖励来自逐任务执行检查器/评测脚本的 benchmark、合成环境或 RL 流水线」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "text": "For PRMs or step-level verifiers, ablate the label source (human vs GPT-4o-generated step labels)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「GUI 步级 PRM 改进 RL 或 best-of-N 的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "text": "Do not rest an agent capability claim on offline step accuracy (AndroidControl, Multimodal-Mind2Web, GUI Odyssey) alone; add an online benchmark or show the offline metric predicts online success",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "能力结论基于对单一参考动作序列的匹配进度，属离线式代理指标，没有执行状态检查的在线成功，也没有证明该指标预测在线成功。",
+   "evidence_ids": [
+    "E017",
+    "E018"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "一次运行，无重复；作者承认重复运行时动作顺序会变化。",
+   "evidence_ids": [
+    "E025"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "正文未说明最大步数、终止判据或步数使用情况。",
+   "evidence_ids": [],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "text": "For inference-time search or best-of-N (simulated lookahead, verifier reranking), report cost/latency and the number of candidates, and compare against real-execution tree search where reset is possible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「推理时选择/搜索(世界模型 lookahead、verifier 重排、best-of-N)提升成功率的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "text": "Disclose and validate any modification to an online benchmark harness (re-implemented checkers, changed action implementations, dropped tasks, extra steps)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在 AndroidWorld/WebArena/Mind2Web-Live/OSWorld 的重构或修改 harness 中取得的结果」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "text": "For live-web results, state the evaluation date and handle site drift (replace outdated tasks, report blocked/CAPTCHA tasks)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在 live 网站或 live 应用上测得的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「观察空间可能不同的 GUI agent 之间的比较」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。（补充：本文只使用 view hierarchy 文本，不比较观察空间。）",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "text": "Report results across backbone sizes (e.g. 7B and 32B/72B), since gains from GUI data/RL recipes shrink with model size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「训练配方可跨策略 backbone 泛化的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "text": "Stratify online success by human reference step count (difficulty) and audit failure causes",
+   "applicable": true,
+   "status": "partial",
+   "reason": "按参考步数(2–3、4–5、6–13 步)分档报告完全完成率/进度，并定性描述失败原因；没有按档的失败原因频次，且样本极小。",
+   "evidence_ids": [
+    "E018",
+    "E023"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "text": "Test grounding robustness under controlled perturbations (zoom, text size, window position/clutter, relational instructions) with matched pairs",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「grounder/agent 对布局、缩放、杂乱等视觉扰动鲁棒或可泛化的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "text": "Report refusal / infeasible-task behaviour (instructions with no valid target)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「含歧义或不可行指令的 grounding/agent benchmark 主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "text": "Compare a synthetic-trajectory recipe against an instruction-first / task-driven synthesis baseline with the same executor and similar data size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「探索优先/反向/世界模型式数据合成产出更好 GUI 训练数据的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "text": "Show a data-scaling curve (fraction or count of synthetic samples vs downstream score) and say where it saturates",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「合成 GUI grounding/转移/轨迹数据提升 agent 的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "text": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「自生成任务、探索转移、记忆或合成环境提升 benchmark 成功率的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "text": "Ablate error-correction/reflection data against filtered behaviour cloning at the same iteration count",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「反思/自纠错/首错恢复数据提升 GUI agent 的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "text": "Evaluate a GUI world model by downstream agent success and closed-loop (multi-step, autoregressive) rollouts, not only teacher-forced one-step fidelity",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「GUI/web 世界模型(文本、代码或图像下一状态预测器)准确或有用的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "text": "Ablate imagination / lookahead horizon, since world-model errors compound beyond 1 (lookahead) or about 5 (training) steps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在学习得到的 GUI 世界模型内做多步 rollout 规划或训练」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "text": "For training in a world model, include sim-only vs real-anchored vs SFT-only arms",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在世界模型或模拟 GUI rollout 中训练策略的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "text": "Back world-model or synthetic-environment fidelity scores with a second independent judge, human validation or executable checks, not a VLM judge from the same family as the training reward",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「用 LLM/VLM judge 度量 GUI 世界模型或模拟应用保真度的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "text": "For a digital twin / simulated app used for training or evaluation, measure its realism and whether it preserves the ranking of agents or checkpoints seen in the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「模拟应用/合成站点/数字孪生可替代真实环境的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "text": "For memory/retrieval agents, show gains on environments other than those the memory was built from",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「经验记忆/检索轨迹改进 GUI agent 的主张」；本文中心主张范围为「ChatGPT 零样本 Android 自动化工具在作者自建 33 任务上的初步评测」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "DroidBot-GPT 在自建 33 任务上完全完成 39.39%、平均进度 66.76%",
+   "setting": "ChatGPT(版本未报)；17 个 F-Droid 应用；2–13 步任务；动作在手机上执行；一次运行",
+   "baseline/control": "无",
+   "selection_vs_test": "任务由作者手工设计；“20 词截断”由实验确定，使用的数据未说明；无留出",
+   "result/denominator": "13/33；Table 2 合计行 66.76% 与分档/分类别加权均值(67.51/68.28)不一致",
+   "evidence_ids": [
+    "E002",
+    "E017",
+    "E019",
+    "E018",
+    "E020"
+   ],
+   "counterevidence": [
+    "E025",
+    "E015"
+   ],
+   "counter_note": "成功判据为与单一参考序列的前缀匹配，不接受等价路径；无基线与方差；摘要数字与表内加权数不一致。",
+   "allowed_conclusion": "作者报告：在其 33 个自建任务上单次运行 13 个任务与参考序列完全一致；进度数值需更正后才可引用。"
+  },
+  {
+   "claim_id": "C2",
+   "text": "无需训练即可高效泛化到更多类别任务",
+   "setting": "10 个类别各 2–6 个任务",
+   "baseline/control": "无",
+   "selection_vs_test": "无留出",
+   "result/denominator": "类别间 20%–66.7% 完全完成率，样本很小",
+   "evidence_ids": [
+    "E022",
+    "E020"
+   ],
+   "counterevidence": [
+    "E021",
+    "E024"
+   ],
+   "counter_note": "每类样本极小，没有任何对比；“高效”无成本证据。",
+   "allowed_conclusion": "在该小样本上，一个冻结的 ChatGPT 提示方案能在多类 app 上做出部分正确的动作序列；“泛化”未检验。"
+  },
+  {
+   "claim_id": "C3",
+   "text": "失败主要由未命名元素、含糊关系、动作不确定性造成",
+   "setting": "定性分析与两个案例图",
+   "baseline/control": "无",
+   "selection_vs_test": "—",
+   "result/denominator": "无失败计数，仅分类",
+   "evidence_ids": [
+    "E023",
+    "E024",
+    "E025",
+    "E021"
+   ],
+   "counterevidence": [],
+   "counter_note": "没有按类型的频次与分母。",
+   "allowed_conclusion": "定性失败边界可信，但频次未知。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "offline",
+  "evidence_level_reason": "虽为实机闭环执行，但成败由“生成动作序列 vs 单一参考序列”的前缀匹配得出，未描述执行状态检查；按 EVIDENCE 对 online 的要求(任务成功由执行结果检查)不满足，因此保守判 offline。",
+  "author_claimed_level": "作者未自称等级，仅称“fully unsupervised”和“generalize”",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "作者报告：在其 33 个自建任务上，单次运行下，ChatGPT 基于 DroidBot 抽取的自然语言化 GUI 提示能让 13 个任务与参考动作序列完全一致，其余任务不同程度地进展；表内进度汇总数字不一致。",
+  "cannot_say": [
+   "不能说优于任何方法（无基线）",
+   "不能说稳定（单次运行，作者承认不稳定）",
+   "不能说泛化到未见应用",
+   "不能说设计选择（20 词、历史、两步输入）有效（无消融）"
+  ],
+  "reproduction_note": "无复现；仅重算表内均值。",
+  "unresolved": [
+   "ChatGPT 版本、温度、最大步数、终止判据",
+   "“完全完成”的精确判定规则",
+   "任务清单与参考序列是否公开"
+  ]
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "问题（低开发成本多样应用自动化）真实且重要，但论文没有任何最近邻比较，核心“首个”主张无查新支撑；本席发现同批 2209.08655 更早用 LLM+VH 文本表示做移动 UI 任务，且本文未引用；残余问题只有定性失败分类。",
+   "evidence_ids": [
+    "E004",
+    "E005",
+    "E027",
+    "E029"
+   ],
+   "counterevidence_ids": [
+    "E029"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "机制具体（GUI 自然语言化+编号选择+历史+两步输入），失败分析能把无名元素缺失与表示联系起来，因此有部分因果解释；但没有任何设计消融或与朴素替代（原始树、少样本、无历史）的可区分预测，“LLM 见过 how-to 手册”只是断言。",
+   "evidence_ids": [
+    "E006",
+    "E011",
+    "E024"
+   ],
+   "counterevidence_ids": [
+    "E015",
+    "E027"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "主要步骤清楚（描述规则、动作空间、两步输入、提示组成），但 ChatGPT 版本/温度、最大步数与终止判据、“完全完成”的判定、历史长度、启动 app 的方式均未说明；失败边界有定性说明。",
+   "evidence_ids": [
+    "E006",
+    "E012",
+    "E014",
+    "E007",
+    "E023"
+   ],
+   "counterevidence_ids": [
+    "E015"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "成败由与单一参考动作序列的前缀匹配得出，不接受等价路径，也未说明执行状态检查；任务集为作者自建且不公开；表内汇总数字与分档/分类别加权均值不一致(66.76 vs 67.51/68.28)。",
+   "evidence_ids": [
+    "E017",
+    "E018"
+   ],
+   "counterevidence_ids": [
+    "E019",
+    "E025"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "not_reported",
+   "rating": 0,
+   "reason": "完整读取全文后未见任何基线、消融或对照（相关工作仅定性区分），无法归因于所提提示设计。",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": [
+    "Sec 3 Evaluation",
+    "Sec 3.1 Results",
+    "Sec 3.2 Limitations",
+    "Sec 4 Related work",
+    "Tables 1-3"
+   ]
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "只有一个作者自建的 33 任务集；20 词截断是“基于我们的实验”确定，可能用过同批任务；无未见应用，ChatGPT 预训练对 F-Droid 应用的暴露未审计；“泛化到更多类别”的措辞无留出支撑。",
+   "evidence_ids": [
+    "E016",
+    "E001"
+   ],
+   "counterevidence_ids": [
+    "E015",
+    "E022"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "给出了分母(33、每档/类的任务数)和定性失败类型，但单次运行、无区间/重复，作者自己承认重复运行结果会变；每类仅 2–6 个任务；汇总数字不一致。",
+   "evidence_ids": [
+    "E018",
+    "E020",
+    "E023"
+   ],
+   "counterevidence_ids": [
+    "E025",
+    "E019"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "not_reported",
+   "rating": 0,
+   "reason": "全文未报告 token/调用次数/延迟/费用或每任务步数预算；未说明 ChatGPT 版本与定价。",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": [
+    "Sec 2 Method",
+    "Sec 3 Evaluation",
+    "Sec 3.1",
+    "Sec 3.2",
+    "Sec 5 Conclusion"
+   ]
+  }
+ },
+ "score": {
+  "raw": 36.25,
+  "display": 36.3,
+  "lower": 36.25,
+  "upper": 36.25,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(15*G+25*M+20*X+10*E.measurement+10*E.causality+10*E.holdout+5*E.statistics+5*E.cost)/4; display = half-up one decimal"
+ },
+ "status": "reviewed",
+ "status_reason": "论文较短且已完整读取；材料完整，评分项缺乏证据处以 not_reported 记录。",
+ "rationale": {
+  "summary": "早期、简洁的 LLM-on-Android 原型：GUI→自然语言化+编号选择+历史的流程清楚，失败分析把结构缺失（无名元素）与表示联系起来。但评测只有 33 个自建任务、单次运行、参考序列匹配判分、无基线无消融，表内汇总数字不一致，“泛化”和“首个”主张缺证据。",
+  "G": "问题真实但无最近邻比较。",
+  "M": "机制具体，无消融。",
+  "X": "关键运行条件未报。",
+  "E": "测量弱，因果无证据，小样本，无成本。"
+ }
+}

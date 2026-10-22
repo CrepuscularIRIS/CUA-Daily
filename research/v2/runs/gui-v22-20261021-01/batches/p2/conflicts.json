@@ -1,0 +1,829 @@
+{
+ "batch": "p2",
+ "attempt": "a1",
+ "coverage_ok": true,
+ "errors": [],
+ "n_conflict_papers": 5,
+ "conflicts": {
+  "2202.08137": [
+   {
+    "field": "rs.primary",
+    "sol": "assumption_audit_and_pivot",
+    "son55": "unify_into_shared_representation"
+   },
+   {
+    "field": "rs.matches",
+    "sol": [
+     "assumption_audit_and_pivot/None"
+    ],
+    "son55": [
+     "unify_into_shared_representation/None"
+    ]
+   },
+   {
+    "field": "domain.matches",
+    "sol": [
+     "trajectory_level_policy_training/None"
+    ],
+    "son55": [
+     "planner_grounder_interface/K29",
+     "trajectory_level_policy_training/None"
+    ]
+   },
+   {
+    "field": "rating.G",
+    "sol": {
+     "status": "resolved",
+     "rating": 2
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 3
+    }
+   },
+   {
+    "field": "rating.E.causality",
+    "sol": {
+     "status": "resolved",
+     "rating": 2
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 3
+    }
+   },
+   {
+    "field": "expectation.E03",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E07",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E13",
+    "sol": "unmet",
+    "son55": "not_applicable"
+   }
+  ],
+  "2209.08655": [
+   {
+    "field": "evidence_level",
+    "sol": null,
+    "son55": "offline"
+   },
+   {
+    "field": "claim_support",
+    "sol": "unresolved",
+    "son55": "scoped"
+   },
+   {
+    "field": "status",
+    "sol": "needs_fulltext",
+    "son55": "reviewed"
+   },
+   {
+    "field": "rs.primary",
+    "sol": null,
+    "son55": "adapt_via_conditioning"
+   },
+   {
+    "field": "rs.supporting",
+    "sol": [],
+    "son55": [
+     "unify_into_shared_representation"
+    ]
+   },
+   {
+    "field": "rs.matches",
+    "sol": [],
+    "son55": [
+     "adapt_via_conditioning/C03",
+     "unify_into_shared_representation/C18"
+    ]
+   },
+   {
+    "field": "domain.matches",
+    "sol": [],
+    "son55": [
+     "structured_screen_observation/C01",
+     "structured_screen_observation/C13"
+    ]
+   },
+   {
+    "field": "rating.G",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.M",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.X",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 3
+    }
+   },
+   {
+    "field": "rating.E.measurement",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.E.causality",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 1
+    }
+   },
+   {
+    "field": "rating.E.holdout",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.E.statistics",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.E.cost",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 1
+    }
+   },
+   {
+    "field": "expectation.E01",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E02",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E03",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E04",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E05",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E06",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E07",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E08",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E09",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E10",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E11",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E12",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E13",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E14",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E15",
+    "sol": null,
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E16",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E17",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E18",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E19",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E20",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E21",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E22",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E23",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E24",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E25",
+    "sol": null,
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E26",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E27",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E28",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E29",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E30",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E31",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E32",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E33",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E34",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E35",
+    "sol": null,
+    "son55": "not_applicable"
+   }
+  ],
+  "2303.17491": [
+   {
+    "field": "evidence_level",
+    "sol": null,
+    "son55": "online"
+   },
+   {
+    "field": "claim_support",
+    "sol": "unresolved",
+    "son55": "scoped"
+   },
+   {
+    "field": "status",
+    "sol": "needs_fulltext",
+    "son55": "reviewed"
+   },
+   {
+    "field": "rs.primary",
+    "sol": null,
+    "son55": "decompose_and_delegate"
+   },
+   {
+    "field": "rs.supporting",
+    "sol": [],
+    "son55": [
+     "adapt_via_conditioning"
+    ]
+   },
+   {
+    "field": "rs.matches",
+    "sol": [],
+    "son55": [
+     "adapt_via_conditioning/None",
+     "decompose_and_delegate/C25"
+    ]
+   },
+   {
+    "field": "domain.matches",
+    "sol": [],
+    "son55": [
+     "agent_loop_context_control/C20",
+     "planner_grounder_interface/C14"
+    ]
+   },
+   {
+    "field": "rating.G",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 3
+    }
+   },
+   {
+    "field": "rating.M",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.X",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 3
+    }
+   },
+   {
+    "field": "rating.E.measurement",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.E.causality",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.E.holdout",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 1
+    }
+   },
+   {
+    "field": "rating.E.statistics",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 1
+    }
+   },
+   {
+    "field": "rating.E.cost",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 1
+    }
+   },
+   {
+    "field": "expectation.E01",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E02",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E03",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E04",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E05",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E06",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E07",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E08",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E09",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E10",
+    "sol": null,
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E11",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E12",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E13",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E14",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E15",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E16",
+    "sol": null,
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E17",
+    "sol": null,
+    "son55": "unknown"
+   },
+   {
+    "field": "expectation.E18",
+    "sol": null,
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E19",
+    "sol": null,
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E20",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E21",
+    "sol": null,
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E22",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E23",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E24",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E25",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E26",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E27",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E28",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E29",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E30",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E31",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E32",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E33",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E34",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E35",
+    "sol": null,
+    "son55": "not_applicable"
+   }
+  ],
+  "2304.07061": [
+   {
+    "field": "evidence_level",
+    "sol": "online",
+    "son55": "offline"
+   },
+   {
+    "field": "rs.supporting",
+    "sol": [],
+    "son55": [
+     "unify_into_shared_representation"
+    ]
+   },
+   {
+    "field": "rs.matches",
+    "sol": [
+     "adapt_via_conditioning/None"
+    ],
+    "son55": [
+     "adapt_via_conditioning/None",
+     "unify_into_shared_representation/C18"
+    ]
+   },
+   {
+    "field": "domain.matches",
+    "sol": [
+     "structured_screen_observation/C01"
+    ],
+    "son55": [
+     "structured_screen_observation/C01",
+     "structured_screen_observation/C13"
+    ]
+   },
+   {
+    "field": "expectation.E02",
+    "sol": "partial",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E15",
+    "sol": "partial",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E17",
+    "sol": "unmet",
+    "son55": "unknown"
+   },
+   {
+    "field": "expectation.E20",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E21",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E23",
+    "sol": "met",
+    "son55": "partial"
+   }
+  ],
+  "2305.11854": [
+   {
+    "field": "rs.supporting",
+    "sol": [],
+    "son55": [
+     "self_supervised_signal_engineering"
+    ]
+   },
+   {
+    "field": "rs.matches",
+    "sol": [
+     "unify_into_shared_representation/C18"
+    ],
+    "son55": [
+     "self_supervised_signal_engineering/C08",
+     "unify_into_shared_representation/C18"
+    ]
+   },
+   {
+    "field": "rating.E.measurement",
+    "sol": {
+     "status": "resolved",
+     "rating": 3
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.E.causality",
+    "sol": {
+     "status": "resolved",
+     "rating": 2
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 3
+    }
+   },
+   {
+    "field": "rating.E.holdout",
+    "sol": {
+     "status": "resolved",
+     "rating": 3
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "expectation.E13",
+    "sol": "unmet",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E17",
+    "sol": "partial",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E23",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E27",
+    "sol": "met",
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E28",
+    "sol": "partial",
+    "son55": "unmet"
+   }
+  ]
+ }
+}

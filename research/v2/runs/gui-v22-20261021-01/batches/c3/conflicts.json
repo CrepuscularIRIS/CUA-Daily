@@ -1,0 +1,643 @@
+{
+ "batch": "c3",
+ "attempt": "a1",
+ "coverage_ok": true,
+ "errors": [],
+ "n_conflict_papers": 6,
+ "conflicts": {
+  "2502.16796": [
+   {
+    "field": "rs.matches",
+    "sol": [
+     "adapt_via_conditioning/None",
+     "decompose_and_delegate/None"
+    ],
+    "son55": [
+     "adapt_via_conditioning/None",
+     "decompose_and_delegate/rs:C25"
+    ]
+   },
+   {
+    "field": "domain.matches",
+    "sol": [
+     "agent_loop_context_control/C17",
+     "experience_memory_retrieval/C19"
+    ],
+    "son55": [
+     "agent_loop_context_control/gui:C17",
+     "agent_loop_context_control/gui:C18",
+     "experience_memory_retrieval/gui:C19"
+    ]
+   },
+   {
+    "field": "rating.G",
+    "sol": {
+     "status": "resolved",
+     "rating": 2
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 3
+    }
+   },
+   {
+    "field": "rating.E.measurement",
+    "sol": {
+     "status": "resolved",
+     "rating": 2
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 1
+    }
+   },
+   {
+    "field": "expectation.E08",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E11",
+    "sol": "partial",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E19",
+    "sol": "not_applicable",
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E20",
+    "sol": "unmet",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E21",
+    "sol": "partial",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E25",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E28",
+    "sol": "partial",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E35",
+    "sol": "unmet",
+    "son55": "unknown"
+   }
+  ],
+  "2505.05440": [
+   {
+    "field": "rs.matches",
+    "sol": [
+     "decompose_and_delegate/None"
+    ],
+    "son55": [
+     "decompose_and_delegate/rs:C25"
+    ]
+   },
+   {
+    "field": "domain.matches",
+    "sol": [
+     "agent_loop_context_control/C17",
+     "agent_loop_context_control/C18"
+    ],
+    "son55": [
+     "agent_loop_context_control/gui:C15",
+     "agent_loop_context_control/gui:C18",
+     "planner_grounder_interface/gui:C10"
+    ]
+   },
+   {
+    "field": "rating.M",
+    "sol": {
+     "status": "resolved",
+     "rating": 3
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.X",
+    "sol": {
+     "status": "resolved",
+     "rating": 2
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 3
+    }
+   },
+   {
+    "field": "rating.E.cost",
+    "sol": {
+     "status": "resolved",
+     "rating": 2
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 3
+    }
+   },
+   {
+    "field": "expectation.E17",
+    "sol": "partial",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E19",
+    "sol": "not_applicable",
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E23",
+    "sol": "partial",
+    "son55": "not_applicable"
+   }
+  ],
+  "2505.12632": [
+   {
+    "field": "claim_type",
+    "sol": "evaluation_resource",
+    "son55": "component_training"
+   },
+   {
+    "field": "domain.matches",
+    "sol": [
+     "mine_human_screen_videos/R03"
+    ],
+    "son55": [
+     "mine_human_screen_videos/gui:R03",
+     "structured_screen_observation/gui:C02"
+    ]
+   },
+   {
+    "field": "rating.G",
+    "sol": {
+     "status": "resolved",
+     "rating": 2
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 3
+    }
+   },
+   {
+    "field": "rating.E.measurement",
+    "sol": {
+     "status": "resolved",
+     "rating": 3
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.E.causality",
+    "sol": {
+     "status": "resolved",
+     "rating": 2
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 1
+    }
+   },
+   {
+    "field": "rating.E.cost",
+    "sol": {
+     "status": "resolved",
+     "rating": 2
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 3
+    }
+   },
+   {
+    "field": "expectation.E02",
+    "sol": "not_applicable",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E05",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E06",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E24",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E26",
+    "sol": "not_applicable",
+    "son55": "unmet"
+   }
+  ],
+  "2510.16051": [
+   {
+    "field": "claim_type",
+    "sol": "evaluation_resource",
+    "son55": "component_training"
+   },
+   {
+    "field": "rs.matches",
+    "sol": [
+     "self_supervised_signal_engineering/None"
+    ],
+    "son55": [
+     "self_supervised_signal_engineering/rs:C08"
+    ]
+   },
+   {
+    "field": "domain.matches",
+    "sol": [
+     "exploration_driven_task_synthesis/K14"
+    ],
+    "son55": [
+     "exploration_driven_task_synthesis/gui:K14",
+     "planner_grounder_interface/gui:K23",
+     "structured_screen_observation/gui:C01"
+    ]
+   },
+   {
+    "field": "rating.M",
+    "sol": {
+     "status": "resolved",
+     "rating": 3
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "expectation.E15",
+    "sol": "unmet",
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E22",
+    "sol": "partial",
+    "son55": "met"
+   },
+   {
+    "field": "expectation.E24",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E25",
+    "sol": "partial",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E28",
+    "sol": "partial",
+    "son55": "met"
+   }
+  ],
+  "2604.11784": [
+   {
+    "field": "status",
+    "sol": "needs_evidence",
+    "son55": "reviewed"
+   },
+   {
+    "field": "rs.supporting",
+    "sol": [],
+    "son55": [
+     "controlled_diagnostic_design"
+    ]
+   },
+   {
+    "field": "rs.matches",
+    "sol": [
+     "self_supervised_signal_engineering/rs:C26"
+    ],
+    "son55": [
+     "controlled_diagnostic_design/None",
+     "self_supervised_signal_engineering/rs:C26"
+    ]
+   },
+   {
+    "field": "domain.matches",
+    "sol": [
+     "learned_outcome_and_process_judges/K19",
+     "online_evaluation_methodology/C26"
+    ],
+    "son55": [
+     "learned_outcome_and_process_judges/gui:K19",
+     "trajectory_level_policy_training/None"
+    ]
+   },
+   {
+    "field": "rating.G",
+    "sol": {
+     "status": "unknown",
+     "rating": null
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.M",
+    "sol": {
+     "status": "resolved",
+     "rating": 3
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 2
+    }
+   },
+   {
+    "field": "rating.E.holdout",
+    "sol": {
+     "status": "resolved",
+     "rating": 1
+    },
+    "son55": {
+     "status": "not_reported",
+     "rating": 0
+    }
+   },
+   {
+    "field": "rating.E.statistics",
+    "sol": {
+     "status": "not_reported",
+     "rating": 0
+    },
+    "son55": {
+     "status": "resolved",
+     "rating": 1
+    }
+   },
+   {
+    "field": "expectation.E12",
+    "sol": "partial",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E13",
+    "sol": "not_applicable",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E21",
+    "sol": "partial",
+    "son55": "unknown"
+   },
+   {
+    "field": "expectation.E22",
+    "sol": "not_applicable",
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E25",
+    "sol": "partial",
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E28",
+    "sol": "not_applicable",
+    "son55": "unmet"
+   }
+  ],
+  "2609.29892": [
+   {
+    "field": "evidence_level",
+    "sol": null,
+    "son55": "online"
+   },
+   {
+    "field": "claim_support",
+    "sol": "unresolved",
+    "son55": "scoped"
+   },
+   {
+    "field": "rs.primary",
+    "sol": null,
+    "son55": "self_supervised_signal_engineering"
+   },
+   {
+    "field": "rs.supporting",
+    "sol": [],
+    "son55": [
+     "adapt_via_conditioning",
+     "assumption_audit_and_pivot"
+    ]
+   },
+   {
+    "field": "rs.matches",
+    "sol": [],
+    "son55": [
+     "adapt_via_conditioning/None",
+     "assumption_audit_and_pivot/None",
+     "self_supervised_signal_engineering/rs:C08"
+    ]
+   },
+   {
+    "field": "domain.matches",
+    "sol": [],
+    "son55": [
+     "experience_memory_retrieval/gui:K27",
+     "exploration_driven_task_synthesis/gui:K15",
+     "trajectory_level_policy_training/None"
+    ]
+   },
+   {
+    "field": "expectation.E01",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E02",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E03",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E04",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E05",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E06",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E07",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E08",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E09",
+    "sol": null,
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E10",
+    "sol": null,
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E11",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E12",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E13",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E14",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E15",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E16",
+    "sol": null,
+    "son55": "unmet"
+   },
+   {
+    "field": "expectation.E17",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E18",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E19",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E20",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E21",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E22",
+    "sol": null,
+    "son55": "met"
+   },
+   {
+    "field": "expectation.E23",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E24",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E25",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E26",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E27",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E28",
+    "sol": null,
+    "son55": "partial"
+   },
+   {
+    "field": "expectation.E29",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E30",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E31",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E32",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E33",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E34",
+    "sol": null,
+    "son55": "not_applicable"
+   },
+   {
+    "field": "expectation.E35",
+    "sol": null,
+    "son55": "partial"
+   }
+  ]
+ }
+}

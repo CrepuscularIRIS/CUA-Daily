@@ -1,0 +1,2127 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c1",
+ "attempt_id": "a1",
+ "seat": "aggregate",
+ "paper": {
+  "paper_key": "2504.12679",
+  "paper_id": "2504.12679",
+  "title": "TongUI: Internet-Scale Trajectories from Multimodal Web Tutorials for Generalized GUI Agents",
+  "version": "2504.12679v4",
+  "claim_type": "component_training",
+  "central_claim": "Converting multimodal web tutorials (WikiHow/Baidu Experience articles and YouTube/Bilibili videos) into GUI trajectories via crawl -> text/visual processing -> zero-shot-agent (UI-TARS) thought/action generation -> multi-stage filtering yields GUI-Net-1M (1M trajectories, 5 OS, 280+ apps); fine-tuning Qwen2.5-VL-3B/7B/32B on it improves grounding and navigation benchmarks, outperforming baseline agents by about 10% on multiple benchmarks and generalising across platforms."
+ },
+ "provenance": {
+  "input_hash": "28c0cca3c5e43fc35f3a1a269b63a8f0a4506d44fbaaa27257dca80bfabb6390",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "aggregate_rules": "docs/agents/AGGREGATE_OPUS.md",
+  "aggregate_rules_sha256": "1ad0c4f39af2ceb06924fc015d8660711edcd9a6f891444e902b44f79584f4e0",
+  "conflicts_sha256": "c87540e933ed213df085fa46383ab640a32d22ff08e61c71774e412a2b689632",
+  "references_sha256": "d15550c3cb35fe623636c849a1bdf24e652afaccf7385bb3c38750de2fde26c8",
+  "model_type": "fable",
+  "actual_model": "claude-opus-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "timestamp": "2026-10-21T17:08:04+00:00",
+  "independence_note": "Aggregation over two seat inputs; the fixed paper text was read before seat scores, but this is not a third blind review or human gold. All results are author reports; nothing was reproduced."
+ },
+ "materials": [
+  {
+   "material_id": "agg:2504.12679",
+   "url": "https://arxiv.org/html/2504.12679",
+   "sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2504.12679.txt",
+   "role": "paper",
+   "sections_read": [
+    "full text"
+   ],
+   "complete": true,
+   "missing_sections": []
+  },
+  {
+   "material_id": "agg:2412.09605",
+   "url": "https://arxiv.org/html/2412.09605",
+   "sha256": "ff0d81b000884775c3d21cacef43eb7db8eb5f0286152dd3fb0f1df0e9fd65bd",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2412.09605.txt",
+   "role": "nearest_neighbor_reference",
+   "sections_read": [
+    "targeted sections cited by agg evidence"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; used only as factual reference"
+   ]
+  },
+  {
+   "material_id": "sol:P",
+   "url": "https://arxiv.org/html/2504.12679v4",
+   "sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2504.12679.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Entire rendered text L1-L815; methods, all tables, references, appendices A-D and footer"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "limitations": [
+    "Figure pixels and image-embedded prompts/architecture/examples are not preserved in the fixed text; no unseen pixel-level findings inferred."
+   ],
+   "version_binding": "Manifest v4; SOURCE is unversioned, not independent version attestation."
+  },
+  {
+   "material_id": "son55:M-2504.12679-html",
+   "url": "https://arxiv.org/html/2504.12679v4",
+   "sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2504.12679.txt",
+   "sections_read": [
+    "Abstract",
+    "Introduction",
+    "Related Work",
+    "Method (Formulation, Tutorial Source/Crawling/Process, Trajectory Generation, Data Filtering, Agent Tuning)",
+    "Dataset Statistics",
+    "Experiments (Setting, Grounding, Offline/Online Navigation, User Study)",
+    "Conclusion",
+    "References",
+    "Appendix A-D (metrics, architecture, action space, resources, prompts, data scaling, error bar, AndroidControl, GUI Odyssey, examples)"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "note": "HTML text render of v4 read in full including appendix tables; figures (Fig 1-3, 5-17, prompts shown as figures) are not in the text."
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "agg:T-A01",
+   "material_id": "agg:2504.12679",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "App A Resource Consumption",
+   "quote": "we utilize the SFT data (training set) of the evaluation dataset to fine-tune the model.",
+   "support_explanation": "Navigation benchmarks are evaluated after in-domain SFT on their own training splits.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:T-A02",
+   "material_id": "agg:2504.12679",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Method: Trajectory Generation",
+   "quote": "we use a pretrained GUI agent (such as UI-TARS",
+   "support_explanation": "Labels come from a stronger teacher conditioned on human step descriptions (privileged at labelling time), without execution.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:T-A03",
+   "material_id": "agg:2412.09605",
+   "material_sha256": "ff0d81b000884775c3d21cacef43eb7db8eb5f0286152dd3fb0f1df0e9fd65bd",
+   "locator": "AgentTrek abstract",
+   "quote": "employs a visual-language model (VLM) agent to execute these instructions in real environments, while a VLM-based evaluator verifies trajectory correctness.",
+   "support_explanation": "Nearest neighbour already converts tutorials to trajectories with execution and a verifier; TongUI trades both away for scale, a trade-off it does not analyse.",
+   "kind": "reviewer_comment"
+  },
+  {
+   "evidence_id": "agg:T-A04",
+   "material_id": "agg:2504.12679",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "App A Resource Consumption",
+   "quote": "Our training involves two stages.",
+   "support_explanation": "Stage composition and data mixture (GUI-Net vs public vs benchmark train splits) are not specified, a key execution condition.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:T-A05",
+   "material_id": "agg:2504.12679",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "App A Prompt (rendered text)",
+   "quote": "In the following, we show the system prompt in our agent framework.\n\nSystem prompt for GUI-Net Agent\n\nIn the following",
+   "support_explanation": "Prompt boxes are empty in the fixed HTML render (rendering loss); not counted as not_reported.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:T-A06",
+   "material_id": "agg:2504.12679",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Table 6 Mind2Web",
+   "quote": "Qwen2.5-VL-3B † \\dagger | 2.5 | 14.5 | 0.4",
+   "support_explanation": "Reproduced zero-shot base model is format-broken, so gains over it overstate data value; the ShowUI-data arm is the meaningful control.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:T01",
+   "material_id": "sol:P",
+   "material_hash": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "L114-L137",
+   "quote": "Recently, notable efforts have been made for GUI agents by fine-tuning the foundation models ( Lin et al. 2024b ; Qin et al. 2025 ; Xu et al. 2025 ) .\nHowever, collecting sufficient trajectory data for fine-tuning is challenging.\nMost existing approaches rely on either manually annotated interaction trajectories ( Liu et al. 2024b ) that are high-quality but costly to obtain, or synthetic trajectories generated from large open-source or proprietary LLMs/VLMs, which may lack diversity and accuracy ( Qin et al. 2023 ; Liu et al. 2024c ; Gao et al. 2024 ) .\nDesirable GUI agents need to perform actions across a wide variety of applications, each with unique interaction sequences, while collecting comprehensive and diverse data across different applications and operating systems remains a major challenge.\nThus, the lack of large-scale, diverse, and well-structured GUI trajectory data continues to be a key bottleneck in developing robust and generalized GUI agents.\n\nIn this paper, we propose the TongUI framework that transforms millions of multimodal web tutorials into GUI trajectories for generalized GUI agents,\nwhere ‘Tong’ means generalization in Chinese.\nOur key observation is that there are readily available multimodal web tutorials on the Internet about how to control computers and smart mobile phones, offering a wealth of information on interacting with various applications and operating systems.\nThese tutorials, in either videos or articles with screenshot formats, provide detailed step-by-step instructions on interacting with GUI.\nCompared to the aforementioned manually collected or synthetic data pipeline, online tutorials offer easy accessibility, rich information content, and good quality.\nThus, it is a natural idea to convert the diverse multimodal web tutorials into task-solving trajectories for GUI agent tuning.\n\nIn doing so, we design the TongUI framework composed of four steps: tutorial crawling, tutorial processing, trajectory generation, and data filtering.\nIn the tutorial crawling step, we write some seed tasks and use LLMs to extend them into a wider collection of tasks.\nThe generated tasks serve as keywords for retrieving content from hosts for online GUI tutorials (such as articles from WikiHow and videos from YouTube).\nThe tutorial processing step aims to extract textual descriptions and screenshots of multimodal tutorials.\nWe first obtain textual descriptions of multimodal tutorials via automatic speech recognition (ASR) or captioning, through which task queries and plans are produced using LLMs on the obtained textual descriptions.\nThen, we extract salient frames from videos as screenshots of each step, while the images in articles are directly regarded as screenshots.\nIn the trajectory generation step, we leverage a zero-shot GUI agent to automatically recognize trajectories, including reasoning thoughts and actions between two steps.\nIn the data filtering step, we apply a multi-stage pipeline to ensure data quality and GUI relevance, including duplicate tutorial removal, LLM-based content filtering, and trajectory-level filtering using GUI agents.\nBased on the TongUI framework, we construct a GUI-Net-1M dataset that contains 1M trajectories across five operating systems with more than 280 applications. As far as we know, GUI-Net-1M is the biggest open-source GUI trajectory dataset.\nNotably, our dataset contains tutorials from different time periods, where the same application may have evolving layouts and task-solving solutions,\nhelping the model generalize to diverse GUI environments.",
+   "support_explanation": "Corpus scarcity and multimodal tutorial proposal.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:T02",
+   "material_id": "sol:P",
+   "material_hash": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "L168-L182",
+   "quote": "In addition to the two schemes, considering that there are abundant resources for GUI operations on the Internet, some efforts focus on collecting trajectory data of GUI agents from the Web, to preserve the data quality and reduce costs simultaneously ( Ou et al. 2024 ; Xu et al. 2024 ) . They collect textual tutorials from the Internet, and convert them into trajectories by using LLMs or exploring in simulators. Unlike them, we directly collect multimodal tutorials from the Internet and propose a multimodal tutorial process pipeline to convert them into trajectories without any simulators.\nMeanwhile, compared with synthetic data in simulators, our data is closer to tasks in the real world with practical purposes, benefiting to the generalization capability of GUI agents. In table 1 , we show the comparisons of GUI-Net-1M with existing GUI trajectory datasets, including GUI Odessey ( Lu et al. 2024a ) , AgentTrek ( Xu et al. 2024 ) , AndroidControl ( Li et al. 2025b ) , AGUVIS ( Xu et al. 2025 ) , LBI ( Su et al. 2025 ) , E-ANT ( Wang et al. 2024a ) , ShowUI ( Lin et al. 2024b ) , and AITW ( Rawles et al. 2023 ) , where GUI-Net-1M has obvious advantages in data size, platform, and operating system numbers.\n\nDatasets | Size | Platform | OS\nGUI Odyssey | 7K | W+M | A\nAgentTrek | 10.4K | W | A+W+L+M+I\nAndroidControl | 15.3K | W+M | A\nAGUVIS | 35K | W+M | A+W+L\nLBI | 42.6K | D+W | L\nE-ANT | 49K | M | A\nShowUI | 137K | W+M | W+L+I\nAITW | 715K | W+M | A\nGUI-Net-1M | 1M | D+W+M | A+W+L+M+I\n\nTable 1: Comparison of GUI-Net-1M with other GUI trajectory datasets. For platform, ‘D’, ‘W’, and ‘M’ mean the desktop, web, and mobile, respectively. For operating systems (OS), ‘A, ‘W’, ‘L’, ‘M’, and ‘I’ denote Android, Windows, Linux, MacOS, and iOS, respectively.",
+   "support_explanation": "Text-tutorial Synatra/AgentTrek versus direct multimodal tutorial extraction lineage.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:T03",
+   "material_id": "sol:P",
+   "material_hash": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "L211-L247",
+   "quote": "We use a keyword-based search approach.\nThe search keywords are constructed by combining the name of the applications or website with the task content, that is “app/web + task”.\nHere, “app/web” refers to the operating system or application being used ( e.g. , a mobile app or website), while “task” has a specific objective ( e.g. , changing font size in Word, or browsing in Chrome).\nWe identify task seeds across multiple applications via brainstorming,\nand expanded them as search keywords using LLMs for more diverse and relevant tasks.\n\nWith these keywords, we crawl multimodal web tutorials from source websites.\nWe employ platform-specific methods to retrieve tutorials, including subtitles and audio.\nFor YouTube, we utilize the Google API and YouTube’s official API to search for videos, and download the relevant content.\nFor Bilibili and TikTok, we use the unofficial API to search for videos and retrieve both video and audio streams for download. For Wikihow and Baidu Experience, articles usually have multiple tags to indicate the main category of the tutorial, such as Windows, Chrome, Word, and etc. We crawl text-image tutorials using tags.\n\n### Tutorial Process\n\nTextual processing. Given a crawled multimodal tutorial { v , e } \\{v,e\\} , this process extracts the task q q and rough descriptions { h 1 , ⋯ , h T } \\{h_{1},\\cdots,h_{T}\\} in T T steps.\nFor video tutorials from Youtube, Tiktok, and Bilibili, the task guidance is usually in the video’s audio information without any textual introductions.\nTo solve this issue, we begin by applying the open-source speech recognition model, Whisper ( Radford et al. 2022 ) , to transcribe the audio streams into the text information e e .\nFor image-text articles on Wikihow and Baidu Experience, we parse websites based on their article structures for the textual information e e .\n\nWe use LLMs\nto identify key task-related verbs and nouns, such as “clicking a button”, “filling out a form”, or “selecting a menu”.\nThen, we leverage both the title and extracted text to classify tutorials into three categories: mobile, desktop, and others. The data with category “others” is discarded.\nFinally, we use LLMs to extract the task q q and summarize this process into rough descriptions { h 1 , ⋯ , h T } \\{h_{1},\\cdots,h_{T}\\} of T T steps from the filtered textual information.\n\nVisual processing. This process extracts the observation { o 1 , ⋯ , o T } \\{o_{1},\\cdots,o_{T}\\} in the T T steps.\nFor text-image articles, we could directly obtain the image sequences as the observation { o 1 , ⋯ , o T } \\{o_{1},\\cdots,o_{T}\\} from the crawled data.\nIn practice, there are some noisy data in Baidu Experience and Wikihow, which might be diagrams, comics, or natural images rather than GUI screenshots.\nTo address this issue, we prompt GPT-4o-mini to classify each image as a screenshot or not.\n\nFor video tutorials, we need to extract key frames that correspond to critical actions, representing meaningful moments in the task-solving process.\nWe observe that the audio transcript of the videos often contains valuable planning information, such as the description of task steps. Therefore, when audio is available, we first segment the video based on the audio transcript timestamps, treating each segment as a potential task step. We then extract key frames from each of these segments.\nIn the absence of audio, we treat the entire video as a single segment and extract key frames throughout the video.\nIn doing so, we adopt the MOG2 algorithm ( Zivkovic 2004a ; Zivkovic 2004b ; Zivkovic and van der Heijden 2006 ) to detect significant changes.\n\nFigure 2: Data statistics on the GUI-Net-1M dataset.\n\nAfter textual and visual processing,\ntutorials from different sources are structured into a task q q with text and image pairs of T T steps, denoted as ( { o 1 , h 1 } , ⋯ , { o i , h i } , ⋯ , { o T , h T } ) \\big(\\{o_{1},h_{1}\\},\\cdots,\\{o_{i},h_{i}\\},\\cdots,\\{o_{T},h_{T}\\}\\big) , where o i o_{i} is the image and h i h_{i} is the rough description in the i i -th step.",
+   "support_explanation": "Search, ASR, task extraction, screenshot classification, MOG2 key frames.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:T04",
+   "material_id": "sol:P",
+   "material_hash": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "L249-L264",
+   "quote": "### Trajectory Generation\n\nThis process aims to generate the trajectory ( o 1 , r 1 , a 1 , ⋯ , o T , r T , a T ) (o_{1},r_{1},a_{1},\\cdots,o_{T},r_{T},a_{T}) in T T steps using the task q q , and image o i o_{i} and rough description h i h_{i} in T T steps.\nConcretely, we use a pretrained GUI agent (such as UI-TARS ( Qin et al. 2025 ) ) to generate the thought r i r_{i} and the action a i a_{i} using the same action space defined by the GUI agent.\nFor the thought r i r_{i} and action a i a_{i} , we feed the observation o i o_{i} with h i h_{i} as the query to the zero-shot agent.\nHere, we use h i h_{i} as the query for agents instead of using the task q q , because q q usually contains an abstract goal instead of specific instructions about what to do on the observation.\nWe empirically find that using h i h_{i} leads to better performance.\nIn this case, each step of text and image pairs can be written as { o i , r i , a i } \\{o_{i},r_{i},a_{i}\\} .\nIn practice, the model might fail to generate well-formatted actions. We discard this step and make the next action the beginning of a new trajectory. For example, for a 4-step trajectory which has a failed generation in the second step, we split it into two training trajectories: ( { o 1 , r 1 , a 1 } ) (\\{o_{1},r_{1},a_{1}\\}) and ( { o 3 , r 3 , a 3 } , { o 4 , r 4 , a 4 } ) (\\{o_{3},r_{3},a_{3}\\},\\{o_{4},r_{4},a_{4}\\}) . Finally, we combine the trajectory with the task q q as ( q , { o i , r i , a i } i = 1 T ) (q,\\{o_{i},r_{i},a_{i}\\}_{i=1}^{T}) .\nWe collect these trajectories into a GUI-Net-1M dataset that contains 1M trajectories.\nThe data is on five operating systems with more than 280 applications.\n\n### Data Filtering\n\nWe apply a multi-stage data filtering pipeline for data quality, as shown in fig. 1 . (1) Duplicate Tutorial Removal. To eliminate redundancy of crawling, we directly remove exact duplicate tutorials based on their unique identifiers ( e.g. , video IDs and URLs), ensuring uniqueness. (2) Content Filtering. After tutorial processing, we employ an LLM to semantically filter out tutorials that are irrelevant to the GUI tasks. Concretely, based on the article content, titles, and audio transcriptions, the LLM evaluates whether the tutorial is about GUI interactions. (3) Trajectory Filtering. In the trajectory generation stage, since we use UI-TARS ( Qin et al. 2025 ) , if a step is unrelated to GUI interaction, the agent typically predicts the action wait or call_user . We use this as a signal to discard such observations.\nThen, we feed the screenshot and trajectory of a task into a Qwen2.5-VL-7B model, and prompt it to filter out low-quality data.",
+   "support_explanation": "UI-TARS step-conditioned pseudo-actions/reasoning; split malformed steps and quality filter.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:T05",
+   "material_id": "sol:P",
+   "material_hash": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "L266-L286",
+   "quote": "### Agent Tuning\n\nGiven a data point ( q , { o i , r i , a i } i = 1 T ) (q,\\{o_{i},r_{i},a_{i}\\}_{i=1}^{T}) of T T -step, we train a VLM M θ M_{\\theta} via supervised fine-tuning (SFT),\n\n | min 𝔼 ( q , { o i , r i , a i } i = 1 T ) ∼ 𝔻 [ − ∑ i = 1 T M θ ( r i , a i ∣ q , o i − n , r i − n , \\displaystyle\\min\\;\\mathbb{E}_{(q,\\{o_{i},r_{i},a_{i}\\}_{i=1}^{T})\\sim\\mathbb{D}}\\Big[-\\sum_{i=1}^{T}M_{\\theta}(r_{i},a_{i}\\mid q,o_{i-n},r_{i-n}, | \n | a i − n , … , o i − 1 , r i − 1 , a i − 1 , o i ) ] \\displaystyle a_{i-n},\\ldots,o_{i-1},r_{i-1},a_{i-1},o_{i})\\Big] |  | (2)\n\nwhere 𝔻 \\mathbb{D} is the collected GUI-Net-1M dataset, and we sum the loss values of the T T steps in the trajectory.\nAfter training, we obtain the TongUI agent.\n\n## Dataset Statistics\n\nWe provide four key statistics\nto show the diversity of the collected GUI-Net-1M dataset.\nWe show the operating system distribution in fig. 2 (a). Our dataset covers a diverse range of operating systems, including Windows, Android, iOS, MacOS, and Linux, ensuring a broad representation of GUI interactions across both desktop and mobile environments.\nWe provide statistics on the data filtering flow in fig. 2 (b). Throughout the data filtering pipeline, we observe a gradual reduction in data volume, reflecting the progressive refinement of the dataset.\nAfter applying duplicate tutorial removal, content filtering, and trajectory filtering, 33.0% of the original data is retained. This three-step filtering process helps to include high-quality and GUI-relevant interactions in the final dataset.\nWe show the step distribution in fig. 2 (c). Our dataset includes GUI interactions with varying step lengths, ranging from single-step actions to 9-step tasks. The distribution shows that shorter tasks (1-3 steps) are more frequent, while longer tasks gradually decrease in numbers.\nThe higher proportion of trajectories of 1-3 steps is partly due to the trajectory splitting strategy described in Section 3.5.\nThe action distribution is shown in fig. 2 (d).\nClick and Tap are the most frequent, reflecting their central role in both desktop and mobile interactions.",
+   "support_explanation": "SFT, 33% retention, short 1-3-step dominance.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:T06",
+   "material_id": "sol:P",
+   "material_hash": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "L288-L308",
+   "quote": "Agent Model | ScreenSpot Avg | ScreenSpot-V2 Avg | ScreenSpot-Pro Avg\n | Text | Icon | Avg | Text | Icon | Avg | Text | Icon | Avg\nGPT-4o | 17.3 | 18.8 | 18.3 | - | - | - | 1.3 | 0.0 | 0.8\nSeeClick-9B ( Cheng et al. 2024 ) | 68.6 | 38.2 | 53.4 | 67.9 | 37.5 | 55.1 | 1.8 | 0.0 | 1.1\nOS-Atlas-4B ( Wu et al. 2024 ) | 86.1 | 62.1 | 76.8 | 81.9 | 56.4 | 71.9 | 5.0 | 1.7 | 3.7\nOS-Atlas-7B ( Wu et al. 2024 ) | 92.2 | 75.1 | 85.1 | 92.2 | 72.2 | 84.1 | 28.1 | 4.0 | 18.9\nShowUI-2B ( Lin et al. 2024b ) | 83.4 | 66.7 | 75.1 | - | - | - | 10.8 | 2.6 | 7.7\nCogAgent-18B ( Hong et al. 2024 ) | - | - | - | - | - | - | 12.0 | 0.8 | 7.7\nAria-UI ( Yang et al. 2024 ) | 90.7 | 71.4 | 82.4 | - | - | - | 17.1 | 2.0 | 11.3\nAGUVIS-7B ( Xu et al. 2025 ) | 92.6 | 73.3 | 84.4 | - | - | - | - | - | -\nUGround-7B ( Gou et al. 2024 ) | 79.5 | 68.1 | 70.4 | - | - | - | 25.0 | 2.8 | 16.5\nUI-TARS-2B ( Qin et al. 2025 ) | 89.3 | 73.0 | 82.3 | 91.0 | 75.3 | 84.7 | 39.6 | 8.4 | 27.7\nUI-TARS-7B ( Qin et al. 2025 ) | 93.5 | 84.8 | 89.5 | 95.3 | 86.4 | 91.6 | 47.8 | 16.2 | 35.7\nUI-TARS-72B ( Qin et al. 2025 ) | 91.1 | 85.4 | 88.4 | 92.5 | 87.3 | 90.3 | 50.9 | 17.5 | 38.1\nQwen2.5-VL-3B † \\dagger | 68.4 | 40.8 | 56.5 | 73.6 | 50.1 | 64.2 | 9.1 | 3.3 | 6.9\nQwen2.5-VL-7B † \\dagger | 87.7 | 66.4 | 78.6 | 92.0 | 72.3 | 84.0 | 17.4 | 4.5 | 12.5\nTongUI-3B | 90.9 | 76.5 | 83.6 | 91.6 | 77.5 | 85.5 | 26.4 | 4.1 | 18.0\nTongUI-7B | 91.6 | 80.4 | 86.0 | 93.2 | 83.0 | 88.7 | 35.1 | 8.0 | 24.7\nTongUI-32B | 94.1 | 82.9 | 88.5 | 95.8 | 86.7 | 92.1 | 45.9 | 12.6 | 33.1\n\nTable 2: Results on ScreenSpot, and ScreenSpot-V2, and ScreenSpot-Pro. † \\dagger means the results are reproduced. The best method is marked in bold, and the second-best method is underlined.",
+   "support_explanation": "Grounding gains over base but UI-TARS remains stronger at 7B on Pro and v2.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:T07",
+   "material_id": "sol:P",
+   "material_hash": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "L378-L425",
+   "quote": "Method | Cross-Task | Cross-Website | Cross-Domain\nElem. Acc | OP. F1 | Step SR | Elem. Acc | OP. F1 | Step SR | Elem. Acc | OP. F1 | Step SR\nCogAgent ( Hong et al. 2024 ) | 22.4 | 53.0 | 17.6 | 18.4 | 42.4 | 13.4 | 20.6 | 42.0 | 15.5\nMindAct ( Deng et al. 2023 ) | 55.1 | 75.7 | 52.0 | 42.0 | 65.2 | 38.9 | 42.1 | 66.5 | 39.6\nOmniParser ( Lu et al. 2024b ) | 42.4 | 87.6 | 39.4 | 41.0 | 84.8 | 36.5 | 45.5 | 85.7 | 42.0\nShowUI-2B ( Lin et al. 2024b ) | 39.9 | 88.6 | 37.2 | 41.6 | 83.5 | 35.1 | 39.4 | 86.8 | 35.2\nSeeClick-9.6B ( Cheng et al. 2024 ) | 28.3 | 87.0 | 25.5 | 21.4 | 80.6 | 16.4 | 23.2 | 84.8 | 20.8\nAgentTrek ( Xu et al. 2024 ) | 45.5 | 84.9 | 40.9 | 40.8 | 82.8 | 35.1 | 48.6 | 84.1 | 42.1\nUI-TARS-2B ( Qin et al. 2025 ) | 62.3 | 90.0 | 56.3 | 58.5 | 87.2 | 50.8 | 58.8 | 89.6 | 52.3\nUI-TARS-7B ( Qin et al. 2025 ) | 73.1 | 92.2 | 67.1 | 68.2 | 90.9 | 61.7 | 66.6 | 90.9 | 60.5\nUI-TARS-72B ( Qin et al. 2025 ) | 74.7 | 92.5 | 68.6 | 72.4 | 91.2 | 63.5 | 68.9 | 91.8 | 62.1\nQwen2.5-VL-3B † \\dagger | 2.5 | 14.5 | 0.4 | 2.7 | 12.6 | 1.0 | 3.3 | 24.2 | 1.7\nQwen2.5-VL-7B † \\dagger | 6.2 | 72.8 | 5.0 | 6.3 | 68.2 | 4.5 | 8.4 | 73.6 | 7.2\nQwen2.5-VL-3B-ShowUI | 43.2 | 88.7 | 39.7 | 41.3 | 86.7 | 35.5 | 45.1 | 86.1 | 40.7\nTongUI-3B | 53.4 | 89.0 | 48.8 | 54.2 | 86.4 | 48.1 | 53.8 | 88.2 | 49.5\nTongUI-7B | 58.1 | 88.7 | 53.4 | 55.6 | 87.2 | 49.0 | 57.6 | 88.7 | 52.9\nTongUI-32B | 57.2 | 88.1 | 52.4 | 57.4 | 85.8 | 50.6 | 59.2 | 87.8 | 54.1\n\nTable 6: Results on Mind2Web. We report results on three types of tasks: cross-task, cross-website, and cross-domain. “Elem. Acc” means whether the element is selected correctly, “OP. F1” denotes the F1 score for the predicted action, and “Step SR” counts successful steps.\n\n#### Offline Navigation\n\nWe evaluate the offline navigation capability of GUI agents on the AITW, AndroidControl, Mind2Web, and UI-Vision datasets, and results are shown in table 3 , table 4 , table 6 , and table 5 , respectively.\nNo matter whether on a small model (3B) or a big model (32B), using GUI-Net-1M data leads to competitive performance.\nFor example, TongUI-3B achieves better performance compared to ShowUI-2B by 1.6% on AITW and more than 10% on UI-Vision.\nThe larger model, TongUI-7B, gains better performance compared to TongUI-3B, which is consistent with common sense.\nOn the AndroidControl and UI-Vision datasets, TongUI achieves even better performance than UI-TARS.\nThis highlights that the collected data improves the generalization capability of GUI agents.\nWe argue that the reason is that the collected data involves diverse applications and operating systems, improving generalization.\n\n#### Online Navigation\n\nWe evaluate the online navigation performance on MiniWob, as shown in table 7 .\nCompared with offline navigation, online navigation is more challenging, since it processes dynamic environments, handles unexpected obstacles, and adapts to changes in the navigation path. In this case, TongUI, which learns from multimodal tutorials, achieves improvements again.\nConsidering that the multimodal tutorials are offline data, the improvements confirm the generalization of TongUI.\n\nModel | Finetuned | Score\nCC-Net(SL) ( Humphreys et al. 2022 ) | ✓ \\checkmark | 23.4\nPix2Act ( Shaw et al. 2023 ) | ✓ \\checkmark | 55.2\nAGUVIS-72B ( Xu et al. 2025 ) | ✓ \\checkmark | 66.0\nSeeClick-9.6B ( Cheng et al. 2024 ) | ✓ \\checkmark | 67.0\nQwen2-VL-2B ( Wang et al. 2024b ) | ✓ \\checkmark | 66.8\nShowUI-2B ( Lin et al. 2024b ) | ✓ \\checkmark | 71.5\nQwen2.5-VL-3B | × \\times | 0.3\nQwen2.5-VL-3B-ShowUI | ✓ \\checkmark | 67.7\nTongUI-3B | ✓ \\checkmark | 72.7\nTongUI-7B | ✓ \\checkmark | 73.9\nTongUI-32B | ✓ \\checkmark | 74.3",
+   "support_explanation": "Offline cross splits plus actual MiniWob online success; finetuned labels.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:T08",
+   "material_id": "sol:P",
+   "material_hash": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "L429-L435",
+   "quote": "### User Study for Data Quality\n\nTo validate the effectiveness of our data filtering strategy and evaluate the data quality of the GUI-Net-1M dataset, we conduct two user studies.\nIn both studies, five participants with substantial experience in GUI agent research (but not involved in our project) are asked to rate the quality of each data point on a scale from 0 (very poor) to 5 (excellent).\nAs shown in fig. 3 (a), we evaluate the impact of our Trajectory Filtering step. Specifically, we randomly sample 100 data points before filtering and 100 after filtering, and mix them. As shown in fig. 3 (a), the average score increases from 3.22 to 4.12 after filtering, demonstrating that Trajectory Filtering significantly improves data quality by effectively removing low-quality or GUI-irrelevant steps.\nWe also randomly sample 100 data points from the ShowUI dataset for comparison. The results are shown in fig. 3 (b), and the ShowUI dataset receives an average score of 4.26.\nThis suggests that data quality in GUI-Net-1M is comparable to that in the ShowUI dataset, while our data leads to further improvements.",
+   "support_explanation": "Five outside researchers rate 100+100 pre/post and 100 ShowUI quality samples.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:T09",
+   "material_id": "sol:P",
+   "material_hash": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "L567-L609",
+   "quote": "## Appendix A Details\n\n### Evaluation Metric.\n\nAfter training, we perform a zero-shot evaluation of the model’s grounding capability on ScreenSpot, ScreenSpot-V2, and ScreenSpot-Pro. The annotation of these grounding benchmarks gives a bounding box for each interactive element. The action from the model is considered correct when the point predicted falls within the bounding box. For online evaluations, the environment of MiniWob provides reward functions, which suggests if a trajectory is correct. For offline evaluations such as Mind2Web, AITW, Baidu Experience, AndroidControl, and GUI Odyssey, the model will be asked to output actions with parameters. We evaluate if the action is correct by the exact match. For parameters, we do the exact match for string parameters and check if a point parameter falls within the bounding box based on annotations. The step is correct if and only if both of the action prediction and parameter prediction are correct.\n\n### Model Architecture\n\nThe model architecture is shown in fig. 5 .\n\nFigure 5: Illustration for TongUI model architecture.\n\n### Action Space\n\nThe used action space is shown in table 8 .\n\nEnvironment | Action | Definition\nDesktop | Click(x,y) | Left single click on an element.\nInput(value, x, y) | Type a string into certain element.\nScroll(direction, x, y) | Scroll screen with left/right/up/down direction. X and y is the start point.\nLeftClickDouble(x, y) | Left double click on an element\nRightClickSingle(x, y) | Right single click on an element\nDrag(x1,y1,x2, y2) | Drag the cursor to the position with left key pressed.\nHotKey(value) | Press the hot key.\nHover(x, y) | Hover over an element.\nFinish() | Finish the task.\nMobile | Tap(x, y) | Finger tap on an element.\nInput(value, x, y) | Type a string into an element.\nSwipe(x1, y1, x2, y2) | Swipe the screen from the start position to the end position.\nLongPress(duration, x, y) | Press on an element with certain seconds.\nPressHome() | Press the home button.\nPressBack() | Press the back button.\nFinish() | Finish the task.\n\nTable 8: Action space in trajectory generation.\n\n### Resource Consumption\n\nTraining. We use Qwen2.5-VL-3B/7B/32B as our base vision-language-action model.\nWe train our model with a context window of 8192. We set the maximum number of previous observations as 2, which results in at most three images in a trajectory. We limit each image to 1350 vision tokens. Our training involves two stages.\nFollowing existing methods ( Lin et al. 2024b ) ,\nwe utilize the SFT data (training set) of the evaluation dataset to fine-tune the model.\nWe apply LoRA on our model’s vision encoder and LLM parts with rank 16 and alpha 32. This setting leads to 0.5% of total parameters. We set the batch size per device to 4 and the gradient accumulation steps to 8. We set the learning rate as 1 ​ e − 4 1e-4 and AdamW optimizer for training. The training process on 8 × \\times A100-80G takes roughly four days for a 3B model and seven days for a 7B model.",
+   "support_explanation": "Metrics/action schema and actual training resources; benchmark train-set tuning.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:T10",
+   "material_id": "sol:P",
+   "material_hash": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "L691-L700",
+   "quote": "Data | ScreenSpot | Mind2Web\nTask | Website | Domain\nNo SFT | 56.5 | 0.4 | 1.0 | 1.7\nRefined data | 68.0 | 39.7 | 35.5 | 40.7\n+ WikiHow 50K | 75.8 | 42.1 | 39.6 | 44.4\n+ Baidu 50K | 78.7 | 43.4 | 41.6 | 45.5\n+ Video 50K | 79.6 | 44.2 | 42.6 | 46.0\n+All data | 83.6 | 48.8 | 48.1 | 49.5\n\nTable 12: Performance scaling over data sources, where Step SR is reported for Mind2Web.",
+   "support_explanation": "Source-size ablations, not size-controlled filter causal test.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:T11",
+   "material_id": "sol:P",
+   "material_hash": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "L706-L717",
+   "quote": "Setting | Metric | Run 1 | Run 2 | Run 3 | Mean ± Std\nCross-Task | Elem. Acc | 52.0 | 52.9 | 52.5 | 52.5 ± 0.451\nOP. F1 | 88.6 | 88.6 | 88.8 | 88.7 ± 0.115\nStep SR | 47.6 | 48.5 | 48.0 | 48.0 ± 0.451\nCross-Web | Elem. Acc | 52.7 | 51.8 | 52.4 | 52.3 ± 0.458\nOP. F1 | 86.0 | 86.3 | 86.6 | 86.3 ± 0.300\nStep SR | 46.1 | 45.7 | 46.5 | 46.1 ± 0.400\nCross-Domain | Elem. Acc | 54.1 | 53.8 | 53.6 | 53.8 ± 0.252\nOP. F1 | 88.7 | 88.5 | 88.4 | 88.5 ± 0.153\nStep SR | 49.7 | 49.6 | 49.4 | 49.6 ± 0.153\n\nTable 13: Error bar on Mind2Web.",
+   "support_explanation": "Three-run spread for offline Mind2Web only.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:T12",
+   "material_id": "sol:P",
+   "material_hash": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "L734-L770",
+   "quote": "Model | FT? | Step Accuracy\nCogAgent ( Hong et al. 2024 ) | No | 11.8\nGPT-4V † \\dagger | No | 18.76\nGPT-4O † \\dagger | No | 20.39\nQwen-VL-Chat(7B) † \\dagger | Yes | 72.81\nOdysseyAgent † \\dagger | Yes | 74.25\nTongUI-3B | Yes | 71.04\nTongUI-7B | Yes | 74.81\n\nTable 15: Step accuracy on GUI Odyssey. “FT?” indicates if the model is fine-tuned on GUI Odyssey training set. Experiments mared with † \\dagger is reported by previous work ( Lu et al. 2024a )\n\nModel | Action Accuracy | Success Rate\nShowUI-2B ( Lin et al. 2024b ) | 65.7 | 14.7\nQwen2.5-VL-3B | 36.3 | 10.8\nQwen2.5-VL-7B | 70.6 | 16.6\nTongUI-3B | 86.3 | 18.6\nTongUI-7B | 87.3 | 25.5\nTongUI-32B | 88.2 | 56.9\n\nTable 16: Results on the Baidu Experience\n\n### Data Scaling Effect\n\nWe evaluate the scaling law of GUI agents using collected data from different sources with Qwen2.5-VL-7B.\nConcretely, (1) we report the performance of w/o SFT; (2) we use the refined public data to tune the model; (2) we add data collected from WikiHow to tune the model; (4) we add data collected from Baidu Experience to tune the model; (5) we add data collected from Video tutorials to tune the model. Results is shown in table 12 . We find that with the increase of data numbers and data sources, the performance of GUI agents is also constantly improving.\n\n### Error Bar\n\nTo evaluate the robustness and stability of our model, we conduct three independent runs on Mind2Web for each type of tasks: Cross-Task, Cross-Web, and Cross-Domain, using TongUI-3B. Table 13 reports the performance on three evaluation metrics(Element Accuracy, Operation F1, and Step Success Rate) along with their mean and standard deviation (Mean ± Std) across runs. The results show that the model exhibits consistent performance with low variance, indicating stable performance of our model.\n\n### Results on AndroidControl\n\nIn table 14 , we show the model performance of our model fine-tuned in the AndroidControl training set. The result indicates that our model achieves the best performance on both low and high level instructions compared to other models trained on the same training set.\n\n### Results on GUI Odyssey\n\nIn table 15 , we show the results evaluated on GUI Odyssey Test-Random split. TongUI-7B achieves the best performance compared with open-source and closed-source models.",
+   "support_explanation": "Additional dataset fine-tuning, error-bar protocol and source scaling description.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:T13",
+   "material_id": "sol:P",
+   "material_hash": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "L439-L445",
+   "quote": "## Conclusion\n\nIn this paper, we present the TongUI framework that converts multimodal web tutorials for an 1M trajectory dataset for GUI agents.\nBy defining suitable and rich sources, we can crawl multimodal tutorials about diverse applications in different operating systems.\nThe proposed tutorial processing method can extract tasks and trajectories from tutorials, and we obtain the GUI-Net-1M dataset.\nUsing this dataset, the tuned Qwen2.5-VL model achieves improvements on multiple commonly used benchmarks, demonstrating the effectiveness of the TongUI framework and the collected GUI-Net-1M dataset.\nIn this method, we have to collect all tutorials and train the model once, which may overlook the potential for continual learning. In the future, we will explore the continual learning capability of GUI agents, enabling the agents to better adapt to new environments.",
+   "support_explanation": "One-shot offline training, continual learning future work.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:T14",
+   "material_id": "sol:P",
+   "material_hash": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "L344-L359",
+   "quote": "Method | Model | High | Low\nAITW | PaLM 2L | 19.5 | 56.7\nSeeClick | GPT-4-Turbo | 33.9 | 54.3\nM3A | GPT-4-Turbo | 42.1 | 55.0\nER | PALM-2S | 19.5 | 45.5\nER | PALM 2L | 33.0 | 45.9\nER | GPT-4 | 32.1 | 51.7\nER | Gemini 1.5 Pro | 24.4 | 50.2\nAGUVIS | AGUVIS-7B | 61.5 | 80.5\nAGUVIS | AGUVIS-72B | 66.4 | 84.4\nUI-TARS | UI-TARS-2B | 68.9 | 89.3\nUI-TARS | UI-TARS-7B | 72.5 | 90.8\nTongUI | TongUI-3B | 73.3 | 91.5\nTongUI | TongUI-7B | 76.0 | 91.9\n\nTable 4: Step accuracy on AndroidControl.",
+   "support_explanation": "AndroidControl offline step success, no AndroidWorld rollout.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E001",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Introduction",
+   "quote": "In this paper, we propose the TongUI framework that transforms millions of multimodal web tutorials into GUI trajectories for generalized GUI agents.",
+   "support_explanation": "Central framework claim.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E002",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Abstract",
+   "quote": "outperforming baseline agents by 10% on multiple benchmarks",
+   "support_explanation": "Headline improvement claim (holds only for specific comparisons such as UI-Vision vs ShowUI-2B).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E003",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Introduction",
+   "quote": "the lack of large-scale, diverse, and well-structured GUI trajectory data continues to be a key bottleneck in developing robust and generalized GUI agents.",
+   "support_explanation": "Author gap: data scarcity/diversity; asserted, not measured on a concrete coverage dimension.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E004",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Related Work",
+   "quote": "Unlike them, we directly collect multimodal tutorials from the Internet and propose a multimodal tutorial process pipeline to convert them into trajectories without any simulators.",
+   "support_explanation": "Delta vs AgentTrek/Synatra (tutorial -> trajectory via LLM/simulator replay).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E005",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "3.5 Trajectory Generation",
+   "quote": "we use a pretrained GUI agent (such as UI-TARS ( Qin et al. 2025 ) ) to generate the thought",
+   "support_explanation": "Labels (thoughts, actions) are produced by a strong third-party GUI model; the student is partly distilled from it.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E006",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "3.5",
+   "quote": "We empirically find that using h i h_{i} leads to better performance.",
+   "support_explanation": "Step-level description h_i used as query instead of task q; no numbers reported for this design choice.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E007",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "3.5",
+   "quote": "We discard this step and make the next action the beginning of a new trajectory.",
+   "support_explanation": "Failed-format steps split trajectories (explains many 1-3 step trajectories).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E008",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "3.6 Data Filtering",
+   "quote": "the agent typically predicts the action wait or call_user",
+   "support_explanation": "Trajectory filter uses the teacher's wait/call_user as a GUI-irrelevance signal; then a Qwen2.5-VL-7B quality filter.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E009",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "3.6",
+   "quote": "Then, we feed the screenshot and trajectory of a task into a Qwen2.5-VL-7B model, and prompt it to filter out low-quality data.",
+   "support_explanation": "Learned filter, not validated against human labels in the text.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E010",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "3.6",
+   "quote": "we directly remove exact duplicate tutorials based on their unique identifiers",
+   "support_explanation": "Only exact-ID deduplication; no near-duplicate or benchmark-overlap check.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E011",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Dataset Statistics",
+   "quote": "After applying duplicate tutorial removal, content filtering, and trajectory filtering, 33.0% of the original data is retained.",
+   "support_explanation": "Retention 33%; effect of the filter on downstream accuracy not ablated.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E012",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "3.3-3.4",
+   "quote": "we adopt the MOG2 algorithm",
+   "support_explanation": "Key-frame extraction by background-subtraction change detection; no accuracy check of frame-step alignment.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E013",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "3.4",
+   "quote": "To address this issue, we prompt GPT-4o-mini to classify each image as a screenshot or not.",
+   "support_explanation": "Image-type filter by an LLM.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E014",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Experiments User Study",
+   "quote": "five participants with substantial experience in GUI agent research (but not involved in our project) are asked to rate the quality of each data point on a scale from 0 (very poor) to 5 (excellent)",
+   "support_explanation": "Data-quality evaluation is a 0-5 rating by 5 raters on 100+100 samples, not action-accuracy against ground truth.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E015",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "User Study",
+   "quote": "the average score increases from 3.22 to 4.12 after filtering",
+   "support_explanation": "Filtering raises rated quality; ShowUI sample scores 4.26 (higher than the filtered 4.12).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E016",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "User Study",
+   "quote": "the ShowUI dataset receives an average score of 4.26",
+   "support_explanation": "Comparator dataset rated higher than GUI-Net after filtering; authors call this 'comparable'.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E017",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Appendix A Resource Consumption",
+   "quote": "we utilize the SFT data (training set) of the evaluation dataset to fine-tune the model.",
+   "support_explanation": "Second-stage fine-tuning on each benchmark's training split for the navigation benchmarks.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E018",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Appendix A",
+   "quote": "takes roughly four days for a 3B model and seven days for a 7B model",
+   "support_explanation": "Training compute disclosed (8xA100-80G); data-construction cost is not.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E019",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Table 2",
+   "quote": "TongUI-7B | 91.6 | 80.4 | 86.0 | 93.2 | 83.0 | 88.7 | 35.1 | 8.0 | 24.7",
+   "support_explanation": "ScreenSpot 86.0, V2 88.7, Pro 24.7 for TongUI-7B (icon accuracy on Pro 8.0).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E020",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Table 2",
+   "quote": "UI-TARS-7B ( Qin et al. 2025 ) | 93.5 | 84.8 | 89.5 | 95.3 | 86.4 | 91.6 | 47.8 | 16.2 | 35.7",
+   "support_explanation": "The teacher-family model is stronger on all three grounding benchmarks (Pro 35.7 vs 24.7).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E021",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Table 4",
+   "quote": "TongUI | TongUI-7B | 76.0 | 91.9",
+   "support_explanation": "AndroidControl High/Low step accuracy; UI-TARS-7B 72.5/90.8; whether UI-TARS was trained on the AndroidControl train split is not stated.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E022",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Offline Navigation",
+   "quote": "On the AndroidControl and UI-Vision datasets, TongUI achieves even better performance than UI-TARS.",
+   "support_explanation": "Author claim of beating the teacher on two offline benchmarks.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E023",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Table 7",
+   "quote": "Qwen2.5-VL-3B-ShowUI | ✓ \\checkmark | 67.7",
+   "support_explanation": "Closest same-base comparison on online MiniWob: ShowUI-data model 67.7 vs TongUI-3B 72.7 (base Qwen2.5-VL-3B 0.3, unfine-tuned).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E024",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Table 7",
+   "quote": "TongUI-3B | ✓ \\checkmark | 72.7",
+   "support_explanation": "MiniWob online score, fine-tuned per SeeClick protocol.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E025",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Online Navigation",
+   "quote": "Considering that the multimodal tutorials are offline data, the improvements confirm the generalization of TongUI.",
+   "support_explanation": "Author inference from MiniWob in-domain fine-tuned results.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E026",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Table 12",
+   "quote": "Refined data | 68.0 | 39.7 | 35.5 | 40.7",
+   "support_explanation": "Control: SFT on 'refined public data' (definition not given): ScreenSpot 68.0, Mind2Web Step SR 39.7/35.5/40.7.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E027",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Table 12",
+   "quote": "+All data | 83.6 | 48.8 | 48.1 | 49.5",
+   "support_explanation": "Adding GUI-Net data lifts ScreenSpot to 83.6 and Mind2Web Step SR to 48.8/48.1/49.5; per-source 50K additions also help (WikiHow, Baidu, Video).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E028",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Appendix C Error Bar",
+   "quote": "we conduct three independent runs on Mind2Web for each type of tasks",
+   "support_explanation": "Only TongUI-3B on Mind2Web has 3 runs (SD <0.5 pp).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E029",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Table 16",
+   "quote": "TongUI-32B | 88.2 | 56.9",
+   "support_explanation": "Baidu Experience (same source as training tutorials) task success 56.9 vs ShowUI-2B 14.7: in-source evaluation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E030",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Offline metric",
+   "quote": "The step is correct if and only if both of the action prediction and parameter prediction are correct.",
+   "support_explanation": "Exact-match step correctness (penalises valid alternative actions).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E031",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Conclusion",
+   "quote": "In this method, we have to collect all tutorials and train the model once, which may overlook the potential for continual learning.",
+   "support_explanation": "Only stated limitation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E032",
+   "material_id": "son55:M-2504.12679-html",
+   "material_sha256": "d09c9bb0b311fbfca0026e2200a1d617fa0ead1d592a97c328971a185c74ebaa",
+   "locator": "Dataset Statistics",
+   "quote": "The higher proportion of trajectories of 1-3 steps is partly due to the trajectory splitting strategy described in Section 3.5.",
+   "support_explanation": "Short trajectories dominate; long-horizon coverage weak.",
+   "kind": "author_report"
+  }
+ ],
+ "preliminary_evidence_judgment": "Read before seat scores. TongUI mines YouTube/Bilibili/WikiHow/Baidu tutorials, extracts per-step frames and step descriptions, and asks UI-TARS (a stronger released agent) to label thought+action per frame conditioned on the human step description; no execution or verifier, unlike neighbour AgentTrek's guided replay with a validated VLM evaluator. Qwen2.5-VL-3B/7B/32B are LoRA-tuned in two stages that also use each evaluation dataset's own training split. Held-out evidence: zero-shot ScreenSpot/-V2/-Pro and UI-Vision grounding; navigation results are offline (AITW, AndroidControl, Mind2Web, GUI Odyssey) after in-domain SFT, and the only online result is MiniWob (trained on MiniWob, SeeClick setting). Reproduced base-Qwen baselines are format-broken (Mind2Web 3B step SR 0.4), inflating 'improvement' margins; the ShowUI-data same-base arm and Table 12 source additions are the meaningful controls (data size unmatched). One 3-run error bar (Mind2Web, 3B). Applicable: component_training; E05/E06 grounding, E15/E02 offline-vs-online, E22 sizes, E27 scaling, E28 overlap.",
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "Training data: raw tutorials (video/article) -> (query, {screenshot, thought, action}) trajectories (baseline: manual or LLM-synthesised GUI datasets such as ShowUI/AGUVIS/AgentTrek)",
+   "information": "Tutorial text (ASR via Whisper or article text), key frames (MOG2 on audio-segmented clips or article images), step description h_i; the UI-TARS teacher sees (o_i, h_i). No environment feedback, no ground-truth actions, no test-set information intended.",
+   "operation": "Keyword crawl (LLM-expanded 'app/web+task') -> LLM extraction of task q and step descriptions -> key-frame/screenshot selection -> zero-shot UI-TARS generates thought and action per step -> failed formats split trajectories -> dedupe + LLM content filter + wait/call_user rule + Qwen2.5-VL-7B quality filter.",
+   "output": "GUI-Net-1M (33% of crawled data retained).",
+   "conditions": "Works where tutorials are visual and teacher can parse the frames; desktop/mobile only ('others' discarded).",
+   "feedback": "none from execution; labels come from a teacher model",
+   "selection_rule": "Three-stage filter; learned filter unvalidated.",
+   "selection_data": "Tutorial content, teacher action tokens, Qwen2.5-VL-7B judgment.",
+   "persistence": "Released dataset (static).",
+   "later_use": "SFT of Qwen2.5-VL.",
+   "claimed_effect": "Grounding and navigation improvements, generalisation.",
+   "failure_boundary": "Label noise from the teacher unmeasured; 1-3 step trajectories dominate; exact-ID dedupe only.",
+   "evidence_ids": [
+    "son55:E004",
+    "son55:E005",
+    "son55:E006",
+    "son55:E007",
+    "son55:E008",
+    "son55:E009",
+    "son55:E010",
+    "son55:E011",
+    "son55:E012",
+    "son55:E013",
+    "son55:E032"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "Policy: Qwen2.5-VL-3B/7B/32B vision-language-action model",
+   "information": "Screenshot history (up to 2 previous observations), thoughts/actions history, query.",
+   "operation": "LoRA (rank 16, alpha 32) SFT on GUI-Net-1M, then fine-tune on the evaluation dataset's training split for the navigation benchmarks; grounding evaluated zero-shot.",
+   "output": "ReAct-style thought + action with coordinates.",
+   "conditions": "Per-benchmark second stage for navigation; MiniWob follows SeeClick fine-tuned protocol.",
+   "feedback": "not_applicable: supervised",
+   "selection_rule": "not_applicable",
+   "selection_data": "not_applicable",
+   "persistence": "model weights",
+   "later_use": "benchmark evaluation",
+   "claimed_effect": "+ over base Qwen2.5-VL and over ShowUI-style baselines on ScreenSpot, AITW, Mind2Web, AndroidControl, UI-Vision, MiniWob.",
+   "failure_boundary": "Below UI-TARS-7B on ScreenSpot-Pro (24.7 vs 35.7); icon grounding weak.",
+   "evidence_ids": [
+    "son55:E017",
+    "son55:E019",
+    "son55:E020",
+    "son55:E023",
+    "son55:E024",
+    "son55:E026",
+    "son55:E027"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "Generalised GUI agents lack large, diverse, cross-OS/app trajectory data: manual annotation is costly and LLM-synthesised trajectories lack diversity/accuracy.",
+  "checked_gap": "Data scarcity for cross-platform trajectories is a real, widely stated limitation, and AgentTrek/Synatra are the right nearest neighbours (tutorial-derived trajectories). The paper compares dataset sizes (Table 1) but does not show that existing datasets fail on a concrete coverage axis, and does not analyse the new failure mode it introduces: dependence on a stronger teacher (UI-TARS) for labels.",
+  "lineage": [
+   "Manual/synthetic GUI trajectory data (AITW, AndroidControl, GUI Odyssey, ShowUI, AGUVIS) -> web-tutorial-derived data (Synatra, AgentTrek, textual tutorials + LLM/simulator) -> TongUI (multimodal tutorials, teacher-labelled, no simulator)"
+  ],
+  "closest_adjacent": [
+   {
+    "name": "AgentTrek (arXiv 2412.09605)",
+    "source_version": "described in TongUI related work; not pinned locally",
+    "solved": "tutorial text guides replay in simulators to make trajectories",
+    "remaining": "textual tutorials only, simulator cost (per TongUI authors)"
+   },
+   {
+    "name": "Synatra (2409.15637)",
+    "source_version": "described in TongUI related work; not pinned locally",
+    "solved": "indirect knowledge to demonstrations",
+    "remaining": "not characterised in the text"
+   },
+   {
+    "name": "UI-TARS (2501.12326)",
+    "source_version": "used as the teacher; model/data not pinned locally",
+    "solved": "strong closed-data native GUI agent",
+    "remaining": "data unreleased (per TongUI); also a confound because it labels GUI-Net"
+   }
+  ],
+  "residue": "Whether tutorial-derived trajectories add information beyond what the UI-TARS teacher already knows, and how noisy the teacher labels are.",
+  "stakes": "If the student mostly inherits the teacher, the dataset adds little capability and comparisons against UI-TARS are circular.",
+  "method_response": "Multimodal tutorial crawl + teacher labelling + filtering at 1M scale with released data.",
+  "remaining_gap": "Label accuracy, long-horizon (>3 step) coverage, overlap with evaluation apps, teacher-independence.",
+  "evidence_ids": [
+   "agg:T-A03",
+   "agg:T-A02"
+  ],
+  "unresolved": [
+   "Neighbour sources (AgentTrek, Synatra, UI-TARS) are not pinned in the input package; gap characterised through TongUI's own related-work text.",
+   "Whether UI-TARS or other baselines were fine-tuned on the same benchmark train splits is not stated."
+  ],
+  "aggregate_neighbor_check": "AgentTrek (2412.09605) reference read: it already turns web tutorials into trajectories via guided replay in real environments with a VLM evaluator validated on human labels. TongUI's residual is multi-platform scale without replay; it does not analyse what is lost (execution verification) nor that its own labels are synthetic teacher outputs, contrary to its framing of synthetic data as lacking accuracy."
+ },
+ "rs_pattern": {
+  "primary": "self_supervised_signal_engineering",
+  "supporting": [],
+  "outside_taxonomy": false,
+  "reason": "Operation actually executed: with no ground-truth trajectories at scale, a supervisory signal (thought+action labels) is manufactured by a model (UI-TARS) on crawled material and routed through a multi-stage quality gate before training. Sibling check: C07 (adaptation-process stability) and C26 (preference/reward objectives) do not apply; C08 (generate candidate instances, gate, fold back into the corpus) is the closest.",
+  "executes_pattern": "partial: generate-then-filter data factory is implemented; the generator is an existing teacher (not a steerable one), there is no iteration or learner-feedback loop, and the filter is not ablated downstream.",
+  "resolves_problem": "partially evidenced: adding GUI-Net data improves ScreenSpot and Mind2Web over an SFT-on-public-data arm (Table 12), but the diversity/coverage gap itself and teacher dependence are not measured.",
+  "matches": [
+   {
+    "main_id": "self_supervised_signal_engineering",
+    "sub_id": "C08",
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": "C08 steps: (1) binding constraint = corpus, cheaper non-generative remedy ruled out - partial (compared with SFT on public 'refined' data); (2) controllable generator reaching under-covered region - weak (tutorial crawl widens apps/OS but no coverage analysis; labeller is a fixed teacher); (3) one load-bearing filter argued as the crux - weak (three heterogeneous filters, none ablated downstream, only a 200-sample rating study); (4) iterate with learner feedback - absent; (5) transfer to real targets and cheaper baselines - partial (benchmarks and ShowUI-data baseline, no equal-size alternative dataset).",
+    "success_failure_checks": {
+     "met": [
+      "downstream benchmark evidence rather than proxy-only"
+     ],
+     "partial": [
+      "cheaper-baseline comparison",
+      "real-target transfer"
+     ],
+     "unmet": [
+      "filter ablation",
+      "iterative or learner-fed generation",
+      "teacher-independence analysis"
+     ],
+     "failure_modes_present": [
+      "generate-and-filter built on an existing teacher (thin wrapper risk)",
+      "filter criterion loosely argued",
+      "no comparison to equal-size alternative data source"
+     ]
+    },
+    "evidence_ids": [
+     "son55:E005",
+     "son55:E008",
+     "son55:E009",
+     "son55:E011",
+     "son55:E014",
+     "son55:E015",
+     "son55:E026",
+     "son55:E027"
+    ],
+    "reason": "Matches the generate -> gate -> train structure of C08 but with a fixed teacher and unablated gates; differs from siblings C07 and C26 as stated."
+   }
+  ],
+  "aggregate_source_seat": "son55",
+  "aggregate_reason": "Both seats: self_supervised_signal_engineering / C08 (generate candidate supervision from tutorials, gate by filters). Fit kept partial (son55): the generator is an external teacher and the gate's accuracy is unvalidated."
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "mine_human_screen_videos",
+    "sub": "R03",
+    "version": "taxonomy 430aa36290ec",
+    "fit": "strong",
+    "condition_checks": [
+     {
+      "id": "S1",
+      "kind": "success",
+      "status": "unmet",
+      "reason": "Extraction/labelling is not scored against human labels (only a 0-5 quality rating on 100+100 samples); no action-accuracy figure.",
+      "evidence_ids": [
+       "son55:E014",
+       "son55:E015"
+      ]
+     },
+     {
+      "id": "S2",
+      "kind": "success",
+      "status": "partial",
+      "reason": "Zero-shot ScreenSpot-Pro and UI-Vision are evaluated without benchmark training, but app/site overlap between tutorials and benchmarks is not analysed.",
+      "evidence_ids": [
+       "son55:E019",
+       "son55:E022"
+      ]
+     },
+     {
+      "id": "S3",
+      "kind": "success",
+      "status": "partial",
+      "reason": "Compared with other open data (ShowUI data model) but no per-trajectory annotation/crawl cost versus alternatives is reported.",
+      "evidence_ids": [
+       "son55:E023",
+       "son55:E018"
+      ]
+     },
+     {
+      "id": "S4",
+      "kind": "success",
+      "status": "unmet",
+      "reason": "Labelling context (step description vs task, narration, neighbouring frames) is not ablated; only 'empirically better' is asserted.",
+      "evidence_ids": [
+       "son55:E006"
+      ]
+     },
+     {
+      "id": "S5",
+      "kind": "success",
+      "status": "partial",
+      "reason": "Evaluation tasks differ from tutorials (benchmarks), but the Baidu Experience evaluation comes from the same source family.",
+      "evidence_ids": [
+       "son55:E029"
+      ]
+     },
+     {
+      "id": "F1",
+      "kind": "failure",
+      "status": "partial",
+      "reason": "Most benchmarks are not aligned with specific tutorials; Baidu Experience is in-source.",
+      "evidence_ids": [
+       "son55:E029"
+      ]
+     },
+     {
+      "id": "F2",
+      "kind": "failure",
+      "status": "unmet",
+      "reason": "Teacher (UI-TARS) labels are used for SFT with a learned filter but without accuracy measurement or downstream error analysis.",
+      "evidence_ids": [
+       "son55:E005",
+       "son55:E009"
+      ]
+     },
+     {
+      "id": "F3",
+      "kind": "failure",
+      "status": "partial",
+      "reason": "Mostly offline exact-match benchmarks; one online benchmark (MiniWob) is in-domain fine-tuned.",
+      "evidence_ids": [
+       "son55:E017",
+       "son55:E024",
+       "son55:E030"
+      ]
+     },
+     {
+      "id": "F4",
+      "kind": "failure",
+      "status": "unknown",
+      "reason": "Key-frame loss and frame-step alignment are not evaluated; trajectories are mostly 1-3 steps.",
+      "evidence_ids": [
+       "son55:E012",
+       "son55:E032"
+      ]
+     },
+     {
+      "id": "F5",
+      "kind": "failure",
+      "status": "partial",
+      "reason": "Only 33% retained and 'others' category discarded; effect on coverage not quantified.",
+      "evidence_ids": [
+       "son55:E011"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "son55:E001",
+     "son55:E005",
+     "son55:E006",
+     "son55:E011",
+     "son55:E019",
+     "son55:E023",
+     "son55:E027"
+    ],
+    "aggregate_source_seat": "son55"
+   },
+   {
+    "main": "trajectory_level_policy_training",
+    "sub": "C21",
+    "version": "as above",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "id": "S4",
+      "kind": "success",
+      "status": "unmet",
+      "reason": "Generated thoughts are not kept only when the action matches ground truth (no ground truth exists for tutorial steps).",
+      "evidence_ids": [
+       "son55:E005"
+      ]
+     },
+     {
+      "id": "S6",
+      "kind": "success",
+      "status": "unknown",
+      "reason": "Single reasoning level; no mixture or decoding-level ablation.",
+      "evidence_ids": []
+     },
+     {
+      "id": "F6",
+      "kind": "failure",
+      "status": "unknown",
+      "reason": "Reasoning noise from source traces not analysed.",
+      "evidence_ids": [
+       "son55:E005"
+      ]
+     },
+     {
+      "id": "F4",
+      "kind": "failure",
+      "status": "partial",
+      "reason": "Three sizes of one backbone family (3B/7B/32B) but gains vs size not analysed.",
+      "evidence_ids": [
+       "son55:E019"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "son55:E005",
+     "son55:E017"
+    ],
+    "aggregate_source_seat": "son55"
+   }
+  ],
+  "unassigned": [
+   "Single action schema shared across desktop and mobile (Table 8 action space) resembles planner_grounder_interface/C12, but no multi-source schema normalisation or ablation is reported, so not matched."
+  ],
+  "revision_proposals": [
+   "none: R03 already covers tutorial/video-derived trajectories; TongUI adds a teacher-labelled, large-scale (1M) instance. Note for the card: teacher-dependence confound should be a listed failure mode (teacher model also used as comparison baseline)."
+  ],
+  "aggregate_note": "Identical card IDs in both seats."
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "self_supervised_signal_engineering",
+   "rs_sub": "C08",
+   "domain": {
+    "namespace": "gui",
+    "main": "mine_human_screen_videos",
+    "sub": "R03"
+   },
+   "operation_correspondence": "RS C08: generate candidate training instances and pass them through a quality gate before training. Domain R03: mine human screen recordings, infer actions between key frames with a VLM and SFT. TongUI's labelling step (teacher VLM infers thought/action per tutorial frame) is the shared operation; filters play the gate.",
+   "conditions_differences": "R03 expects validation of extraction/labels against humans and an ablated labelling context; TongUI has neither. C08 expects iteration or learner feedback; TongUI has none. TongUI adds article tutorials (not only video).",
+   "evidence_ids": [
+    "son55:E005",
+    "son55:E008",
+    "son55:E009",
+    "son55:E014",
+    "son55:E026",
+    "son55:E027"
+   ]
+  },
+  {
+   "rs_main": "self_supervised_signal_engineering",
+   "rs_sub": "C08",
+   "domain": {
+    "namespace": "gui",
+    "main": "trajectory_level_policy_training",
+    "sub": "C21"
+   },
+   "operation_correspondence": "Both: a strong MLLM writes the thought/action targets for demonstration steps that a screenshot policy is then SFT'd on.",
+   "conditions_differences": "C21's success conditions (action-consistent reasoning, mixed levels) are not available here because tutorial steps have no ground-truth actions.",
+   "evidence_ids": [
+    "son55:E005",
+    "son55:E017"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2404.07972#s1",
+    "paper_practice:2501.12326#s1",
+    "paper_practice:2505.13227#s2",
+    "paper_practice:2510.17790#s1",
+    "paper_practice:2601.04126#s2",
+    "paper_practice:2602.00575#s2",
+    "paper_practice:2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Paper does not claim desktop end-to-end task success on OSWorld; desktop evidence is offline grounding/UI-Vision. The missing online agent evidence is scored under E15 instead of double-counting here.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2410.05243#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.04454#s3"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.19723#s1"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2501.12326#s3"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2506.08012#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2509.11543#s1"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2509.23738#s1"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2602.09856#s2"
+    }
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Mobile navigation/generalized-agent framing has only offline AndroidControl/AITW/Odyssey, no AndroidWorld; MiniWob cannot establish mobile execution.",
+   "evidence_ids": [
+    "sol:T07",
+    "sol:T14"
+   ],
+   "score_item": [
+    "measurement",
+    "holdout"
+   ],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2410.13232#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2411.02337#s3"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2410.02907#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2601.22149#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2602.14721#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.19723#s1"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2411.02337",
+     "note": "authors concede evaluation on 165-task WebArena-Lite subset due to cost"
+    }
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Web navigation uses offline Mind2Web and online MiniWob, not WebArena functional long-task checks.",
+   "evidence_ids": [
+    "sol:T07"
+   ],
+   "score_item": [
+    "measurement"
+   ],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2504.01382#s2",
+    "paper_practice:2411.06559#s1",
+    "paper_practice:2601.04126#s2",
+    "paper_practice:2410.05243#s2",
+    "paper_practice:2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim about web-agent success on real, live websites') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2501.12326#s3",
+    "paper_practice:2505.13227#s1",
+    "paper_practice:2509.11543",
+    "paper_practice:2604.14262#s2",
+    "paper_limitation:2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": true,
+   "status": "met",
+   "reason": "Reports ScreenSpot, ScreenSpot-V2 and ScreenSpot-Pro (with text/icon splits and per-platform appendix tables).",
+   "evidence_ids": [
+    "son55:E019"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2412.04454#s1",
+     "note": "vs UGround"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2501.12326#s3",
+     "note": "vs UGround-V1-7B, OS-Atlas-7B, Aguvis"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2505.13227#s1",
+     "note": "vs UI-TARS-7B/72B, UGround-V1-7B, Aguvis, OS-Atlas"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2506.08012",
+     "note": "GPT-4o + UGround / Aguvis-7B / Aria-UI baselines"
+    }
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": true,
+   "status": "partial",
+   "reason": "7B OS-Atlas/UGround/Aguvis/UI-TARS comparisons present; variant/backbone/training-data exposure not comprehensively matched.",
+   "evidence_ids": [
+    "sol:T06"
+   ],
+   "score_item": [
+    "causality"
+   ],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2509.11543#s1",
+    "paper_practice:2506.08012#s2",
+    "paper_practice:2509.23738#s1",
+    "paper_practice:2510.17790#s1",
+    "paper_practice:2601.04126#s2",
+    "paper_practice:2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Compares with UI-TARS and with a same-base ShowUI-data model, but only on offline benchmarks and one in-domain online benchmark; no agentic-framework baselines (planner+grounder) and no OSWorld/AndroidWorld.",
+   "evidence_ids": [
+    "son55:E021",
+    "son55:E022",
+    "son55:E023"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2410.05243#s2",
+    "paper_practice:2412.04454#s3",
+    "paper_practice:2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a grounding component (or the planner-grounder split itself) improves agent task success') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2411.02337#s3",
+    "paper_practice:2406.11896#s1",
+    "paper_practice:2509.11543#s1",
+    "paper_practice:2601.22149#s2",
+    "paper_practice:2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2406.11896#s2",
+    "paper_practice:2411.02337#s2",
+    "paper_practice:2504.01382#s1",
+    "paper_practice:2602.00575#s1",
+    "paper_practice:2412.19723#s2",
+    "paper_practice:2311.08649#s2",
+    "paper_limitation:2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "applicable": true,
+   "status": "partial",
+   "reason": "The Qwen2.5-VL-7B/GPT-4o-mini/LLM filters judge data quality; a 5-rater study (200 samples) shows rated quality 3.22->4.12 but gives no agreement/precision against human keep/drop labels or on held-out trajectories.",
+   "evidence_ids": [
+    "son55:E009",
+    "son55:E014",
+    "son55:E015"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2510.18596#s2",
+    "paper_practice:2504.01382#s1",
+    "paper_practice:2602.00575#s1",
+    "paper_limitation:2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2509.23738#s1",
+    "paper_practice:2602.00575#s2",
+    "paper_limitation:2510.18596",
+    "paper_practice:2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a learned reward model or verifier improves GUI-agent RL training') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_limitation:2404.07972",
+    "paper_limitation:2602.00575",
+    "paper_practice:2609.07712#s2",
+    "paper_practice:2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "paper_practice:2509.23738#s2",
+    "paper_limitation:2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a process reward model for GUI steps improves RL or best-of-N') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_limitation:2501.12326",
+    "paper_practice:2509.11543#s3",
+    "paper_limitation:2602.09856",
+    "paper_practice:2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Rests mainly on offline exact-match step metrics (AITW, AndroidControl, Mind2Web, UI-Vision); adds MiniWob online but it is simple, fine-tuned in-domain, and the paper does not show the offline metric predicts online success.",
+   "evidence_ids": [
+    "son55:E017",
+    "son55:E025",
+    "son55:E030"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2501.12326#s1",
+    "paper_practice:2505.13227#s2",
+    "paper_practice:2510.17790#s1",
+    "paper_practice:2504.01382#s1",
+    "paper_practice:2609.10031",
+    "paper_limitation:2311.08649",
+    "paper_limitation:2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "The online MiniWob numbers are single runs; the only repeated runs (3, SD<0.5 pp) are offline Mind2Web for TongUI-3B.",
+   "evidence_ids": [
+    "son55:E024",
+    "son55:E028"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2501.12326#s1",
+     "note": "reports both 15 and 50 steps"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2410.13232#s2",
+     "note": "5 actions vs 30 for some baselines (condition)"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2504.01382#s2",
+     "note": "differing step caps; efficiency stratified"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2609.07712#s3",
+     "note": "budget exhaustion"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2510.17790#s1",
+     "note": "average steps reported"
+    }
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Online MiniWob follows prior setting but explicit matched cap/steps/exhaustion absent in full rendered text.",
+   "evidence_ids": [
+    "sol:T07",
+    "sol:T09"
+   ],
+   "score_item": [
+    "cost"
+   ],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2410.13232#s2",
+    "paper_practice:2411.06559#s1",
+    "paper_practice:2509.23738#s2",
+    "paper_practice:2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_limitation:2509.23738",
+    "paper_practice:2506.08012#s2",
+    "paper_limitation:2412.19723",
+    "paper_practice:2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_limitation:2504.01382",
+    "paper_limitation:2406.11896",
+    "paper_limitation:2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim measured on live websites or live apps') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2404.07972#s2",
+    "paper_practice:2410.05243#s2",
+    "paper_practice:2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": true,
+   "status": "partial",
+   "reason": "TongUI is screenshot-only, but Mind2Web/AITW tables mix baselines that use HTML/a11y/parsers (MindAct, OmniParser, PaLM2-CoT) without separating observation settings.",
+   "evidence_ids": [
+    "son55:E019"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2509.11543",
+    "paper_practice:2501.12326#s3",
+    "paper_practice:2604.02345#s2",
+    "paper_practice:2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": true,
+   "status": "met",
+   "reason": "Reports 3B, 7B and 32B Qwen2.5-VL results on grounding and Mind2Web; one backbone family only, and gain-vs-size shrinkage is not analysed.",
+   "evidence_ids": [
+    "son55:E019",
+    "son55:E027"
+   ],
+   "score_item": "E.holdout",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "paper_practice:2504.01382#s2",
+    "paper_practice:2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a new benchmark or a claim about long-horizon GUI task capability') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2604.14262#s1",
+    "paper_practice:2404.07972#s2",
+    "paper_practice:2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "The paper claims generalisation across diverse apps/OS but no controlled perturbation (zoom, layout, text size) or matched-pair robustness test is reported.",
+   "evidence_ids": [
+    "son55:E002"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2505.13227#s1",
+    "paper_practice:2404.07972#s1",
+    "paper_limitation:2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a grounding or agent benchmark claim where some instructions are ambiguous or infeasible') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2410.02907#s3"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.19723#s1"
+    }
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Tutorial mining is neither exploration-first nor reverse/world-model trajectory synthesis; size-matched source control still considered under causality.",
+   "evidence_ids": [],
+   "score_item": [],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2410.05243#s1",
+    "paper_practice:2505.13227#s1",
+    "paper_limitation:2412.19723",
+    "paper_practice:2604.02345#s1",
+    "paper_practice:2510.09038#s1",
+    "paper_limitation:2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Table 12 adds data by source (50K increments, then all data) for the 7B model; no fraction-vs-score curve or saturation point, and 'all data' size is not stated in the table.",
+   "evidence_ids": [
+    "son55:E026",
+    "son55:E027"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2411.06559#s2",
+    "paper_practice:2412.19723#s1",
+    "paper_practice:2601.04126#s2",
+    "paper_practice:2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Grounding is zero-shot on ScreenSpot-Pro/UI-Vision and tutorials are separate from benchmarks, but no overlap/contamination analysis (exact-ID dedupe only), the teacher was trained on unknown data, and navigation benchmarks use their own training splits.",
+   "evidence_ids": [
+    "son55:E010",
+    "son55:E017",
+    "son55:E019",
+    "son55:E029"
+   ],
+   "score_item": "E.holdout",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "paper_practice:2506.08012#s1",
+    "paper_practice:2506.08012#s2",
+    "paper_limitation:2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that reflection, self-correction or first-error recovery data improves GUI agents') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2609.00048#s1",
+    "paper_practice:2411.06559#s2",
+    "paper_practice:2602.09856#s2",
+    "paper_practice:2410.13232#s1",
+    "paper_practice:2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2411.06559#s1",
+    "paper_practice:2601.22149#s2",
+    "paper_limitation:2410.13232",
+    "paper_limitation:2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a method that plans or trains with multi-step rollouts inside a learned GUI world model') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2601.22149#s2",
+    "paper_limitation:2608.05891",
+    "paper_practice:2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that policy training on world-model or simulated GUI rollouts improves agents') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_limitation:2609.00048",
+    "paper_practice:2602.14721#s1",
+    "paper_practice:2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2609.07712#s1",
+    "paper_practice:2504.03597#s1",
+    "paper_practice:2403.03949#s1",
+    "paper_limitation:2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a simulated app, synthetic site or digital twin substitutes for the real environment') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "paper_practice:2510.09038#s1",
+    "paper_practice:2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that experience memory or retrieved trajectories improve GUI agents') is not the paper's claim: a trained GUI-grounding/navigation model fine-tuned on a crawled tutorial-derived dataset, evaluated on ScreenSpot-family, AITW, AndroidControl, Mind2Web, UI-Vision, MiniWob and Baidu Experience; no OSWorld/AndroidWorld/WebArena runs, no RL, no world model, no memory, no live-web claim.",
+   "evidence_ids": [],
+   "score_item": null
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "GUI-Net-1M (1M trajectories, 5 OS, 280+ apps) can be built automatically from web tutorials at low cost with acceptable quality.",
+   "setting": "crawl + teacher labelling + 3-stage filter",
+   "baseline_control": "ShowUI sample rated 4.26 vs filtered GUI-Net 4.12 by 5 raters",
+   "selection_vs_test": "n/a",
+   "result_denominator": "33% retained; 100+100 rated samples",
+   "evidence_ids": [
+    "son55:E011",
+    "son55:E014",
+    "son55:E015",
+    "son55:E016",
+    "son55:E018"
+   ],
+   "counterevidence": "Label accuracy vs ground truth not measured; construction cost not reported; unfiltered 3.22 rating.",
+   "allowed_conclusion": "A large tutorial-derived dataset exists with mid-high rated quality; label accuracy and 'low-cost' are unverified."
+  },
+  {
+   "claim_id": "C2",
+   "text": "Fine-tuning on GUI-Net-1M improves grounding over the base model and rivals/surpasses open baselines.",
+   "setting": "zero-shot ScreenSpot/V2/Pro; Qwen2.5-VL-3B/7B/32B",
+   "baseline_control": "base Qwen2.5-VL, ShowUI-2B, OS-Atlas, AGUVIS, UGround, UI-TARS",
+   "selection_vs_test": "zero-shot grounding; no benchmark training",
+   "result_denominator": "TongUI-7B 86.0/88.7/24.7 vs Qwen2.5-VL-7B 78.6/84.0/12.5 vs UI-TARS-7B 89.5/91.6/35.7",
+   "evidence_ids": [
+    "son55:E019",
+    "son55:E020"
+   ],
+   "counterevidence": "Below the UI-TARS teacher family; base-model numbers are authors' reproduction (†).",
+   "allowed_conclusion": "Large gains over the base model; still below UI-TARS-7B."
+  },
+  {
+   "claim_id": "C3",
+   "text": "TongUI outperforms baselines on offline navigation (AITW, AndroidControl, Mind2Web, UI-Vision), 'even better than UI-TARS' on two.",
+   "setting": "benchmark training split used for second-stage fine-tuning",
+   "baseline_control": "ShowUI, AGUVIS, UI-TARS, Qwen2.5-VL (zero-shot)",
+   "selection_vs_test": "benchmark train/test splits; teacher data unknown",
+   "result_denominator": "AndroidControl 76.0/91.9 vs UI-TARS-7B 72.5/90.8",
+   "evidence_ids": [
+    "son55:E017",
+    "son55:E021",
+    "son55:E022",
+    "son55:E026",
+    "son55:E027"
+   ],
+   "counterevidence": "Base Qwen2.5-VL baseline is zero-shot, so its low numbers conflate format learning; whether UI-TARS got the same in-domain fine-tuning is unstated; exact-match metric.",
+   "allowed_conclusion": "With in-domain fine-tuning, adding GUI-Net data improves offline step metrics over an SFT-on-public-data arm (Table 12)."
+  },
+  {
+   "claim_id": "C4",
+   "text": "TongUI generalises to online navigation (MiniWob 72.7-74.3).",
+   "setting": "MiniWob following SeeClick, fine-tuned",
+   "baseline_control": "ShowUI-2B 71.5; Qwen2.5-VL-3B-ShowUI 67.7",
+   "selection_vs_test": "in-domain fine-tuned",
+   "result_denominator": "single run",
+   "evidence_ids": [
+    "son55:E023",
+    "son55:E024",
+    "son55:E025"
+   ],
+   "counterevidence": "Simple environment, in-domain fine-tuning, no variance.",
+   "allowed_conclusion": "Small in-domain online gain (+1.2 to +5.0 pp over ShowUI-based baselines) in single runs."
+  },
+  {
+   "claim_id": "C5",
+   "text": "Data from more sources and larger scale keeps improving performance.",
+   "setting": "Qwen2.5-VL-7B, ScreenSpot + Mind2Web",
+   "baseline_control": "'refined public data' arm",
+   "selection_vs_test": "same benchmarks",
+   "result_denominator": "ScreenSpot 68.0->83.6; Mind2Web Step SR 39.7->48.8 (cross-task)",
+   "evidence_ids": [
+    "son55:E026",
+    "son55:E027"
+   ],
+   "counterevidence": "'refined data' and 'all data' sizes unspecified; no equal-size alternative data arm; one model size.",
+   "allowed_conclusion": "GUI-Net data adds ~8-16 points over an unspecified public-data SFT arm on these benchmarks."
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_reason": "Only MiniWob is interactive with reward checks, and it is trained on; per EVIDENCE rule 2 the ceiling is online. Grounding and navigation evidence otherwise offline.",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "Author-reported: adding teacher-labelled, tutorial-derived GUI-Net data to Qwen2.5-VL SFT improves zero-shot screenshot grounding (ScreenSpot-family, UI-Vision) and, after in-domain SFT, offline step accuracy over a same-base ShowUI-data arm and a public-data arm (sizes unmatched); online evidence is limited to MiniWob. TongUI-7B remains below UI-TARS-7B on ScreenSpot-family.",
+  "not_supported": [
+   "Generalised online GUI-agent capability across platforms",
+   "Label correctness of unexecuted teacher labels beyond a 100-sample rating study",
+   "Low-cost claim (data-construction cost not reported)"
+  ],
+  "unresolved": [
+   "Two-stage training mixture (agg:T-A04)",
+   "Tutorial-benchmark overlap beyond ID-level dedupe",
+   "Prompts lost in HTML render (agg:T-A05)"
+  ],
+  "retention_trace": "not_applicable: static corpus and LoRA weights; no retained online self-improvement claimed",
+  "author_report_only": true,
+  "our_run": false
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Trajectory-data scarcity is real and AgentTrek/Synatra are the right neighbours, but the gap is argued by dataset size; it does not analyse the execution/verification it gives up relative to AgentTrek or its dependence on a stronger teacher.",
+   "evidence_ids": [
+    "son55:E003",
+    "son55:E004",
+    "sol:T01",
+    "agg:T-A03"
+   ],
+   "counterevidence_ids": [
+    "son55:E020"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Concrete conversion chain (ASR/frames -> step descriptions -> teacher labels -> filters); the key assumption that unexecuted teacher labels on extracted frames are correct is weakly supported (100-sample rating study), and why tutorial data adds information beyond the teacher (human step descriptions as privileged hints) is not tested.",
+   "evidence_ids": [
+    "son55:E005",
+    "son55:E006",
+    "son55:E008",
+    "sol:T03",
+    "sol:T04",
+    "agg:T-A02"
+   ],
+   "counterevidence_ids": [
+    "son55:E020"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Sources, Whisper/MOG2 processing, teacher call, filter stages and LoRA settings are described and artefacts released, but the two-stage training mixture (GUI-Net vs public vs benchmark train splits) and filter thresholds are not specified, so the trained configuration is not reconstructable; prompt boxes are lost in the HTML render.",
+   "evidence_ids": [
+    "son55:E009",
+    "son55:E012",
+    "sol:T05",
+    "sol:T09",
+    "agg:T-A01",
+    "agg:T-A04"
+   ],
+   "counterevidence_ids": [
+    "agg:T-A05"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Click-in-box and MiniWob rewards are reliable, but navigation is offline exact-match, the 'improvement over baselines' partly compares against format-broken reproduced base models, and data quality rests on a 5-rater 0-5 study without ground-truth accuracy.",
+   "evidence_ids": [
+    "son55:E014",
+    "son55:E015",
+    "son55:E030",
+    "agg:T-A06"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Same-base ShowUI-data arm and Table 12 source additions give partial attribution; data size, teacher distillation and in-domain SFT remain confounded; no filter ablation.",
+   "evidence_ids": [
+    "son55:E026",
+    "son55:E027",
+    "sol:T07",
+    "sol:T10"
+   ],
+   "counterevidence_ids": [
+    "agg:T-A01",
+    "agg:T-A02"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Zero-shot grounding on ScreenSpot-Pro/UI-Vision and Mind2Web cross-website/domain splits are genuine held-out signals; navigation uses in-domain train splits, Baidu Experience is in-source, and tutorial-benchmark overlap is not audited.",
+   "evidence_ids": [
+    "son55:E019",
+    "son55:E022",
+    "son55:E029"
+   ],
+   "counterevidence_ids": [
+    "agg:T-A01",
+    "son55:E017"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Single runs except one 3-run Mind2Web error bar for TongUI-3B; no CIs, no failure analysis; several margins (e.g. MiniWob 72.7 vs 71.5) are within plausible run noise.",
+   "evidence_ids": [
+    "son55:E028",
+    "sol:T08"
+   ],
+   "counterevidence_ids": [
+    "son55:E024"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Training compute disclosed (8xA100, 4-7 days); the 'low-cost' data construction (crawl, ASR, LLM and teacher calls) is not costed and baseline compute is not matched.",
+   "evidence_ids": [
+    "son55:E018",
+    "sol:T09"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 47.5,
+  "display": 47.5,
+  "lower": 47.5,
+  "upper": 47.5,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(15G+25M+20X+10Emeas+10Ecaus+10Ehold+5Estat+5Ecost)/4; unknown -> L uses 0, U uses 4; raw=null while any unknown"
+ },
+ "status": "reviewed",
+ "status_reason": "Full fixed HTML text available and read; all eight items resolved.",
+ "input_seat_hashes": {
+  "sol": "0a8494f0a46f51ff8ac348e1b52a48fd9361476fab7a2cbe90c58333226cf764",
+  "son55": "dfbfe39882281a844f8f9dc05a7cb7ceef5e72e7653f691bbacdbc6cc828429a"
+ },
+ "aggregate_model": "fable",
+ "aggregate_actual_model": "claude-opus-5-5[1m]",
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_note": "Configured model type fable (upstream claude-opus-5-5[1m]) per batch manifest model_types.opus55; no session id or invocation receipt is exposed to this agent.",
+ "seat_integrity_check": {
+  "sol": {
+   "file_sha256": "0a8494f0a46f51ff8ac348e1b52a48fd9361476fab7a2cbe90c58333226cf764",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "material_complete": true,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "sonnet",
+   "actual_model": "gpt-6.1-sol"
+  },
+  "son55": {
+   "file_sha256": "dfbfe39882281a844f8f9dc05a7cb7ceef5e72e7653f691bbacdbc6cc828429a",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "material_complete": true,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "haiku",
+   "actual_model": "claude-sonnet-5-5[1m]"
+  }
+ },
+ "resolutions": [
+  {
+   "field_path": "rating.G",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "son55",
+   "final_value": 2,
+   "reason": "The AgentTrek reference confirms son55's point: the residual vs the nearest neighbour is scale-without-replay, not argued as a measured deficit.",
+   "evidence_ids": [
+    "agg:T-A03",
+    "son55:E003"
+   ],
+   "score_impact": "vs sol -3.75; vs son55 0"
+  },
+  {
+   "field_path": "rating.M",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "son55",
+   "final_value": 2,
+   "reason": "Key label-validity assumption is weakly supported; sol's own reason lists teacher privilege and executability as weak.",
+   "evidence_ids": [
+    "agg:T-A02",
+    "son55:E020"
+   ],
+   "score_impact": "vs sol -6.25; vs son55 0"
+  },
+  {
+   "field_path": "rating.X",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "decision": "sol",
+   "final_value": 2,
+   "reason": "The training mixture across two stages is a key unstated condition (anchor 2); released code does not substitute for the fixed text, and render-lost prompts are not held against the paper.",
+   "evidence_ids": [
+    "agg:T-A01",
+    "agg:T-A04"
+   ],
+   "score_impact": "vs sol 0; vs son55 -5.0"
+  },
+  {
+   "field_path": "rating.E.measurement",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "son55",
+   "final_value": 2,
+   "reason": "Offline exact-match plus format-broken reproduced baselines and an unvalidated quality filter keep measurement at anchor 2.",
+   "evidence_ids": [
+    "agg:T-A06",
+    "son55:E030"
+   ],
+   "score_impact": "vs sol -2.5; vs son55 0"
+  },
+  {
+   "field_path": "rating.E.holdout",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 1
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "son55",
+   "final_value": 2,
+   "reason": "Zero-shot grounding benchmarks and cross-website/domain splits are real held-out evidence; sol's 1 underweights them.",
+   "evidence_ids": [
+    "son55:E019",
+    "son55:E022"
+   ],
+   "score_impact": "vs sol +2.5; vs son55 0"
+  },
+  {
+   "field_path": "rating.E.statistics",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 1
+   },
+   "decision": "son55",
+   "final_value": 1,
+   "reason": "Only one 3-run setting and no failure denominators, weaker than DRIVE-style subset repeats; sol's 2 overcredits.",
+   "evidence_ids": [
+    "son55:E028"
+   ],
+   "score_impact": "vs sol -1.25; vs son55 0"
+  },
+  {
+   "field_path": "expectation.E02",
+   "sol_value": "unmet",
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": "unmet",
+   "reason": "TongUI claims improved mobile navigation via AITW/AndroidControl/GUI Odyssey only; E02 applies to mobile-agent improvement claims and no AndroidWorld online result is given.",
+   "evidence_ids": [
+    "son55:E022"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E03",
+   "sol_value": "unmet",
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": "unmet",
+   "reason": "A data-synthesis method claiming web-agent gains (Mind2Web, MiniWob) without a self-hosted realistic web benchmark such as WebArena.",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E06",
+   "sol_value": "partial",
+   "son55_value": "met",
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "UGround/Aguvis/OS-Atlas/UI-TARS-7B appear on ScreenSpot, but ScreenSpot-V2/-Pro omit some, UI-TARS-1.5 absent; partial rather than met.",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E17",
+   "sol_value": "unmet",
+   "son55_value": "unknown",
+   "decision": "sol",
+   "final_value": "unmet",
+   "reason": "E17 requires an equal, stated budget; MiniWob step caps are never stated, so the requirement is unmet (not merely unknown).",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E22",
+   "sol_value": "partial",
+   "son55_value": "met",
+   "decision": "son55",
+   "final_value": "met",
+   "reason": "3B/7B/32B results are reported, including where 32B does not beat 7B.",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E26",
+   "sol_value": "not_applicable",
+   "son55_value": "partial",
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "E26 targets exploration-first/reverse/world-model synthesis; tutorial mining with task extraction is instruction-first, so the requirement does not apply.",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E28",
+   "sol_value": "unmet",
+   "son55_value": "partial",
+   "decision": "son55",
+   "final_value": "partial",
+   "reason": "Some evaluations are separate from the data sources (zero-shot grounding), but Baidu Experience is both source and test and no overlap audit is reported.",
+   "evidence_ids": [
+    "son55:E029"
+   ],
+   "score_impact": "none"
+  }
+ ],
+ "shared_error_corrections": [],
+ "aggregate_status": "accepted_final",
+ "aggregate_status_reason": "All seat disagreements resolved from the fixed text; AgentTrek reference used only to confirm the gap resolution; no scoring unknowns.",
+ "final_record_hash": "3ab68d8aafdf9ffc08efa1263fc7fe0871d621fac93a0ef893f6d867664a59c1"
+}

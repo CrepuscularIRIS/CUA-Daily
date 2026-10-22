@@ -1,0 +1,181 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "c2",
+  "attempt_id": "a1",
+  "seat": "sol",
+  "status": "completed_with_blockers",
+  "timestamp": "2026-10-21T17:28:28.812547+00:00",
+  "input_hash": "26b023b230f3f5dfbc6207db584916bc00434db1bd9d7e96eea6447b745b95a8",
+  "provenance": {
+    "model_type": "sonnet",
+    "actual_model": "gpt-6.1-sol",
+    "session_id": null,
+    "receipt_ref": null,
+    "unavailable_reason": "Stable invocation session/receipt not supplied; own transcript used only to recover original Read quotations, no model probing."
+  },
+  "counts": {
+    "assigned": 6,
+    "records_written": 6,
+    "reviewed": 2,
+    "needs_evidence": 4,
+    "needs_fulltext": 0,
+    "out_of_scope": 0,
+    "original_outside_taxonomy": 1
+  },
+  "records": [
+    {
+      "paper_key": "2505.13909",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c2/seats/sol/attempts/a1/2505.13909.json",
+      "sha256": "bd71cb19e8fec76356880ae5dfa8e663f51c54cb7a2d42f76ca8f26d60bc37f0",
+      "status": "reviewed",
+      "score": {
+        "raw": 72.5,
+        "display": 72.5,
+        "lower": 72.5,
+        "upper": 72.5,
+        "coverage": 1.0,
+        "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+        "provisional": true
+      },
+      "original_outside_taxonomy": false
+    },
+    {
+      "paper_key": "2506.03095",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c2/seats/sol/attempts/a1/2506.03095.json",
+      "sha256": "4321dd1a8765e501d5422f91470fc9365d9500f0ff12358e92cf0c0d480e2af2",
+      "status": "reviewed",
+      "score": {
+        "raw": 43.75,
+        "display": 43.8,
+        "lower": 43.75,
+        "upper": 43.75,
+        "coverage": 1.0,
+        "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+        "provisional": true
+      },
+      "original_outside_taxonomy": false
+    },
+    {
+      "paper_key": "2509.00366",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c2/seats/sol/attempts/a1/2509.00366.json",
+      "sha256": "1312884c27516a6d5f2c8fbb6adbb0ffd071aba136d94363f1849e36ad5bd53c",
+      "status": "needs_evidence",
+      "score": {
+        "raw": null,
+        "display": null,
+        "lower": 35.0,
+        "upper": 55.0,
+        "coverage": 0.8,
+        "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+        "provisional": true
+      },
+      "original_outside_taxonomy": true
+    },
+    {
+      "paper_key": "2606.07027",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c2/seats/sol/attempts/a1/2606.07027.json",
+      "sha256": "1477832fbff3045575f392a0207186a1fb44a9395b20ed0402bcbd71d6bc90f1",
+      "status": "needs_evidence",
+      "score": {
+        "raw": null,
+        "display": null,
+        "lower": 47.5,
+        "upper": 67.5,
+        "coverage": 0.8,
+        "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+        "provisional": true
+      },
+      "original_outside_taxonomy": false
+    },
+    {
+      "paper_key": "2606.31612",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c2/seats/sol/attempts/a1/2606.31612.json",
+      "sha256": "7ddb1f76c0cb789660ed468eede6796afd8d7487fad065886a49dc06a67ad1c8",
+      "status": "needs_evidence",
+      "score": {
+        "raw": null,
+        "display": null,
+        "lower": 53.75,
+        "upper": 73.75,
+        "coverage": 0.8,
+        "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+        "provisional": true
+      },
+      "original_outside_taxonomy": false
+    },
+    {
+      "paper_key": "2504.14603",
+      "path": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c2/seats/sol/attempts/a1/2504.14603.json",
+      "sha256": "8560f893334f10585eb92647cb47221cbf84db419e0d050ee8a413fb1563cc7c",
+      "status": "needs_evidence",
+      "score": {
+        "raw": null,
+        "display": null,
+        "lower": 42.5,
+        "upper": 62.5,
+        "coverage": 0.8,
+        "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+        "provisional": true
+      },
+      "original_outside_taxonomy": false
+    }
+  ],
+  "validation": {
+    "exact_assigned_set": true,
+    "expectations_per_paper": 35,
+    "flat_ratings_per_paper": 8,
+    "quotes_checked": 118,
+    "quotes_match_original_read_transcript_or_unchanged_hash_bound_source": true,
+    "rs_and_domain_parents_checked": true,
+    "rating_statuses_checked": true,
+    "arithmetic_and_coverage_recomputed": true,
+    "primary_hashes_match_manifest": true,
+    "boundary": "Focused structural/arithmetic/reference validation, not a general JSONschema validator or independent scientific reproduction."
+  },
+  "blockers": [
+    {
+      "type": "shared_rendering_defects",
+      "papers": [
+        "2509.00366",
+        "2606.07027",
+        "2606.31612",
+        "2504.14603"
+      ],
+      "effect": "Xunknown, point score null; original Algorithms/prompt listings lost in frozen render. Coordinator confirmed later shared-material a2."
+    },
+    {
+      "type": "shared_source_overwrite",
+      "papers": [
+        "2509.00366",
+        "2606.07027",
+        "2606.31612",
+        "2504.14603"
+      ],
+      "effect": "Shared current text paths changed after a1 reading. Old manifest hashes retained. UFO2 short quotes recovered from own original tool-result transcript and validated at old lines, not byte-identical fulltext recovery. Coordinator instructs a1 remains valid, skip a1 aggregation and directly two-seat a2 for affected six-paper cross-batch list."
+    },
+    {
+      "type": "rubric_provisional",
+      "effect": "SCORE_SPEC draft_uncalibrated; all scores provisional, not accepted_final or frozen production scores."
+    },
+    {
+      "type": "version_binding",
+      "effect": "Version asserted by manifest; cached SOURCE URLs unversioned; no independent version refetch."
+    },
+    {
+      "type": "nearest_reference_scope",
+      "effect": "14fixed references; unavailable closest sources identified per paper, not privately fetched."
+    }
+  ],
+  "boundaries": {
+    "blind": true,
+    "peer_or_aggregate_or_retired_judgments_read": false,
+    "other_batch_outputs_read": false,
+    "shared_indexes_modified": false,
+    "git_operations": false,
+    "paper_code_executed": false,
+    "external_messages": false,
+    "independent_replication": false
+  },
+  "next_action": "Coordinator-controlled repaired shared materials and separate a2 attempts; do not mutate this closed a1."
+}

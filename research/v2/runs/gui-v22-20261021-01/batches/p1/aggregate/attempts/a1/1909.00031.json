@@ -1,0 +1,1967 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p1",
+ "attempt_id": "a1",
+ "seat": "aggregate",
+ "paper": {
+  "paper_key": "1909.00031",
+  "paper_id": "1909.00031",
+  "version": "1909.00031v2",
+  "title": "Interactive Task and Concept Learning from Natural Language Instructions and GUI Demonstrations",
+  "claim_type": "system_method",
+  "central_claim": "Pumice：一种领域无关的多模态方法，先让用户用自然语言高层描述任务及条件，再与 agent 通过对话与 GUI 演示递归地解决含糊概念和新过程；用户也可通过引用/演示第三方手机 App 的 GUI 内容来定义新概念；10 人实验室研究显示其可用。"
+ },
+ "provenance": {
+  "input_hash": "27c3d4f26b56f3943ebb73731665de7b845b179ab70d27f6dcfa94cb495e6822",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "aggregate_rules": "docs/agents/AGGREGATE_OPUS.md",
+  "aggregate_rules_sha256": "1ad0c4f39af2ceb06924fc015d8660711edcd9a6f891444e902b44f79584f4e0",
+  "conflicts_sha256": "b57c4ea59328539c158d4ce02c97e004686627cc33539432f6d49f452d21ab01",
+  "references_sha256": "ed9d577bd9b2fc25073d44f2506dda757688a30d4528fe3872527a0134fccfbc",
+  "model_type": "fable",
+  "actual_model": "claude-opus-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "timestamp": "2026-10-21T17:52:06+00:00",
+  "independence_note": "Aggregation over two seat inputs; the fixed paper text was read in full before the seat scores, but this is not a third blind review or human gold. All results are author reports; nothing was reproduced."
+ },
+ "materials": [
+  {
+   "material_id": "agg:1909.00031",
+   "source_url": "https://arxiv.org/html/1909.00031",
+   "version": "1909.00031v2",
+   "sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt",
+   "role": "paper",
+   "sections_read": [
+    "full text, all sections and appendices as rendered"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "figure images (captions only in render)"
+   ]
+  },
+  {
+   "material_id": "sol:1909.00031v2",
+   "url": "https://arxiv.org/abs/1909.00031v2",
+   "version": "1909.00031v2",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt",
+   "sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "sections_read": [
+    "Abstract",
+    "Introduction",
+    "All related-work subsections",
+    "Formative study",
+    "PUMICE scenario/design",
+    "Semantic parser, recording/replay, knowledge representation",
+    "User study participants/procedure/all four tasks/results/discussion",
+    "Limitations and future work",
+    "Conclusion",
+    "All references; no appendix in supplied document"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "visual_asset_caveat": "Text render contains captions and tables; plotted/diagrammed images were not independently viewed. Unrendered numerical values are not inferred.",
+   "version_verified": false,
+   "source_url": "https://arxiv.org/html/1909.00031"
+  },
+  {
+   "material_id": "son55:M-1909.00031-v2",
+   "role": "target_fulltext",
+   "url": "https://arxiv.org/abs/1909.00031v2",
+   "source_url": "https://arxiv.org/html/1909.00031",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt",
+   "sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "material_status": "html",
+   "sections_read": [
+    "Abstract",
+    "Introduction",
+    "Background and Related Work",
+    "Formative Study",
+    "PUMICE (example, design features, implementation)",
+    "User Study",
+    "Limitations and Future Work",
+    "Conclusion",
+    "References"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "note": "v2 为 AAAI-20 IPA workshop 版（UIST 2019 完整版的精简），无解析器数值指标、无 DSL 文法细节。图 1–5 为截图/柱状图，数值在文本中已含。"
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "agg:P-A01",
+   "material_id": "agg:1909.00031",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "User Study / Procedure",
+   "quote": "We asked participants to keep trying until they were able to correctly execute the automation",
+   "support_explanation": "Completion is eventual under unlimited retries; the attempt/failure denominator is not observable.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:P-A02",
+   "material_id": "agg:1909.00031",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "User Study / Tasks",
+   "quote": "used conditions that we can control so we can test the correctness of the scripts",
+   "support_explanation": "Experimenters verified script behaviour under controlled conditions, i.e. an execution-based correctness check of the produced automations.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:P-A03",
+   "material_id": "agg:1909.00031",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "User Study / Results",
+   "quote": "These factors might contributed to the successes of our participants.",
+   "support_explanation": "Authors acknowledge the tutorial and guidance may drive the success; boundary stated.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:P-A04",
+   "material_id": "agg:1909.00031",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "Formative Study",
+   "quote": "this difference is statistically significant with p",
+   "support_explanation": "Formative comparison reports significance without naming the test or group sizes.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:P-A05",
+   "material_id": "agg:1909.00031",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "System Implementation",
+   "quote": "The app was developed and tested on a Google Pixel 2 XL phone running Android 8.0.",
+   "support_explanation": "Device/OS declared; no evaluation date or app versions (E20).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:P-A06",
+   "material_id": "agg:1909.00031",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "Design Features",
+   "quote": "Because Pumice ’s support for procedure learning is unchanged from the underlying Sugilite mechanisms",
+   "support_explanation": "GUI execution and procedure generalisation are inherited from Sugilite; Pumice's contribution is concept/conditional learning, so layout-robustness is not a Pumice claim (E24).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E001",
+   "material_id": "sol:1909.00031v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt:L74-L74",
+   "quote": "users would often use unclear, ambiguous or vague concepts when naturally instructing tasks in natural language, especially when specifying conditionals.",
+   "support_explanation": "Authors motivate concept clarification, not autonomous task invention.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E002",
+   "material_id": "sol:1909.00031v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt:L240-L240",
+   "quote": "Pumice recursively executes each resolve() function in the parsing result in a depth-first fashion.",
+   "support_explanation": "Typed unresolved components cause explicit agent-initiated clarification.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E003",
+   "material_id": "sol:1909.00031v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt:L240-L240",
+   "quote": "After a concept is fully resolved (i.e., all concepts used for defining it have been resolved), it is added to a persistent knowledge graph",
+   "support_explanation": "Human-defined concepts persist; selection is resolution/confirmation, not an RL improvement test.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E004",
+   "material_id": "sol:1909.00031v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt:L223-L223",
+   "quote": "Pumice confirms with the user every time it learns a new concept or a new rule",
+   "support_explanation": "Human is part of validation loop and supplies meaning; no autonomous-verifier claim.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E005",
+   "material_id": "sol:1909.00031v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt:L287-L287",
+   "quote": "Sugilite provides action recording and replaying capabilities on third-party Android apps using the Android Accessibility API.",
+   "support_explanation": "Structured accessibility privilege and inherited execution substrate.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E006",
+   "material_id": "sol:1909.00031v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt:L302-L302",
+   "quote": "We did not use a control condition, as we could not find other tools that can feasibly support users with little programming expertise to complete the target tasks.",
+   "support_explanation": "No controlled summative attribution experiment; explanation is not evidence of superiority.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E007",
+   "material_id": "sol:1909.00031v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt:L314-L314",
+   "quote": "We asked participants to keep trying until they were able to correctly execute the automation, and that they were happy with the resulting actions of the agent. We also checked the scripts at the end of each study session to evaluate their correctness.",
+   "support_explanation": "Outcome is eventual user-assisted authoring plus script inspection, not first-attempt autonomous success.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E008",
+   "material_id": "sol:1909.00031v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt:L338-L338",
+   "quote": "All participants were able to complete all 4 tasks. The total time for tasks ranged from 19.4 minutes to 25 minutes for the 10 participants.",
+   "support_explanation": "40 task-authoring completions among 10 trained users, measured time denominator explicit.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E009",
+   "material_id": "sol:1909.00031v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt:L342-L342",
+   "quote": "all participants had received a tutorial with an example task demonstrated.",
+   "support_explanation": "Study success depends on tutorial, known apps, and guidance.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E010",
+   "material_id": "sol:1909.00031v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt:L358-L358",
+   "quote": "it only supports single basic Boolean operations (i.e., greater than, less than, equal to)",
+   "support_explanation": "Expressivity boundary excludes general logical/arithmetic conditional programming.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E011",
+   "material_id": "sol:1909.00031v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt:L363-L363",
+   "quote": "the proposed technique is used in conversations for performing immediate tasks instead of for completely automated rules.",
+   "support_explanation": "No unattended ongoing rule-monitoring capability demonstrated.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E012",
+   "material_id": "sol:1909.00031v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt:L338-L338",
+   "quote": "for programmers (22.12 minutes, SD=2.40) was slightly shorter than that for non-programmers (23.06 minutes, SD=1.57), but the difference was not statistically significant.",
+   "support_explanation": "Time variation reported; small groups cannot establish population-level programming-experience equivalence.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E013",
+   "material_id": "sol:1909.00031v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt:L189-L189",
+   "quote": "The inter-rater agreement [ \\citeauthoryearCohen1960 ] was κ = 0.87 \\kappa=0.87 , suggesting good agreement.",
+   "support_explanation": "Formative two-coder reliability, separate from summative task outcome verification.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E014",
+   "material_id": "sol:1909.00031v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt:L326-L326",
+   "quote": "We pre-taught Pumice the concept of “hot” in the task domain of turning on the air conditioner.",
+   "support_explanation": "Reuse task starts with known concept intentionally preloaded; not independent zero-shot learning.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E015",
+   "material_id": "sol:1909.00031v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/1909.00031.txt:L361-L361",
+   "quote": "The current version of Pumice does not differentiate between personal preferences and generalizable knowledge in learned concepts and procedures.",
+   "support_explanation": "Persistent user-local knowledge is not cross-user general capability.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV01",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "Abstract; fulltext line 74",
+   "quote": "A lab study with 10 users showed its usability.",
+   "support_explanation": "摘要的实证主张：10 人实验室可用性研究。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV02",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "Formative Study; fulltext line 195",
+   "quote": "In the control group (instructing without seeing app screenshots), 33% of the participants used ambiguous, unclear or vague concepts in the instructions",
+   "support_explanation": "形成性研究：无 GUI 截图组 33% 使用含糊概念。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV03",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "Formative Study; fulltext line 197",
+   "quote": "fewer participants (9%) used ambiguous or vague concepts",
+   "support_explanation": "有 GUI 截图组仅 9%；作者称 p<0.05，但检验方法与每组人数未给。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV04",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "Formative Study; fulltext line 207",
+   "quote": "18% of the 39 descriptions from users omitted an else statement when it was expected",
+   "support_explanation": "18% 的描述遗漏本应有的 else（另有 33% 遗漏可推断的 else，同段）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV05",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "Formative Study; fulltext line 182",
+   "quote": "formative study on Amazon Mechanical Turk with 58 participants",
+   "support_explanation": "形成性研究规模：MTurk 58 人（41 非程序员）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV06",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "Formative Study; fulltext line 189",
+   "quote": "19% of responses were excluded from the analysis for quality control",
+   "support_explanation": "约 19% 回复被排除，排除标准较主观。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV07",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "System Implementation; fulltext line 282",
+   "quote": "allowing typed resolve() functions in the parsing results to indicate unknown or unclear concepts and procedures",
+   "support_explanation": "核心操作：语义解析结果里的类型化 resolve() 占位符标记未知概念/过程。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV08",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "PUMICE / Design Features; fulltext line 240",
+   "quote": "Pumice recursively executes each resolve() function in the parsing result in a depth-first fashion.",
+   "support_explanation": "递归、深度优先地逐个向用户提问以解析 resolve()。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV09",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "PUMICE / Design Features; fulltext line 240",
+   "quote": "it is added to a persistent knowledge graph",
+   "support_explanation": "持久化：完全解析后的概念进入持久知识图。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV10",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "PUMICE / Example Scenario; fulltext line 223",
+   "quote": "Pumice confirms with the user every time it learns a new concept or a new rule",
+   "support_explanation": "选择/拒绝规则：每次新概念或新规则都向用户确认。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV11",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "System Implementation; fulltext line 282",
+   "quote": "that were mostly collected and enriched from the formative study",
+   "support_explanation": "解析器训练数据(n=905)主要来自形成性研究——与评测任务来源重叠的污染风险。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV12",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "User Study; fulltext line 302",
+   "quote": "We did not use a control condition",
+   "support_explanation": "用户研究无对照条件。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV13",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "User Study; fulltext line 314",
+   "quote": "We also checked the scripts at the end of each study session to evaluate their correctness.",
+   "support_explanation": "脚本正确性由研究者在会后检查，非自动可执行判据。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV14",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "User Study; fulltext line 320",
+   "quote": "we controlled the temperature, the traffic condition, and the room price by manipulating the GPS location of the phone",
+   "support_explanation": "任务条件通过改 GPS 控制，使脚本行为可检验。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV15",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "User Study; fulltext line 326",
+   "quote": "We pre-taught Pumice the concept of",
+   "support_explanation": "Task 1 预先教过“hot”概念，因此该任务测的是已有概念的泛化而非从零学习。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV16",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "User Study / Results; fulltext line 338",
+   "quote": "All participants were able to complete all 4 tasks.",
+   "support_explanation": "结果：10 人全部完成 4 个任务。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV17",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "User Study / Results; fulltext line 338",
+   "quote": "The total time for tasks ranged from 19.4 minutes to 25 minutes for the 10 participants.",
+   "support_explanation": "总时间 19.4–25 分钟（4 个任务）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV18",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "User Study / Results; fulltext line 342",
+   "quote": "However, all participants had received a tutorial with an example task demonstrated.",
+   "support_explanation": "所有参与者都有教程示范——作者承认可能影响成功。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV19",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "User Study / Results; fulltext line 340",
+   "quote": "Most of the issues encountered by participants were actually from the Google Cloud speech recognition system used in Pumice",
+   "support_explanation": "主要问题来自语音识别；靠 undo/重述恢复。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV20",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "User Study / Results; fulltext line 344",
+   "quote": "indicating that our participants were generally satisfied with their experience using Pumice",
+   "support_explanation": "Likert 满意度结论（均值 6.1–6.9/7，无分散度）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV21",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "PUMICE / Design Features; fulltext line 260",
+   "quote": "to be reused at three different levels",
+   "support_explanation": "概念复用三层：完全相同 / 不同阈值 / 不同取值查询。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV22",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "System Implementation; fulltext line 291",
+   "quote": "a continuously refreshing UI snapshot graph representing third-party app contexts for demonstration",
+   "support_explanation": "信息可见性：UI snapshot graph 包含可见与不可见 GUI 对象(通过 Accessibility/interaction proxy)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV23",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "System Implementation; fulltext line 287",
+   "quote": "but may have problems working with web apps and apps with special graphic engines (e.g., games)",
+   "support_explanation": "适用边界：Web 应用与特殊渲染引擎应用不稳。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV24",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "Limitations and Future Work; fulltext line 358",
+   "quote": "it only supports single basic Boolean operations",
+   "support_explanation": "限制：只支持单一基本布尔运算，无逻辑/算术组合。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV25",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "Limitations and Future Work; fulltext line 361",
+   "quote": "The current version of Pumice does not differentiate between personal preferences and generalizable knowledge",
+   "support_explanation": "知识图仅本机、单用户，不区分偏好与可泛化知识。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV26",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "User Study / Results; fulltext line 352",
+   "quote": "P5 said that teaching the agent could be too time-consuming unless the task was very repetitive",
+   "support_explanation": "用户顾虑：教学成本高于直接操作。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV27",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "Background and Related Work; fulltext line 165",
+   "quote": "Compared to those, Pumice is the only one that can learn concepts as generalized knowledge, and the only one that supports creating conditionals from natural language instructions.",
+   "support_explanation": "作者对新颖性的“唯一”声明，无逐项对比实验。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV28",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "Background and Related Work; fulltext line 150",
+   "quote": "However, a key difference between Pumice and other conversational instructable agents is that Pumice is domain-independent.",
+   "support_explanation": "与 Iris/LIA 等 conversational instructable agents 的区别：领域无关(靠第三方 App GUI)。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV29",
+   "material_id": "son55:M-1909.00031-v2",
+   "material_sha256": "01df5309176861875750158a06cee21dfcbca5b9ee7773760e5911fb5d34cda0",
+   "locator": "System Implementation; fulltext line 287",
+   "quote": "Pumice operates well on most native Android apps,",
+   "support_explanation": "依赖 Sugilite/Accessibility 录制与回放，仅前台执行。",
+   "kind": "author_report"
+  }
+ ],
+ "preliminary_evidence_judgment": "Read before seat scores. Pumice (AAAI-20 workshop version of the UIST-19 paper) is an end-user-programmable Android agent: a Sempre semantic parser emits a typed DSL with resolve() holes for unknown Boolean/value concepts and procedures; holes are resolved recursively by user explanation or GUI demonstration (Sugilite accessibility recording/replay, UI snapshot graph queries), stored in a persistent knowledge base and reused. Gap evidence: a 58-person MTurk formative study (33% vs 9% vague concepts with vs without app screenshots, p<0.05, kappa .87). System evidence: 10-user lab study, 4 author-designed tasks, 5-min tutorial, pre-taught concept, participants retried until correct execution; all completed; times with SD; Likert. No control, no ablation, no retry/error counts, no parser accuracy. Agent executes on real third-party apps; script correctness checked by experimenters under GPS-controlled conditions. Applicable: R02 (agent-initiated user interaction), C01.",
+ "scope_decision": {
+  "in_scope": true,
+  "inclusion_type": "A",
+  "edge": true,
+  "reason": "Final scope decision (edge): Pumice is an agent that perceives app GUIs through the Android accessibility tree and executes recorded/generalised procedures on real third-party apps; its contribution changes the instruction/clarification and knowledge part of the loop (concept grounding via GUI demonstration and agent-initiated questions). It is not pure API, UI-code generation or robotics, so it meets EVIDENCE.md scope. It is an edge case because evidence is an HCI usability study of human+agent authoring rather than autonomous task success; claim_type system_method is kept and E items are judged against that usability claim."
+ },
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "由自然语言指令生成含条件与新概念的自动化脚本的“对话式概念解析”流程（相对基线：只能映射到预定义领域的 instructable agent）",
+   "information": "解析器无领域本体；用户口述与演示；系统读取演示 App 的完整 UI snapshot graph（含不可见对象，经 Accessibility API）。",
+   "operation": "语义解析把话语映射成类型化 DSL，未知的 Boolean/value/procedure 用 typed resolve() 占位；系统提问“How do I know whether X?”，用户用话语或 GUI 演示回答；递归直到全部解析；低置信度成分通过混合主动提问消歧；undo 回退。",
+   "output": "可执行的条件脚本 + 写入知识图的新过程/概念。",
+   "conditions": "用户熟悉相关 App；任务能通过现有手机 App 表达；单一基本布尔运算；前台执行。",
+   "feedback": "用户确认每个新概念/规则；用户 undo；解析置信度比较。",
+   "selection_rule": "用户确认=接受，undo/重述=拒绝；没有自动评分。",
+   "selection_data": "用户当场输入，无离线选择集。",
+   "persistence": "本机持久知识库：过程=Sugilite 脚本+参数+备选值；Boolean 概念=触发语+布尔表达式+上下文；value 概念=触发语+已演示的取值查询+上下文。",
+   "later_use": "后续任务命中同名概念时询问复用（三层复用），无需重复演示。",
+   "claimed_effect": "10 名参与者在教程后都完成 4 个任务(19.4–25 min)，Likert 易用 6.2/自然 6.1/有用 6.9。",
+   "failure_boundary": "语音识别错误、代词指代、单一布尔运算、Web App/游戏、仅前台、单用户、无语义理解(隐含参数)。",
+   "retained_trace": {
+    "applicable": true,
+    "before": "无该概念/过程知识的解析器",
+    "proposed_change": "用户解释+演示得到的概念/过程",
+    "selection": "用户确认后写入",
+    "persisted": "知识图(本机)",
+    "later_tasks": "用户研究 Task 1 复用预教概念(EV15)",
+    "measured_gain": "未测：无“有/无知识库”的对照"
+   },
+   "evidence_ids": [
+    "son55:EV07",
+    "son55:EV08",
+    "son55:EV09",
+    "son55:EV10",
+    "son55:EV21",
+    "son55:EV22",
+    "son55:EV23",
+    "son55:EV24"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "把口头指代映射到第三方 App GUI 内容的 value 查询（演示式概念落地）",
+   "information": "演示时高亮与话语/比较常量类型兼容的 GUI 对象（如与 30 分钟比较的时长）；覆盖层可记录屏幕上所有数值，不限可点击元素。",
+   "operation": "用户长按选中目标值；系统把导航到该屏并取值的过程存为 value query，解析器把话语转为对 UI snapshot graph 的查询。",
+   "output": "可复用的 value query。",
+   "conditions": "App 通过 Accessibility 暴露内容。",
+   "feedback": "用户选择高亮对象。",
+   "selection_rule": "用户选定",
+   "selection_data": "当场演示",
+   "persistence": "存入知识库的 value query。",
+   "later_use": "之后任何需要该值的条件/概念。",
+   "claimed_effect": "形成性研究中 GUI 截图使含糊概念使用率 33%→9%（支持该设计动机）。",
+   "failure_boundary": "Web App/特殊图形引擎；App 改版会令查询失效(文中提及仅“处理小改动”)。",
+   "evidence_ids": [
+    "son55:EV02",
+    "son55:EV03",
+    "son55:EV22",
+    "son55:EV23"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "终端用户口头指令常含含糊/常识性概念（cold weather、heavy traffic）且常漏写 else；现有自然语言编程系统限定在预定义领域，PBD 系统多以演示为主、不学习可泛化的概念。",
+  "checked_gap": "形成性研究给出可量化的前提证据：无 GUI 组 33% vs 有 GUI 组 9% 使用含糊概念(p<0.05，检验与组大小未给)；18% 漏 else、33% 漏可推断 else(EV02–EV04)。样本为 MTurk 58 人且排除 19%，效应量与检验细节不足，故“部分核实”。“唯一”声明(EV27)未经对比实验验证。",
+  "lineage": [
+   {
+    "name": "Sugilite (Li, Azaria, Myers 2017)",
+    "source_version": "CHI 2017，经本文描述",
+    "solved": "Android 演示录制/回放/参数化",
+    "left": "不学概念、不处理条件"
+   },
+   {
+    "name": "Appinite (Li et al. 2018a)",
+    "source_version": "VL/HCC 2018，经本文描述",
+    "solved": "用口头解释消歧演示的数据描述",
+    "left": "概念与条件仍缺"
+   },
+   {
+    "name": "Iris (Fast 2018) / LIA (Azaria 2016) / Srivastava 2017",
+    "source_version": "经本文描述",
+    "solved": "对话式澄清、概念从自然语言解释学习",
+    "left": "限定领域或无 GUI 演示落地"
+   },
+   {
+    "name": "PLOW / CoScripter / Sikuli / Hilc",
+    "source_version": "经本文描述",
+    "solved": "网页/桌面 PBD",
+    "left": "条件需脚本语言或不学概念"
+   }
+  ],
+  "closest_adjacent": "Sugilite+Appinite（同一团队前作，机制直接复用）与 Srivastava et al. 2017（从自然语言解释联合学概念与语义解析）；后者的概念学习仅依赖语言，Pumice 以 GUI 演示落地——该区别由作者自述，我们未对原文核对（固定包无这些论文）。",
+  "residue": "语义理解缺失(隐含参数)、布尔表达力受限、指代、跨用户共享、后台触发、真实使用场景研究。",
+  "stakes": "终端用户（非程序员）为日常任务（点咖啡、订酒店）创建含条件的跨 App 自动化。",
+  "method_response": "用类型化占位符把“哪里含糊”显式化，并将每个含糊点交给用户以话语或第三方 App GUI 演示落地，结果持久化复用。",
+  "remaining_gap": "无对照或消融证明 resolve() 递归/GUI 落地/else 提示各自的必要性；泛化与复用没有定量评测；学习成本相对手工操作的优势未证明(EV26)。",
+  "evidence_ids": [
+   "son55:EV02",
+   "son55:EV03",
+   "son55:EV27",
+   "agg:P-A04"
+  ],
+  "unresolved": [
+   "相邻工作原文不在固定包；“唯一”声明无法核对",
+   "形成性研究的检验与每组人数未给"
+  ],
+  "current_relevance": {
+   "note": "固定参考包内无引用本文/Sugilite 的论文（grep 未发现），无后续发展可引用。",
+   "facts": [],
+   "evidence_ids": []
+  },
+  "aggregate_neighbor_check": "Sugilite, Appinite, Iris, PLOW, Sikuli are not in the fixed pack; lineage stays author-attributed (both seats). The formative study gives measured stakes for the gap; 'only one' novelty claims remain unverified."
+ },
+ "rs_pattern": {
+  "primary": "decompose_and_delegate",
+  "supporting": [],
+  "matches": [
+   {
+    "main_id": "decompose_and_delegate",
+    "sub_id": null,
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": [
+     {
+      "step": "boundary_at_comparative_advantage",
+      "status": "met",
+      "note": "解析器负责结构提取与占位；领域取值（温度、通勤时间）委托给对应第三方 App 的 GUI 查询，而不是让解析器学领域知识(EV07,EV22)"
+     },
+     {
+      "step": "typed_intermediate_artifact",
+      "status": "met",
+      "note": "类型化 DSL + typed resolve() 即带类型的中间物，可由系统检查类型与完整性(EV07)"
+     },
+     {
+      "step": "verification_feedback_loop",
+      "status": "partial",
+      "note": "闭环依靠用户确认与 undo，而非机器可检验的 solver 输出(EV10)"
+     },
+     {
+      "step": "ablation_of_load_bearing_step",
+      "status": "unmet",
+      "note": "无消融证明 resolve() 递归或 GUI 落地必要(EV12)"
+     },
+     {
+      "step": "cost_and_transfer",
+      "status": "partial",
+      "note": "报告用户耗时；未对比手工操作成本；任务由作者设计(EV17,EV26)"
+     }
+    ],
+    "success_checks": [
+     {
+      "id": "typed_externally_checkable_artifact",
+      "status": "partial",
+      "note": "类型可检，但语义正确性靠用户"
+     },
+     {
+      "id": "reusable_capital",
+      "status": "partial",
+      "note": "知识图复用在 Task 1 展示，但无定量(EV15,EV21)"
+     }
+    ],
+    "failure_checks": [
+     {
+      "id": "benchmark_tailored",
+      "status": "present",
+      "note": "4 个任务由作者按形成性研究主题设计，解析器亦用同源数据训练(EV11)"
+     },
+     {
+      "id": "no_ablation",
+      "status": "present",
+      "note": "无消融/对照(EV12)"
+     }
+    ],
+    "evidence_ids": [
+     "son55:EV07",
+     "son55:EV08",
+     "son55:EV09",
+     "son55:EV10",
+     "son55:EV11",
+     "son55:EV12",
+     "son55:EV22"
+    ],
+    "reason": "实际操作是：把含糊处拆成类型化子问题，分派给用户话语/第三方 App GUI 查询这两个“求解者”，通过结构化中间物拼回脚本——与 decompose_and_delegate 的骨架相符。“求解者”是人和外部 App 而非形式化 solver，闭环无机器验证，因此 sub 卡 C25（要求机器可检验 artifact）不选，fit 记 partial。"
+   }
+  ],
+  "outside_taxonomy": false,
+  "reason": "虽然这是 HCI/终端用户编程系统而非典型 ML 方法，仍能映射到 decompose_and_delegate 的操作骨架（类型化中间物 + 委托给外部求解来源）；匹配程度为 partial。",
+  "executes_pattern": {
+   "value": "partial",
+   "note": "执行了分解+类型化占位+委托，但缺验证闭环与消融"
+  },
+  "resolves_problem": {
+   "value": "not_established",
+   "note": "可用性研究(n=10, 有教程, 作者设计任务)不足以证明含糊概念/else 遗漏问题被关闭；形成性研究只证明 GUI 落地能降低含糊使用率。",
+   "evidence_ids": [
+    "son55:EV03",
+    "son55:EV16",
+    "son55:EV18"
+   ]
+  },
+  "aggregate_source_seat": "son55",
+  "aggregate_reason": "Both seats choose decompose_and_delegate as the only match. Sub-card: C25's load-bearing element is closing the loop with a sound solver's machine-checkable output during construction; in Pumice the typed DSL is checkable but semantic resolution and verification come from the user (confirmation, undo), so no child is assigned (sub null), per PATTERN_PROTOCOL's allowance for an empty sub with stated difference."
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "agent_initiated_user_interaction",
+    "sub": "R02",
+    "version": "manifest-bound-2026-10-21",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "condition": "Agent initiates needed clarification",
+      "status": "met",
+      "reason": "Typed resolve functions trigger questions, explanations and demonstrations."
+     },
+     {
+      "condition": "Real human rather than simulated oracle",
+      "status": "met",
+      "reason": "Ten recruited users operate third-party apps."
+     },
+     {
+      "condition": "Asking precision/recall, threshold and autonomous/human controls",
+      "status": "unmet",
+      "reason": "Timing is structural DSL unresolvedness, not trained ASK confidence; no ask count/necessity metric or control."
+     },
+     {
+      "condition": "Human cost",
+      "status": "partial",
+      "reason": "Task-authoring time/SD reported, not per-clarification load."
+     }
+    ],
+    "evidence_ids": [
+     "sol:E002",
+     "sol:E004",
+     "sol:E008",
+     "sol:E012"
+    ],
+    "aggregate_source_seat": "sol"
+   },
+   {
+    "main": "structured_screen_observation",
+    "sub": "C01",
+    "version": "manifest-bound-2026-10-21",
+    "fit": "strong",
+    "condition_checks": [
+     {
+      "condition": "Structured app objects available",
+      "status": "met",
+      "reason": "Android Accessibility API and UI graph of visible/invisible objects; not pixel-only."
+     },
+     {
+      "condition": "Coverage limits",
+      "status": "met",
+      "reason": "Native apps supported; web/custom-engine/gestural interfaces limited in §implementation."
+     }
+    ],
+    "evidence_ids": [
+     "sol:E005"
+    ],
+    "aggregate_source_seat": "sol"
+   }
+  ],
+  "unassigned": [
+   {
+    "operation": "用类型化占位符把含糊概念显式化并交给用户演示的 GUI 内容来落地（instructable agent）",
+    "reason": "现有 R02/C19 都不描述“话语→占位符→GUI 演示落地→持久复用”的整体；仅 1 篇全文，只能记 case",
+    "evidence_ids": [
+     "son55:EV07",
+     "son55:EV08",
+     "son55:EV22"
+    ]
+   }
+  ],
+  "revision_proposals": [
+   {
+    "proposal": "可考虑在 agent_initiated_user_interaction 之外设 case：Instruction-time concept grounding by user demonstration（Pumice）。",
+    "support": "单篇(1909.00031)；本批不修改卡片",
+    "status": "pending_not_applied"
+   }
+  ],
+  "aggregate_note": "R02 agreed. C01 (element-id actions over accessibility-tree objects) is a real operation of the agent (Sugilite/UI snapshot graph). gui:C19 is defined as knowledge from the agent's own runs; Pumice's knowledge is user-taught, which son55 itself rated weak, so it is not matched; the persistent user-taught knowledge base stays in unassigned."
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": null,
+   "domain": {
+    "namespace": "gui",
+    "main": "agent_initiated_user_interaction",
+    "sub": "R02"
+   },
+   "operation_correspondence": "RS 的“分解并委托给外部求解来源”对应 Pumice 的“resolve() 占位 → 向用户提问 → 用户话语/GUI 演示作答”；R02 的“向用户发问并把回答写回历史”是同一交互的 GUI-agent 域对应物。",
+   "necessary_conditions_and_differences": "R02 要求 ask 决策被训练/度量；Pumice 的提问规则固定且不度量。委托对象是人而非形式化 solver，故 RS 子卡 C25 不成立。",
+   "evidence_ids": [
+    "son55:EV07",
+    "son55:EV08",
+    "son55:EV10",
+    "son55:EV12"
+   ],
+   "aggregate_source_seat": "son55"
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "kind": "dataset",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。 另：该期望依赖的基准/基线晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "kind": "dataset",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“an empirical claim that a method improves task success of an Android/mobile GUI agent”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。 另：该期望依赖的基准/基线晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null,
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "kind": "dataset",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。 另：该期望依赖的基准/基线晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "kind": "dataset",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim about web-agent success on real, live websites”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。 另：该期望依赖的基准/基线晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "kind": "dataset",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。 另：该期望依赖的基准/基线晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "kind": "baseline",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a grounding model or grounding-data recipe beats prior GUI grounders”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。 另：该期望依赖的基准/基线晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "kind": "baseline",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a trained end-to-end GUI agent model improves online task success”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。 另：该期望依赖的基准/基线晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a grounding component (or the planner-grounder split itself) improves agent task success”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。 另：该期望依赖的基准/基线晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "kind": "baseline",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。 另：该期望依赖的基准/基线晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不使用 LLM/VLM 判官判成功；脚本正确性由研究者检查(EV13)，故不涉及判官校验。",
+   "evidence_ids": [
+    "son55:EV13"
+   ],
+   "score_item": null
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a learned reward model or verifier improves GUI-agent RL training”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a process reward model for GUI steps improves RL or best-of-N”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim of improved agent capability measured with offline, teacher-forced step metrics”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。 本文没有以离线步骤准确率作能力声明。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "kind": "reproducibility",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null,
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "kind": "other",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a comparison of agent success where methods or baselines may run with different step caps”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。 无 agent 成功率比较、无步数预算概念。",
+   "evidence_ids": [],
+   "score_item": null,
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "kind": "baseline",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "kind": "reproducibility",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E20",
+   "version": "manifest-bound-2026-10-21",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_limitation",
+     "ref": "2504.01382",
+     "note": "authors: websites evolve so tasks must be replaced"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2406.11896",
+     "note": "authors: frozen policies degrade over time due to site/app changes"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2510.09038",
+     "note": "authors: evolving websites complicate reproducibility"
+    }
+   ],
+   "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Real third-party Android apps used on a declared device/OS, but app versions and precise data-collection dates/drift/blocked cases not enumerated.",
+   "evidence_ids": [
+    "sol:E005",
+    "sol:E008"
+   ],
+   "score_item": "E.holdout",
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "kind": "other",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a comparison of GUI agents whose observation spaces may differ”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null,
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "kind": "scale",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a training recipe generalises across policy backbones”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a new benchmark or a claim about long-horizon GUI task capability”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "kind": "other",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a grounder or agent is robust or generalises across visual layouts”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null,
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a grounding or agent benchmark claim where some instructions are ambiguous or infeasible”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "kind": "baseline",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "kind": "scale",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that synthetic GUI grounding, transition or trajectory data improves agents”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "kind": "other",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that reflection, self-correction or first-error recovery data improves GUI agents”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a method that plans or trains with multi-step rollouts inside a learned GUI world model”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that policy training on world-model or simulated GUI rollouts improves agents”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "kind": "other",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a simulated app, synthetic site or digital twin substitutes for the real environment”；本文中心主张是面向终端用户的“自然语言+GUI 演示”任务与概念教学系统（可用性研究，2019/2020），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "kind": "other",
+   "applicable": true,
+   "status": "partial",
+   "reason": "边缘适用：知识库来自用户教学而非 agent 经验，但声称概念/过程可复用。Task 1 展示把预教概念“hot”泛化到咖啡点单，是跨领域复用的单点演示；无定量，也无与建库环境不同的未见环境评测。",
+   "evidence_ids": [
+    "son55:EV15",
+    "son55:EV21"
+   ],
+   "score_item": "E.holdout"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "终端用户在没有 GUI 参照时会更多使用含糊概念，显示相关 App GUI 可减少含糊。",
+   "setting": "MTurk 58 人，9 个任务，between-subject，组间是否展示 App 截图",
+   "baseline_control": "无截图对照组",
+   "selection_vs_test": "随机分组；两名编码者开放编码 κ=0.87；19% 被排除",
+   "result_denominator": "33% vs 9%，每组人数未给",
+   "evidence_ids": [
+    "son55:EV02",
+    "son55:EV03",
+    "son55:EV05",
+    "son55:EV06"
+   ],
+   "counterevidence": [],
+   "allowed_conclusion": "在 MTurk 情景下，展示 GUI 与含糊概念使用率下降相关(随机分组，故近似因果)；但无每组 n 与检验方法，结论为描述性。"
+  },
+  {
+   "claim_id": "C2",
+   "text": "Pumice 可让用户教会含条件与新概念的任务；10 名用户全部完成 4 个任务并给出高 Likert 评分。",
+   "setting": "Pixel 2 手机、真实第三方 App(Starbucks、Google Maps、Marriott、Uber…)，GPS 控制条件",
+   "baseline_control": "无",
+   "selection_vs_test": "任务由作者按形成性主题设计，参与者有 5 分钟教程；解析器与形成性数据同源",
+   "result_denominator": "n=10，4 任务，成功=作者检查脚本",
+   "evidence_ids": [
+    "son55:EV12",
+    "son55:EV13",
+    "son55:EV14",
+    "son55:EV16",
+    "son55:EV17",
+    "son55:EV18",
+    "son55:EV19",
+    "son55:EV20"
+   ],
+   "counterevidence": [
+    "son55:EV18",
+    "son55:EV19"
+   ],
+   "allowed_conclusion": "在有教程、任务预设、作者检查的条件下，10 人全部完成；可说明可行性/可用性，不支持“一般终端用户自然使用”或相对其他系统的优势。"
+  },
+  {
+   "claim_id": "C3",
+   "text": "概念与过程可被泛化复用（同概念的三层复用）。",
+   "setting": "Task 1 预教概念并要求跨领域复用；示例场景",
+   "baseline_control": "无",
+   "selection_vs_test": "无",
+   "result_denominator": "无定量(仅一个任务的完成)",
+   "evidence_ids": [
+    "son55:EV15",
+    "son55:EV21"
+   ],
+   "counterevidence": [
+    "son55:EV25"
+   ],
+   "allowed_conclusion": "功能被演示，复用效果未被度量；知识库仅限本机单用户。"
+  },
+  {
+   "claim_id": "C4",
+   "text": "Pumice 是唯一既能把概念学成泛化知识、又能从自然语言创建条件的系统。",
+   "setting": "与 Sugilite/Kite/Appinite/CoScripter/Plow/Hilc/Sikuli 的叙述性比较",
+   "baseline_control": "无实验比较",
+   "selection_vs_test": "not_applicable",
+   "result_denominator": "not_applicable",
+   "evidence_ids": [
+    "son55:EV27"
+   ],
+   "counterevidence": [],
+   "allowed_conclusion": "未被支持（无对比实验；空检索不证明新颖）。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_reason": "Weak online: the authored automations execute on real apps on a real phone and experimenters checked script correctness under controlled conditions (agg:P-A02); success is human+agent eventual completion, n=10, 4 designed tasks, no held-out apps, so not transfer.",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "Author-reported: after a 5-minute tutorial, 10 participants each eventually authored 4 author-designed conditional automations with new concepts on real Android apps (19.4-25 min total, high Likert ratings); a randomised formative study shows showing app GUIs reduces vague-concept use (33% -> 9%). Comparative benefit, concept-reuse accuracy, retry burden and untutored usability are not shown.",
+  "not_supported": [
+   "Advantage over other tools or manual operation (no control)",
+   "Correctness/generalisation of learned concepts beyond the 4 tasks",
+   "Uniqueness claims versus prior PBD systems"
+  ],
+  "unresolved": [
+   "Retry/undo counts and error rates",
+   "Formative-study test and per-group sizes"
+  ],
+  "retention_trace": "Persistent knowledge base stores user-taught concepts/procedures for reuse; reuse is demonstrated in Task 1 (pre-taught 'hot') but not measured, so no retained-improvement claim is supported.",
+  "author_report_only": true,
+  "our_run": false
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Concrete bottleneck (vague concepts and omitted else in end-user instructions) measured by a randomised formative study; lineage (Sugilite/Appinite/Iris/LIA/PLOW/Sikuli) named with operational differences and residual limits stated. Not 4: neighbours author-attributed, 'only one' claims unverified, and the bottleneck sits in instruction specification rather than the perceive-act loop itself.",
+   "evidence_ids": [
+    "son55:EV02",
+    "son55:EV03",
+    "son55:EV04",
+    "son55:EV28",
+    "sol:E013"
+   ],
+   "counterevidence_ids": [
+    "son55:EV27"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Typed resolve() holes + recursive questions + GUI demonstration + persistent reuse map one-to-one onto the formative findings; reconstructable but no distinguishing ablation.",
+   "evidence_ids": [
+    "son55:EV07",
+    "son55:EV08",
+    "son55:EV22",
+    "sol:E002",
+    "sol:E004"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Operation chain, information access (UI snapshot graph incl. invisible objects), knowledge-base schema, three reuse levels, undo and mixed-initiative disambiguation, and limits are described; DSL grammar and parser metrics absent in this version.",
+   "evidence_ids": [
+    "son55:EV09",
+    "son55:EV21",
+    "son55:EV22",
+    "son55:EV23",
+    "sol:E003",
+    "sol:E005"
+   ],
+   "counterevidence_ids": [
+    "sol:E010",
+    "sol:E011"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Measures are eventual completion under unlimited retries, time and Likert, plus an unspecified experimenter script check; they fit 'usable' only coarsely and give no objective measure of concept correctness, errors or retries.",
+   "evidence_ids": [
+    "son55:EV13",
+    "son55:EV14",
+    "son55:EV16",
+    "agg:P-A02"
+   ],
+   "counterevidence_ids": [
+    "agg:P-A01"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "No comparator or feature ablation for the system; the randomised formative comparison motivates the design but does not attribute system effects.",
+   "evidence_ids": [
+    "son55:EV12",
+    "son55:EV03"
+   ],
+   "counterevidence_ids": [
+    "sol:E006"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Tasks designed from the formative themes, parser trained mostly on formative data, same apps for teaching and testing, tutorial given; no held-out tasks or users.",
+   "evidence_ids": [
+    "son55:EV11",
+    "son55:EV15",
+    "son55:EV18",
+    "sol:E009",
+    "sol:E014"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Denominator 10x4 and total-time SDs exist, but the retry-until-correct protocol hides the failure denominator, errors are qualitative only, Likert lacks dispersion, and the formative test is unnamed.",
+   "evidence_ids": [
+    "son55:EV16",
+    "son55:EV17",
+    "sol:E012"
+   ],
+   "counterevidence_ids": [
+    "agg:P-A01",
+    "agg:P-A04",
+    "son55:EV19"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Authoring time reported and the teaching-cost concern discussed; no manual-operation or alternative-tool baseline, no parser latency.",
+   "evidence_ids": [
+    "son55:EV17",
+    "son55:EV26",
+    "sol:E008"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 58.75,
+  "display": 58.8,
+  "lower": 58.75,
+  "upper": 58.75,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(15G+25M+20X+10Emeas+10Ecaus+10Ehold+5Estat+5Ecost)/4; unknown -> L uses 0, U uses 4; raw=null while any unknown"
+ },
+ "status": "reviewed",
+ "status_reason": "Full fixed HTML text available and read (figure images are captions only); in scope per scope_decision; all eight items resolved.",
+ "input_seat_hashes": {
+  "sol": "00979512e2bc07c49d77a0748a2832f8046cfadbd4313087f2457c2977925dc1",
+  "son55": "1c87c2753ae98bc88341ffb6fbb6fdec3853542527dac22bb046c43afd08dc61"
+ },
+ "aggregate_model": "fable",
+ "aggregate_actual_model": "claude-opus-5-5[1m]",
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_note": "Configured model type fable (upstream claude-opus-5-5[1m]) per batch manifest model_types.opus55; no session id or invocation receipt is exposed to this agent.",
+ "seat_integrity_check": {
+  "sol": {
+   "file_sha256": "00979512e2bc07c49d77a0748a2832f8046cfadbd4313087f2457c2977925dc1",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "target_material_sha_matches_manifest": true,
+   "target_material_complete": true,
+   "rs_and_domain_parent_errors": [],
+   "seat_status": "reviewed",
+   "model_type": "sonnet",
+   "actual_model": "gpt-6.1-sol",
+   "receipt_ref": "/home/lingxufeng/.claude-kimi/projects/-home-lingxufeng-GUI/681194da-49f5-4ad4-8eb4-573b45384076.jsonl"
+  },
+  "son55": {
+   "file_sha256": "1c87c2753ae98bc88341ffb6fbb6fdec3853542527dac22bb046c43afd08dc61",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "target_material_sha_matches_manifest": true,
+   "target_material_complete": true,
+   "rs_and_domain_parent_errors": [],
+   "seat_status": "reviewed",
+   "model_type": "haiku",
+   "actual_model": "claude-sonnet-5-5[1m]",
+   "receipt_ref": null
+  }
+ },
+ "resolutions": [
+  {
+   "field_path": "rs.matches",
+   "sol_value": [
+    "decompose_and_delegate/C25"
+   ],
+   "son55_value": [
+    "decompose_and_delegate/None"
+   ],
+   "decision": "son55",
+   "final_value": [
+    "decompose_and_delegate/None"
+   ],
+   "reason": "C25 requires construction-time closure by a sound solver's machine-checkable output; Pumice's verification is user confirmation/undo, so sub null with the difference stated (sol's own check marks that condition partial).",
+   "evidence_ids": [
+    "son55:EV10",
+    "sol:E004"
+   ],
+   "score_impact": "none (not scored)"
+  },
+  {
+   "field_path": "domain.matches",
+   "sol_value": [
+    "agent_initiated_user_interaction/R02",
+    "structured_screen_observation/C01"
+   ],
+   "son55_value": [
+    "agent_initiated_user_interaction/R02",
+    "experience_memory_retrieval/C19"
+   ],
+   "decision": "sol",
+   "final_value": [
+    "agent_initiated_user_interaction/R02",
+    "structured_screen_observation/C01"
+   ],
+   "reason": "C01 is executed (accessibility-tree element actions via Sugilite); gui:C19 requires knowledge distilled from the agent's own runs, whereas Pumice's is user-taught (son55 rated it weak and declined to claim execution).",
+   "evidence_ids": [
+    "sol:E005",
+    "son55:EV22",
+    "son55:EV09"
+   ],
+   "score_impact": "none (not scored)"
+  },
+  {
+   "field_path": "rating.G",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "decision": "son55",
+   "final_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "reason": "As for 1802.08802, sol's 2 rests only on originals being outside the fixed pack. The paper supplies a measured, randomised formative study for the bottleneck, named lineage with differences, and stated residuals (anchor 3).",
+   "evidence_ids": [
+    "son55:EV02",
+    "son55:EV03",
+    "son55:EV28"
+   ],
+   "score_impact": "+3.75 vs sol, 0 vs son55"
+  },
+  {
+   "field_path": "rating.E.measurement",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "son55",
+   "final_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "reason": "Completion is measured only after unlimited retries (agg:P-A01) with an unspecified script check and self-report; this is a coarse measure of the usability claim and none of concept correctness, so anchor 2 rather than sol's 3.",
+   "evidence_ids": [
+    "agg:P-A01",
+    "son55:EV13",
+    "son55:EV20"
+   ],
+   "score_impact": "-2.5 vs sol, 0 vs son55"
+  },
+  {
+   "field_path": "rating.E.statistics",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 1
+   },
+   "decision": "son55",
+   "final_value": {
+    "status": "resolved",
+    "rating": 1
+   },
+   "reason": "The sub-item covers statistics and failure denominators: the retry protocol hides failures, error counts are absent, Likert has no dispersion and the formative test is unnamed; n=10 with time SDs alone does not reach sol's 3.",
+   "evidence_ids": [
+    "agg:P-A01",
+    "agg:P-A04",
+    "son55:EV19"
+   ],
+   "score_impact": "-2.5 vs sol, 0 vs son55"
+  },
+  {
+   "field_path": "expectation.E02",
+   "sol_value": "challenged_with_evidence",
+   "son55_value": "not_applicable",
+   "decision": "son55",
+   "final_value": "not_applicable",
+   "reason": "No claim that a method improves an Android agent's task success relative to anything; the claim is authoring usability, judged under the E items. Named benchmarks/baselines postdate the paper and are not demanded (publication-time rule); the publication-time equivalent is judged.",
+   "evidence_ids": [
+    "son55:EV12"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E16",
+   "sol_value": "partial",
+   "son55_value": "not_applicable",
+   "decision": "son55",
+   "final_value": "not_applicable",
+   "reason": "No agent comparison on an online benchmark with run-to-run noise; the user study has no comparison arm.",
+   "evidence_ids": [
+    "son55:EV12"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E17",
+   "sol_value": "partial",
+   "son55_value": "not_applicable",
+   "decision": "son55",
+   "final_value": "not_applicable",
+   "reason": "No comparison of agent success under step caps.",
+   "evidence_ids": [
+    "son55:EV12"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E20",
+   "sol_value": "partial",
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "The study runs on live third-party apps, so E20 applies (son55's not_applicable is wrong); device/OS stated and conditions controlled via GPS, but no evaluation date, app versions or drift handling.",
+   "evidence_ids": [
+    "agg:P-A05",
+    "son55:EV14"
+   ],
+   "score_impact": "none (E.holdout=1 agreed)"
+  },
+  {
+   "field_path": "expectation.E21",
+   "sol_value": "met",
+   "son55_value": "not_applicable",
+   "decision": "son55",
+   "final_value": "not_applicable",
+   "reason": "No comparison of agents with different observation spaces; sol's 'met' records disclosure, but E21's premise is absent.",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E24",
+   "sol_value": "partial",
+   "son55_value": "not_applicable",
+   "decision": "son55",
+   "final_value": "not_applicable",
+   "reason": "Layout robustness is an inherited Sugilite capability, not a Pumice claim (agg:P-A06); Pumice's generalisation claims concern concept reuse across task domains, judged under E.holdout.",
+   "evidence_ids": [
+    "agg:P-A06",
+    "son55:EV21"
+   ],
+   "score_impact": "none"
+  }
+ ],
+ "shared_error_corrections": [],
+ "aggregate_status": "accepted_final",
+ "aggregate_status_reason": "All 11 seat disagreements resolved from the fixed text; scope edge decided (kept, see scope_decision); no shared error found; no scoring unknowns.",
+ "final_record_hash": "fcfbb7037844605fe5ff0f58cd5a5e6d7dc1e4c0ec4cc007401bd3bc95686e94"
+}

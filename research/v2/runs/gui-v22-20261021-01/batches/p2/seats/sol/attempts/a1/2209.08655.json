@@ -1,0 +1,272 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "p2",
+  "attempt_id": "a1",
+  "seat": "sol",
+  "paper": {
+    "paper_key": "2209.08655",
+    "paper_id": "2209.08655",
+    "title": "Enabling Conversational Interaction with Mobile UI using Large Language Models",
+    "version": "2209.08655v2",
+    "claim_type": "component_training",
+    "central_claim": "A single few-shot LLM supports four conversational mobile-UI tasks without task-specific model training."
+  },
+  "provenance": {
+    "input_hash": "fed6b4a2d84803fc93183b9a9669ad578f4b1611b203548221a83913612b045e",
+    "rubric_version": "v2.2 draft_uncalibrated",
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+    "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+    "asset_hashes": {
+      "corpus": {
+        "path": "research/corpus.jsonl",
+        "sha256": "ab81004336f12af0464893fc548cb5eba57552028d6a2431c2db1014ecf52cbc"
+      },
+      "rubric": {
+        "path": "research/SCORE_SPEC.md",
+        "sha256": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+      },
+      "pattern_protocol": {
+        "path": "research/PATTERN_PROTOCOL.md",
+        "sha256": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373"
+      },
+      "batch_contract": {
+        "path": "research/BATCH_CONTRACT.md",
+        "sha256": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275"
+      },
+      "review_worksheet": {
+        "path": "research/REVIEW_WORKSHEET.md",
+        "sha256": "b0ca3ac92a458c934894aee62c88d6de8ab53901047326e0c8abdfd1a0d3219e"
+      },
+      "evidence_rules": {
+        "path": "docs/EVIDENCE.md",
+        "sha256": "336e1bcdd149cd485ee5a1f22101ca594997b755b47555447ba6661b23a1fac5"
+      },
+      "rs_cards_manifest": {
+        "path": "research/reference/researchstudio-15-31/MANIFEST.tsv",
+        "sha256": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32"
+      },
+      "domain_taxonomy": {
+        "path": "research/patterns/taxonomy.json",
+        "sha256": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21"
+      },
+      "domain_conditions": {
+        "path": "research/patterns/conditions.json",
+        "sha256": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+      },
+      "expectations": {
+        "path": ".forge/domains/cua-agents/v1/profile/expectations.json",
+        "sha256": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67"
+      }
+    },
+    "model_type": "sonnet",
+    "actual_model": "gpt-6.1-sol",
+    "actual_model_source": "runtime-supplied; not independently provider-verified",
+    "session_id": null,
+    "session_id_reason": "No independently exposed worker session ID.",
+    "receipt_ref": null,
+    "receipt_ref_reason": "Provider receipt not exposed to worker.",
+    "timestamp": "2026-10-21T17:11:17.818842+00:00",
+    "final_material_integrity_check": {
+      "paper_key": "2209.08655",
+      "type": "frozen_material_path_changed",
+      "expected_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+      "current_sha256": "3839515330de621ca54373d11e9a639f69749f409d853d66fbe2275b75372823",
+      "reason": "Shared source path replaced after initial full read/hash verification; original a1 material not reavailable at this path. No upgraded-content scientific review performed."
+    },
+    "material_incident_resolution": {
+      "source": "Coordinator message in this session,2026-10-21",
+      "old_file_recoverable": false,
+      "old_hash_retained_in": "materials.jsonl and a1 batch manifest, per coordinator; not reread by worker",
+      "a1_quote_binding": "Retain originally verified continuous quotes bound to old SHA; do not rebind to replacement text.",
+      "aggregation_disposition": "material_upgraded_a2_pending",
+      "a1_aggregation": "skip",
+      "next_action": "Both seats independently review separately saved upgraded materials in a2.",
+      "fetch_safeguard": "Coordinator reports fetch changed to never overwrite existing materials."
+    }
+  },
+  "materials": [
+    {
+      "material_id": "2209.08655",
+      "url": "https://arxiv.org/html/2209.08655v2",
+      "version": "2209.08655v2",
+      "sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+      "sections_read": [
+        "All supplied text, main methods/results/references and appendices"
+      ],
+      "complete": false,
+      "missing_sections": [
+        "Appendix A Listings 1–4 prompt bodies absent; captions alone remain."
+      ],
+      "version_binding": "Version supplied by fixed manifest; extraction header has unversioned URL."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E001",
+      "material_id": "2209.08655",
+      "material_sha256": "846262729e319c3972b1980dab7c5f88f49c52957d1c1101c6b37ec4397769d7",
+      "locator": "fixed text line 886; appendix listing caption",
+      "quote": "Listing 1: 2-shot example prompt for screen question-generation.",
+      "support_explanation": "Caption exists, but associated body is absent in frozen extraction. Controller confirmed renderer v1 dropped LaTeXML ltx_listing content. This is a material defect, not author non-reporting.",
+      "kind": "our_inference",
+      "verification_note": "Exact quote/hash verified before shared-path replacement; final recheck blocked by material drift, not rebound to new hash."
+    }
+  ],
+  "signatures": [],
+  "gap": {
+    "author_gap": null,
+    "checked_gap": null,
+    "lineage": [],
+    "closest_adjacent": [],
+    "unresolved": [
+      "Material gate prevents final scientific assessment."
+    ]
+  },
+  "rs_pattern": {
+    "primary": null,
+    "supporting": [],
+    "matches": [],
+    "outside_taxonomy": false,
+    "reason": "Pattern assessment deferred for missing substantive fulltext; not an outside-taxonomy verdict.",
+    "executes_pattern": "unknown",
+    "resolves_problem": "unknown"
+  },
+  "domain_pattern": {
+    "namespace": "gui",
+    "matches": [],
+    "unassigned": true,
+    "revision_proposals": [],
+    "reason": "Deferred until both seats receive fixed complete materials."
+  },
+  "pattern_mapping": [],
+  "expectations": [],
+  "claims": [],
+  "assessment": {
+    "evidence_level": null,
+    "claim_support": "unresolved",
+    "author_report_not_reproduced": true,
+    "strongest_supported_claim": "No final scientific verdict on frozen incomplete input."
+  },
+  "ratings": {
+    "G": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Substantive frozen-input extraction loss blocks complete review. Appendix A Listings 1–4 prompt bodies absent; captions alone remain.",
+      "evidence_ids": [
+        "E001"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire supplied text including appendix captions; no unilateral material fetch."
+      ]
+    },
+    "M": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Substantive frozen-input extraction loss blocks complete review. Appendix A Listings 1–4 prompt bodies absent; captions alone remain.",
+      "evidence_ids": [
+        "E001"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire supplied text including appendix captions; no unilateral material fetch."
+      ]
+    },
+    "X": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Substantive frozen-input extraction loss blocks complete review. Appendix A Listings 1–4 prompt bodies absent; captions alone remain.",
+      "evidence_ids": [
+        "E001"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire supplied text including appendix captions; no unilateral material fetch."
+      ]
+    },
+    "E.measurement": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Substantive frozen-input extraction loss blocks complete review. Appendix A Listings 1–4 prompt bodies absent; captions alone remain.",
+      "evidence_ids": [
+        "E001"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire supplied text including appendix captions; no unilateral material fetch."
+      ]
+    },
+    "E.causality": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Substantive frozen-input extraction loss blocks complete review. Appendix A Listings 1–4 prompt bodies absent; captions alone remain.",
+      "evidence_ids": [
+        "E001"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire supplied text including appendix captions; no unilateral material fetch."
+      ]
+    },
+    "E.holdout": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Substantive frozen-input extraction loss blocks complete review. Appendix A Listings 1–4 prompt bodies absent; captions alone remain.",
+      "evidence_ids": [
+        "E001"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire supplied text including appendix captions; no unilateral material fetch."
+      ]
+    },
+    "E.statistics": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Substantive frozen-input extraction loss blocks complete review. Appendix A Listings 1–4 prompt bodies absent; captions alone remain.",
+      "evidence_ids": [
+        "E001"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire supplied text including appendix captions; no unilateral material fetch."
+      ]
+    },
+    "E.cost": {
+      "status": "unknown",
+      "rating": null,
+      "reason": "Substantive frozen-input extraction loss blocks complete review. Appendix A Listings 1–4 prompt bodies absent; captions alone remain.",
+      "evidence_ids": [
+        "E001"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        "Entire supplied text including appendix captions; no unilateral material fetch."
+      ]
+    }
+  },
+  "score": {
+    "raw": null,
+    "display": null,
+    "lower": 0.0,
+    "upper": 100.0,
+    "coverage": 0.0,
+    "weights": {
+      "G": 15,
+      "M": 25,
+      "X": 20,
+      "E.measurement": 10,
+      "E.causality": 10,
+      "E.holdout": 10,
+      "E.statistics": 5,
+      "E.cost": 5
+    },
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+  },
+  "status": "needs_fulltext",
+  "status_reason": "Appendix A Listings 1–4 prompt bodies absent; captions alone remain. Controller confirmed both-seat upgraded-material a2 review; a1 remains frozen.",
+  "readable_rationale": "输入渲染丢失实质 listing 正文，不能把抽取缺失记作作者未报告。保持八项 unknown、总分 null；等待共享材料重新固定后两席 a2 重评。"
+}

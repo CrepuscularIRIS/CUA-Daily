@@ -1,0 +1,345 @@
+{
+ "schema_version": "radar-batch-report-v2.2",
+ "kind": "aggregate-batch-report",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c3",
+ "attempt_id": "a1",
+ "seat": "aggregate",
+ "input_hash": "3a53a9b05139dc558c16026d9c92aba6c603593cded48db189b7c3080ebc16fb",
+ "conflicts_sha256": "0e72316b8c7336dc2746822a29f690d8a7e0d67cdcdb043414644d8bb363bc9d",
+ "references_sha256": "ed9d577bd9b2fc25073d44f2506dda757688a30d4528fe3872527a0134fccfbc",
+ "aggregate_model": "fable",
+ "aggregate_actual_model": "claude-opus-5-5[1m]",
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_note": "Configured model type fable (upstream claude-opus-5-5[1m]) per batch manifest model_types.opus55; no session id or invocation receipt is exposed to this agent.",
+ "assigned": 6,
+ "dispositions": {
+  "accepted_final": 5,
+  "needs_revision": 0,
+  "needs_evidence": 0,
+  "needs_fulltext": 0,
+  "out_of_scope": 1
+ },
+ "scored": 5,
+ "blocked": 0,
+ "outside_taxonomy_ratio_of_reviewed": "0/5",
+ "totals": {
+  "mechanical_conflicts": 95,
+  "resolutions": 95,
+  "rating_conflicts": 14,
+  "shared_error_corrections": 2,
+  "unresolved": 0
+ },
+ "records": [
+  {
+   "paper_key": "2604.11784",
+   "version": "2604.11784v1",
+   "aggregate_status": "accepted_final",
+   "claim_type": "system_method",
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "raw_score": 40.0,
+   "display_score": 40.0,
+   "ratings": {
+    "G": 2,
+    "M": 2,
+    "X": 2,
+    "E.measurement": 2,
+    "E.causality": 1,
+    "E.holdout": 0,
+    "E.statistics": 1,
+    "E.cost": 1
+   },
+   "seat_raw_scores": {
+    "sol": null,
+    "son55": 40.0
+   },
+   "seat_status": {
+    "sol": "needs_evidence",
+    "son55": "reviewed"
+   },
+   "n_mechanical_conflicts": 14,
+   "n_resolutions": 14,
+   "resolution_decisions": {
+    "sol": 3,
+    "son55": 8,
+    "revised": 3,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_rating_conflicts": 4,
+   "n_shared_error_corrections": 2,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c3/aggregate/attempts/a1/2604.11784.json",
+   "file_sha256": "126dc00298ffa163964866bf436cb7ac0614accb499b65a799cdc56ce4f7d292",
+   "final_record_hash": "796c081b901e188cfced6d5b9ae296729c92345d2a8d66335545a110da89f0de",
+   "input_seat_hashes": {
+    "sol": "41b3014d5785165645c24bc1eb1438b9f85d297f92f3f2e5d8414d92b5b9f4bb",
+    "son55": "a175374930b33d6286e8fd761fa3b5aeca5fbaa9b8ba736cbe1d058e6642700d"
+   }
+  },
+  {
+   "paper_key": "2609.29892",
+   "version": "2609.29892v1",
+   "aggregate_status": "out_of_scope",
+   "claim_type": null,
+   "evidence_level": null,
+   "claim_support": null,
+   "raw_score": null,
+   "display_score": null,
+   "ratings": {
+    "G": null,
+    "M": null,
+    "X": null,
+    "E.measurement": null,
+    "E.causality": null,
+    "E.holdout": null,
+    "E.statistics": null,
+    "E.cost": null
+   },
+   "seat_raw_scores": {
+    "sol": null,
+    "son55": null
+   },
+   "seat_status": {
+    "sol": "out_of_scope",
+    "son55": "out_of_scope"
+   },
+   "n_mechanical_conflicts": 41,
+   "n_resolutions": 41,
+   "resolution_decisions": {
+    "sol": 41,
+    "son55": 0,
+    "revised": 0,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_rating_conflicts": 0,
+   "n_shared_error_corrections": 0,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c3/aggregate/attempts/a1/2609.29892.json",
+   "file_sha256": "00824edf01a5305eb37a8b2f69b2cd8fcd47f40ad9a6621f22ec0340500bdfaa",
+   "final_record_hash": "1432e15359ac9803091146bfb37ad852acc5c0a271817388584c2b6eaf7e1fe7",
+   "input_seat_hashes": {
+    "sol": "ab9909a9babc33678cb6070f6a9a72ca97e71fbbef5fd73ea7e3c05f472c4e55",
+    "son55": "bc1db58d33ce71eabd67322520cc81695fc1ddbc70ed1d1fa08aa033153623d0"
+   }
+  },
+  {
+   "paper_key": "2505.12632",
+   "version": "2505.12632v1",
+   "aggregate_status": "accepted_final",
+   "claim_type": "component_training",
+   "evidence_level": "offline",
+   "claim_support": "scoped",
+   "raw_score": 63.75,
+   "display_score": 63.8,
+   "ratings": {
+    "G": 3,
+    "M": 3,
+    "X": 3,
+    "E.measurement": 2,
+    "E.causality": 2,
+    "E.holdout": 2,
+    "E.statistics": 1,
+    "E.cost": 2
+   },
+   "seat_raw_scores": {
+    "sol": 62.5,
+    "son55": 62.5
+   },
+   "seat_status": {
+    "sol": "reviewed",
+    "son55": "reviewed"
+   },
+   "n_mechanical_conflicts": 11,
+   "n_resolutions": 11,
+   "resolution_decisions": {
+    "sol": 3,
+    "son55": 7,
+    "revised": 1,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_rating_conflicts": 4,
+   "n_shared_error_corrections": 0,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c3/aggregate/attempts/a1/2505.12632.json",
+   "file_sha256": "e086ce0cd1e503d3ca77b27e9ffa9f41c6fac00a28e42f611fa3ec2c563add60",
+   "final_record_hash": "e64239a3347e6c333d7aceb2976b9af705fa65c6476ae1f51ba12405da68bc9e",
+   "input_seat_hashes": {
+    "sol": "0355db0de014123fd3bff78f3cd6a3bef431151be9b51a49c2232182d6f26e63",
+    "son55": "8d76e9a8c098a522798204fdce7536bafbdc37326b561b64a66e8eff99a777f4"
+   }
+  },
+  {
+   "paper_key": "2510.16051",
+   "version": "2510.16051v2",
+   "aggregate_status": "accepted_final",
+   "claim_type": "component_training",
+   "evidence_level": "offline",
+   "claim_support": "scoped",
+   "raw_score": 58.75,
+   "display_score": 58.8,
+   "ratings": {
+    "G": 2,
+    "M": 3,
+    "X": 2,
+    "E.measurement": 2,
+    "E.causality": 2,
+    "E.holdout": 3,
+    "E.statistics": 2,
+    "E.cost": 2
+   },
+   "seat_raw_scores": {
+    "sol": 58.75,
+    "son55": 52.5
+   },
+   "seat_status": {
+    "sol": "reviewed",
+    "son55": "reviewed"
+   },
+   "n_mechanical_conflicts": 9,
+   "n_resolutions": 9,
+   "resolution_decisions": {
+    "sol": 3,
+    "son55": 5,
+    "revised": 1,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_rating_conflicts": 1,
+   "n_shared_error_corrections": 0,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c3/aggregate/attempts/a1/2510.16051.json",
+   "file_sha256": "1b8297191a622a3ed65b546d2c54fd586b2680e9887c38674d2fa3a644381c7c",
+   "final_record_hash": "ee5b6471b6d7dbac58f4ceb68fbeef2606731ef7b62f8c907c04cee79f5cab40",
+   "input_seat_hashes": {
+    "sol": "0cc8c457627f8a55156daf8da06bad4980850b0277492eea2c10e057d02b3af1",
+    "son55": "f97136730ea3fea5b53885232a6151397eb70537d7d83bf441e5a95b2509368d"
+   }
+  },
+  {
+   "paper_key": "2502.16796",
+   "version": "2502.16796v1",
+   "aggregate_status": "accepted_final",
+   "claim_type": "system_method",
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "raw_score": 50.0,
+   "display_score": 50.0,
+   "ratings": {
+    "G": 2,
+    "M": 3,
+    "X": 2,
+    "E.measurement": 1,
+    "E.causality": 2,
+    "E.holdout": 1,
+    "E.statistics": 1,
+    "E.cost": 2
+   },
+   "seat_raw_scores": {
+    "sol": 52.5,
+    "son55": 53.75
+   },
+   "seat_status": {
+    "sol": "reviewed",
+    "son55": "reviewed"
+   },
+   "n_mechanical_conflicts": 12,
+   "n_resolutions": 12,
+   "resolution_decisions": {
+    "sol": 6,
+    "son55": 5,
+    "revised": 1,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_rating_conflicts": 2,
+   "n_shared_error_corrections": 0,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c3/aggregate/attempts/a1/2502.16796.json",
+   "file_sha256": "a9e3c2d824fa55a31884d24f925305003ac02625f7d9cd1b3e31db8c74c788d5",
+   "final_record_hash": "b35846a57188bd77a1d5f9ad37cfe7c21230a582e727bfb11f1b2c11d051a0d2",
+   "input_seat_hashes": {
+    "sol": "94ac176d74bf977bff23560e1c330b587c229ecb02d38b483214cf685ce58d67",
+    "son55": "ffbbb519d7c93148a4d2d42b2866bddd8e067cd936663bf2c7568a5fd4c1a313"
+   }
+  },
+  {
+   "paper_key": "2505.05440",
+   "version": "2505.05440v3",
+   "aggregate_status": "accepted_final",
+   "claim_type": "system_method",
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "raw_score": 53.75,
+   "display_score": 53.8,
+   "ratings": {
+    "G": 2,
+    "M": 2,
+    "X": 3,
+    "E.measurement": 3,
+    "E.causality": 2,
+    "E.holdout": 1,
+    "E.statistics": 1,
+    "E.cost": 2
+   },
+   "seat_raw_scores": {
+    "sol": 55.0,
+    "son55": 55.0
+   },
+   "seat_status": {
+    "sol": "reviewed",
+    "son55": "reviewed"
+   },
+   "n_mechanical_conflicts": 8,
+   "n_resolutions": 8,
+   "resolution_decisions": {
+    "sol": 3,
+    "son55": 4,
+    "revised": 1,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_rating_conflicts": 3,
+   "n_shared_error_corrections": 0,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c3/aggregate/attempts/a1/2505.05440.json",
+   "file_sha256": "fe39a71c0290cd72782e4cd9e1ebbda0aebf7478e1a0e06d65231c51bb3df59a",
+   "final_record_hash": "1f0a9bb872061ea3a71555908f06fd3e17a1cdc12efb8428e59ee5f996a405aa",
+   "input_seat_hashes": {
+    "sol": "7aae9acd7d75ac64baa6d671dc0577e76368dc0d93abcf7ed4efbe21c913d0a5",
+    "son55": "5be17a69a07a6af120d58dd7150cd11df164bb58d50971d65cf7a3071c04f7bc"
+   }
+  }
+ ],
+ "validation": {
+  "seat_set_equals_manifest": true,
+  "seat_versions_input_hash_material_sha_checked": true,
+  "seat_quote_substring_check": "all seat evidence quotes (both seats, 6 papers) found in the cited fixed texts after whitespace normalisation",
+  "seat_rs_parent_and_domain_namespace_checked": "PARENTS.tsv + taxonomy.json with rs:/gui: prefixes normalised; no errors in either seat",
+  "seat_schema_note": "son55 writes status as an object {state, reason} in all six records (contract: string + reason); value read from .state, no effect on judgements. sol uses bare domain sub IDs (e.g. C17) vs son55 gui:C17; final records use gui: prefixes.",
+  "every_mechanical_conflict_has_resolution": true,
+  "rating_resolutions_match_final_ratings": true,
+  "final_rs_parent_and_domain_checks": true,
+  "evidence_reference_integrity": "every evidence_id referenced in a final record exists in its evidence list; seat IDs namespaced sol:/son55:, own evidence agg:",
+  "agg_quote_substring_check": "each agg quote asserted as an exact substring of the cited fixed text (paper or frozen reference)",
+  "score_recomputed": "S=(15G+25M+20X+10Em+10Ec+10Eh+5Es+5Ecost)/4; weights sum 100, E sum 40; recomputed after write and asserted against hand-computed values",
+  "final_record_hash_recomputed_after_write": true,
+  "hash_rule": "sha256 of json.dumps(record minus final_record_hash, sort_keys=True, ensure_ascii=False, separators=(',',':')) in UTF-8",
+  "atomic_writes": "tmp file + os.replace",
+  "limitations": [
+   "Structural/arithmetic/quote checks do not establish semantic correctness or scientific validity; nothing reproduced.",
+   "MAI-UI (2512.22047) entered references.json after c3 seats ran; it was used only as a shared factual check for 2604.11784 and every use is listed in that record's shared_error_corrections.",
+   "Figures are not rendered in the fixed HTML texts (e.g. MobileSteward Fig 5-6, MONDAY Fig 3-5, GUIrilla Fig 5-9, ClawGUI Fig 1-4); judgements use text/tables/captions only.",
+   "No session id or invocation receipt is available to this agent."
+  ]
+ },
+ "requests_to_controller": [
+  "None blocking. Optional for 2604.11784: if a later version states the MobileWorld settings used for the MAI-UI-2B/8B re-runs and the training-task source, E.measurement/E.causality/E.holdout could be re-checked (re-dispatch both seats on the new version)."
+ ],
+ "boundaries": "No publication, no Reel selection, no rubric/card/seat/input edits, no git operations. Scores are draft_uncalibrated v2.2 values pending controller verification.",
+ "timestamp": "2026-10-21T17:49:45+00:00"
+}

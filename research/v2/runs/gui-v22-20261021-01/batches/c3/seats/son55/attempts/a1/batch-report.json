@@ -1,0 +1,88 @@
+{
+ "schema_version": "radar-batch-report-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c3",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "assigned": 6,
+ "reviewed": 5,
+ "needs_fulltext": 0,
+ "needs_evidence": 0,
+ "out_of_scope": 1,
+ "outside_taxonomy": 0,
+ "outside_taxonomy_ratio": 0.0,
+ "schema_errors": 0,
+ "schema_error_detail": [],
+ "per_paper": [
+  {
+   "paper_key": "2604.11784",
+   "status": "reviewed",
+   "raw_score": 40.0,
+   "claim_type": "system_method",
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "rs_primary": "self_supervised_signal_engineering"
+  },
+  {
+   "paper_key": "2609.29892",
+   "status": "out_of_scope",
+   "raw_score": null,
+   "claim_type": "system_method",
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "rs_primary": "self_supervised_signal_engineering"
+  },
+  {
+   "paper_key": "2505.12632",
+   "status": "reviewed",
+   "raw_score": 62.5,
+   "claim_type": "component_training",
+   "evidence_level": "offline",
+   "claim_support": "scoped",
+   "rs_primary": "self_supervised_signal_engineering"
+  },
+  {
+   "paper_key": "2510.16051",
+   "status": "reviewed",
+   "raw_score": 52.5,
+   "claim_type": "component_training",
+   "evidence_level": "offline",
+   "claim_support": "scoped",
+   "rs_primary": "self_supervised_signal_engineering"
+  },
+  {
+   "paper_key": "2502.16796",
+   "status": "reviewed",
+   "raw_score": 53.75,
+   "claim_type": "system_method",
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "rs_primary": "decompose_and_delegate"
+  },
+  {
+   "paper_key": "2505.05440",
+   "status": "reviewed",
+   "raw_score": 55.0,
+   "claim_type": "system_method",
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "rs_primary": "decompose_and_delegate"
+  }
+ ],
+ "model_type": "haiku",
+ "actual_model": "claude-sonnet-5-5[1m]",
+ "session_ref": null,
+ "receipt_ref": null,
+ "session_note": "no session/receipt handle exposed to this worker; actual_model taken from system prompt",
+ "input_bundle_sha256": "3a53a9b05139dc558c16026d9c92aba6c603593cded48db189b7c3080ebc16fb",
+ "blockers_and_flags": [
+  "2609.29892 (Qwen-Planner-Agent): marked out_of_scope (tool-calling planner, no GUI action surface; moderate confidence). Full provisional analysis kept in the record; ratings all unknown, score null. Controller must rule on scope; re-score if ruled in-scope.",
+  "2510.16051 (GUIrilla): Appendix A.3 prompts empty in material; Gold counts (1,283 / 1,319 / 1,565) and leakage-adjusted score (90.41->90.33) are internally inconsistent; scored with these as unresolved.",
+  "2502.16796 (MobileSteward): success-judging procedure not reported anywhere in the material (no appendix); Table 2 vs Table 3 Task Rate mismatch (0.76 vs 0.81).",
+  "2604.11784 (ClawGUI): E.holdout recorded not_reported (training-task source / overlap with the 117 eval tasks absent from full text).",
+  "RS-layer fit is only partial for all 6 papers (cards are ML-method oriented); none forced to outside_taxonomy, none given supporting cards beyond a genuinely distinct operation.",
+  "R03 domain card cites 2505.12632 as its own source (circular); condition statuses for that paper were read directly from the full text, not from the card.",
+  "Blind boundary: no seat/aggregate/archive/old score read; research/patterns/assignments.jsonl only grepped as queue hint (truncated lines for 5 papers displayed), not used as evidence."
+ ],
+ "output_dir": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c3/seats/son55/attempts/a1"
+}

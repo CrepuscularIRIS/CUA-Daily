@@ -1,0 +1,2101 @@
+{
+  "schema_version": "radar-review-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "c1",
+  "attempt_id": "a1",
+  "seat": "sol",
+  "paper": {
+    "paper_key": "2605.23939",
+    "paper_id": "2605.23939",
+    "title": "DRIVE: Modeling Skills at the Reasoning and Interaction Levels for Web Agents under Continual Learning",
+    "version": "2605.23939v1",
+    "claim_type": "system_method",
+    "central_claim": "Separating reusable reasoning guidance from executable interaction skills, with scene-aware retrieval and skill-specific reflection, enables continual accumulation and adaptation in dynamic web environments, reaching 52.8% WebArena average success (+7.3 percentage points)."
+  },
+  "provenance": {
+    "input_hash": "28c0cca3c5e43fc35f3a1a269b63a8f0a4506d44fbaaa27257dca80bfabb6390",
+    "rubric_version": "v2.2 draft_uncalibrated",
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+    "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+    "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+    "asset_hashes": {
+      "corpus": {
+        "path": "research/corpus.jsonl",
+        "sha256": "ab81004336f12af0464893fc548cb5eba57552028d6a2431c2db1014ecf52cbc"
+      },
+      "rubric": {
+        "path": "research/SCORE_SPEC.md",
+        "sha256": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+      },
+      "pattern_protocol": {
+        "path": "research/PATTERN_PROTOCOL.md",
+        "sha256": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373"
+      },
+      "batch_contract": {
+        "path": "research/BATCH_CONTRACT.md",
+        "sha256": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275"
+      },
+      "review_worksheet": {
+        "path": "research/REVIEW_WORKSHEET.md",
+        "sha256": "b0ca3ac92a458c934894aee62c88d6de8ab53901047326e0c8abdfd1a0d3219e"
+      },
+      "evidence_rules": {
+        "path": "docs/EVIDENCE.md",
+        "sha256": "336e1bcdd149cd485ee5a1f22101ca594997b755b47555447ba6661b23a1fac5"
+      },
+      "rs_cards_manifest": {
+        "path": "research/reference/researchstudio-15-31/MANIFEST.tsv",
+        "sha256": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32"
+      },
+      "domain_taxonomy": {
+        "path": "research/patterns/taxonomy.json",
+        "sha256": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21"
+      },
+      "domain_conditions": {
+        "path": "research/patterns/conditions.json",
+        "sha256": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+      },
+      "expectations": {
+        "path": ".forge/domains/cua-agents/v1/profile/expectations.json",
+        "sha256": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67"
+      }
+    },
+    "model_type": "sonnet",
+    "actual_model": "gpt-6.1-sol",
+    "session_id": null,
+    "receipt_ref": null,
+    "unavailable_reason": "Session identifier and invocation receipt are not exposed in this worker context. Actual model is supplied in the system environment.",
+    "timestamp": "2026-10-21T16:26:51.544766+00:00",
+    "score_use": "Independent provisional calibration assessment; not a frozen production ranking."
+  },
+  "materials": [
+    {
+      "material_id": "P",
+      "url": "https://arxiv.org/html/2605.23939v1",
+      "sha256": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed",
+      "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2605.23939.txt",
+      "material_status": "html",
+      "sections_read": [
+        "Entire text L1-L631: abstract, introduction, related work, methods, all experiments, limitations, safety, references, footer"
+      ],
+      "complete": true,
+      "missing_sections": [],
+      "version_binding": "Manifest version; SOURCE endpoint is unversioned and does not independently attest snapshot version."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "D01",
+      "material_id": "P",
+      "material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed",
+      "locator": "L156-L174",
+      "quote": "where 𝒦 r \\mathcal{K}^{r} and 𝒦 i \\mathcal{K}^{i} denote the reasoning skill library and the interaction skill library, respectively. We use 𝒦 all = 𝒦 r ∪ 𝒦 i \\mathcal{K}^{\\mathrm{all}}=\\mathcal{K}^{r}\\cup\\mathcal{K}^{i} to denote all skill entries. The two types of skills capture complementary aspects of historical experience. Reasoning skills encode transferable knowledge about what to do, whereas interaction skills encode executable knowledge about how to do it. Each skill is also associated with a scenario descriptor that summarizes the task semantics and page-context conditions under which the skill is applicable. This descriptor serves as the interface between offline skill induction and online skill retrieval.\n\nInteraction skills in 𝒦 i \\mathcal{K}^{i} encode reusable executable web procedures grounded in page context. They are primarily induced from successful trajectories and can be further refined using execution-level failure feedback collected during online deployment. Rather than functioning as a static open-loop mapping, each interaction skill is represented as a parameterized executable procedure (or sub-policy). Invoking an interaction skill k i k^{i} under a specific web context C ∈ 𝒞 C\\in\\mathcal{C} with input arguments X ∈ 𝒳 X\\in\\mathcal{X} triggers a dynamic, closed-loop execution process against the environment. This process yields a realized action trace α \\alpha and a final execution outcome e e :\n\n | k i ​ ( C , X ) → ( α , e ) , k^{i}(C,X)\\rightarrow(\\alpha,e), | \n\nwhere 𝒞 \\mathcal{C} denotes the space of web contexts (including page structure, available elements, and local state conditions), 𝒳 \\mathcal{X} denotes the space of input arguments required for execution, α ∈ 𝒜 ∗ \\alpha\\in\\mathcal{A}^{*} is the finite sequence of primitive actions executed during the invocation, and e ∈ 𝒴 e\\in\\mathcal{Y} is the execution outcome. During execution, k i k^{i} actively interacts with the page (e.g., iteratively verifying locators and handling dynamic UI changes) rather than blindly emitting a predefined sequence. In this sense, an interaction skill is not simply a behavioral hint, but a robust executable module that directly supports action execution on the web page.\n\nReasoning skills in 𝒦 r \\mathcal{K}^{r} encode reusable guidance for task understanding and decision making. Unlike interaction skills, they do not execute web actions directly. Instead, they provide high-level support for subgoal decomposition, strategy selection, state assessment, and outcome verification. We represent a reasoning skill as\n\n | k r = ⟨ ℳ , ℬ , 𝒱 ⟩ , k^{r}=\\langle\\mathcal{M},\\mathcal{B},\\mathcal{V}\\rangle, | \n\nwhere ℳ \\mathcal{M} summarizes a previously observed reasoning error pattern or decision deficiency, ℬ \\mathcal{B} specifies the corresponding corrected reasoning principle or behavioral guidance, and 𝒱 \\mathcal{V} defines explicit verification instructions for checking whether the current decision process satisfies the intended task requirements. During execution, reasoning skills are injected into the model context as structured guidance, helping the agent avoid recurring reasoning errors and make more reliable decisions in related scenarios.\n\nEach skill entry ( k , d k ) ∈ 𝒦 all (k,d_{k})\\in\\mathcal{K}^{\\mathrm{all}} contains a skill k k and its associated scenario descriptor\n\n | d k = ⟨ 𝒰 k , 𝒲 k ⟩ , d_{k}=\\langle\\mathcal{U}_{k},\\mathcal{W}_{k}\\rangle, | \n\nwhere 𝒰 k \\mathcal{U}_{k} denotes the applicable web context of skill k k , such as URL patterns or page-level environment cues, and 𝒲 k \\mathcal{W}_{k} denotes the semantic task scenario captured by skill k k . Given the current instruction q q and observation o t o_{t} , the agent uses d k d_{k} to retrieve candidate skills and determine whether a skill should be invoked under the current context.",
+      "support_explanation": "Distinct executable interaction and M/B/V reasoning artifacts.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "D02",
+      "material_id": "P",
+      "material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed",
+      "locator": "L192-L219",
+      "quote": "### 3.4 Counterfactual Failure Attribution from Failed Trajectories\n\nFailed episodes provide useful signals for self-evolution, but their underlying causes are often entangled. To identify the source of failure in a failed episode τ ∈ Γ fail \\tau\\in\\Gamma_{\\mathrm{fail}} , we introduce an LM-based attribution module\n\n | c = f attr ​ ( τ ) , c=f_{\\mathrm{attr}}(\\tau), | \n\nwhere c ∈ ℰ fail = { err i , err r } c\\in\\mathcal{E}_{\\mathrm{fail}}=\\{\\mathrm{err}^{i},\\mathrm{err}^{r}\\} denotes the inferred failure type. Instead of treating each failed episode as a uniform negative example, we prompt the language model to perform a counterfactual analysis of the error trace by asking whether the task could have been completed if the agent had preserved its high-level intent but followed a different interaction procedure. If the answer is yes, the failure is attributed to an interaction-level error ( c = err i c=\\mathrm{err}^{i} ); otherwise, it is attributed to a reasoning-level error ( c = err r c=\\mathrm{err}^{r} ).\n\nBased on the attributed failure type, the failed episode is converted into a corresponding skill entry:\n\n | G fail ​ ( τ , c ) = { ( k τ i , d k τ i ) , c = err i , ( k τ r , d k τ r ) , c = err r , G_{\\mathrm{fail}}(\\tau,c)=\\begin{cases}(k_{\\tau}^{i},d_{k_{\\tau}^{i}}),&c=\\mathrm{err}^{i},\\\\\n(k_{\\tau}^{r},d_{k_{\\tau}^{r}}),&c=\\mathrm{err}^{r},\\end{cases} | \n\nwhere G fail ​ ( ⋅ ) G_{\\mathrm{fail}}(\\cdot) maps a failed episode to either an interaction-skill entry or a reasoning-skill entry.\n\nA reasoning-level error indicates that the failure comes from incorrect task understanding, flawed decomposition, or invalid assumptions about the environment, rather than from the execution procedure itself. In this case, the failed episode is converted into a reasoning skill\n\n | k τ r = ⟨ ℳ , ℬ , 𝒱 ⟩ , k_{\\tau}^{r}=\\langle\\mathcal{M},\\mathcal{B},\\mathcal{V}\\rangle, | \n\nwhere ℳ \\mathcal{M} summarizes the observed reasoning error pattern, ℬ \\mathcal{B} specifies the corrected reasoning principle or behavioral guidance, and 𝒱 \\mathcal{V} defines explicit verification instructions. These skills serve as structured corrective guidance and are injected into the model context in future related tasks to reduce similar reasoning failures. The induced reasoning skill and its associated scenario descriptor are then accumulated into a new reasoning skill pool via\n\n | 𝒦 new r ← 𝒦 new r ∪ { ( k τ r , d k τ r ) } . \\mathcal{K}_{\\mathrm{new}}^{r}\\leftarrow\\mathcal{K}_{\\mathrm{new}}^{r}\\cup\\{(k_{\\tau}^{r},d_{k_{\\tau}^{r}})\\}. | \n\nBy contrast, an interaction-level error indicates that the agent follows an appropriate high-level strategy but fails during web interaction because of page-specific interruptions, missing elements, selector mismatch, or brittle interaction paths. In this case, we synthesize an interaction skill k τ i k_{\\tau}^{i} that encodes a corrected executable procedure for the failed task pattern. Compared with interaction skills induced from successful episodes, these skills may also include recovery logic, such as condition checking, exception handling, or conditional retries, to improve robustness under similar web conditions. The induced interaction skill and its associated scenario descriptor are then added to the new interaction skill pool via\n\n | 𝒦 new i ← 𝒦 new i ∪ { ( k τ i , d k τ i ) } . \\mathcal{K}_{\\mathrm{new}}^{i}\\leftarrow\\mathcal{K}_{\\mathrm{new}}^{i}\\cup\\{(k_{\\tau}^{i},d_{k_{\\tau}^{i}})\\}. | \n\nFor both failure types, the newly induced skill is further associated with a scenario descriptor, denoted by d k τ r d_{k_{\\tau}^{r}} or d k τ i d_{k_{\\tau}^{i}} , which supports future retrieval and conditional invocation under similar task semantics and page-context conditions. In this way, failed episodes are not discarded as unsuccessful experience, but are explicitly transformed into reusable knowledge that supports continual self-evolution.",
+      "support_explanation": "Counterfactual attribution creates staged corrective skills.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "D03",
+      "material_id": "P",
+      "material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed",
+      "locator": "L227-L267",
+      "quote": "At environment step t t , the current observation o t o_{t} provides the full environmental signals. From this, we extract the local page context, including the active URL u t u_{t} and the current interface state, denoted by\n\n | C t = ExtractContext ⁡ ( o t ) . C_{t}=\\mathrm{ExtractContext}(o_{t}). | \n\nEach skill entry ( k , d k ) ∈ 𝒦 all (k,d_{k})\\in\\mathcal{K}^{\\mathrm{all}} contains a scenario descriptor\n\n | d k = ⟨ 𝒰 k , 𝒲 k ⟩ , d_{k}=\\langle\\mathcal{U}_{k},\\mathcal{W}_{k}\\rangle, | \n\nwhere 𝒰 k \\mathcal{U}_{k} characterizes the page-context conditions under which skill k k applies, and 𝒲 k \\mathcal{W}_{k} summarizes the task-semantic conditions under which skill k k is relevant.\n\nGiven the current task instruction q q and observation o t o_{t} , we use a two-stage mechanism for both reasoning and interaction skills. We first perform structural filtering by retaining only the skills whose applicable page context is compatible with the current webpage state, yielding candidate sets\n\n | 𝒦 cand , t r = { ( k , d k ) ∈ 𝒦 r ∣ Match ⁡ ( C t , 𝒰 k ) = 1 } , \\mathcal{K}^{r}_{\\mathrm{cand},t}=\\{(k,d_{k})\\in\\mathcal{K}^{r}\\mid\\mathrm{Match}(C_{t},\\mathcal{U}_{k})=1\\}, | \n\n | 𝒦 cand , t i = { ( k , d k ) ∈ 𝒦 i ∣ Match ⁡ ( C t , 𝒰 k ) = 1 } . \\mathcal{K}^{i}_{\\mathrm{cand},t}=\\{(k,d_{k})\\in\\mathcal{K}^{i}\\mid\\mathrm{Match}(C_{t},\\mathcal{U}_{k})=1\\}. | \n\nWe then derive a compact semantic representation of the current task context from q q and o t o_{t} and compare it with the task-semantic descriptors 𝒲 k \\mathcal{W}_{k} associated with the candidate skills. This descriptor-level matching step ranks candidate skills without requiring the full contents of all skills to be injected into the model context.\n\nTo avoid conflicts among multiple applicable skills, DRIVE treats the retrieved skills as candidates rather than actions to be executed jointly. At each step, the agent applies a singleton activation policy within each skill level: it selects at most one reasoning skill and at most one interaction skill according to their compatibility with the current task-page scene. Formally,\n\n | ( k t r , d k t r ) = Select r ​ ( q , o t , 𝒦 cand , t r ) , ( k t i , d k t i ) = Select i ​ ( q , o t , 𝒦 cand , t i ) , (k_{t}^{r},d_{k_{t}^{r}})=\\mathrm{Select}^{r}(q,o_{t},\\mathcal{K}_{\\mathrm{cand},t}^{r}),\\qquad(k_{t}^{i},d_{k_{t}^{i}})=\\mathrm{Select}^{i}(q,o_{t},\\mathcal{K}_{\\mathrm{cand},t}^{i}), | \n\nwhere\n\n | Select ℓ ​ ( q , o t , 𝒦 cand , t ℓ ) ∈ 𝒦 cand , t ℓ ∪ { ∅ } , ℓ ∈ { r , i } . \\mathrm{Select}^{\\ell}(q,o_{t},\\mathcal{K}_{\\mathrm{cand},t}^{\\ell})\\in\\mathcal{K}_{\\mathrm{cand},t}^{\\ell}\\cup\\{\\varnothing\\},\\qquad\\ell\\in\\{r,i\\}. | \n\nThe selection is based on the match between the current task semantics, page context, and the scenario descriptor d k d_{k} . If no candidate is sufficiently compatible with the current scene, the selector returns ∅ \\varnothing , and the agent falls back to primitive action generation. Thus, multiple skills may be retrieved as candidates, but they are not invoked simultaneously.\n\nWhen a reasoning skill is selected, it has the form\n\n | k t r = ⟨ ℳ t , ℬ t , 𝒱 t ⟩ k_{t}^{r}=\\langle\\mathcal{M}_{t},\\mathcal{B}_{t},\\mathcal{V}_{t}\\rangle | \n\nand is injected into the model context as structured guidance for decision making. Specifically, it reminds the agent of the relevant reasoning error pattern ℳ t \\mathcal{M}_{t} , provides the corresponding corrected strategy ℬ t \\mathcal{B}_{t} , and highlights the verification instructions 𝒱 t \\mathcal{V}_{t} to guide subsequent reasoning and action planning.\n\nWhen an interaction skill k t i k_{t}^{i} is selected, the agent first checks whether its scenario descriptor is consistent with the current reasoning intent and page context. If the selected interaction skill is compatible, the agent instantiates its required input arguments X t X_{t} from the current task and observation, and then executes the skill under the current web context:\n\n | ( α t , e t ) = k t i ​ ( C t , X t ) , α t ∈ 𝒜 ∗ , e t ∈ 𝒴 , (\\alpha_{t},e_{t})=k_{t}^{i}(C_{t},X_{t}),\\qquad\\alpha_{t}\\in\\mathcal{A}^{*},\\ e_{t}\\in\\mathcal{Y}, | \n\nwhere C t C_{t} denotes the current page context, X t X_{t} denotes the instantiated task-specific arguments, α t \\alpha_{t} denotes the realized finite sequence of primitive actions executed during the invocation, and e t e_{t} denotes the corresponding execution outcome. If the selected interaction skill is incompatible or fails its applicability check, the agent does not invoke it and instead falls back to primitive action generation.\n\nCompared with token-level generation of primitive actions, this invocation mode directly reuses a context-conditioned executable interaction procedure for the current task pattern and returns both the action trace and the local execution result. In this way, scenario-aware retrieval enables the agent to use the complementary roles of the two skill types together: reasoning skills guide what to do, while interaction skills support how to do it under the current page context.",
+      "support_explanation": "Structural compatibility then semantic selection, at most one of each skill, primitive fallback.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "D04",
+      "material_id": "P",
+      "material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed",
+      "locator": "L275-L343",
+      "quote": "continues to grow. DRIVE manages the library at each evolution round to remove invalid interaction skills and redundant reasoning skills. Since the two skill types have different feedback signals, they are updated with different operators.\n\nWhen a skill is invoked, DRIVE records its execution feedback as\n\n | ϕ = ⟨ k ϕ , d k ϕ , q ϕ , C t , ϕ , X t , ϕ , e t , ϕ , Δ t , ϕ , y ϕ ⟩ \\phi=\\left\\langle k_{\\phi},d_{k_{\\phi}},q_{\\phi},C_{t,\\phi},X_{t,\\phi},e_{t,\\phi},\\Delta_{t,\\phi},y_{\\phi}\\right\\rangle | \n\nwhere k ϕ k_{\\phi} is the invoked skill, d k ϕ d_{k_{\\phi}} is its descriptor, q ϕ q_{\\phi} is the task instruction, C t , ϕ C_{t,\\phi} is the current page context, X t , ϕ X_{t,\\phi} is the instantiated input, e t , ϕ e_{t,\\phi} is the skill execution outcome, y ϕ y_{\\phi} is the final task label, and Δ t , ϕ \\Delta_{t,\\phi} is the execution log. The feedback collected before round n n is denoted by\n\n | Φ n = { ϕ 1 , ϕ 2 , … , ϕ m } . \\Phi_{n}=\\{\\phi_{1},\\phi_{2},\\ldots,\\phi_{m}\\}. | \n\nFor interaction skills, Δ t , ϕ \\Delta_{t,\\phi} records local signals, including selector matching, URL or page-state changes, returned results, and execution exceptions. For reasoning skills, no clear local error is usually available, so DRIVE mainly uses the final task outcome as a weak utility signal.\n\nInteraction skills in 𝒦 i \\mathcal{K}^{i} are executable procedures ( k i : 𝒞 × 𝒳 → 𝒜 ∗ × 𝒴 k^{i}:\\mathcal{C}\\times\\mathcal{X}\\rightarrow\\mathcal{A}^{*}\\times\\mathcal{Y} ). They may fail when the UI changes, selectors become invalid, or a modal blocks the intended action. To reduce this brittleness, DRIVE does not bind each operation to a single selector. Instead, the internal executable procedure of each interaction skill is parameterized as a sequence of operation templates:\n\n | Θ ⁡ ( k i ) = [ ( r 1 , Σ 1 ) , ( r 2 , Σ 2 ) , … , ( r P , Σ P ) ] , \\Theta(k^{i})=\\left[(r_{1},\\Sigma_{1}),(r_{2},\\Sigma_{2}),\\ldots,(r_{P},\\Sigma_{P})\\right], | \n\nwhere r j r_{j} is the intended operation and\n\n | Σ j = ( σ j , 1 , σ j , 2 , … , σ j , L j ) \\Sigma_{j}=(\\sigma_{j,1},\\sigma_{j,2},\\ldots,\\sigma_{j,L_{j}}) | \n\nis an ordered sequence of selectors for grounding its target element. These selectors may come from successful executions on similar pages and may include CSS selectors, XPath, DOM identifiers, text-based locators, accessibility attributes, or nearby-label locators. During execution, DRIVE tries the selectors in Σ j \\Sigma_{j} in order and uses the first valid one.\n\nDRIVE treats a case as interaction-skill failure when the skill is retrieved and invoked, but its local effect is missing. This includes four common cases: no selector in Σ j \\Sigma_{j} matches the target element; the action is executed but the URL or page state does not change as expected; no expected result is returned; or the final page state violates the skill check. In contrast, if the skill is not retrieved due to descriptor mismatch, the case is not treated as interaction-skill failure.\n\nGiven interaction feedback Φ n i ⊆ Φ n \\Phi_{n}^{i}\\subseteq\\Phi_{n} , DRIVE repairs interaction skills by local patching:\n\n | Θ ​ ( k i ) + = Patch i ​ ( Θ ⁡ ( k i ) , Φ n i ) . {\\Theta(k^{i})}^{+}=\\mathrm{Patch}^{i}(\\Theta(k^{i}),\\Phi_{n}^{i}). | \n\nThe patch operator mainly rewrites selector sets rather than regenerating the whole skill. For an operation r j r_{j} , the updated selector set is\n\n | Σ j + = UpdateSelector ⁡ ( Σ j , C t , ϕ , r j , Δ t , ϕ ) . \\Sigma_{j}^{+}=\\mathrm{UpdateSelector}\\left(\\Sigma_{j},C_{t,\\phi},r_{j},\\Delta_{t,\\phi}\\right). | \n\nA failed selector is demoted or removed. A working selector found in later traces is added to the set. If needed, DRIVE also adds a small fallback branch, such as retrying with another locator or closing an unexpected modal. When a skill still fails after repeated selector-level patches, DRIVE removes it from 𝒦 i \\mathcal{K}^{i} .\n\nReasoning skills in 𝒦 r \\mathcal{K}^{r} are natural-language rules for task decisions. They do not directly execute actions, so their errors are harder to localize. DRIVE therefore does not rewrite a reasoning skill after a single failure. Instead, it manages reasoning skills through addition, merging, and deletion.\n\nFor each reasoning skill k r k^{r} , DRIVE records its usage count\n\n | N ( k r ) = ∑ ϕ ∈ Φ n 𝟏 [ k ϕ = k r ] , N(k^{r})=\\sum_{\\phi\\in\\Phi_{n}}\\mathbf{1}[k_{\\phi}=k^{r}], | \n\nand its successful usage count\n\n | S ( k r ) = ∑ ϕ ∈ Φ n 𝟏 [ k ϕ = k r ] ⋅ y ϕ . S(k^{r})=\\sum_{\\phi\\in\\Phi_{n}}\\mathbf{1}[k_{\\phi}=k^{r}]\\cdot y_{\\phi}. | \n\nThe smoothed utility score is\n\n | ρ ⁡ ( k r ) = S ⁡ ( k r ) + λ N ⁡ ( k r ) + 2 ​ λ , \\rho(k^{r})=\\frac{S(k^{r})+\\lambda}{N(k^{r})+2\\lambda}, | \n\nwhere λ \\lambda is a smoothing constant. Since task success may also depend on interaction skills, ρ ⁡ ( k r ) \\rho(k^{r}) is only a weak signal. DRIVE uses it to identify reasoning skills that are rarely useful.\n\nWhen several reasoning skills describe similar scenarios and give similar guidance, DRIVE merges them:\n\n | ( k ¯ r , d k ¯ r ) = Merge r ​ ( 𝒢 r ) , (\\bar{k}^{r},d_{\\bar{k}^{r}})=\\mathrm{Merge}^{r}(\\mathcal{G}^{r}), | \n\nwhere\n\n | 𝒢 r = { ( k 1 r , d k 1 r ) , … , ( k l r , d k l r ) } \\mathcal{G}^{r}=\\{(k_{1}^{r},d_{k_{1}^{r}}),\\ldots,(k_{l}^{r},d_{k_{l}^{r}})\\} | \n\nis a group of similar reasoning skills. The merged skill keeps the shared mistake pattern, correction rule, and verification condition, while removing repeated or overly specific content. Reasoning skills with low utility, low usage, or strong overlap with a better skill are deleted. New reasoning-level failures identified by f attr f_{\\mathrm{attr}} are added as new skills.\n\nLet 𝒦 new i \\mathcal{K}_{\\mathrm{new}}^{i} and 𝒦 new r \\mathcal{K}_{\\mathrm{new}}^{r} denote the pools of new skills induced from successful and failed trajectories during the current round. At the end of round n n , DRIVE updates the interaction library by applying a batch patching operator across applicable skills and pruning the invalid ones:\n\n | 𝒦 i , ( n + 1 ) = Prune i ​ ( BatchPatch i ​ ( 𝒦 i , ( n ) ∪ 𝒦 new i , Φ n i ) , Φ n i ) . \\mathcal{K}^{i,(n+1)}=\\mathrm{Prune}^{i}\\left(\\mathrm{BatchPatch}^{i}\\left(\\mathcal{K}^{i,(n)}\\cup\\mathcal{K}_{\\mathrm{new}}^{i},\\Phi_{n}^{i}\\right),\\Phi_{n}^{i}\\right). | \n\nIt updates the reasoning library by applying a batch merging operator to groups of similar skills and pruning those with low utility scores based on accumulated feedback:\n\n | 𝒦 r , ( n + 1 ) = Prune r ​ ( BatchMerge r ​ ( 𝒦 r , ( n ) ∪ 𝒦 new r ) , Φ n r ) . \\mathcal{K}^{r,(n+1)}=\\mathrm{Prune}^{r}\\left(\\mathrm{BatchMerge}^{r}\\left(\\mathcal{K}^{r,(n)}\\cup\\mathcal{K}_{\\mathrm{new}}^{r}\\right),\\Phi_{n}^{r}\\right). | \n\nThus, interaction-skill management focuses on selector repair and small execution patches, while reasoning-skill management focuses on adding, merging, and deleting high-level rules. This keeps the library compact while allowing it to adapt over time.",
+      "support_explanation": "Local execution patches versus outcome-based reasoning utility, batch persistence.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "D05",
+      "material_id": "P",
+      "material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed",
+      "locator": "L351-L363",
+      "quote": "We evaluate DRIVE on WebArena [ 21 ] , a high-fidelity benchmark with 812 multi-step web tasks spanning five domains:Shopping, CMS, Forum, Gitlab, Map. WebArena is well suited to our setting because its tasks require both long-horizon reasoning and accurate page-level grounding. Following the standard benchmark protocol, we use the automated functional-correctness evaluator and report success rate as the primary metric.\n\n#### 4.1.2 Baselines\n\nWe compare DRIVE with a standard prompting agent and several recent web-agent frameworks. The standard prompting baseline is the vanilla WebArena agent [ 21 ] , which maps observations directly to actions without retaining past experience. For observation/action alignment, we include AgentOccam [ 30 ] , a strong baseline that improves zero-shot performance through LLM-friendly textual representations and standardized action spaces. For data-centric exploration, we compare with Go-Browse [ 31 ] , which uses offline structured exploration to collect interaction trajectories for policy refinement. We also include two skill-based or hierarchical methods: SteP [ 32 ] , which uses a stack of LLM policies for dynamic control flow, and SkillWeaver [ 16 ] , which discovers and distills experience into executable APIs.\n\nImplementation details. To ensure a fair comparison, all experiments, including DRIVE and the reproduced baselines, use GPT-4.1 as the backbone and are evaluated under the same environment configuration.\n\n#### 4.1.3 Experiment details\n\nWe limit the web agent to 20 environment steps per episode. For dataset construction and evaluation, we first manually group tasks on each website by task type. We then use a within-website stratified split, assigning 30% of tasks to training and 70% to testing, while keeping the task-type coverage of both partitions as broad as possible. This task-type-aware stratification is designed to test generalization over a diverse and representative task distribution and to reduce bias from skewed task compositions.\n\nUnless otherwise specified, our main agent uses GPT-4.1 as the backbone language model with a decoding temperature of 0.1. For fair comparison, all baseline methods use the same model and decoding configuration whenever applicable, and all methods are evaluated on the same test tasks, with identical task IDs and evaluation protocol.",
+      "support_explanation": "Functional WebArena evaluator, common GPT-4.1 and 20-step budget, within-site split.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "D06",
+      "material_id": "P",
+      "material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed",
+      "locator": "L373-L379",
+      "quote": "Agent | Shopping | CMS | Forum | Gitlab | Map | Average\nWebArena | 21.4 | 15.4 | 8.1 | 14.1 | 12.7 | 14.3\nSteP | 37.0 | 24.0 | 59.0 | 32.0 | 30.0 | 36.4\nGo-Browse | 41.2 | 38.4 | 51.6 | 41.2 | 38.4 | 42.2\nSkillWeaver | 25.1 | 23.8 | 41.3 | 32.0 | 26.2 | 29.7\nAgentOccam | 37.2 | 41.5 | 60.4 | 41.4 | 46.8 | 45.5\nOurs | 45.9 | 46.1 | 66.7 | 50.0 | 55.4 | 52.8",
+      "support_explanation": "Five-domain macro averages, 52.8 versus AgentOccam45.5.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "D07",
+      "material_id": "P",
+      "material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed",
+      "locator": "L399-L404",
+      "quote": "Method | Shop. (%) | CMS (%) | Forum (%) | GitLab (%) | Map (%) | Avg. (%) | Δ \\Delta Avg. (pp)\nBaseline | 37.2 | 41.5 | 60.4 | 41.4 | 46.8 | 45.5 | –\n+ Succ.-Int. | 41.3 | 44.9 | 65.0 | 48.2 | 49.5 | 49.8 | +4.3\n+ Fail.-Int. | 39.7 | 42.3 | 63.4 | 45.5 | 51.8 | 48.5 | +3.0\n+ Fail.-Reas. | 40.1 | 42.8 | 63.1 | 42.6 | 50.1 | 47.8 | +2.3\nDRIVE | 45.9 | 46.1 | 66.7 | 50.0 | 55.4 | 52.8 | +7.3",
+      "support_explanation": "Induction pathway ablations.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "D08",
+      "material_id": "P",
+      "material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed",
+      "locator": "L412-L429",
+      "quote": "We randomly sample 30 tasks from each of the five WebArena domains, yielding a 150-task evaluation subset. On this subset, the baseline agent achieves a 46.0% success rate and produces 81 failed trajectories. Two human annotators independently reviewed the execution traces and labeled each failure as either a reasoning error or an interaction error. Disagreements were resolved through discussion. We then compared the LM-based predictions with these human-adjudicated labels.\n\nSetting | Success Rate (%) | Δ \\Delta (pp)\nNo skill | 46.0 | –\nHuman attr. | 54.0 | +8.0\nLM attr. | 49.3 | +3.3\nRandom attr. | 46.7 | +0.7\nReversed attr. | 44.7 | -1.3\n\n(a) Attribution confusion matrix\n\n(b) Effect of attribution quality\n\nFigure 3 : Validation of failure attribution.\n(a) Confusion matrix between human-adjudicated and LM-based failure labels, where the LM-based attribution module achieves 69.1% overall accuracy.\n(b) Success rates under different attribution settings on the 150-task subset. Human attribution performs best, while reversed attribution performs worse than the no-skill baseline.\n\nAs shown in Figure 3 (a), the LM-based module achieves 69.1% overall accuracy against human annotations. It correctly identifies 36 of 47 reasoning errors, corresponding to 76.6% recall, and 20 of 34 interaction errors, corresponding to 58.8% recall. These results suggest that the module captures useful failure-type signals, especially for reasoning errors. At the same time, the confusion matrix shows that failure disentanglement remains difficult. In particular, 14 interaction errors are misclassified as reasoning failures. This often happens in cascading failures, where a UI constraint, such as an unhandled pop-up, causes the agent to try implausible alternative actions that the LM interprets as a reasoning error. Conversely, the 11 reasoning errors misclassified as interaction errors often involve premature task termination: the agent incorrectly assumes that the task has been completed and stops, while the LM treats the failure as a localized execution problem.",
+      "support_explanation": "Human comparison and LM attribution errors on 150-task subset.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "D09",
+      "material_id": "P",
+      "material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed",
+      "locator": "L437-L455",
+      "quote": "Beyond the overall ablation results, we conduct a fine-grained error analysis to examine how the two types of skills affect different failure modes. We use the same 100 randomly sampled test tasks for all skill configurations. Each configuration is evaluated three times under the same evaluation protocol, and we report the mean and standard deviation across runs.\n\nWe define a fixed failure taxonomy, shown in Table 3 , that distinguishes reasoning errors from interaction errors . Reasoning errors reflect failures in task interpretation, exploration, or decision making, whereas interaction errors reflect failures in executing the intended web operation. Successful trajectories are counted separately. Each failed trajectory is assigned to exactly one error category, so the three proportions in Table 4 are normalized over the same task set and sum to 100% up to rounding. GPT-4.1 is used only as a post-hoc classifier: given the task instruction, execution trace, and final outcome, it maps each failed trajectory to the fixed human-designed taxonomy.\n\nTable 3 : Failure taxonomy used for error-type analysis. Each failed trajectory is assigned to one of the two mutually exclusive categories.\n\nError Category | Specific Failure Modes\nReasoning Errors | Answer omission; insufficient exploration; task misunderstanding;\nfalse no-data judgment; empty answer.\nInteraction Errors | Repeated execution; multi-field form-filling failure; oscillatory\ninteraction loop; repeated backtracking.\n\nTable 4 : Error-type analysis on 100 randomly sampled test tasks. Results are reported as mean ± \\pm standard deviation over three runs. Correct tasks and the two error categories are normalized over the same task set.\n\nMethod | Correct tasks (%) | Reasoning errors (%) | Interaction errors (%)\nNo skill | 42.3 ± 3.06 42.3\\pm 3.06 | 35.7 ± 2.52 35.7\\pm 2.52 | 22.0 ± 3.57 22.0\\pm 3.57\nReasoning-only skills | 48.0 ± 1.81 48.0\\pm 1.81 | 30.3 ± 2.36 30.3\\pm 2.36 | 21.7 ± 2.08 21.7\\pm 2.08\nInteraction-only skills | 47.7 ± 2.52 47.7\\pm 2.52 | 33.3 ± 0.58 33.3\\pm 0.58 | 19.0 ± 2.17 19.0\\pm 2.17\nReasoning + Interaction skills | 52.3 ± 2.52 \\mathbf{52.3}\\pm 2.52 | 30.0 ± 2.03 \\mathbf{30.0}\\pm 2.03 | 17.7 ± 1.53 \\mathbf{17.7}\\pm 1.53",
+      "support_explanation": "100-task three-repeat means and standard deviations.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "D10",
+      "material_id": "P",
+      "material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed",
+      "locator": "L477-L493",
+      "quote": "We further analyze the efficiency overhead introduced by DRIVE. Since skill retrieval and invocation mainly affect the input context, we focus on input-token consumption and interaction cost. As shown in Table 5 , DRIVE improves the Shopping success rate from 37.23% to 45.99%, corresponding to an absolute gain of 8.76 percentage points. Although DRIVE increases the average input-token consumption per task by 13.9%, the input-token cost per successful completion decreases from 164.7k to 151.9k, yielding a 7.8% reduction. This suggests that the additional context overhead introduced by dual-level skill retrieval is offset by the improved task-completion rate.\n\nMethod | SR (%) | Avg. input per task | Input per success | Avg. steps per task | Avg. calls per task\nBaseline | 37.23 | 61,316 | 164.7k | 9.3 | 10.8\nDRIVE | 45.99 | 69,858 | 151.9k | 9.1 | 13.3\nRelative change | +8.76 pp | +13.9% | -7.8% | -2.2% | +23.2%\n\nTable 5: Overall efficiency and overhead comparison on the Shopping test set ( N = 137 N=137 ). SR denotes task success rate. Input per success is computed by normalizing total input-token consumption by the number of successful completions.\n\nMethod | Total input tokens | Total steps | Avg. input per task | Avg. steps per task | Input per step\nBaseline | 3.35M | 464 | 55.8k | 7.7 | 7.22k\nDRIVE | 2.98M | 404 | 49.7k | 6.7 | 7.38k\nRelative change | -10.9% | -12.9% | -10.9% | -13.0% | +2.3%\n\nTable 6: Matched-subset efficiency comparison on Shopping. The comparison uses the same matched task subset extracted from the analysis logs, so both methods are evaluated on identical task instances. Token counts are shown in compact form, where M and k denote millions and thousands, respectively. All relative changes are computed with respect to the Baseline.\n\nDRIVE also introduces additional orchestration overhead, as reflected by the increase in average calls per task. However, the average number of environment steps slightly decreases from 9.3 to 9.1 on the full Shopping test set. To further examine execution cost under comparable task conditions, Table 6 reports statistics on the same matched task subset extracted from the analysis logs. On this subset, DRIVE reduces total interaction steps by 12.9%, average steps per task by 13.0%, and total input-token consumption by 10.9%. Although the input tokens per step increase slightly, the reduction in trajectory length dominates, leading to lower overall token consumption on the matched subset.",
+      "support_explanation": "Shopping costs; task tokens/calls increase, input per success falls; selected matched subset.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "D11",
+      "material_id": "P",
+      "material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed",
+      "locator": "L497-L506",
+      "quote": "We also evaluate DRIVE with the smaller open-source backbone Qwen2.5-7B-Instruct [ 33 ] to test whether its gains extend beyond strong proprietary models. As shown in Table 7 , DRIVE improves success rates on all five WebArena domains, with an average relative gain of 52%. The largest improvement appears on Forum, and the other domains also show clear and consistent gains.\n\nTable 7: Task success rates on WebArena using Qwen2.5-7B-Instruct. The Δ \\Delta row reports relative improvement over the baseline.\n\nMethod | Shopping | CMS | Forum | Gitlab | Map | Average\nBaseline | 8.4 | 6.1 | 9.9 | 8.7 | 7.8 | 8.2\nOurs | 12.3 | 8.9 | 16.9 | 12.7 | 11.7 | 12.5\nΔ \\Delta | ↑ 46 % \\uparrow 46\\% | ↑ 46 % \\uparrow 46\\% | ↑ 71 % \\uparrow 71\\% | ↑ 46 % \\uparrow 46\\% | ↑ 50 % \\uparrow 50\\% | ↑ 52 % \\uparrow 52\\%\n\nAlthough the absolute success rates remain lower than those achieved with stronger backbones, this is not surprising for long-horizon web tasks. Such tasks require models to handle large, noisy contexts and make reliable multi-step decisions under partial observability. Smaller models are more likely to lose track of relevant state information and make suboptimal decisions during extended interaction, which also reduces the reliability of induced multi-step skills. Even so, the consistent gains in Table 7 show that the effectiveness of DRIVE is not tied to a particular high-capacity backbone and can transfer to open-source models as well.",
+      "support_explanation": "Framework on Qwen2.5-7B; not unseen-environment transfer.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "D12",
+      "material_id": "P",
+      "material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed",
+      "locator": "L524",
+      "quote": "Several limitations remain. First, DRIVE depends on reliable failure attribution; incorrect attribution may update the wrong part of the skill library. Second, retrieval may become less precise as the library grows, which calls for more scalable selection mechanisms. Third, our experiments use a DOM-based benchmark and do not fully capture the visual complexity of real websites [ 35 ] . Extending DRIVE to multimodal web agents is therefore an important direction for future work [ 36 , 1 , 2 ] .",
+      "support_explanation": "Explicit attribution, retrieval-growth and DOM limitations.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "D13",
+      "material_id": "P",
+      "material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed",
+      "locator": "L106-L108",
+      "quote": "Prior work has improved web agents by reusing past trajectories through episodic memory and experience replay [ 22 ] . AWM [ 14 ] extracts reusable workflows from previous interactions, CER [ 15 ] retrieves relevant patterns from a replay buffer, WebCoach [ 23 ] compresses navigation histories into reusable guidance, and ExpSeek [ 24 ] intervenes with prior experience when the agent is uncertain. Together, these methods show that accumulated trajectories can support decisions in later tasks. In most cases, however, the experience is reused as a single object, such as a memory entry or workflow. This design is useful for recalling high-level strategies, but it leaves low-level interaction knowledge largely implicit, including the knowledge needed to carry out those strategies on a concrete web page. For example, a summary may tell an agent to search, filter, and confirm, yet the agent may still fail when it must identify the right interface element or handle page-specific constraints.\n\nExecutable skill induction. A related line of work studies how web interaction trajectories can be abstracted into programmatic or callable skills. SkillWeaver [ 16 ] synthesizes reusable web skills as APIs through exploration and practice, and CASCADE [ 25 ] and ALITA [ 26 ] study how repeated interaction patterns can be exposed as callable tools or skills. These methods show that interaction data can be converted into reusable operations rather than kept only as contextual memory. The resulting skills or policies, however, are usually represented as single procedural units. This improves executability, but offers limited support for capturing the reasoning experience that explains when and why an operation should be used. Other self-improving frameworks, including WebRL [ 27 ] , WebAgent-R1 [ 28 ] , and Agent Q [ 29 ] , improve agent behavior through online exploration, reinforcement learning, or search-based correction. Their feedback signals are typically used for overall behavior optimization rather than skill-level revision. This leaves existing methods limited in how they accumulate reasoning experience and support the continual refinement of reusable skills.",
+      "support_explanation": "Author-reported nearest-neighbor lineage; external sources not independently read.",
+      "kind": "author_report"
+    },
+    {
+      "evidence_id": "D14",
+      "material_id": "P",
+      "material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed",
+      "locator": "L176-L190",
+      "quote": "### 3.3 Skill Induction from Successful Trajectories\n\nA successful episode τ ∈ Γ succ \\tau\\in\\Gamma_{\\mathrm{succ}} contains reusable web operation patterns for accomplishing a task, but it remains tied to a specific task instance and page context. Instead of replaying such instance-specific experience directly, DRIVE abstracts it into a parameterized interaction skill that can be reused across related tasks and similar web scenarios.\n\nGiven a successful episode τ \\tau , we prompt the language model to synthesize an executable interaction skill k τ i k_{\\tau}^{i} . This process abstracts task-specific entities in the instruction and observation history into input arguments in 𝒳 \\mathcal{X} , converting the original episode into a reusable procedure conditioned on context. The induced interaction skill encapsulates the necessary closed-loop execution logic and is represented as:\n\n | k τ i ​ ( C , X ) → ( α , e ) , k_{\\tau}^{i}(C,X)\\rightarrow(\\alpha,e), | \n\nwhere 𝒞 \\mathcal{C} denotes the space of web contexts required for execution, 𝒳 \\mathcal{X} denotes the space of parameterized task-specific inputs, α ∈ 𝒜 ∗ \\alpha\\in\\mathcal{A}^{*} is the dynamic action trace generated during interaction, and e ∈ 𝒴 e\\in\\mathcal{Y} is the final execution outcome.\n\nAlong with the executable procedure, the language model also generates a scenario descriptor d k τ i d_{k_{\\tau}^{i}} that summarizes the task semantics and page-context conditions under which the skill applies. This descriptor serves as the retrieval key for later online invocation.\n\nThe induced interaction skill and its associated scenario descriptor are then accumulated into a new interaction skill pool for the current round, rather than updating the main library immediately:\n\n | 𝒦 new i ← 𝒦 new i ∪ { ( k τ i , d k τ i ) } . \\mathcal{K}_{\\mathrm{new}}^{i}\\leftarrow\\mathcal{K}_{\\mathrm{new}}^{i}\\cup\\{(k_{\\tau}^{i},d_{k_{\\tau}^{i}})\\}. | ",
+      "support_explanation": "Successful trajectories parameterized and staged before batch update.",
+      "kind": "author_report"
+    }
+  ],
+  "signatures": [
+    {
+      "sig_id": "S1",
+      "object": "Successful and failed agent trajectories",
+      "information": "Task, DOM/page context, action traces and binary task outcomes",
+      "operation": "Distil successful interaction programs; attribute failures counterfactually to interaction versus reasoning, then create executable repairs or M/B/V guidance",
+      "output": "Two scenario-keyed candidate skill pools",
+      "conditions": "Attribution must distinguish intent from execution; local programs require locatable elements",
+      "feedback": "Local trace/result and final y",
+      "selection_rule/data": "Success trajectories and LM failure attribution; candidates staged per round",
+      "persistence": "Separate Kr/Ki libraries, updated at round boundary",
+      "later_use": "Scenario-filtered later-task retrieval",
+      "claimed_effect": "Reusable experience rather than repeated trial and error",
+      "failure_boundary": "69.1% attribution accuracy; no proof counterfactual labels are causal ground truth",
+      "evidence_ids": [
+        "D01",
+        "D02",
+        "D14"
+      ]
+    },
+    {
+      "sig_id": "S2",
+      "object": "Persistent reasoning and interaction libraries",
+      "information": "URL, current page state, task intent and scenario descriptors",
+      "operation": "Structural compatibility filter then semantic ranking; insert one reasoning skill and invoke at most one parameterized interaction skill",
+      "output": "Conditioned reasoning or realized primitive action trace",
+      "conditions": "Skill/page/intent compatibility; executable preconditions",
+      "feedback": "Local outcome plus eventual functional checker",
+      "selection_rule/data": "No compatible skill or incompatible invocation falls back to primitive action; not best-of-N outcome search",
+      "persistence": "Libraries persist; selected context transient",
+      "later_use": "At next decision and subsequent tasks",
+      "claimed_effect": "Grounded reusable routines plus transferable guidance",
+      "failure_boundary": "DOM regime and possible retrieval drift as library grows",
+      "evidence_ids": [
+        "D03",
+        "D12"
+      ]
+    },
+    {
+      "sig_id": "S3",
+      "object": "Used skill candidates and usage records",
+      "information": "Selectors, exceptions, state changes, final y, usage N and success S",
+      "operation": "Patch/prune interaction selectors and merge/prune reasoning using smoothed outcome utility",
+      "output": "Batch-updated Kr/Ki",
+      "conditions": "Final success is a confounded weak signal for reasoning utility",
+      "feedback": "Local program checks versus task-level y",
+      "selection_rule/data": "Demote failed locators, add working alternatives, remove repeated failures; merge redundant guidance and prune low utility; operational thresholds not instantiated",
+      "persistence": "End-of-round BatchPatch/Prune and BatchMerge/Prune",
+      "later_use": "Next-round task execution; fixed test set tested as training experience increases",
+      "claimed_effect": "Retained library improvement",
+      "failure_boundary": "No isolated maintenance-versus-frozen library control or changed-site retention test",
+      "evidence_ids": [
+        "D04",
+        "D07",
+        "D12"
+      ]
+    }
+  ],
+  "gap": {
+    "problem": "A single experience representation conflates reusable high-level decisions with page-specific executable interactions.",
+    "nearest_neighbors": [
+      {
+        "name": "AWM/CER/WebCoach/ExpSeek",
+        "relationship": "Authors characterize these as unified episodic/workflow reuse",
+        "evidence_ids": [
+          "D13"
+        ],
+        "version": null,
+        "version_reason": "Exact neighbor version not fixed or independently read; lineage is attributed to references/related work in 2605.23939v1.",
+        "source_version": "2605.23939v1",
+        "source_material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed"
+      },
+      {
+        "name": "SkillWeaver/CASCADE/ALITA",
+        "relationship": "Executable skill lineage; SkillWeaver is compared at common GPT-4.1",
+        "evidence_ids": [
+          "D13",
+          "D05",
+          "D06"
+        ],
+        "version": null,
+        "version_reason": "Exact neighbor version not fixed or independently read; lineage is attributed to references/related work in 2605.23939v1.",
+        "source_version": "2605.23939v1",
+        "source_material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed"
+      }
+    ],
+    "residual_gap": "Different error granularity plausibly calls for different artifacts and maintenance, but no equal-capacity unified-library control establishes necessity.",
+    "method_response": "Split representation and update operators, retrieve by scenario, and evaluate live execution.",
+    "unverified": "Nearest-neighbor primary-source versions not independently inspected; broad dynamic-site adaptation not tested by site/UI holdout.",
+    "author_gap": "A single experience representation conflates reusable high-level decisions with page-specific executable interactions.",
+    "checked_gap": "Different error granularity plausibly calls for different artifacts and maintenance, but no equal-capacity unified-library control establishes necessity.",
+    "lineage": [
+      {
+        "name": "AWM/CER/WebCoach/ExpSeek",
+        "relationship": "Authors characterize these as unified episodic/workflow reuse",
+        "evidence_ids": [
+          "D13"
+        ],
+        "version": null,
+        "version_reason": "Exact neighbor version not fixed or independently read; lineage is attributed to references/related work in 2605.23939v1.",
+        "source_version": "2605.23939v1",
+        "source_material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed"
+      },
+      {
+        "name": "SkillWeaver/CASCADE/ALITA",
+        "relationship": "Executable skill lineage; SkillWeaver is compared at common GPT-4.1",
+        "evidence_ids": [
+          "D13",
+          "D05",
+          "D06"
+        ],
+        "version": null,
+        "version_reason": "Exact neighbor version not fixed or independently read; lineage is attributed to references/related work in 2605.23939v1.",
+        "source_version": "2605.23939v1",
+        "source_material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed"
+      }
+    ],
+    "closest_adjacent": [
+      {
+        "name": "AWM/CER/WebCoach/ExpSeek",
+        "relationship": "Authors characterize these as unified episodic/workflow reuse",
+        "evidence_ids": [
+          "D13"
+        ],
+        "version": null,
+        "version_reason": "Exact neighbor version not fixed or independently read; lineage is attributed to references/related work in 2605.23939v1.",
+        "source_version": "2605.23939v1",
+        "source_material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed"
+      },
+      {
+        "name": "SkillWeaver/CASCADE/ALITA",
+        "relationship": "Executable skill lineage; SkillWeaver is compared at common GPT-4.1",
+        "evidence_ids": [
+          "D13",
+          "D05",
+          "D06"
+        ],
+        "version": null,
+        "version_reason": "Exact neighbor version not fixed or independently read; lineage is attributed to references/related work in 2605.23939v1.",
+        "source_version": "2605.23939v1",
+        "source_material_hash": "63f7022cd111f6bb6f0e864527d8eeff0ef9124c43acc95cc7492147be2ec0ed"
+      }
+    ],
+    "residue": "Different error granularity plausibly calls for different artifacts and maintenance, but no equal-capacity unified-library control establishes necessity.",
+    "remaining_gap": "Different error granularity plausibly calls for different artifacts and maintenance, but no equal-capacity unified-library control establishes necessity.",
+    "unresolved": [
+      "Nearest-neighbor primary-source versions not independently inspected; broad dynamic-site adaptation not tested by site/UI holdout."
+    ],
+    "evidence_ids": [
+      "D05",
+      "D06",
+      "D13"
+    ],
+    "stakes": "Different failure granularity can make stored web skills brittle and costly."
+  },
+  "rs_pattern": {
+    "status": "matched",
+    "primary": "heterogeneous_decomposition",
+    "supporting": [
+      "adapt_via_conditioning"
+    ],
+    "conditions": [
+      {
+        "condition": "Heterogeneity measured",
+        "status": "partial",
+        "evidence_ids": [
+          "D08",
+          "D09"
+        ],
+        "reason": "Error classes and selective improvements measured, though largely post-design and classifier-noisy."
+      },
+      {
+        "condition": "Partition load-bearing versus uniform treatment",
+        "status": "partial",
+        "evidence_ids": [
+          "D07",
+          "D09"
+        ],
+        "reason": "Separate pathways help, but no matched-capacity uniform representation."
+      },
+      {
+        "condition": "Treatment derived from component property",
+        "status": "partial",
+        "evidence_ids": [
+          "D01",
+          "D04"
+        ],
+        "reason": "Different signals motivated; thresholds and several heuristics unspecified."
+      },
+      {
+        "condition": "Structural conditioning holdout",
+        "status": "unmet",
+        "evidence_ids": [
+          "D05"
+        ],
+        "reason": "Task instances split within all five websites, not unseen categories/sites."
+      }
+    ],
+    "executes_pattern": true,
+    "resolves_problem": false,
+    "matches": [
+      {
+        "main_id": "heterogeneous_decomposition",
+        "sub_id": null,
+        "fit": "strong",
+        "evidence_ids": [
+          "D01",
+          "D02",
+          "D04"
+        ],
+        "reason": "Experience is partitioned by reasoning versus interaction properties and given different representations and updates. C04 is explicitly rejected: no high-impact-minority compression or error-bound construction.",
+        "role": "primary",
+        "tactic_steps_checked": [
+          "Experience is partitioned by reasoning versus interaction properties and given different representations and updates. C04 is explicitly rejected: no high-impact-minority compression or error-bound construction."
+        ],
+        "success/failure_checks": [
+          {
+            "condition": "Heterogeneity measured",
+            "status": "partial",
+            "evidence_ids": [
+              "D08",
+              "D09"
+            ],
+            "reason": "Error classes and selective improvements measured, though largely post-design and classifier-noisy."
+          },
+          {
+            "condition": "Partition load-bearing versus uniform treatment",
+            "status": "partial",
+            "evidence_ids": [
+              "D07",
+              "D09"
+            ],
+            "reason": "Separate pathways help, but no matched-capacity uniform representation."
+          },
+          {
+            "condition": "Treatment derived from component property",
+            "status": "partial",
+            "evidence_ids": [
+              "D01",
+              "D04"
+            ],
+            "reason": "Different signals motivated; thresholds and several heuristics unspecified."
+          }
+        ],
+        "version": "sha256:3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32"
+      },
+      {
+        "main_id": "adapt_via_conditioning",
+        "sub_id": null,
+        "fit": "partial",
+        "reason": "Retrieved reasoning guidance conditions a frozen agent; C03 not assigned because canonical learned/shared-space reference parsing and category holdout are absent.",
+        "evidence_ids": [
+          "D03",
+          "D05"
+        ],
+        "role": "supporting",
+        "tactic_steps_checked": [
+          "Retrieved reasoning guidance conditions a frozen agent; C03 not assigned because canonical learned/shared-space reference parsing and category holdout are absent."
+        ],
+        "success/failure_checks": [
+          {
+            "condition": "Structural conditioning holdout",
+            "status": "unmet",
+            "evidence_ids": [
+              "D05"
+            ],
+            "reason": "Task instances split within all five websites, not unseen categories/sites."
+          }
+        ],
+        "version": "sha256:3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32"
+      }
+    ],
+    "outside_taxonomy": false,
+    "reason": "Matched on the cited operations, not on card count; see per-match reasons and condition checks."
+  },
+  "domain_pattern": {
+    "namespace": "gui",
+    "matches": [
+      {
+        "main_id": "experience_memory_retrieval",
+        "sub_id": "C19",
+        "fit": "strong",
+        "evidence_ids": [
+          "D01",
+          "D04",
+          "D14"
+        ],
+        "reason": "Distils reusable app programs and guidance from own runs into persistent libraries.",
+        "main": "experience_memory_retrieval",
+        "sub": "C19",
+        "version": "sha256:430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+        "condition_checks": [
+          {
+            "condition": "Own-run artifacts retained and consumed later",
+            "status": "met",
+            "reason": "Reasoning and executable libraries are updated and reused.",
+            "evidence_ids": [
+              "D01",
+              "D04",
+              "D14"
+            ]
+          },
+          {
+            "condition": "Selective maintenance benefit isolated",
+            "status": "unmet",
+            "reason": "No frozen maintenance,patch-only,merge-only or capacity-matched unified-library control.",
+            "evidence_ids": [
+              "D04",
+              "D07",
+              "D08"
+            ]
+          },
+          {
+            "condition": "Unseen-environment retention/transfer",
+            "status": "unmet",
+            "reason": "Task split within same five sites,not site/UI change holdout.",
+            "evidence_ids": [
+              "D05",
+              "D12"
+            ]
+          }
+        ],
+        "conditions_version": "sha256:a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+      },
+      {
+        "main_id": "experience_memory_retrieval",
+        "sub_id": "K27",
+        "fit": "strong",
+        "evidence_ids": [
+          "D03"
+        ],
+        "reason": "Retrieves scenario-keyed experience into decision context.",
+        "main": "experience_memory_retrieval",
+        "sub": "K27",
+        "version": "sha256:430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+        "condition_checks": [
+          {
+            "condition": "State-keyed retrieval and fallback",
+            "status": "met",
+            "reason": "Structural/semantic scene match,at most one skill pertype,primitivefallback.",
+            "evidence_ids": [
+              "D03"
+            ]
+          },
+          {
+            "condition": "Retrieval contribution and growth cost isolated",
+            "status": "partial",
+            "reason": "Library gains reported;no isolated retrieval control or large-library scaling.",
+            "evidence_ids": [
+              "D03",
+              "D07",
+              "D12"
+            ]
+          },
+          {
+            "condition": "Failure/recovery and cost boundary",
+            "status": "partial",
+            "reason": "Localselectorrepair andguidance pruning exist;cost pertask/calls rise despite lower input per success.",
+            "evidence_ids": [
+              "D04",
+              "D10"
+            ]
+          }
+        ],
+        "conditions_version": "sha256:a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+      }
+    ],
+    "unassigned": [],
+    "revision_proposals": []
+  },
+  "pattern_mapping": [
+    {
+      "namespace": "gui",
+      "rs_main_id": "heterogeneous_decomposition",
+      "domain_main_id": "experience_memory_retrieval",
+      "domain_sub_id": "C19",
+      "relationship": "Differentiated treatment instantiated in a dual artifact experience library",
+      "evidence_ids": [
+        "D01",
+        "D04"
+      ],
+      "rs_main": "heterogeneous_decomposition",
+      "rs_sub": null,
+      "domain_namespace": "gui",
+      "domain": {
+        "namespace": "gui",
+        "main": "experience_memory_retrieval",
+        "sub": "C19"
+      },
+      "operation_correspondence": "Differentiated treatment instantiated in a dual artifact experience library",
+      "necessary_conditions_and_differences": "See cited RS tactic and gui condition_checks; shared operation is not equal empirical sufficiency."
+    },
+    {
+      "namespace": "gui",
+      "rs_main_id": "adapt_via_conditioning",
+      "domain_main_id": "experience_memory_retrieval",
+      "domain_sub_id": "K27",
+      "relationship": "Retrieval conditions unchanged backbone",
+      "evidence_ids": [
+        "D03"
+      ],
+      "rs_main": "adapt_via_conditioning",
+      "rs_sub": null,
+      "domain_namespace": "gui",
+      "domain": {
+        "namespace": "gui",
+        "main": "experience_memory_retrieval",
+        "sub": "K27"
+      },
+      "operation_correspondence": "Retrieval conditions unchanged backbone",
+      "necessary_conditions_and_differences": "See cited RS tactic and gui condition_checks; shared operation is not equal empirical sufficiency."
+    }
+  ],
+  "expectations": [
+    {
+      "id": "E01",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s1",
+          "note": "defines execution-based per-task checkers"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "OSWorld at 15 and 50 steps, averaged over 3 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2",
+          "note": "OSWorld planner+grounder success"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "OSWorld-Verified 15 steps, averaged over 4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "OSWorld-Verified (15 steps) as transfer target"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "OSWorld-Verified success after GRPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.08164#s1",
+          "note": "OSWorld full set"
+        }
+      ],
+      "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Web DOM agent, not Ubuntu/Windows desktop success.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E02",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.09856#s2"
+        }
+      ],
+      "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No mobile-agent improvement claim.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E03",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.02907#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.14721#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2411.02337",
+          "note": "authors concede evaluation on 165-task WebArena-Lite subset due to cost"
+        }
+      ],
+      "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+      "applicable": true,
+      "status": "partial",
+      "reason": "WebArena functional checks and explicit within-site 30/70 split; exact test IDs/counts and full-set comparison scope not supplied in text.",
+      "evidence_ids": [
+        "D05"
+      ],
+      "score_item": [
+        "measurement",
+        "holdout"
+      ]
+    },
+    {
+      "id": "E04",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2",
+          "note": "constructs Online-Mind2Web; WebVoyager overstates competence"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s1",
+          "note": "Online-Mind2Web and Mind2Web-Live"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "Online-Mind2Web as transfer benchmark"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2",
+          "note": "Mind2Web-Live"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "Mind2Web-Live"
+        }
+      ],
+      "applies_when": "a claim about web-agent success on real, live websites",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Self-hosted WebArena, not measured live-public-site success.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E05",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.14262#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2501.12326",
+          "note": "authors: ScreenSpot v1/v2 may not be robust enough to capture gains at scale"
+        }
+      ],
+      "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No screenshot-to-coordinate grounding model.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E06",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s1",
+          "note": "vs UGround"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3",
+          "note": "vs UGround-V1-7B, OS-Atlas-7B, Aguvis"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "vs UI-TARS-7B/72B, UGround-V1-7B, Aguvis, OS-Atlas"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012",
+          "note": "GPT-4o + UGround / Aguvis-7B / Aria-UI baselines"
+        }
+      ],
+      "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No new grounder comparison claim.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E07",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1",
+          "note": "vs UI-TARS-7B, SFT-only, offline RL"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2",
+          "note": "vs UI-TARS-7B/72B, GPT-4o+Aria-UI"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "UI-TARS-1.5-7B base"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "UI-TARS-1.5-7B, GTA1-7B+o3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "UI-TARS-1.5-7B base"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "UI-TARS-1.5-7B base"
+        }
+      ],
+      "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Libraries condition a fixed model; no trained native GUI policy.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E08",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2"
+        }
+      ],
+      "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not a planner plus interchangeable screenshot grounder.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E09",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s3",
+          "note": "vs SFT, Filtered BC, AWR, DigiRL"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2406.11896#s1",
+          "note": "vs Filtered BC, AWR"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s1",
+          "note": "vs SFT-only, offline GRPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "vs WebRL, NNetNav SFT"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "vs ORM-based PPO and ARPO"
+        }
+      ],
+      "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No policy-gradient or RL algorithm.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E10",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2406.11896#s2",
+          "note": "2.8% error vs human"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.02337#s2",
+          "note": "79.4% on 100 manually labelled rollouts"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "agreement with human labels; held-out agents"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s1",
+          "note": "accuracy vs human-corrected labels"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s2",
+          "note": "Spearman with human labels"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2311.08649#s2",
+          "note": "F1 0.74 vs manual labels"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.09038",
+          "note": "authors concede VLM judges can admit failures or reject valid successes; no precision reported"
+        }
+      ],
+      "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Binary success uses functional checkers; LM classifies failure type, not trajectory success.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E11",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2510.18596#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "precision on AgentRewardBench; low recall noted"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s1",
+          "note": "F1 under class imbalance"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2504.01382",
+          "note": "authors concede o4-mini WebJudge is overly conservative with low recall"
+        }
+      ],
+      "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No learned success/reward verifier reliability claim; failure-class confusion is assessed separately.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E12",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s1",
+          "note": "PRM-PPO vs ORM-PPO vs ARPO"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "VAGEN reward vs ProRe reward"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.18596",
+          "note": "authors: UPE not validated inside RL; abstention may bias kept samples"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2605.06732#s3",
+          "note": "theory: systematic reward bias is not removed by more rollouts"
+        }
+      ],
+      "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No learned RL reward.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E13",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2404.07972",
+          "note": "authors: more red-teaming could reduce remaining false positives/negatives"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2602.00575",
+          "note": "authors: OSWorld-Verified scripts produce false negatives (multiple solutions)"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s2",
+          "note": "reviewer audit on correct and deliberate-failure trajectories"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2610.05001#s2",
+          "note": "detection rate plus non-rejection rate on legal alternatives"
+        }
+      ],
+      "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Reuses existing WebArena checkers; does not build a benchmark, synthetic environment or RL reward pipeline.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E14",
+      "version": "cua-agents/v1",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2509.23738",
+          "note": "authors: GPT-4o labels show significant gap to human experts"
+        }
+      ],
+      "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No PRM training or step-reward labels.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E15",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2501.12326",
+          "note": "authors: offline benchmark results may fail to capture online capability"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543#s3",
+          "note": "SOP R^2=0.934 vs AndroidControl-High 0.470 against AndroidWorld"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2602.09856",
+          "note": "authors: offline evaluation cannot assess alternative valid trajectories or recovery"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2"
+        }
+      ],
+      "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Primary task success comes from interactive execution, not teacher-forced step metrics.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E16",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "3 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s2",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "4 runs"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s1",
+          "note": "3 runs, std 1.1%"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.10031",
+          "note": "3 repetitions"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2311.08649",
+          "note": "authors: monetary constraints prevented multiple runs"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2411.02337",
+          "note": "authors: random task generation raises variance across seeds"
+        }
+      ],
+      "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Three repeats mean±SD on 100-task error analysis; main five-domain score has no full-test spread.",
+      "evidence_ids": [
+        "D06",
+        "D09"
+      ],
+      "score_item": [
+        "statistics"
+      ]
+    },
+    {
+      "id": "E17",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s1",
+          "note": "reports both 15 and 50 steps"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2",
+          "note": "5 actions vs 30 for some baselines (condition)"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2",
+          "note": "differing step caps; efficiency stratified"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s3",
+          "note": "budget exhaustion"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.17790#s1",
+          "note": "average steps reported"
+        }
+      ],
+      "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Common 20-step cap/backbone and Shopping actual steps/calls; whole-benchmark exhaustion distribution absent.",
+      "evidence_ids": [
+        "D05",
+        "D10"
+      ],
+      "score_item": [
+        "cost"
+      ]
+    },
+    {
+      "id": "E18",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s2",
+          "note": "$ and seconds vs tree search"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s1",
+          "note": "wall-clock vs tree search"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2509.23738#s2",
+          "note": "gain vs N, plateau"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.00575#s2",
+          "note": "best-of-N vs N"
+        }
+      ],
+      "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Skill compatibility selection is not outcome reranking, lookahead or best-of-N.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E19",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2509.23738",
+          "note": "authors: AndroidWorld re-engineered; validated only by matching 32.8 baseline"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2",
+          "note": "modified scroll/type and +5 max steps disclosed"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.19723",
+          "note": "authors: 112 of 116 AndroidWorld tasks; one WebArena task per template"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "unscorable network/reCAPTCHA tasks disclosed"
+        }
+      ],
+      "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Task split disclosed; no re-engineered action/checker harness claimed.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E20",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2504.01382",
+          "note": "authors: websites evolve so tasks must be replaced"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2406.11896",
+          "note": "authors: frozen policies degrade over time due to site/app changes"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2510.09038",
+          "note": "authors: evolving websites complicate reproducibility"
+        }
+      ],
+      "applies_when": "a claim measured on live websites or live apps",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Self-hosted benchmark rather than live sites.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E21",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3"
+        }
+      ],
+      "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+      "applicable": true,
+      "status": "met",
+      "reason": "DOM-based setting stated and visual extension explicitly future work; no screenshot-only extrapolation warranted.",
+      "evidence_ids": [
+        "D05",
+        "D12"
+      ],
+      "score_item": [
+        "X",
+        "holdout"
+      ]
+    },
+    {
+      "id": "E22",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2509.11543",
+          "note": "relative gain 7B +104% vs 32B +37%"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2501.12326#s3",
+          "note": "2B/7B/72B"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.02345#s2",
+          "note": "seven backbones"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.04454#s3",
+          "note": "7B and 72B"
+        }
+      ],
+      "applies_when": "a claim that a training recipe generalises across policy backbones",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No parameter-training recipe; two backbone framework results recorded in claim matrix.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E23",
+      "version": "cua-agents/v1",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2504.01382#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s3"
+        }
+      ],
+      "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Failure causes audited with two annotators and three-run subset; no human-reference-length stratification.",
+      "evidence_ids": [
+        "D08",
+        "D09"
+      ],
+      "score_item": [
+        "statistics"
+      ]
+    },
+    {
+      "id": "E24",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2604.14262#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s2"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s3",
+          "note": "knowledge-free re-annotated instructions"
+        }
+      ],
+      "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "DOM interaction reliability is not a screenshot/layout robustness study.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E25",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "OSWorld-G refusal category"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2404.07972#s1",
+          "note": "infeasible tasks"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.04454",
+          "note": "authors: model cannot indicate uncertainty or refuse"
+        }
+      ],
+      "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Not an ambiguous/infeasible instruction benchmark claim.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E26",
+      "version": "cua-agents/v1",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.02907#s3"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1"
+        }
+      ],
+      "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No exploration-first synthetic policy-training trajectory recipe.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E27",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2410.05243#s1",
+          "note": "diminishing after ~100K screenshots"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2505.13227#s1",
+          "note": "10%-100% no saturation"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2412.19723",
+          "note": "authors: performance saturates at larger data scales"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2604.02345#s1",
+          "note": "log-linear"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "memory-size scaling"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2608.05891",
+          "note": "authors: returns saturate after 20K rollouts"
+        }
+      ],
+      "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Scaling actual accumulated skill experience, not synthetic GUI training samples; curve still recorded in evidence.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E28",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "test-query search actions filtered from in-domain data"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2412.19723#s1",
+          "note": "only 20 of 833 AndroidControl apps seen in synthesis"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.04126#s2",
+          "note": "train on generated sites, evaluate on OSWorld/Online-Mind2Web/MobileWorld"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "OOD GUI-Odyssey and OSWorld"
+        }
+      ],
+      "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+      "applicable": true,
+      "status": "partial",
+      "reason": "Tasks held out within websites; no held-out apps/sites or explicit query-overlap audit.",
+      "evidence_ids": [
+        "D05"
+      ],
+      "score_item": [
+        "holdout"
+      ]
+    },
+    {
+      "id": "E29",
+      "version": "cua-agents/v1",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2506.08012#s2"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2506.08012",
+          "note": "authors: reflection data covers visual/grounding errors, not high-level planning"
+        }
+      ],
+      "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "Reflection creates programs/context, not error-correction behaviour-cloning data or iterative policy fitting.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E30",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2609.00048#s1"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "intrinsic accuracy correlated with Mind2Web-Live SR"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.09856#s2",
+          "note": "AndroidWorld SR with lookahead"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.13232#s1",
+          "note": "downstream SR ablation"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2"
+        }
+      ],
+      "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No next-state world model.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E31",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s1",
+          "note": "H=1 best"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "dream length 4-5 best"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2410.13232",
+          "note": "authors: errors accumulate with search depth"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2402.01086",
+          "note": "authors: autoregressive error accumulation (robotics)"
+        }
+      ],
+      "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No imagined model rollout.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E32",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2601.22149#s2",
+          "note": "0% real underperforms SFT"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2608.05891",
+          "note": "authors: world-model-only data lowers ATP below base"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2403.03949#s3",
+          "note": "real co-training 2-3.5x over sim co-training (robotics)"
+        }
+      ],
+      "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No training on simulated world-model rollouts.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E33",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_limitation",
+          "ref": "2609.00048",
+          "note": "authors: VLM judges miss fine-grained task-state errors; more human-validated checks needed"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2602.14721#s1",
+          "note": "ranking checked under a second (Claude-Opus-4.1) judge"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2411.06559#s2",
+          "note": "intrinsic metric correlated with executed SR"
+        }
+      ],
+      "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No synthetic-environment fidelity judge.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E34",
+      "version": "cua-agents/v1",
+      "source_strength": "common_practice",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2609.07712#s1",
+          "note": "blind A/B realism; placeholder residual"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2504.03597#s1",
+          "note": "checkpoint ranking preserved vs real"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2403.03949#s1",
+          "note": "targeted twin vs generic assets"
+        },
+        {
+          "kind": "paper_limitation",
+          "ref": "2507.07067",
+          "note": "authors: residual sim-to-real gap is unavoidable after calibration"
+        }
+      ],
+      "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+      "applicable": false,
+      "status": "not_applicable",
+      "reason": "No replacement digital twin.",
+      "evidence_ids": [],
+      "score_item": []
+    },
+    {
+      "id": "E35",
+      "version": "cua-agents/v1",
+      "source_strength": "single_source",
+      "source_refs": [
+        {
+          "kind": "paper_practice",
+          "ref": "2510.09038#s1",
+          "note": "OOD gains small"
+        },
+        {
+          "kind": "paper_practice",
+          "ref": "2410.08164#s2"
+        }
+      ],
+      "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+      "applicable": true,
+      "status": "unmet",
+      "reason": "All memory/evaluation sites overlap; alternative backbone is not held-out environment transfer.",
+      "evidence_ids": [
+        "D05",
+        "D11"
+      ],
+      "score_item": [
+        "holdout"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "C1",
+      "original": "Dual-level skills yield 52.8% average success, +7.3 points.",
+      "support": "supported",
+      "scoped": "Author-reported five-site macro-average on fixed within-site held-out tasks, GPT-4.1/20 steps.",
+      "evidence_ids": [
+        "D05",
+        "D06"
+      ],
+      "counterevidence_ids": [],
+      "text": "Dual-level skills yield 52.8% average success, +7.3 points.",
+      "setting": "WebArena five sites;GPT-4.1,temperature0.1,20steps",
+      "baseline/control": "AgentOccam and other fixed-backbone frameworks",
+      "selection_vs_test": "Within-site stratified30% induction/70% test;not site holdout",
+      "result/denominator": "52.8five-site macro-average vs45.5AgentOccam;812tasks before split",
+      "counterevidence": [],
+      "allowed_conclusion": "Author-reported five-site macro-average on fixed within-site held-out tasks, GPT-4.1/20 steps."
+    },
+    {
+      "claim_id": "C2",
+      "original": "Differentiated representation/refinement causes the gains.",
+      "support": "scoped",
+      "scoped": "Induction arms and error-class tests favor both skills; no unified equal-capacity library or patch/merge/retrieval isolation.",
+      "evidence_ids": [
+        "D07",
+        "D08",
+        "D09"
+      ],
+      "counterevidence_ids": [
+        "D08"
+      ],
+      "text": "Differentiated representation/refinement causes the gains.",
+      "setting": "Same benchmark and fixed agent",
+      "baseline/control": "Remove successful interaction/failure interaction/failure reasoning induction;150-task attribution controls",
+      "selection_vs_test": "Training skill induction versus held-out same-site execution;attribution study separate150tasks",
+      "result/denominator": "49.8/48.5/47.8 versusfull52.8;human attribution54.0,LM49.3,random46.7,reversed44.7,no-skill46.0",
+      "counterevidence": [
+        "D08"
+      ],
+      "allowed_conclusion": "Induction arms and error-class tests favor both skills; no unified equal-capacity library or patch/merge/retrieval isolation."
+    },
+    {
+      "claim_id": "C3",
+      "original": "Continual accumulation adapts agents to dynamic web environments.",
+      "support": "scoped",
+      "scoped": "Fixed same-site held-out task improvement as training trajectories increase; changed websites and retention against frozen maintenance not isolated.",
+      "evidence_ids": [
+        "D04",
+        "D05"
+      ],
+      "counterevidence_ids": [
+        "D12"
+      ],
+      "text": "Continual accumulation adapts agents to dynamic web environments.",
+      "setting": "Persistent reasoning/interaction libraries with reflection",
+      "baseline/control": "Performance as experience accumulates;no frozen-maintenance or changed-site control",
+      "selection_vs_test": "Same five sites for experience and task holdout;no unseen-site evaluation",
+      "result/denominator": "Growing-library task-success benefit reported;independent retention/maintenance causal effect unresolved",
+      "counterevidence": [
+        "D12"
+      ],
+      "allowed_conclusion": "Fixed same-site held-out task improvement as training trajectories increase; changed websites and retention against frozen maintenance not isolated."
+    },
+    {
+      "claim_id": "C4",
+      "original": "Efficiency improves and framework generalizes.",
+      "support": "scoped",
+      "scoped": "Shopping input per success drops but per-task input/calls rise; Qwen framework gain without unseen-environment transfer or total offline cost.",
+      "evidence_ids": [
+        "D10",
+        "D11"
+      ],
+      "counterevidence_ids": [
+        "D10"
+      ],
+      "text": "Efficiency improves and framework generalizes.",
+      "setting": "137Shopping tasks for costs;additionalQwen2.5-7Bbackbone",
+      "baseline/control": "Before/after skills;not end-to-end offline plus online budget",
+      "selection_vs_test": "Within-environment test;backbone comparison not environment transfer",
+      "result/denominator": "Input/task61316->69858,input/success164.7k->151.9k,calls10.8->13.3,steps9.3->9.1;Qwen8.2->12.5",
+      "counterevidence": [
+        "D10"
+      ],
+      "allowed_conclusion": "Shopping input per success drops but per-task input/calls rise; Qwen framework gain without unseen-environment transfer or total offline cost."
+    }
+  ],
+  "assessment": {
+    "evidence_level": "online",
+    "claim_support": "scoped",
+    "author_report_only": true,
+    "our_run": false,
+    "retained": "Libraries are persistent and later tasks improve as experience accumulates; causal benefit of selective maintenance and dynamic-environment transfer unresolved.",
+    "scoped": "Online same-site task-holdout benefit with component and error attribution analyses; not demonstrated changed-site continual generalization.",
+    "rationale": "Clear differentiated artifacts and usable fallback/maintenance chain, with meaningful ablations and partial statistics. Central generality exceeds within-site split; route noise, missing matched unified control and lifecycle costs remain.",
+    "strongest_supported_claim": "Online same-site task-holdout benefit with component and error attribution analyses; not demonstrated changed-site continual generalization.",
+    "unresolved": [
+      "Different error granularity plausibly calls for different artifacts and maintenance, but no equal-capacity unified-library control establishes necessity."
+    ],
+    "audit_status": "pending",
+    "audit_note": "Independent aggregate scientific audit is pending; local validation is structural/arithmetic/source matching only, not reproduction."
+  },
+  "ratings": {
+    "G": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Concrete intent/execution bottleneck and lineage; external residual novelty incompletely verified.",
+      "evidence_ids": [
+        "D01",
+        "D13"
+      ],
+      "counterevidence_ids": [],
+      "search_scope": [
+        {
+          "material_id": "P",
+          "scope": "Entire fixed full text, including all rendered methods, experiments, references and appendices; no paper code executed."
+        }
+      ]
+    },
+    "M": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Different artifacts and updates fit different errors and predict selective benefit.",
+      "evidence_ids": [
+        "D01",
+        "D04",
+        "D09"
+      ],
+      "counterevidence_ids": [
+        "D08"
+      ],
+      "search_scope": [
+        {
+          "material_id": "P",
+          "scope": "Entire fixed full text, including all rendered methods, experiments, references and appendices; no paper code executed."
+        }
+      ]
+    },
+    "X": {
+      "status": "resolved",
+      "rating": 3,
+      "reason": "Retrieval, fallback, staging and persistence reconstructable; thresholds and dynamic retention incomplete.",
+      "evidence_ids": [
+        "D03",
+        "D04"
+      ],
+      "counterevidence_ids": [
+        "D12"
+      ],
+      "search_scope": [
+        {
+          "material_id": "P",
+          "scope": "Entire fixed full text, including all rendered methods, experiments, references and appendices; no paper code executed."
+        }
+      ]
+    },
+    "E": {
+      "measurement": {
+        "status": "resolved",
+        "rating": 3,
+        "reason": "Functional online checker and per-domain values; no independent checker audit.",
+        "evidence_ids": [
+          "D05",
+          "D06"
+        ],
+        "counterevidence_ids": [],
+        "search_scope": [
+          {
+            "material_id": "P",
+            "scope": "Entire fixed full text, including all rendered methods, experiments, references and appendices; no paper code executed."
+          }
+        ]
+      },
+      "causality": {
+        "status": "resolved",
+        "rating": 2,
+        "reason": "Component and human/random/reversed attribution controls informative; no uniform-capacity or maintenance-isolation control.",
+        "evidence_ids": [
+          "D07",
+          "D08",
+          "D09"
+        ],
+        "counterevidence_ids": [],
+        "search_scope": [
+          {
+            "material_id": "P",
+            "scope": "Entire fixed full text, including all rendered methods, experiments, references and appendices; no paper code executed."
+          }
+        ]
+      },
+      "holdout": {
+        "status": "resolved",
+        "rating": 1,
+        "reason": "Task-instance holdout within sites only; broader adaptation claim not tested.",
+        "evidence_ids": [
+          "D05",
+          "D11"
+        ],
+        "counterevidence_ids": [
+          "D12"
+        ],
+        "search_scope": [
+          {
+            "material_id": "P",
+            "scope": "Entire fixed full text, including all rendered methods, experiments, references and appendices; no paper code executed."
+          }
+        ]
+      },
+      "statistics": {
+        "status": "resolved",
+        "rating": 2,
+        "reason": "100-task three-run SD plus 150-task failure denominators; main score uncertainty absent.",
+        "evidence_ids": [
+          "D08",
+          "D09"
+        ],
+        "counterevidence_ids": [
+          "D06"
+        ],
+        "search_scope": [
+          {
+            "material_id": "P",
+            "scope": "Entire fixed full text, including all rendered methods, experiments, references and appendices; no paper code executed."
+          }
+        ]
+      },
+      "cost": {
+        "status": "resolved",
+        "rating": 2,
+        "reason": "Common budget with actual tokens/steps/calls on Shopping; calls rise and offline/latency costs absent.",
+        "evidence_ids": [
+          "D05",
+          "D10"
+        ],
+        "counterevidence_ids": [
+          "D10"
+        ],
+        "search_scope": [
+          {
+            "material_id": "P",
+            "scope": "Entire fixed full text, including all rendered methods, experiments, references and appendices; no paper code executed."
+          }
+        ]
+      }
+    }
+  },
+  "score": {
+    "raw": 65.0,
+    "display": 65.0,
+    "lower": 65.0,
+    "upper": 65.0,
+    "coverage": 1.0,
+    "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+    "provisional": true
+  },
+  "status": "reviewed",
+  "reason": "Complete fixed text reviewed; narrower author-reported online evidence than broad continual-generalization claim.",
+  "record_revisions": [
+    {
+      "previous_sha256": "ad711bd2252e7c526d7c546e387109939e71773fdadb1048f925b06eade6810e",
+      "timestamp": "2026-10-21T16:43:34.859033+00:00",
+      "reason": "Pre-closure contract-field normalization: canonical aliases, explicit inherited condition checks and existing-evidence matrix context; no ratings, score or claim-support changes.",
+      "ratings_unchanged": true,
+      "score_unchanged": true
+    },
+    {
+      "previous_sha256": "9371abad83fecc73fd00e10842b9ed0b6b14353e50d8a8d6d826fd6262a52998",
+      "timestamp": "2026-10-21T16:49:32.229661+00:00",
+      "reason": "Bind card versions to exact frozen hashes; explicitly mark unfixed neighbor versions; individualize LiteCUA inapplicability reasons; scope DRIVE RS checks to corresponding main. Scientific ratings and scores unchanged.",
+      "ratings_unchanged": true,
+      "score_unchanged": true
+    }
+  ]
+}

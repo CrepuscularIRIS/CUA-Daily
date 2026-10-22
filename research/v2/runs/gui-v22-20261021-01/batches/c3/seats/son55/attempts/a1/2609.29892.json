@@ -1,0 +1,1331 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c3",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "paper": {
+  "paper_key": "2609.29892",
+  "paper_id": "arXiv:2609.29892",
+  "title": "Qwen-Planner-Agent: A Closed-Loop AI-for-AI Framework for Real-World Mobile Planner Agents",
+  "version": "2609.29892v1",
+  "claim_type": "system_method",
+  "central_claim": "提出闭环“AI-for-AI”框架开发移动端 Planner Agent：AI 辅助任务构造/失败诊断→数据飞轮、课程式能力自适应 RL(CARE)、模型–Harness（Skills+Memory+反馈）共进化；Qwen-Planner-Agent 27B 在 MobilePA-Bench 上 Overall 77.05%，居所评估模型之首且输出成本较低。"
+ },
+ "provenance": {
+  "input_hash": "3a53a9b05139dc558c16026d9c92aba6c603593cded48db189b7c3080ebc16fb",
+  "rubric_version": "SCORE_SPEC v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": {
+   "taxonomy": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+   "conditions": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+  },
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_receipt_note": "worker has no session/receipt handle exposed; model name taken from system prompt",
+  "timestamp": "2026-10-21",
+  "blind_boundary_note": "No seat/aggregate/archive/old score read. research/patterns/assignments.jsonl was only grepped as a queue hint (truncated lines for 5 of 6 papers were displayed); its fit notes were not used as evidence and all pattern calls below were made from full text."
+ },
+ "materials": [
+  {
+   "material_id": "2609.29892",
+   "url": "https://arxiv.org/html/2609.29892v1",
+   "sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2609.29892.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Abstract/Intro",
+    "§2.1-2.5",
+    "§3.1-3.5",
+    "§4 Related Work",
+    "§5 Conclusion",
+    "Appendix A, B, C",
+    "References (skimmed)"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Figure images (captions only)"
+   ]
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "Q001",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "§2.1.2 Task Formulation (end)",
+   "quote": "The agent primarily acts through structured tools rather than pixel-coordinate GUI actions, although tools may return visual observations when needed.",
+   "support_explanation": "范围判定的关键：动作面是类型化工具调用，而非屏幕上的 GUI 操作",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q002",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "§4.2",
+   "quote": "Qwen-Planner-Agent focuses on this planning problem rather than introducing a new screen-grounding architecture.",
+   "support_explanation": "作者自述不做屏幕 grounding",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q003",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "§3.1",
+   "quote": "Tasks start from controlled initial states; completion is verified through tool calls, terminal state changes, or agent behavior.",
+   "support_explanation": "MobilePA-Bench 的验证方式：工具调用/终态变化",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q004",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "Appendix A.1",
+   "quote": "Agent-backed capabilities and atomic tools enter the same structured action interface",
+   "support_explanation": "“sub-agent”会话作为工具暴露；其内部是否为 GUI agent 未在材料中说明",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q005",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "§1",
+   "quote": "Within this framework, AI interprets execution feedback to identify capability gaps and guide coordinated updates to training data, learning strategies, and runtime support.",
+   "support_explanation": "中心主张（AI-for-AI 闭环）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q006",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "§1",
+   "quote": "Model parameters remain fixed during serving; offline updates are validated and versioned, with human review retained for ambiguous and release-critical decisions.",
+   "support_explanation": "更新为离线、版本化、人工把关——无服务期自我改进",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q007",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "§2.3.4",
+   "quote": "Feedback thus determines both which data to select and which tasks to construct next.",
+   "support_explanation": "反馈驱动的数据选择/任务构造",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q008",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "§2.4.3",
+   "quote": "A bounded LLM-based controller periodically configures the predefined scheduling parameters from recent training statistics and held-out development-set feedback.",
+   "support_explanation": "CARE 调度参数由 LLM 控制器依据开发集反馈配置",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q009",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "§2.4.3",
+   "quote": "A task-specific rule-based verifier or rubric-guided generative reward model assigns each trajectory a binary success indicator",
+   "support_explanation": "奖励来自规则验证器或 rubric 生成式奖励模型（未见人工校验）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q010",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "§3.2.1",
+   "quote": "Without advantage calibration, outputs become shorter but training accuracy remains substantially lower over the plotted interval.",
+   "support_explanation": "CARE 优势校准消融（仅训练曲线、读图）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q011",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "Table 1",
+   "quote": "Qwen-Planner-Agent | 27B | 77.05 | 77.79 | 74.76 | 86.25 | 59.55",
+   "support_explanation": "主结果 Overall 77.05",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q012",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "Table 1",
+   "quote": "GPT 6 Astra | Closed-Source | 76.84 | 75.71 | 74.73 | 93.25 | 53.93",
+   "support_explanation": "最强闭源对照仅差 0.21 点",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q013",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "Table 1",
+   "quote": "Qwen Baseline | 27B | 67.22 | 68.37 | 67.82 | 73.75 | 47.19",
+   "support_explanation": "同骨干未训练基线",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q014",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "§3.2.2",
+   "quote": "Holding the 27B checkpoint fixed, the Harness raises Overall from 71.90% to 77.05%",
+   "support_explanation": "固定检查点的 Harness 配对增益",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q015",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "§3.2.3",
+   "quote": "The updated policy is then evaluated under the same harness on a held-out evolve set, which serves as the development set for co-evolution rather than an independent final test set.",
+   "support_explanation": "共进化表的评测集同时是驱动 Harness 修订的开发集",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q016",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "Table 2",
+   "quote": "Model–Harness Co-evolution | 88.50 | 89.76 | 88.69 | 82.42 | 46.98",
+   "support_explanation": "共进化结果（开发集）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q017",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "Table 2",
+   "quote": "Model Only | 82.67 | 83.36 | 85.43 | 75.46 | 38.00",
+   "support_explanation": "对照臂",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q018",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "§3.1",
+   "quote": "Costs are estimated from mean output tokens per task, including thinking tokens, and the corresponding output-token rates.",
+   "support_explanation": "成本仅估输出 token",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q019",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "§2.5.4",
+   "quote": "We present this mechanism as a development pathway rather than claiming that sustained autonomous co-evolution has already been established.",
+   "support_explanation": "作者自我限定：共进化未被证明",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q020",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "§3.3.2",
+   "quote": "and several individual pairs show small regressions",
+   "support_explanation": "Harness 记忆在短历史基准上持平/个别倒退",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "Q021",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "§3.1 / References [11]",
+   "quote": "MobilePA-bench: benchmarking mobile planner agents on complex real-world tasks",
+   "support_explanation": "评测基准 MobilePA-Bench 来自同一作者群（参考文献 [11] 作者与贡献者名单重叠）",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "Q022",
+   "material_id": "2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "full text",
+   "quote": null,
+   "support_explanation": "全文查找：多种子/置信区间、judge 校验、Harness 的单变量消融（Skills vs Memory）——未报告",
+   "kind": "our_inference"
+  }
+ ],
+ "scope_review": {
+  "decision": "out_of_scope",
+  "confidence": "moderate",
+  "reason": "EVIDENCE.md 不收录“没有 GUI 或浏览器操作面的纯 API / function-calling agent”。本文策略以类型化工具调用为动作面（Q001），MobilePA-Bench 以工具调用/终态变化验证（Q003），作者明确不做屏幕 grounding（Q002）；GUI 操作至多经“sub-agent 会话”间接出现，材料中未描述其 GUI 感知/动作（Q004）。",
+  "counter_consideration": "数据来自“程序化沙箱+LLM 模拟+真机会话”三后端且含 App 内操作；若总控判定“真机会话上的手机操作”足以构成操作面，应改判 in-scope 并重评，本席已保留全部临时分析以便复用。",
+  "ask_controller": "请总控裁定范围；未得裁定前本记录 score=null。"
+ },
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "训练数据飞轮：任务构造 agent→自动 rollout→质检/人审→按能力与稳定性重加权",
+   "information": "训练 rollout 反馈 + 开发集（不入训练）按能力的失败分布；验证器可看特权状态证据而策略看不到",
+   "operation": "对已掌握任务下采样、对不稳定任务上采样、对缺失能力生成新任务；人审门控每个版本",
+   "output": "版本化数据配置（任务增删、采样权重）",
+   "conditions": "需要可复位任务与可靠完成判据",
+   "feedback": "任务级 rollout 分析 + 能力级开发集结果",
+   "selection_rule/data": "分析 agent 提议 → 人类批准/修改/拒绝 → 冻结下一轮",
+   "persistence": "版本化数据集与采样配置",
+   "later_use": "下一轮 SFT/RL",
+   "claimed_effect": "未单独量化数据飞轮的收益（无关闭消融）",
+   "failure_boundary": "无“无飞轮 vs 有飞轮”对照；人审介入程度未量化",
+   "evidence_ids": [
+    "Q007",
+    "Q006",
+    "Q022"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "CARE：按组成功率切换奖励机制（进度塑形/结果巩固/效率精炼）+ 效率态优势地板",
+   "information": "组内成功率 s̄、开发集指标；LLM 控制器仅配置预设参数",
+   "operation": "三段奖励 + σ_anchor 地板避免成功饱和组的效率差被标准化放大",
+   "output": "更短输出（-32.5% token）而训练准确率与 vanilla RL 相当",
+   "conditions": "需二值验证器；阈值 p_low/p_high 由 LLM 控制器周期配置",
+   "feedback": "训练统计 + 开发集",
+   "selection_rule/data": "LLM 控制器每 N 步依据开发集选参数",
+   "persistence": "策略权重",
+   "later_use": "主表评测",
+   "claimed_effect": "训练曲线上 token 减少 32.5%，去掉校准则准确率明显偏低",
+   "failure_boundary": "仅 4 个训练环境平滑曲线，无最终测试集消融，无多种子",
+   "evidence_ids": [
+    "Q008",
+    "Q009",
+    "Q010",
+    "Q022"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "部署时 Harness（Scenario Adapter 技能 + 持久记忆 + 反馈）与离线 LLM 编辑的 Harness 修订",
+   "information": "工具清单、检索到的记忆、历史；记忆仅作证据不授予权限",
+   "operation": "按可见工具编译技能指引；记忆捕获→验证→索引→检索→巩固→修订；交替“RL 训练模型/LLM 改 Harness 指令”",
+   "output": "更新后的 η（指令配置）与 θ（权重）",
+   "conditions": "服务期参数固定，更新离线、人审、版本化",
+   "feedback": "开发集（evolve 集）结果",
+   "selection_rule/data": "LLM 编辑者依据开发集反馈修订 Harness；是否保留由人审/规则检查决定",
+   "persistence": "版本化指令配置 + 记忆库",
+   "later_use": "下一轮训练 rollout 与服务",
+   "claimed_effect": "共进化 82.67→88.50 (MobilePA-Internal)、38.00→46.98 (MCPMark)",
+   "failure_boundary": "评测集=开发集（Q015）；Skills 与 Memory 的各自贡献未拆分；无多种子",
+   "evidence_ids": [
+    "Q006",
+    "Q014",
+    "Q015",
+    "Q016",
+    "Q017",
+    "Q019",
+    "Q022"
+   ]
+  }
+ ],
+ "retention_trace": {
+  "applicable": true,
+  "status": "provisional (scope pending)",
+  "before": "模型 θ(k)、Harness 指令 η(k)（k 轮）",
+  "proposed_change": "RL 更新 θ；LLM 编辑者基于开发集失败诊断修订 η；数据飞轮提议任务增删/权重调整",
+  "selection_data_rule": "开发集（evolve 集，不入训练）结果 + 规则检查 + 人审批准（Q006/Q015）",
+  "persisted_change": "版本化 η、数据配置、权重；记忆库",
+  "later_tasks": "下一轮训练与评测",
+  "measured_gain": "MobilePA-Internal 82.67→88.50（4 轮）；MCPMark 38.00→46.98（3 轮）——均在选择用的开发集上（Q015/Q016）",
+  "verdict": "task improvement 在开发集上；retained improvement（独立测试集上）与 improver improvement 未示；不可称 retained。"
+ },
+ "gap": {
+  "author_gap": "需要把执行经验转成对数据、训练、运行时支持的协同改进；真机交互昂贵、难并行（Q005 及 §1）。",
+  "checked_gap": "问题陈述偏方法论（“AI 参与开发 AI”），具体瓶颈（移动 planner 的 Tool/Memory/Skill/Sub-agent 能力）取决于其自家基准 MobilePA-Bench（Q021）；与 GUI 感知—动作环路的关系间接。",
+  "lineage": {
+   "ancestors": [
+    "Self-Instruct/LLM2LLM/AutoIF（反馈驱动数据）",
+    "GRPO/DAPO/GSPO（组相对 RL）",
+    "AutoHarness/Meta-Harness/Natural-language Agent Harnesses（Harness 优化）",
+    "DigiRL/MobileRL/Mobile-R1/PhoneBuddy（移动 RL）"
+   ],
+   "closest_adjacent": "正文引述的上述方法；本席未取得其全文，固定最近邻核查不完整。",
+   "source_versions": {}
+  },
+  "residue": "自述为开发路径而非已证实的持续共进化（Q019）。",
+  "stakes": "无独立测试集 → 共进化收益未被证明可迁移。",
+  "method_response": "三阶段闭环+版本化人审。",
+  "remaining_gap": "独立测试集上的共进化收益；Skills/Memory/Harness 编辑各自的因果；GUI 层面能力。",
+  "evidence_ids": [
+   "Q005",
+   "Q019",
+   "Q021"
+  ],
+  "unresolved": [
+   "最近邻原文未固定，gap 仅为临时判断；范围未裁定。"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "self_supervised_signal_engineering",
+  "supporting": [
+   "adapt_via_conditioning",
+   "assumption_audit_and_pivot"
+  ],
+  "matches": [
+   {
+    "main_id": "self_supervised_signal_engineering",
+    "sub_id": "rs:C08",
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "1 瓶颈是训练语料": "是（覆盖缺口与冗余）",
+     "2 可控生成器触达缺口": "AI 任务构造 agent（未示其扩展支持域的证据）",
+     "3 单一载重过滤": "验证器+质检+人审（多重，非单一）",
+     "4 迭代并把学习者误差回灌生成器": "有：失败分布→新任务（最接近 C08 的最强形式）",
+     "5 真实目标迁移与更廉价基线对比": "缺：无“无飞轮”对照"
+    },
+    "success/failure_checks": "success：回灌式生成命中；failure：无廉价替代基线、gate 非单一判据（命中）",
+    "evidence_ids": [
+     "Q006",
+     "Q007",
+     "Q022"
+    ],
+    "reason": "数据飞轮的“按学习者失败回灌任务生成”与 C08 最强形式一致，但缺少关闭消融，不能记为有效。"
+   },
+   {
+    "main_id": "adapt_via_conditioning",
+    "sub_id": null,
+    "role": "supporting",
+    "fit": "weak",
+    "tactic_steps_checked": {
+     "条件化代替重训": "Harness 的 Skills/Memory 在上下文注入而不更新参数"
+    },
+    "success/failure_checks": "未采用 C03 的统一上游调优阶段（不选子卡）",
+    "evidence_ids": [
+     "Q004",
+     "Q014"
+    ],
+    "reason": "运行时条件化对应；弱。"
+   },
+   {
+    "main_id": "assumption_audit_and_pivot",
+    "sub_id": null,
+    "role": "supporting",
+    "fit": "weak",
+    "tactic_steps_checked": {
+     "识别隐含假设": "组内标准差归一对成功饱和组放大效率差",
+     "放宽并修正": "σ_anchor 地板"
+    },
+    "success/failure_checks": "非形式化分析；无保证；不选子卡",
+    "evidence_ids": [
+     "Q010"
+    ],
+    "reason": "CARE 优势校准对应；弱。"
+   }
+  ],
+  "outside_taxonomy": false,
+  "reason": "临时匹配（范围待裁定）。",
+  "executes_pattern": {
+   "self_supervised_signal_engineering/rs:C08": "partial"
+  },
+  "resolves_problem": {
+   "closed-loop co-evolution": "not_shown (dev=eval)"
+  }
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "version": "taxonomy@sha256:430aa36290ec",
+  "matches": [
+   {
+    "namespace": "gui",
+    "main": "exploration_driven_task_synthesis",
+    "sub": "gui:K15",
+    "version": "taxonomy@sha256:430aa36290ec",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "cond": "S5 失败条件课程且证明可迁移",
+      "status": "unmet",
+      "note": "失败驱动任务生成无消融/迁移",
+      "evidence_ids": [
+       "Q007",
+       "Q022"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "Q007"
+    ],
+    "reason": "失败/覆盖条件化任务提议；非 GUI 屏幕探索。"
+   },
+   {
+    "namespace": "gui",
+    "main": "experience_memory_retrieval",
+    "sub": "gui:K27",
+    "version": "taxonomy@sha256:430aa36290ec",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "cond": "F3 其他环境收益未隔离",
+      "status": "present",
+      "note": "记忆评测为 LoCoMo/LongMemEval/BEAM，与移动任务环境不同，但与规划增益未关联",
+      "evidence_ids": [
+       "Q020"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "Q014",
+     "Q020"
+    ],
+    "reason": "持久记忆检索入上下文。"
+   },
+   {
+    "namespace": "gui",
+    "main": "trajectory_level_policy_training",
+    "sub": null,
+    "version": "taxonomy@sha256:430aa36290ec",
+    "fit": "weak",
+    "condition_checks": [
+     {
+      "cond": "S1 SFT 初始化后在线 RL",
+      "status": "met",
+      "note": "冷启动 SFT + 在线 RL",
+      "evidence_ids": [
+       "Q008"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "Q008"
+    ],
+    "reason": "训练范式一致，动作面为工具调用。"
+   }
+  ],
+  "unassigned": [
+   "模型–Harness 共进化（LLM 编辑 Harness 指令）无对应领域卡"
+  ],
+  "revision_proposals": []
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "self_supervised_signal_engineering",
+   "rs_sub": "rs:C08",
+   "domain": {
+    "namespace": "gui",
+    "main": "exploration_driven_task_synthesis",
+    "sub": "gui:K15"
+   },
+   "operation_correspondence": "失败分布回灌任务构造 ↔ 失败/覆盖条件化任务提议。",
+   "required_conditions_and_differences": "领域卡要求迁移证明；RS 要求关闭消融——均缺。",
+   "evidence_ids": [
+    "Q007",
+    "Q022"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report execution-checked success rate on OSWorld (or OSWorld-Verified) for desktop computer-use claims, stating the step budget (15 vs 50 steps) and observation setting",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report online success on AndroidWorld for mobile-agent claims, not only offline AndroidControl/AITW step metrics",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report success on WebArena (self-hosted, functional-correctness checkers) for web-agent training or planning claims; if the 165-task WebArena-Lite or a per-template subset is used, say so and justify it",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Evaluate live-web agents on Online-Mind2Web (human-validated, start URL given, no search engine) or Mind2Web-Live rather than only WebVoyager, where a naive search-and-click agent already solves 51% of sampled tasks",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report GUI grounding on ScreenSpot-Pro (high-resolution professional desktop) and ScreenSpot-v2, not only ScreenSpot v1, which saturates (7B and 72B indistinguishable)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare a new grounder against UGround(-V1-7B), Aguvis-7B/72B, OS-Atlas-7B and UI-TARS(-1.5) at matched backbone size",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare a native end-to-end GUI policy against UI-TARS(-1.5)-7B (or the same backbone's SFT-only model) and against an agentic framework (GPT-4o/o3 planner + specialised grounder such as UGround, Aria-UI, Jedi, GTA1)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E08",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For planner-grounder systems, hold the planner fixed and swap grounders (e.g. GPT-4o + UGround vs + Aguvis vs + Jedi), and report the planner alone",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare GUI online-RL methods against DigiRL, WebRL, filtered BC / AWR and an SFT-only model trained on the same data",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": true,
+   "status": "partial",
+   "reason": "[provisional] 仅与 Vanilla RL 在训练曲线上对比，无 DigiRL/MobileRL 等基线。",
+   "evidence_ids": [
+    "Q010"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E10",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Validate an LLM/VLM success judge or outcome reward model against human labels on trajectories from agents not used to build it (agreement/accuracy, plus the resulting success-rate gap)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "[provisional] rubric 引导的生成式奖励模型/规则验证器未见人工校验。",
+   "evidence_ids": [
+    "Q009",
+    "Q022"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E11",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report judge reliability separately for positive and negative verdicts (precision and NPV, or precision/recall per class), not only overall accuracy",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E12",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "When a learned judge or PRM is the RL reward, show downstream policy gain against an alternative reward (rule/script checker, ORM vs PRM, another judge), and address reward hacking or bias",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Measure execution checkers (evaluation scripts) two-sidedly: false negatives on alternative valid solutions as well as false positives",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For PRMs or step-level verifiers, ablate the label source (human vs GPT-4o-generated step labels)",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Do not rest an agent capability claim on offline step accuracy (AndroidControl, Multimodal-Mind2Web, GUI Odyssey) alone; add an online benchmark or show the offline metric predicts online success",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E16",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "[provisional] 无多种子/置信区间。",
+   "evidence_ids": [
+    "Q022"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E18",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For inference-time search or best-of-N (simulated lookahead, verifier reranking), report cost/latency and the number of candidates, and compare against real-execution tree search where reset is possible",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Disclose and validate any modification to an online benchmark harness (re-implemented checkers, changed action implementations, dropped tasks, extra steps)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E20",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For live-web results, state the evaluation date and handle site drift (replace outdated tasks, report blocked/CAPTCHA tasks)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E22",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report results across backbone sizes (e.g. 7B and 32B/72B), since gains from GUI data/RL recipes shrink with model size",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": true,
+   "status": "met",
+   "reason": "[provisional] 35B-A3B 与 27B 两个规模均报告（Table 1）。",
+   "evidence_ids": [
+    "Q011",
+    "Q013"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E23",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Stratify online success by human reference step count (difficulty) and audit failure causes",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E24",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Test grounding robustness under controlled perturbations (zoom, text size, window position/clutter, relational instructions) with matched pairs",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report refusal / infeasible-task behaviour (instructions with no valid target)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare a synthetic-trajectory recipe against an instruction-first / task-driven synthesis baseline with the same executor and similar data size",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Show a data-scaling curve (fraction or count of synthetic samples vs downstream score) and say where it saturates",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "[provisional] 声明最终评测与开发评测分离（§3.1），但共进化表的评测集就是驱动 Harness 修订的开发集。",
+   "evidence_ids": [
+    "Q015",
+    "Q016"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E29",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Ablate error-correction/reflection data against filtered behaviour cloning at the same iteration count",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Evaluate a GUI world model by downstream agent success and closed-loop (multi-step, autoregressive) rollouts, not only teacher-forced one-step fidelity",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Ablate imagination / lookahead horizon, since world-model errors compound beyond 1 (lookahead) or about 5 (training) steps",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For training in a world model, include sim-only vs real-anchored vs SFT-only arms",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Back world-model or synthetic-environment fidelity scores with a second independent judge, human validation or executable checks, not a VLM judge from the same family as the training reward",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For a digital twin / simulated app used for training or evaluation, measure its realism and whether it preserves the ranking of agents or checkpoints seen in the real environment",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "范围待裁定（动作面为工具调用而非 GUI）；除 provisional 列出者外，该期望所针对的 GUI/Web/grounding 主张本文不涉及。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For memory/retrieval agents, show gains on environments other than those the memory was built from",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "applicable": true,
+   "status": "partial",
+   "reason": "[provisional] 记忆在三个独立基准上评测并给配对增益，但增益集中于长历史，短历史个别倒退，且 Mem0 为外部引用。",
+   "evidence_ids": [
+    "Q020"
+   ],
+   "score_item": "E.holdout"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "Qwen-Planner-Agent 27B 在 MobilePA-Bench 上 Overall 77.05%，高于 GPT 6 Astra 76.84% 等",
+   "setting": "1,700+ 可执行任务，工具/终态验证",
+   "baseline/control": "各模型/系统（设置与预算未逐一说明）",
+   "selection_vs_test": "声明最终评测与开发评测分离；基准为同作者群所建",
+   "result/denominator": "77.05 vs 76.84（0.21 点），无方差",
+   "evidence_ids": [
+    "Q011",
+    "Q012",
+    "Q003",
+    "Q021"
+   ],
+   "counterevidence": [
+    "Q022"
+   ],
+   "allowed_conclusion": "作者报告：自家基准上与最强闭源模型打平。"
+  },
+  {
+   "claim_id": "C2",
+   "text": "模型–Harness 共进化优于“仅模型”“模型+Harness”",
+   "setting": "MobilePA-Internal（内部）与 MCPMark",
+   "baseline/control": "Model Only / Model+Harness",
+   "selection_vs_test": "评测集即开发集",
+   "result/denominator": "82.67→88.50；38.00→46.98",
+   "evidence_ids": [
+    "Q015",
+    "Q016",
+    "Q017",
+    "Q019"
+   ],
+   "counterevidence": [
+    "Q015"
+   ],
+   "allowed_conclusion": "仅为开发集上的 task improvement；不可称 retained/improver 收益。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_note": "[provisional] 状态变化验证的交互任务；非 GUI 操作面；开发集=评测集（共进化部分）",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "[provisional] 作者报告：在其自建基准上 Overall 与最强闭源持平；固定检查点下加 Harness 提升 5.15 点（71.90→77.05）。",
+  "cannot_claim": [
+   "共进化的独立收益",
+   "GUI 操作能力",
+   "CARE 在最终测试集上的收益"
+  ],
+  "unresolved": [
+   "范围裁定",
+   "judge 校验",
+   "基准与方法的作者重叠"
+  ],
+  "reproduction_note": "全部为作者报告。"
+ },
+ "ratings": {
+  "G": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "out_of_scope 暂挂：G（范围待裁定，未给分）",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "M": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "out_of_scope 暂挂：M（范围待裁定，未给分）",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "X": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "out_of_scope 暂挂：X（范围待裁定，未给分）",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "out_of_scope 暂挂：E.measurement（范围待裁定，未给分）",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "out_of_scope 暂挂：E.causality（范围待裁定，未给分）",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "out_of_scope 暂挂：E.holdout（范围待裁定，未给分）",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "out_of_scope 暂挂：E.statistics（范围待裁定，未给分）",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "out_of_scope 暂挂：E.cost（范围待裁定，未给分）",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": null,
+  "display": null,
+  "lower": 0.0,
+  "upper": 100.0,
+  "coverage": 0.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+ },
+ "status": {
+  "state": "out_of_scope",
+  "reason": "动作面为工具调用，GUI 操作面缺失（Q001-Q004）；待总控裁定。全文已读，临时分析保留。"
+ },
+ "outside_taxonomy": false,
+ "conditional_assessment_if_in_scope": {
+  "non_scoring_advisory": true,
+  "strengths": [
+   "开发集/最终测试集分离声明",
+   "固定检查点的 Harness 配对消融",
+   "输出成本报告（仅输出 token）",
+   "规模 35B-A3B/27B 双报告"
+  ],
+  "weaknesses": [
+   "共进化结果在开发集上",
+   "MobilePA-Bench 与作者同源",
+   "奖励模型/验证器无校验",
+   "无多种子",
+   "Skills/Memory 未拆分",
+   "动作面非 GUI"
+  ],
+  "expected_claim_support": "scoped"
+ },
+ "readable_rationale": "该论文是移动端“工具调用型 planner”的 AI-for-AI 开发报告，GUI 操作面缺失（作者自述不做 grounding），按 EVIDENCE 的“纯 API/function-calling agent 不收录”标为 out_of_scope（中等把握），请总控裁定。附带的临时观察：共进化收益是在驱动 Harness 修订的开发集上测得，基准与作者同源，奖励模型无校验、无多种子。"
+}

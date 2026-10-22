@@ -1,0 +1,107 @@
+[
+ {
+  "field": "evidence_level",
+  "sol": null,
+  "son55": "offline"
+ },
+ {
+  "field": "claim_support",
+  "sol": "unresolved",
+  "son55": "scoped"
+ },
+ {
+  "field": "status",
+  "sol": "needs_evidence",
+  "son55": "reviewed"
+ },
+ {
+  "field": "domain.matches",
+  "sol": [],
+  "son55": [
+   "trajectory_level_policy_training/None"
+  ]
+ },
+ {
+  "field": "rating.X",
+  "sol": {
+   "status": "unknown",
+   "rating": null
+  },
+  "son55": {
+   "status": "resolved",
+   "rating": 1
+  }
+ },
+ {
+  "field": "rating.E.statistics",
+  "sol": {
+   "status": "unknown",
+   "rating": null
+  },
+  "son55": {
+   "status": "resolved",
+   "rating": 1
+  }
+ },
+ {
+  "field": "rating.E.cost",
+  "sol": {
+   "status": "resolved",
+   "rating": 1
+  },
+  "son55": {
+   "status": "resolved",
+   "rating": 2
+  }
+ },
+ {
+  "field": "expectation.E04",
+  "sol": "not_applicable",
+  "son55": "unknown"
+ },
+ {
+  "field": "expectation.E07",
+  "sol": "unmet",
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E09",
+  "sol": "unmet",
+  "son55": "partial"
+ },
+ {
+  "field": "expectation.E13",
+  "sol": "not_applicable",
+  "son55": "unknown"
+ },
+ {
+  "field": "expectation.E16",
+  "sol": "unknown",
+  "son55": "unmet"
+ },
+ {
+  "field": "expectation.E20",
+  "sol": "not_applicable",
+  "son55": "unknown"
+ },
+ {
+  "field": "expectation.E21",
+  "sol": "partial",
+  "son55": "not_applicable"
+ },
+ {
+  "field": "expectation.E23",
+  "sol": "unknown",
+  "son55": "unmet"
+ },
+ {
+  "field": "expectation.E28",
+  "sol": "not_applicable",
+  "son55": "unmet"
+ },
+ {
+  "field": "expectation.E34",
+  "sol": "not_applicable",
+  "son55": "unknown"
+ }
+]

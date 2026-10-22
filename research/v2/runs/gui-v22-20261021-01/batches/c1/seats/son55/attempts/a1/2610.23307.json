@@ -1,0 +1,1668 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c1",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "paper": {
+  "paper_key": "2610.23307",
+  "paper_id": "2610.23307",
+  "title": "MobileInject: Evaluating Reasoning-to-Action Security of MLLM-Based Mobile Agents under Cross-Modal Consistency Injection",
+  "version": "2610.23307v1",
+  "claim_type": "evaluation_resource",
+  "central_claim": "MobileInject is the first benchmark for multimodal (visual+textual) indirect injection and reasoning-to-action security of MLLM-based mobile agents: 108 executable, resettable Android-emulator instances (11 scenarios, 9 risk categories) with deterministic state oracles; Cross-Modal Consistency Injection (CMCI) reveals a cross-modal reinforcement effect, two reinforced attacks (MRCD, RCI) intensify trust manipulation and reasoning hijacking, and a Reasoning Security Diagnosis Framework (RSDF) shows agents are broadly vulnerable with many failures stemming from early reasoning hijacking."
+ },
+ "provenance": {
+  "input_hash": "28c0cca3c5e43fc35f3a1a269b63a8f0a4506d44fbaaa27257dca80bfabb6390",
+  "rubric_version": "radar-score-spec v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": {
+   "taxonomy": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+   "conditions": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+  },
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "pattern_protocol_hash": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_note": "actual_model taken from the worker system prompt (Sonnet 5.5, claude-sonnet-5-5[1m]); no session id / receipt exposed to the worker, so null",
+  "timestamp": "2026-10-21T16:34:46+00:00"
+ },
+ "materials": [
+  {
+   "material_id": "M-2610.23307-html",
+   "url": "https://arxiv.org/html/2610.23307v1",
+   "sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2610.23307.txt",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Related Work",
+    "3 MobileInject 3.1-3.4",
+    "4 Reasoning Security Diagnosis Framework",
+    "5 Experiments 5.1-5.5",
+    "6 Conclusion",
+    "References"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "note": "HTML text render (73,100 chars) read in full including all tables; figures (Fig 1-12) are not in the text; no appendix in this render, so prompts/templates/oracle code/diagnoser model are not visible."
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "E001",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "Abstract",
+   "quote": "we introduce MobileInject, the first benchmark for evaluating mobile agents against multimodal injection attacks and reasoning-to-action security risks.",
+   "support_explanation": "Central claim ('first' is not verifiable from the text).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E002",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "Abstract",
+   "quote": "MobileInject provides a high-fidelity interactive mobile evaluation framework covering 11 scenarios, 9 security-risk categories, and 108 executable risk instances.",
+   "support_explanation": "Scale of the resource.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E003",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "1 Introduction",
+   "quote": "Consequently, attack success alone is insufficient to characterize the end-to-end security of mobile agents from safety awareness to action execution.",
+   "support_explanation": "Author gap: outcome-only evaluation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E004",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "1 Introduction",
+   "quote": "First, many benchmarks rely on unrealistic sandbox environments",
+   "support_explanation": "Author gap (realism); judged via Table 1 checklist, not by running neighbours.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E005",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "2 Related Work",
+   "quote": "Nevertheless, existing evaluations still lack a systematic benchmark for multimodal indirect injection in realistic mobile ecosystems.",
+   "support_explanation": "Positioning vs MobileSafetyBench, GhostEI-Bench, OS-Sentinel, AgentDoG, AgentDojo.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E006",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "3.1 Threat Model",
+   "quote": "Attacker can inject malicious payloads only through these observable surfaces, but cannot alter the system prompt, model parameters, operating system, or genuine user instructions.",
+   "support_explanation": "Black-box, trusted-instruction/untrusted-observation threat model.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E007",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "1 Introduction",
+   "quote": "First, MobileInject constructs a high-fidelity Android environment based on a full-function emulator, covering 11 application scenarios, 108 executable risk instances, and 9 security-risk categories, to characterize realistic multi-step and cross-application execution processes.",
+   "support_explanation": "Environment is an Android emulator; fidelity to real devices is asserted, not measured.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E008",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "3.2",
+   "quote": "MobileInject executes each instance in a resettable Android emulator rather than as a static prompt–response sample.",
+   "support_explanation": "Online, resettable, stateful execution.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E009",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "3.2",
+   "quote": "Admission requires schema completeness, successful reset, payload visibility in the declared channel, executable benign and adversarial paths, and replayable oracle checks.",
+   "support_explanation": "Instance admission/quality control.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E010",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "3.2",
+   "quote": "Because the 108 instances reuse workflow and objective structures, they are not semantically or statistically independent; our analysis accounts for both dependencies.",
+   "support_explanation": "108 instances = reused workflow x objective structure; effective sample is smaller.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E011",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "3.2",
+   "quote": "The stress layer defines 12 registered adversarial objectives spanning nine consequence categories",
+   "support_explanation": "12 objectives x 9 workflows = 108.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E012",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "3.3",
+   "quote": "CMCI varies where the same adversarial instruction is exposed: the visual channel only, the textual channel only, or both.",
+   "support_explanation": "The manipulated axis.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E013",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "5.2",
+   "quote": "Fig. 11 then fixes the exposure count: repeating text changes AGR from 68.8% to 72.9%, and repeating the visual payload leaves AGR at 27.8%, whereas presenting the same content once in each channel reaches 85.4% AGR and 0.0% UA.",
+   "support_explanation": "Equal-exposure control isolating the cross-modal effect.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E014",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "5.2 Fig 11 caption",
+   "quote": "Equal-exposure CMCI controls on Gemini-2.5-Flash, averaged over four major benign workflows.",
+   "support_explanation": "The decisive control is one model and four workflows.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E015",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "3.3",
+   "quote": "Among the 108 paired instances, 30 exhibit the same reversal pattern: neither VOI nor TOI reaches the adversarial state, whereas aligned CMCI does.",
+   "support_explanation": "Matched-trajectory evidence (30/108).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E016",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "5.2",
+   "quote": "Their AGR ranges from 70.83% to 77.08%, whereas the full setting reaches 85.40% with 0.00% UA.",
+   "support_explanation": "Budget-matched controls (length, repetition, exposure, salience) for MRCD+RCI.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E017",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "5.2",
+   "quote": "Fig. 9 shows that adding RCI raises AGR by 5.6–16.7 percentage points across all six base attacks while reducing UA in every comparison.",
+   "support_explanation": "RCI ablation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E018",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "4",
+   "quote": "an automated semantic evaluator separate from the tested mobile agent proposes the diagnostic vector",
+   "support_explanation": "RSDF awareness/rationale/action labels come from an LLM evaluator whose identity is not stated in the text.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E019",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "4",
+   "quote": "Awareness requires an explicit link to the injected source, conflict, or risk; generic caution is insufficient.",
+   "support_explanation": "Labelling rubric for SAR.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E020",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "4",
+   "quote": "The implemented pipeline additionally enforces that an episode whose adversarial state oracle fires contains at least one action-hijack label and, when rationale is available, at least one rationale-hijack label",
+   "support_explanation": "Outcome constraint: RHR/AHR are forced to be consistent with the oracle, which inflates their coupling by construction.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E021",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "4",
+   "quote": "They are verified against Android/application state rather than inferred from the tested agent’s response.",
+   "support_explanation": "Deterministic state oracles for UA and AGR.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E022",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "4",
+   "quote": "OSS ranges from 0 to 100 and summarizes the outcome and trajectory dimensions with fixed weights",
+   "support_explanation": "Auxiliary OSS has ad hoc weights (40/20/20/20).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E023",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "5 Implementation",
+   "quote": "every complete framework–model condition has N = 108 N=108 episodes",
+   "support_explanation": "N=108 per condition (9 models x 2 frameworks).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E024",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "3.2",
+   "quote": "execute up to 20 agent actions while logging each observation, rationale, parsed action, target, and state transition",
+   "support_explanation": "Equal step budget of 20 actions for all conditions.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E025",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "5 Implementation",
+   "quote": "For supported comparisons, we report cluster-paired inference; for the remaining conditions, we report point estimates over the full grid.",
+   "support_explanation": "Statistics: cluster-paired inference only for some comparisons.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E026",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "Table 4",
+   "quote": "GLM-4.5V | 66.67% | 0.93% | 83.33%",
+   "support_explanation": "UC column (clean utility) takes values 100/88.89/77.78/66.67/44.44 (multiples of 1/9, one 75.00): our inference is that UC rests on about nine benign workflows.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E027",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "5.1",
+   "quote": "Average UA is only 17.59% under MobAgent and 11.11% under M3A, while AGR remains high at 51.13% and 50.31%.",
+   "support_explanation": "Headline vulnerability numbers.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E028",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "5.1",
+   "quote": "Low AGR can reflect weak execution ability rather than genuine reasoning-level resistance.",
+   "support_explanation": "Own caveat showing why outcome-only AGR misleads; motivates RSDF.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E029",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "5.1",
+   "quote": "For GLM-4.5V, RHR and AHR are identical in both frameworks (98.15%/98.15% and 99.07%/99.07%), showing strong reasoning–action coupling.",
+   "support_explanation": "Coupling claim; identical values are partly forced by E020.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E030",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "5.3",
+   "quote": "These families map to 9 top-level risk consequences, including the merger of content tampering and data destruction under data-integrity compromise.",
+   "support_explanation": "Table 7 shows 10 categories; the paper merges two to get 9 (reporting inconsistency).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E031",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "5.4",
+   "quote": "Table 9 shows that the evaluated prompt-level defenses provide only limited protection under MobileInject.",
+   "support_explanation": "Defense claim; all five defenses are prompt-level and run on GLM-4.5V/MobAgent (Table 9 baseline).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E032",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "5.4",
+   "quote": "SCoT reduces AGR by 12.96 points, yet its cluster interval crosses zero",
+   "support_explanation": "Best defense effect is not statistically distinguishable from zero.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E033",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "5.5",
+   "quote": "Fig. 5 reports empirical repeated-run variances of at most 2.15 for the displayed RSDF metrics and 3.85 for the displayed endpoint metrics on the 0–100 scale",
+   "support_explanation": "Repeatability of some metrics; sample of reruns is small.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E034",
+   "material_id": "M-2610.23307-html",
+   "material_sha256": "47a057f24862277a168acccc304835edb8ae8fdb352ab4d2db6a6b6a325d7410",
+   "locator": "5.5",
+   "quote": "The directory labels for the 2026 and 2028 files are swapped, so we use the embedded seed rather than the folder name.",
+   "support_explanation": "Data-handling slip disclosed; three seeds for GLM-4.5V/MobAgent endpoints only.",
+   "kind": "author_report"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "Poisoned observation pair (visual screenshot content, textual UI/XML representation) of an Android workflow; baseline: single-channel textual (TOI) or visual (VOI) injection",
+   "information": "Attacker controls only observable carriers (rendered content and UI metadata); cannot touch system prompt, model, OS or user instruction. Agents see screenshot + UI/XML.",
+   "operation": "Embed the same registered adversarial instruction in the visual carrier, the textual carrier, or both (CMCI), with equal-exposure controls (TOI+, VOI+ repeat twice in one channel).",
+   "output": "Endpoint pair (benign oracle, adversarial oracle) per episode; AGR, UA, OCM.",
+   "conditions": "Payload visible in the declared channel (admission rule); 20-action budget; resettable snapshot.",
+   "feedback": "none; templates are fixed (non-adaptive)",
+   "selection_rule": "not_applicable for retention; instance admission by contract checks",
+   "selection_data": "not_applicable",
+   "persistence": "Benchmark release (108 instances); not a learning system.",
+   "later_use": "Benchmark evaluation of agents/defenses.",
+   "claimed_effect": "Cross-modal reinforcement: CMCI 85.4% AGR vs 72.9% (text x2) and 27.8% (visual x2) on Gemini-2.5-Flash.",
+   "failure_boundary": "Single model/four workflows for the control; non-adaptive carriers; dependent instances.",
+   "evidence_ids": [
+    "E006",
+    "E008",
+    "E009",
+    "E012",
+    "E013",
+    "E014",
+    "E015"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "Attack templates under a fixed adversarial objective: MRCD (role-like authority/consent/rationale fragments) and RCI (context-anchored bridge making the goal switch look like the next step)",
+   "information": "Visible current-app context; registered adversarial GoalID; no model internals.",
+   "operation": "Compose authority/priority/consent cues and a pseudo-rationale bridge into the carrier text.",
+   "output": "Higher AGR and lower UA than six base attacks and budget-matched baselines (InjecAgent+, Manipulation+, Important+).",
+   "conditions": "Matched length, objective repetitions, exposure rounds and interface salience.",
+   "feedback": "none (fixed templates)",
+   "selection_rule": "not_applicable",
+   "selection_data": "not_applicable",
+   "persistence": "templates released with the benchmark",
+   "later_use": "stress layer of the benchmark",
+   "claimed_effect": "+5.6 to +16.7 pp AGR from RCI; full setting 85.40% vs 70.83-77.08% for matched baselines (Gemini-2.5-Flash).",
+   "failure_boundary": "Not tested against adaptive/informed defenders; only prompt defenses evaluated.",
+   "evidence_ids": [
+    "E016",
+    "E017",
+    "E031",
+    "E032"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "Trajectory-level diagnosis: RSDF (collector, two deterministic state oracles, LLM Reasoning Diagnoser, aggregator, reporter)",
+   "information": "Post-exposure observation, emitted rationale, action, target and resulting device state; evaluator is separate from the tested agent.",
+   "operation": "Oracles give (benign, adversarial) endpoints; an LLM evaluator proposes awareness / rationale-hijack / action-hijack labels with trace anchors; a conflict checker and adjudication merge them; outcome constraints force labels to agree with the oracle.",
+   "output": "UC, UA, AGR, OCM, SAR, RHR, RHOR, RHD, AHR, AHAS, RATM and the OSS summary.",
+   "conditions": "Rationale available in the recorded trace.",
+   "feedback": "none",
+   "selection_rule": "conflict-directed adjudication (details not in text)",
+   "selection_data": "not_applicable",
+   "persistence": "records per episode",
+   "later_use": "benchmark reporting",
+   "claimed_effect": "Shows reasoning hijack precedes harmful action (RHR 75-81% average) and low AGR can hide hijacked reasoning.",
+   "failure_boundary": "Evaluator identity and human agreement not reported; outcome constraints couple RHR and AHR with AGR.",
+   "evidence_ids": [
+    "E018",
+    "E019",
+    "E020",
+    "E021",
+    "E028",
+    "E029"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "Existing agent-security evaluations are unrealistic sandboxes, lack multimodal indirect injection in mobile ecosystems, and report only binary success so they cannot show risk awareness, reasoning hijack or action propagation.",
+  "checked_gap": "A concrete, testable residue: whether synchronized visual+textual exposure amplifies injection beyond repeated single-channel exposure, and whether outcome-only metrics mask hijacked reasoning. Both are probed with controls. The neighbour comparison (GhostEI-Bench, MobileSafetyBench, OS-Sentinel, AgentDoG) rests on the authors' feature checklist (Table 1), not on running those benchmarks. Note dual-channel exposure is the natural condition for on-screen text (it also appears in UI/XML), so 'cross-modal consistency' partly describes ordinary exposure.",
+  "lineage": [
+   "Tool-agent injection benchmarks (InjecAgent, AgentDojo) -> mobile/GUI safety benchmarks (MobileSafetyBench, GhostEI-Bench, OS-Sentinel, AgentDoG, DTAP) -> MobileInject (dual-channel injection, reinforced templates, trajectory diagnosis)"
+  ],
+  "closest_adjacent": [
+   {
+    "name": "GhostEI-Bench (arXiv 2510.20333)",
+    "source_version": "described in MobileInject related work/Table 1; not pinned locally",
+    "solved": "environmental injection in dynamic on-device mobile environments",
+    "remaining": "per authors: cross-modal consistency and reasoning-action diagnosis not covered (TOI/VOI only partial)"
+   },
+   {
+    "name": "MobileSafetyBench (Lee et al. 2026)",
+    "source_version": "described by authors; not pinned locally",
+    "solved": "safety of mobile device control agents; MobAgent framework reused here",
+    "remaining": "per authors: no CMC/RIT/RATM"
+   },
+   {
+    "name": "OS-Sentinel / AgentDoG",
+    "source_version": "described by authors; not pinned locally",
+    "solved": "trajectory-level safety detection / diagnostic guardrail",
+    "remaining": "per authors: partial diagnosis, no state-verified reasoning-action matrix"
+   }
+  ],
+  "residue": "Cross-modal reinforcement and reasoning-hijack coupling are measured with templated, non-adaptive injections and with an LLM diagnoser whose reliability is not shown.",
+  "stakes": "Mobile agents touching payments, messages and files can turn untrusted content into state-changing actions.",
+  "method_response": "Resettable emulator, dual state oracles, CMCI/MRCD/RCI templates with matched controls, RSDF trajectory diagnosis.",
+  "remaining_gap": "Adaptive attackers and system-level defenses, real devices/apps, human-validated diagnostic labels, independence of instances.",
+  "evidence_ids": [
+   "E003",
+   "E004",
+   "E005",
+   "E010",
+   "E014"
+  ],
+  "unresolved": [
+   "Nearest-neighbour benchmark sources are not pinned in the input package (only author characterisation); 'first benchmark' cannot be verified here. Request to controller if neighbour-level checking is wanted for both seats."
+  ]
+ },
+ "rs_pattern": {
+  "primary": "controlled_diagnostic_design",
+  "supporting": [
+   "assumption_audit_and_pivot"
+  ],
+  "outside_taxonomy": false,
+  "reason": "Operation executed: name the measurement confound (repeated exposure vs cross-modal placement; outcome-only AGR hiding hijacked reasoning), build instances where one axis moves (visual/textual/both with equal-exposure controls, length/repetition/salience-matched baselines), and score with oracles independent of the agent; the headline is the divergence between apparent and de-confounded outcomes. Supporting: MRCD/RCI violate the trusted-instruction/untrusted-observation boundary agents rely on (exploit-type pivot).",
+  "executes_pattern": "yes for the controlled-instance part; partial for independent ground truth (state oracles yes; RSDF diagnostic labels no) and for the scope/transfer step (single-model controls, emulator only).",
+  "resolves_problem": "partially evidenced: matched controls show an effect on one model; whether it holds across models and for natural exposure is not shown, and the reasoning-coupling claim is partly constructed by outcome-constrained labelling.",
+  "matches": [
+   {
+    "main_id": "controlled_diagnostic_design",
+    "sub_id": "C02",
+    "role": "primary",
+    "fit": "strong-partial",
+    "tactic_steps_checked": "C02 steps: (1) name the confound - met (repeated exposure; outcome-only metrics); (2) controlled instances varying one axis - met (TOI/VOI/TOI+/VOI+/CMCI; matched MRCD/RCI baselines; 30/108 matched reversals) but the central control uses one model and four workflows; (3) ground truth independent of the evaluand - partial (deterministic state oracles yes; LLM-diagnosed rationale/action labels are outcome-constrained and not human-validated); (4) divergence as headline - met (low AGR vs high RHR, GLM-4.6V M3A 14.81% AGR vs 77.78% RHR); (5) scope bounded/transfer shown - partial (emulator-only, 108 dependent instances, templated carriers).",
+    "success_failure_checks": {
+     "met": [
+      "matched-condition construction",
+      "trivial same-channel repeat baselines",
+      "independent state oracles for outcomes"
+     ],
+     "partial": [
+      "external anchor for diagnostic labels",
+      "scope/transfer beyond controlled regime"
+     ],
+     "unmet": [
+      "human validation of the LLM diagnoser"
+     ],
+     "failure_modes_present": [
+      "circularity risk in RSDF (outcome-constrained labels)",
+      "synthetic/contrived carriers with unshown transfer to natural exposure"
+     ]
+    },
+    "evidence_ids": [
+     "E010",
+     "E012",
+     "E013",
+     "E014",
+     "E015",
+     "E016",
+     "E020",
+     "E021",
+     "E028"
+    ],
+    "reason": "The benchmark's value rests on controlled one-axis contrasts reported as divergences; C02 is its sole sibling under the parent."
+   },
+   {
+    "main_id": "assumption_audit_and_pivot",
+    "sub_id": null,
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": "Audit-and-pivot success conditions: exploit success traced to a structural property (visual grounding + textual executability produce a priority switch) - partial; validated against an adaptive/informed defender - unmet (only static prompt defenses); prior methods shown to fail because of the audited assumption - partial (single-channel evaluation misses the effect). Sub-cards C01/C05/C11/C19/C28/C29 concern representational loci, identifiability, selection rules or optimisation theory, none matching, so sub=null.",
+    "success_failure_checks": {
+     "partial": [
+      "structural-property explanation of exploit success"
+     ],
+     "unmet": [
+      "adaptive defender validation"
+     ]
+    },
+    "evidence_ids": [
+     "E006",
+     "E015",
+     "E016",
+     "E031",
+     "E032"
+    ],
+    "reason": "Needed to account for MRCD/RCI as boundary-violating attack constructions distinct from the diagnostic design."
+   }
+  ]
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "environmental_injection_attacks",
+    "sub": "C30",
+    "version": "taxonomy 430aa36290ec",
+    "fit": "strong",
+    "condition_checks": [
+     {
+      "id": "S1",
+      "kind": "success",
+      "status": "met",
+      "reason": "Payloads sit in channels the agent reads (rendered content and UI/XML), with a payload-visibility admission rule.",
+      "evidence_ids": [
+       "E009",
+       "E012"
+      ]
+     },
+     {
+      "id": "S2",
+      "kind": "success",
+      "status": "unmet",
+      "reason": "No placement ablation relative to the expected target; only modality/template/repetition are varied.",
+      "evidence_ids": [
+       "E012"
+      ]
+     },
+     {
+      "id": "S3",
+      "kind": "success",
+      "status": "met",
+      "reason": "Completion by adversarial state oracle plus trajectory-level hijack/awareness measures reported separately.",
+      "evidence_ids": [
+       "E018",
+       "E021",
+       "E028"
+      ]
+     },
+     {
+      "id": "S4",
+      "kind": "success",
+      "status": "met",
+      "reason": "Nine MLLMs x two agent frameworks with per-category and per-workflow breakdowns.",
+      "evidence_ids": [
+       "E023",
+       "E027"
+      ]
+     },
+     {
+      "id": "S5",
+      "kind": "success",
+      "status": "partial",
+      "reason": "RSDF localises where reasoning vs action is hijacked but there is no component/agent-graph attribution.",
+      "evidence_ids": [
+       "E020",
+       "E029"
+      ]
+     },
+     {
+      "id": "S6",
+      "kind": "success",
+      "status": "unmet",
+      "reason": "MRCD/RCI are fixed templates; no optimised attack with transfer/retargeting tests.",
+      "evidence_ids": [
+       "E016",
+       "E017"
+      ]
+     },
+     {
+      "id": "F1",
+      "kind": "failure",
+      "status": "partial",
+      "reason": "Payload presence is guaranteed by admission rules and workflows were chosen for natural third-party carriers; natural exposure rate is not estimated.",
+      "evidence_ids": [
+       "E009"
+      ]
+     },
+     {
+      "id": "F2",
+      "kind": "failure",
+      "status": "met",
+      "reason": "Two frameworks, nine backends, online emulator execution.",
+      "evidence_ids": [
+       "E008",
+       "E023"
+      ]
+     },
+     {
+      "id": "F3",
+      "kind": "failure",
+      "status": "unmet",
+      "reason": "The intermediate hijack judgement relies on an LLM evaluator with unstated identity and no reported human agreement.",
+      "evidence_ids": [
+       "E018",
+       "E020"
+      ]
+     },
+     {
+      "id": "F4",
+      "kind": "failure",
+      "status": "unmet",
+      "reason": "108 dependent, templated, non-adaptive instances.",
+      "evidence_ids": [
+       "E010",
+       "E016"
+      ]
+     },
+     {
+      "id": "F5",
+      "kind": "failure",
+      "status": "met",
+      "reason": "Black-box text templates; no white-box component.",
+      "evidence_ids": [
+       "E006"
+      ]
+     },
+     {
+      "id": "F6",
+      "kind": "failure",
+      "status": "partial",
+      "reason": "Success conditions are registered as state oracles, but oracle code and per-instance criteria are not in the text.",
+      "evidence_ids": [
+       "E009",
+       "E021"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E006",
+     "E009",
+     "E012",
+     "E013",
+     "E021",
+     "E027"
+    ]
+   },
+   {
+    "main": "environmental_injection_attacks",
+    "sub": "C33",
+    "version": "as above",
+    "fit": "strong",
+    "condition_checks": [
+     {
+      "id": "C33.works",
+      "kind": "success",
+      "status": "met",
+      "reason": "Executable final-state check of adversarial goal (AGR) plus intermediate rationale/action hijack measures; shows hijacking far more frequent than completion for some models (GLM-4.6V M3A: AGR 14.81% vs RHR 77.78%).",
+      "evidence_ids": [
+       "E021",
+       "E028",
+       "E029"
+      ]
+     },
+     {
+      "id": "C33.fails",
+      "kind": "failure",
+      "status": "unmet",
+      "reason": "Judge reliability not quantified (no human agreement) and labels are outcome-constrained.",
+      "evidence_ids": [
+       "E018",
+       "E020"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E020",
+     "E021",
+     "E028"
+    ]
+   },
+   {
+    "main": "injection_defense_isolation",
+    "sub": "C34",
+    "version": "as above",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "id": "S2",
+      "kind": "success",
+      "status": "met",
+      "reason": "Benign utility (UA) is reported with each defense.",
+      "evidence_ids": [
+       "E031"
+      ]
+     },
+     {
+      "id": "S4",
+      "kind": "success",
+      "status": "partial",
+      "reason": "Five standard in-context defenses are evaluated (none proposed), on one model/framework.",
+      "evidence_ids": [
+       "E031"
+      ]
+     },
+     {
+      "id": "F1",
+      "kind": "failure",
+      "status": "unmet",
+      "reason": "Generic defensive prompts give limited protection (observed finding, not a design choice).",
+      "evidence_ids": [
+       "E031",
+       "E032"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E031",
+     "E032"
+    ]
+   }
+  ],
+  "unassigned": [
+   "Reasoning-hijack onset/depth/transition-matrix diagnosis (RHOR, RHD, RATM) has no direct card; nearest is C33 (attempt vs completion) extended to step-level; candidate for a revision proposal."
+  ],
+  "revision_proposals": [
+   "(single paper, not candidate) extend environmental_injection_attacks/C33 with step-level reasoning-vs-action hijack diagnosis and a warning that outcome-constrained labels make RHR/AHR partly tautological with AGR."
+  ]
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "controlled_diagnostic_design",
+   "rs_sub": "C02",
+   "domain": {
+    "namespace": "gui",
+    "main": "environmental_injection_attacks",
+    "sub": "C33"
+   },
+   "operation_correspondence": "RS: report the divergence between apparent and de-confounded performance as the headline. Domain C33: report hijack attempt and attack completion separately. MobileInject's AGR (oracle completion) vs RHR/AHR/SAR (trajectory diagnosis) is that divergence.",
+   "conditions_differences": "C02 requires ground truth independent of the evaluand; RSDF labels are LLM-produced and outcome-constrained. C33's failure mode (unvalidated judge) is present.",
+   "evidence_ids": [
+    "E018",
+    "E020",
+    "E021",
+    "E028"
+   ]
+  },
+  {
+   "rs_main": "controlled_diagnostic_design",
+   "rs_sub": "C02",
+   "domain": {
+    "namespace": "gui",
+    "main": "environmental_injection_attacks",
+    "sub": "C30"
+   },
+   "operation_correspondence": "RS: instances where one axis (channel placement) varies with equal-exposure controls. Domain C30: plant natural-language instructions in attacker-writable content (messages, email, calendar, posts) of legitimate apps.",
+   "conditions_differences": "C30 evidence is mostly web/desktop; here Android emulator workflows. Placement ablation (C30/S2) absent.",
+   "evidence_ids": [
+    "E008",
+    "E012",
+    "E013",
+    "E015"
+   ]
+  },
+  {
+   "rs_main": "assumption_audit_and_pivot",
+   "rs_sub": null,
+   "domain": {
+    "namespace": "gui",
+    "main": "injection_defense_isolation",
+    "sub": "C34"
+   },
+   "operation_correspondence": "RS: violate the trusted-vs-untrusted boundary assumption with an exploit. Domain C34: in-context defenses (delimiters, prescriptive, SCoT, safe guide, sandwich) are the assumption being violated/tested.",
+   "conditions_differences": "The paper evaluates defenses rather than proposing one; no adaptive attacker against a defense.",
+   "evidence_ids": [
+    "E016",
+    "E031",
+    "E032"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2404.07972#s1",
+    "paper_practice:2501.12326#s1",
+    "paper_practice:2505.13227#s2",
+    "paper_practice:2510.17790#s1",
+    "paper_practice:2601.04126#s2",
+    "paper_practice:2602.00575#s2",
+    "paper_practice:2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2410.05243#s2",
+    "paper_practice:2412.04454#s3",
+    "paper_practice:2412.19723#s1",
+    "paper_practice:2501.12326#s3",
+    "paper_practice:2506.08012#s2",
+    "paper_practice:2509.11543#s1",
+    "paper_practice:2509.23738#s1",
+    "paper_practice:2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('an empirical claim that a method improves task success of an Android/mobile GUI agent') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2410.13232#s2",
+    "paper_practice:2411.02337#s3",
+    "paper_practice:2410.02907#s2",
+    "paper_practice:2601.22149#s2",
+    "paper_practice:2602.14721#s2",
+    "paper_practice:2412.19723#s1",
+    "paper_limitation:2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2504.01382#s2",
+    "paper_practice:2411.06559#s1",
+    "paper_practice:2601.04126#s2",
+    "paper_practice:2410.05243#s2",
+    "paper_practice:2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim about web-agent success on real, live websites') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2501.12326#s3",
+    "paper_practice:2505.13227#s1",
+    "paper_practice:2509.11543",
+    "paper_practice:2604.14262#s2",
+    "paper_limitation:2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2412.04454#s1",
+    "paper_practice:2501.12326#s3",
+    "paper_practice:2505.13227#s1",
+    "paper_practice:2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a grounding model or grounding-data recipe beats prior GUI grounders') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2509.11543#s1",
+    "paper_practice:2506.08012#s2",
+    "paper_practice:2509.23738#s1",
+    "paper_practice:2510.17790#s1",
+    "paper_practice:2601.04126#s2",
+    "paper_practice:2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a trained end-to-end GUI agent model improves online task success') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2410.05243#s2",
+    "paper_practice:2412.04454#s3",
+    "paper_practice:2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a grounding component (or the planner-grounder split itself) improves agent task success') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2411.02337#s3",
+    "paper_practice:2406.11896#s1",
+    "paper_practice:2509.11543#s1",
+    "paper_practice:2601.22149#s2",
+    "paper_practice:2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2406.11896#s2",
+    "paper_practice:2411.02337#s2",
+    "paper_practice:2504.01382#s1",
+    "paper_practice:2602.00575#s1",
+    "paper_practice:2412.19723#s2",
+    "paper_practice:2311.08649#s2",
+    "paper_limitation:2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "The RSDF semantic evaluator (unnamed LLM) labels awareness, rationale hijack and action hijack, but no agreement with human labels or held-out validation is reported in the text (only run-to-run variance).",
+   "evidence_ids": [
+    "E018",
+    "E020"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2510.18596#s2",
+    "paper_practice:2504.01382#s1",
+    "paper_practice:2602.00575#s1",
+    "paper_limitation:2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "No per-class reliability (precision/NPV or recall) for positive and negative diagnostic labels is reported.",
+   "evidence_ids": [
+    "E018",
+    "E019"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2509.23738#s1",
+    "paper_practice:2602.00575#s2",
+    "paper_limitation:2510.18596",
+    "paper_practice:2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a learned reward model or verifier improves GUI-agent RL training') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_limitation:2404.07972",
+    "paper_limitation:2602.00575",
+    "paper_practice:2609.07712#s2",
+    "paper_practice:2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Oracles are admitted through replayable checks and reset tests, but false-negative rates on alternative valid adversarial paths and false-positive rates are not quantified.",
+   "evidence_ids": [
+    "E009",
+    "E021"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "paper_practice:2509.23738#s2",
+    "paper_limitation:2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a process reward model for GUI steps improves RL or best-of-N') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_limitation:2501.12326",
+    "paper_practice:2509.11543#s3",
+    "paper_limitation:2602.09856",
+    "paper_practice:2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim of improved agent capability measured with offline, teacher-forced step metrics') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2501.12326#s1",
+    "paper_practice:2505.13227#s2",
+    "paper_practice:2510.17790#s1",
+    "paper_practice:2504.01382#s1",
+    "paper_practice:2609.10031",
+    "paper_limitation:2311.08649",
+    "paper_limitation:2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Three-seed AGR for one condition (81.5/80.6/83.3%) and repeated-run variance for displayed metrics; most conditions are point estimates, only some comparisons have cluster-paired inference.",
+   "evidence_ids": [
+    "E025",
+    "E033",
+    "E034"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2501.12326#s1",
+    "paper_practice:2410.13232#s2",
+    "paper_practice:2504.01382#s2",
+    "paper_practice:2609.07712#s3",
+    "paper_practice:2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Same 20-action budget for all models/frameworks; steps used and budget exhaustion rates are not reported.",
+   "evidence_ids": [
+    "E024"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2410.13232#s2",
+    "paper_practice:2411.06559#s1",
+    "paper_practice:2509.23738#s2",
+    "paper_practice:2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_limitation:2509.23738",
+    "paper_practice:2506.08012#s2",
+    "paper_limitation:2412.19723",
+    "paper_practice:2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_limitation:2504.01382",
+    "paper_limitation:2406.11896",
+    "paper_limitation:2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim measured on live websites or live apps') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2404.07972#s2",
+    "paper_practice:2410.05243#s2",
+    "paper_practice:2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": true,
+   "status": "partial",
+   "reason": "The attack channel (visual/textual/both) is separated and agents jointly consume both observations, but results are not reported by agent observation setting (screenshot-only vs a11y-augmented) across M3A and MobAgent.",
+   "evidence_ids": [
+    "E012",
+    "E014"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2509.11543",
+    "paper_practice:2501.12326#s3",
+    "paper_practice:2604.02345#s2",
+    "paper_practice:2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a training recipe generalises across policy backbones') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "paper_practice:2504.01382#s2",
+    "paper_practice:2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Results are stratified by consequence category and workflow and failures are audited via OCM/RATM, but not by human reference length or step count.",
+   "evidence_ids": [
+    "E030"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2604.14262#s1",
+    "paper_practice:2404.07972#s2",
+    "paper_practice:2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a grounder or agent is robust or generalises across visual layouts') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2505.13227#s1",
+    "paper_practice:2404.07972#s1",
+    "paper_limitation:2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a grounding or agent benchmark claim where some instructions are ambiguous or infeasible') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "paper_practice:2410.02907#s3",
+    "paper_practice:2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2410.05243#s1",
+    "paper_practice:2505.13227#s1",
+    "paper_limitation:2412.19723",
+    "paper_practice:2604.02345#s1",
+    "paper_practice:2510.09038#s1",
+    "paper_limitation:2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that synthetic GUI grounding, transition or trajectory data improves agents') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2411.06559#s2",
+    "paper_practice:2412.19723#s1",
+    "paper_practice:2601.04126#s2",
+    "paper_practice:2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "paper_practice:2506.08012#s1",
+    "paper_practice:2506.08012#s2",
+    "paper_limitation:2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that reflection, self-correction or first-error recovery data improves GUI agents') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2609.00048#s1",
+    "paper_practice:2411.06559#s2",
+    "paper_practice:2602.09856#s2",
+    "paper_practice:2410.13232#s1",
+    "paper_practice:2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2411.06559#s1",
+    "paper_practice:2601.22149#s2",
+    "paper_limitation:2410.13232",
+    "paper_limitation:2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a method that plans or trains with multi-step rollouts inside a learned GUI world model') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2601.22149#s2",
+    "paper_limitation:2608.05891",
+    "paper_practice:2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that policy training on world-model or simulated GUI rollouts improves agents') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_limitation:2609.00048",
+    "paper_practice:2602.14721#s1",
+    "paper_practice:2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2609.07712#s1",
+    "paper_practice:2504.03597#s1",
+    "paper_practice:2403.03949#s1",
+    "paper_limitation:2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Fidelity of the emulator workflows to real devices/apps is asserted ('high-fidelity', 'realistically evolving'), but no realism check or ranking-preservation test against real environments is reported.",
+   "evidence_ids": [
+    "E007",
+    "E008"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "paper_practice:2510.09038#s1",
+    "paper_practice:2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that experience memory or retrieved trajectories improve GUI agents') is not the paper's claim: a mobile-agent security benchmark (injection attacks, diagnosis, prompt-level defenses) run on an Android emulator with nine MLLMs and two agent frameworks; it trains nothing, claims no policy/grounder improvement, and has no OSWorld/AndroidWorld/WebArena/live-web/world-model component.",
+   "evidence_ids": [],
+   "score_item": null
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "Mobile agents are broadly vulnerable: low utility under attack and high adversarial goal success.",
+   "setting": "9 MLLMs x {MobAgent, M3A}, N=108 instances each, 20-action budget, Android emulator",
+   "baseline_control": "UC clean utility; no human/safe-agent reference",
+   "selection_vs_test": "benchmark evaluation; templates authored by benchmark creators",
+   "result_denominator": "avg UA 17.59%/11.11%, AGR 51.13%/50.31%; per-model range AGR 24.07-83.33% (MobAgent)",
+   "evidence_ids": [
+    "E010",
+    "E023",
+    "E024",
+    "E026",
+    "E027"
+   ],
+   "counterevidence": "Instances are dependent (workflow x objective); UC apparently estimated from ~9 benign tasks; most conditions single-run; templated non-adaptive injections.",
+   "allowed_conclusion": "Under these authored templates and this emulator, all evaluated agent-model pairs show substantial AGR and low UA; not an estimate of real-world exposure."
+  },
+  {
+   "claim_id": "C2",
+   "text": "Cross-Modal Consistency Injection reinforces attacks beyond repeated single-channel exposure.",
+   "setting": "Gemini-2.5-Flash, four major benign workflows (Fig 11), 108 paired instances for reversal pattern",
+   "baseline_control": "TOI, VOI, TOI+, VOI+ (equal exposure)",
+   "selection_vs_test": "n/a",
+   "result_denominator": "AGR 68.8/72.9 (text x1/x2), 27.8 (visual x2), 85.4 (both); 30/108 matched reversals",
+   "evidence_ids": [
+    "E012",
+    "E013",
+    "E014",
+    "E015"
+   ],
+   "counterevidence": "One model; averaged over four workflows; dual-channel is the natural exposure for on-screen text, so the contrast partly measures realism of single-channel ablations.",
+   "allowed_conclusion": "On Gemini-2.5-Flash with these workflows, dual-channel placement yields higher AGR than equal-exposure single-channel controls."
+  },
+  {
+   "claim_id": "C3",
+   "text": "MRCD and RCI intensify trust manipulation and reasoning hijacking.",
+   "setting": "Gemini-2.5-Flash, budget-matched controls",
+   "baseline_control": "InjecAgent+, Manipulation+, Important+ matched on length, repetition, exposure rounds, salience",
+   "selection_vs_test": "n/a",
+   "result_denominator": "70.83-77.08% vs 85.40% AGR; RCI +5.6 to +16.7 pp",
+   "evidence_ids": [
+    "E016",
+    "E017"
+   ],
+   "counterevidence": "Authors' own baseline variants; single model; templates fixed.",
+   "allowed_conclusion": "Reinforced templates raise AGR over matched variants on one model."
+  },
+  {
+   "claim_id": "C4",
+   "text": "Reasoning is hijacked early and propagates to action; low AGR does not imply security.",
+   "setting": "RSDF over all 18 conditions",
+   "baseline_control": "none (descriptive)",
+   "selection_vs_test": "n/a",
+   "result_denominator": "avg RHR 75.31%/80.86%, AHR 70.78%/67.59%",
+   "evidence_ids": [
+    "E018",
+    "E020",
+    "E028",
+    "E029"
+   ],
+   "counterevidence": "Labels are outcome-constrained (RHR>=AGR by construction) and produced by an unvalidated LLM evaluator; GLM-4.5V RHR=AHR identity follows from the constraint.",
+   "allowed_conclusion": "Tentative; the 'low AGR can hide hijacked reasoning' point is supported qualitatively by GLM-4.6V M3A (AGR 14.81 vs RHR 77.78) but coupling magnitude is not independently validated."
+  },
+  {
+   "claim_id": "C5",
+   "text": "Existing prompt-level defenses give limited protection.",
+   "setting": "GLM-4.5V/MobAgent, five defenses, 108 instances each",
+   "baseline_control": "no defense AGR 83.33%",
+   "selection_vs_test": "n/a",
+   "result_denominator": "best SCoT 70.37% AGR (-12.96 pp, CI crosses zero), UA ~0-9%",
+   "evidence_ids": [
+    "E031",
+    "E032"
+   ],
+   "counterevidence": "Only prompt-level defenses and one model/framework; no system-level isolation defenses.",
+   "allowed_conclusion": "For this model, five prompt defenses do not significantly reduce AGR; says nothing about other defense classes."
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_reason": "Executable, resettable emulator workflows with deterministic state oracles; no real-device or unseen-environment transfer.",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "On a 108-instance, dependent-structure emulator benchmark with authored templated injections, nine MLLMs under two agent frameworks show high oracle-verified adversarial success and low utility; on Gemini-2.5-Flash, same-content dual-channel injection beats equal-exposure single-channel controls. Reasoning-hijack coupling and the 'first benchmark' claim are not independently verified.",
+  "not_supported": [
+   "Reasoning-hijack/action-hijack coupling as an independent empirical finding (partly by construction)",
+   "'First benchmark' (neighbours not run)",
+   "Generality of the cross-modal effect beyond one model/four workflows",
+   "Defense conclusions beyond prompt-level defenses on one model"
+  ],
+  "unresolved": [
+   "Identity and validation of the RSDF LLM evaluator",
+   "Oracle implementations and per-instance criteria",
+   "Whether apps/environment are real or mock apps",
+   "Risk-category count (9 vs 10 columns in Table 7)"
+  ],
+  "retention_trace": "not_applicable: benchmark/resource paper; no retained or self-improving component claimed"
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Concrete, testable residue (does synchronized visual+textual exposure amplify injection; does outcome-only AGR hide hijacked reasoning) with named neighbours; neighbour comparison rests on a self-authored checklist and sources are not pinned, and dual-channel exposure is partly the natural condition.",
+   "evidence_ids": [
+    "E003",
+    "E004",
+    "E005",
+    "E012"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Design separates manipulated axis (channel), exposure confound and matched template baselines, with oracles independent of the agent and diagnostics kept separate from state verification; makes distinguishing predictions (CMCI > TOI+/VOI+, low AGR != safe). RSDF's outcome-constraining weakens independence of its diagnostics.",
+   "evidence_ids": [
+    "E012",
+    "E013",
+    "E016",
+    "E018",
+    "E020",
+    "E021"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Six-stage protocol, instance contract, admission rules, 20-action budget, metric definitions and equations are specified; templates, oracle code, diagnoser model/prompts, adjudication details and number of instances per category are not visible in the text.",
+   "evidence_ids": [
+    "E009",
+    "E018",
+    "E021",
+    "E024"
+   ],
+   "counterevidence_ids": [
+    "E030"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Deterministic state oracles for UA/AGR with replay admission are strong, but the headline diagnostic metrics (SAR/RHR/AHR, OSS) come from an unnamed LLM evaluator with no human agreement, outcome-constrained labels, ad hoc OSS weights, and UC resting on roughly nine benign tasks.",
+   "evidence_ids": [
+    "E009",
+    "E018",
+    "E020",
+    "E021",
+    "E022",
+    "E026"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Equal-exposure and budget-matched controls plus 30/108 matched reversal trajectories give strong attribution of the cross-modal and RCI effects; limited by one model, four workflows, authored baselines, and constructed RHR/AHR coupling.",
+   "evidence_ids": [
+    "E013",
+    "E014",
+    "E015",
+    "E016",
+    "E017"
+   ],
+   "counterevidence_ids": [
+    "E020"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Nine models and two frameworks give breadth, but all instances are authored templates over nine workflows (dependent), run in one emulator, no real-device check, no independent test set, defenses only prompt-level.",
+   "evidence_ids": [
+    "E010",
+    "E023",
+    "E007"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "N=108 per condition, cluster-paired inference for some comparisons with Holm-adjusted p-values, three-seed and repeated-run variance for a few metrics; most conditions are point estimates and a data-handling slip (swapped seed folders) is disclosed.",
+   "evidence_ids": [
+    "E025",
+    "E033",
+    "E034",
+    "E032"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Equal 20-action budget for all conditions supports budget fairness; compute/time/token cost of the benchmark and of RSDF diagnosis are not reported.",
+   "evidence_ids": [
+    "E024"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 67.5,
+  "display": 67.5,
+  "lower": 67.5,
+  "upper": 67.5,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(sum w_i*r_i)/4, weights G15 M25 X20 E.meas10 E.caus10 E.hold10 E.stat5 E.cost5; unknown->L(0)/U(4)"
+ },
+ "status": "reviewed",
+ "status_reason": "Full text (HTML render) read incl. all tables; figures and any appendix prompts/templates not available. All eight items resolved.",
+ "condition_check_convention": "kind=success: status says whether the success condition is satisfied; kind=failure: status says whether the paper avoids the failure mode (unmet = failure mode present).",
+ "rationale": "MobileInject 是 evaluation_resource：108 个可复位的 Android 模拟器实例 + 确定性状态 oracle，用 CMCI（视觉/文本/双通道）配合等曝光对照、MRCD/RCI 配预算匹配基线来隔离跨模态强化效应，并用 RSDF 做轨迹诊断。强项：等曝光与 30/108 配对反转轨迹、AGR 由状态 oracle 判定。弱项：关键对照只在 Gemini-2.5-Flash 与四个工作流上；RSDF 标签来自未具名 LLM、无人工一致性，且强制与 oracle 一致使 RHR/AHR 耦合部分是构造所致；108 实例相互依赖；防御只评了 prompt 级。RS 原卡 primary=controlled_diagnostic_design/C02，supporting=assumption_audit_and_pivot；领域卡 environmental_injection_attacks/C30、C33（强）与 injection_defense_isolation/C34（部分）。claim_support=scoped，evidence_level=online。"
+}

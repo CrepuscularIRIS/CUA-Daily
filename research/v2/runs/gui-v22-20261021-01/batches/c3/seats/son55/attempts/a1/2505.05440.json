@@ -1,0 +1,1526 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c3",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "paper": {
+  "paper_key": "2505.05440",
+  "paper_id": "arXiv:2505.05440",
+  "title": "EcoAgent: An Efficient Device-Cloud Collaborative Multi-Agent Framework for Mobile Automation",
+  "version": "2505.05440v3",
+  "claim_type": "system_method",
+  "central_claim": "提出闭环端云协同多智能体 EcoAgent：云端 Planning Agent 以 Dual-ReACT 生成带“期望”的逐步计划并在失败时基于记忆/反思重规划；端侧 Execution Agent 执行、端侧 Observation Agent（含 Pre-Understanding 文本压缩）校验并向云端反馈；在 AndroidWorld 上达到与全云端 agent 相当的任务成功率，同时降低云端资源消耗与响应延迟、保护隐私。"
+ },
+ "provenance": {
+  "input_hash": "3a53a9b05139dc558c16026d9c92aba6c603593cded48db189b7c3080ebc16fb",
+  "rubric_version": "SCORE_SPEC v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": {
+   "taxonomy": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+   "conditions": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+  },
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_receipt_note": "worker has no session/receipt handle exposed; model name taken from system prompt",
+  "timestamp": "2026-10-21",
+  "blind_boundary_note": "No seat/aggregate/archive/old score read. research/patterns/assignments.jsonl was only grepped as a queue hint (truncated lines for 5 of 6 papers were displayed); its fit notes were not used as evidence and all pattern calls below were made from full text."
+ },
+ "materials": [
+  {
+   "material_id": "2505.05440",
+   "url": "https://arxiv.org/html/2505.05440v3",
+   "sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2505.05440.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Abstract",
+    "Introduction",
+    "Related Work",
+    "Framework",
+    "Experiments (Tables 1-4)",
+    "Conclusion",
+    "Appendix: Case Study, Setup, System Overhead, Failure Analysis, Prompts (Tables 5-10)",
+    "References (skimmed)"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Figure images (captions only)"
+   ]
+  },
+  {
+   "material_id": "2405.14573",
+   "url": "https://arxiv.org/html/2405.14573",
+   "sha256": "d745a9085e86a2ea357a27f08bb1c0fd1918ff9040ef9885c5db387c456a56cc",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2405.14573.txt",
+   "material_status": "html",
+   "sections_read": [
+    "grep for M3A seeds variance; baseline context only"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "reference paper read only by targeted grep for gap/lineage; not a full review"
+   ]
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "C001",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Abstract",
+   "quote": "reliance on cloud-side verification requires uploading mobile screenshots, compromising user privacy",
+   "support_explanation": "作者 gap 1：云端校验需上传截图（隐私）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C002",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Abstract",
+   "quote": "open-loop cooperation lacking device-to-cloud feedback, underutilizing device resources and increasing latency",
+   "support_explanation": "作者 gap 2：开环协作缺少端到云反馈",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C003",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "§1",
+   "quote": "the Planning Agent employs Dual-ReACT, a two-stage reasoning framework that first performs global ReACT-based planning over the instruction and initial screen, followed by local ReACT-based generation of step-by-step actions and corresponding expectations.",
+   "support_explanation": "Dual-ReACT：全局规划+局部逐步动作与期望",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C004",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "§1",
+   "quote": "the lightweight Observation Agent compares the current screen with the expectation to verify execution status—without requiring strong reasoning.",
+   "support_explanation": "端侧 Observation Agent 以期望比对替代云端分析",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C005",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Appendix Case Study",
+   "quote": "The Planning Agent first retrieves the user instruction and the initial screen from the device, then generates an initial plan using a Dual-ReAct formulation.",
+   "support_explanation": "初始屏幕仍上传云端（隐私主张的限定）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C006",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "§Observation Agent",
+   "quote": "screen images that typically consume over 1400 tokens per image are encoded into concise textual descriptions requiring only 50–150 tokens.",
+   "support_explanation": "Pre-Understanding：图→文本压缩",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C007",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Abstract",
+   "quote": "Experiments on AndroidWorld demonstrate that EcoAgent matches the task success rates of fully cloud-based agents, while reducing resource consumption and response latency.",
+   "support_explanation": "作者核心主张",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C008",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 1",
+   "quote": "EcoAgent (OS-Atlas) | Multi | GPT-4o, OS-Atlas-Pro (4B), Qwen2-VL-2B | 27.6",
+   "support_explanation": "EcoAgent SR（OS-Atlas 执行器）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C009",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 1",
+   "quote": "M3A | Multi | GPT-4o * 2 | 28.4",
+   "support_explanation": "被“匹配”的云端多智能体",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C010",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 1",
+   "quote": "Agent S2 | Multi | GPT-4o * 4 | 54.3",
+   "support_explanation": "更强的云端多智能体：未被匹配",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C011",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 1",
+   "quote": "V-Droid | Single | V-Droid (8B) | 59.5",
+   "support_explanation": "端侧单模型 59.5，显著高于 EcoAgent",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C012",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 1",
+   "quote": "UGround-V1-7B | Multi | GPT-4o * 2, UGround-V1-7B | 44.0",
+   "support_explanation": "开环端云：44.0",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C013",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "§Evaluation on Task Success Rate",
+   "quote": "This surpasses all single-agent baselines and even matches the performance of M3A (28.4%)",
+   "support_explanation": "与 V-Droid(单智能体 59.5) 矛盾的表述",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C014",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "§Evaluation on Task Success Rate",
+   "quote": "Importantly, EcoAgent is orthogonal to V-Droid",
+   "support_explanation": "作者以“正交”回应",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C015",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 2",
+   "quote": "M3A | 13.39 | 87469",
+   "support_explanation": "云端双智能体成本（MC 调用/MT 令牌）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C016",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 2",
+   "quote": "EcoAgent (OS-Atlas) | 1.53 | 3240",
+   "support_explanation": "EcoAgent 成本",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C017",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 2",
+   "quote": "UGround-V1-2B | 12.21 | 45192",
+   "support_explanation": "开环对照成本（成本表未含 Agent S2）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C018",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "§Evaluation on Operational Costs",
+   "quote": "compared to the cloud-based dual-agent M3A, EcoAgent achieves even more significant savings: MC is reduced by 89% and MT by 96%.",
+   "support_explanation": "成本节省主张（数值与表一致，按 MC/MT 计，仅云端侧）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C019",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 3",
+   "quote": "ShowUI | GPT-4o | Qwen2-VL-2B | ✓ |  |  | 7.0 | 0 | 0",
+   "support_explanation": "消融：仅执行器 7.0",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C020",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 3",
+   "quote": "✓ | ✓ |  | 15.5 | 1 | 2149",
+   "support_explanation": "消融：+Planner 15.5",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C021",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 3",
+   "quote": "✓ | ✓ | ✓ | 25.6 | 1.87 | 3545",
+   "support_explanation": "消融：+Observer 25.6",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C022",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 4",
+   "quote": "EcoAgent (ShowUI) | 3.9",
+   "support_explanation": "每步延迟 3.9s",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C023",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "§Metrics",
+   "quote": "Latency refers to the average time taken for the agent to complete each execution step.",
+   "support_explanation": "延迟=每步均值，非任务端到端",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C024",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Appendix Experimental Setup",
+   "quote": "to simulate mobile inference.",
+   "support_explanation": "端侧模型实际在 RTX 3090 服务器上模拟，不是真机",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C025",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 6",
+   "quote": "Count | 7 | 10 | 2 | 1",
+   "support_explanation": "失败原因（20 个失败样本）：规划7/接地10/步数2/验证1",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C026",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Appendix Failure Analysis",
+   "quote": "we conduct a failure analysis based on 20",
+   "support_explanation": "失败分析样本量 20",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C027",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 5",
+   "quote": "Data (kB) | 2098 | 5831 | 120",
+   "support_explanation": "每任务上行数据量",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C028",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "§Baselines",
+   "quote": "For fairness, the cloud-based agents for all baselines are implemented using GPT-4o.",
+   "support_explanation": "基线云端模型统一 GPT-4o",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C029",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 2 + §Evaluation (our recomputation)",
+   "quote": null,
+   "support_explanation": "正文称相对 UGround-V1-2B “6.5× MC”：12.21/1.87(ShowUI)=6.5，而对 OS-Atlas 变体为 12.21/1.53=8.0；MT 14× 对应 OS-Atlas 变体——两处取不同变体，数值小幅错配",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "C030",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Table 1 (our inference)",
+   "quote": null,
+   "support_explanation": "25.6% 与 7.0% 不是 1/116 的整数倍（29/116=25.0，30/116=25.9；8/116=6.9），说明任务数/运行次数/取整口径未报告",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "C031",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "full text incl. appendix",
+   "quote": null,
+   "support_explanation": "全文含附录查找：隐私泄露度量（文本摘要是否含敏感信息）、Observation Agent 准确率（对/误判）、Dual-ReACT 对普通 ReACT 的消融、Pre-Understanding 对原图上传的消融、云端校验对照、步数上限、重复运行/置信区间、基线数值出处——均未报告",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "C032",
+   "material_id": "2405.14573",
+   "material_sha256": "d745a9085e86a2ea357a27f08bb1c0fd1918ff9040ef9885c5db387c456a56cc",
+   "locator": "Appendix E.4 / §6",
+   "quote": "Across three seeds, we observe significant performance variations: 27.6%, 26.3% and 33.2% (mean 29.0%)",
+   "support_explanation": "固定参照：AndroidWorld 上 M3A 跨种子 SR 波动可达 ~7 点，说明单次 SR 差 0.8 点（27.6 vs 28.4）在噪声内",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "C033",
+   "material_id": "2505.05440",
+   "material_sha256": "2d02157493f8f97c06f0183d3b58a5bde8591b535d8c4c4b07072ad22ea7da48",
+   "locator": "Appendix Prompts",
+   "quote": "For all visual inputs, we use raw screen screenshots without any additional preprocessing.",
+   "support_explanation": "输入为原始截图（无 a11y）",
+   "kind": "author_report"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "云端规划与重规划（Dual-ReACT + Memory/Reflection）",
+   "information": "初始：指令+初始原始截图（上传）；重规划：端侧发回的文本屏幕摘要与失败理由，无原图",
+   "operation": "生成屏幕描述→全局 ReACT 子目标→局部 ReACT 步骤+期望；失败时基于记忆反思生成新计划",
+   "output": "步骤+期望的 JSON 计划",
+   "conditions": "步骤文本不含坐标；动作词表固定",
+   "feedback": "Observation Agent 的校验结果与文本摘要",
+   "selection_rule/data": "失败即重规划；无失败则不调用云端（MC≈1.5-1.9）",
+   "persistence": "任务内 Memory 模块（文本轨迹）；无跨任务留存",
+   "later_use": "同任务内重规划",
+   "claimed_effect": "+Planner：7.0→15.5 / 4.3→19.0",
+   "failure_boundary": "规划误解（7/20 失败）；初始截图上传",
+   "evidence_ids": [
+    "C003",
+    "C005",
+    "C019",
+    "C020",
+    "C025"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "端侧逐步校验（Observation Agent, Qwen2-VL-2B）",
+   "information": "执行后屏幕 S_{t+1} 与期望 EX_t（原图仅在端侧）",
+   "operation": "判断屏幕是否满足期望→R_t；失败才通知云端",
+   "output": "步骤成功/失败判决",
+   "conditions": "不用 GUI 微调的通用小 VLM（避免文本能力退化）",
+   "feedback": "期望文本",
+   "selection_rule/data": "2B VLM 单次判断；无阈值/多数票",
+   "persistence": "not_applicable",
+   "later_use": "触发重规划",
+   "claimed_effect": "+Observer：15.5→25.6 / 19.0→27.6，MC 与 MT 小幅上升",
+   "failure_boundary": "校验准确率未测；误判会让错误步被放行或误触重规划",
+   "evidence_ids": [
+    "C004",
+    "C020",
+    "C021",
+    "C025",
+    "C031"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "端→云通信压缩（Pre-Understanding Module）",
+   "information": "端侧完整屏幕 → 3-5 句文本摘要",
+   "operation": "图→文，50-150 token 替代 >1400 token",
+   "output": "云端 Memory 的文本轨迹",
+   "conditions": "摘要需保留重规划所需的语义变化",
+   "feedback": "not_applicable",
+   "selection_rule/data": "固定提示（3-5 句）",
+   "persistence": "任务内",
+   "later_use": "重规划上下文",
+   "claimed_effect": "每任务上行 120kB vs AppAgent 2098kB / M3A 5831kB；隐私风险“显著降低”（未度量）",
+   "failure_boundary": "文本摘要仍可能含敏感内容；初始屏幕已上传",
+   "evidence_ids": [
+    "C006",
+    "C027",
+    "C005",
+    "C031"
+   ]
+  }
+ ],
+ "retention_trace": {
+  "applicable": false,
+  "reason": "任务内记忆与重规划，无跨任务留存或自我改进主张。"
+ },
+ "gap": {
+  "author_gap": "云端多智能体延迟/成本高且有隐私风险；直接的端云协作多为开环（单向指令，云端仍需截图验证）（C001/C002）。",
+  "checked_gap": "成本/延迟缺口是真实的；开环近邻（UGround+M3A）确实需要云端验证，表中成本最高（C017）。但：端侧单模型 V-Droid(59.5) 在更低延迟下远超 EcoAgent（C011），削弱了“端侧不会规划”这一前提；云端多智能体 Agent S2(54.3) 同样远高（C010）。隐私缺口仅以“上行字节数”侧面度量，无泄露测度（C031）。",
+  "lineage": {
+   "ancestors": [
+    "M3A（云端双智能体）",
+    "AppAgent/MobileAgent（云端单智能体+辅助检测）",
+    "UGround/CogAgent/AutoDroid（开环端云）",
+    "ShowUI/OS-Atlas（端侧小 grounder）",
+    "ReACT/Reflexion"
+   ],
+   "closest_adjacent": "UGround+M3A（开环端云，GPT-4o×2+UGround）；AndroidWorld M3A 基线（2405.14573）。",
+   "source_versions": {
+    "2405.14573": "html fixed sha256 d745a908..."
+   }
+  },
+  "residue": "端侧小模型的接地能力是主要失败来源（10/20）；验证准确率未知；真机延迟未测。",
+  "stakes": "若验证器不准，闭环既不省钱也不稳；隐私主张未验证则不应写入结论。",
+  "method_response": "把校验下沉到端侧（期望比对），用文本压缩替换原图传输，云端只在失败时介入。",
+  "remaining_gap": "验证器准确率；与云端校验的同 SR 成本对比；隐私泄露度量；真机延迟；与 V-Droid 等强端侧模型的组合。",
+  "evidence_ids": [
+   "C001",
+   "C002",
+   "C010",
+   "C011",
+   "C017",
+   "C031"
+  ],
+  "unresolved": [
+   "Table 1 基线数值出处与重跑情况"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "decompose_and_delegate",
+  "supporting": [],
+  "matches": [
+   {
+    "main_id": "decompose_and_delegate",
+    "sub_id": "rs:C25",
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "1 在能力换挡处划线": "云端强推理做规划/反思，端侧小模型做接地与比对（按能力与隐私划线）",
+     "2 交接为类型化可验证工件": "计划=JSON（步骤+期望）；期望是文本，由小 VLM 判断，非外部可验证",
+     "3 单一载重机制+回落消融": "消融为 +Planner、+Observer，但 Dual-ReACT 对普通 ReACT、Pre-Understanding 对原图均无消融",
+     "4 结构性诊断": "开环缺反馈/云端校验需上传——有",
+     "5 可获信号闭环": "端侧校验信号→云端重规划"
+    },
+    "success/failure_checks": "success：划线与闭环；failure：交接非可验证、无成本-边际对照、单基准（部分命中）",
+    "evidence_ids": [
+     "C003",
+     "C004",
+     "C019",
+     "C020",
+     "C021",
+     "C031"
+    ],
+    "reason": "分工+结构化交接+反馈回路与原卡一致，但“求解器”均为学习模型，无外部可验证性；partial。"
+   }
+  ],
+  "outside_taxonomy": false,
+  "reason": "最近原卡为 decompose_and_delegate。",
+  "executes_pattern": {
+   "decompose_and_delegate/rs:C25": "partial"
+  },
+  "resolves_problem": {
+   "cloud cost & call reduction": "shown_on_AndroidWorld_vs_listed_baselines",
+   "privacy": "not_shown",
+   "matching cloud-agent SR": "partially (M3A only)"
+  }
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "version": "taxonomy@sha256:430aa36290ec",
+  "matches": [
+   {
+    "namespace": "gui",
+    "main": "agent_loop_context_control",
+    "sub": "gui:C18",
+    "version": "taxonomy@sha256:430aa36290ec",
+    "fit": "good",
+    "condition_checks": [
+     {
+      "cond": "S4 可见可逆错误上的反思",
+      "status": "unknown",
+      "note": "未分析错误是否可逆",
+      "evidence_ids": []
+     },
+     {
+      "cond": "F1 反思/自检准确率未测",
+      "status": "present",
+      "note": "Observer 准确率未报告",
+      "evidence_ids": [
+       "C031"
+      ]
+     },
+     {
+      "cond": "F5 不可逆动作与屏幕差异",
+      "status": "unknown",
+      "note": "AndroidWorld 任务多可恢复",
+      "evidence_ids": []
+     }
+    ],
+    "evidence_ids": [
+     "C004",
+     "C021",
+     "C031"
+    ],
+    "reason": "逐步前后屏幕对照期望→判决→触发重规划，与 C18 同构；独立处是校验器下沉到端侧小模型。"
+   },
+   {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "gui:C10",
+    "version": "taxonomy@sha256:430aa36290ec",
+    "fit": "good",
+    "condition_checks": [
+     {
+      "cond": "S1 固定强 planner 增加 grounder 的价值",
+      "status": "partial",
+      "note": "GPT-4o 规划，换 ShowUI/OS-Atlas 执行器；未报告“规划器单独”",
+      "evidence_ids": [
+       "C019",
+       "C021"
+      ]
+     },
+     {
+      "cond": "F1 planner 错误通过自然语言接口传播",
+      "status": "present",
+      "note": "规划错误占 7/20",
+      "evidence_ids": [
+       "C025"
+      ]
+     },
+     {
+      "cond": "F3 饱和 grounding 基准",
+      "status": "absent",
+      "note": "在线 AndroidWorld",
+      "evidence_ids": [
+       "C008"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "C003",
+     "C019",
+     "C025"
+    ],
+    "reason": "云端规划 NL 步骤、端侧专才 grounder 出坐标。"
+   },
+   {
+    "namespace": "gui",
+    "main": "agent_loop_context_control",
+    "sub": "gui:C15",
+    "version": "taxonomy@sha256:430aa36290ec",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "cond": "S2 近期全保真、早期文本、窗口消融",
+      "status": "unmet",
+      "note": "全部历史为文本摘要，无窗口消融、无原图对照",
+      "evidence_ids": [
+       "C006",
+       "C031"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "C006",
+     "C031"
+    ],
+    "reason": "Pre-Understanding 把历史压成文本，但未做保真度/窗口消融。"
+   }
+  ],
+  "unassigned": [
+   "端侧隐私保护式压缩（以文本摘要替代原图上传）无专门领域卡"
+  ],
+  "revision_proposals": []
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": "rs:C25",
+   "domain": {
+    "namespace": "gui",
+    "main": "agent_loop_context_control",
+    "sub": "gui:C18"
+   },
+   "operation_correspondence": "RS“结构化交接+反馈回路”↔ C18“前后观测校验并回馈判决”。",
+   "required_conditions_and_differences": "RS 要求可验证工件；C18 失败边界为反思准确率——本文均未度量。",
+   "evidence_ids": [
+    "C004",
+    "C021",
+    "C031"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report execution-checked success rate on OSWorld (or OSWorld-Verified) for desktop computer-use claims, stating the step budget (15 vs 50 steps) and observation setting",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无桌面 OSWorld 主张。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report online success on AndroidWorld for mobile-agent claims, not only offline AndroidControl/AITW step metrics",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": true,
+   "status": "met",
+   "reason": "在 AndroidWorld（程序化评测、116 任务/20 App）上报告在线成功率，而非仅离线步指标。",
+   "evidence_ids": [
+    "C007",
+    "C008"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E03",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report success on WebArena (self-hosted, functional-correctness checkers) for web-agent training or planning claims; if the 165-task WebArena-Lite or a per-template subset is used, say so and justify it",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Evaluate live-web agents on Online-Mind2Web (human-validated, start URL given, no search engine) or Mind2Web-Live rather than only WebVoyager, where a naive search-and-click agent already solves 51% of sampled tasks",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report GUI grounding on ScreenSpot-Pro (high-resolution professional desktop) and ScreenSpot-v2, not only ScreenSpot v1, which saturates (7B and 72B indistinguishable)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare a new grounder against UGround(-V1-7B), Aguvis-7B/72B, OS-Atlas-7B and UI-TARS(-1.5) at matched backbone size",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare a native end-to-end GUI policy against UI-TARS(-1.5)-7B (or the same backbone's SFT-only model) and against an agentic framework (GPT-4o/o3 planner + specialised grounder such as UGround, Aria-UI, Jedi, GTA1)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E08",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For planner-grounder systems, hold the planner fixed and swap grounders (e.g. GPT-4o + UGround vs + Aguvis vs + Jedi), and report the planner alone",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "固定 GPT-4o 规划，更换 ShowUI/OS-Atlas 执行器并报告执行器单独（7.0/4.3）；未报告 planner 单独或云端校验对照。",
+   "evidence_ids": [
+    "C019",
+    "C020",
+    "C021"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E09",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare GUI online-RL methods against DigiRL, WebRL, filtered BC / AWR and an SFT-only model trained on the same data",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E10",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Validate an LLM/VLM success judge or outcome reward model against human labels on trajectories from agents not used to build it (agreement/accuracy, plus the resulting success-rate gap)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "小 VLM Observation Agent 作为逐步成功判决器，未与人工/真值比较其准确率。",
+   "evidence_ids": [
+    "C004",
+    "C031"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E11",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report judge reliability separately for positive and negative verdicts (precision and NPV, or precision/recall per class), not only overall accuracy",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "无正/负判决分别的可靠性；失败样本中验证类仅 1/20，无法推出假阳性/假阴性率。",
+   "evidence_ids": [
+    "C025",
+    "C031"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E12",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "When a learned judge or PRM is the RL reward, show downstream policy gain against an alternative reward (rule/script checker, ORM vs PRM, another judge), and address reward hacking or bias",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Measure execution checkers (evaluation scripts) two-sidedly: false negatives on alternative valid solutions as well as false positives",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For PRMs or step-level verifiers, ablate the label source (human vs GPT-4o-generated step labels)",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Do not rest an agent capability claim on offline step accuracy (AndroidControl, Multimodal-Mind2Web, GUI Odyssey) alone; add an online benchmark or show the offline metric predicts online success",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E16",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "无重复运行/置信区间；AndroidWorld 上 M3A 跨种子 SR 波动 26.3-33.2，本文 27.6 vs 28.4 的差在噪声内。",
+   "evidence_ids": [
+    "C032",
+    "C030"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "未说明 EcoAgent 与基线的最大步数、使用步数或超预算情况。",
+   "evidence_ids": [
+    "C031"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E18",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For inference-time search or best-of-N (simulated lookahead, verifier reranking), report cost/latency and the number of candidates, and compare against real-execution tree search where reset is possible",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Disclose and validate any modification to an online benchmark harness (re-implemented checkers, changed action implementations, dropped tasks, extra steps)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "applicable": true,
+   "status": "partial",
+   "reason": "披露 Pixel 6/API 33 配置与新增 DeleteText 动作；基线数值出处与是否重跑未说明。",
+   "evidence_ids": [
+    "C033"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E20",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For live-web results, state the evaluation date and handle site drift (replace outdated tasks, report blocked/CAPTCHA tasks)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": true,
+   "status": "partial",
+   "reason": "EcoAgent 仅用原始截图，已声明；表中 M3A/Agent S2 等基线观测设置（含 a11y）未分开说明。",
+   "evidence_ids": [
+    "C033",
+    "C028"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E22",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report results across backbone sizes (e.g. 7B and 32B/72B), since gains from GUI data/RL recipes shrink with model size",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无训练配方；仅换用 2 个现成执行器，不是跨骨干训练主张。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E23",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Stratify online success by human reference step count (difficulty) and audit failure causes",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "非新基准、非长程能力主张（有 20 个失败样本归因，作补充）。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E24",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Test grounding robustness under controlled perturbations (zoom, text size, window position/clutter, relational instructions) with matched pairs",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report refusal / infeasible-task behaviour (instructions with no valid target)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare a synthetic-trajectory recipe against an instruction-first / task-driven synthesis baseline with the same executor and similar data size",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Show a data-scaling curve (fraction or count of synthetic samples vs downstream score) and say where it saturates",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E29",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Ablate error-correction/reflection data against filtered behaviour cloning at the same iteration count",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Evaluate a GUI world model by downstream agent success and closed-loop (multi-step, autoregressive) rollouts, not only teacher-forced one-step fidelity",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Ablate imagination / lookahead horizon, since world-model errors compound beyond 1 (lookahead) or about 5 (training) steps",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For training in a world model, include sim-only vs real-anchored vs SFT-only arms",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Back world-model or synthetic-environment fidelity scores with a second independent judge, human validation or executable checks, not a VLM judge from the same family as the training reward",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For a digital twin / simulated app used for training or evaluation, measure its realism and whether it preserves the ranking of agents or checkpoints seen in the real environment",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文是端云协同的提示/组装式系统（执行器与观测器为现成小模型，无训练配方/合成数据/世界模型/记忆跨任务主张）；按冻结类型解释判不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For memory/retrieval agents, show gains on environments other than those the memory was built from",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "仅任务内记忆，无跨任务经验记忆主张。",
+   "evidence_ids": [],
+   "score_item": null
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "EcoAgent 与全云端多智能体成功率相当（25.6/27.6 vs M3A 28.4）且云端调用/令牌大幅下降（MC -89%，MT -96%）",
+   "setting": "AndroidWorld 116 任务；云端 GPT-4o，端侧 ShowUI/OS-Atlas-Pro + Qwen2-VL-2B（RTX 3090 模拟）",
+   "baseline/control": "M3A、AppAgent、UGround+M3A 等；Agent S2/V-Droid 仅 SR",
+   "selection_vs_test": "无开发/测试划分说明；提示是否在 AndroidWorld 上调过未说明",
+   "result/denominator": "27.6 vs 28.4（噪声内）；MC 1.53 vs 13.39；单次",
+   "evidence_ids": [
+    "C007",
+    "C008",
+    "C009",
+    "C015",
+    "C016",
+    "C018",
+    "C032"
+   ],
+   "counterevidence": [
+    "C010",
+    "C011",
+    "C013",
+    "C030"
+   ],
+   "allowed_conclusion": "作者报告：与 M3A 打平的 SR 下，云端侧调用与令牌明显更少；未达到 Agent S2/UGround-7B/V-Droid 水平，“匹配全云端 agent”应限定为 M3A。"
+  },
+  {
+   "claim_id": "C2",
+   "text": "规划与观测两个组件都有贡献（7.0→15.5→25.6；4.3→19.0→27.6）",
+   "setting": "AndroidWorld，两种执行器",
+   "baseline/control": "仅执行器；执行器+规划器",
+   "selection_vs_test": "同基准",
+   "result/denominator": "+8.5/+10.1；+14.7/+8.6；单次",
+   "evidence_ids": [
+    "C019",
+    "C020",
+    "C021"
+   ],
+   "counterevidence": [
+    "C031"
+   ],
+   "allowed_conclusion": "组件级累加消融方向一致；未隔离 Dual-ReACT、Pre-Understanding 或“端侧 vs 云端校验”。"
+  },
+  {
+   "claim_id": "C3",
+   "text": "延迟低（3.9s vs 云端 7.1-15.9s、开环 4.9-18.2s）",
+   "setting": "每步平均延迟；端侧在 3090 服务器上",
+   "baseline/control": "表中其他 agent（硬件与设置未说明）",
+   "selection_vs_test": "not_applicable",
+   "result/denominator": "单个数值，无方差",
+   "evidence_ids": [
+    "C022",
+    "C023",
+    "C024"
+   ],
+   "counterevidence": [
+    "C031"
+   ],
+   "allowed_conclusion": "每步延迟的作者报告；非端到端任务时间，非真机。"
+  },
+  {
+   "claim_id": "C4",
+   "text": "隐私友好：用文本摘要替代原图上传",
+   "setting": "上行 120kB/任务",
+   "baseline/control": "AppAgent 2098kB、M3A 5831kB",
+   "selection_vs_test": "not_applicable",
+   "result/denominator": "上行字节数；无泄露测度",
+   "evidence_ids": [
+    "C001",
+    "C005",
+    "C006",
+    "C027"
+   ],
+   "counterevidence": [
+    "C005",
+    "C031"
+   ],
+   "allowed_conclusion": "仅能说上行数据量更小；隐私保护未被度量，且初始截图仍上传。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_note": "AndroidWorld 程序化检查；单一基准，未涉及训练期隔离或迁移 → online。",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "作者报告：在 AndroidWorld 上，端侧校验+文本摘要的闭环使云端调用/令牌相对 M3A 降 89%/96%，SR 与 M3A 相近（27.6 vs 28.4，噪声内）；组件累加消融方向一致。",
+  "cannot_claim": [
+   "匹配所有全云端 agent（Agent S2 54.3、UGround-7B 44.0 更高）",
+   "“surpasses all single-agent baselines”（V-Droid 59.5）",
+   "隐私保护",
+   "真机延迟收益",
+   "观测器可靠"
+  ],
+  "unresolved": [
+   "基线数值出处",
+   "步预算",
+   "Dual-ReACT 与普通 ReACT 差别"
+  ],
+  "reproduction_note": "全部为作者报告；本席仅核对表内算术。"
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "成本/延迟/隐私缺口真实，开环近邻（UGround+M3A）成本最高（C017）支持其论点。但残余缺口被端侧强单模型 V-Droid(59.5, 3.0s) 与云端 Agent S2(54.3) 削弱（C010/C011），隐私缺口仅以上行字节侧面论证（C031），“端侧不会规划”的前提未被固定近邻检验。=2。",
+   "evidence_ids": [
+    "C001",
+    "C002",
+    "C010",
+    "C011",
+    "C017"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "机制清晰：期望驱动的逐步校验、失败才上云、文本压缩。关键假设均薄弱或未测：①2B 通用 VLM 可靠判断“屏幕是否符合期望”（准确率未测，C031）；②文本摘要足以重规划（仅由整体 SR 间接支撑）；③摘要即隐私保护（初始屏幕上传，且无泄露测度，C005）。对“端侧→云端反馈优于云端校验”的区分性预测未检验。=2。",
+   "evidence_ids": [
+    "C003",
+    "C004",
+    "C006",
+    "C005"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "算法、提示词（Tables 7-10）、动作空间（含新增 DeleteText）、模型选择与部署模拟方式均给出，重规划触发与终止（“No need to replan”）可重建。扣分：步上限、超预算处理、观测器误判处置、基线设置缺失（C031）。=3。",
+   "evidence_ids": [
+    "C003",
+    "C004",
+    "C033",
+    "C031"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "主指标 SR 来自 AndroidWorld 程序化检查（强项）；成本以云端 MC/MT 度量、上行字节、FLOPs；扣分：延迟为每步均值且端侧在 3090 模拟（C023/C024）、成本不含端侧、基线数值出处不明（C031）、隐私无度量、25.6/7.0 不是 1/116 整数倍口径不明（C030）。=3。",
+   "evidence_ids": [
+    "C007",
+    "C016",
+    "C022",
+    "C023",
+    "C024"
+   ],
+   "counterevidence_ids": [
+    "C030",
+    "C031"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "累加消融（执行器→+规划→+观测，两种执行器，C019-C021）方向一致；但缺 Dual-ReACT vs 普通 ReACT、Pre-Understanding vs 原图上传、端侧观测 vs 云端校验的消融，故无法把收益归因于论文声称的三项新颖机制；与基线的比较混杂规划器/执行器/步数设置。=2。",
+   "evidence_ids": [
+    "C019",
+    "C020",
+    "C021"
+   ],
+   "counterevidence_ids": [
+    "C031"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "仅 AndroidWorld 单一基准；未描述提示/阈值是否在这些任务上调试、无开发/测试划分、无跨基准或真机迁移；声称“移动自动化”的范围大于证据。=1。",
+   "evidence_ids": [
+    "C008"
+   ],
+   "counterevidence_ids": [
+    "C031"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "给出任务数（116）与 20 例失败归因，但 SR 单次、无方差；AndroidWorld 上 M3A 跨种子波动 26.3-33.2（C032）使“匹配 M3A”(27.6 vs 28.4) 不可区分；SR 口径与 1/116 不整除（C030）。=1。",
+   "evidence_ids": [
+    "C025",
+    "C026"
+   ],
+   "counterevidence_ids": [
+    "C030",
+    "C032"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "成本是中心主张且被直接度量并分层：MC/MT、上行 kB、端侧 FLOPs、每步延迟、与云端/开环对比（C015-C018、C022、C027），并给出消融中成本的增量。扣分：成本表未含 Agent S2 与 V-Droid，端侧计算不计入 MT，MC 倍数引用错配（C029），非端到端延迟。=3。",
+   "evidence_ids": [
+    "C015",
+    "C016",
+    "C017",
+    "C018",
+    "C022",
+    "C027"
+   ],
+   "counterevidence_ids": [
+    "C029"
+   ],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 55.0,
+  "display": 55.0,
+  "lower": 55.0,
+  "upper": 55.0,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+ },
+ "status": {
+  "state": "reviewed",
+  "reason": "全文含附录齐备；八项均已判定。"
+ },
+ "outside_taxonomy": false,
+ "readable_rationale": "EcoAgent 的端云闭环设计合理且成本数据直接：相对 M3A 云端调用/令牌分别降 89%/96%，SR 与其相近（但在单次噪声内，且显著低于 Agent S2、UGround-7B、V-Droid）。摘要“匹配全云端 agent”“超过所有单智能体”均需限定；隐私主张无度量且初始截图仍上传；Observation Agent 的准确率与三个新颖机制的单独消融缺失；单基准、单次运行。claim_support=scoped，原始分 55.0（未校准草案）。"
+}

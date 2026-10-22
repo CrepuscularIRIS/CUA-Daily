@@ -1,0 +1,2088 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p2",
+ "attempt_id": "a1",
+ "seat": "son55",
+ "paper": {
+  "paper_key": "2305.11854",
+  "paper_id": "arXiv:2305.11854",
+  "title": "Multimodal Web Navigation with Instruction-Finetuned Foundation Models",
+  "version": "2305.11854v4",
+  "claim_type": "system_method",
+  "claim_type_note": "训练完整的多模态 web agent（含数据生成流水线与发布数据集），在 MiniWoB++/WebShop 在线评测并在 Mind2Web 离线评测；不是单一组件。",
+  "scope_note": null,
+  "central_claim": "WebGUM：把 Flan-T5(指令微调语言模型)与 ViT(时序+局部 patch 视觉 token)联合，在由 LLM agent 生成并按成功过滤的 347K(+54K)多模态演示上离线微调，在 MiniWoB++ 上达 94.2% 并“超过”离线 SoTA、在线 RL SoTA、人类和 GPT-4 agent；在 WebShop 上 3B 模型超过 PaLM-540B 提示；对 Mind2Web 实现正迁移。",
+  "central_claim_scope": "MiniWoB++ 56 个可用整数元素索引表达的任务(训练与评测同任务集，100 回合/任务，忽略时限，单 seed)；WebShop 500 指令(域内训练 ~1K 人类演示)；Mind2Web 离线步级评测；头条 94.2% 使用 401K 数据(含 54K Synapse/脚本教师数据)，消融多为 347K 或更小数据。"
+ },
+ "provenance": {
+  "input_hash": "fed6b4a2d84803fc93183b9a9669ad578f4b1611b203548221a83913612b045e",
+  "rubric_version": "radar-score-v2.2 (draft_uncalibrated)",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "pattern_protocol_hash": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_cards_hash_note": "domain_cards_hash = sha256 of research/patterns/taxonomy.json (manifest asset domain_taxonomy); conditions hash given separately",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "corpus_hash": "ab81004336f12af0464893fc548cb5eba57552028d6a2431c2db1014ecf52cbc",
+  "model_type": "haiku",
+  "actual_model": "claude-sonnet-5-5[1m] (self-reported from system prompt: Sonnet 5.5)",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_receipt_note": "No session id or receipt reference is exposed to this subagent; null by contract.",
+  "timestamp": "2026-10-21T17:23:47Z"
+ },
+ "materials": [
+  {
+   "material_id": "M-2305.11854v4",
+   "url": "https://arxiv.org/html/2305.11854",
+   "version": "2305.11854v4",
+   "sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2305.11854.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Related Work",
+    "3 Preliminaries",
+    "4 WebGUM (4.1-4.3)",
+    "5 Results (5.1-5.5)",
+    "6 Discussion",
+    "Appendix A-K (A, C, D, E, F, G Table 8, H, I, J, K), Appendix L headings/captions"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Appendix L example episodes (images/text samples) only skimmed via captions",
+    "Figures 1-11 are images; numbers used only from stated text/tables"
+   ],
+   "note": "Complete for the argument."
+  },
+  {
+   "material_id": "R-2306.06070",
+   "url": "https://arxiv.org/html/2306.06070",
+   "version": null,
+   "sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2306.06070.txt",
+   "material_status": "html",
+   "sections_read": [
+    "lines 252-264, 750-755"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; consulted only for the listed lines (fact source for lineage/baseline cross-check, not judgement)"
+   ],
+   "role": "nearest_neighbor_reference",
+   "purpose": "MindAct/GPT-4 baselines and seed variance used for cross-check of Table 3 comparability"
+  },
+  {
+   "material_id": "R-2401.10935",
+   "url": "https://arxiv.org/html/2401.10935",
+   "version": null,
+   "sha256": "8961f2b08e5dcd2c88679f424018ee8590bc295bcc6390de69884424cc5e9b1f",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2401.10935.txt",
+   "material_status": "html",
+   "sections_read": [
+    "line 289"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; consulted only for the listed lines (fact source for lineage/baseline cross-check, not judgement)"
+   ],
+   "role": "nearest_neighbor_reference",
+   "purpose": "later model paper positions WebGUM as offline SOTA that selects HTML elements"
+  },
+  {
+   "material_id": "M-2303.17491v3",
+   "url": "https://arxiv.org/html/2303.17491",
+   "version": "2303.17491v3",
+   "sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2303.17491.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Sec 3.2.2 line 295"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "reviewed separately"
+   ],
+   "note": "same-batch cross-reference"
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "E001",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Abstract; fulltext line 66",
+   "quote": "We propose an instruction-following multimodal agent, WebGUM, that observes both webpage screenshots and HTML pages and outputs web navigation actions",
+   "support_explanation": "中心主张：多模态(截图+HTML)指令跟随 web agent。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E002",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Abstract; fulltext line 69",
+   "quote": "On the MiniWoB, we improve over the previous best offline methods by more than 45.8%, even outperforming online-finetuned SoTA, humans, and GPT-4-based agent.",
+   "support_explanation": "头条主张：MiniWoB 上超离线 SoTA 45.8 个点，并“超过”在线 SoTA、人类与 GPT-4 agent。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E003",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Abstract; fulltext line 70",
+   "quote": "On the WebShop benchmark, our 3-billion-parameter model achieves superior performance to the existing SoTA, PaLM-540B.",
+   "support_explanation": "WebShop 主张。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E004",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Abstract; fulltext line 71",
+   "quote": "Furthermore, WebGUM exhibits strong positive transfer to the real-world planning tasks on the Mind2Web.",
+   "support_explanation": "Mind2Web 迁移主张。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E005",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 1; fulltext line 82",
+   "quote": "offline training from the static dataset enables safe development of web agents, but the performance has been sub-optimal compared to those online RL counterparts",
+   "support_explanation": "作者 gap：离线训练落后于在线 RL。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E006",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 1; fulltext line 83",
+   "quote": "many of the prior works was unable to leverage rich out-of-domain data for generalization",
+   "support_explanation": "作者 gap：web 专用架构无法利用预训练基础模型。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E007",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 1; fulltext line 94",
+   "quote": "Second, we observe that web navigation tasks are by nature instruction-following and thus base the language model on an instruction-tuned LLM",
+   "support_explanation": "设计假设：指令微调 LLM 更适合。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E008",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 1; fulltext line 96",
+   "quote": "Fourth, our model outputs action in free-form text.",
+   "support_explanation": "动作用自由文本输出。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E009",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 3; fulltext line 138",
+   "quote": "selector is an integer index that can uniquely specify the element",
+   "support_explanation": "动作 = function(selector, text)，selector 为整数元素索引。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E010",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 4.1; fulltext line 176",
+   "quote": "Temporal visual tokens contribute to predict the consistent actions in a multi-step tasks.",
+   "support_explanation": "时序视觉 token 的设计动机。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E011",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 4.2; fulltext line 195",
+   "quote": "an instruction-finetuned T5, as opposed to using a vanilla pre-trained T5",
+   "support_explanation": "用 Flan-T5 替换 vanilla T5。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E012",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 4.3; fulltext line 209",
+   "quote": "we leverage the finetuned-LLM policy from Gur et al. (2022) , instead of human demonstrators",
+   "support_explanation": "数据：用已微调 LLM 策略代替人类演示者。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E013",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 4.3; fulltext line 211",
+   "quote": "We first rollout a LLM policy with 100 episodes per task, which results in a 2.8K successful episodes.",
+   "support_explanation": "第 1 轮：100 回合/任务 → 2.8K 成功回合。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E014",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 4.3; fulltext line 213",
+   "quote": "Lastly, we collect additional 54K demonstrations with Synapse ( Zheng et al., 2023 ) , a private-LLM-based agents with prompting, for the tasks where the finetuned-LLM may not complete well.",
+   "support_explanation": "额外 54K 来自 Synapse(提示式私有 LLM agent)，补充难任务。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E015",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix F; fulltext line 941",
+   "quote": "We run such LLM policies with 10,000 episodes per task and only keep successful trajectories to maintain the quality of dataset",
+   "support_explanation": "第 2 轮：10,000 回合/任务，仅保留成功轨迹（环境奖励过滤）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E016",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix F; fulltext line 942",
+   "quote": "and also write a scripted policy for book-flight",
+   "support_explanation": "为 book-flight 另写了脚本策略（oracle 式教师）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E017",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix F Table 7; fulltext line 967",
+   "quote": "click-scroll-list | 0 | 0 | 0.00%",
+   "support_explanation": "347K 数据中 click-scroll-list 零回合。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E018",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix F Table 7; fulltext line 968",
+   "quote": "click-shades | 0 | 0 | 0.00%",
+   "support_explanation": "347K 数据中 click-shades 零回合。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E019",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix F Table 7; fulltext line 985",
+   "quote": "enter-time | 0 | 0 | 0.00%",
+   "support_explanation": "347K 数据中 enter-time 零回合。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E020",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix A; fulltext line 864",
+   "quote": "we will exclude those from the dataset release and it will result in 347K episodes",
+   "support_explanation": "54K LLM 生成演示不随数据集发布。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E021",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 5; fulltext line 223",
+   "quote": "with 100 evaluation episodes per task, taking the average success rate over 56 tasks",
+   "support_explanation": "评测：100 回合/任务，56 任务均值。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E022",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Table 1; fulltext line 149",
+   "quote": "HTML+Image | Flan-T5-XL,ViT-B16 | ✔ | 401K | 94.2 %",
+   "support_explanation": "Table 1：头条 94.2% 对应 401K 数据（含 54K 额外教师数据）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E023",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Table 1; fulltext line 151",
+   "quote": "CC-Net (SL+RL) | DOM+Image | ResNet | ✗ | 2400K+ | 93.5%",
+   "support_explanation": "Table 1：CC-Net 93.5% 是 104 任务均值。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E024",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Table 1; fulltext line 152",
+   "quote": "Human | – | – | – | – | 93.5%",
+   "support_explanation": "Table 1：人类 93.5%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E025",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 5; fulltext line 224",
+   "quote": "surpassing the online RL-finetuned SoTA, CC-Net ( Humphreys et al., 2022 ) (+0.7%), despite our fully offline training and much fewer data",
+   "support_explanation": "“超过 CC-Net 0.7 个点”的表述。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E026",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix G; fulltext line 1014",
+   "quote": "During the evaluation on MiniWoB++, we ignore the time limit due to the computational constraints.",
+   "support_explanation": "评测忽略时间限制（harness 修改）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E027",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix G Table 8; fulltext line 1131",
+   "quote": "# of Tasks | 63 | 104 | 53 | 54 | 54 | 104 | 104 | 48 | 56 | 56 | 56",
+   "support_explanation": "Table 8：各基线所覆盖任务数不同（Synapse 63、Human/CC-Net 104、RCI 54…、WebGUM 56）；Table 1 的均值是跨不同任务集比较。本席据此在 WebGUM 有分的 56 任务上重算：CC-Net(SL+RL) 0.964、Human 0.945、Synapse(54 任务) 0.986、AdaPlanner(51) 0.930、RCI-gpt3.5(51) 0.904、RCI-gpt4(51) 0.941，WebGUM 0.942/0.939/0.937。",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E028",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix G Table 8; fulltext line 1130",
+   "quote": "Average | 0.985 | 0.935 | 0.929 | 0.906 | 0.940 | 0.935 | 0.305 | 0.646 | 0.484 | 0.887 | 0.942",
+   "support_explanation": "Table 8 Average 行：Synapse 0.985、WebGUM(HTML) 0.887、WebGUM 0.942。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E029",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix G Table 8; fulltext line 1051",
+   "quote": "click-shades | 1.00 | 0.91 | 1.00 | 1.00 | 1.00 | 1.00 | 0.04 | 0.22 | 0.00 | 0.05 | 1.00",
+   "support_explanation": "click-shades：HTML 版 0.05→多模态 1.00（且 347K 数据中该任务零回合）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E030",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix G Table 8; fulltext line 1032",
+   "quote": "choose-list | 1.00 | 0.98 | 1.00 | 1.00 | 1.00 | 0.99 | 0.19 | 0.16 | 0.26 | 0.24 | 1.00",
+   "support_explanation": "choose-list：HTML 版 0.24→多模态 1.00。本席计算：图像增益总和 3.06 个任务分，click-shades+choose-list+book-flight 占 2.21（72%）。",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "E031",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Fig 3; fulltext line 184",
+   "quote": "WebGUM (white) | HTML+Image | 90.9%",
+   "support_explanation": "图像控制：白图 90.9% 对比随机图 92.2%、HTML-only 88.7%、正常 94.2%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E032",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Fig 3; fulltext line 185",
+   "quote": "WebGUM (random) | HTML+Image | 92.2%",
+   "support_explanation": "图像控制：随机图。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E033",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Fig 3; fulltext line 183",
+   "quote": "WebGUM | HTML | 88.7%",
+   "support_explanation": "同数据 HTML-only 88.7%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E034",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 5.1; fulltext line 240",
+   "quote": "combining both temporal and local visual tokens (66.1%) improves the performance than temporal (64.2%) or local tokens only (64.0%)",
+   "support_explanation": "视觉 token 消融（Base 模型）：双 token 66.1 vs 64.2/64.0。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E035",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 5.1; fulltext line 241",
+   "quote": "the effects of different pre-trained ViT are marginal",
+   "support_explanation": "ViT 预训练差异影响很小。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E036",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Table 4; fulltext line 900",
+   "quote": "T5-XL | HTML | 347K | 49.8%",
+   "support_explanation": "同 347K 数据：vanilla T5-XL HTML 49.8%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E037",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Table 5; fulltext line 915",
+   "quote": "Flan-T5-XL | 3B | HTML | 75.5%",
+   "support_explanation": "同 347K 数据：Flan-T5-XL HTML 75.5%（+25.7 vs T5-XL）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E038",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Table 5; fulltext line 919",
+   "quote": "Flan-T5-XL, ViT-B16 | 3B | HTML+Image | 80.3%",
+   "support_explanation": "347K 数据时 XL+ViT 80.3%，而 401K 时 94.2%（+13.9）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E039",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Table 4; fulltext line 906",
+   "quote": "Flan-T5-Base, ViT-B16 | HTML+Image | 347K | 66.1%",
+   "support_explanation": "Base+ViT 347K 66.1%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E040",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Table 4; fulltext line 904",
+   "quote": "Flan-T5-Base, ViT-B16 | HTML+Image | 2.8K | 61.1%",
+   "support_explanation": "Base+ViT 2.8K 61.1%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E041",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 5.2; fulltext line 273",
+   "quote": "Base-size WebGUM with 2.8K episodes already achieves 55.7%/66.1%, surpassing previous best SL models (49.8%/55.6% we trained with 347K episodes).",
+   "support_explanation": "正文把 66.1%（Table 4 中是 347K）与 2.8K 并列，且 55.6% 不见于 Table 4——文本与表不一致。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E042",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 5.3; fulltext line 289",
+   "quote": "The results show that WebGUM with HTML and image inputs outperforms prior finetuned-LLM ( Gur et al., 2022 ) and Synapse ( Zheng et al., 2023 ) , a SoTA LLM agent in MiniWoB++",
+   "support_explanation": "组合任务主张：超过 Gur 与 Synapse（平均）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E043",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix H Table 9; fulltext line 1168",
+   "quote": "click-button_click-checkboxes | 0.26 | 0.84 | 0.21 | 0.27",
+   "support_explanation": "组合任务逐项：click-button_click-checkboxes 上 WebGUM 0.27 远低于 Synapse 0.84。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E044",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix H Table 9; fulltext line 1174",
+   "quote": "Ave. | 0.510 | 0.738 | 0.742 | 0.785",
+   "support_explanation": "组合任务平均：WebN-T5 0.510、Synapse 0.738、WebGUM(HTML) 0.742、WebGUM 0.785（仅 6 个“拼接”任务）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E045",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 5.3; fulltext line 294",
+   "quote": "WebGUM outperforms prior finetuned LLM (+ 56.2% in multimodal and +33.4% in unimodal models) even when extra distracted attributes are added to HTML.",
+   "support_explanation": "扰动鲁棒性主张（HTML 端扰动）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E046",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Table 2; fulltext line 304",
+   "quote": "WebGUM | SL | Flan-T5-XL | 67.5 | 45.0%",
+   "support_explanation": "WebShop：WebGUM 45.0% SR。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E047",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Table 2; fulltext line 302",
+   "quote": "ReAct | In-context | PaLM-540B | 66.6 | 40.0%",
+   "support_explanation": "WebShop：ReAct(PaLM-540B) 40.0%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E048",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Table 11; fulltext line 1221",
+   "quote": "Human | – | – | Text+Image | 82.1 | 59.6%",
+   "support_explanation": "WebShop：人类 59.6%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E049",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix K; fulltext line 1205",
+   "quote": "We finetune Flan-T5-XL with about 1K human demonstrations curated by Yao et al. (2022a)",
+   "support_explanation": "WebShop：用 ~1K 人类演示在同一环境微调，属域内训练。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E050",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix K; fulltext line 1207",
+   "quote": "We evaluate our method with 500 user instructions in the test set.",
+   "support_explanation": "WebShop 测试 500 条指令。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E051",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 5.5; fulltext line 338",
+   "quote": "we transfer WebGUM finetuned for MiniWoB++ with 401K dataset into real-world Mind2Web by further finetuning with the training set",
+   "support_explanation": "Mind2Web：MiniWoB++ 预训练再在 Mind2Web 训练集微调。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E052",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Table 3; fulltext line 329",
+   "quote": "WebGUM-XL (ours) | SL | 57.2 | 80.3 | 53.7 | 8.5 | 45.3 | 70.9 | 41.6 | 5.2 | 43.9 | 72.2 | 41.4 | 3.2",
+   "support_explanation": "Table 3：WebGUM-XL 三个拆分的 EleAcc/OpF1/StepSR/SR。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E053",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Table 3; fulltext line 327",
+   "quote": "MindAct-XL | SL | 55.1 | 75.7 | 52.0 | 5.2 | 42.0 | 65.2 | 38.9 | 5.1 | 42.1 | 66.5 | 39.6 | 2.9",
+   "support_explanation": "Table 3：MindAct-XL。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E054",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Table 3; fulltext line 325",
+   "quote": "GPT-4 | ICL | 41.6 | 60.6 | 36.2 | 2.0 | 35.8 | 51.1 | 30.1 | 2.0 | 37.1 | 46.5 | 26.4 | 2.0",
+   "support_explanation": "Table 3 中 GPT-4 行。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E055",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Table 3 caption; fulltext line 331",
+   "quote": "We adopt the top-50 candidate generation results",
+   "support_explanation": "WebGUM 用 top-50 候选。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E056",
+   "material_id": "R-2306.06070",
+   "material_sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+   "locator": "Table 2 caption (Mind2Web); fulltext line 252",
+   "quote": "For GPT-4 we use 50 50 tasks for each setting with top- 10 10 candidates due to",
+   "support_explanation": "Mind2Web 原文：GPT-4 行只在每拆分 50 任务、top-10 候选上跑；与 WebGUM 的 top-50 全测试集不同设置——“优于 GPT-4”不是同设置比较。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E057",
+   "material_id": "R-2306.06070",
+   "material_sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+   "locator": "Appendix D.1 Table 5 (Mind2Web); fulltext line 755",
+   "quote": "Flan-T5 XL | 51.9 51.9 ± \\pm 0.8 0.8 | 39.5 39.5 ± \\pm 0.2 0.2 | 39.6 39.6 ± \\pm 0.2 0.2",
+   "support_explanation": "Mind2Web 原文：Flan-T5 XL 在 5 个种子上的步成功率标准差 0.2–0.8，说明 1.7–2.7 个点的差异可能超出种子噪声，但 WebGUM 为单 seed、无法检验。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E058",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 6; fulltext line 351",
+   "quote": "human-level broader generalization to the diverse real websites or instructions is still a hard problem to be resolved",
+   "support_explanation": "作者承认真实网站泛化仍未解决。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E059",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix C; fulltext line 885",
+   "quote": "Due to the huge computational requirements, we run one seed to train each model throughout the paper",
+   "support_explanation": "全文每个模型只训练一个 seed。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E060",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Appendix C; fulltext line 886",
+   "quote": "Base-size models require 256 cores and XL-size models do 512 cores, which takes 1-2 days for finetuning.",
+   "support_explanation": "训练算力：TPU-v4 256/512 核，1–2 天。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E061",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 6; fulltext line 348",
+   "quote": "However, this is still far from internet-scale dataset that is necessary for generalist models.",
+   "support_explanation": "作者局限：数据仍远非互联网规模。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E062",
+   "material_id": "M-2305.11854v4",
+   "material_sha256": "53a299401d404fe35042ed9b1bc640b1b5b5193c15f9ec785c77ccb0cd7bcf53",
+   "locator": "Sec 5; fulltext line 226",
+   "quote": "there is room for improvement in complex reasoning tasks requiring memory such as guess-number",
+   "support_explanation": "失败：需要记忆的 guess-number。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E063",
+   "material_id": "R-2401.10935",
+   "material_sha256": "8961f2b08e5dcd2c88679f424018ee8590bc295bcc6390de69884424cc5e9b1f",
+   "locator": "Sec 2 (SeeClick, same fixed bundle); fulltext line 289",
+   "quote": "the state-of-the-art method WebGUM ( Furuta et al., 2023 ) uses screenshots as auxiliary input but still selects HTML elements as actions",
+   "support_explanation": "后续 SeeClick 把 WebGUM 当离线 SOTA，并指出仍以 HTML 元素为动作（谱系/现实相关性）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "E064",
+   "material_id": "M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.2.2 (RCI, same batch); fulltext line 198",
+   "quote": "Notably, our proposed RCI prompting method outperforms the SotA LLM approach",
+   "support_explanation": "RCI 的同期提示式路线（谱系）。",
+   "kind": "author_report"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "多模态编码-解码模型：Flan-T5 + ViT(时序 H=2、局部 14×14 patch token)，输出文本动作",
+   "information": "输入=指令、HTML 文本、历史动作、当前+上一帧截图(裁掉指令区、补白到 224)；动作 function(selector, text)，selector 为整数元素索引；评测时无时限；无奖励输入。",
+   "operation": "把 web 导航改写成 VQA 形式(text,image→text)，T5 encoder 同时消费视觉和 HTML token，decoder 自由文本输出动作；ViT 与 LM 联合微调。",
+   "output": "可解析的文本动作。",
+   "conditions": "页面元素可用整数索引寻址(MiniWoB 的 DOM)、HTML 能放进 4096 token。",
+   "feedback": {
+    "status": "not_applicable",
+    "reason": "离线监督微调，无环境反馈参与训练。"
+   },
+   "selection_rule/data": "见 S2。",
+   "persistence": {
+    "status": "not_applicable",
+    "reason": "静态模型。"
+   },
+   "later_use": {
+    "status": "not_applicable",
+    "reason": "静态模型。"
+   },
+   "claimed_effect": "视觉 token 与指令微调 LM 带来 grounded 感知、HTML 理解、多步推理；规模化后超越各基线。",
+   "failure_boundary": "guess-number(需要记忆)、count-shape、social-media-all；仅覆盖元素索引可表达的 56 任务。",
+   "evidence_ids": [
+    "E001",
+    "E009",
+    "E010",
+    "E011",
+    "E034",
+    "E062"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "训练数据流水线：LLM 策略 rollout → 环境奖励过滤成功 → 微调 → 再 rollout",
+   "information": "起点是 Gur 2022 的 WebN-T5(人类 12K 演示监督)；rollout 在 MiniWoB++ 环境内产生，成功与否由环境奖励判定；54K 来自 Synapse(PaLM2 提示)，book-flight 另有脚本策略。",
+   "operation": "第 1 轮：100 回合/任务 → 2.8K 成功回合；用其微调 Flan-T5-XL；第 2 轮：10,000 回合/任务只保留成功轨迹 → 347K；再补 54K 难任务教师数据 → 401K。",
+   "output": "含 HTML+截图+动作+指令的多模态数据集。",
+   "conditions": "环境可重置、奖励可脚本判定。",
+   "feedback": "环境脚本奖励（成功/失败）。",
+   "selection_rule/data": "仅保留成功回合；难任务由更强/不同教师补充。",
+   "persistence": {
+    "status": "applicable",
+    "where": "数据集(347K 发布，54K 不发布)与训练好的权重"
+   },
+   "later_use": {
+    "status": "applicable",
+    "where": "用于微调 WebGUM；第 1 轮模型作为第 2 轮 rollout 策略"
+   },
+   "claimed_effect": "低成本构造大规模多模态数据；规模带来增益。",
+   "failure_boundary": "难任务(click-scroll-list/click-shades/enter-time 在 347K 中零回合)依赖额外教师；数据与评测同环境同任务。",
+   "evidence_ids": [
+    "E012",
+    "E013",
+    "E014",
+    "E015",
+    "E016",
+    "E017",
+    "E018",
+    "E019",
+    "E020"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "以指令微调 LM 作为 HTML 理解/多步推理先验的迁移：MiniWoB++→Mind2Web",
+   "information": "先在 MiniWoB++ 401K 上微调，再在 Mind2Web 训练集上继续微调；测试用 top-50 候选。",
+   "operation": "继续微调。",
+   "output": "步级动作预测。",
+   "conditions": "候选由 MindAct 的小模型预筛选；Flan-T5 基座与对手相同。",
+   "feedback": {
+    "status": "not_applicable",
+    "reason": "离线监督"
+   },
+   "selection_rule/data": "Mind2Web 官方跨任务/网站/领域拆分。",
+   "persistence": {
+    "status": "not_applicable",
+    "reason": "静态"
+   },
+   "later_use": {
+    "status": "not_applicable",
+    "reason": "静态"
+   },
+   "claimed_effect": "正迁移，超过 MindAct 与 GPT-4。",
+   "failure_boundary": "整任务 SR 仅 3–8%；真实网站泛化仍未解决。",
+   "evidence_ids": [
+    "E051",
+    "E052",
+    "E058"
+   ]
+  }
+ ],
+ "retention_trace": {
+  "applicable": "partial",
+  "before": "WebN-T5(人类 12K 演示监督)作为 rollout 策略；",
+  "proposed_change": "第 1 轮：rollout 100 回合/任务；第 2 轮：用其微调出的 Flan-T5-XL rollout 10,000 回合/任务；另加 Synapse 54K 与 book-flight 脚本数据。",
+  "selection_data_rule": "环境奖励判定成功即保留（失败丢弃）；难任务靠教师补充。",
+  "persisted_change": "数据集(347K 发布、54K 内部)与 WebGUM 权重。",
+  "later_tasks": "用于训练 WebGUM；在 MiniWoB++ 同任务集评测，Mind2Web 继续微调。",
+  "measured_gain": "WebGUM 94.2%（401K）vs WebN-T5 48.4% 等；但该增益混合了模型改动(Flan-T5+ViT)、数据规模与教师数据，论文没有“仅数据过滤循环”的消融。",
+  "claim": "论文不声称跨迭代自我改进；这是离线数据构造流程，不是 retained improvement；不要把它评成 improver。"
+ },
+ "gap": {
+  "author_gap": "在线 RL 需要海量交互、真实站点不可行；离线监督性能落后于在线 RL；web 专用架构（LSTM/GNN/DOM 专用）无法利用预训练基础模型；缺少大规模多模态演示数据。",
+  "checked_gap": "同批 CC-Net 原文核实：在线 RL SoTA 93.5%(104 任务)。离线 WebN-T5 48.4% 等基线来自 Gur 2022，原文不在固定包内，数值取自 WebGUM Table 1。本席核对到：WebGUM 的“超过 CC-Net/人类/GPT-4 agent”建立在跨任务集比较上（Table 8：#Tasks 63/104/53/54/56…）；在 WebGUM 有分的 56 个共同任务上，CC-Net(SL+RL) 为 0.964 > WebGUM 0.942，Synapse 0.986 > WebGUM 0.939，人类 0.945 ≈ WebGUM 0.942，仅对 RCI(gpt-3.5) 和 AdaPlanner 略高。因此“离线追平在线 RL”在共同任务上并未成立，而“离线大幅优于 WebN-T5”成立。",
+  "lineage": [
+   "CC-Net(2202.08137，在线 RL，同批) / WebN-T5(Gur 2022，T5 HTML 微调) → WebGUM(本文，Flan-T5+ViT+LLM 生成数据) ← RCI(2303.17491，提示式，同批)；Synapse/AdaPlanner(提示式)；随后 MindAct(Mind2Web 官方基线，同样 Flan-T5)。"
+  ],
+  "closest_adjacent": [
+   {
+    "work": "WebN-T5 (Gur et al. 2022)",
+    "source_version": "numbers as reported in 2305.11854v4; original not in pinned bundle",
+    "solved": "离线 HTML LM 微调，MiniWoB 48.4%",
+    "residual": "vanilla T5、无视觉、12K 演示",
+    "evidence_ids": [
+     "E022",
+     "E036"
+    ]
+   },
+   {
+    "work": "CC-Net (2202.08137v2)",
+    "source_version": "pinned, same batch",
+    "solved": "在线 RL+2.4M 演示，104 任务 93.5%",
+    "residual": "依赖海量演示和在线 RL；任务集不同",
+    "evidence_ids": [
+     "E023",
+     "E025",
+     "E027"
+    ]
+   },
+   {
+    "work": "RCI / Synapse / AdaPlanner (prompted LLM agents)",
+    "source_version": "RCI 2303.17491v3 pinned; Synapse/AdaPlanner as reported in Table 8",
+    "solved": "提示式 90.6–98.5%（各自任务集）",
+    "residual": "长 HTML 任务上下文受限（作者的区分点）",
+    "evidence_ids": [
+     "E028",
+     "E064"
+    ]
+   },
+   {
+    "work": "MindAct (Mind2Web)",
+    "source_version": "2306.06070v? pinned",
+    "solved": "真实网站离线动作预测，Flan-T5 微调",
+    "residual": "GPT-4 行为不同设置",
+    "evidence_ids": [
+     "E053",
+     "E056"
+    ]
+   }
+  ],
+  "residue": "真实网站泛化(整任务 SR 3–8%)、需要记忆的长时程任务、MiniWoB 合成性、数据仍小、对元素索引动作的依赖。",
+  "stakes": "证明离线、基础模型驱动的多模态 recipe 可在合成 web 任务上接近在线 RL 与强提示 agent，有利于无法在线探索的真实场景；数据集可复用。",
+  "method_response": "四要素：多模态时序+局部视觉 token、指令微调 LM、大规模多模态数据(LLM agent 生成并过滤)、自由文本动作输出。",
+  "remaining_gap": "共同任务上仍低于 CC-Net 与 Synapse；视觉增益集中在少数任务；真实网站的在线成功未验证；单 seed。",
+  "current_relevance": "SeeClick 等后续工作把 WebGUM 作为离线 SOTA 并指出其仍选 HTML 元素作为动作，凸显后续转向纯视觉 grounding 的残余问题（谱系位置，不否定当时 gap）。",
+  "evidence_ids": [
+   "E005",
+   "E006",
+   "E023",
+   "E027",
+   "E028",
+   "E063",
+   "E056"
+  ],
+  "unresolved": [
+   "WebN-T5/Synapse/AdaPlanner/Pix2Act 原文不在固定包内；对它们的描述按 WebGUM 转述。"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "unify_into_shared_representation",
+  "supporting": [
+   "self_supervised_signal_engineering"
+  ],
+  "sub_pattern": "C18",
+  "outside_taxonomy": false,
+  "reason": "核心操作：把 web 导航重写成 (text,image→text) 的 VQA 格式，用一个预训练 T5+ViT 统一消费 HTML、截图、指令与历史并以文本输出动作，替代 web 专用架构（LSTM/GNN/分类头）；命中 unify_into_shared_representation 与 C18：为缺乏现成 substrate 的 GUI 模态制造接口（视觉 patch token 桥接到预训练 LM、动作文本序列化），再套用成熟 recipe，并有 naive 对照（HTML-only、白/随机图、T5 vs Flan-T5）。第二个操作是用 LLM agent rollout + 环境奖励过滤生成训练数据（C08 战术）。",
+  "matches": [
+   {
+    "main_id": "unify_into_shared_representation",
+    "sub_id": "C18",
+    "role": "primary",
+    "fit": "strong",
+    "tactic_steps_checked": {
+     "1_name_blocking_assumption": "met(web 专用架构无法使用预训练模型)",
+     "2_construct_interface_and_validate_semantics": "partial(ViT patch token 桥接；白/随机图控制说明视觉通道有信息，但 ViT 预训练差异影响很小，接口本身语义未做更多验证)",
+     "3_apply_recipe_uniformly": "met(统一文本到文本微调)",
+     "4_ablations_vs_naive_baseline": "met(HTML-only、白图、随机图、vanilla T5、token 类型消融)",
+     "5_capability_beyond_bespoke_and_beat_specialists": "partial(开放文本动作、Mind2Web/WebShop 可用；共同任务上不及 CC-Net/Synapse)"
+    },
+    "success_checks": {
+     "precondition_established": "partial(WebSRC 上 Flan-T5>T5)",
+     "uniform_objective": "met",
+     "emergent_capability_measured": "partial(组合任务、扰动鲁棒、WebShop、Mind2Web)",
+     "generality_across_backbones": "partial(T5 各规模+Flan-PaLM-8B；单 seed)"
+    },
+    "failure_checks": {
+     "mechanical_recombination": "partial(组合现成部件，但有受控对照)",
+     "no_ablation_isolating_unification": "not_present(有同数据对照)",
+     "single_backbone": "not_present(多规模、含 decoder-only)",
+     "fails_specialists": "present(共同任务上低于 CC-Net 与 Synapse)"
+    },
+    "evidence_ids": [
+     "E006",
+     "E001",
+     "E008",
+     "E033",
+     "E031",
+     "E032",
+     "E036",
+     "E037",
+     "E035",
+     "E027"
+    ],
+    "reason": "多模态统一接口+指令微调 LM 的 recipe 与卡片 C18 的 serializer/bridge 战术一致，且有控制消融。"
+   },
+   {
+    "main_id": "self_supervised_signal_engineering",
+    "sub_id": "C08",
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "1_binding_constraint_is_corpus": "met(无多模态演示；人类数据昂贵)",
+     "2_controllable_generator_that_extends_support": "partial(已微调的 LLM 策略 + Synapse + 脚本；覆盖难任务但与评测同分布)",
+     "3_single_quality_gate": "met(环境奖励成功过滤)",
+     "4_iterate": "partial(两轮)",
+     "5_real_target_transfer_and_cheaper_alternatives": "partial(同环境评测；与人类演示数据未做同量对照)"
+    },
+    "success_checks": {
+     "curation_removal_shown_to_break": "unmet(没有“不过滤/不加教师数据”的消融)"
+    },
+    "failure_checks": {
+     "thin_generator_plus_filter": "present(生成+过滤是常见做法)",
+     "transfer_assumption_unvalidated": "present(合成与评测同环境同任务)",
+     "cheaper_baseline_missing": "present"
+    },
+    "evidence_ids": [
+     "E012",
+     "E013",
+     "E014",
+     "E015",
+     "E016"
+    ],
+    "reason": "训练数据由模型 rollout 生成并按奖励过滤；该卡原义“无真值监督时自造信号”在此仅部分适用，因环境奖励存在。"
+   }
+  ],
+  "considered_not_chosen": [
+   {
+    "main_id": "adapt_via_conditioning",
+    "why_not": "WebGUM 通过微调适配，不是推理时条件化；虽然摘要强调指令跟随，但不属于该卡的“无参数更新”操作。"
+   },
+   {
+    "main_id": "architectural_operator_substitution",
+    "why_not": "替换了 web 专用架构，但没有“证明保持关键性质”的步骤，更贴近统一表示。"
+   }
+  ],
+  "executes_pattern": {
+   "value": "yes",
+   "reason": "执行了统一表示：单一 T5+ViT、文本到文本、受控对照；未执行的是“超过全部专家”这一成功条件。"
+  },
+  "resolves_problem": {
+   "value": "partial",
+   "reason": "关闭了“离线 HTML LM（WebN-T5）与在线 RL 差距巨大”的问题（48.4→94.2，同 Table 8 任务）；但在共同任务上仍低于 CC-Net 与 Synapse，且真实网站泛化未解决。",
+   "evidence_ids": [
+    "E022",
+    "E027",
+    "E028",
+    "E052"
+   ]
+  }
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "trajectory_level_policy_training",
+    "sub": null,
+    "version": "taxonomy@430aa362",
+    "fit": "partial",
+    "operation": "“初始 SFT 策略 → rollout → 按成功过滤 → SFT 更新”接近该主卡 signature（update with SFT 分支），但无 RL/DPO/首错修正，各子卡 K20/K21/K25/K26/C21 均不对应，所以 sub=null。",
+    "condition_checks": [
+     {
+      "id": "S1",
+      "status": "not_applicable",
+      "note": "无在线 RL；SFT 初始化由 WebN-T5 提供 rollout 策略",
+      "evidence_ids": [
+       "E012"
+      ]
+     },
+     {
+      "id": "F2",
+      "status": "present",
+      "note": "Mind2Web 部分按步精确匹配，会把等价路径当错",
+      "evidence_ids": [
+       "E052"
+      ]
+     },
+     {
+      "id": "F3",
+      "status": "present",
+      "note": "任务短、56 任务子集、单 seed",
+      "evidence_ids": [
+       "E059",
+       "E021"
+      ]
+     },
+     {
+      "id": "F4",
+      "status": "not_observed",
+      "note": "提供了 Base→XXL 多规模结果，未见增益随规模缩小",
+      "evidence_ids": [
+       "E039",
+       "E037"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "E013",
+     "E015",
+     "E059"
+    ]
+   },
+   {
+    "main": "structured_screen_observation",
+    "sub": "C01",
+    "version": "taxonomy@430aa362",
+    "fit": "partial",
+    "operation": "动作用整数元素索引(function(selector,text))，同时输入 HTML 与截图；与 C01 一致的是元素 id 动作，差异在于不画 mark、元素由 DOM 属性索引，且截图是辅助通道。",
+    "condition_checks": [
+     {
+      "id": "S1",
+      "status": "met",
+      "note": "MiniWoB 的 DOM 暴露可点击元素",
+      "evidence_ids": [
+       "E009"
+      ]
+     },
+     {
+      "id": "S4",
+      "status": "partial",
+      "note": "同骨干下 HTML-only vs HTML+Image 比较，但无 a11y/SoM 变体",
+      "evidence_ids": [
+       "E033",
+       "E031",
+       "E032"
+      ]
+     },
+     {
+      "id": "F1",
+      "status": "present",
+      "note": "只评测 56 个能用元素索引表达的任务；需要拖拽/连续动作的 MiniWoB 任务不在评测集",
+      "evidence_ids": [
+       "E027"
+      ]
+     },
+     {
+      "id": "F5",
+      "status": "unknown",
+      "note": "未做结构-像素冲突探测",
+      "evidence_ids": []
+     }
+    ],
+    "evidence_ids": [
+     "E009",
+     "E033",
+     "E031",
+     "E027"
+    ]
+   }
+  ],
+  "unassigned": [
+   "“LLM agent 生成并按奖励过滤的多模态演示 + 指令微调 LM”——最接近 trajectory_level_policy_training，但无子卡匹配（K25/C21 是推理注释，K26 是首错修正）。",
+   "视觉 patch token 作为 HTML 的辅助通道，非 C08 高分辨率细节通道（目的是上下文而非定位）。"
+  ],
+  "revision_proposals": [
+   {
+    "status": "case_candidate_not_checked",
+    "note": "可考虑 trajectory_level_policy_training 子卡：agent-rollout 成功过滤 + 教师补充的离线 SFT 数据流水线（WebGUM 单篇；需第二篇独立全文支持）。"
+   }
+  ]
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "unify_into_shared_representation",
+   "rs_sub": "C18",
+   "domain": {
+    "namespace": "gui",
+    "main": "structured_screen_observation",
+    "sub": "C01"
+   },
+   "operation_correspondence": "RS C18：把结构化/异构信号序列化并桥接进预训练模型，套用统一 recipe；GUI C01：元素 id 动作+结构化观察。WebGUM 的整数元素索引动作与 HTML/截图双通道对应。",
+   "conditions_and_differences": "领域卡强调“结构缺失元素”边界：WebGUM 只评测元素索引可表达任务；RS 卡强调对照专家：共同任务上不及 CC-Net/Synapse。",
+   "evidence_ids": [
+    "E009",
+    "E027",
+    "E033"
+   ]
+  },
+  {
+   "rs_main": "self_supervised_signal_engineering",
+   "rs_sub": "C08",
+   "domain": {
+    "namespace": "gui",
+    "main": "trajectory_level_policy_training",
+    "sub": null
+   },
+   "operation_correspondence": "RS C08：生成器+单一质量闸+回灌训练；GUI：agent rollout+成功过滤+SFT。",
+   "conditions_and_differences": "领域主卡的成功条件(KL/回放/SFT 初始化)不适用于纯 SFT；缺“去过滤/去教师数据”的消融。",
+   "evidence_ids": [
+    "E013",
+    "E015",
+    "E016"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "text": "Report execution-checked success rate on OSWorld (or OSWorld-Verified) for desktop computer-use claims, stating the step budget (15 vs 50 steps) and observation setting",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「桌面(Ubuntu/Windows)端到端 computer-use 成功率主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "text": "Report online success on AndroidWorld for mobile-agent claims, not only offline AndroidControl/AITW step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「Android/移动 GUI agent 任务成功率主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "text": "Report success on WebArena (self-hosted, functional-correctness checkers) for web-agent training or planning claims; if the 165-task WebArena-Lite or a per-template subset is used, say so and justify it",
+   "applicable": true,
+   "status": "partial",
+   "reason": "MiniWoB++ 与 WebShop 是自托管、脚本判据的 web 环境，满足“自托管+功能性判据”的部分目的，但不是 WebArena 类真实站点（WebArena 晚于本文首版）；评测任务子集 56/62 并说明。",
+   "evidence_ids": [
+    "E021",
+    "E050"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "text": "Evaluate live-web agents on Online-Mind2Web (human-validated, start URL given, no search engine) or Mind2Web-Live rather than only WebVoyager, where a naive search-and-click agent already solves 51% of sampled tasks",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「真实 live-web 站点上的 web agent 成功率主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "text": "Report GUI grounding on ScreenSpot-Pro (high-resolution professional desktop) and ScreenSpot-v2, not only ScreenSpot v1, which saturates (7B and 72B indistinguishable)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「截图到坐标的 GUI grounding 模型/数据配方主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "text": "Compare a new grounder against UGround(-V1-7B), Aguvis-7B/72B, OS-Atlas-7B and UI-TARS(-1.5) at matched backbone size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「新 grounder 优于已有 GUI grounder 的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "text": "Compare a native end-to-end GUI policy against UI-TARS(-1.5)-7B (or the same backbone's SFT-only model) and against an agentic framework (GPT-4o/o3 planner + specialised grounder such as UGround, Aria-UI, Jedi, GTA1)",
+   "applicable": true,
+   "status": "partial",
+   "reason": "与同基座 SFT-only（WebN-T5、T5-XL）及同期强基线（CC-Net、RCI、AdaPlanner、Synapse）对比；UI-TARS 等后来的基线在当时不存在；提示式基线在不同任务集上比较。",
+   "evidence_ids": [
+    "E022",
+    "E023",
+    "E028"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "text": "For planner-grounder systems, hold the planner fixed and swap grounders (e.g. GPT-4o + UGround vs + Aguvis vs + Jedi), and report the planner alone",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「接地组件(或 planner–grounder 拆分)提升 agent 任务成功的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "text": "Compare GUI online-RL methods against DigiRL, WebRL, filtered BC / AWR and an SFT-only model trained on the same data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「RL 算法(在线/离线转在线/半在线/基于模型)提升 GUI/web agent 的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "text": "Validate an LLM/VLM success judge or outcome reward model against human labels on trajectories from agents not used to build it (agreement/accuracy, plus the resulting success-rate gap)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「用 LLM/VLM judge、ORM 或 reflector 为评测/过滤/奖励标注轨迹成败」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "text": "Report judge reliability separately for positive and negative verdicts (precision and NPV, or precision/recall per class), not only overall accuracy",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「GUI agent judge/PRM/ORM 足够可靠可作奖励或评测的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "text": "When a learned judge or PRM is the RL reward, show downstream policy gain against an alternative reward (rule/script checker, ORM vs PRM, another judge), and address reward hacking or bias",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「学习型奖励模型/验证器改进 GUI agent RL 训练的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "text": "Measure execution checkers (evaluation scripts) two-sidedly: false negatives on alternative valid solutions as well as false positives",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「奖励来自逐任务执行检查器/评测脚本的 benchmark、合成环境或 RL 流水线」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "text": "For PRMs or step-level verifiers, ablate the label source (human vs GPT-4o-generated step labels)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「GUI 步级 PRM 改进 RL 或 best-of-N 的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "text": "Do not rest an agent capability claim on offline step accuracy (AndroidControl, Multimodal-Mind2Web, GUI Odyssey) alone; add an online benchmark or show the offline metric predicts online success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "真实网站迁移结论仅依赖 Mind2Web 离线步级指标（含整任务 SR 个位数）；但能力主张同时有 MiniWoB++/WebShop 的在线脚本判据支撑。",
+   "evidence_ids": [
+    "E052",
+    "E058"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "每个模型仅单 seed，评测无多次运行。",
+   "evidence_ids": [
+    "E059"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "评测忽略 MiniWoB 时限，且未说明最大步数；与按时限评测的基线是否同口径未核查。",
+   "evidence_ids": [
+    "E026"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "text": "For inference-time search or best-of-N (simulated lookahead, verifier reranking), report cost/latency and the number of candidates, and compare against real-execution tree search where reset is possible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「推理时选择/搜索(世界模型 lookahead、verifier 重排、best-of-N)提升成功率的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "text": "Disclose and validate any modification to an online benchmark harness (re-implemented checkers, changed action implementations, dropped tasks, extra steps)",
+   "applicable": true,
+   "status": "partial",
+   "reason": "披露了忽略时限与 56 任务子集（去重自 62 任务），但没有验证这些改动对结果的影响，也未在统一口径下重跑基线。",
+   "evidence_ids": [
+    "E026",
+    "E027"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "text": "For live-web results, state the evaluation date and handle site drift (replace outdated tasks, report blocked/CAPTCHA tasks)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在 live 网站或 live 应用上测得的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+   "applicable": true,
+   "status": "met",
+   "reason": "分别报告 HTML-only 与 HTML+Image，并有白图/随机图控制，同骨干下对比；",
+   "evidence_ids": [
+    "E033",
+    "E031",
+    "E032"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "text": "Report results across backbone sizes (e.g. 7B and 32B/72B), since gains from GUI data/RL recipes shrink with model size",
+   "applicable": true,
+   "status": "met",
+   "reason": "报告 T5 Base/Large/XL/XXL 与 ViT 组合，另有 Flan-PaLM-8B 解码器对照；增益随规模上升，未见缩小。",
+   "evidence_ids": [
+    "E037",
+    "E038",
+    "E039"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "text": "Stratify online success by human reference step count (difficulty) and audit failure causes",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「新 benchmark 或关于长时程 GUI 任务能力的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "text": "Test grounding robustness under controlled perturbations (zoom, text size, window position/clutter, relational instructions) with matched pairs",
+   "applicable": true,
+   "status": "partial",
+   "reason": "有三种 HTML 端扰动（顶部/底部额外 HTML、坐标属性）与基线配对比较；未涉及视觉布局/缩放/杂乱，也无配对统计。",
+   "evidence_ids": [
+    "E045"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "text": "Report refusal / infeasible-task behaviour (instructions with no valid target)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「含歧义或不可行指令的 grounding/agent benchmark 主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "text": "Compare a synthetic-trajectory recipe against an instruction-first / task-driven synthesis baseline with the same executor and similar data size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「探索优先/反向/世界模型式数据合成产出更好 GUI 训练数据的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。（补充：本文数据来自“LLM agent 在同环境 rollout 并按奖励过滤”，没有与指令优先的合成基线对比，也不主张探索优先合成优于指令优先。）",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "text": "Show a data-scaling curve (fraction or count of synthetic samples vs downstream score) and say where it saturates",
+   "applicable": true,
+   "status": "partial",
+   "reason": "给出 2.8K/68K/347K 的数据规模曲线(Base)，趋势单调；没有说明饱和点，也未覆盖头条 401K 或 54K 教师数据的单独作用。",
+   "evidence_ids": [
+    "E039",
+    "E040",
+    "E038"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "text": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "演示由 LLM agent 在 MiniWoB++ 环境内生成，评测使用同一环境同一批任务，没有把合成环境与评测分开；Mind2Web 的迁移是另一数据集但属离线并经过再微调。",
+   "evidence_ids": [
+    "E012",
+    "E015",
+    "E021"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "text": "Ablate error-correction/reflection data against filtered behaviour cloning at the same iteration count",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「反思/自纠错/首错恢复数据提升 GUI agent 的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "text": "Evaluate a GUI world model by downstream agent success and closed-loop (multi-step, autoregressive) rollouts, not only teacher-forced one-step fidelity",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「GUI/web 世界模型(文本、代码或图像下一状态预测器)准确或有用的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "text": "Ablate imagination / lookahead horizon, since world-model errors compound beyond 1 (lookahead) or about 5 (training) steps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在学习得到的 GUI 世界模型内做多步 rollout 规划或训练」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "text": "For training in a world model, include sim-only vs real-anchored vs SFT-only arms",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在世界模型或模拟 GUI rollout 中训练策略的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "text": "Back world-model or synthetic-environment fidelity scores with a second independent judge, human validation or executable checks, not a VLM judge from the same family as the training reward",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「用 LLM/VLM judge 度量 GUI 世界模型或模拟应用保真度的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "text": "For a digital twin / simulated app used for training or evaluation, measure its realism and whether it preserves the ranking of agents or checkpoints seen in the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「模拟应用/合成站点/数字孪生可替代真实环境的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "text": "For memory/retrieval agents, show gains on environments other than those the memory was built from",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「经验记忆/检索轨迹改进 GUI agent 的主张」；本文中心主张范围为「离线训练的多模态 web agent（MiniWoB++/WebShop 在线，Mind2Web 离线），含数据生成流水线与数据集发布」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "MiniWoB++ 上 WebGUM 94.2%：超过离线 SoTA 45.8 点，并超过在线 RL SoTA(CC-Net)、人类与 GPT-4 agent",
+   "setting": "Flan-T5-XL+ViT-B16；401K 数据(含 54K Synapse/脚本教师数据)；56 任务；100 回合/任务；忽略时限；单 seed",
+   "baseline/control": "WebN-T5(48.4)、CC-Net(93.5, 104 任务)、人类(93.5, 104 任务)、RCI、AdaPlanner、Synapse(98.5, 63 任务)",
+   "selection_vs_test": "训练与评测同一批 MiniWoB++ 任务（Table 7 有这些任务的训练回合）；教师数据针对难任务",
+   "result/denominator": "Table 8 共同 56 任务上重算：WebGUM 0.942；CC-Net(SL+RL) 0.964；人类 0.945；Synapse(54 任务) 0.986 vs WebGUM 0.939；RCI-gpt4(51) 0.941 vs 0.937",
+   "evidence_ids": [
+    "E002",
+    "E022",
+    "E025",
+    "E021",
+    "E027",
+    "E028"
+   ],
+   "counterevidence": [
+    "E027",
+    "E026",
+    "E038",
+    "E018"
+   ],
+   "counter_note": "头条比较跨不同任务集；共同任务上 CC-Net 与 Synapse 更高、人类相当；94.2% 依赖额外 54K 教师/脚本数据(347K 时同模型仅 80.3%)；忽略时限。",
+   "allowed_conclusion": "作者报告：WebGUM 在其 56 任务上 94.2%，远超同类离线 HTML-LM(WebN-T5)，与人类、RCI(gpt-4)、AdaPlanner 大致持平；不应写成超过 CC-Net 或 Synapse。"
+  },
+  {
+   "claim_id": "C2",
+   "text": "时序+局部视觉 token 带来 grounded 多模态感知增益",
+   "setting": "同数据 HTML-only vs HTML+Image；白图/随机图控制；token 类型消融(Base)",
+   "baseline/control": "HTML-only、白图、随机图、仅时序/仅局部 token",
+   "selection_vs_test": "同 MiniWoB++ 任务",
+   "result/denominator": "HTML 88.7 → 94.2(+5.5)；白图 90.9、随机图 92.2；Base：双 token 66.1 vs 64.2/64.0；ViT 预训练差异小",
+   "evidence_ids": [
+    "E033",
+    "E031",
+    "E032",
+    "E034",
+    "E035",
+    "E029",
+    "E030"
+   ],
+   "counterevidence": [
+    "E059",
+    "E030"
+   ],
+   "counter_note": "增益高度集中：click-shades(+0.95)、choose-list(+0.76)、book-flight(+0.50) 占图像总增益 72%（本席由 Table 8 计算）；多数任务已饱和为 1.00；单 seed。",
+   "allowed_conclusion": "作者报告：视觉输入在少数视觉/页面转移任务上有大增益，总体 +5.5；不是均匀增益。"
+  },
+  {
+   "claim_id": "C3",
+   "text": "指令微调 LM（Flan-T5）显著优于 vanilla T5，并带来更好 HTML 理解与鲁棒性",
+   "setting": "同 347K 数据、同规模(XL, 3B)、HTML-only",
+   "baseline/control": "T5-XL",
+   "selection_vs_test": "同任务；组合任务与扰动为测试时构造",
+   "result/denominator": "T5-XL 49.8 vs Flan-T5-XL 75.5（+25.7）；组合任务 6 个：0.742(HTML)/0.785 vs WebN-T5 0.510、Synapse 0.738；扰动：+33.4/+56.2",
+   "evidence_ids": [
+    "E036",
+    "E037",
+    "E007",
+    "E042",
+    "E044",
+    "E045"
+   ],
+   "counterevidence": [
+    "E043",
+    "E059"
+   ],
+   "counter_note": "组合任务仅 6 个“拼接”的 click 任务，逐项 Synapse 在 4/6 更高；扰动仅在 HTML 端；单 seed。",
+   "allowed_conclusion": "作者报告：同数据同规模下 Flan-T5 远胜 vanilla T5（在 MiniWoB++ 上）；对未见组合与 HTML 扰动更稳健的证据较弱。"
+  },
+  {
+   "claim_id": "C4",
+   "text": "数据与模型规模均带来提升",
+   "setting": "Base 的 2.8K/68K/347K；Base→XXL",
+   "baseline/control": "同设置内部比较",
+   "selection_vs_test": "同任务",
+   "result/denominator": "Base+ViT 61.1→62.3→66.1；Flan-T5 Base→XL (HTML) 57.2→75.5→XXL 79.0",
+   "evidence_ids": [
+    "E039",
+    "E040",
+    "E037",
+    "E038"
+   ],
+   "counterevidence": [
+    "E041",
+    "E038"
+   ],
+   "counter_note": "正文把 66.1% 误配 2.8K；347K→401K 的 +13.9 点主要来自额外教师数据且未纳入规模曲线。",
+   "allowed_conclusion": "趋势单调，但曲线未覆盖头条所用的 401K。"
+  },
+  {
+   "claim_id": "C5",
+   "text": "WebShop：3B WebGUM 超过 PaLM-540B 提示",
+   "setting": "Flan-T5-XL，仅文本，~1K 人类演示在同环境微调(840 条 score≥50)，500 测试指令",
+   "baseline/control": "ReAct(PaLM-540B 提示)40.0、IL/IL+RL、Rule、WebN-T5 29.8、人类 59.6",
+   "selection_vs_test": "域内监督微调，基线中 ReAct 仅一次性提示",
+   "result/denominator": "45.0% vs 40.0%（+5 点）",
+   "evidence_ids": [
+    "E046",
+    "E047",
+    "E048",
+    "E049",
+    "E050"
+   ],
+   "counterevidence": [
+    "E059"
+   ],
+   "counter_note": "与提示式 540B 的比较是微调 vs 一次性提示，预算/信息不同；单 seed。",
+   "allowed_conclusion": "作者报告：域内微调的 3B 模型在 WebShop 上 SR 高于 PaLM-540B 提示基线，仍低于人类。"
+  },
+  {
+   "claim_id": "C6",
+   "text": "从 MiniWoB++ 到 Mind2Web 的强正迁移，优于 MindAct 与 GPT-4",
+   "setting": "MiniWoB++(401K)微调后在 Mind2Web 训练集再微调；top-50 候选；三个拆分",
+   "baseline/control": "MindAct-Large/XL（同 Flan-T5 基座，仅 Mind2Web 微调）、GPT-4 ICL（取自 Mind2Web 论文）",
+   "selection_vs_test": "Mind2Web 官方拆分",
+   "result/denominator": "WebGUM-XL vs MindAct-XL：EleAcc +2.1/+3.3/+1.8，StepSR +1.7/+2.7/+1.8，整任务 SR 8.5/5.2/3.2 vs 5.2/5.1/2.9",
+   "evidence_ids": [
+    "E052",
+    "E053",
+    "E054",
+    "E051",
+    "E055"
+   ],
+   "counterevidence": [
+    "E056",
+    "E058",
+    "E059"
+   ],
+   "counter_note": "GPT-4 行在 Mind2Web 原文中是 50 任务/top-10 候选，与 WebGUM 的 top-50 全测试集设置不同；单 seed，差距 1.7–3.3 点（Mind2Web 原文的种子标准差 0.2–0.8，可能显著但未检验）；整任务 SR 仍为个位数。",
+   "allowed_conclusion": "作者报告：MiniWoB++ 预微调后在 Mind2Web 上略优于同基座的 MindAct；“强正迁移”和“优于 GPT-4”的措辞过强。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_reason": "MiniWoB++ 与 WebShop 以环境奖励在线判定；训练与评测任务/环境相同，不构成 transfer；Mind2Web 为离线步级指标，不能升级。",
+  "author_claimed_level": "作者自称对真实世界任务有强正迁移",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "作者报告：在 MiniWoB++ 的 56 个训练任务上，401K 数据训练的 Flan-T5-XL+ViT 达 94.2%（同数据 HTML-only 88.7%），显著高于 WebN-T5 等离线 HTML-LM；同 347K 数据与规模下 Flan-T5 明显优于 vanilla T5（+25.7 点），视觉增益集中在少数任务；与 CC-Net、Synapse 在共同任务上并未被超过；Mind2Web 上对同基座 MindAct 有小幅提升。",
+  "cannot_say": [
+   "不能说超过 CC-Net 或 Synapse（共同任务上相反）",
+   "不能说视觉通道均匀提升",
+   "不能说头条 94.2% 仅由模型设计带来（含 54K 教师/脚本数据，347K 时 80.3%）",
+   "不能说对真实网站有强迁移（整任务 SR 个位数、离线）",
+   "不能说超过 GPT-4（设置不同）"
+  ],
+  "reproduction_note": "全部数值为作者报告；本席仅重算表内均值与差值。",
+  "unresolved": [
+   "54K 教师数据不发布，头条数字无法由发布数据复现",
+   "评测忽略时限的影响未量化"
+  ]
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "问题具体且有来源：离线训练落后于在线 RL，web 专用架构无法利用预训练基础模型；最近邻中 CC-Net、RCI、Mind2Web/MindAct 在固定包内可核对，WebN-T5、Synapse、AdaPlanner 凭作者转述。残余问题(真实网站、记忆型任务、单 seed)有说明；但“追平在线 RL”的 gap 在共同任务上并未真正关闭，影响 gap 的清晰度，故 3。",
+   "evidence_ids": [
+    "E005",
+    "E006",
+    "E023",
+    "E027",
+    "E063"
+   ],
+   "counterevidence_ids": [
+    "E027"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "四个设计各自对应瓶颈（视觉 grounding、指令微调→HTML 理解/推理、数据规模、自由文本动作），并提出可检验预测（白/随机图、vanilla T5、HTML 扰动、组合任务、WebShop）且大部分预测得到同数据对照支持。扣分：视觉增益集中少数任务，教师数据覆盖与模型改动没有分离。",
+   "evidence_ids": [
+    "E007",
+    "E010",
+    "E033",
+    "E031",
+    "E036",
+    "E037"
+   ],
+   "counterevidence_ids": [
+    "E030",
+    "E038"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "模型、token 数、训练批量/序列长度、算力、数据生成两轮流程(100→2.8K→10K/任务→过滤)、54K 与脚本补充、评测协议(100 回合)都有说明；迁移与 Mind2Web 设置也清楚。扣分：Synapse/脚本数据的比例与具体任务划分、训练步数与超参细节有限，54K 不发布，忽略时限。",
+   "evidence_ids": [
+    "E013",
+    "E014",
+    "E015",
+    "E016",
+    "E021",
+    "E060",
+    "E026"
+   ],
+   "counterevidence_ids": [
+    "E020"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "MiniWoB++/WebShop 为脚本奖励（执行检查），逐任务表完整；但头条比较跨不同任务集（共同 56 任务上结论反转）、评测忽略时限、基线数字取自他文，Mind2Web 的 GPT-4 行设置不同；正文与表有若干不一致（2.8K/66.1%）。",
+   "evidence_ids": [
+    "E021",
+    "E028",
+    "E046"
+   ],
+   "counterevidence_ids": [
+    "E027",
+    "E026",
+    "E056",
+    "E041"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "同数据/同规模受控比较多：T5 vs Flan-T5、HTML vs HTML+Image、白/随机图、token 类型、ViT 预训练、数据与模型规模、Flan-PaLM 解码器对照；足以支持“指令微调 LM”与“视觉 token”子主张。扣分：头条 94.2% 的归因与 54K 教师/脚本数据混杂（347K 时 80.3%），视觉增益集中在三项任务，单 seed。",
+   "evidence_ids": [
+    "E036",
+    "E037",
+    "E033",
+    "E031",
+    "E032",
+    "E034",
+    "E035"
+   ],
+   "counterevidence_ids": [
+    "E038",
+    "E030",
+    "E059"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "MiniWoB++ 训练与评测同任务；组合任务(6 个拼接)、HTML 扰动与 Mind2Web 跨网站/领域是真正的留出式检查，但组合任务规模小且 Synapse 逐项更高，扰动仅在 HTML 端，Mind2Web 离线且差距小；WebShop 是域内微调。“强正迁移”措辞超出证据。",
+   "evidence_ids": [
+    "E042",
+    "E045",
+    "E051",
+    "E049"
+   ],
+   "counterevidence_ids": [
+    "E043",
+    "E058",
+    "E056"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "每个模型单 seed；评测 100 回合/任务，无置信区间；Mind2Web 差距小，对比 MindAct 论文的 5-seed 标准差 0.2–0.8 才可能显著，但自身无法检验；失败案例与局限有定性讨论。",
+   "evidence_ids": [
+    "E021",
+    "E062"
+   ],
+   "counterevidence_ids": [
+    "E059",
+    "E057"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "披露训练算力(TPU-v4 256/512 核，1–2 天)、参数量、数据量/生成回合数、数据构造的成本优势（相对人类演示）；缺少推理成本/延迟、教师数据生成成本（PaLM2/Synapse 调用）、与提示式 agent 的成本对比。",
+   "evidence_ids": [
+    "E060",
+    "E015",
+    "E012"
+   ],
+   "counterevidence_ids": [
+    "E020"
+   ],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 66.25,
+  "display": 66.3,
+  "lower": 66.25,
+  "upper": 66.25,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(15*G+25*M+20*X+10*E.measurement+10*E.causality+10*E.holdout+5*E.statistics+5*E.cost)/4; display = half-up one decimal"
+ },
+ "status": "reviewed",
+ "status_reason": "全文含正文与 Appendix A–K；材料完整，可评。",
+ "rationale": {
+  "summary": "WebGUM 在“统一为 (text,image→text) + 指令微调 LM + 大规模 LLM 生成数据”这一 recipe 上做了系统受控实验，同数据同规模下 Flan-T5 vs T5、HTML vs HTML+Image 的对照扎实，数据/模型 scaling 与 Mind2Web 迁移也给出信息。弱点在比较口径：头条“超过 CC-Net/人类/GPT-4 agent”跨不同任务集，在 56 个共同任务上 CC-Net 与 Synapse 更高；94.2% 含 54K 教师/脚本数据；视觉增益集中；单 seed。",
+  "G": "gap 具体，部分最近邻原文缺，gap 未在共同任务上完全关闭。",
+  "M": "设计对应瓶颈，预测多被同数据对照支持。",
+  "X": "数据流水线与训练细节较清楚。",
+  "E": "消融强、比较口径弱、留出一般、单 seed。"
+ }
+}

@@ -1,0 +1,691 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c3",
+ "attempt_id": "a1",
+ "seat": "aggregate",
+ "paper": {
+  "paper_key": "2609.29892",
+  "paper_id": "2609.29892",
+  "title": "Qwen-Planner-Agent: A Closed-Loop AI-for-AI Framework for Real-World Mobile Planner Agents",
+  "version": "2609.29892v1",
+  "claim_type": null,
+  "central_claim": "提出闭环“AI-for-AI”框架开发移动端 Planner Agent：AI 辅助任务构造/失败诊断→数据飞轮、课程式能力自适应 RL(CARE)、模型–Harness（Skills+Memory+反馈）共进化；Qwen-Planner-Agent 27B 在 MobilePA-Bench 上 Overall 77.05%，居所评估模型之首且输出成本较低。"
+ },
+ "provenance": {
+  "input_hash": "3a53a9b05139dc558c16026d9c92aba6c603593cded48db189b7c3080ebc16fb",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "aggregate_rules": "docs/agents/AGGREGATE_OPUS.md",
+  "aggregate_rules_sha256": "1ad0c4f39af2ceb06924fc015d8660711edcd9a6f891444e902b44f79584f4e0",
+  "conflicts_sha256": "0e72316b8c7336dc2746822a29f690d8a7e0d67cdcdb043414644d8bb363bc9d",
+  "references_sha256": "ed9d577bd9b2fc25073d44f2506dda757688a30d4528fe3872527a0134fccfbc",
+  "model_type": "fable",
+  "actual_model": "claude-opus-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "timestamp": "2026-10-21T17:49:45+00:00",
+  "independence_note": "Aggregation over two seat inputs; each fixed paper text was read before the seat scores, but this is not a third blind review or human gold. All results are author reports; nothing was reproduced."
+ },
+ "materials": [
+  {
+   "material_id": "agg:2609.29892",
+   "url": "https://arxiv.org/html/2609.29892",
+   "sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2609.29892.txt",
+   "role": "paper",
+   "sections_read": [
+    "full text"
+   ],
+   "complete": true,
+   "missing_sections": []
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "agg:QP-A01",
+   "material_id": "agg:2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "Sec 2.1.2 Task Formulation",
+   "quote": "The agent primarily acts through structured tools rather than pixel-coordinate GUI actions",
+   "support_explanation": "The action space is typed tool calls, memory/skill operations and clarification; no GUI operation surface.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:QP-A02",
+   "material_id": "agg:2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "Sec 4 Related work (mobile agents)",
+   "quote": "Qwen-Planner-Agent focuses on this planning problem rather than introducing a new screen-grounding architecture.",
+   "support_explanation": "Authors place the contribution outside screen perception/grounding.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:QP-A03",
+   "material_id": "agg:2609.29892",
+   "material_sha256": "fd0dd559d336c82f83031f3fd5212ca2905b014ba93e64f8ca607ecae954009e",
+   "locator": "Sec 2.2.1",
+   "quote": "Programmatic sandbox environments execute typed tool calls through predefined program logic over structured application databases.",
+   "support_explanation": "Main training/evaluation substrate is tool-call sandboxes; MobilePA-Bench verifies via tool calls/state changes.",
+   "kind": "author_report"
+  }
+ ],
+ "ratings": {
+  "G": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Not scored: out_of_scope disposition (not a quality judgement).",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "M": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Not scored: out_of_scope disposition (not a quality judgement).",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "X": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Not scored: out_of_scope disposition (not a quality judgement).",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Not scored: out_of_scope disposition (not a quality judgement).",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Not scored: out_of_scope disposition (not a quality judgement).",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Not scored: out_of_scope disposition (not a quality judgement).",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Not scored: out_of_scope disposition (not a quality judgement).",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "unknown",
+   "rating": null,
+   "reason": "Not scored: out_of_scope disposition (not a quality judgement).",
+   "evidence_ids": [],
+   "counterevidence_ids": [],
+   "search_scope": []
+  }
+ },
+ "score": null,
+ "status": "out_of_scope",
+ "status_reason": "Confirmed out_of_scope. Qwen-Planner-Agent is a mobile planner over typed tool calls, memory and skills; the agent 'primarily acts through structured tools rather than pixel-coordinate GUI actions', the authors state they do not introduce screen grounding, and the headline benchmark (MobilePA-Bench) verifies tool calls/state changes. Optional visual tool returns and opaque sub-agent sessions do not give the evaluated system a GUI operation surface. Under docs/EVIDENCE.md this is a pure API/function-calling agent, excluded from the GUI Agents radar. The exclusion is a scope disposition, not a quality judgement; CARE/harness contributions may belong to a tool-agent project.",
+ "input_seat_hashes": {
+  "sol": "ab9909a9babc33678cb6070f6a9a72ca97e71fbbef5fd73ea7e3c05f472c4e55",
+  "son55": "bc1db58d33ce71eabd67322520cc81695fc1ddbc70ed1d1fa08aa033153623d0"
+ },
+ "aggregate_model": "fable",
+ "aggregate_actual_model": "claude-opus-5-5[1m]",
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_note": "Configured model type fable (upstream claude-opus-5-5[1m]) per batch manifest model_types.opus55; no session id or invocation receipt is exposed to this agent.",
+ "seat_integrity_check": {
+  "sol": {
+   "file_sha256": "ab9909a9babc33678cb6070f6a9a72ca97e71fbbef5fd73ea7e3c05f472c4e55",
+   "status": "out_of_scope",
+   "status_field_shape": "str",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "rs_and_domain_parent_errors": [
+    "bad rs primary None"
+   ],
+   "model_type": "sonnet",
+   "actual_model": "gpt-6.1-sol"
+  },
+  "son55": {
+   "file_sha256": "bc1db58d33ce71eabd67322520cc81695fc1ddbc70ed1d1fa08aa033153623d0",
+   "status": "out_of_scope",
+   "status_field_shape": "dict (contract expects string; value read from .state)",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "haiku",
+   "actual_model": "claude-sonnet-5-5[1m]"
+  }
+ },
+ "resolutions": [
+  {
+   "field_path": "evidence_level",
+   "sol_value": null,
+   "son55_value": "online",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "claim_support",
+   "sol_value": "unresolved",
+   "son55_value": "scoped",
+   "decision": "sol",
+   "final_value": "unresolved",
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "rs.primary",
+   "sol_value": null,
+   "son55_value": "self_supervised_signal_engineering",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "rs.supporting",
+   "sol_value": [],
+   "son55_value": [
+    "adapt_via_conditioning",
+    "assumption_audit_and_pivot"
+   ],
+   "decision": "sol",
+   "final_value": [],
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "rs.matches",
+   "sol_value": [],
+   "son55_value": [
+    "adapt_via_conditioning/None",
+    "assumption_audit_and_pivot/None",
+    "self_supervised_signal_engineering/rs:C08"
+   ],
+   "decision": "sol",
+   "final_value": [],
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "domain.matches",
+   "sol_value": [],
+   "son55_value": [
+    "experience_memory_retrieval/gui:K27",
+    "exploration_driven_task_synthesis/gui:K15",
+    "trajectory_level_policy_training/None"
+   ],
+   "decision": "sol",
+   "final_value": [],
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E01",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E02",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E03",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E04",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E05",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E06",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E07",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E08",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E09",
+   "sol_value": null,
+   "son55_value": "partial",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E10",
+   "sol_value": null,
+   "son55_value": "unmet",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E11",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E12",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E13",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E14",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E15",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E16",
+   "sol_value": null,
+   "son55_value": "unmet",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E17",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E18",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E19",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E20",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E21",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E22",
+   "sol_value": null,
+   "son55_value": "met",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E23",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E24",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E25",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E26",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E27",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E28",
+   "sol_value": null,
+   "son55_value": "partial",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E29",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E30",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E31",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E32",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E33",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E34",
+   "sol_value": null,
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  },
+  {
+   "field_path": "expectation.E35",
+   "sol_value": null,
+   "son55_value": "partial",
+   "decision": "sol",
+   "final_value": null,
+   "reason": "Both seats independently disposed of the paper as out_of_scope; son55 additionally kept provisional analysis fields (status object reason: 'temporary analysis retained'). An out-of-scope final record carries no assessment, pattern, expectation or rating judgement, so the sol value (null/empty) is kept. son55's provisional content is not adopted and is not judged here; it remains in the seat original (hash in input_seat_hashes).",
+   "evidence_ids": [
+    "agg:QP-A01"
+   ],
+   "score_impact": "none (out_of_scope, score=null)"
+  }
+ ],
+ "shared_error_corrections": [],
+ "aggregate_status": "out_of_scope",
+ "aggregate_status_reason": "Scope exclusion confirmed from the fixed full text (typed tool-call planner; no GUI operation surface). Disposition, not an error state and not a completed scoring review; score=null.",
+ "final_record_hash": "1432e15359ac9803091146bfb37ad852acc5c0a271817388584c2b6eaf7e1fe7"
+}

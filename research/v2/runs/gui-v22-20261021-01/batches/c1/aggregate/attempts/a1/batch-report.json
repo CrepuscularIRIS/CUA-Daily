@@ -1,0 +1,243 @@
+{
+ "schema_version": "radar-batch-report-v2.2",
+ "kind": "aggregate-batch-report",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c1",
+ "attempt_id": "a1",
+ "seat": "aggregate",
+ "input_hash": "28c0cca3c5e43fc35f3a1a269b63a8f0a4506d44fbaaa27257dca80bfabb6390",
+ "conflicts_sha256": "c87540e933ed213df085fa46383ab640a32d22ff08e61c71774e412a2b689632",
+ "aggregate_model": "fable",
+ "aggregate_actual_model": "claude-opus-5-5[1m]",
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_note": "Configured model type fable (upstream claude-opus-5-5[1m]) per batch manifest model_types.opus55; no session id or invocation receipt is exposed to this agent.",
+ "assigned": 6,
+ "accepted_final": 5,
+ "needs_revision": 0,
+ "needs_evidence": 0,
+ "needs_fulltext": 1,
+ "scored": 5,
+ "blocked": 1,
+ "outside_taxonomy_ratio_of_reviewed": "1/5",
+ "totals": {
+  "mechanical_conflicts": 57,
+  "resolutions": 57,
+  "shared_error_corrections": 5,
+  "unresolved": 0
+ },
+ "records": [
+  {
+   "paper_key": "2605.23939",
+   "version": "2605.23939v1",
+   "aggregate_status": "accepted_final",
+   "claim_type": "system_method",
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "raw_score": 61.25,
+   "seat_raw_scores": {
+    "sol": 65.0,
+    "son55": 65.0
+   },
+   "n_mechanical_conflicts": 10,
+   "n_resolutions": 10,
+   "resolution_decisions": {
+    "sol": 1,
+    "son55": 8,
+    "revised": 1,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_shared_error_corrections": 2,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c1/aggregate/attempts/a1/2605.23939.json",
+   "file_sha256": "ddcff5aba571a341d8b1a3eb5edd7107cd5ad3321da6d17901895f4ce802f561",
+   "final_record_hash": "27ee285d4d088003cc48e4686b11a3058289c2bc84bae53475c8311f1fccd6a5",
+   "input_seat_hashes": {
+    "sol": "f7563d725d6ad4609404324044bbe7541d47251713f85617f8bcf227db06d54f",
+    "son55": "7f732962ad22042fb08acd6296fc0cab7a8f32a1614a2dcfae49b321664fb9af"
+   }
+  },
+  {
+   "paper_key": "2505.18829",
+   "version": "2505.18829v2",
+   "aggregate_status": "accepted_final",
+   "claim_type": "system_method",
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "raw_score": 25.0,
+   "seat_raw_scores": {
+    "sol": 48.75,
+    "son55": 25.0
+   },
+   "n_mechanical_conflicts": 13,
+   "n_resolutions": 13,
+   "resolution_decisions": {
+    "sol": 0,
+    "son55": 10,
+    "revised": 3,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_shared_error_corrections": 2,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c1/aggregate/attempts/a1/2505.18829.json",
+   "file_sha256": "aad7f83522101b873c9eedfd5821f5d10da0c4414bbae5f7d38d759a803a2875",
+   "final_record_hash": "d9869a741b2e6bd3ffe3872d76d0bf0d5760c3a83b4b23e7106441491d13b4b8",
+   "input_seat_hashes": {
+    "sol": "e9a1e744bef5ea1c23904697b84cf4c47f89af8d1b26f5db37b31878795e19ef",
+    "son55": "8c4168ef82eda0c2c3697891c4ea2708e5be525a54604c1f60cfe8c8f2bde47b"
+   }
+  },
+  {
+   "paper_key": "2504.12679",
+   "version": "2504.12679v4",
+   "aggregate_status": "accepted_final",
+   "claim_type": "component_training",
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "raw_score": 47.5,
+   "seat_raw_scores": {
+    "sol": 58.75,
+    "son55": 52.5
+   },
+   "n_mechanical_conflicts": 13,
+   "n_resolutions": 13,
+   "resolution_decisions": {
+    "sol": 6,
+    "son55": 7,
+    "revised": 0,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_shared_error_corrections": 0,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c1/aggregate/attempts/a1/2504.12679.json",
+   "file_sha256": "bd9fb1f9f3acaf1d6f7b0533e8cf2dd74cd17bfb0db2b43641e80349c4baed5c",
+   "final_record_hash": "3ab68d8aafdf9ffc08efa1263fc7fe0871d621fac93a0ef893f6d867664a59c1",
+   "input_seat_hashes": {
+    "sol": "0a8494f0a46f51ff8ac348e1b52a48fd9361476fab7a2cbe90c58333226cf764",
+    "son55": "dfbfe39882281a844f8f9dc05a7cb7ceef5e72e7653f691bbacdbc6cc828429a"
+   }
+  },
+  {
+   "paper_key": "2610.23307",
+   "version": "2610.23307v1",
+   "aggregate_status": "accepted_final",
+   "claim_type": "evaluation_resource",
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "raw_score": 53.75,
+   "seat_raw_scores": {
+    "sol": 50.0,
+    "son55": 67.5
+   },
+   "n_mechanical_conflicts": 9,
+   "n_resolutions": 9,
+   "resolution_decisions": {
+    "sol": 4,
+    "son55": 5,
+    "revised": 0,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_shared_error_corrections": 1,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c1/aggregate/attempts/a1/2610.23307.json",
+   "file_sha256": "dc0567186281df0d0b46072aa668b79f659e0cda8f054730391886442d19128e",
+   "final_record_hash": "08d6fbce7366e7aa71af3b62a2ebfd12671aafae7088bbc81d328e6c0655672a",
+   "input_seat_hashes": {
+    "sol": "63c1988d424211f99988ce1e4a039ed9838e73d48aba8a8775bfcd01bb14fc8c",
+    "son55": "5d62d83694e9469643d38ed86ec787ece97ad6e014ca902e61138a6bd2da0152"
+   }
+  },
+  {
+   "paper_key": "2610.23303",
+   "version": "2610.23303v1",
+   "aggregate_status": "accepted_final",
+   "claim_type": "evaluation_resource",
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "raw_score": 53.75,
+   "seat_raw_scores": {
+    "sol": 57.5,
+    "son55": 57.5
+   },
+   "n_mechanical_conflicts": 11,
+   "n_resolutions": 11,
+   "resolution_decisions": {
+    "sol": 6,
+    "son55": 4,
+    "revised": 1,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_shared_error_corrections": 0,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c1/aggregate/attempts/a1/2610.23303.json",
+   "file_sha256": "9baad131c2e25f2ee326d23a943c482bd60fd9941b0deebafb08c39f3bdc1467",
+   "final_record_hash": "d578e82760d44fba1f04f197ea7dd209523d45053326f9db64d242af2fd71475",
+   "input_seat_hashes": {
+    "sol": "5b2f720bf94426326b2e6c31918454a314632adeff1944f53dd13c7b44ebe4db",
+    "son55": "b174839414c4e32cccb4080b06d72f7863b1fa66581183944b4068a7fbe2229b"
+   }
+  },
+  {
+   "paper_key": "2610.23857",
+   "version": "2610.23857v1",
+   "aggregate_status": "needs_fulltext",
+   "claim_type": null,
+   "evidence_level": null,
+   "claim_support": null,
+   "raw_score": null,
+   "seat_raw_scores": {
+    "sol": null,
+    "son55": null
+   },
+   "n_mechanical_conflicts": 1,
+   "n_resolutions": 1,
+   "resolution_decisions": {
+    "sol": 0,
+    "son55": 0,
+    "revised": 1,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_shared_error_corrections": 0,
+   "n_unresolved": 0,
+   "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c1/aggregate/attempts/a1/2610.23857.json",
+   "file_sha256": "93a07a578c07687fb5b06b5f3f5f010d8cd1dfec316220bca2927f8e3c0d91bc",
+   "final_record_hash": "54dca7c4b8f9b3019469c0582c7b795c70dcedd2a245874ebd511e48b8e15ce0",
+   "input_seat_hashes": {
+    "sol": "d5a04dc5b57e0b834df5c6dbe928b0e5890ec5e4c501d6229c2556af8cdd1ece",
+    "son55": "729ea6e294c8be293447a32535d70b797511631d5b3c73576afe95bc9058e9f0"
+   }
+  }
+ ],
+ "validation": {
+  "seat_set_equals_manifest": true,
+  "seat_versions_input_hash_material_sha_checked": true,
+  "seat_rs_parent_and_domain_namespace_checked": "PARENTS.tsv + taxonomy.json, both seats, all reviewed papers: no errors",
+  "every_mechanical_conflict_has_resolution": true,
+  "rating_resolutions_match_final_ratings": true,
+  "final_rs_parent_and_domain_checks": true,
+  "evidence_reference_integrity": "every evidence_id referenced in a final record exists in its evidence list; seat IDs namespaced sol:/son55:, own evidence agg:",
+  "agg_quote_substring_check": "each agg quote is an exact substring of the cited fixed text (reference texts for neighbour facts)",
+  "score_recomputed": "S=(15G+25M+20X+10Em+10Ec+10Eh+5Es+5Ecost)/4; weights sum 100, E sum 40; recomputed after write",
+  "final_record_hash_recomputed_after_write": true,
+  "hash_rule": "sha256 of json.dumps(record minus final_record_hash, sort_keys=True, ensure_ascii=False, separators=(',',':')) in UTF-8",
+  "atomic_writes": "tmp file + os.replace",
+  "limitations": [
+   "Structural/arithmetic/quote checks do not establish semantic correctness or scientific validity; nothing reproduced.",
+   "Figures are not rendered in the fixed HTML texts (DRIVE Fig 2, TongUI prompts/Fig 2-3, MobileInject Fig 5-12, MobileJailBench Fig 3); judgements use text/captions only and say so.",
+   "Reference-library texts were used only as factual sources for neighbour/baseline facts; shared-error corrections derived from them are listed per paper.",
+   "No session id or invocation receipt is available to this agent."
+  ]
+ },
+ "requests_to_controller": [
+  "2610.23857: pin v1 full text (HTML or PDF) with sha256 identically for both seats and re-dispatch; aggregate cannot proceed.",
+  "Optional: a PDF version of 2610.23303 with visible bootstrap intervals and unresolved-episode counts would allow re-checking E.statistics (currently 1)."
+ ],
+ "boundaries": "No publication, no Reel selection, no rubric/card/seat/input edits, no git operations. Scores are draft_uncalibrated v2.2 provisional values pending controller verification.",
+ "timestamp": "2026-10-21T17:08:04+00:00"
+}

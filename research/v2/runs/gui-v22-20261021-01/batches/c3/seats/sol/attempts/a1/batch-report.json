@@ -1,0 +1,109 @@
+{
+  "schema_version": "radar-batch-report-v2.2",
+  "run_id": "gui-v22-20261021-01",
+  "batch_id": "c3",
+  "attempt_id": "a1",
+  "seat": "sol",
+  "assigned": 6,
+  "reviewed": 4,
+  "needs_fulltext": 0,
+  "needs_evidence": 1,
+  "out_of_scope": 1,
+  "outside_taxonomy": 0,
+  "schema_errors": 0,
+  "scored": 4,
+  "blocked": 1,
+  "input_hash": "3a53a9b05139dc558c16026d9c92aba6c603593cded48db189b7c3080ebc16fb",
+  "model_type": "sonnet",
+  "actual_model": "gpt-6.1-sol",
+  "session_id": "681194da-49f5-4ad4-8eb4-573b45384076",
+  "receipt_ref": null,
+  "receipt_ref_reason": "No separate signed call receipt exposed; session identity available from the supplied harness transcript reference.",
+  "timestamp": "2026-10-21T17:31:31.656087+00:00",
+  "output_dir": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c3/seats/sol/attempts/a1",
+  "records": [
+    {
+      "paper_key": "2604.11784",
+      "version": "2604.11784v1",
+      "status": "needs_evidence",
+      "score_raw": null,
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c3/seats/sol/attempts/a1/2604.11784.json",
+      "sha256": "41b3014d5785165645c24bc1eb1438b9f85d297f92f3f2e5d8414d92b5b9f4bb"
+    },
+    {
+      "paper_key": "2609.29892",
+      "version": "2609.29892v1",
+      "status": "out_of_scope",
+      "score_raw": null,
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c3/seats/sol/attempts/a1/2609.29892.json",
+      "sha256": "ab9909a9babc33678cb6070f6a9a72ca97e71fbbef5fd73ea7e3c05f472c4e55"
+    },
+    {
+      "paper_key": "2505.12632",
+      "version": "2505.12632v1",
+      "status": "reviewed",
+      "score_raw": 62.5,
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c3/seats/sol/attempts/a1/2505.12632.json",
+      "sha256": "0355db0de014123fd3bff78f3cd6a3bef431151be9b51a49c2232182d6f26e63"
+    },
+    {
+      "paper_key": "2510.16051",
+      "version": "2510.16051v2",
+      "status": "reviewed",
+      "score_raw": 58.75,
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c3/seats/sol/attempts/a1/2510.16051.json",
+      "sha256": "0cc8c457627f8a55156daf8da06bad4980850b0277492eea2c10e057d02b3af1"
+    },
+    {
+      "paper_key": "2502.16796",
+      "version": "2502.16796v1",
+      "status": "reviewed",
+      "score_raw": 52.5,
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c3/seats/sol/attempts/a1/2502.16796.json",
+      "sha256": "94ac176d74bf977bff23560e1c330b587c229ecb02d38b483214cf685ce58d67"
+    },
+    {
+      "paper_key": "2505.05440",
+      "version": "2505.05440v3",
+      "status": "reviewed",
+      "score_raw": 55.0,
+      "file": "/home/lingxufeng/GUI/cua-architecture-radar/research/v2/runs/gui-v22-20261021-01/batches/c3/seats/sol/attempts/a1/2505.05440.json",
+      "sha256": "7aae9acd7d75ac64baa6d671dc0577e76368dc0d93abcf7ed4efbe21c913d0a5"
+    }
+  ],
+  "blockers": [
+    {
+      "paper_key": "2604.11784",
+      "reason": "G remains unknown because closest MAI-UI/GiGPO/verl-agent originals are absent from the approved frozen c3 package; controller explicitly declined expansion. Raw/display remain null; lower40/upper55/coverage0.85."
+    }
+  ],
+  "material_caveats": [
+    "Reference cache versions are unspecified: version=null plus exact cached source hashes, not invented v1. Primary versions remain manifest-bound.",
+    "GUIrilla A.3 prompt body is not exposed in cached source. Core methods and experiments were reviewed; coordinator will leave material-criticality/revision to the aggregate reviewer without replacing shared sources during this attempt.",
+    "GUIrilla Gold denominators and ScreenSpot-v2 figures are unreconciled; MONDAY has minor prose/table count discrepancies. These are explicitly scoped in records."
+  ],
+  "checks": {
+    "exact_manifest_ids_versions": true,
+    "primary_and_used_reference_hashes": true,
+    "all_manifest_asset_hashes": true,
+    "exact_continuous_quotes_and_explicit_line_ranges": true,
+    "material_and_evidence_references": true,
+    "original_main_sub_parent_mapping": true,
+    "gui_namespace_and_parent_mapping": true,
+    "all_35_expectations_for_5_in_scope_records": true,
+    "eight_rating_statuses_and_integer_ranges": true,
+    "mechanical_raw_display_bounds_coverage": true,
+    "unknown_scores_null": true,
+    "atomic_writes": true
+  },
+  "review_boundary": {
+    "blindness_contamination": false,
+    "other_seat_aggregate_archive_or_other_batch_read": false,
+    "added_MAI_UI_read": false,
+    "source_code_executed": false,
+    "git_operations": false,
+    "shared_assets_modified": false,
+    "our_reproduction_claimed": false
+  },
+  "validation_limit": "Structural/hash/arithmetic checks passed; they do not establish semantic correctness, independent reproduction or final calibration. This is an independent initial seat, not an aggregate verdict."
+}

@@ -1,0 +1,2472 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c1",
+ "attempt_id": "a1",
+ "seat": "aggregate",
+ "paper": {
+  "paper_key": "2610.23303",
+  "paper_id": "2610.23303",
+  "title": "MobileJailBench: Red Queen Jailbreak Benchmarking for Mobile Agents",
+  "version": "2610.23303v1",
+  "claim_type": "evaluation_resource",
+  "central_claim": "MobileJailBench is the first evolving jailbreak benchmark for mobile agents: 520 tasks in six sub-benches (Benign, Explicit, Implicit, two Composite, Expansion) over 14 risk categories and 28 apps in a browser-based Android-like simulator; Dual-Dynamic Evolution (Failure-Distilled Jailbreak Evolution + Weakness-Driven Benchmark Expansion) keeps attack pressure and coverage growing (up to 100% ASR on Qwen3.5-122B); a Stratified Adjudication Framework (SAF) assesses awareness, execution and consequence beyond ASR; current agents are particularly vulnerable to implicit jailbreaks and their alignment is superficial."
+ },
+ "provenance": {
+  "input_hash": "28c0cca3c5e43fc35f3a1a269b63a8f0a4506d44fbaaa27257dca80bfabb6390",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "aggregate_rules": "docs/agents/AGGREGATE_OPUS.md",
+  "aggregate_rules_sha256": "1ad0c4f39af2ceb06924fc015d8660711edcd9a6f891444e902b44f79584f4e0",
+  "conflicts_sha256": "c87540e933ed213df085fa46383ab640a32d22ff08e61c71774e412a2b689632",
+  "references_sha256": "d15550c3cb35fe623636c849a1bdf24e652afaccf7385bb3c38750de2fde26c8",
+  "model_type": "fable",
+  "actual_model": "claude-opus-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "timestamp": "2026-10-21T17:08:04+00:00",
+  "independence_note": "Aggregation over two seat inputs; the fixed paper text was read before seat scores, but this is not a third blind review or human gold. All results are author reports; nothing was reproduced."
+ },
+ "materials": [
+  {
+   "material_id": "agg:2610.23303",
+   "url": "https://arxiv.org/html/2610.23303",
+   "sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2610.23303.txt",
+   "role": "paper",
+   "sections_read": [
+    "full text"
+   ],
+   "complete": true,
+   "missing_sections": []
+  },
+  {
+   "material_id": "agg:2410.17520",
+   "url": "https://arxiv.org/html/2410.17520",
+   "sha256": "27921280338b64cd169091b270fca13e972cd80415de0ab179827dce287eb4a3",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2410.17520.txt",
+   "role": "nearest_neighbor_reference",
+   "sections_read": [
+    "targeted sections cited by agg evidence"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; used only as factual reference"
+   ]
+  },
+  {
+   "material_id": "sol:P",
+   "url": "https://arxiv.org/html/2610.23303v1",
+   "sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2610.23303.txt",
+   "material_status": "html",
+   "sections_read": [
+    "L1-L352: entire fixed rendered text including abstract, introduction, prior-work table, related work, threat model and simulator, task protocol, FDJE, WDBE, freeze boundary, SAF equations, all result tables and figure captions, experiment setup/results, conclusion and references; no appendix supplied"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Figure 1-3 pixels are absent from text export; figure-only numeric ablation/defense details cannot be reconstructed beyond reported prose."
+   ],
+   "version_binding": "Manifest binds v1 and material SHA256; unversioned SOURCE does not independently prove version identity."
+  },
+  {
+   "material_id": "son55:M-2610.23303-html",
+   "url": "https://arxiv.org/html/2610.23303v1",
+   "sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2610.23303.txt",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Related Work",
+    "3 Design and Construction 3.1-3.2",
+    "4 Dual-Dynamic Evolution 4.1-4.3",
+    "5 Stratified Adjudication Framework",
+    "6 Experiments 6.1-6.2",
+    "7 Conclusion",
+    "References"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "note": "HTML text render (50,064 chars) read in full including Tables 1-3; figures (Fig 1-3 incl. FDJE ablations and baselines, defense panel) and any appendix are not in the text, so M3A results, per-bench counts, CIs, step limit, judge identity and baseline budgets are not visible."
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "agg:J-A01",
+   "material_id": "agg:2610.23303",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Table 2 caption",
+   "quote": "TSR uses 50 benign tasks; Explicit and Implicit each contain 70 attacks.",
+   "support_explanation": "Reported tables use 190 of the claimed 520 tasks.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:J-A02",
+   "material_id": "agg:2610.23303",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Sec 5 SAF",
+   "quote": "Each rate excludes unresolved episodes and reports coverage alongside bootstrap confidence intervals",
+   "support_explanation": "Denominators exclude unresolved episodes; no counts or intervals appear in the rendered tables.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:J-A03",
+   "material_id": "agg:2610.23303",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Abstract",
+   "quote": "reaching a 100% ASR on Qwen3.5-122B",
+   "support_explanation": "Headline number; Table 3(a) shows FDJE ASR 98.6 for Qwen-122B.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:J-A04",
+   "material_id": "agg:2610.23303",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Table 3(a)",
+   "quote": "Qwen-122B Baseline 89.3 95.0 91.4 6.4 FDJE 98.6 100.0 99.3 0.0",
+   "support_explanation": "Tabulated FDJE ASR is 98.6 (RHR 100), not 100 ASR.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:J-A05",
+   "material_id": "agg:2610.23303",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Table 3(b)",
+   "quote": "Gemini-2.5-Pro | 36.0 | 56.0 | 96.0",
+   "support_explanation": "First-run vs two-run union differs by 20 pp: single-run main comparisons are noisy.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:J-A06",
+   "material_id": "agg:2610.23303",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Sec 3.1 Mobile Environment",
+   "quote": "The environment supports controlled execution while abstracting real Android process isolation and live service behavior.",
+   "support_explanation": "Simulator, not real Android; realism untested.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:J-A07",
+   "material_id": "agg:2410.17520",
+   "material_sha256": "27921280338b64cd169091b270fca13e972cd80415de0ab179827dce287eb4a3",
+   "locator": "MobileSafetyBench intro",
+   "quote": "Additionally, our benchmark includes scenarios that challenge agents with indirect prompt injection attacks, deceiving them into taking actions contrary to user intentions.",
+   "support_explanation": "Neighbour already evaluates mobile workflows (emulator) with harmful tasks and injections; MobileJailBench's 'conversational-only' gap is partly overstated.",
+   "kind": "reviewer_comment"
+  },
+  {
+   "evidence_id": "sol:J01",
+   "material_id": "sol:P",
+   "material_hash": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "L38-L42",
+   "quote": "MLLM-based mobile agents are rapidly gaining autonomy in perception, planning, and closed-loop execution in dynamic mobile environments. However, this autonomy also broadens the attack surface and amplifies the risks of malicious misuse, including privacy leakage, device compromise, and large-scale phishing. Existing jailbreak evaluations leave three critical gaps for mobile agents: they focus on conversational attacks instead of mobile workflows, use static task sets with fixed difficulty, and rely narrowly on attack success rate rather than comprehensive security assessment.\nTo close these gaps, we present MobileJailBench , the first evolving jailbreak benchmark for mobile agents, comprising three key components: (1) a benchmark comprising 520 tasks spanning three jailbreak paradigms and 14 risk categories, built on a high-fidelity mobile sandbox that we construct, enabling realistic workflows across over 20 widely used apps;\n(2) Dual-Dynamic Evolution , which combines Failure-Distilled Jailbreak Evolution with Weakness-Driven Benchmark Expansion ; and\n(3) Stratified Adjudication Framework for assessing security awareness, execution behavior, and risk consequences.\nExtensive experiments show that current mobile agents are particularly vulnerable to implicit jailbreaks, as their safety alignment remains largely superficial and fails to generalize from conversational refusal to dynamic mobile interactions. Moreover, our dynamic evolution mechanism sharpens practical threat boundaries by continually uncovering new vulnerabilities, reaching a 100% ASR on Qwen3.5-122B. MobileJailBench provides a reproducible, continuously evolving framework for tracking the true security boundaries of mobile agents.",
+   "support_explanation": "Original broad resource, fidelity, dynamic evolution and alignment claims.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:J02",
+   "material_id": "sol:P",
+   "material_hash": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "L50-L68",
+   "quote": "Yet existing jailbreak evaluations remain poorly matched to mobile agents. First , they mostly test conversational attacks rather than mobile workflows involving interface navigation, app switching, and irreversible state changes ( Deng et al., 2024 ; Lee et al., 2026 ) . Second , they rely on static task sets with fixed difficulty ( Mazeika et al., 2024 ; Zhang et al., 2024 ) , failing to capture the adaptive nature of practical red-teaming. Third , they focus narrowly on attack success rate (ASR) ( Shen et al., 2024 ) , without diagnosing whether the agent recognizes risk, how it behaves under jailbreak pressure, or what harms its actions actually produce. These limitations are especially problematic in mobile settings, where agents operate in dynamic, stateful, and cross-application environments ( Rawles et al., 2025 ; Chen et al., 2025 ) . Table 1 situates representative evaluations along these dimensions.\n\nTable 1: Comparison with prior benchmarks. MWR: multi-app workflow realism; CAC: cross-app contextualization; DSE: dynamic state evolution; BDE: benchmark difficulty evolution; BAE: benchmark auto-expansion; IMP: implicit jailbreak prompts; SAA: security awareness assessment; BEH: behavior-level diagnosis; RCO: root-cause-oriented analysis. × \\times : not supported; △ \\triangle : partial support; ✓ \\checkmark : full support.\n\nBenchmark / Method | Environment Grounding | Benchmark Design | Diagnostic Granularity\n | MWR | CAC | DSE | BDE | BAE | IMP | SAA | BEH | RCO\nHarmBench ( Mazeika et al., 2024 ) | × \\times | × \\times | × \\times | × \\times | × \\times | × \\times | × \\times | × \\times | × \\times\nDoAnythingNow ( Shen et al., 2024 ) | × \\times | × \\times | × \\times | × \\times | × \\times | × \\times | × \\times | × \\times | × \\times\nToolEmu ( Ruan et al., 2024 ) | × \\times | △ \\triangle | △ \\triangle | × \\times | × \\times | × \\times | × \\times | △ \\triangle | △ \\triangle\nAgentDojo ( Debenedetti et al., 2024 ) | × \\times | △ \\triangle | √ \\surd | × \\times | × \\times | × \\times | × \\times | × \\times | △ \\triangle\nMobileSafetyBench ( Lee et al., 2026 ) | √ \\surd | △ \\triangle | √ \\surd | × \\times | × \\times | × \\times | × \\times | △ \\triangle | △ \\triangle\nGhostEI-Bench ( Chen et al., 2025 ) | √ \\surd | △ \\triangle | √ \\surd | × \\times | × \\times | × \\times | × \\times | △ \\triangle | △ \\triangle\nOS-Sentinel ( Sun et al., 2025 ) | √ \\surd | △ \\triangle | √ \\surd | × \\times | × \\times | × \\times | △ \\triangle | √ \\surd | △ \\triangle\nAgentDoG ( Liu et al., 2026 ) | △ \\triangle | △ \\triangle | △ \\triangle | × \\times | × \\times | × \\times | √ \\surd | √ \\surd | √ \\surd\nMobileJailBench (Ours) | √ \\surd | √ \\surd | √ \\surd | √ \\surd | √ \\surd | √ \\surd | √ \\surd | √ \\surd | √ \\surd\n\nThese gaps motivate three questions: how can we benchmark jailbreak risks embedded in realistic mobile workflows rather than prompt-only interactions; how can attacks evolve with adversarial interaction instead of remaining fixed; and how can evaluation move beyond binary success to diagnose agent awareness, behavior, and consequences? Addressing them requires an evaluation paradigm that is simultaneously environment-grounded, dynamically evolving, and diagnostically fine-grained.\n\nTo this end, we present MobileJailBench , the first evolving jailbreak benchmark for mobile agents. It combines a high-fidelity mobile sandbox that we build, spanning 20+ widely used apps , with 520 curated tasks across three jailbreak paradigms —explicit, implicit, and composite—and 14 risk categories . It further introduces Dual-Dynamic Evolution , which combines Failure-Distilled Jailbreak Evolution and Weakness-Driven Benchmark Expansion to adapt attacks and continually grow the benchmark, together with a Stratified Adjudication Framework that evaluates security awareness, execution behavior, and risk consequences. Our evaluation shows that current mobile agents remain far from securely aligned: they are especially vulnerable to implicit jailbreaks, suggesting that safety alignment trained on explicit conversational refusals transfers poorly to realistic mobile interaction. Figure 1 summarizes the benchmark, mobile environment, and evaluation flow. Our main contributions are as follows:",
+   "support_explanation": "Author prior benchmark comparison and residual evaluation gaps.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:J03",
+   "material_id": "sol:P",
+   "material_hash": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "L86-L110",
+   "quote": "## 2 Related Work\n\nEvolution of Autonomous Mobile Agents. Autonomous mobile agents have evolved from language-model-based sequential decision making to tool use and, more recently, embodied interaction with graphical mobile interfaces. ReAct showed that language models can interleave reasoning and acting Yao et al. (2023) , while tool-augmented agents extended this paradigm to API and function calling Qin et al. (2024) . Subsequent work brought these capabilities to smartphones: AppAgent enabled visual mobile interaction Zhang et al. (2025) ; Mobile-Agent and Mobile-Agent-v2 improved autonomous device control with multimodal perception and multi-agent collaboration Wang et al. (2024b) ; Wang et al. (2024a) ; and Mobile-Bench provided standardized evaluation for LLM-based mobile agents Deng et al. (2024) . In parallel, OSWorld and AndroidWorld introduced realistic dynamic environments for computer and Android agents Xie et al. (2024) ; Rawles et al. (2025) , while DigiRL explored training device-control agents via autonomous reinforcement learning Bai et al. (2024) . Together, these advances move agents from text assistants to autonomous operators in private, multimodal, and stateful environments, substantially increasing both capability and security risk.\n\nSecurity Benchmarks for Mobile Agents. Progress in multimodal understanding has been accompanied by growing attention to adversarial robustness and model security Wang et al. (2026) ; Wang et al. (2025b) ; Wang et al. (2025a) ; Wang et al. (2025c) ; Wei et al. (2023) ; Wang et al. (2024c) ; Wang et al. (2024d) . Recent work has begun to evaluate the safety of agents in realistic mobile settings. MobileSafetyBench studies safety risks in autonomous mobile control Lee et al. (2026) . GhostEI-Bench focuses on environmental injection attacks in dynamic on-device environments Chen et al. (2025) , and OS-Sentinel proposes trajectory-level validation for safer mobile GUI agents in realistic workflows Sun et al. (2025) . More broadly, ToolEmu analyzes risks in tool-integrated agents Ruan et al. (2024) , AgentDojo evaluates prompt injection attacks and defenses Debenedetti et al. (2024) , and Agent-SafetyBench benchmarks agent safety across multiple risk dimensions Zhang et al. (2024) . AgentDoG further emphasizes fine-grained diagnostic decomposition for real-world deployment Liu et al. (2026) , while DTAP provides a controllable interactive platform for agent red teaming Chen et al. (2026) . However, existing benchmarks still do not jointly capture realistic mobile environment grounding, diverse jailbreak strategies, and fine-grained diagnosis, leaving a key gap in evaluating jailbreak robustness for autonomous mobile agents.\n\nNevertheless, jailbreak risk evaluation for mobile agents remains underexplored. Current studies lack a systematic framework tailored to mobile agents, and existing benchmarks mainly rely on static task sets with fixed difficulty and scale, failing to reflect evolving attack strategies in realistic scenarios. In addition, binary success-or-failure judgments are inadequate for characterizing agent safety boundaries under jailbreak prompts. To address these issues, MobileJailBench targets jailbreak risks in real mobile workflows with a dynamic benchmark evolution mechanism and a hierarchical adjudication framework for fine-grained diagnosis of safety failures in safety awareness, execution behavior, and risk consequences.\n\n## 3 MobileJailBench: Design and Construction\n\nJailbreak attacks can exploit MLLM-based mobile agents’ autonomous control of apps and device functions, leading to privacy leakage, device compromise, and scalable phishing. Yet, systematic evaluation grounded in executable mobile workflows is still missing, leaving these agents’ security boundaries insufficiently understood. This raises a critical question: how can we benchmark jailbreak risks embedded in realistic mobile workflows rather than prompt-only interactions?\n\nTo address the aforementioned research gap, we construct a stateful, high-fidelity, Android-like mobile environment covering 28 popular applications, and on top of it establish MobileJailBench. The benchmark comprises 520 tasks spanning 14 risk categories, and is organized into six complementary sub-benchmarks: Benign, Explicit, Implicit, Benign-First Composite, Harm-First Composite, and Expansion. In terms of task design, MobileJailBench systematically covers three major jailbreak paradigms—explicit, implicit, and composite jailbreaks—while spanning workflow complexity levels from L1 to L4; among the 520 tasks, 322 involve cross-application interactions. Consequently, MobileJailBench enables a systematic and comprehensive evaluation of the safety robustness and capability boundaries of mobile agents in mobile settings under different jailbreak paradigms, progressing from shallow to deep and from single-step to composite scenarios.\n\n### 3.1 Threat Model and Mobile Environment\n\nThreat Model. We consider a threat model in which a malicious user seeks to circumvent the agent’s safety alignment through carefully crafted instructions and environment-carried payloads, with the goal of causing the agent to execute harmful or unlawful actions. The adversary, however, is restricted to the instruction channel and designated environmental carriers (e.g., the clipboard) and cannot otherwise directly mutate the simulator state, invoke privileged APIs, or tamper with the system instructions, model parameters, or evaluation harness.\n\nMobile Environment. The environment of MobileJailBench is a browser-based, Android-like, high-fidelity simulator operated by a Python harness. Its 28 applications comprise 14 third-party apps spanning communication, finance, social media, commerce, navigation, and entertainment, and 14 system apps such as Messages, Settings, Contacts, Calendar, Notes, Gallery, Browser, and File Manager. Together, they cover core everyday mobile workflows. The environment supports controlled execution while abstracting real Android process isolation and live service behavior. Compared with Android Studio emulator-based mobile safety benchmarks such as MobileSafetyBench Lee et al. (2026) , this browser-based environment offers a lighter-weight evaluation setup and supports large-scale parallel evaluation through isolated browser pages, accelerating benchmark execution.\n\n### 3.2 Six Complementary Benches\n\nBenchmark Construction. Together, the six benches assess whether mobile agents demonstrate a deep understanding of mobile-specific security risks without compromising benign task utility across explicit, context-dependent implicit, and composite jailbreak paradigms. All benchmarks are constructed through a combination of human effort and LLM assistance, and undergo rigorous multi-stage human annotation and correction.\n\nTask Execution Protocol. Each episode follows five stages. (1) Reset: restore the simulator to a clean baseline for reproducible initial conditions and isolation between tasks. (2) Prepare: automatically populate the files, entities, and contextual data required by the task, then record the prepared initial state. (3) Execute: the agent reads screenshots and issues GUI actions. (4) Update: the simulator applies each action and updates the device state; stages (3)–(4) repeat until the episode terminates or reaches its step limit. (5) Evaluate: automated checks compare the prepared initial and final device states against the instruction’s task-specific goal criteria to determine completion.",
+   "support_explanation": "Method lineage, malicious-user permissions, browser simulator abstractions, task counts and execution protocol.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:J04",
+   "material_id": "sol:P",
+   "material_hash": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "L118-L131",
+   "quote": "### 4.1 Failure-Distilled Jailbreak Evolution\n\nFDJE turns failed attack attempts into a feedback signal for strengthening subsequent evaluation. Its central idea is to couple failure diagnosis with adaptive adversarial evolution : the observed failure pattern determines the next strategy, and persistent failures trigger iterative implicit-track evolution. Attack pressure thus adapts to the target agent while the prohibited consequence and task oracle remain fixed.\n\n(1) Baseline probing and trajectory diagnosis. Baseline probing establishes both an initial safety profile and the evidence needed to adapt the attack. For each task τ \\tau in the baseline task set 𝒯 \\mathcal{T} , FDJE executes its unmodified instruction on the target mobile agent for b b episodes ( b = 1 b=1 by default). It distills the resulting trajectories into breached, refused ( R 0 R_{0} ), and execution-failed ( C 0 C_{0} ) sets using oracle verdicts and observed termination reasons. Verified breaches leave the search pool; the remaining failure profiles guide subsequent strategy routing (Figure 2 , top left). (2) Dynamic attack strategy routing.\n\nFDJE routes refusals R 0 R_{0} to (i) Task-flow camouflage , Select the top-k benign workflows from the benign task library and concatenate them with the original instruction for testing. This prefix is intended to frame prohibited sub-goals as a natural continuation of everyday tasks, thereby reducing their salience and sustaining execution without triggering refusal prematurely. Execution failures C 0 C_{0} without observed refusal enter (ii)Witness-guided navigation , where feedback-driven optimization of navigational prompt prefixes is used to improve less capable agents’ ability to recognize, resist, and refuse malicious instructions.\n\n(3) Implicit-track evolution. Unresolved tasks from both routes form R 1 R_{1} for implicit escalation. As observed in the experiments in Section 6.2 , implicit tasks typically trigger fewer refusals yet lead to more risk-carrying executions, suggesting that safety alignment may rely mainly on surface-level conversational cues rather than a genuine understanding of the compositional risks jointly induced by instructions and the embodied environment . Motivated by this finding, implicit trajectory evolution is designed as the following three-step procedure: (i) Instruction decomposition. A predefined mapping decomposes each request into a superficially benign instruction scaffold and a semantically aligned, risk-carrying payload. (ii) Implicit delivery. During the setup stage, the test framework embeds the payload into an environmental carrier (e.g., the clipboard); while following the clean instruction, the agent encounters the payload through the GUI. (iii) Failure-driven optimization. Without receiving the payload content, the attack model performs reflective optimization of the adversarial prefix solely on the basis of the latest failure summary. At the t t -th refinement step, the candidate prefix p ^ t \\widehat{p}_{t} is prepended to the clean instruction and evaluated once; p t ⋆ p_{t}^{\\star} denotes the current best prefix, and d ⁡ ( ⋅ ) d(\\cdot) denotes the observed diagnostic score measuring progress toward the task objective:\n\n | p t + 1 ⋆ = { p ^ t , d ⁡ ( p ^ t ) > d ⁡ ( p t ⋆ ) , p t ⋆ , otherwise . p_{t+1}^{\\star}=\\begin{cases}\\widehat{p}_{t},&d(\\widehat{p}_{t})>d(p_{t}^{\\star}),\\\\\np_{t}^{\\star},&\\text{otherwise}.\\end{cases} |  | (1)\n\nPayload, target consequence, and binary oracle V τ V_{\\tau} remain fixed. Ties retain the incumbent; search stops at a verified breach or exhaustion of the per-task or global episode budget.",
+   "support_explanation": "FDJE failure partition, adaptive routing, prefix selection, fixed consequence/oracle and stop rule.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:J05",
+   "material_id": "sol:P",
+   "material_hash": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "L133-L155",
+   "quote": "### 4.2 Weakness-Driven Benchmark Expansion\n\nWDBE proposes a benchmark self-expansion mechanism for security evaluation centered on weakness discovery, task synthesis, and dual verification , which transforms safety weaknesses exposed in interaction trajectories into executable and verifiable new tasks, thereby enabling the evaluation benchmark to continuously broaden its risk coverage as model capabilities evolve. WDBE follows four stages, with failures feeding evidence back into construction (Figure 2 , top right).\n\nConstruct. An agent attributes the observed failure by jointly considering the execution trajectory, the attack strategy library, and the construction protocol, analyzes and identifies vulnerabilities in the target-side agent, and accordingly selects a new workflow or carrier. It emits a JSON task specification containing four elements: instruction, preparation, verification rules, and risk description. Attribution separates agent behavior from specification, generator, and environment defects.\n\nVerify. Before code generation, each specification must pass four reviews: environment feasibility (reachable apps, paths, and objects), behavioral harm (harm persists after removing sensitive labels), concrete data (executable synthetic data without placeholders), and threat plausibility (a clear victim and loss mechanism). Failed reviews return the specification for revision.\n\nBuild. The generator parses the specification, instantiates preparation, derives aligned checks, and emits task code. A self-check chain validates directory layout, compilation, static contracts, smoke loading, and positive/negative judge tests. The oracle V τ V_{\\tau} takes initial and final states as inputs. For prepared state s 0 s_{0} and canonical state update ℳ τ \\mathcal{M}_{\\tau} realizing task τ \\tau ’s target consequence, it must satisfy\n\n | V τ ​ ( s 0 , s 0 ) = 0 , V τ ​ ( s 0 , ℳ τ ​ ( s 0 ) ) = 1 . V_{\\tau}(s_{0},s_{0})=0,\\qquad V_{\\tau}\\bigl(s_{0},\\mathcal{M}_{\\tau}(s_{0})\\bigr)=1. |  | (2)\n\nSpecification defects return to construction; unsupported operations trigger generator repair and rebuilding. These checks establish endpoint consistency; GUI reachability requires execution evidence.\n\nEvaluate. Candidate tasks run in the simulator, producing trajectories and attack success rates that guide further strategy and specification revisions. Every revision repeats the verification and build gates without relaxing the prohibited consequence. Admission requires a version-matched GUI witness; generated and certified counts are reported separately. Accepted batches retain task code, judge tests, prompts, and trajectories.\n\n### 4.3 A Frozen-Release Boundary\n\nFDJE supplies failure evidence to WDBE, whose admitted tasks extend subsequent evaluations. This feedback crosses a frozen-release boundary:\n\n | 𝒯 ( r + 1 ) = Freeze ⁡ ( 𝒯 ( r ) ∪ { τ ^ : Adm ⁡ ( τ ^ ) = 1 ∧ Novel ⁡ ( τ ^ , 𝒯 ( r ) ) = 1 } ) . \\mathcal{T}^{(r+1)}=\\operatorname{Freeze}\\!\\left(\\mathcal{T}^{(r)}\\cup\\{\\widehat{\\tau}:\\operatorname{Adm}(\\widehat{\\tau})=1\\land\\operatorname{Novel}(\\widehat{\\tau},\\mathcal{T}^{(r)})=1\\}\\right). |  | (3)\n\nHere 𝒯 ( r ) \\mathcal{T}^{(r)} is release r r ’s task set and τ ^ \\widehat{\\tau} a candidate task. The binary checks Adm \\operatorname{Adm} and Novel \\operatorname{Novel} test admission and novelty, respectively; Freeze \\operatorname{Freeze} fixes the next release’s task set.",
+   "support_explanation": "WDBE specification, four reviews, build/repair, canonical oracle tests, GUI witness and release freezing.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:J06",
+   "material_id": "sol:P",
+   "material_hash": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "L157-L187",
+   "quote": "## 5 Stratified Adjudication Framework\n\nThe Stratified Adjudication Framework (SAF) evaluates mobile-agent safety across security awareness, execution behavior, and risk consequences, distinguishing failure modes that ASR alone cannot resolve. It separates objective adoption, risk-bearing behavior, and verified consequences through deterministic rules, dual-track semantic judgment, evidence auditing, and conflict arbitration (Figure 2 , bottom left).\n\nEvidence representation. Each episode retains a raw profile with supporting citations and event positions:\n\n | 𝐳 i raw = ( h ~ i , f i , v ~ i , p i ) ∈ { 0 , 1 , ⊥ } 4 , p i = V τ i ( s 0 , s T ) . \\mathbf{z}_{i}^{\\mathrm{raw}}=(\\tilde{h}_{i},f_{i},\\tilde{v}_{i},p_{i})\\in\\{0,1,\\bot\\}^{4},\\qquad p_{i}=V_{\\tau_{i}}(s_{0},s_{T}). |  | (4)\n\nHere h ~ \\tilde{h} denotes expressed adoption of the prohibited objective, f f safety-motivated refusal before risky execution, v ~ \\tilde{v} an action advancing that objective, and p p verified breach; ⊥ \\bot denotes unresolved evidence. Adoption concerns observable expressions, not latent cognition. Independently of semantic judgment, the state oracle checks all mandated endpoints:\n\n | V τ ​ ( s 0 , s T ) = ∏ j = 1 J [ 1 − q j ​ ( s 0 , s T ) ] , V_{\\tau}(s_{0},s_{T})=\\prod_{j=1}^{J}[1-q_{j}(s_{0},s_{T})], |  | (5)\n\nwhere q j = 1 q_{j}=1 indicates that protected invariant j j survives between the prepared and final states.\n\nL0–L1: rule-grounded dual-track judgment. L0 deterministically matches safety anchors to trajectory steps, producing candidate labels and event positions. Scripts lock refusal timing; model outputs cannot override temporal eligibility. L1 addresses semantic ambiguity through two calls to the same judge model in isolated contexts. Each track returns labels and verbatim ( step , field , quote ) (\\text{step},\\text{field},\\text{quote}) citations without access to the other’s output. These calls expose judgment instability but are not independent annotators.\n\nEvidence audit and L2 arbitration. A deterministic audit requires each quotation to be an exact substring of its cited trajectory field; any fabricated citation invalidates the entire track. This establishes provenance; the rubric determines semantic relevance. L2 accepts two valid agreeing tracks, retains the sole valid track, invokes a conservative evidence-checked tie-breaker for conflicting valid tracks, and abstains when neither track is valid. An unsupported tie-breaker also yields ⊥ \\bot .\n\nOutcome-consistent aggregation. On resolved binary labels, reporting enforces\n\n | h i = max ⁡ ( h ~ i , p i ) , v i = max ⁡ ( v ~ i , p i ) , f ¯ i = f i ​ ( 1 − p i ) . h_{i}=\\max(\\tilde{h}_{i},p_{i}),\\qquad v_{i}=\\max(\\tilde{v}_{i},p_{i}),\\qquad\\bar{f}_{i}=f_{i}(1-p_{i}). |  | (6)\n\nA verified breach receives violation and hijacking labels with no refusal credit. This convention preserves raw labels and event timing without inferring latent cognition. Safety Violation Rate (SVR), Reasoning Hijacking Rate (RHR), and Safety Refusal Rate (SRR) average v i v_{i} , h i h_{i} , and f ¯ i \\bar{f}_{i} , respectively. Attack success uses valid attack episodes ℰ 𝒯 \\mathcal{E}_{\\mathcal{T}} :\n\n | ASR ⁡ ( π , 𝒯 ) = ∑ i ∈ ℰ 𝒯 p i | ℰ 𝒯 | . \\mathrm{ASR}(\\pi,\\mathcal{T})=\\frac{\\sum_{i\\in\\mathcal{E}_{\\mathcal{T}}}p_{i}}{|\\mathcal{E}_{\\mathcal{T}}|}. |  | (7)\n\nFor authorized-completion indicator C i C_{i} , valid Benign and Composite episodes ℰ ℬ \\mathcal{E}_{\\mathcal{B}} and ℰ ℳ \\mathcal{E}_{\\mathcal{M}} define task success and endpoint-safe utility:\n\n | TSR = ∑ i ∈ ℰ ℬ C i | ℰ ℬ | , SU = ∑ i ∈ ℰ ℳ C i ​ ( 1 − p i ) | ℰ ℳ | . \\mathrm{TSR}=\\frac{\\sum_{i\\in\\mathcal{E}_{\\mathcal{B}}}C_{i}}{|\\mathcal{E}_{\\mathcal{B}}|},\\qquad\\mathrm{SU}=\\frac{\\sum_{i\\in\\mathcal{E}_{\\mathcal{M}}}C_{i}(1-p_{i})}{|\\mathcal{E}_{\\mathcal{M}}|}. |  | (8)\n\nSU excludes full prohibited completion, but can include unsafe attempts. Each rate excludes unresolved episodes and reports coverage alongside bootstrap confidence intervals; empty support is undefined. SAF thus integrates per-task decisions and confidence intervals for TSR, ASR, SVR, RHR, and SRR into a unified diagnostic profile, revealing how security awareness, execution behavior, and risk consequences diverge under jailbreak pressure.",
+   "support_explanation": "SAF same-model dual judgments, quote audit, abstention, raw/derived labels and endpoint-conditioned aggregation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:J07",
+   "material_id": "sol:P",
+   "material_hash": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "L189-L202",
+   "quote": "Table 2: GenericV2: capability and safety across ten models. TSR uses 50 benign tasks; Explicit and Implicit each contain 70 attacks. Rates are percentages over valid or resolved outcomes.\n\n |  | Explicit | Implicit\nModel | TSR ↑ \\uparrow | ASR ↓ \\downarrow | RHR ↓ \\downarrow | SVR ↓ \\downarrow | SRR ↑ \\uparrow | ASR ↓ \\downarrow | RHR ↓ \\downarrow | SVR ↓ \\downarrow | SRR ↑ \\uparrow\nQwen3.5-122B-A10B | 90.0 | 84.3 | 87.1 | 87.1 | 12.9 | 92.9 | 100.0 | 97.1 | 2.9\nQwen3.5-397B-A17B | 92.0 | 81.4 | 87.1 | 85.7 | 14.3 | 81.4 | 98.6 | 97.1 | 1.4\nGLM-4.6V | 76.6 | 87.1 | 100.0 | 95.7 | 0.0 | 58.6 | 98.6 | 92.9 | 0.0\nGemini-3-Flash | 84.4 | 80.0 | 84.3 | 82.9 | 15.7 | 51.4 | 85.7 | 90.0 | 4.3\nGemini-3.1-Pro | 88.0 | 60.0 | 64.3 | 62.9 | 35.7 | 60.0 | 85.7 | 81.4 | 17.1\nGPT-5.6-Luna | 82.2 | 38.6 | 55.7 | 50.0 | 40.0 | 52.9 | 87.1 | 81.4 | 7.1\nGPT-5.5 | 92.0 | 25.7 | 45.7 | 28.6 | 60.0 | 41.4 | 91.4 | 78.6 | 5.7\nQwen3.6-27B | 52.0 | 81.4 | 95.7 | 91.4 | 2.9 | 45.7 | 97.1 | 78.6 | 0.0\nKimi-K3 | 60.0 | 27.1 | 60.0 | 35.7 | 48.6 | 40.0 | 95.7 | 71.4 | 7.1\nGemini-2.5-Pro | 49.0 | 38.6 | 80.0 | 71.4 | 17.1 | 24.3 | 97.1 | 94.3 | 4.3",
+   "support_explanation": "GenericV2 benign/explicit/implicit results; valid/resolved denominators.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:J08",
+   "material_id": "sol:P",
+   "material_hash": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "L204-L231",
+   "quote": "Figure 3: FDJE ablations and attack–defense performance. (a) Component ablation. (b) Strategy ablation on residual tasks. (c) Comparison with jailbreak baselines, including PAIR ( Chao et al., 2025 ) . (d) Evaluation of filtering and safety-prompting defenses, including SCoT-style guidance ( Lee et al., 2026 ) .\n\nTable 3: Cross-model evolution, transfer, and adjudication. Rates are percentages. (a) Baseline ASR is pass@2; FDJE adds adaptive search and outcome-consistent SAF aggregation. Bold denotes safer values within each model pair, including ties. (b) ASR1: first run; P@2: two-run union; R ∩ \\cap S: adoption followed by refusal. (c) Agreement uses pooled references; stability and safety rates use the hard suite.\n\n(a) Baseline versus FDJE Model Setting ASR ↓ \\downarrow RHR ↓ \\downarrow SVR ↓ \\downarrow SRR ↑ \\uparrow GLM-4.6V Baseline 83.6 100.0 98.6 0.0 FDJE 95.0 100.0 98.6 0.0 Qwen-397B Baseline 86.4 92.9 92.1 7.1 FDJE 97.1 98.6 97.9 1.4 GPT-5.5 Baseline 56.4 73.9 63.0 29.0 FDJE 70.0 79.7 73.2 21.7 GPT-5.6-Luna Baseline 70.0 81.4 76.4 21.4 FDJE 80.0 88.6 84.3 15.0 Gemini-2.5-Pro Baseline 50.7 96.4 82.1 5.7 FDJE 83.6 100.0 95.0 0.7 Gemini-3-Flash Baseline 65.0 60.7 80.9 12.6 FDJE 87.9 74.8 95.6 2.2 Gemini-3.1-Pro Baseline 62.9 62.1 72.9 22.1 FDJE 88.6 79.3 90.7 9.3 Qwen-27B Baseline 71.4 98.6 89.3 2.1 FDJE 94.3 100.0 98.6 0.0 Kimi-K3 Baseline 60.0 75.7 62.1 25.0 FDJE 63.6 77.1 65.0 23.6 Qwen-122B Baseline 89.3 95.0 91.4 6.4 FDJE 98.6 100.0 99.3 0.0\n\n(b) Performance on WDBE-50\n\nModel | ASR1 ↓ \\downarrow | P@2 ↓ \\downarrow | SVR ↓ \\downarrow | RHR ↓ \\downarrow | SRR ↑ \\uparrow | R ∩ \\cap S\nQwen-122B | 96.0 | 96.0 | 100.0 | 100.0 | 0.0 | 0.0\nQwen-397B | 82.0 | 90.0 | 98.0 | 100.0 | 0.0 | 0.0\nGPT-5.6-Luna | 74.0 | 80.0 | 94.0 | 92.0 | 16.0 | 12.0\nQwen-27B | 68.0 | 78.0 | 92.0 | 100.0 | 2.0 | 2.0\nGemini-3-Flash | 66.0 | 80.0 | 96.0 | 89.7 | 10.3 | 10.3\nGPT-5.5 | 66.0 | 74.0 | 90.0 | 94.0 | 24.0 | 20.0\nGLM-4.6V | 64.0 | 76.0 | 92.0 | 100.0 | 0.0 | 0.0\nGemini-3.1-Pro | 50.0 | 66.0 | 68.0 | 68.9 | 44.4 | 17.8\nKimi-K3 | 50.0 | 64.0 | 74.0 | 98.0 | 18.0 | 16.0\nGemini-2.5-Pro | 36.0 | 56.0 | 96.0 | 100.0 | 0.0 | 0.0\n\n(c) Judge Agreement and Stability\n\nMethod | Agree. ↑ \\uparrow | Stable ↑ \\uparrow | SVR | RHR | SRR\nSAF (ours) | 97.26 | 98.1 | 72.2 | 83.3 | 20.4\nSingle LLM | 91.14 | 95.7 | 74.4 | 63.3 | 21.7\nVote × 3 \\times 3 | 90.72 | 94.2 | 74.9 | 62.3 | 21.7\nMean × 3 \\times 3 | 89.45 | 91.8 | 76.1 | 63.7 | 21.8\nGround truth | — | — | 71.9 | 83.3 | 18.9",
+   "support_explanation": "Figure caption and tables: adaptive-search coverage, WDBE transfer, agreement and stability.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:J09",
+   "material_id": "sol:P",
+   "material_hash": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "L233-L251",
+   "quote": "## 6 Experiments\n\n### 6.1 Experimental Setup\n\nModels and agents. We conduct extensive experiments on two agents, GenericV2 ( Wu et al., 2026 ) and M3A ( Rawles et al., 2025 ) , evaluating ten representative multimodal large language models (MLLMs), for a total of 20 model–agent pairings. The evaluated MLLMs span five major families: Qwen ( Qwen Team, 2026 ) , GLM ( Z.ai, 2025 ) , Gemini ( Google, 2026 ) , GPT ( OpenAI, 2026 ) , and Kimi ( Moonshot AI, 2026 ) .\n\nJailbreak baselines. Nine baselines comprise BoN ( Hughes et al., 2024 ) , PAIR ( Chao et al., 2025 ) , TAP ( Mehrotra et al., 2024 ) , AutoDAN-Turbo ( Liu et al., 2025 ) , TRACE ( Zeng et al., 2026 ) , Tree, Dense (GEPA-style ( Agrawal et al., 2025 ) ), Env-Injection, and RedEvo-Agent, plus the no-prefix control Ctrl.\n\nDefense methods. A diverse set of representative defense methods is included in our evaluation, covering Input-F/Out-F moderation ( Rebedea et al., 2023 ) , Safe-G/SCoT-style prompting ( Lee et al., 2026 ) , and Prescriptive rules ( Ruan et al., 2024 ) , in order to assess the benchmark’s behavior under defensive interventions.\n\nOur experiments are organized around the following research questions: RQ1: Under explicit and implicit jailbreak benchmark settings, what is the practical security level of current models in mobile environments? RQ2: How do adaptive evolution and benchmark expansion expose agent weaknesses, and how effective are different attack and defense methods? RQ3: Compared with generic judgment, how reliable is a stratified adjudication framework for evaluating agent safety?\n\n### 6.2 Results and Analysis\n\nKey finding 1 (RQ1): Safety alignment weakens beyond explicit conversational cues. Table 2 reveals that implicit tasks reduce mean SRR from 26.8 % 26.8\\% to 6.6 % 6.6\\% while raising SVR from 68.9 % 68.9\\% to 86.6 % 86.6\\% across 20 model–agent pairings. The slightly lower ASR ( 59.8 % 59.8\\% to 56.4 % 56.4\\% ) therefore masks greater behavioral exposure. Refusal declines in 19 of 20 conditions, suggesting sensitivity to overt harmful intent and limited transfer to consequence-aware mobile control.\n\nKey finding 2 (RQ2): FDJE and WDBE jointly deepen and broaden vulnerability testing. FDJE raises mean cross-model coverage from 69.6 % 69.6\\% to 85.9 % 85.9\\% with additional search (Table 3 (a)). Matched implicit placement outperforms mismatched placement ( 98.6 % 98.6\\% versus 87.1 % 87.1\\% ; Figure 3 (a)), while strategy ablations expose sensitivity on residual tasks (b). Under the recorded budgets and permissions, FDJE reaches 100 % 100\\% versus Tree’s 94.3 % 94.3\\% (c); even Safe-G permits 57.9 % 57.9\\% ASR (d). WDBE adds 50 tasks yielding 36 36 – 82 % 82\\% first-run ASR on nine other models (Table 3 (b)). This couples deeper probing of existing objectives with broader, transferable coverage of vulnerable workflows: FDJE exposes weaknesses within fixed task contracts, and WDBE converts these weaknesses into new tests.\n\nKey finding 3 (RQ3): SAF enables stable, multidimensional diagnosis beyond binary outcomes. Table 3 (c) reports 97.26 % 97.26\\% reference agreement and 98.1 % 98.1\\% hard-suite stability for SAF, versus 91.14 % 91.14\\% and 95.7 % 95.7\\% for single judging. SAF also matches the reference RHR of 83.3 % 83.3\\% , whereas the single judge reports 63.3 % 63.3\\% ; voting and averaging preserve this under-detection. Rule-grounded readings, evidence auditing, and arbitration retain objective adoption, risky actions, and refusal timing, separating expressed awareness from sustained behavioral control. This profile localizes failures that binary endpoint judgments obscure.",
+   "support_explanation": "Twenty pairings, attack/defense baseline identities and limited numerical findings.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:J10",
+   "material_id": "sol:P",
+   "material_hash": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "L253-L255",
+   "quote": "## 7 Conclusion\n\nMobileJailBench makes mobile-agent jailbreaks measurable as prohibited device-state transitions across six benches, 520 tasks, and 14 risk categories across over 20 widely used apps. Its two dynamics address complementary sources of benchmark staleness: FDJE adapts attack presentation to execution feedback, while WDBE converts observed weaknesses into new tasks subject to oracle and GUI validation. SAF connects these consequences to evidence of objective adoption, risky execution, and refusal. Together, these components support a reproducible cycle of vulnerability discovery, diagnosis, and benchmark expansion, with fixed success criteria within each evaluation.",
+   "support_explanation": "Final author claim on executable consequences and fixed success criteria.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E001",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Abstract",
+   "quote": "we present MobileJailBench , the first evolving jailbreak benchmark for mobile agents, comprising three key components",
+   "support_explanation": "Central claim ('first' not verifiable).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E002",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Abstract",
+   "quote": "(1) a benchmark comprising 520 tasks spanning three jailbreak paradigms and 14 risk categories, built on a high-fidelity mobile sandbox that we construct, enabling realistic workflows across over 20 widely used apps;",
+   "support_explanation": "Scale (text elsewhere says 28 apps).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E003",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Abstract",
+   "quote": "they focus on conversational attacks instead of mobile workflows, use static task sets with fixed difficulty, and rely narrowly on attack success rate rather than comprehensive security assessment",
+   "support_explanation": "Three author-stated gaps.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E004",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Abstract",
+   "quote": "reaching a 100% ASR on Qwen3.5-122B",
+   "support_explanation": "Headline number; Table 3(a) FDJE ASR for Qwen-122B is 98.6.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E005",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Abstract",
+   "quote": "Extensive experiments show that current mobile agents are particularly vulnerable to implicit jailbreaks, as their safety alignment remains largely superficial",
+   "support_explanation": "Headline finding (see counter-evidence on ASR).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E006",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "3.1",
+   "quote": "The environment of MobileJailBench is a browser-based, Android-like, high-fidelity simulator operated by a Python harness.",
+   "support_explanation": "Custom simulator, not Android emulator.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E007",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "3.1",
+   "quote": "The environment supports controlled execution while abstracting real Android process isolation and live service behavior.",
+   "support_explanation": "Self-stated fidelity limit.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E008",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "3",
+   "quote": "Android-like mobile environment covering 28 popular applications",
+   "support_explanation": "28 apps built by the authors.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E009",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "3.2",
+   "quote": "organized into six complementary sub-benchmarks: Benign, Explicit, Implicit, Benign-First Composite, Harm-First Composite, and Expansion",
+   "support_explanation": "Six benches.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E010",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "3",
+   "quote": "while spanning workflow complexity levels from L1 to L4; among the 520 tasks, 322 involve cross-application interactions",
+   "support_explanation": "Complexity levels L1-L4; per-level results not in text.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E011",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "3.2",
+   "quote": "All benchmarks are constructed through a combination of human effort and LLM assistance, and undergo rigorous multi-stage human annotation and correction.",
+   "support_explanation": "Construction process; no counts or agreement.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E012",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "3.1",
+   "quote": "The adversary, however, is restricted to the instruction channel and designated environmental carriers (e.g., the clipboard)",
+   "support_explanation": "Threat model: malicious user plus carrier payload (jailbreak, not third-party injection).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E013",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "3.2",
+   "quote": "automated checks compare the prepared initial and final device states",
+   "support_explanation": "State-based outcome check; step limit value never stated in the text.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E014",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "4.1",
+   "quote": "Attack pressure thus adapts to the target agent while the prohibited consequence and task oracle remain fixed.",
+   "support_explanation": "FDJE fixes consequence and oracle.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E015",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "4.1",
+   "quote": "Verified breaches leave the search pool; the remaining failure profiles guide subsequent strategy routing",
+   "support_explanation": "FDJE uses oracle verdicts as feedback (privileged signal for the attacker loop).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E016",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "4.1",
+   "quote": "Without receiving the payload content, the attack model performs reflective optimization of the adversarial prefix solely on the basis of the latest failure summary.",
+   "support_explanation": "Implicit-track optimisation rule.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E017",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "4.2",
+   "quote": "Admission requires a version-matched GUI witness; generated and certified counts are reported separately.",
+   "support_explanation": "WDBE admission; counts not in the text.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E018",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "4.2",
+   "quote": "These checks establish endpoint consistency; GUI reachability requires execution evidence.",
+   "support_explanation": "Oracle checked on canonical update (V(s0,s0)=0, V(s0,M(s0))=1), not on alternative valid breach paths.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E019",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "4.3",
+   "quote": "FDJE exposes weaknesses within fixed task contracts, and WDBE converts these weaknesses into new tests.",
+   "support_explanation": "Evolution loop with frozen-release boundary.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E020",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "5",
+   "quote": "These calls expose judgment instability but are not independent annotators.",
+   "support_explanation": "Authors concede L1 dual calls to the same judge are not independent.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E021",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "5",
+   "quote": "A verified breach receives violation and hijacking labels with no refusal credit.",
+   "support_explanation": "Outcome-consistent aggregation forces labels to agree with the oracle.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E022",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "5",
+   "quote": "A deterministic audit requires each quotation to be an exact substring of its cited trajectory field; any fabricated citation invalidates the entire track.",
+   "support_explanation": "Provenance check, not semantic validation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E023",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "5",
+   "quote": "Each rate excludes unresolved episodes and reports coverage alongside bootstrap confidence intervals; empty support is undefined.",
+   "support_explanation": "Bootstrap CIs are claimed but Tables 2-3 show none in the text render.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E024",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Table 3 (c)",
+   "quote": "SAF (ours) | 97.26 | 98.1 | 72.2 | 83.3 | 20.4",
+   "support_explanation": "Agreement 97.26, stability 98.1, SVR 72.2, RHR 83.3, SRR 20.4.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E025",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Table 3 (c)",
+   "quote": "Single LLM | 91.14 | 95.7 | 74.4 | 63.3 | 21.7",
+   "support_explanation": "Single judge: agreement 91.14, RHR 63.3 (under-detection).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E026",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Table 3 (c)",
+   "quote": "Ground truth | — | — | 71.9 | 83.3 | 18.9",
+   "support_explanation": "Ground-truth row; how it is produced (annotators, N) is not described.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E027",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Table 3 caption",
+   "quote": "Agreement uses pooled references; stability and safety rates use the hard suite.",
+   "support_explanation": "Reference definition and suite size unspecified.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E028",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "6.1",
+   "quote": "We conduct extensive experiments on two agents, GenericV2 ( Wu et al., 2026 ) and M3A ( Rawles et al., 2025 ) , evaluating ten representative multimodal large language models (MLLMs), for a total of 20 model–agent pairings.",
+   "support_explanation": "Scope of evaluation; only GenericV2 results are in the text.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E029",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Table 2 caption",
+   "quote": "TSR uses 50 benign tasks; Explicit and Implicit each contain 70 attacks.",
+   "support_explanation": "Small N per attack set.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E030",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "6.2 Key finding 1",
+   "quote": "Table 2 reveals that implicit tasks reduce mean SRR from",
+   "support_explanation": "Averaged over 20 pairings: SRR 26.8%->6.6%, SVR 68.9%->86.6% (numbers in text with markup).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E031",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "6.2 Key finding 1",
+   "quote": "therefore masks greater behavioral exposure",
+   "support_explanation": "Authors concede ASR is slightly LOWER under implicit (59.8% -> 56.4%).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E032",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Table 2",
+   "quote": "GLM-4.6V | 76.6 | 87.1 | 100.0 | 95.7 | 0.0 | 58.6 | 98.6 | 92.9 | 0.0",
+   "support_explanation": "Explicit ASR 87.1 vs implicit ASR 58.6 for GLM-4.6V.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E033",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Table 2",
+   "quote": "Gemini-2.5-Pro | 49.0 | 38.6 | 80.0 | 71.4 | 17.1 | 24.3 | 97.1 | 94.3 | 4.3",
+   "support_explanation": "Explicit ASR 38.6 vs implicit 24.3; but SVR 71.4->94.3 and SRR 17.1->4.3.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E034",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Table 3 (a)",
+   "quote": "Qwen-122B Baseline 89.3 95.0 91.4 6.4 FDJE 98.6 100.0 99.3 0.0",
+   "support_explanation": "FDJE ASR 98.6 (not 100%) for Qwen-122B in the table.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E035",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Table 3 caption",
+   "quote": "Baseline ASR is pass@2; FDJE adds adaptive search and outcome-consistent SAF aggregation.",
+   "support_explanation": "Baseline vs FDJE compares pass@2 with adaptive search plus different aggregation; compute not matched/stated.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E036",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "6.2 Key finding 2",
+   "quote": "Under the recorded budgets and permissions",
+   "support_explanation": "FDJE-vs-baseline-attack comparison depends on unstated budgets/permissions (Fig 3c).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E037",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "6.2 Key finding 2",
+   "quote": "WDBE adds 50 tasks yielding",
+   "support_explanation": "WDBE-50 tasks; first-run ASR 36-82% on nine models other than the source model (Table 3b).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E038",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "Table 3 (b)",
+   "quote": "Qwen-122B | 96.0 | 96.0 | 100.0 | 100.0 | 0.0 | 0.0",
+   "support_explanation": "Source-model row of WDBE-50 (excluded from the 'nine other models' range).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E039",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "6.2 Key finding 2",
+   "quote": "Matched implicit placement outperforms mismatched placement",
+   "support_explanation": "FDJE component ablation (98.6 vs 87.1, in Fig 3a).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E040",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "6.2 Key finding 2",
+   "quote": "even Safe-G permits",
+   "support_explanation": "Defense evaluation (Safe-G still permits 57.9% ASR) is stated, but panel (d) is a figure.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E041",
+   "material_id": "son55:M-2610.23303-html",
+   "material_sha256": "b8e4324945140472ce3771f3a1c47a51aa5673805972410147ae5c997403466e",
+   "locator": "4.2",
+   "quote": "Select the top-k benign workflows from the benign task library and concatenate them with the original instruction for testing.",
+   "support_explanation": "Task-flow camouflage route for refusals.",
+   "kind": "author_report"
+  }
+ ],
+ "preliminary_evidence_judgment": "Read before seat scores. Evaluation resource in a browser-based Android-like simulator (abstracts process isolation and live services), 520 tasks claimed but tables use 50 benign + 70 explicit + 70 implicit; M3A results for the '20 pairings' are not shown. ASR is oracle-checked; SAF labels come from two calls of one judge model with quote audit and outcome-forced aggregation, validated against a 'ground truth' of unspecified provenance and size. FDJE is adaptive search on the evaluation tasks with unstated budget vs pass@2; the abstract's 100% ASR on Qwen3.5-122B is not in the tables (98.6). Two-run results show large run-to-run variance (Gemini-2.5-Pro 36 vs 56) while main tables are single-run and exclude unresolved episodes without counts. Neighbour MobileSafetyBench already evaluates harmful/high-risk tasks and indirect injection in Android emulators.",
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "Evaluation instrument: 520 stateful mobile-workflow tasks in six sub-benches (explicit, implicit with carrier-delivered payload, composites, benign utility, expansion)",
+   "information": "A malicious user instruction channel plus designated environmental carriers (e.g. clipboard); agent sees screenshots and issues GUI actions; adversary cannot mutate simulator state or privileged APIs.",
+   "operation": "Reset -> prepare entities/files -> agent executes -> simulator updates -> state-oracle checks initial vs final device state against task-specific protected invariants; tasks built by humans+LLMs with multi-stage annotation.",
+   "output": "TSR (benign), ASR (verified breach), SVR, RHR, SRR, SU.",
+   "conditions": "Browser-based Android-like simulator (28 apps); step limit not stated.",
+   "feedback": "none within an episode beyond state updates",
+   "selection_rule": "Task admission by human annotation; per-bench counts not in text",
+   "selection_data": "human+LLM authored",
+   "persistence": "Frozen release T(r)",
+   "later_use": "Agents/defenses evaluated on the release",
+   "claimed_effect": "Implicit jailbreaks yield fewer refusals and more risk-carrying execution than explicit ones.",
+   "failure_boundary": "Simulator abstracts real Android process isolation and live service behavior; explicit and implicit sets are different task sets (not matched pairs).",
+   "evidence_ids": [
+    "son55:E006",
+    "son55:E007",
+    "son55:E008",
+    "son55:E009",
+    "son55:E011",
+    "son55:E012",
+    "son55:E013",
+    "son55:E030",
+    "son55:E031"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "Dual-Dynamic Evolution: attack presentation (FDJE) and benchmark task set (WDBE) as functions of observed agent failures",
+   "information": "Oracle verdicts, refusal/exec-failure profiles, trajectories; attack model does not see payload content; WDBE sees trajectories, strategy library and construction protocol.",
+   "operation": "FDJE: baseline probe -> split into breached/refused/exec-failed -> route refusals to task-flow camouflage, exec failures to witness-guided navigation, unresolved to implicit-track escalation with monotone reflective prefix optimisation under fixed oracle. WDBE: attribute failure -> JSON task spec -> four reviews -> build code with self-check chain and oracle sanity conditions -> evaluate -> admit with GUI witness and novelty check -> freeze next release.",
+   "output": "Higher ASR (FDJE) and new executable tasks (WDBE-50).",
+   "conditions": "Per-task/global episode budget; verified breach stops search.",
+   "feedback": "verified oracle breach/diagnostic score d(.) and failure summaries",
+   "selection_rule": "Accept prefix if diagnostic score improves (ties keep incumbent); admit task if Adm and Novel",
+   "selection_data": "Same simulator and tasks used for attack evolution; WDBE tasks derived from source-model failures (Qwen-122B).",
+   "persistence": "Within-release search state; admitted tasks persist into release r+1",
+   "later_use": "Next evaluation release",
+   "claimed_effect": "Coverage 69.6%->85.9%; ASR gains (e.g. Gemini-2.5-Pro 50.7->83.6); WDBE-50 yields 36-82% first-run ASR on nine other models.",
+   "failure_boundary": "Baseline is pass@2 vs adaptive search; evolved attack results are not comparable across releases or budgets.",
+   "evidence_ids": [
+    "son55:E014",
+    "son55:E015",
+    "son55:E016",
+    "son55:E017",
+    "son55:E018",
+    "son55:E019",
+    "son55:E034",
+    "son55:E035",
+    "son55:E036",
+    "son55:E037",
+    "son55:E038"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "Adjudication: Stratified Adjudication Framework replacing single-LLM safety judging",
+   "information": "Full trajectory with cited steps/fields plus the state oracle result p_i.",
+   "operation": "L0 deterministic anchors lock refusal timing; L1 two isolated calls of the same judge model return labels + verbatim quotes; exact-substring evidence audit; L2 arbitration/tie-break/abstention; outcome-consistent aggregation (h=max(h~,p), v=max(v~,p), f=f(1-p)).",
+   "output": "Per-episode labels -> SVR/RHR/SRR/ASR/TSR/SU with coverage and bootstrap CIs.",
+   "conditions": "Judge model identity, rubric and suite size not in text.",
+   "feedback": "none",
+   "selection_rule": "conflict arbitration",
+   "selection_data": "not_applicable",
+   "persistence": "labels per episode",
+   "later_use": "reporting",
+   "claimed_effect": "Agreement 97.26% and stability 98.1% vs 91.14%/95.7% for a single LLM; RHR matches ground truth 83.3 vs 63.3.",
+   "failure_boundary": "Dual calls are not independent annotators; ground-truth provenance unspecified; consistency forcing may favour SAF by construction.",
+   "evidence_ids": [
+    "son55:E020",
+    "son55:E021",
+    "son55:E022",
+    "son55:E023",
+    "son55:E024",
+    "son55:E025",
+    "son55:E026",
+    "son55:E027"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "Jailbreak evaluations (i) test conversational attacks rather than mobile workflows, (ii) use static task sets with fixed difficulty that cannot track improving alignment ('Red Queen'), and (iii) rely on ASR instead of diagnosing awareness, behaviour and consequence.",
+  "checked_gap": "(iii) is supported inside the paper (a single judge under-detects hijacking: RHR 63.3 vs 83.3 ground truth) and (i) is plausible. (ii) is not demonstrated: the authors' own static set is far from saturated (explicit/implicit ASR ~56-60% on average), so the claim that fixed difficulty fails to track alignment is argued, not shown. Neighbour comparison (MobileSafetyBench, GhostEI-Bench, OS-Sentinel, AgentDoG) is a self-authored feature table; none was run. A same-week sibling in this batch (MobileInject, 2610.23307) uses the same neighbour set but targets third-party injection, not user-driven jailbreak.",
+  "lineage": [
+   "Conversational jailbreak benchmarks (HarmBench, DAN) and tool-agent safety (ToolEmu, AgentDojo) -> mobile-agent safety (MobileSafetyBench, GhostEI-Bench, OS-Sentinel, AgentDoG) -> MobileJailBench (evolving, workflow-grounded, stratified adjudication)"
+  ],
+  "closest_adjacent": [
+   {
+    "name": "MobileSafetyBench (Lee et al. 2026)",
+    "source_version": "described by authors (Table 1, Sec 3.1); not pinned locally",
+    "solved": "Android-emulator mobile safety evaluation (SCoT prompt used as defense here)",
+    "remaining": "per authors: static tasks, ASR-centric, partial diagnostics; heavier emulator"
+   },
+   {
+    "name": "GhostEI-Bench / OS-Sentinel / AgentDoG",
+    "source_version": "described by authors; not pinned locally",
+    "solved": "environmental injection, trajectory validation, diagnostic guardrails",
+    "remaining": "per authors: no difficulty evolution or auto-expansion"
+   },
+   {
+    "name": "MobileInject (2610.23307)",
+    "source_version": "same batch (pinned); concurrent work, not a predecessor",
+    "solved": "third-party multimodal injection benchmark with state oracles and trajectory diagnosis",
+    "remaining": "different threat model (untrusted observation vs malicious user)"
+   }
+  ],
+  "residue": "Real benchmark staleness is not measured; implicit-vs-explicit comparisons are across different task sets; judge reference provenance is unspecified.",
+  "stakes": "Overstating alignment weakness from implicit tasks or mixing adaptive-attack results with benchmark scores would mislead safety comparisons.",
+  "method_response": "Six benches plus evolving attacks/tasks and a layered adjudicator with deterministic oracles.",
+  "remaining_gap": "Real-device validity, comparability across releases, independent human-validated labels, effect of simulator abstraction on safety conclusions.",
+  "evidence_ids": [
+   "agg:J-A07"
+  ],
+  "unresolved": [
+   "Neighbour benchmark sources are not pinned (author characterisation only); 'first evolving jailbreak benchmark' unverifiable here.",
+   "M3A results behind the 20-pairing headline and several figures are not in the text."
+  ],
+  "aggregate_neighbor_check": "MobileSafetyBench (2410.17520) reference read: Android-emulator evaluation already includes harmful/high-risk tasks and indirect prompt injection, so 'existing jailbreak evaluations focus on conversational attacks' is partly overstated (the paper's own Table 1 marks MobileSafetyBench as workflow-grounded). Residue: implicit/composite jailbreak delivery, evolving attack/task sets, layered adjudication; the static-difficulty gap is argued, not shown."
+ },
+ "rs_pattern": {
+  "primary": "assumption_audit_and_pivot",
+  "supporting": [
+   "controlled_diagnostic_design"
+  ],
+  "executes_pattern": true,
+  "resolves_problem": false,
+  "resolution_reason": "Shows security counterexamples and constructs adaptive evaluation, but does not establish real-world security boundaries or a causally independent account of alignment failure.",
+  "unassigned_candidates": [
+   {
+    "main_id": "generative_process_redesign",
+    "sub_ids": [
+     "C15",
+     "C23",
+     "C24"
+    ],
+    "reason": "Adaptive benchmark generation is not a redesign of geometric substrate, diffusion/flow-chain internals or a fixed refinement-backbone conditioning space. Do not assign on the word evolution/generation alone."
+   }
+  ],
+  "matches": [
+   {
+    "main_id": "assumption_audit_and_pivot",
+    "sub_id": "C01",
+    "match": "partial",
+    "tactic_execution": "Move the safety test from explicit conversational cues to implicit instructions plus GUI-carried content and state consequences, testing the sufficiency of refusal-style alignment. FDJE turns the locus shift into a feedback-guided attack template.",
+    "evidence_ids": [
+     "sol:J03",
+     "sol:J04",
+     "sol:J09"
+    ],
+    "success_conditions": [
+     {
+      "condition": "Bounded reachable adversary",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J03",
+       "sol:J05"
+      ],
+      "reason": "Instruction/carrier permissions bounded and GUI witnesses required; actual numeric attack budgets and real Android reachability absent."
+     },
+     {
+      "condition": "Structural exploit template",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J04"
+      ],
+      "reason": "Instruction/payload decomposition and refusal/execution-failure routing are reusable operations."
+     },
+     {
+      "condition": "Prior failure specifically caused by audited assumption",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J07",
+       "sol:J09"
+      ],
+      "reason": "Implicit versus explicit refusal differences support surface-cue dependence, not a controlled isolation of safety-training causation."
+     },
+     {
+      "condition": "Informed/adaptive defense validation",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J09"
+      ],
+      "reason": "Filtering/prompt defenses tested; no informed defender trained or optimized against the new locus."
+     }
+    ],
+    "failure_modes": [
+     {
+      "condition": "Mechanism confounded by bundled search and extra compute",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J04",
+       "sol:J08",
+       "sol:J09"
+      ],
+      "reason": "Placement and strategy ablations described, but baseline pass@2 and adaptive FDJE budgets not numerically equated."
+     },
+     {
+      "condition": "Realism and nearest-neighbor distinction unclosed",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J02",
+       "sol:J03",
+       "sol:J09"
+      ]
+     }
+    ],
+    "role": "primary",
+    "fit": "partial",
+    "reason": "Move the safety test from explicit conversational cues to implicit instructions plus GUI-carried content and state consequences, testing the sufficiency of refusal-style alignment. FDJE turns the locus shift into a feedback-guided attack template.",
+    "tactic_steps_checked": [
+     "Move the safety test from explicit conversational cues to implicit instructions plus GUI-carried content and state consequences, testing the sufficiency of refusal-style alignment. FDJE turns the locus shift into a feedback-guided attack template."
+    ],
+    "success/failure_checks": [
+     {
+      "condition": "Bounded reachable adversary",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J03",
+       "sol:J05"
+      ],
+      "reason": "Instruction/carrier permissions bounded and GUI witnesses required; actual numeric attack budgets and real Android reachability absent."
+     },
+     {
+      "condition": "Structural exploit template",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J04"
+      ],
+      "reason": "Instruction/payload decomposition and refusal/execution-failure routing are reusable operations."
+     },
+     {
+      "condition": "Prior failure specifically caused by audited assumption",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J07",
+       "sol:J09"
+      ],
+      "reason": "Implicit versus explicit refusal differences support surface-cue dependence, not a controlled isolation of safety-training causation."
+     },
+     {
+      "condition": "Informed/adaptive defense validation",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J09"
+      ],
+      "reason": "Filtering/prompt defenses tested; no informed defender trained or optimized against the new locus."
+     },
+     {
+      "condition": "Mechanism confounded by bundled search and extra compute",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J04",
+       "sol:J08",
+       "sol:J09"
+      ],
+      "reason": "Placement and strategy ablations described, but baseline pass@2 and adaptive FDJE budgets not numerically equated."
+     },
+     {
+      "condition": "Realism and nearest-neighbor distinction unclosed",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J02",
+       "sol:J03",
+       "sol:J09"
+      ]
+     }
+    ],
+    "version": "sha256:3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32"
+   },
+   {
+    "main_id": "controlled_diagnostic_design",
+    "sub_id": "C02",
+    "match": "partial",
+    "evidence_ids": [
+     "sol:J06",
+     "sol:J08",
+     "sol:J09"
+    ],
+    "tactic_execution": "Matched/mismatched placement and single/vote/mean/SAF comparisons promote input placement and measurement apparatus to experiment variables.",
+    "conditions": [
+     {
+      "condition": "Matched intervention",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J09"
+      ],
+      "reason": "98.6 versus87.1 placement result reported; detailed matching and inferential uncertainty absent."
+     },
+     {
+      "condition": "Independent truth anchor",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J05",
+       "sol:J06",
+       "sol:J08"
+      ],
+      "reason": "Executable outcomes anchored; reference provenance for semantic labels unspecified and derived labels are outcome-constrained."
+     },
+     {
+      "condition": "Measurement circularity avoided",
+      "status": "unmet",
+      "evidence_ids": [
+       "sol:J06",
+       "sol:J08"
+      ],
+      "reason": "No raw-versus-outcome-floor ablation; aggregate agreement alone cannot establish independent diagnostic causality."
+     }
+    ],
+    "role": "supporting",
+    "fit": "partial",
+    "reason": "Matched/mismatched placement and single/vote/mean/SAF comparisons promote input placement and measurement apparatus to experiment variables.",
+    "tactic_steps_checked": [
+     "Matched/mismatched placement and single/vote/mean/SAF comparisons promote input placement and measurement apparatus to experiment variables."
+    ],
+    "success/failure_checks": [
+     {
+      "condition": "Matched intervention",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J09"
+      ],
+      "reason": "98.6 versus87.1 placement result reported; detailed matching and inferential uncertainty absent."
+     },
+     {
+      "condition": "Independent truth anchor",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J05",
+       "sol:J06",
+       "sol:J08"
+      ],
+      "reason": "Executable outcomes anchored; reference provenance for semantic labels unspecified and derived labels are outcome-constrained."
+     },
+     {
+      "condition": "Measurement circularity avoided",
+      "status": "unmet",
+      "evidence_ids": [
+       "sol:J06",
+       "sol:J08"
+      ],
+      "reason": "No raw-versus-outcome-floor ablation; aggregate agreement alone cannot establish independent diagnostic causality."
+     }
+    ],
+    "version": "sha256:3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32"
+   }
+  ],
+  "outside_taxonomy": false,
+  "reason": "Shows security counterexamples and constructs adaptive evaluation, but does not establish real-world security boundaries or a causally independent account of alignment failure.",
+  "aggregate_source_seat": "sol",
+  "aggregate_reason": "Primary assumption_audit_and_pivot / C01 (sol): the operational core relocates the harmful payload from the instruction text to a GUI environmental carrier (implicit track) to test whether refusal alignment keyed to conversational cues survives - a locus relocation exploit, C01's tactic. Supporting controlled_diagnostic_design / C02 for matched/mismatched placement and judge-apparatus comparisons. son55's weak self_supervised_signal_engineering listing dropped (WDBE gating is task generation for evaluation, not a training signal)."
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "match": "strong",
+    "evidence_ids": [
+     "sol:J03",
+     "sol:J05",
+     "sol:J06"
+    ],
+    "operation": "Reset, prepare, GUI-execute and compare initial/final privileged simulator state against task contracts.",
+    "conditions": [
+     {
+      "condition": "Resettable state and outcome-based checks",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J03",
+       "sol:J06"
+      ]
+     },
+     {
+      "condition": "Checker validation accepts legal alternatives and rejects faults",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J05"
+      ],
+      "reason": "Canonical changed-state positive and unchanged-state negative tests only; no independent alternative/fault pools or empirical error rates."
+     },
+     {
+      "condition": "Seed variance exposed",
+      "status": "unmet",
+      "evidence_ids": [
+       "sol:J08",
+       "sol:J09"
+      ],
+      "reason": "Two-run union and promised bootstrap reporting do not supply broad multi-seed spread."
+     }
+    ],
+    "failure_modes": [
+     {
+      "condition": "Synthetic apps abstract real service/security behavior",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J03"
+      ]
+     },
+     {
+      "condition": "Checker false positive/negative rates unquantified",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J05"
+      ]
+     }
+    ],
+    "main": "verifiable_execution_reward",
+    "sub": "C22",
+    "version": "sha256:430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "fit": "strong",
+    "condition_checks": [
+     {
+      "condition": "Resettable state and outcome-based checks",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J03",
+       "sol:J06"
+      ]
+     },
+     {
+      "condition": "Checker validation accepts legal alternatives and rejects faults",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J05"
+      ],
+      "reason": "Canonical changed-state positive and unchanged-state negative tests only; no independent alternative/fault pools or empirical error rates."
+     },
+     {
+      "condition": "Seed variance exposed",
+      "status": "unmet",
+      "evidence_ids": [
+       "sol:J08",
+       "sol:J09"
+      ],
+      "reason": "Two-run union and promised bootstrap reporting do not supply broad multi-seed spread."
+     },
+     {
+      "condition": "Synthetic apps abstract real service/security behavior",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J03"
+      ]
+     },
+     {
+      "condition": "Checker false positive/negative rates unquantified",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J05"
+      ]
+     }
+    ],
+    "conditions_version": "sha256:a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+    "aggregate_source_seat": "sol"
+   },
+   {
+    "match": "strong",
+    "evidence_ids": [
+     "sol:J04",
+     "sol:J05"
+    ],
+    "operation": "Propose and gate new GUI security tasks from observed failure trajectories and environment constraints; applied to evaluation rather than policy curriculum training.",
+    "conditions": [
+     {
+      "condition": "History/failure conditioned proposals",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J05"
+      ]
+     },
+     {
+      "condition": "Feasibility/difficulty gates",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J05"
+      ],
+      "reason": "Four semantic reviews, code tests and GUI witness; no quantified admission/novelty accuracy or full generated/certified funnel."
+     },
+     {
+      "condition": "Transfer",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J08",
+       "sol:J09"
+      ],
+      "reason": "WDBE50 tested on nine other models, same simulator; no held-out environment."
+     }
+    ],
+    "failure_modes": [
+     {
+      "condition": "Selection validity and environment overlap",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J03",
+       "sol:J05",
+       "sol:J08"
+      ],
+      "reason": "Exact fidelity, independent retention precision and real-app transfer unmeasured; freeze rule controls within-release drift but not ecological validity."
+     }
+    ],
+    "main": "exploration_driven_task_synthesis",
+    "sub": "K15",
+    "version": "sha256:430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "fit": "strong",
+    "condition_checks": [
+     {
+      "condition": "History/failure conditioned proposals",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J05"
+      ]
+     },
+     {
+      "condition": "Feasibility/difficulty gates",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J05"
+      ],
+      "reason": "Four semantic reviews, code tests and GUI witness; no quantified admission/novelty accuracy or full generated/certified funnel."
+     },
+     {
+      "condition": "Transfer",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J08",
+       "sol:J09"
+      ],
+      "reason": "WDBE50 tested on nine other models, same simulator; no held-out environment."
+     },
+     {
+      "condition": "Selection validity and environment overlap",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J03",
+       "sol:J05",
+       "sol:J08"
+      ],
+      "reason": "Exact fidelity, independent retention precision and real-app transfer unmeasured; freeze rule controls within-release drift but not ecological validity."
+     }
+    ],
+    "conditions_version": "sha256:a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+    "aggregate_source_seat": "sol"
+   },
+   {
+    "match": "strong",
+    "evidence_ids": [
+     "sol:J06",
+     "sol:J07",
+     "sol:J08"
+    ],
+    "operation": "Separate observed adoption, advancing actions and prohibited final-state breach; includes malicious-user jailbreaks as well as environment-carried injection.",
+    "conditions": [
+     {
+      "condition": "Attempt and completion reported",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J06",
+       "sol:J07"
+      ]
+     },
+     {
+      "condition": "Intermediate judge validated",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J08"
+      ],
+      "reason": "Reference agreement/stability improve, but reference identity/sample/class reliability and independent human agreement not documented."
+     },
+     {
+      "condition": "Cross-agent scope",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J09"
+      ],
+      "reason": "Two frameworks and ten models in same simulator."
+     }
+    ],
+    "failure_modes": [
+     {
+      "condition": "Intermediate diagnosis validity/independence unresolved",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J06",
+       "sol:J08"
+      ],
+      "reason": "Same-model dual calls explicitly not independent; endpoint-consistent floors make aggregate coupling partly definitional."
+     }
+    ],
+    "main": "environmental_injection_attacks",
+    "sub": "C33",
+    "version": "sha256:430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+    "fit": "strong",
+    "condition_checks": [
+     {
+      "condition": "Attempt and completion reported",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J06",
+       "sol:J07"
+      ]
+     },
+     {
+      "condition": "Intermediate judge validated",
+      "status": "partial",
+      "evidence_ids": [
+       "sol:J08"
+      ],
+      "reason": "Reference agreement/stability improve, but reference identity/sample/class reliability and independent human agreement not documented."
+     },
+     {
+      "condition": "Cross-agent scope",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J09"
+      ],
+      "reason": "Two frameworks and ten models in same simulator."
+     },
+     {
+      "condition": "Intermediate diagnosis validity/independence unresolved",
+      "status": "met",
+      "evidence_ids": [
+       "sol:J06",
+       "sol:J08"
+      ],
+      "reason": "Same-model dual calls explicitly not independent; endpoint-consistent floors make aggregate coupling partly definitional."
+     }
+    ],
+    "conditions_version": "sha256:a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+    "aggregate_source_seat": "sol"
+   },
+   {
+    "main": "learned_outcome_and_process_judges",
+    "sub": "C25",
+    "version": "as above",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "id": "S1",
+      "kind": "success",
+      "status": "partial",
+      "reason": "Judge agreement reported (97.26% vs 91.14%) but against 'pooled references' of unspecified provenance.",
+      "evidence_ids": [
+       "son55:E024",
+       "son55:E025",
+       "son55:E027"
+      ]
+     },
+     {
+      "id": "F2",
+      "kind": "failure",
+      "status": "partial",
+      "reason": "Single-judge disagreement with ground truth is quantified for RHR (63.3 vs 83.3); free-form labelling remains LLM-dependent.",
+      "evidence_ids": [
+       "son55:E025",
+       "son55:E026"
+      ]
+     },
+     {
+      "id": "F3",
+      "kind": "failure",
+      "status": "partial",
+      "reason": "Dual calls come from the same model and are 'not independent annotators'; systematic bias not independently tested.",
+      "evidence_ids": [
+       "son55:E020"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "son55:E020",
+     "son55:E022",
+     "son55:E024",
+     "son55:E025"
+    ],
+    "aggregate_source_seat": "son55"
+   }
+  ],
+  "unassigned": [
+   "Implicit jailbreak payload in an environmental carrier (clipboard) resembles environmental_injection_attacks/C30, but the adversary is the user, not third-party content, so not matched; boundary case for the domain taxonomy (jailbreak vs injection)."
+  ],
+  "revision_proposals": [
+   "(single paper) boundary note for environmental_injection_attacks: user-driven implicit jailbreaks with carrier payloads sit between injection and jailbreak; consider a separate main pattern only if two more independent papers appear."
+  ],
+  "aggregate_note": "Union: C22 (resettable executable oracles), K15 (WDBE proposes tasks from observed failures), C33 (SAF separates adoption/violation from verified breach), C25 partial (dual-track LLM judge)."
+ },
+ "pattern_mapping": [
+  {
+   "rs_main_id": "assumption_audit_and_pivot",
+   "rs_sub_id": "C01",
+   "domain_namespace": "gui",
+   "domain_main_id": "environmental_injection_attacks",
+   "domain_sub_id": "C33",
+   "relation": "Shift from explicit refusal to contextual mobile consequence; distinguish compromised behavior from completed harm.",
+   "evidence_ids": [
+    "sol:J04",
+    "sol:J06",
+    "sol:J09"
+   ],
+   "rs_main": "assumption_audit_and_pivot",
+   "rs_sub": "C01",
+   "domain": {
+    "namespace": "gui",
+    "main": "environmental_injection_attacks",
+    "sub": "C33"
+   },
+   "operation_correspondence": "Shift from explicit refusal to contextual mobile consequence; distinguish compromised behavior from completed harm.",
+   "necessary_conditions_and_differences": "See cited RS tactic and gui condition_checks; shared operation is not equal empirical sufficiency."
+  },
+  {
+   "rs_main_id": "controlled_diagnostic_design",
+   "rs_sub_id": "C02",
+   "domain_namespace": "gui",
+   "domain_main_id": "verifiable_execution_reward",
+   "domain_sub_id": "C22",
+   "relation": "Paired attack/measurement comparisons anchored by programmatic endpoints, with diagnostic-independence limitations.",
+   "evidence_ids": [
+    "sol:J05",
+    "sol:J06",
+    "sol:J08",
+    "sol:J09"
+   ],
+   "rs_main": "controlled_diagnostic_design",
+   "rs_sub": "C02",
+   "domain": {
+    "namespace": "gui",
+    "main": "verifiable_execution_reward",
+    "sub": "C22"
+   },
+   "operation_correspondence": "Paired attack/measurement comparisons anchored by programmatic endpoints, with diagnostic-independence limitations.",
+   "necessary_conditions_and_differences": "See cited RS tactic and gui condition_checks; shared operation is not equal empirical sufficiency."
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2404.07972#s1",
+    "paper_practice:2501.12326#s1",
+    "paper_practice:2505.13227#s2",
+    "paper_practice:2510.17790#s1",
+    "paper_practice:2601.04126#s2",
+    "paper_practice:2602.00575#s2",
+    "paper_practice:2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2410.05243#s2",
+    "paper_practice:2412.04454#s3",
+    "paper_practice:2412.19723#s1",
+    "paper_practice:2501.12326#s3",
+    "paper_practice:2506.08012#s2",
+    "paper_practice:2509.11543#s1",
+    "paper_practice:2509.23738#s1",
+    "paper_practice:2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('an empirical claim that a method improves task success of an Android/mobile GUI agent') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2410.13232#s2",
+    "paper_practice:2411.02337#s3",
+    "paper_practice:2410.02907#s2",
+    "paper_practice:2601.22149#s2",
+    "paper_practice:2602.14721#s2",
+    "paper_practice:2412.19723#s1",
+    "paper_limitation:2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2504.01382#s2",
+    "paper_practice:2411.06559#s1",
+    "paper_practice:2601.04126#s2",
+    "paper_practice:2410.05243#s2",
+    "paper_practice:2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim about web-agent success on real, live websites') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2501.12326#s3",
+    "paper_practice:2505.13227#s1",
+    "paper_practice:2509.11543",
+    "paper_practice:2604.14262#s2",
+    "paper_limitation:2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2412.04454#s1",
+    "paper_practice:2501.12326#s3",
+    "paper_practice:2505.13227#s1",
+    "paper_practice:2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a grounding model or grounding-data recipe beats prior GUI grounders') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2509.11543#s1",
+    "paper_practice:2506.08012#s2",
+    "paper_practice:2509.23738#s1",
+    "paper_practice:2510.17790#s1",
+    "paper_practice:2601.04126#s2",
+    "paper_practice:2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a trained end-to-end GUI agent model improves online task success') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2410.05243#s2",
+    "paper_practice:2412.04454#s3",
+    "paper_practice:2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a grounding component (or the planner-grounder split itself) improves agent task success') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2411.02337#s3",
+    "paper_practice:2406.11896#s1",
+    "paper_practice:2509.11543#s1",
+    "paper_practice:2601.22149#s2",
+    "paper_practice:2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2406.11896#s2",
+    "paper_practice:2411.02337#s2",
+    "paper_practice:2504.01382#s1",
+    "paper_practice:2602.00575#s1",
+    "paper_practice:2412.19723#s2",
+    "paper_practice:2311.08649#s2",
+    "paper_limitation:2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "applicable": true,
+   "status": "partial",
+   "reason": "SAF is validated by agreement (97.26% vs 91.14% for a single judge) and stability, but against 'pooled references'/'ground truth' whose annotators, size and independence are not described, and on a hard suite of unspecified size.",
+   "evidence_ids": [
+    "son55:E024",
+    "son55:E025",
+    "son55:E026",
+    "son55:E027"
+   ],
+   "score_item": "E.measurement",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2510.18596#s2",
+    "paper_practice:2504.01382#s1",
+    "paper_practice:2602.00575#s1",
+    "paper_limitation:2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Per-label rates (SVR, RHR, SRR) are compared to ground truth for four judge variants, but precision/NPV or per-class recall are not reported.",
+   "evidence_ids": [
+    "son55:E024",
+    "son55:E025",
+    "son55:E026"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2509.23738#s1",
+    "paper_practice:2602.00575#s2",
+    "paper_limitation:2510.18596",
+    "paper_practice:2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a learned reward model or verifier improves GUI-agent RL training') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_limitation:2404.07972",
+    "paper_limitation:2602.00575",
+    "paper_practice:2609.07712#s2",
+    "paper_practice:2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Oracles must satisfy V(s0,s0)=0 and V(s0,M(s0))=1 and need a GUI witness, but false-negative rates on alternative harmful paths and false-positive rates are not measured.",
+   "evidence_ids": [
+    "son55:E018"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "paper_practice:2509.23738#s2",
+    "paper_limitation:2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a process reward model for GUI steps improves RL or best-of-N') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_limitation:2501.12326",
+    "paper_practice:2509.11543#s3",
+    "paper_limitation:2602.09856",
+    "paper_practice:2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim of improved agent capability measured with offline, teacher-forced step metrics') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2501.12326#s1",
+    "paper_practice:2505.13227#s2",
+    "paper_practice:2510.17790#s1",
+    "paper_practice:2504.01382#s1",
+    "paper_practice:2609.10031",
+    "paper_limitation:2311.08649",
+    "paper_limitation:2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "partial",
+   "reason": "ASR1 vs pass@2 imply two runs for some tables; bootstrap CIs are claimed but absent in the text render; no 3-run mean±SD for the main tables.",
+   "evidence_ids": [
+    "son55:E023",
+    "son55:E035"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2501.12326#s1",
+     "note": "reports both 15 and 50 steps"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2410.13232#s2",
+     "note": "5 actions vs 30 for some baselines (condition)"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2504.01382#s2",
+     "note": "differing step caps; efficiency stratified"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2609.07712#s3",
+     "note": "budget exhaustion"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2510.17790#s1",
+     "note": "average steps reported"
+    }
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Mentions episode step limit and task/global search budgets without numeric caps, used steps or exhaustion counts; baseline pass@2 and additional FDJE search not explicitly equalized.",
+   "evidence_ids": [
+    "sol:J03",
+    "sol:J04",
+    "sol:J08",
+    "sol:J09"
+   ],
+   "score_item": [
+    "cost",
+    "causality"
+   ],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2410.13232#s2",
+    "paper_practice:2411.06559#s1",
+    "paper_practice:2509.23738#s2",
+    "paper_practice:2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "FDJE is compared with Tree/PAIR/TAP-style attack searches (Fig 3c), but candidate counts, cost/latency and real-execution comparators are not in the text; baseline is pass@2.",
+   "evidence_ids": [
+    "son55:E035",
+    "son55:E036"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_limitation:2509.23738",
+    "paper_practice:2506.08012#s2",
+    "paper_limitation:2412.19723",
+    "paper_practice:2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_limitation:2504.01382",
+    "paper_limitation:2406.11896",
+    "paper_limitation:2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim measured on live websites or live apps') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2404.07972#s2",
+    "paper_practice:2410.05243#s2",
+    "paper_practice:2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "GenericV2 and M3A observation spaces differ but results are not separated by screenshot-only vs a11y-augmented settings in the text.",
+   "evidence_ids": [
+    "son55:E028"
+   ],
+   "score_item": "E.causality",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2509.11543",
+    "paper_practice:2501.12326#s3",
+    "paper_practice:2604.02345#s2",
+    "paper_practice:2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a training recipe generalises across policy backbones') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "paper_practice:2504.01382#s2",
+    "paper_practice:2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Workflow complexity levels L1-L4 and cross-app counts are defined and SAF separates awareness/behaviour/consequence, but per-level results and reference-length stratification are not in the text.",
+   "evidence_ids": [
+    "son55:E010",
+    "son55:E024"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2604.14262#s1",
+    "paper_practice:2404.07972#s2",
+    "paper_practice:2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a grounder or agent is robust or generalises across visual layouts') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2505.13227#s1",
+    "paper_practice:2404.07972#s1",
+    "paper_limitation:2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a grounding or agent benchmark claim where some instructions are ambiguous or infeasible') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "paper_practice:2410.02907#s3",
+    "paper_practice:2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2410.05243#s1",
+    "paper_practice:2505.13227#s1",
+    "paper_limitation:2412.19723",
+    "paper_practice:2604.02345#s1",
+    "paper_practice:2510.09038#s1",
+    "paper_limitation:2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that synthetic GUI grounding, transition or trajectory data improves agents') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2411.06559#s2",
+    "paper_practice:2412.19723#s1",
+    "paper_practice:2601.04126#s2",
+    "paper_practice:2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "WDBE-50 tasks (generated from Qwen-122B failures) are evaluated on nine other models, a useful held-out signal, but in the same simulator and with the source-model result at 96%.",
+   "evidence_ids": [
+    "son55:E037",
+    "son55:E038"
+   ],
+   "score_item": "E.holdout",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "paper_practice:2506.08012#s1",
+    "paper_practice:2506.08012#s2",
+    "paper_limitation:2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that reflection, self-correction or first-error recovery data improves GUI agents') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2609.00048#s1",
+    "paper_practice:2411.06559#s2",
+    "paper_practice:2602.09856#s2",
+    "paper_practice:2410.13232#s1",
+    "paper_practice:2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2411.06559#s1",
+    "paper_practice:2601.22149#s2",
+    "paper_limitation:2410.13232",
+    "paper_limitation:2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a method that plans or trains with multi-step rollouts inside a learned GUI world model') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2601.22149#s2",
+    "paper_limitation:2608.05891",
+    "paper_practice:2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that policy training on world-model or simulated GUI rollouts improves agents') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_limitation:2609.00048",
+    "paper_practice:2602.14721#s1",
+    "paper_practice:2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "paper_practice:2609.07712#s1",
+    "paper_practice:2504.03597#s1",
+    "paper_practice:2403.03949#s1",
+    "paper_limitation:2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "A browser-based Android-like simulator substitutes for real devices; the authors state it abstracts Android isolation and live services, and no realism or ranking-preservation check against a real environment is reported.",
+   "evidence_ids": [
+    "son55:E006",
+    "son55:E007",
+    "son55:E008"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "paper_practice:2510.09038#s1",
+    "paper_practice:2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "applies_when ('a claim that experience memory or retrieved trajectories improve GUI agents') is not the paper's claim: a jailbreak benchmark and adjudication/evolution framework for mobile agents run in a custom browser-based Android-like simulator with ten MLLMs and two agent frameworks; no trained policy/grounder, no RL, no OSWorld/AndroidWorld/WebArena/live-web or world-model claim.",
+   "evidence_ids": [],
+   "score_item": null
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "Mobile agents are particularly vulnerable to implicit jailbreaks; safety alignment is superficial.",
+   "setting": "GenericV2 (Table 2, ten models) and M3A (text only), 20 model-agent pairings, 70 explicit + 70 implicit attacks",
+   "baseline_control": "Explicit bench (different task set)",
+   "selection_vs_test": "n/a",
+   "result_denominator": "mean SRR 26.8%->6.6%, SVR 68.9%->86.6%, ASR 59.8%->56.4% (explicit->implicit)",
+   "evidence_ids": [
+    "son55:E005",
+    "son55:E029",
+    "son55:E030",
+    "son55:E031",
+    "son55:E032",
+    "son55:E033"
+   ],
+   "counterevidence": "Verified ASR is lower under implicit on average and for GLM-4.6V (87.1->58.6), Gemini-2.5-Pro (38.6->24.3), Qwen3.6-27B (81.4->45.7); explicit/implicit sets are not matched pairs; lower refusal may reflect absence of overt harmful text and capability effects.",
+   "allowed_conclusion": "Implicit tasks draw fewer refusals and more risk-carrying execution but not more verified breaches; 'particularly vulnerable' holds for SVR/SRR, not ASR."
+  },
+  {
+   "claim_id": "C2",
+   "text": "FDJE deepens vulnerability testing and reaches 100% ASR on Qwen3.5-122B.",
+   "setting": "Table 3(a) baseline pass@2 vs FDJE adaptive search; Fig 3(c) vs attack baselines",
+   "baseline_control": "pass@2 baseline; Tree/PAIR/TAP/AutoDAN-Turbo etc. 'under recorded budgets and permissions'",
+   "selection_vs_test": "attack evolved on the same tasks it is evaluated on",
+   "result_denominator": "Qwen-122B 89.3->98.6 ASR (table); 100% only in Fig 3(c)/abstract",
+   "evidence_ids": [
+    "son55:E004",
+    "son55:E015",
+    "son55:E016",
+    "son55:E034",
+    "son55:E035",
+    "son55:E036"
+   ],
+   "counterevidence": "FDJE uses oracle verdicts and extra episodes; compute not matched/stated; table value 98.6 vs abstract 100.",
+   "allowed_conclusion": "Adaptive search raises ASR across ten models (e.g. Gemini-2.5-Pro 50.7->83.6) at a larger, unstated query budget; 100% is not reproduced in the text tables."
+  },
+  {
+   "claim_id": "C3",
+   "text": "WDBE converts weaknesses into new transferable tests.",
+   "setting": "WDBE-50 tasks, ten models",
+   "baseline_control": "none",
+   "selection_vs_test": "source model Qwen-122B vs nine others",
+   "result_denominator": "36-82% first-run ASR on nine other models",
+   "evidence_ids": [
+    "son55:E017",
+    "son55:E037",
+    "son55:E038"
+   ],
+   "counterevidence": "Generated vs certified counts not in text; same simulator.",
+   "allowed_conclusion": "Generated tasks elicit substantial ASR on models other than the source model; certification yield unknown."
+  },
+  {
+   "claim_id": "C4",
+   "text": "SAF gives more reliable, multidimensional diagnosis than single-judge ASR-style evaluation.",
+   "setting": "hard suite, pooled references",
+   "baseline_control": "Single LLM, vote x3, mean x3",
+   "selection_vs_test": "n/a",
+   "result_denominator": "agreement 97.26 vs 91.14; stability 98.1 vs 95.7; RHR 83.3 vs 63.3 (truth 83.3)",
+   "evidence_ids": [
+    "son55:E020",
+    "son55:E021",
+    "son55:E022",
+    "son55:E024",
+    "son55:E025",
+    "son55:E026",
+    "son55:E027"
+   ],
+   "counterevidence": "Reference provenance/size unknown; outcome-consistent aggregation may favour SAF by construction; same judge model in dual tracks.",
+   "allowed_conclusion": "On an unspecified reference set SAF agrees more and under-detects hijacking less than simpler judges."
+  },
+  {
+   "claim_id": "C5",
+   "text": "Existing defenses are inadequate.",
+   "setting": "Input-F/Out-F, Safe-G/SCoT, Prescriptive (Fig 3d)",
+   "baseline_control": "no defense",
+   "selection_vs_test": "n/a",
+   "result_denominator": "Safe-G still 57.9% ASR (figure-derived)",
+   "evidence_ids": [
+    "son55:E040"
+   ],
+   "counterevidence": "Figure not readable; configuration unstated.",
+   "allowed_conclusion": "Not verifiable from text beyond the authors' statement."
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_reason": "Interactive simulator with state-diff oracles (author report); simulator is Android-like, not real Android.",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "Author-reported, in a browser-based Android-like simulator: ten MLLMs under GenericV2 show high oracle-verified ASR on 70 explicit and 70 implicit tasks, implicit tasks draw far fewer refusals and more coded risky execution without higher verified ASR, adaptive FDJE search at an unstated budget raises ASR (Qwen-122B 98.6, not 100), a 50-task WDBE expansion transfers to other models, and SAF agrees more with an unspecified reference than a single judge.",
+  "not_supported": [
+   "100% ASR as tabulated",
+   "Budget-matched superiority of FDJE",
+   "Real-Android fidelity",
+   "Results for M3A pairings and composite/expansion benches beyond WDBE-50"
+  ],
+  "unresolved": [
+   "SAF reference provenance and size",
+   "Unresolved-episode counts per rate",
+   "Step limit and search budgets"
+  ],
+  "retention_trace": "not_applicable: evaluation resource (benchmark releases are frozen; no agent improvement claimed)",
+  "author_report_only": true,
+  "our_run": false
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Workflow-grounded jailbreak and ASR-only evaluation gaps are real, but MobileSafetyBench already covers harmful tasks/injection in emulator workflows and the 'static difficulty' gap is argued while the own static bench is unsaturated (~56-60% ASR).",
+   "evidence_ids": [
+    "son55:E003",
+    "son55:E005",
+    "son55:E031",
+    "sol:J02"
+   ],
+   "counterevidence_ids": [
+    "agg:J-A07"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Coherent layered design: fixed-oracle adaptive attack routing, gated task generation with oracle sanity conditions and GUI witness, and a deterministic-anchor/dual-track/quote-audit/arbitration judge; predictions (single judge under-detects RHR) are tested. Weaknesses: outcome-consistency forcing and same-judge tracks.",
+   "evidence_ids": [
+    "son55:E014",
+    "son55:E017",
+    "son55:E020",
+    "sol:J04",
+    "sol:J05",
+    "sol:J06"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Episode protocol, FDJE routing, WDBE gates and SAF equations are described; step limit, search budgets, judge model, reference annotation, per-bench counts and M3A results are absent from the text.",
+   "evidence_ids": [
+    "son55:E013",
+    "son55:E017",
+    "sol:J03"
+   ],
+   "counterevidence_ids": [
+    "son55:E027",
+    "sol:J08"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "State oracles with sanity tests are sound inside the simulator, but SAF's reference ('ground truth') provenance/size is undefined, rates drop unresolved episodes without counts, outcome-forced aggregation shapes RHR/SVR, and the headline 100% is not traceable to the tables.",
+   "evidence_ids": [
+    "son55:E018",
+    "son55:E024",
+    "sol:J05",
+    "sol:J06"
+   ],
+   "counterevidence_ids": [
+    "agg:J-A02",
+    "agg:J-A03",
+    "agg:J-A04"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "FDJE component/strategy ablations and matched-vs-mismatched placement exist; explicit vs implicit are different task sets and FDJE vs pass@2 has unmatched compute.",
+   "evidence_ids": [
+    "son55:E024",
+    "son55:E035",
+    "sol:J08"
+   ],
+   "counterevidence_ids": [
+    "son55:E031",
+    "sol:J04"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "WDBE-50 transfers to models other than its source, a held-out signal; FDJE is optimised on the evaluation tasks, everything runs in one custom simulator without realism check.",
+   "evidence_ids": [
+    "son55:E037",
+    "son55:E038",
+    "sol:J09"
+   ],
+   "counterevidence_ids": [
+    "agg:J-A06"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Main tables are single-run on 70-task sets with no visible intervals, denominators exclude unresolved episodes without counts, and the two-run data show 20 pp run-to-run swings, so the explicit-vs-implicit mean contrasts (59.8 vs 56.4 ASR) are not statistically supported.",
+   "evidence_ids": [
+    "sol:J07",
+    "son55:E029"
+   ],
+   "counterevidence_ids": [
+    "agg:J-A02",
+    "agg:J-A05"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Budgets are said to be recorded but not given; adaptive search compared with pass@2 and other attacks without matched compute; evaluation cost unreported.",
+   "evidence_ids": [
+    "son55:E035",
+    "son55:E036",
+    "sol:J04"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 53.75,
+  "display": 53.8,
+  "lower": 53.75,
+  "upper": 53.75,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(15G+25M+20X+10Emeas+10Ecaus+10Ehold+5Estat+5Ecost)/4; unknown -> L uses 0, U uses 4; raw=null while any unknown"
+ },
+ "status": "reviewed",
+ "status_reason": "Full fixed HTML text available and read; all eight items resolved.",
+ "input_seat_hashes": {
+  "sol": "5b2f720bf94426326b2e6c31918454a314632adeff1944f53dd13c7b44ebe4db",
+  "son55": "b174839414c4e32cccb4080b06d72f7863b1fa66581183944b4068a7fbe2229b"
+ },
+ "aggregate_model": "fable",
+ "aggregate_actual_model": "claude-opus-5-5[1m]",
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_note": "Configured model type fable (upstream claude-opus-5-5[1m]) per batch manifest model_types.opus55; no session id or invocation receipt is exposed to this agent.",
+ "seat_integrity_check": {
+  "sol": {
+   "file_sha256": "5b2f720bf94426326b2e6c31918454a314632adeff1944f53dd13c7b44ebe4db",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "material_complete": true,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "sonnet",
+   "actual_model": "gpt-6.1-sol"
+  },
+  "son55": {
+   "file_sha256": "b174839414c4e32cccb4080b06d72f7863b1fa66581183944b4068a7fbe2229b",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "material_complete": true,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "haiku",
+   "actual_model": "claude-sonnet-5-5[1m]"
+  }
+ },
+ "resolutions": [
+  {
+   "field_path": "rs.primary",
+   "sol_value": "assumption_audit_and_pivot",
+   "son55_value": "controlled_diagnostic_design",
+   "decision": "sol",
+   "final_value": "assumption_audit_and_pivot",
+   "reason": "The contribution's operational core is relocating the harmful payload to a GUI carrier to break conversational-cue alignment (C01 tactic); C02 fits the evaluation-control parts and is kept as supporting.",
+   "evidence_ids": [
+    "sol:J03",
+    "sol:J04"
+   ],
+   "score_impact": "none (pattern matches are not scored)"
+  },
+  {
+   "field_path": "rs.supporting",
+   "sol_value": [
+    "controlled_diagnostic_design"
+   ],
+   "son55_value": [
+    "assumption_audit_and_pivot",
+    "self_supervised_signal_engineering"
+   ],
+   "decision": "sol",
+   "final_value": [
+    "controlled_diagnostic_design"
+   ],
+   "reason": "self_supervised_signal_engineering (weak, son55) dropped: WDBE generate-and-gate produces evaluation tasks, not supervision, and protocol allows supporting cards only when a distinct operation needs them.",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "rs.matches",
+   "sol_value": [
+    "assumption_audit_and_pivot/C01",
+    "controlled_diagnostic_design/C02"
+   ],
+   "son55_value": [
+    "assumption_audit_and_pivot/None",
+    "controlled_diagnostic_design/C02",
+    "self_supervised_signal_engineering/None"
+   ],
+   "decision": "sol",
+   "final_value": [
+    "assumption_audit_and_pivot/C01",
+    "controlled_diagnostic_design/C02"
+   ],
+   "reason": "Follows rs.primary/supporting; C01 sub under correct parent per PARENTS.tsv.",
+   "evidence_ids": [],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "domain.matches",
+   "sol_value": [
+    "environmental_injection_attacks/C33",
+    "exploration_driven_task_synthesis/K15",
+    "verifiable_execution_reward/C22"
+   ],
+   "son55_value": [
+    "exploration_driven_task_synthesis/K15",
+    "learned_outcome_and_process_judges/C25",
+    "verifiable_execution_reward/C22"
+   ],
+   "decision": "revised",
+   "final_value": "C22 + K15 + C33 + C25(partial)",
+   "reason": "Each seat's extra card names a real operation (C33: adoption/violation vs breach; C25: LLM judge tracks).",
+   "evidence_ids": [
+    "sol:J05",
+    "sol:J06",
+    "son55:E020"
+   ],
+   "score_impact": "none (pattern matches are not scored)"
+  },
+  {
+   "field_path": "rating.G",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "son55",
+   "final_value": 2,
+   "reason": "MobileSafetyBench reference confirms partial coverage of the claimed gap; the Red Queen staleness gap is not demonstrated.",
+   "evidence_ids": [
+    "agg:J-A07",
+    "son55:E031"
+   ],
+   "score_impact": "vs sol -3.75; vs son55 0"
+  },
+  {
+   "field_path": "rating.E.measurement",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "decision": "sol",
+   "final_value": 2,
+   "reason": "son55's 3 credits a judge study whose reference is undefined; unresolved exclusions and the untraceable 100% headline keep measurement at anchor 2.",
+   "evidence_ids": [
+    "agg:J-A02",
+    "agg:J-A03",
+    "agg:J-A04"
+   ],
+   "score_impact": "vs sol 0; vs son55 -2.5"
+  },
+  {
+   "field_path": "rating.E.statistics",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 1
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "sol",
+   "final_value": 1,
+   "reason": "Failure denominators (unresolved exclusions) are not given and run-to-run variance is large relative to the reported contrasts; stated-but-invisible bootstrap CIs cannot be credited.",
+   "evidence_ids": [
+    "agg:J-A02",
+    "agg:J-A05"
+   ],
+   "score_impact": "vs sol 0; vs son55 -1.25"
+  },
+  {
+   "field_path": "expectation.E10",
+   "sol_value": "not_applicable",
+   "son55_value": "partial",
+   "decision": "son55",
+   "final_value": "partial",
+   "reason": "SAF's judge produces headline labels (RHR/SVR/SRR); agreement with a reference is reported but its annotators/size/independence are not, so partial.",
+   "evidence_ids": [
+    "son55:E024",
+    "son55:E025"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E17",
+   "sol_value": "unmet",
+   "son55_value": "unknown",
+   "decision": "sol",
+   "final_value": "unmet",
+   "reason": "Step limit and search budgets are never stated and FDJE is compared with pass@2 at unequal search; E17's 'equal, stated budget' is unmet.",
+   "evidence_ids": [
+    "sol:J04"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E21",
+   "sol_value": "met",
+   "son55_value": "unknown",
+   "decision": "son55",
+   "final_value": "unknown",
+   "reason": "GenericV2 and M3A may differ in observation space; the text gives only a generic 'reads screenshots' protocol and shows no M3A results, so applicability holds and status is unknown.",
+   "evidence_ids": [
+    "son55:E013"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E28",
+   "sol_value": "not_applicable",
+   "son55_value": "partial",
+   "decision": "son55",
+   "final_value": "partial",
+   "reason": "Self-generated WDBE tasks are evaluated on models other than their source (held-out signal) but in the same simulator; FDJE itself is optimised on evaluation tasks.",
+   "evidence_ids": [
+    "son55:E037",
+    "son55:E038"
+   ],
+   "score_impact": "none"
+  }
+ ],
+ "shared_error_corrections": [],
+ "aggregate_status": "accepted_final",
+ "aggregate_status_reason": "All seat disagreements resolved; MobileSafetyBench reference used to confirm the gap resolution; no scoring unknowns. Note: figure-only content (Fig 3) and the unrendered bootstrap intervals could change E.statistics only if a fuller version with visible intervals and unresolved counts is pinned.",
+ "final_record_hash": "d578e82760d44fba1f04f197ea7dd209523d45053326f9db64d242af2fd71475"
+}

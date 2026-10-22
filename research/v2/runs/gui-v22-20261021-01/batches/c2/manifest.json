@@ -1,0 +1,111 @@
+{
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c2",
+ "attempt": "a1",
+ "papers": [
+  {
+   "paper_key": "2505.13909",
+   "arxiv": "2505.13909",
+   "title": "Efficient Agent Training for Computer Use",
+   "version": "2505.13909v2",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2505.13909.txt",
+   "material_status": "html",
+   "material_sha256": "528d6fe93388797ade4d923e357abb0597c8212ea31b953384eb21ed085e7e02"
+  },
+  {
+   "paper_key": "2506.03095",
+   "arxiv": "2506.03095",
+   "title": "DPO Learning with LLMs-Judge Signal for Computer Use Agents",
+   "version": "2506.03095v1",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2506.03095.txt",
+   "material_status": "html",
+   "material_sha256": "fe85729b6f2ce3adff16bf47e2452b225246fa24125bf61d19627ae7b688f89b"
+  },
+  {
+   "paper_key": "2509.00366",
+   "arxiv": "2509.00366",
+   "title": "KG-RAG: Enhancing GUI Agent Decision-Making via Knowledge Graph-Driven Retrieval-Augmented Generation",
+   "version": "2509.00366v1",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2509.00366.txt",
+   "material_status": "html",
+   "material_sha256": "2ab4c7cf48c9a4c04c3de67ed3e4c5755a335f6cb3fcb69661d9c602de280801"
+  },
+  {
+   "paper_key": "2606.07027",
+   "arxiv": "2606.07027",
+   "title": "StainFlow: Entity-Stain Tracking and Evidence Linking for Process Rewards in GUI Agents",
+   "version": "2606.07027v2",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2606.07027.txt",
+   "material_status": "html",
+   "material_sha256": "da7cee1fbb7e7611020b91d88913392b3a790cc114ad63f0cbd795d0f0abc3c9"
+  },
+  {
+   "paper_key": "2606.31612",
+   "arxiv": "2606.31612",
+   "title": "What Memory Do GUI Agents Really Need? From Passive Records to Active Task-Driving States",
+   "version": "2606.31612v2",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2606.31612.txt",
+   "material_status": "html",
+   "material_sha256": "ef972be39fc40efd66342f28ce4d169dab19725d4598f2612b988daaa1b6e437"
+  },
+  {
+   "paper_key": "2504.14603",
+   "arxiv": "2504.14603",
+   "title": "UFO2: The Desktop AgentOS",
+   "version": "2504.14603v2",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2504.14603.txt",
+   "material_status": "html",
+   "material_sha256": "25a5945cb23d38cbee75499e8ab007504b11cff6b921cb1faa265796c7e2f72f"
+  }
+ ],
+ "asset_hashes": {
+  "corpus": {
+   "path": "research/corpus.jsonl",
+   "sha256": "ab81004336f12af0464893fc548cb5eba57552028d6a2431c2db1014ecf52cbc"
+  },
+  "rubric": {
+   "path": "research/SCORE_SPEC.md",
+   "sha256": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5"
+  },
+  "pattern_protocol": {
+   "path": "research/PATTERN_PROTOCOL.md",
+   "sha256": "68efaa73410752ab0f1eb3cf013e9e94e61959ba42437e4f0c88eabefd2fe373"
+  },
+  "batch_contract": {
+   "path": "research/BATCH_CONTRACT.md",
+   "sha256": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275"
+  },
+  "review_worksheet": {
+   "path": "research/REVIEW_WORKSHEET.md",
+   "sha256": "b0ca3ac92a458c934894aee62c88d6de8ab53901047326e0c8abdfd1a0d3219e"
+  },
+  "evidence_rules": {
+   "path": "docs/EVIDENCE.md",
+   "sha256": "336e1bcdd149cd485ee5a1f22101ca594997b755b47555447ba6661b23a1fac5"
+  },
+  "rs_cards_manifest": {
+   "path": "research/reference/researchstudio-15-31/MANIFEST.tsv",
+   "sha256": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32"
+  },
+  "domain_taxonomy": {
+   "path": "research/patterns/taxonomy.json",
+   "sha256": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21"
+  },
+  "domain_conditions": {
+   "path": "research/patterns/conditions.json",
+   "sha256": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+  },
+  "expectations": {
+   "path": ".forge/domains/cua-agents/v1/profile/expectations.json",
+   "sha256": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67"
+  }
+ },
+ "model_types": {
+  "controller": "opus (glm-5.3[1m], this session)",
+  "sol": "sonnet (upstream gpt-6.1-sol)",
+  "son55": "haiku (upstream recorded as claude-sonnet-5-5 by the 2026-10-21 reset notes; actual upstream self-reported per worker)",
+  "opus55": "fable (upstream claude-opus-5-5[1m])",
+  "reel": "opus (upstream glm-5.3[1m]), selected papers only"
+ },
+ "input_bundle_sha256": "26b023b230f3f5dfbc6207db584916bc00434db1bd9d7e96eea6447b745b95a8"
+}

@@ -1,0 +1,2500 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p1",
+ "attempt_id": "a1",
+ "seat": "aggregate",
+ "paper": {
+  "paper_key": "2103.16057",
+  "paper_id": "2103.16057",
+  "version": "2103.16057v2",
+  "title": "Grounding Open-Domain Instructions to Automate Web Support Tasks",
+  "claim_type": "system_method",
+  "central_claim": "russ：BERT-LSTM 指针网络把开放域逐步指令解析为 ThingTalk（面向网页的 DSL），再由 grounding 模型取回元素 ID，运行时执行或与用户对话；仅用合成数据训练，在作者收集的 741 条真实指令上端到端动作预测准确率 76.7%，优于不经 ThingTalk 的模型；用户研究显示用户更偏好 russ。"
+ },
+ "provenance": {
+  "input_hash": "27c3d4f26b56f3943ebb73731665de7b845b179ab70d27f6dcfa94cb495e6822",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "aggregate_rules": "docs/agents/AGGREGATE_OPUS.md",
+  "aggregate_rules_sha256": "1ad0c4f39af2ceb06924fc015d8660711edcd9a6f891444e902b44f79584f4e0",
+  "conflicts_sha256": "b57c4ea59328539c158d4ce02c97e004686627cc33539432f6d49f452d21ab01",
+  "references_sha256": "ed9d577bd9b2fc25073d44f2506dda757688a30d4528fe3872527a0134fccfbc",
+  "model_type": "fable",
+  "actual_model": "claude-opus-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "timestamp": "2026-10-21T17:52:06+00:00",
+  "independence_note": "Aggregation over two seat inputs; the fixed paper text was read in full before the seat scores, but this is not a third blind review or human gold. All results are author reports; nothing was reproduced."
+ },
+ "materials": [
+  {
+   "material_id": "agg:2103.16057",
+   "source_url": "https://arxiv.org/html/2103.16057",
+   "version": "2103.16057v2",
+   "sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt",
+   "role": "paper",
+   "sections_read": [
+    "full text, all sections and appendices as rendered"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "figure images (captions only in render)"
+   ]
+  },
+  {
+   "material_id": "agg:2005.03776",
+   "source_url": "https://arxiv.org/html/2005.03776",
+   "version": "2005.03776v2",
+   "sha256": "ff58d0b0c6a3c9de8269173d51ea6dab897720c8032db71a108d4c2b925038d7",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2005.03776.txt",
+   "role": "batch_paper_reference",
+   "sections_read": [
+    "targeted sections cited by agg evidence"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "used only as factual reference for cited lines"
+   ]
+  },
+  {
+   "material_id": "sol:2103.16057v2",
+   "url": "https://arxiv.org/abs/2103.16057v2",
+   "version": "2103.16057v2",
+   "path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt",
+   "sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "sections_read": [
+    "Abstract",
+    "1-8 all text/tables and figure captions",
+    "References; no appendices listed"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "visual_asset_caveat": "Text render contains captions and tables; plotted/diagrammed images were not independently viewed. Unrendered numerical values are not inferred.",
+   "version_verified": false,
+   "source_url": "https://arxiv.org/html/2103.16057"
+  },
+  {
+   "material_id": "son55:M-2103.16057-v2",
+   "role": "target_fulltext",
+   "url": "https://arxiv.org/abs/2103.16057v2",
+   "source_url": "https://arxiv.org/html/2103.16057",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt",
+   "sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "material_status": "html",
+   "sections_read": [
+    "Abstract",
+    "1",
+    "2",
+    "3.1-3.4",
+    "4.1-4.2",
+    "5.1-5.4",
+    "6",
+    "7",
+    "References"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "note": "v2；文本与表格齐全，无附录；图为条形/示意图。"
+  },
+  {
+   "material_id": "son55:MR-2412.09605",
+   "role": "shared_reference_fact_only",
+   "url": "https://arxiv.org/abs/2412.09605",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2412.09605.txt",
+   "sha256": "ff0d81b000884775c3d21cacef43eb7db8eb5f0286152dd3fb0f1df0e9fd65bd",
+   "name": "AgentTrek",
+   "sections_read": [
+    "dataset comparison table located by grep"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; used only for the located lines listed in evidence[]"
+   ],
+   "note": "shared fixed reference (references.json); used for current_relevance facts only, not as judgment"
+  },
+  {
+   "material_id": "son55:MR-2306.06070",
+   "role": "shared_reference_fact_only",
+   "url": "https://arxiv.org/abs/2306.06070",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2306.06070.txt",
+   "sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+   "name": "Mind2Web",
+   "sections_read": [
+    "Table 1 (dataset statistics)"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; used only for the located lines listed in evidence[]"
+   ],
+   "note": "shared fixed reference (references.json); used for current_relevance facts only, not as judgment"
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "agg:R-A01",
+   "material_id": "agg:2103.16057",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "Sec 2 Related Work",
+   "quote": "Unlike prior research, our work focuses on a new domain of parsing natural language instructions into executable actions on the web, where instead of mapping directly to elements using a neural model, we semantically parse",
+   "support_explanation": "RUSS's stated differentiator from prior work is not mapping directly to elements.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:R-A02",
+   "material_id": "agg:2005.03776",
+   "material_sha256": "ff58d0b0c6a3c9de8269173d51ea6dab897720c8032db71a108d4c2b925038d7",
+   "locator": "Seq2Act Sec 1",
+   "quote": "Our approach (Figure 1 ) decomposes the problem into an action phrase-extraction step and a grounding step.",
+   "support_explanation": "The cited mobile neighbour already decomposes instruction grounding instead of mapping directly to elements, so RUSS's differentiator is inaccurate for its closest structural neighbour.",
+   "kind": "reviewer_comment"
+  },
+  {
+   "evidence_id": "agg:R-A03",
+   "material_id": "agg:2005.03776",
+   "material_sha256": "ff58d0b0c6a3c9de8269173d51ea6dab897720c8032db71a108d4c2b925038d7",
+   "locator": "Seq2Act Sec 3.3",
+   "quote": "To get past the bottleneck, we exploit two properties of the task to generate a synthetic command-action dataset, RicoSCA .",
+   "support_explanation": "The neighbour also trained from synthetic command data, the other half of RUSS's recipe.",
+   "kind": "reviewer_comment"
+  },
+  {
+   "evidence_id": "agg:R-A04",
+   "material_id": "agg:2103.16057",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "Sec 5.4 User Study",
+   "quote": "For all tasks, users were given a fake persona (a set of credentials such as email, password, gift card code, etc) to use when interacting with the agent.",
+   "support_explanation": "With fake credentials (e.g. a gift card code) some tasks cannot reach a real verified outcome; completion is a flow-level, human-observed notion with no stated criterion.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:R-A05",
+   "material_id": "agg:2103.16057",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "Sec 5.4 User Study",
+   "quote": "Participants were able to complete 85% of the tasks on their own on the web and 98% of tasks with the help of russ .",
+   "support_explanation": "Live-study completion rates are reported without criterion, interval or test.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:R-A06",
+   "material_id": "agg:2103.16057",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "Sec 5.4 User Study",
+   "quote": "Those who did not finish their task either gave up or failed to complete the task within 5 minutes.",
+   "support_explanation": "Equal 5-minute budget in both live-study conditions (E17).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:R-A07",
+   "material_id": "agg:2103.16057",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "Sec 5",
+   "quote": "russ achieves 76.7% overall accuracy on the Evaluation Dataset",
+   "support_explanation": "Headline result is per-instruction accuracy on the static evaluation dataset (offline).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:R-A08",
+   "material_id": "agg:2103.16057",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "Sec 5.2",
+   "quote": "The webpage features used as inputs in PhraseNode are a subset of our representation.",
+   "support_explanation": "The prior-grounder comparison is not information-matched (E06/E21).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:R-A09",
+   "material_id": "agg:2103.16057",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "Sec 1",
+   "quote": "trains an agent that masters any web task specified from open-domain instructions.",
+   "support_explanation": "Broad generalisation claim across websites (E24 premise).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E001",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L52-L52",
+   "quote": "russ achieves 76.7 % end-to-end accuracy predicting agent actions from single instructions.",
+   "support_explanation": "Central 76.7 figure is per-instruction prediction, not complete-task online success.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E002",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L116-L116",
+   "quote": "we semantically parse natural language instructions to formal actions that support web navigation as well as user interactivity.",
+   "support_explanation": "Publication-time design delta over direct element mapping.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E003",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L160-L160",
+   "quote": "To translate natural language instructions into ThingTalk, we use the previously proposed BERT-LSTM model",
+   "support_explanation": "Inherited parser architecture, not a new neural model.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E004",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L213-L213",
+   "quote": "It filters elements by their type and absolute location. Next it handles relative positioning",
+   "support_explanation": "Explicit constraints before neural text similarity.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E005",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L213-L213",
+   "quote": "It passes the text of the remaining candidates through a Sentence-BERT",
+   "support_explanation": "Grounding uses pretrained text embeddings and DOM candidates.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E006",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L217-L217",
+   "quote": "russ starts a new automated Chrome session for each task and uses Puppeteer to automate web actions in the browser.",
+   "support_explanation": "Executable browser runtime exists; does not turn static dataset metrics into live task rates.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E007",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L217-L217",
+   "quote": "For @ask actions, russ uses a preprogrammed dialogue to ask the user for a dictionary key",
+   "support_explanation": "Programmed user interaction rather than learned uncertainty-based assistance.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E008",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L256-L256",
+   "quote": "Steps found missing from the instructions were inserted. If an instruction mapped to several actions, the text was broken into individual instructions.",
+   "support_explanation": "Benchmark uses human-edited step-level instructions, not untouched open-domain plans.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E009",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L258-L258",
+   "quote": "304 instructions from 30 tasks in the dev set and 437 instructions from 50 tasks in the test set.",
+   "support_explanation": "Task-level dev/test denominator; evaluation not training.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E010",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L272-L272",
+   "quote": "a Synthetic Dataset with 1.5M training samples.",
+   "support_explanation": "Template supervision scale, no self-improvement loop.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E011",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L285-L289",
+   "quote": "russ (1.5M training parses) | 87.0%\nAblations | Accuracy (dev)\nruss (1.5M training parses) | 88.2%\n− - entity extraction | 77.6%\n− - 1M training parses, entity extraction | 70.0%",
+   "support_explanation": "Parser results and confounded second ablation; abstract summary differs from actual test table.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E012",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L309-L311",
+   "quote": "russ | 63.6%\nEnd-to-End Baseline | 51.1%\nPhraseNode | 46.5%",
+   "support_explanation": "Grounding subtask on 252 element-referring test instructions; not the overall 76.7 metric.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E013",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L317-L317",
+   "quote": "Had the semantic parser been correct 100% of the time, the Grounding Model would achieve an accuracy of 73.0%.",
+   "support_explanation": "Gold-parse oracle estimate reveals cascading error and differs from abstract grounding summary.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E014",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L322-L322",
+   "quote": "The webpage features used as inputs in PhraseNode are a subset of our representation.",
+   "support_explanation": "Baseline privilege/features mismatch limits architectural attribution.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E015",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L326-L326",
+   "quote": "approximately 7 hours on an NVIDIA Tesla V100. russ can perform a new task on-the-job by running the instructions through the semantic parser in less than 1 minute.",
+   "support_explanation": "Training and rough parser runtime disclosed, not full latency distribution.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E016",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L348-L348",
+   "quote": "We recruited 12 participants who were asked to complete 5 customer-support tasks",
+   "support_explanation": "Small live user study denominator.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E017",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L360-L360",
+   "quote": "Participants were able to complete 85% of the tasks on their own on the web and 98% of tasks with the help of russ .",
+   "support_explanation": "Human-assisted live task outcome evidence, not autonomous whole-benchmark rate.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E018",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L358-L358",
+   "quote": "we used Latin Square Balancing",
+   "support_explanation": "Counterbalancing reduces ordering effects in user comparison.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E019",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L369-L369",
+   "quote": "russ gives the user 3 tries to return an expected response before terminating. russ also times out if a webpage takes more than >60 seconds to load in Puppeteer.",
+   "support_explanation": "Explicit failure boundaries; failures appeared in user study.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E020",
+   "material_id": "sol:2103.16057v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2103.16057.txt:L328-L328",
+   "quote": "“click the hamburger menu icon”), which is not supported by russ .",
+   "support_explanation": "Visual/icon limitation despite open-domain rhetoric.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV01",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "Abstract; fulltext line 52",
+   "quote": "russ achieves 76.7 % end-to-end accuracy predicting agent actions from single instructions.",
+   "support_explanation": "摘要主结果：单条指令的端到端动作预测 76.7%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV02",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "Abstract; fulltext line 52",
+   "quote": "It outperforms state-of-the-art models that directly map instructions to actions without ThingTalk.",
+   "support_explanation": "摘要对比主张：优于不经 ThingTalk 直接映射的 SOTA 模型。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV03",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5 Evaluation; fulltext line 295",
+   "quote": "russ achieves 76.7% overall accuracy on the Evaluation Dataset, even though all of russ , including the semantic parser is trained with only synthetic data.",
+   "support_explanation": "仅用合成数据训练，测试真实指令。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV04",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "4.1 russ Evaluation Dataset; fulltext line 258",
+   "quote": "We collected a total of 80 tasks and 741 lines of instructions from 22 different online help centers.",
+   "support_explanation": "评测集规模：80 任务/741 行/22 个帮助中心。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV05",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "4.1 russ Evaluation Dataset; fulltext line 258",
+   "quote": "The dataset is split into a dev set and a test set, with 304 instructions from 30 tasks in the dev set and 437 instructions from 50 tasks in the test set.",
+   "support_explanation": "dev/test 按任务划分：30/50 任务。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV06",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "4.1 russ Evaluation Dataset; fulltext line 256",
+   "quote": "An author of the paper walked through each task, performed the actions as instructed, scraped the webpage in the browser, and annotated the instruction with the corresponding ThingTalk code.",
+   "support_explanation": "真值由一名作者单人标注，无一致性度量。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV07",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "4.2 Synthetic Dataset; fulltext line 258",
+   "quote": "The russ Evaluation dataset is not used for training.",
+   "support_explanation": "评测集不用于训练。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV08",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.1 Semantic Parsing Accuracy; fulltext line 306",
+   "quote": "The entity extraction technique where string entities are replaced with placeholders during training, as discussed in Section 3.2 , contributes 10.6% improvement in accuracy.",
+   "support_explanation": "实体抽取消融 +10.6%（dev）；第二个消融同时改变了训练规模。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV09",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.2 Grounding Evaluation; fulltext line 310",
+   "quote": "End-to-End Baseline | 51.1%",
+   "support_explanation": "Table 4：端到端基线 grounding 51.1%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV10",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.2 Grounding Evaluation; fulltext line 311",
+   "quote": "PhraseNode | 46.5%",
+   "support_explanation": "Table 4：复现的 PhraseNode 46.5%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV11",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.2 Grounding Evaluation; fulltext line 309",
+   "quote": "russ | 63.6%",
+   "support_explanation": "Table 4：russ grounding 63.6%（test 上 252 条元素指令）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV12",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.2 Grounding Evaluation; fulltext line 320",
+   "quote": "However, we do not parse the natural language sentences into their input features in russ , but is left intact as input to Sentence-Bert to compute its embedding.",
+   "support_explanation": "端到端基线 = 不解析、整句 SBERT 嵌入后最近元素匹配——无训练的朴素基线。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV13",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.2 Grounding Evaluation; fulltext line 322",
+   "quote": "To compare our grounding model with state-of-the-art results, we also replicate the best performing embedding model from Pasupat et al. (2018)",
+   "support_explanation": "PhraseNode 为作者复现，训练数据/设置未说明。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV14",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.2 Grounding Evaluation; fulltext line 317",
+   "quote": "81.4% of the instructions are parsed correctly, and 77.9% of the correct parses are grounded accurately.",
+   "support_explanation": "解析 81.4%、条件 grounding 77.9%。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV15",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.2 Grounding Evaluation; fulltext line 317",
+   "quote": "Had the semantic parser been correct 100% of the time, the Grounding Model would achieve an accuracy of 73.0%.",
+   "support_explanation": "与 77.9% 并存的 73.0%：作者解释为易例相关；数字口径较乱。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV16",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.3 Analysis; fulltext line 334",
+   "quote": "Spatial | 36.7% | 30.3%",
+   "support_explanation": "Table 5：空间推理类 36.7%（russ）vs 30.3%（PhraseNode）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV17",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.3 Analysis; fulltext line 342",
+   "quote": "Important attributes needed for grounding can be hidden behind classes.",
+   "support_explanation": "失败原因：DOM 文本不含视觉语义（站点特定 class 名）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV18",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.4 User Study; fulltext line 360",
+   "quote": "Participants were able to complete 85% of the tasks on their own on the web and 98% of tasks with the help of russ .",
+   "support_explanation": "用户研究：网页自行完成 85% vs 借助 russ 98%（用户在回路中）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV19",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.4 User Study; fulltext line 346",
+   "quote": "This is a small-scale study with promising early results, but can benefit from further user studies on larger populations.",
+   "support_explanation": "作者承认用户研究规模小。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV20",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.4 User Study; fulltext line 348",
+   "quote": "We recruited 12 participants who were asked to complete 5 customer-support tasks",
+   "support_explanation": "12 人 × 5 任务。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV21",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.4 User Study; fulltext line 361",
+   "quote": "The time it took users to accomplish each task was similar for the Web and russ",
+   "support_explanation": "耗时相近（任务 2 例外）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV22",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "1 Introduction; fulltext line 68",
+   "quote": "trains an agent that masters any web task specified from open-domain instructions.",
+   "support_explanation": "范围声明“任意网页任务”，实际评测仅单条指令、22 个站点。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV23",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "1 Introduction; fulltext line 95",
+   "quote": "our grounding model achieves 75% accuracy in resolving web element descriptions",
+   "support_explanation": "引言写 75%，正文 Table 4 为 63.6%、条件 73.0/77.9%：数值口径不一致。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV24",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.1 Semantic Parsing Accuracy; fulltext line 301",
+   "quote": "We measure Exact Match Accuracy : a parse is considered correct only if it matches the gold annotation token by token.",
+   "support_explanation": "解析指标：逐 token 精确匹配。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV25",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "4.2 Synthetic Dataset; fulltext line 272",
+   "quote": "We generate hundreds of different types of natural language templates which are combined to create a Synthetic Dataset with 1.5M training samples.",
+   "support_explanation": "训练集 = 模板合成 150 万条；无过滤门，无真实训练数据。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV26",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.3 Analysis; fulltext line 326",
+   "quote": "The entire one-time process for training russ takes approximately 7 hours on an NVIDIA Tesla V100.",
+   "support_explanation": "训练成本 7 小时/V100。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV27",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.3 Analysis; fulltext line 326",
+   "quote": "russ can perform a new task on-the-job by running the instructions through the semantic parser in less than 1 minute.",
+   "support_explanation": "部署成本：新任务解析 <1 分钟。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV28",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.4 User Study; fulltext line 369",
+   "quote": "russ gives the user 3 tries to return an expected response before terminating.",
+   "support_explanation": "运行时错误处理很弱：3 次机会后终止。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV29",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "3.4 The Run-Time; fulltext line 217",
+   "quote": "russ starts a new automated Chrome session for each task and uses Puppeteer to automate web actions in the browser.",
+   "support_explanation": "运行时：Puppeteer 驱动 Chrome。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV30",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "3.3 Grounding Model; fulltext line 213",
+   "quote": "It filters elements by their type and absolute location.",
+   "support_explanation": "grounding 第一步：按类型与绝对位置过滤，之后相对位置过滤再用 SBERT 余弦。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV31",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "3.3 Grounding Model; fulltext line 166",
+   "quote": "The webpage is modeled using the Document Object Model (DOM), which is a hierarchical representation of all elements in the page.",
+   "support_explanation": "观测为 DOM（含文本、id、tag、class、隐藏状态、坐标）；无像素。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV32",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "3.2 Semantic Parser Model; fulltext line 162",
+   "quote": "We preprocess the natural language by performing entity extraction",
+   "support_explanation": "解析前启发式实体抽取（URL/LOC/TYPE 占位）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV33",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "4.1 russ Evaluation Dataset; fulltext line 266",
+   "quote": "On average the DOMs of the webpages contain 689 web elements each.",
+   "support_explanation": "每页平均 689 个元素：grounding 的候选规模。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV34",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "2 Related Work; fulltext line 116",
+   "quote": "with prior work investigating approaches to map natural language instructions to mobile interfaces such as Android Li et al. (2020)",
+   "support_explanation": "相关工作仅一句提及 Li et al. 2020（即 2005.03776），未做比较。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV35",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "2 Related Work; fulltext line 116",
+   "quote": "our work focuses on a new domain of parsing natural language instructions into executable actions on the web",
+   "support_explanation": "作者对差异的自述：解析成形式化动作，含用户交互。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV36",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "4.1 russ Evaluation Dataset; fulltext line 260",
+   "quote": "61.4% of the natural-language instructions require retrieving an element from the webpage (click, enter, read).",
+   "support_explanation": "约 61% 指令需要元素检索；其余为 ask/goto/say。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV37",
+   "material_id": "son55:M-2103.16057-v2",
+   "material_sha256": "5ceb3b644d27131d37ecd27fb66ebfedf903c2fceb5f6ce584c03abddf0b4f89",
+   "locator": "5.4 User Study; fulltext line 348",
+   "quote": "chosen from popular websites: Amazon, Spotify, pinterest, Google, and Walmart",
+   "support_explanation": "用户研究站点，与数据集“Top 100 站点帮助页”同源，是否与评测集重叠未说明。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV38",
+   "material_id": "son55:MR-2412.09605",
+   "material_sha256": "ff0d81b000884775c3d21cacef43eb7db8eb5f0286152dd3fb0f1df0e9fd65bd",
+   "locator": "AgentTrek dataset comparison table; fulltext line 189",
+   "quote": "RUSS | 80 | 5.4 | Yes | No | No | No | No | 22 | Low",
+   "support_explanation": "后续数据集比较表把 RUSS 标为 80 任务、平均 5.4 步、22 站点、低层任务（current_relevance）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:EV39",
+   "material_id": "son55:MR-2306.06070",
+   "material_sha256": "87feadb8e33d1f4624ea6b05aa980306a60da2a1b03cb2b44da6f1cf8b753fc9",
+   "locator": "Mind2Web Table 1; fulltext line 184",
+   "quote": "RUSS [ 39 ] | − - | 22 22 | Real-world websites | 801 801 | 80 80 | High & low | 5.4 5.4",
+   "support_explanation": "Mind2Web 比较表中的 RUSS 行（current_relevance）。",
+   "kind": "author_report"
+  }
+ ],
+ "preliminary_evidence_judgment": "Read before seat scores. RUSS parses single help-page instructions into a typed web DSL (ThingTalk subset: 6 agent actions + @retrieve descriptors) with a BERT-LSTM pointer parser trained only on 1.5M template-synthesised pairs, then grounds descriptors on the DOM by type/location filtering + Sentence-BERT similarity, executed via Puppeteer with a scripted dialogue for @ask. Main evidence is offline per-instruction exact match on 741 author-annotated instructions over scraped DOMs (test 437; parser 87.0%, grounding 63.6% vs untrained whole-sentence SBERT 51.1% and replicated PhraseNode 46.5% with fewer features; 76.7% overall recomputable from 63.6%x252 + 94.6%x185). Summary numbers in the text are inconsistent (85/75/76.6). A 12-user, 5-task live study reports 98% vs 85% completion with fake personas and no stated success criterion. Nearest neighbour Seq2Act (2005.03776, in this batch) already decomposed instruction grounding into phrase extraction + grounding with synthetic training data; RUSS cites it only as mobile work and claims its difference is not mapping directly to elements, which does not hold against Seq2Act.",
+ "scope_decision": {
+  "in_scope": true,
+  "inclusion_type": "A",
+  "edge": false,
+  "reason": "Web agent that grounds instructions to DOM element actions and executes them in a browser runtime."
+ },
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "指令→类型化 DSL（ThingTalk：6 个 agent 动作 + @retrieve 描述符）的语义解析（相对基线：整句直接匹配元素）",
+   "information": "单条自然语言指令；训练数据全为模板合成(150 万)；解析时不看网页。",
+   "operation": "启发式实体抽取(URL/LOC/TYPE)后，BERT 编码器 + LSTM 指针解码器逐 token 生成 ThingTalk，再把实体回填。",
+   "output": "形如 [@retrieve(descr,type,loc,above,below,…)]* ⇒ @click/@enter/@read/@goto/@say/@ask 的程序。",
+   "conditions": "指令为单条英文句子；仅能表达 6 种动作与文本/类型/位置/相对位置描述符；不含图像语义。",
+   "feedback": "无环境反馈；监督学习。",
+   "selection_rule": "not_applicable",
+   "selection_data": "dev 304/test 437 条真实指令不参与训练",
+   "persistence": "模型权重。",
+   "later_use": "每条新指令推理。",
+   "claimed_effect": "解析精确匹配 87.0%(test)；实体抽取 +10.6%(dev)。",
+   "failure_boundary": "ThingTalk 不能表达“下拉选择”等；空间/图像语义类 36.7%；解析错误传导。",
+   "retained_trace": {
+    "applicable": false,
+    "reason": "静态监督/规则系统，无留存或自我改进声称。"
+   },
+   "evidence_ids": [
+    "son55:EV08",
+    "son55:EV24",
+    "son55:EV25",
+    "son55:EV32",
+    "son55:EV16"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "@retrieve 的 DOM 元素 grounding（相对基线：整句 SBERT 匹配 / PhraseNode）",
+   "information": "当前网页 DOM（文本、id、tag、class、隐藏状态、尺寸与坐标、子节点），平均 689 个元素。",
+   "operation": "按 type 与绝对位置过滤 → 按相对位置约束筛选 → 对候选文本做 Sentence-BERT 与 descr 的余弦，取最高；无训练。",
+   "output": "元素 ID。",
+   "conditions": "DOM 文本能反映视觉语义；无像素/图像语义。",
+   "feedback": "无",
+   "selection_rule": "余弦最高者",
+   "selection_data": "无",
+   "persistence": "not_applicable",
+   "later_use": "运行时执行动作。",
+   "claimed_effect": "grounding 63.6% vs 端到端 51.1% vs PhraseNode 46.5%。",
+   "failure_boundary": "站点特定 class 隐藏语义、图标类引用、空间推理弱(36.7%)。",
+   "evidence_ids": [
+    "son55:EV09",
+    "son55:EV10",
+    "son55:EV11",
+    "son55:EV12",
+    "son55:EV16",
+    "son55:EV17",
+    "son55:EV30",
+    "son55:EV31",
+    "son55:EV33"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "执行与对话运行时（Puppeteer + 语音 + 字典）",
+   "information": "用户通过语音回答 @ask；信息存入键值字典，@enter 取最近键。",
+   "operation": "每任务新开 Chrome 会话执行 @goto/@click/@enter；@say/@ask/@read 通过语音交互。",
+   "output": "网页动作与用户对话。",
+   "conditions": "页面 60 秒内加载；用户 3 次内给出期望回答。",
+   "feedback": "用户回答、页面加载超时",
+   "selection_rule": "not_applicable",
+   "selection_data": "not_applicable",
+   "persistence": "会话内字典",
+   "later_use": "同会话后续 @enter",
+   "claimed_effect": "用户研究：98% 任务借助 russ 完成。",
+   "failure_boundary": "3 次机会终止、超时、离题对话处理弱。",
+   "evidence_ids": [
+    "son55:EV18",
+    "son55:EV28",
+    "son55:EV29"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "帮助中心里的逐步指令是写给人的；让 agent 在开放域网页上直接执行它们，现有做法要么限定领域启发式，要么依赖演示(PBD)，要么把自然语言直接映射到元素(无动作、无交互)。",
+  "checked_gap": "文内证据部分支持：同一 SBERT 下，整句直接匹配 51.1% vs 解析后 63.6%，并有按推理类型的对比(Table 5)(EV09–EV11,EV16)。但对比对象是无训练的朴素基线和作者复现的 PhraseNode，最近的同类分解论文(Seq2act)只被一句话提及(EV34)，未比较。",
+  "lineage": [
+   {
+    "name": "PhraseNode (Pasupat et al. 2018)",
+    "source_version": "EMNLP 2018，经本文描述并由作者复现",
+    "solved": "把自然语言命令映射到网页元素(无动作)",
+    "left": "无动作/交互语义，评测 46.5%"
+   },
+   {
+    "name": "CoScripter / PLOW / Sugilite 系 PBD",
+    "source_version": "经本文描述",
+    "solved": "演示编辑，部分自然语言解析",
+    "left": "需要用户演示"
+   },
+   {
+    "name": "Seq2act (Li et al. 2020)",
+    "source_version": "本批 2005.03776，本文仅一句提及",
+    "solved": "移动端：短语抽取 + 视图层级 grounding，合成命令训练",
+    "left": "未执行动作；本文声称不同在于形式 DSL 与对话"
+   },
+   {
+    "name": "BERT-LSTM semantic parser (Xu et al. 2020, Schema2QA)",
+    "source_version": "经本文引用",
+    "solved": "可复用的解析器骨架",
+    "left": "非网页动作领域"
+   }
+  ],
+  "closest_adjacent": "PhraseNode（唯一数值比较对象）与 Seq2act（结构上最接近的“语言端抽取+落地端合成训练”，但未比较）；二者原文中仅 Seq2act 在本批可读。",
+  "residue": "视觉/图标引用、空间推理、DOM 隐藏语义、多步上下文(逐条指令独立解析)、运行时错误处理。",
+  "stakes": "客服类网页任务自动化，面向视障/情境受限用户；绕过领域 API。",
+  "method_response": "以形式 DSL 作中间层：解析器只需学习语言到描述符，grounding 用确定性过滤+预训练 SBERT；全程可用合成数据训练，真实指令仅测试。",
+  "remaining_gap": "评测是单条指令 + 黄金 DOM，不含多步导航、状态变化、页面漂移；基线弱；单人标注；用户研究在回路；声称的“任意网页任务”未验证。",
+  "evidence_ids": [
+   "agg:R-A01",
+   "agg:R-A02",
+   "agg:R-A03",
+   "son55:EV34"
+  ],
+  "unresolved": [
+   "PhraseNode 复现训练细节不明",
+   "Seq2act 为何不比较",
+   "数字口径（75%/73.0/77.9/63.6/76.6/76.7）未完全对齐"
+  ],
+  "current_relevance": {
+   "note": "仅记录后续发展",
+   "facts": [
+    "后续数据集比较表把 RUSS 作为低层、80 任务、22 站点的网页指令资源(AgentTrek、Mind2Web)"
+   ],
+   "evidence_ids": [
+    "son55:EV38",
+    "son55:EV39"
+   ]
+  },
+  "aggregate_neighbor_check": "Seq2Act (2005.03776, fixed text in this batch) already decomposed instruction grounding into phrase extraction + grounding with synthetic command data (agg:R-A02, agg:R-A03). RUSS cites it only as mobile work and states its difference as not mapping directly to elements (agg:R-A01), which does not distinguish it from Seq2Act. Residual gap: web domain, typed DSL with user-interaction actions and compositional relational descriptors; the lineage boundary is incompletely drawn."
+ },
+ "rs_pattern": {
+  "primary": "decompose_and_delegate",
+  "supporting": [
+   "self_supervised_signal_engineering"
+  ],
+  "matches": [
+   {
+    "main_id": "decompose_and_delegate",
+    "sub_id": null,
+    "role": "primary",
+    "fit": "strong",
+    "tactic_steps_checked": [
+     {
+      "step": "boundary_at_comparative_advantage",
+      "status": "met",
+      "note": "学习模型只负责语言→描述符；元素检索交给确定性过滤+预训练 SBERT，执行交给 Puppeteer 运行时(EV30,EV12)"
+     },
+     {
+      "step": "typed_intermediate_artifact",
+      "status": "met",
+      "note": "ThingTalk 是带类型的 DSL，作为解析目标与 grounding 输入(EV01)"
+     },
+     {
+      "step": "verification_feedback_loop",
+      "status": "unmet",
+      "note": "没有对解析结果的类型/可执行性检验回路，解析错误直接传导(EV14)；运行时仅 3 次重试(EV28)"
+     },
+     {
+      "step": "ablation_of_load_bearing_step",
+      "status": "partial",
+      "note": "去掉解析(整句直接匹配)掉到 51.1% 即回到朴素基线(EV09,EV12)；但基线无训练、较弱"
+     },
+     {
+      "step": "cost_and_transfer",
+      "status": "partial",
+      "note": "报告训练 7h、新任务 <1min(EV26,EV27)；仅单一数据集、22 站点"
+     }
+    ],
+    "success_checks": [
+     {
+      "id": "typed_handoff",
+      "status": "met",
+      "note": ""
+     },
+     {
+      "id": "single_mechanism_collapse",
+      "status": "partial",
+      "note": "去掉 DSL 回到朴素基线，但未对训练端到端基线"
+     }
+    ],
+    "failure_checks": [
+     {
+      "id": "benchmark_tailored",
+      "status": "present",
+      "note": "ThingTalk 针对帮助页指令分布设计，评测集由设计者团队标注(EV06)"
+     },
+     {
+      "id": "marginal_over_end_to_end",
+      "status": "absent",
+      "note": "对朴素端到端 +12.6 点，但缺强端到端"
+     }
+    ],
+    "evidence_ids": [
+     "son55:EV01",
+     "son55:EV09",
+     "son55:EV12",
+     "son55:EV14",
+     "son55:EV26",
+     "son55:EV27",
+     "son55:EV28",
+     "son55:EV30"
+    ],
+    "reason": "实际操作：用类型化 DSL 把“理解指令”与“找元素/执行”拆开并各用合适机制，且有“去掉 DSL 即回到朴素基线”的对照——与 decompose_and_delegate 的骨架吻合。无机器验证回路，故不选要求 solver 闭环的子卡 C25，sub=null。",
+    "aggregate_source_seat": "son55"
+   },
+   {
+    "main_id": "self_supervised_signal_engineering",
+    "sub_id": null,
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": [
+     "Typed templates and scraped values manufacture NL-program labels",
+     "Train parser on1.5M generated pairs",
+     "Test real edited instructions"
+    ],
+    "success_failure_checks": [
+     {
+      "condition": "Check1",
+      "status": "met",
+      "reason": "Real test feasibility shown",
+      "evidence_ids": [
+       "sol:E008",
+       "sol:E009",
+       "sol:E010",
+       "sol:E011"
+      ]
+     },
+     {
+      "condition": "Check2",
+      "status": "not_applicable",
+      "reason": "C08 not selected: no generated-instance quality gate/iterative curator",
+      "evidence_ids": [
+       "sol:E008",
+       "sol:E009",
+       "sol:E010",
+       "sol:E011"
+      ]
+     },
+     {
+      "condition": "Check3",
+      "status": "partial",
+      "reason": "Second volume ablation also changes entity processing; no isolated data curve",
+      "evidence_ids": [
+       "sol:E008",
+       "sol:E009",
+       "sol:E010",
+       "sol:E011"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "sol:E008",
+     "sol:E009",
+     "sol:E010",
+     "sol:E011"
+    ],
+    "reason": "Static template generator makes supervision without human program labeling; not model self-evaluation or autonomous improvement.",
+    "aggregate_source_seat": "sol"
+   }
+  ],
+  "outside_taxonomy": false,
+  "reason": "Both seats agree on decompose_and_delegate primary + self_supervised_signal_engineering supporting. Children: C25 is not assigned because no construction-time verification by the delegated solver exists (both seats mark that check unmet), consistent with 1909.00031; C08 is not assigned because the template synthesis has no quality gate or iteration (son55's own steps 3-4 unmet), consistent with 2005.03776.",
+  "executes_pattern": "partial: typed-DSL decomposition with deterministic+embedding grounding and Puppeteer execution; template-manufactured parser supervision; no verification loop or gate.",
+  "resolves_problem": "partial: offline single-instruction improvement over naive baselines; multi-step execution and live robustness open.",
+  "aggregate_source_seat": "revised",
+  "aggregate_reason": "Both seats agree on decompose_and_delegate primary + self_supervised_signal_engineering supporting. Children: C25 is not assigned because no construction-time verification by the delegated solver exists (both seats mark that check unmet), consistent with 1909.00031; C08 is not assigned because the template synthesis has no quality gate or iteration (son55's own steps 3-4 unmet), consistent with 2005.03776."
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "structured_screen_observation",
+    "sub": "C01",
+    "version": "manifest-bound-2026-10-21",
+    "fit": "strong",
+    "condition_checks": [
+     {
+      "condition": "Check1",
+      "status": "met",
+      "reason": "DOM text,type,visibility,geometry,children explicitly available",
+      "evidence_ids": [
+       "sol:E004",
+       "sol:E005",
+       "sol:E020"
+      ]
+     },
+     {
+      "condition": "Check2",
+      "status": "met",
+      "reason": "No pixel-only equivalence; visual icon failure acknowledged",
+      "evidence_ids": [
+       "sol:E004",
+       "sol:E005",
+       "sol:E020"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "sol:E004",
+     "sol:E005",
+     "sol:E020"
+    ],
+    "aggregate_source_seat": "sol"
+   },
+   {
+    "main": "agent_initiated_user_interaction",
+    "sub": "R02",
+    "version": "manifest-bound-2026-10-21",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "condition": "Check1",
+      "status": "met",
+      "reason": "Programmed ask/read dialogue used with real participants",
+      "evidence_ids": [
+       "sol:E007",
+       "sol:E016",
+       "sol:E017",
+       "sol:E019"
+      ]
+     },
+     {
+      "condition": "Check2",
+      "status": "unmet",
+      "reason": "No learned need-to-ask threshold, assistance-rate tradeoff or autonomous control",
+      "evidence_ids": [
+       "sol:E007",
+       "sol:E016",
+       "sol:E017",
+       "sol:E019"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "sol:E007",
+     "sol:E016",
+     "sol:E017",
+     "sol:E019"
+    ],
+    "aggregate_source_seat": "sol"
+   },
+   {
+    "main": "online_evaluation_methodology",
+    "sub": "C23",
+    "version": "manifest-bound-2026-10-21",
+    "fit": "strong",
+    "condition_checks": [
+     {
+      "condition": "Check1",
+      "status": "met",
+      "reason": "Annotated instruction/DOM action matching gives main76.7",
+      "evidence_ids": [
+       "sol:E001",
+       "sol:E008",
+       "sol:E009",
+       "sol:E017"
+      ]
+     },
+     {
+      "condition": "Check2",
+      "status": "partial",
+      "reason": "Separate five-task live user feasibility study; not dataset online rollout",
+      "evidence_ids": [
+       "sol:E001",
+       "sol:E008",
+       "sol:E009",
+       "sol:E017"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "sol:E001",
+     "sol:E008",
+     "sol:E009",
+     "sol:E017"
+    ],
+    "aggregate_source_seat": "sol"
+   },
+   {
+    "main": "planner_grounder_interface",
+    "sub": "K29",
+    "version": "taxonomy@430aa36290ec",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "id": "S5",
+      "status": "met",
+      "note": "接口按可得结构设计：DOM 可解析，动作用元素 ID 寻址(EV31)"
+     },
+     {
+      "id": "F5",
+      "status": "present",
+      "note": "接口粒度不足：图标/空间引用、下拉选择不可表达(EV16,EV17)"
+     }
+    ],
+    "evidence_ids": [
+     "son55:EV01",
+     "son55:EV16",
+     "son55:EV17",
+     "son55:EV31"
+    ],
+    "reason": "ThingTalk 重新定义了模型与浏览器之间的动作抽象(6 动作+@retrieve 描述符)，是 K29 “改动作接口” 的实例；差别在于这是解析目标语言，而非让 LLM 直接发出的 ACI。",
+    "executes_pattern": "partial",
+    "resolves_problem": "not_claimed",
+    "aggregate_source_seat": "son55"
+   },
+   {
+    "main": "planner_grounder_interface",
+    "sub": "C10",
+    "version": "taxonomy@430aa36290ec",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "id": "F1",
+      "status": "present",
+      "note": "解析/描述符错误传导到 grounding(81.4% 解析正确)(EV14)"
+     },
+     {
+      "id": "S1",
+      "status": "unmet",
+      "note": "无固定强规划器下加/换 grounder 的对照；只有“解析器完美则 73.0%”的口头上界(EV15)"
+     }
+    ],
+    "evidence_ids": [
+     "son55:EV12",
+     "son55:EV14",
+     "son55:EV15"
+    ],
+    "reason": "解析器输出自然语言目标描述符，另有独立 grounder 派发——与 C10 一致；但解析器处理给定指令而非规划，grounder 非视觉模型。",
+    "executes_pattern": "partial",
+    "resolves_problem": "not_claimed",
+    "aggregate_source_seat": "son55"
+   }
+  ],
+  "unassigned": [
+   {
+    "operation": "用类型化 DSL 把开放域人类指令解析为带描述符的网页动作，再检索元素",
+    "reason": "K22/C10 关注 LLM 规划器+视觉 grounder，K29 关注直接动作接口；“指令→形式 DSL→DOM 检索”的语义解析路线没有对应卡",
+    "evidence_ids": [
+     "son55:EV01",
+     "son55:EV12",
+     "son55:EV30"
+    ]
+   }
+  ],
+  "revision_proposals": [
+   {
+    "proposal": "可考虑登记 case：Parse instructions into a typed web-action DSL, then ground descriptors on the DOM（RUSS）；与 2005.03776 同属“指令→结构化动作+grounder”，二者联合为 2 篇全文才可升 candidate_pattern。",
+    "support": "本批 2103.16057 与 2005.03776 为两篇独立全文，但操作细节不同（DSL vs span 元组）；是否合并留给阶段末聚合。本批不修改卡片",
+    "status": "pending_not_applied"
+   }
+  ],
+  "aggregate_note": "Union of both seats; each card names a different executed operation: element-id actions (C01), scripted @ask dialogue with the user (R02, partial: asking is instruction-driven, not agent-decided), offline per-instruction evaluation (C23), a redesigned DSL action interface (K29), and descriptor-then-grounder split (C10). Not scored."
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": "C25",
+   "domain_namespace": "gui",
+   "domain_main": "structured_screen_observation",
+   "domain_sub": "C01",
+   "operation_correspondence": "Typed retrieve constraints delegate grounding to DOM candidate filtering and exact runtime; explicit objects make executable intermediate addressable.",
+   "necessary_conditions_differences": "PartialC25requires no claim of semantic certificate: no solver feedback during construction; GUI C01 describes observation privilege, not equivalent original tactic.",
+   "evidence_ids": [
+    "sol:E002",
+    "sol:E004",
+    "sol:E006"
+   ],
+   "aggregate_source_seat": "sol",
+   "aggregate_note": "Seat mapping rows cite C25 (sol) or C08 (son55) as rs_sub; final matches use sub null for both (see rs_pattern.reason)."
+  },
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": null,
+   "domain": {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "K29"
+   },
+   "operation_correspondence": "RS 的“分解+类型化中间物”对应 ThingTalk 作为解析目标/grounding 输入；K29 的“改变模型与计算机之间的动作抽象”是同一中间层的 GUI 域解释。",
+   "necessary_conditions_and_differences": "K29 示例是 LLM 直接输出的 ACI；ThingTalk 由监督解析器生成，且 grounding 用相似度检索。",
+   "evidence_ids": [
+    "son55:EV01",
+    "son55:EV12",
+    "son55:EV30"
+   ],
+   "aggregate_source_seat": "son55",
+   "aggregate_note": "Seat mapping rows cite C25 (sol) or C08 (son55) as rs_sub; final matches use sub null for both (see rs_pattern.reason)."
+  },
+  {
+   "rs_main": "decompose_and_delegate",
+   "rs_sub": null,
+   "domain": {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "C10"
+   },
+   "operation_correspondence": "解析器产出目标描述符 → 独立 grounder 定位：与 C10 的“描述目标再派发”一致。",
+   "necessary_conditions_and_differences": "无规划；grounder 不是视觉模型，而是 DOM 文本检索。",
+   "evidence_ids": [
+    "son55:EV12",
+    "son55:EV14"
+   ],
+   "aggregate_source_seat": "son55",
+   "aggregate_note": "Seat mapping rows cite C25 (sol) or C08 (son55) as rs_sub; final matches use sub null for both (see rs_pattern.reason)."
+  },
+  {
+   "rs_main": "self_supervised_signal_engineering",
+   "rs_sub": "C08",
+   "domain": {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "C10"
+   },
+   "operation_correspondence": "模板合成训练数据让解析器无需真实标注——对应 C08 的数据工厂，但在领域卡中没有对应的合成解析数据卡（K23 针对像素 grounding 数据），故此映射只记录为与 C10 的数据侧关联而非一对一。",
+   "necessary_conditions_and_differences": "C08 有质量门/迭代，RUSS 无。",
+   "evidence_ids": [
+    "son55:EV25"
+   ],
+   "aggregate_source_seat": "son55",
+   "aggregate_note": "Seat mapping rows cite C25 (sol) or C08 (son55) as rs_sub; final matches use sub null for both (see rs_pattern.reason)."
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "kind": "dataset",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。 另：该期望依赖的基准/基线（OSWorld、AndroidWorld、WebArena、ScreenSpot 系、UI-TARS 等）晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "kind": "dataset",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“an empirical claim that a method improves task success of an Android/mobile GUI agent”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。 另：该期望依赖的基准/基线（OSWorld、AndroidWorld、WebArena、ScreenSpot 系、UI-TARS 等）晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "kind": "dataset",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。 另：该期望依赖的基准/基线（OSWorld、AndroidWorld、WebArena、ScreenSpot 系、UI-TARS 等）晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "kind": "dataset",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Named benchmarks/baselines postdate the paper and are not demanded (publication-time rule); the publication-time equivalent is judged. The paper makes a live-website success claim (98% assisted completion, agg:R-A05); the publication-time equivalent (an independent, validated live task set with stated start state and success criterion) is absent: 5 author-chosen tasks, fake personas, no criterion.",
+   "evidence_ids": [
+    "agg:R-A04",
+    "agg:R-A05",
+    "son55:EV37"
+   ],
+   "score_item": "E.holdout",
+   "aggregate_source_seat": "revised"
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "kind": "dataset",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。 另：该期望依赖的基准/基线（OSWorld、AndroidWorld、WebArena、ScreenSpot 系、UI-TARS 等）晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "kind": "baseline",
+   "applicable": true,
+   "status": "partial",
+   "reason": "RUSS claims to outperform the state-of-the-art grounder PhraseNode, so E06 applies. Named benchmarks/baselines postdate the paper and are not demanded (publication-time rule); the publication-time equivalent is judged. A contemporary prior grounder is compared, but with a feature subset (agg:R-A08) and an unspecified replication setup, so not information-matched.",
+   "evidence_ids": [
+    "agg:R-A08",
+    "sol:E012",
+    "son55:EV13"
+   ],
+   "score_item": "E.causality",
+   "aggregate_source_seat": "revised"
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "kind": "baseline",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a trained end-to-end GUI agent model improves online task success”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。 另：该期望依赖的基准/基线（OSWorld、AndroidWorld、WebArena、ScreenSpot 系、UI-TARS 等）晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "kind": "ablation",
+   "applicable": true,
+   "status": "partial",
+   "reason": "主张“解析+grounding 的拆分优于直接映射”。时点等价对照：整句 SBERT 端到端(51.1%)、PhraseNode(46.5%)，及“解析器完美时上界 73.0%”的口头分析；没有固定解析器、替换 grounder 的受控对比，也没有只测解析器单独的上界实验。",
+   "evidence_ids": [
+    "son55:EV09",
+    "son55:EV10",
+    "son55:EV15"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "kind": "baseline",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。 另：该期望依赖的基准/基线（OSWorld、AndroidWorld、WebArena、ScreenSpot 系、UI-TARS 等）晚于本文，按发表时点评价。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a learned reward model or verifier improves GUI-agent RL training”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a process reward model for GUI steps improves RL or best-of-N”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "kind": "metric",
+   "applicable": true,
+   "status": "partial",
+   "reason": "能力主张主要靠离线的“单条指令+黄金 DOM”准确率；另有 12 人 5 任务的在线用户研究，但其成功含用户协助，且未展示离线→在线的相关性。",
+   "evidence_ids": [
+    "son55:EV01",
+    "son55:EV18",
+    "son55:EV19"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E16",
+   "version": "manifest-bound-2026-10-21",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2501.12326#s1",
+     "note": "3 runs"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2505.13227#s2",
+     "note": "4 runs"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2510.17790#s1",
+     "note": "4 runs"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2504.01382#s1",
+     "note": "3 runs, std 1.1%"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2609.10031",
+     "note": "3 repetitions"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2311.08649",
+     "note": "authors: monetary constraints prevented multiple runs"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2411.02337",
+     "note": "authors: random task generation raises variance across seeds"
+    }
+   ],
+   "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Twelve users/five tasks and counterbalancing disclosed; no repeated agent-run means/spread or confidence intervals on success differences.",
+   "evidence_ids": [
+    "sol:E016",
+    "sol:E017",
+    "sol:E018"
+   ],
+   "score_item": "E.statistics",
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E17",
+   "version": "manifest-bound-2026-10-21",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2501.12326#s1",
+     "note": "reports both 15 and 50 steps"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2410.13232#s2",
+     "note": "5 actions vs 30 for some baselines (condition)"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2504.01382#s2",
+     "note": "differing step caps; efficiency stratified"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2609.07712#s3",
+     "note": "budget exhaustion"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2510.17790#s1",
+     "note": "average steps reported"
+    }
+   ],
+   "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Five-minute participant deadline and3 dialogue tries/60s load timeout described. No equal action-cap comparison with automated baselines or budget-exhaustion stratification.",
+   "evidence_ids": [
+    "sol:E019"
+   ],
+   "score_item": "E.measurement",
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "kind": "baseline",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "kind": "reproducibility",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "kind": "reproducibility",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "用户研究在真实站点(Amazon、Spotify、Pinterest、Google、Walmart)上进行，但未陈述日期、页面漂移处理或被拦截/CAPTCHA 情况。",
+   "evidence_ids": [
+    "son55:EV37"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E21",
+   "version": "manifest-bound-2026-10-21",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2404.07972#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2410.05243#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.04454#s3"
+    }
+   ],
+   "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": true,
+   "status": "partial",
+   "reason": "DOM privilege explicit. Direct baseline shares it, but PhraseNode uses a subset of features; no screenshot-only confusion, yet not fully matched comparison.",
+   "evidence_ids": [
+    "sol:E004",
+    "sol:E005",
+    "sol:E014"
+   ],
+   "score_item": "E.causality",
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "kind": "scale",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a training recipe generalises across policy backbones”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "kind": "metric",
+   "applicable": true,
+   "status": "partial",
+   "reason": "新评测集：给出推理类型分层(type/input/relational/spatial)的准确率，说明空间推理最弱；但没有按任务长度分层，也没有完整失败成因审计。",
+   "evidence_ids": [
+    "son55:EV16",
+    "son55:EV36"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E24",
+   "version": "manifest-bound-2026-10-21",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2604.14262#s1"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2404.07972#s2"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2505.13227#s3",
+     "note": "knowledge-free re-annotated instructions"
+    }
+   ],
+   "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Relational reasoning subset reported but not matched perturbations; icon and hidden DOM text failures acknowledged. General open-domain robustness remains unestablished.",
+   "evidence_ids": [
+    "sol:E004",
+    "sol:E020"
+   ],
+   "score_item": "X",
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a grounding or agent benchmark claim where some instructions are ambiguous or infeasible”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。 数据集含 @ask/@say 动作，但不度量“无有效目标”的拒绝行为，属范围外。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "manifest-bound-2026-10-21",
+   "source_strength": "single_source",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2410.02907#s3"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.19723#s1"
+    }
+   ],
+   "source_interpretation": "Fixed-profile paper practices/limitations, not actual reviews of this paper; cited originals not all independently reread.",
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Typed single-instruction program synthesis, not exploration-first/reverse trajectory generation.",
+   "evidence_ids": [],
+   "score_item": "X",
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "kind": "scale",
+   "applicable": true,
+   "status": "partial",
+   "reason": "只有 50 万 vs 150 万两个点，且 50 万那一档同时去掉了实体抽取(混杂)，无法得到数据规模曲线或饱和点。",
+   "evidence_ids": [
+    "son55:EV08",
+    "son55:EV25"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "kind": "other",
+   "applicable": true,
+   "status": "partial",
+   "reason": "训练仅合成数据，dev/test 为真实指令且按任务划分；但合成取值来自“抓取的 DOM 文本/URL”，其来源站点与评测站点是否重叠未说明，也无 OOD 迁移报告。",
+   "evidence_ids": [
+    "son55:EV03",
+    "son55:EV05",
+    "son55:EV07",
+    "son55:EV25"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that reflection, self-correction or first-error recovery data improves GUI agents”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a method that plans or trains with multi-step rollouts inside a learned GUI world model”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "kind": "ablation",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that policy training on world-model or simulated GUI rollouts improves agents”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "kind": "metric",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "kind": "other",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that a simulated app, synthetic site or digital twin substitutes for the real environment”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1 profile/expectations.json sha256:4663f2b47de5",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "kind": "other",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "不适用：适用前提为“a claim that experience memory or retrieved trajectories improve GUI agents”；本文中心主张是以语义解析为中间层的开放域网页指令落地系统（单条指令离线评测+小规模用户研究，2021），不构成该前提。",
+   "evidence_ids": [],
+   "score_item": null
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "russ 在 437 条测试指令上端到端动作预测准确率 76.7%（仅合成数据训练）。",
+   "setting": "每条指令配黄金页面 DOM；非元素指令按解析精确匹配计、元素指令按元素 ID 计",
+   "baseline_control": "无同口径的端到端对照（对照只针对 grounding 子任务）",
+   "selection_vs_test": "dev(30 任务)用于消融，test(50 任务)报告；真值由作者标注",
+   "result_denominator": "437 条（252 条元素指令 + 185 条其他）；由 63.6%×252 与 94.6%×185 可复算出 76.7%，数值可核",
+   "evidence_ids": [
+    "son55:EV01",
+    "son55:EV03",
+    "son55:EV05",
+    "son55:EV06",
+    "son55:EV11",
+    "son55:EV14",
+    "son55:EV23"
+   ],
+   "counterevidence": [
+    "son55:EV23"
+   ],
+   "allowed_conclusion": "在作者构建的单指令测试集上总体精确匹配约 77%；非元素指令的“动作”仅是解析精确匹配，不是执行结果。"
+  },
+  {
+   "claim_id": "C2",
+   "text": "拆分为语义解析+grounding 优于直接映射（grounding 63.6% vs 端到端 51.1% vs PhraseNode 46.5%）。",
+   "setting": "test 上 252 条元素检索指令",
+   "baseline_control": "整句 SBERT 匹配(无训练)；复现 PhraseNode",
+   "selection_vs_test": "test",
+   "result_denominator": "252 条；单次运行；无区间",
+   "evidence_ids": [
+    "son55:EV09",
+    "son55:EV10",
+    "son55:EV11",
+    "son55:EV12",
+    "son55:EV13",
+    "son55:EV16"
+   ],
+   "counterevidence": [
+    "son55:EV12",
+    "son55:EV13"
+   ],
+   "allowed_conclusion": "相对朴素 SBERT 与作者复现的 PhraseNode，含解析的流水线更准；对手较弱，不能外推为优于“强端到端学习模型”。"
+  },
+  {
+   "claim_id": "C3",
+   "text": "用户研究显示用户更偏好 russ（69% 偏好；98% 任务借助 russ 完成 vs 85% 自行完成）。",
+   "setting": "12 人、5 个客服任务、Latin square，限时 5 分钟",
+   "baseline_control": "同一参与者直接用网页",
+   "selection_vs_test": "任务站点与数据集同源",
+   "result_denominator": "12×5；无显著性检验；成功判据未说明",
+   "evidence_ids": [
+    "son55:EV18",
+    "son55:EV19",
+    "son55:EV20",
+    "son55:EV21",
+    "son55:EV37"
+   ],
+   "counterevidence": [
+    "son55:EV19",
+    "son55:EV28"
+   ],
+   "allowed_conclusion": "小规模、用户在回路条件下，russ 辅助的任务完成率更高、偏好更多；不是 agent 自主成功率。"
+  },
+  {
+   "claim_id": "C4",
+   "text": "russ 能掌握“任何由开放域指令指定的网页任务”。",
+   "setting": "引言/摘要范围声明",
+   "baseline_control": "无",
+   "selection_vs_test": "not_applicable",
+   "result_denominator": "not_applicable",
+   "evidence_ids": [
+    "son55:EV22",
+    "son55:EV04"
+   ],
+   "counterevidence": [
+    "son55:EV16",
+    "son55:EV17"
+   ],
+   "allowed_conclusion": "未被支持：评测限于 22 个帮助站点、单条指令；空间/图标引用明显较弱。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "offline",
+  "evidence_level_reason": "The central results are exact-match accuracies on scraped DOMs for single instructions (agg:R-A07). The live 12-user/5-task study is human-assisted, uses fake personas and states no success criterion (agg:R-A04), so it does not provide execution-checked task success; it is recorded as feasibility evidence only.",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "Author-reported: a parser trained only on synthetic ThingTalk data reaches 87.0% exact match on 437 real (edited) help-page instructions, and parse-then-ground reaches 63.6% element accuracy on 252 element instructions versus 51.1% for whole-sentence SBERT and 46.5% for a feature-reduced PhraseNode replication; a small user study reports higher assisted completion and preference. Multi-step autonomous execution, 'any web task', and superiority over a trained end-to-end or Seq2Act-style decomposition are not shown.",
+  "not_supported": [
+   "Autonomous multi-step task success on live sites",
+   "'Masters any web task' generalisation",
+   "Novelty of decomposition relative to Seq2Act"
+  ],
+  "unresolved": [
+   "Inconsistent summary figures (85/75/76.6 vs 87.0/63.6/73.0/76.7)",
+   "69% of 12 users is not an integer share",
+   "Overlap of synthetic value sources with evaluation sites"
+  ],
+  "retention_trace": "No retained-improvement claim; static models and a per-task user dictionary.",
+  "author_report_only": true,
+  "our_run": false
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Concrete bottleneck (open-domain help instructions to web actions with user interaction, ~689 elements per page) and a numerical comparison with PhraseNode, but the closest structural neighbour Seq2Act, which already decomposed grounding with synthetic data, is dismissed with an inaccurate differentiator (agg:R-A01 vs agg:R-A02), so the residual gap is incompletely bounded (anchor 2).",
+   "evidence_ids": [
+    "son55:EV33",
+    "son55:EV16",
+    "sol:E002"
+   ],
+   "counterevidence_ids": [
+    "agg:R-A01",
+    "agg:R-A02",
+    "agg:R-A03"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "DSL descriptors constrain the candidate set, supported per reasoning type and by the parse-removed baseline; assumptions (independent single instructions, DOM text sufficiency) are strong.",
+   "evidence_ids": [
+    "son55:EV09",
+    "son55:EV12",
+    "son55:EV16",
+    "sol:E004"
+   ],
+   "counterevidence_ids": [
+    "sol:E020"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Main steps described, but grounding thresholds/SBERT variant, template inventory, dialogue handling and success criteria are unclear; runtime error handling minimal (3 tries, 60 s timeout).",
+   "evidence_ids": [
+    "son55:EV28",
+    "son55:EV30",
+    "sol:E006",
+    "sol:E007"
+   ],
+   "counterevidence_ids": [
+    "son55:EV23"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Exact match to single-annotator gold ThingTalk/element IDs without execution; summary figures inconsistent; live-study completion criterion unstated.",
+   "evidence_ids": [
+    "son55:EV06",
+    "son55:EV14",
+    "son55:EV24",
+    "sol:E009"
+   ],
+   "counterevidence_ids": [
+    "son55:EV23",
+    "agg:R-A04"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Whole-sentence SBERT baseline isolates the parsing layer and reasoning-type breakdown adds attribution; baseline untrained, PhraseNode replication feature-reduced, data size and entity extraction confounded in the ablation.",
+   "evidence_ids": [
+    "son55:EV09",
+    "son55:EV12",
+    "sol:E011"
+   ],
+   "counterevidence_ids": [
+    "agg:R-A08",
+    "son55:EV13"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Synthetic-only training with task-disjoint dev/test real instructions; but instructions were edited/inserted by an author, synthetic value sources vs evaluation sites unaudited, live tasks from the same sites, and the 'any web task' scope is far wider than the test.",
+   "evidence_ids": [
+    "agg:R-A07",
+    "son55:EV05",
+    "son55:EV07",
+    "sol:E008"
+   ],
+   "counterevidence_ids": [
+    "agg:R-A09",
+    "son55:EV37"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Single runs, no intervals or tests; user study n=12 without tests; inconsistent figures; reasoning-type breakdown but no error audit.",
+   "evidence_ids": [
+    "son55:EV16",
+    "son55:EV19",
+    "sol:E016"
+   ],
+   "counterevidence_ids": [
+    "son55:EV23",
+    "agg:R-A05"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Training 7 h on a V100 and <1 min per new task reported, user time and interaction counts given; no runtime latency or baseline cost comparison.",
+   "evidence_ids": [
+    "son55:EV26",
+    "son55:EV27",
+    "son55:EV21"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 55.0,
+  "display": 55.0,
+  "lower": 55.0,
+  "upper": 55.0,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(15G+25M+20X+10Emeas+10Ecaus+10Ehold+5Estat+5Ecost)/4; unknown -> L uses 0, U uses 4; raw=null while any unknown"
+ },
+ "status": "reviewed",
+ "status_reason": "Full fixed HTML text available and read (figure images are captions only); in scope per scope_decision; all eight items resolved.",
+ "input_seat_hashes": {
+  "sol": "772b00402c851db3f38b4cc6b4ce4dddcc0a0ac0c8ae8aa9a12fb26f016563fa",
+  "son55": "51b687cbde32f12ba7cf8807318ef623365760dfd33e8f3a9e72ce9b234f5b25"
+ },
+ "aggregate_model": "fable",
+ "aggregate_actual_model": "claude-opus-5-5[1m]",
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_note": "Configured model type fable (upstream claude-opus-5-5[1m]) per batch manifest model_types.opus55; no session id or invocation receipt is exposed to this agent.",
+ "seat_integrity_check": {
+  "sol": {
+   "file_sha256": "772b00402c851db3f38b4cc6b4ce4dddcc0a0ac0c8ae8aa9a12fb26f016563fa",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "target_material_sha_matches_manifest": true,
+   "target_material_complete": true,
+   "rs_and_domain_parent_errors": [],
+   "seat_status": "reviewed",
+   "model_type": "sonnet",
+   "actual_model": "gpt-6.1-sol",
+   "receipt_ref": "/home/lingxufeng/.claude-kimi/projects/-home-lingxufeng-GUI/681194da-49f5-4ad4-8eb4-573b45384076.jsonl"
+  },
+  "son55": {
+   "file_sha256": "51b687cbde32f12ba7cf8807318ef623365760dfd33e8f3a9e72ce9b234f5b25",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "target_material_sha_matches_manifest": true,
+   "target_material_complete": true,
+   "rs_and_domain_parent_errors": [],
+   "seat_status": "reviewed",
+   "model_type": "haiku",
+   "actual_model": "claude-sonnet-5-5[1m]",
+   "receipt_ref": null
+  }
+ },
+ "resolutions": [
+  {
+   "field_path": "evidence_level",
+   "sol_value": "online",
+   "son55_value": "offline",
+   "decision": "son55",
+   "final_value": "offline",
+   "reason": "EVIDENCE.md 'online' requires task success judged by execution results. The headline and component results are static per-instruction accuracies (agg:R-A07); the only live evidence is a human-assisted 5-task study with fake personas and no stated success criterion (agg:R-A04, agg:R-A05), which cannot certify executed outcomes. sol itself notes the 76.7% is offline and online rests only on the user study.",
+   "evidence_ids": [
+    "agg:R-A04",
+    "agg:R-A05",
+    "agg:R-A07"
+   ],
+   "score_impact": "none (evidence_level is not scored)"
+  },
+  {
+   "field_path": "rs.matches",
+   "sol_value": [
+    "decompose_and_delegate/C25",
+    "self_supervised_signal_engineering/None"
+   ],
+   "son55_value": [
+    "decompose_and_delegate/None",
+    "self_supervised_signal_engineering/C08"
+   ],
+   "decision": "revised",
+   "final_value": [
+    "decompose_and_delegate/None",
+    "self_supervised_signal_engineering/None"
+   ],
+   "reason": "Primary/supporting agreed; children dropped on both sides: C25 lacks construction-time solver verification (both seats mark it unmet), C08 lacks any quality gate/iteration (son55's own checks).",
+   "evidence_ids": [
+    "sol:E004",
+    "son55:EV25"
+   ],
+   "score_impact": "none (not scored)"
+  },
+  {
+   "field_path": "domain.matches",
+   "sol_value": [
+    "agent_initiated_user_interaction/R02",
+    "online_evaluation_methodology/C23",
+    "structured_screen_observation/C01"
+   ],
+   "son55_value": [
+    "planner_grounder_interface/C10",
+    "planner_grounder_interface/K29",
+    "structured_screen_observation/C01"
+   ],
+   "decision": "revised",
+   "final_value": [
+    "structured_screen_observation/C01",
+    "agent_initiated_user_interaction/R02",
+    "online_evaluation_methodology/C23",
+    "planner_grounder_interface/K29",
+    "planner_grounder_interface/C10"
+   ],
+   "reason": "Union: each seat's extra cards describe real, different operations of RUSS (see domain_note).",
+   "evidence_ids": [
+    "sol:E007",
+    "son55:EV12",
+    "son55:EV31",
+    "sol:E009"
+   ],
+   "score_impact": "none (not scored)"
+  },
+  {
+   "field_path": "rating.G",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "decision": "sol",
+   "final_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "reason": "The fixed in-batch text of Seq2Act shows the closest structural neighbour already used decomposition plus synthetic data; RUSS's stated differentiator does not separate it (agg:R-A01-R-A03). son55 noted Seq2Act was dismissed but still gave 3; an incompletely bounded nearest-neighbour comparison is anchor 2.",
+   "evidence_ids": [
+    "agg:R-A01",
+    "agg:R-A02",
+    "agg:R-A03",
+    "son55:EV34"
+   ],
+   "score_impact": "0 vs sol, -3.75 vs son55"
+  },
+  {
+   "field_path": "expectation.E04",
+   "sol_value": "challenged_with_evidence",
+   "son55_value": "not_applicable",
+   "decision": "revised",
+   "final_value": "unmet",
+   "reason": "Applicable (live-site completion is claimed, son55's n/a misses it); not a pure anachronism challenge (sol): the time-equivalent requirement of an independent, validated live task set with a success criterion is unmet.",
+   "evidence_ids": [
+    "agg:R-A04",
+    "agg:R-A05"
+   ],
+   "score_impact": "none (E.holdout=2 agreed)"
+  },
+  {
+   "field_path": "expectation.E06",
+   "sol_value": "challenged_with_evidence",
+   "son55_value": "not_applicable",
+   "decision": "revised",
+   "final_value": "partial",
+   "reason": "Applicable because RUSS claims to beat state-of-the-art PhraseNode; a contemporary prior grounder is compared but not information-matched (agg:R-A08).",
+   "evidence_ids": [
+    "agg:R-A08",
+    "sol:E012"
+   ],
+   "score_impact": "none (E.causality=2 agreed)"
+  },
+  {
+   "field_path": "expectation.E16",
+   "sol_value": "unmet",
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": "unmet",
+   "reason": "The live comparison (85% vs 98%, 69% preference) has no spread, interval or test, and offline numbers are single runs.",
+   "evidence_ids": [
+    "agg:R-A05",
+    "sol:E016"
+   ],
+   "score_impact": "none (E.statistics=1 agreed)"
+  },
+  {
+   "field_path": "expectation.E17",
+   "sol_value": "partial",
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "The live study states an equal 5-minute cap for both conditions and reports interaction counts (agg:R-A06), but budget exhaustion is not stratified and the runtime's 3-try/60 s limits only apply to RUSS.",
+   "evidence_ids": [
+    "agg:R-A06",
+    "sol:E019"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E21",
+   "sol_value": "partial",
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "RUSS vs PhraseNode compares grounders with different observation features (PhraseNode uses a subset), disclosed but not matched.",
+   "evidence_ids": [
+    "agg:R-A08"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E24",
+   "sol_value": "unmet",
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": "unmet",
+   "reason": "The paper claims an agent that masters any web task (agg:R-A09), a generalisation across sites/layouts, with no controlled perturbation test; icon and hidden-text failures acknowledged.",
+   "evidence_ids": [
+    "agg:R-A09",
+    "sol:E020",
+    "son55:EV17"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E26",
+   "sol_value": "not_applicable",
+   "son55_value": "unmet",
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "Template synthesis of parser data is not claimed better than an alternative synthesis recipe; consistent with 2005.03776. The missing real-data control is judged under E.causality.",
+   "evidence_ids": [
+    "son55:EV25"
+   ],
+   "score_impact": "none"
+  }
+ ],
+ "shared_error_corrections": [],
+ "aggregate_status": "accepted_final",
+ "aggregate_status_reason": "All 11 seat disagreements resolved from the fixed text, using the in-batch Seq2Act text for the neighbour check; no shared error found; no scoring unknowns.",
+ "final_record_hash": "74516949e233cace1beeb386c89a3320519f116b93372d78037015214c6db97e"
+}

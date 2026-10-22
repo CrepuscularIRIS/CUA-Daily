@@ -1,0 +1,211 @@
+{
+ "schema_version": "radar-batch-report-v2.2",
+ "kind": "aggregate-batch-report",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p2",
+ "attempt_id": "a1",
+ "seat": "aggregate",
+ "input_hash": "fed6b4a2d84803fc93183b9a9669ad578f4b1611b203548221a83913612b045e",
+ "conflicts_sha256": "57a5f35169e4eb55da1368cc3dfd609817f4c0f0f2f4a5284db9ff7e1065f2bb",
+ "aggregate_model": "fable",
+ "aggregate_actual_model": "claude-opus-5-5[1m]",
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_note": "Configured model type fable (upstream claude-opus-5-5[1m]) per batch manifest model_types.opus55; no session id or invocation receipt is exposed to this agent.",
+ "assigned_in_manifest": 5,
+ "in_scope_for_a1_aggregation": 3,
+ "skipped_a2_pending": 2,
+ "accepted_final": 3,
+ "needs_revision": 0,
+ "needs_evidence": 0,
+ "needs_fulltext": 0,
+ "scored": 3,
+ "blocked": 0,
+ "disposition_sum_check": "3 aggregated + 2 skipped_a2_pending = 5 in manifest",
+ "outside_taxonomy_ratio_of_reviewed": "0/3",
+ "totals": {
+  "mechanical_conflicts": 28,
+  "scoring_item_conflicts": 5,
+  "resolutions": 28,
+  "shared_error_corrections": 2,
+  "unresolved": 0
+ },
+ "records": [
+  {
+   "paper_key": "2202.08137",
+   "version": "2202.08137v2",
+   "aggregate_status": "accepted_final",
+   "claim_type": "system_method",
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "raw_score": 68.75,
+   "display_score": 68.8,
+   "seat_raw_scores": {
+    "sol": 62.5,
+    "son55": 68.75
+   },
+   "n_mechanical_conflicts": 8,
+   "n_resolutions": 8,
+   "resolution_decisions": {
+    "sol": 4,
+    "son55": 3,
+    "revised": 1,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_scoring_item_conflicts": 2,
+   "n_shared_error_corrections": 0,
+   "n_unresolved": 0,
+   "seat_evidence_not_verifiable": [
+    "son55:E028"
+   ],
+   "file": "research/v2/runs/gui-v22-20261021-01/batches/p2/aggregate/attempts/a1/2202.08137.json",
+   "file_sha256": "1bac82f3321c714b10f5a124373e9aad405752f8114df497b4d81b261e265181",
+   "final_record_hash": "fbe5d4acfe9cebc0be3413c9b4cf8153fe9ff2af7992f3f6c7ca5d29133672eb",
+   "input_seat_hashes": {
+    "sol": "508b24567210c5a59f3af190c74dd77df438d15ddd52f12040b3bc84c3d409fb",
+    "son55": "a000cfd57ed98085b2ad2ffc1dc47243c4b093031fc2e110c5e56e3755802a26"
+   }
+  },
+  {
+   "paper_key": "2304.07061",
+   "version": "2304.07061v5",
+   "aggregate_status": "accepted_final",
+   "claim_type": "system_method",
+   "evidence_level": "offline",
+   "claim_support": "scoped",
+   "raw_score": 36.25,
+   "display_score": 36.2,
+   "seat_raw_scores": {
+    "sol": 36.25,
+    "son55": 36.25
+   },
+   "n_mechanical_conflicts": 10,
+   "n_resolutions": 10,
+   "resolution_decisions": {
+    "sol": 3,
+    "son55": 6,
+    "revised": 1,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_scoring_item_conflicts": 0,
+   "n_shared_error_corrections": 1,
+   "n_unresolved": 0,
+   "seat_evidence_not_verifiable": [
+    "son55:E029"
+   ],
+   "file": "research/v2/runs/gui-v22-20261021-01/batches/p2/aggregate/attempts/a1/2304.07061.json",
+   "file_sha256": "465d1d6359db712aaff8085566f5d27514089cc3bbc89ae382dee8c4d41f957f",
+   "final_record_hash": "84786ccc2c17a0fed381cf4e79eb908f0811334e6a1534815551977407297ac5",
+   "input_seat_hashes": {
+    "sol": "c6e78494cc97e1895c1f6a5cb2a18d25df0424398e4ab5229a12a657bfe63931",
+    "son55": "e0c8aa33d1c1d87f936cb7817c75270c77e77a7eb99b47890d36f30fca8d1a81"
+   }
+  },
+  {
+   "paper_key": "2305.11854",
+   "version": "2305.11854v4",
+   "aggregate_status": "accepted_final",
+   "claim_type": "system_method",
+   "evidence_level": "online",
+   "claim_support": "scoped",
+   "raw_score": 66.25,
+   "display_score": 66.2,
+   "seat_raw_scores": {
+    "sol": 68.75,
+    "son55": 66.25
+   },
+   "n_mechanical_conflicts": 10,
+   "n_resolutions": 10,
+   "resolution_decisions": {
+    "sol": 2,
+    "son55": 8,
+    "revised": 0,
+    "unresolved": 0,
+    "same_supported_fact": 0
+   },
+   "n_scoring_item_conflicts": 3,
+   "n_shared_error_corrections": 1,
+   "n_unresolved": 0,
+   "seat_evidence_not_verifiable": [
+    "son55:E064"
+   ],
+   "file": "research/v2/runs/gui-v22-20261021-01/batches/p2/aggregate/attempts/a1/2305.11854.json",
+   "file_sha256": "7b89e6db539c082da34d8c77d82492be98f6d0687d4d4e97bfa10d3039e8b49a",
+   "final_record_hash": "2af9b8abef3395e56dd9d0c554e33f501829ddebe1b0dd8d3702c1edbebe37ed",
+   "input_seat_hashes": {
+    "sol": "b8b45e0931277615c1c4c3a222166c0123f54ce9df46338ebbb064ddd1a8d333",
+    "son55": "ce94ce3b83f3fa7b273e4c6db9fabc60057a791a4b92555caa7aae511a7e30ce"
+   }
+  }
+ ],
+ "skipped": [
+  {
+   "paper_key": "2209.08655",
+   "version": "2209.08655v2",
+   "disposition": "skipped_a2_pending",
+   "aggregate_status": null,
+   "raw_score": null,
+   "reason": "material_upgraded_a2_pending: the shared fixed full-text file was replaced by a repaired version after a1 froze; both seats' a1 records stay bound to the old sha and are retained, but no a1 aggregation is performed. The aggregator did not evaluate these papers and did not open their upgraded files.",
+   "a1_seat_files_retained": {
+    "sol": {
+     "path": "research/v2/runs/gui-v22-20261021-01/batches/p2/seats/sol/attempts/a1/2209.08655.json",
+     "sha256": "0b4f045570f81723d39be56f6b352633b45bff75f95db7bf40c36d0ef3f391b1"
+    },
+    "son55": {
+     "path": "research/v2/runs/gui-v22-20261021-01/batches/p2/seats/son55/attempts/a1/2209.08655.json",
+     "sha256": "9cb7d749bde5841a5affee8036b42b8f9d9bae1c55ce13473a47dedc18013195"
+    }
+   },
+   "n_mechanical_conflicts_not_processed": 50
+  },
+  {
+   "paper_key": "2303.17491",
+   "version": "2303.17491v3",
+   "disposition": "skipped_a2_pending",
+   "aggregate_status": null,
+   "raw_score": null,
+   "reason": "material_upgraded_a2_pending: the shared fixed full-text file was replaced by a repaired version after a1 froze; both seats' a1 records stay bound to the old sha and are retained, but no a1 aggregation is performed. The aggregator did not evaluate these papers and did not open their upgraded files.",
+   "a1_seat_files_retained": {
+    "sol": {
+     "path": "research/v2/runs/gui-v22-20261021-01/batches/p2/seats/sol/attempts/a1/2303.17491.json",
+     "sha256": "18fcb42d59c279d8b8795e2c0a01d97045c3b9511f67f114a510166048292383"
+    },
+    "son55": {
+     "path": "research/v2/runs/gui-v22-20261021-01/batches/p2/seats/son55/attempts/a1/2303.17491.json",
+     "sha256": "3da494aca4beb9770fdbfa049848be03745a5b79aa274ad3bed73f104135b084"
+    }
+   },
+   "n_mechanical_conflicts_not_processed": 50
+  }
+ ],
+ "validation": {
+  "aggregated_plus_skipped_equals_manifest": true,
+  "seat_versions_input_hash_material_sha_checked": "both seats, 3 in-scope papers: version, input_bundle_sha256 and paper material sha match manifest; model types sol=sonnet(gpt-6.1-sol), son55=haiku(claude-sonnet-5-5 self-reported) as in manifest.model_types",
+  "seat_rs_parent_and_domain_namespace_checked": "PARENTS.tsv + taxonomy.json, both seats, 3 papers: no errors",
+  "seat_quote_check": "all seat quotes are substrings of their cited fixed texts except son55 2202:E028, 2304:E029, 2305:E064, which cite the replaced 2303.17491/2209.08655 files; not opened, marked not verifiable, not used in any final rating/resolution/correction (asserted)",
+  "every_mechanical_conflict_has_resolution": true,
+  "rating_resolutions_match_final_ratings": true,
+  "final_rs_parent_and_domain_checks": true,
+  "evidence_reference_integrity": "every evidence_id referenced in a final record exists in its evidence list; seat IDs namespaced sol:/son55:, own evidence agg:",
+  "agg_quote_substring_check": "each agg quote is an exact substring of the cited fixed paper text",
+  "score_recomputed": "S=(15G+25M+20X+10Em+10Ec+10Eh+5Es+5Ecost)/4; weights sum 100, E sum 40; recomputed after write; display=Python round to 1 decimal (as c1/a1), selection uses raw",
+  "final_record_hash_recomputed_after_write": true,
+  "hash_rule": "sha256 of json.dumps(record minus final_record_hash, sort_keys=True, ensure_ascii=False, separators=(',',':')) in UTF-8",
+  "atomic_writes": "tmp file + os.replace",
+  "limitations": [
+   "Structural/arithmetic/quote checks do not establish semantic correctness or scientific validity; nothing reproduced.",
+   "v1 render: figures not rendered (2202 Fig 3/5/7/8 ablation values, 2304 Fig 4 prompt example, 2305 Fig 4/7); judgements use text, tables and captions and say so.",
+   "No session id or invocation receipt is available to this agent."
+  ]
+ },
+ "requests_to_controller": [
+  "2209.08655, 2303.17491: a2 pending on upgraded materials; not aggregated here.",
+  "son55 cited replaced-material evidence in 3 in-scope records (2202:E028, 2304:E029, 2305:E064); not relied on. If the a2 re-dispatch re-runs these papers, the neighbour facts can be re-cited against the new files.",
+  "Optional (non-blocking): rendered figures for 2202.08137 Fig 3/5/7/8 would let E.causality be checked against numbers rather than author prose.",
+  "Domain-card revision proposal (record only): gui:K29 counter-evidence from 2202.08137 Sec 3.4."
+ ],
+ "boundaries": "No publication, no Reel selection, no rubric/card/seat/input edits, no git operations. Scores are draft_uncalibrated v2.2 provisional values pending controller verification.",
+ "timestamp": "2026-10-21T17:40:56+00:00"
+}

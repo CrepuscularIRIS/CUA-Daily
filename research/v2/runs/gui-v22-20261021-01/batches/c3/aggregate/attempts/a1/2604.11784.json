@@ -1,0 +1,2321 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c3",
+ "attempt_id": "a1",
+ "seat": "aggregate",
+ "paper": {
+  "paper_key": "2604.11784",
+  "paper_id": "2604.11784",
+  "title": "ClawGUI: A Unified Framework for Training, Evaluating, and Deploying GUI Agents",
+  "version": "2604.11784v1",
+  "claim_type": "system_method",
+  "central_claim": "提出统一开源框架 ClawGUI（ClawGUI-RL 在线 RL 基础设施[模拟器+真机]、ClawGUI-Eval 标准化评测流水线、ClawGUI-Agent 真机部署）；在该流水线内端到端训练的 ClawGUI-2B 在 MobileWorld GUI-Only 上 SR 17.1%（同规模 MAI-UI-2B 11.1%）；ClawGUI-Eval 对已发表基线复现率 95.8%。（子主张按各自类型评价：RL 部分≈component_training，Eval 部分≈evaluation_resource。）"
+ },
+ "provenance": {
+  "input_hash": "3a53a9b05139dc558c16026d9c92aba6c603593cded48db189b7c3080ebc16fb",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "aggregate_rules": "docs/agents/AGGREGATE_OPUS.md",
+  "aggregate_rules_sha256": "1ad0c4f39af2ceb06924fc015d8660711edcd9a6f891444e902b44f79584f4e0",
+  "conflicts_sha256": "0e72316b8c7336dc2746822a29f690d8a7e0d67cdcdb043414644d8bb363bc9d",
+  "references_sha256": "ed9d577bd9b2fc25073d44f2506dda757688a30d4528fe3872527a0134fccfbc",
+  "model_type": "fable",
+  "actual_model": "claude-opus-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "timestamp": "2026-10-21T17:49:45+00:00",
+  "independence_note": "Aggregation over two seat inputs; each fixed paper text was read before the seat scores, but this is not a third blind review or human gold. All results are author reports; nothing was reproduced."
+ },
+ "materials": [
+  {
+   "material_id": "agg:2604.11784",
+   "url": "https://arxiv.org/html/2604.11784",
+   "sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2604.11784.txt",
+   "role": "paper",
+   "sections_read": [
+    "full text"
+   ],
+   "complete": true,
+   "missing_sections": []
+  },
+  {
+   "material_id": "agg:2512.22047",
+   "url": "https://arxiv.org/html/2512.22047",
+   "sha256": "c134dac591c66cc8d583a75a91995a5bdcee6edb3949f9deeaf49e6632b688ac",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2512.22047.txt",
+   "role": "nearest_neighbor_reference",
+   "sections_read": [
+    "targeted sections cited by agg evidence"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; used only as shared factual reference"
+   ]
+  },
+  {
+   "material_id": "sol:paper:2604.11784v1",
+   "url": "https://arxiv.org/html/2604.11784v1",
+   "version": "2604.11784v1",
+   "sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2604.11784.txt",
+   "sections_read": [
+    "Entire fulltext including methods, all experiments, references and any appended material"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "version_binding": "Primary version assigned by manifest; cached header is unversioned, exact bytes verified against manifest."
+  },
+  {
+   "material_id": "sol:reference:2501.12326:cache",
+   "url": "https://arxiv.org/html/2501.12326",
+   "version": null,
+   "sha256": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2501.12326.txt",
+   "sections_read": [
+    "§4.5–4.6, cached lines 635–713"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "Only cited sections inspected; full-reference review not claimed"
+   ],
+   "version_binding": "Frozen reference cache does not expose version metadata; identity and exact bytes hash bound, no invented v1."
+  },
+  {
+   "material_id": "sol:reference:2405.14573:cache",
+   "url": "https://arxiv.org/html/2405.14573",
+   "version": null,
+   "sha256": "d745a9085e86a2ea357a27f08bb1c0fd1918ff9040ef9885c5db387c456a56cc",
+   "local_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2405.14573.txt",
+   "sections_read": [
+    "§3.1–3.6 and §4.1–4.3, cached lines 182–290"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "Only cited sections inspected; full-reference review not claimed"
+   ],
+   "version_binding": "Frozen reference cache does not expose version metadata; identity and exact bytes hash bound, no invented v1."
+  },
+  {
+   "material_id": "son55:2604.11784",
+   "url": "https://arxiv.org/html/2604.11784v1",
+   "sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2604.11784.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Abstract",
+    "§1 Introduction",
+    "§2 Related Work",
+    "§3.1-3.4",
+    "§4.1-4.4",
+    "§5 Discussion",
+    "§6 Conclusion",
+    "Tables 1-3",
+    "Figure captions 1-4",
+    "References (skimmed)"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Figure images (captions only)",
+    "Table 3 colour coding (green/red) not preserved in text"
+   ]
+  },
+  {
+   "material_id": "son55:2509.02544",
+   "url": "https://arxiv.org/html/2509.02544",
+   "sha256": "efdf7a26d17ae2f59c1447b256508ca472716208a9f47271984c1cfa62a54c63",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2509.02544.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Abstract/§1/§2.2 grep for sandbox/infra; gap lineage only"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "reference paper read only by targeted grep for gap/lineage; not a full review"
+   ]
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "agg:CG-A01",
+   "material_id": "agg:2512.22047",
+   "material_sha256": "c134dac591c66cc8d583a75a91995a5bdcee6edb3949f9deeaf49e6632b688ac",
+   "locator": "MAI-UI Sec 2.3.3",
+   "quote": "we introduce a centralized Environment Manager that coordinates container instances across multiple physical machines",
+   "support_explanation": "The base model's own RL stack already has a containerised environment manager (reuse, cross-machine orchestration, fault tolerance).",
+   "kind": "reviewer_comment"
+  },
+  {
+   "evidence_id": "agg:CG-A02",
+   "material_id": "agg:2512.22047",
+   "material_sha256": "c134dac591c66cc8d583a75a91995a5bdcee6edb3949f9deeaf49e6632b688ac",
+   "locator": "MAI-UI Sec 2.3.3",
+   "quote": "maintaining backup sessions for seamless failover and replacement",
+   "support_explanation": "Failover/replacement sessions already exist in the neighbour, the counterpart of ClawGUI's spare-server rotation.",
+   "kind": "reviewer_comment"
+  },
+  {
+   "evidence_id": "agg:CG-A03",
+   "material_id": "agg:2512.22047",
+   "material_sha256": "c134dac591c66cc8d583a75a91995a5bdcee6edb3949f9deeaf49e6632b688ac",
+   "locator": "MAI-UI Sec 2.3.3",
+   "quote": "This hybrid approach achieves 83% agreement with human annotations",
+   "support_explanation": "The neighbour validates its rule+MLLM verifier against humans; ClawGUI reports no such validation for its MLLM judge or PRM.",
+   "kind": "reviewer_comment"
+  },
+  {
+   "evidence_id": "agg:CG-A04",
+   "material_id": "agg:2512.22047",
+   "material_sha256": "c134dac591c66cc8d583a75a91995a5bdcee6edb3949f9deeaf49e6632b688ac",
+   "locator": "MAI-UI Sec 2.3.3",
+   "quote": "This constraint motivates our use of virtualized environments rather than physical devices.",
+   "support_explanation": "Physical-device training is genuinely absent in the neighbour, so ClawGUI's residual includes it, but ClawGUI reports no physical-device result.",
+   "kind": "reviewer_comment"
+  },
+  {
+   "evidence_id": "agg:CG-A05",
+   "material_id": "agg:2512.22047",
+   "material_sha256": "c134dac591c66cc8d583a75a91995a5bdcee6edb3949f9deeaf49e6632b688ac",
+   "locator": "MAI-UI Table (MobileWorld), Ours rows",
+   "quote": "Ours MAI-UI-8B 27.5 22.2 20.0 24.9",
+   "support_explanation": "Official MAI-UI-8B GUI-only SR is 27.5; ClawGUI lists 19.7. No MAI-UI-2B row exists in the official table.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:CG-A06",
+   "material_id": "agg:2512.22047",
+   "material_sha256": "c134dac591c66cc8d583a75a91995a5bdcee6edb3949f9deeaf49e6632b688ac",
+   "locator": "MAI-UI Table (MobileWorld) header",
+   "quote": "GUI-Only (116)",
+   "support_explanation": "Official GUI-only denominator is 116 tasks; ClawGUI states 117.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:CG-A07",
+   "material_id": "agg:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Table 1",
+   "quote": "MAI-UI-8B | 19.7",
+   "support_explanation": "ClawGUI's MAI-UI-8B value, 7.8 points below the official one.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:CG-A08",
+   "material_id": "agg:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Table 1",
+   "quote": "MAI-UI-2B | 11.1",
+   "support_explanation": "Same-scale comparator; absent from the official table, so evaluated by ClawGUI under unstated settings.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:CG-A09",
+   "material_id": "agg:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Table 1 caption",
+   "quote": "Table 1 : Comparison of models on GUI-Only (117 tasks) benchmark.",
+   "support_explanation": "117 tasks, while all non-MAI-UI rows are identical to MAI-UI's 116-task table, i.e. mixed provenance and denominators.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:CG-A10",
+   "material_id": "agg:2512.22047",
+   "material_sha256": "c134dac591c66cc8d583a75a91995a5bdcee6edb3949f9deeaf49e6632b688ac",
+   "locator": "MAI-UI Sec 2.3.3",
+   "quote": "we integrated over 35 applications, encompassing system utilities and open-source software such as Mattermost (enterprise communication), Mastodon (social media), and Mall4Uni (e-commerce)",
+   "support_explanation": "The base model was already RL-trained on the MobileWorld app family, so the starting point is in-distribution for the test apps.",
+   "kind": "reviewer_comment"
+  },
+  {
+   "evidence_id": "agg:CG-A11",
+   "material_id": "agg:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Sec 3.2.1",
+   "quote": "ClawGUI-RL launches dozens of Docker-based Android emulators in parallel via MobileWorld",
+   "support_explanation": "Training environment = evaluation environment; training-task source/overlap never reported.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:CG-A12",
+   "material_id": "agg:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Sec 4.2",
+   "quote": "Both models share the same base weights; the gain stems entirely from ClawGUI-RL’s scalable environment management and reward design.",
+   "support_explanation": "Attribution claim not supported by any infrastructure-isolating control.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:CG-A13",
+   "material_id": "agg:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Table 2",
+   "quote": "GiGPO | Dense (episode- & step-level) | 17.1",
+   "support_explanation": "The only ablation changes estimator (GRPO->GiGPO) and reward type together.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:CG-A14",
+   "material_id": "agg:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Sec 2.2",
+   "quote": "none of these works open-source their training infrastructure",
+   "support_explanation": "Author gap statement; consistent with MAI-UI, which states model release but no infrastructure release.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:CG-A15",
+   "material_id": "agg:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Sec 1 contributions",
+   "quote": "We release ClawGUI-RL , the first open-source GUI agent RL infrastructure with validated support for both large-scale parallel virtual environments and real physical devices",
+   "support_explanation": "'Validated' physical-device support has no reported experiment.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E01",
+   "material_id": "sol:paper:2604.11784v1",
+   "material_hash": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§3.2.2, lines 250–260",
+   "quote": "ClawGUI-RL adopts a two-level reward formulation combining a binary outcome reward with a dense process reward.",
+   "support_explanation": "Actual reward signal construction, not an autonomous architecture-improvement loop.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E02",
+   "material_id": "sol:paper:2604.11784v1",
+   "material_hash": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§3.2.2 line 256",
+   "quote": "After each action, the PRM receives the previous screenshot, the current screenshot, and the full history of actions taken so far",
+   "support_explanation": "Privileged training-time judge observes transition and history; its correctness is an assumption, not established by this description.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E03",
+   "material_id": "sol:paper:2604.11784v1",
+   "material_hash": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.1 line 367",
+   "quote": "We train ClawGUI-2B based on MAI-UI-2B",
+   "support_explanation": "Same-base initialization, training setup 64 environments/8 A6000/3 epochs, Qwen3.5-72B PRM.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E04",
+   "material_id": "sol:paper:2604.11784v1",
+   "material_hash": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.1 line 369",
+   "quote": "We set the maximum number of interaction steps to 50 for all evaluations.",
+   "support_explanation": "Online MobileWorld GUI-only split with 117 tasks and shared declared cap; no unseen-app split demonstrated.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E05",
+   "material_id": "sol:paper:2604.11784v1",
+   "material_hash": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Table 1 line 359",
+   "quote": "ClawGUI-2B | 17.1",
+   "support_explanation": "Author-reported 17.1 vs MAI-UI-2B 11.1; +6.0 percentage points, not +6% relative. No run performed by this reviewer.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E06",
+   "material_id": "sol:paper:2604.11784v1",
+   "material_hash": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Table 2 lines 371–375",
+   "quote": "GRPO | Binary (episode-level) | 14.5",
+   "support_explanation": "14.5 vs GiGPO dense 17.1 changes reward AND estimator; cannot isolate PRM or infrastructure management.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E07",
+   "material_id": "sol:paper:2604.11784v1",
+   "material_hash": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.4 line 406",
+   "quote": "A result is considered successfully reproduced",
+   "support_explanation": "Reproduction rule is <=2 absolute percentage-point difference OR reproduced >= official; upward deviations count automatically, so not symmetric numerical equivalence.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E08",
+   "material_id": "sol:paper:2604.11784v1",
+   "material_hash": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.4 line 433",
+   "quote": "95.8% (46/48 cells with official baselines)",
+   "support_explanation": "Author reproduction denominator explicit; not 95.8% task success or reviewer reproduction.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E09",
+   "material_id": "sol:paper:2604.11784v1",
+   "material_hash": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§3.4.2 line 332",
+   "quote": "the top- k k most semantically similar memories are retrieved and injected into the system context",
+   "support_explanation": "Persistent memory implementation described, but no later-task benefit experiment found in complete paper.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E10",
+   "material_id": "sol:paper:2604.11784v1",
+   "material_hash": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§3.3.2 line 307",
+   "quote": "a point-in-box judge for standard GUI grounding benchmarks",
+   "support_explanation": "Static grounding judges and OSWorld-G refusal-aware/AndroidControl action judges differ from task-completion validation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E11",
+   "material_id": "sol:reference:2501.12326:cache",
+   "material_hash": "ad78e3c7b9d94206e7c10c63f31274825b81efb8bea2ca021bc153cfc5cac241",
+   "locator": "UI-TARS §4.5 line 654",
+   "quote": "Human Review : part of the traces are further inspected by annotators",
+   "support_explanation": "Prior UI-TARS already collected, filtered and trained on online traces on hundreds of PCs; does not prove all targeted infrastructure already open.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E12",
+   "material_id": "sol:reference:2405.14573:cache",
+   "material_hash": "d745a9085e86a2ea357a27f08bb1c0fd1918ff9040ef9885c5db387c456a56cc",
+   "locator": "AndroidWorld §3.4 line 226",
+   "quote": "AndroidWorld provides reward signals primarily by managing application state",
+   "support_explanation": "Existing resettable Android benchmark and state-checker ancestor; screenshot-only real-device judging has weaker hidden-state access.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E001",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Abstract",
+   "quote": "progress in this area is bottlenecked less by modeling capacity than by the absence of a coherent full-stack infrastructure",
+   "support_explanation": "作者对瓶颈的定位：基础设施而非模型容量",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E002",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§1 para 3",
+   "quote": "none release the underlying infrastructure, leaving outside researchers unable to reproduce the setup or build upon it",
+   "support_explanation": "gap1：在线 RL 基础设施未开源",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E003",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§1 para 4",
+   "quote": "Prompt formatting, coordinate normalization conventions, image resolution, and sampling configuration each shift reported accuracy by several points, and these choices are often undocumented.",
+   "support_explanation": "gap2：评测配置漂移（本文未单独量化各因素）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E004",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§3.2.1 Spare Server Rotation",
+   "quote": "When a container is detected as unhealthy, the system automatically draws from the queue and rotates to a healthy replacement",
+   "support_explanation": "环境管理器的健康检查/备用服务器轮换机制",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E005",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§3.2.1 Real Device Training",
+   "quote": "ClawGUI-RL therefore relies on MLLM-as-judge to assess task completion by evaluating the final screen state against the task instruction",
+   "support_explanation": "真机训练仅靠 MLLM judge 作奖励，无系统级校验",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E006",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§3.2.1 Task Evaluation (virtual)",
+   "quote": "Virtual environments expose system-level root access, enabling reliable task completion verification through direct inspection of app state and database records.",
+   "support_explanation": "模拟器上结果奖励来自特权状态检查（MobileWorld）+MLLM judge",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E007",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§3.2.2",
+   "quote": "After each action, the PRM receives the previous screenshot, the current screenshot, and the full history of actions taken so far, and judges whether the current action meaningfully contributes to task completion.",
+   "support_explanation": "PRM 信息可见性与输出：逐步稠密分",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E008",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.1 Training",
+   "quote": "For PRM-based step-level reward judgment, we employ Qwen3.5-72B as the judge model.",
+   "support_explanation": "PRM 由 72B 零样本 judge 担任，未见校验",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E009",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.1 Training",
+   "quote": "We adopt the GiGPO algorithm with a rollout group size of 8, sampling temperature of 0.7, and learning rate of 1e-6 for 3 epochs with a training batch size of 8.",
+   "support_explanation": "训练超参；未给训练任务来源/数量",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E010",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.1 Evaluation",
+   "quote": "We set the maximum number of interaction steps to 50 for all evaluations.",
+   "support_explanation": "统一 50 步预算（仅声明本文评测）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E011",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.1 Evaluation",
+   "quote": "which contains 117 tasks that require agents to complete real-world mobile interactions purely through visual GUI control",
+   "support_explanation": "GUI-Only 117 任务，评测分母",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E012",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Table 1",
+   "quote": "ClawGUI-2B | 17.1",
+   "support_explanation": "主结果（单次）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E013",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Table 1",
+   "quote": "MAI-UI-2B | 11.1",
+   "support_explanation": "同规模基线（来源未说明是否重跑）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E014",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Table 1",
+   "quote": "Doubao-1.5-UI-TARS | 26.3",
+   "support_explanation": "表内更高的端到端模型：结论需限定在“未训练的大模型”",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E015",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Table 1",
+   "quote": "MAI-UI-8B | 19.7",
+   "support_explanation": "同族更大模型更高",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E016",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Table 2",
+   "quote": "GRPO | Binary (episode-level) | 14.5",
+   "support_explanation": "消融臂 A",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E017",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Table 2",
+   "quote": "GiGPO | Dense (episode- & step-level) | 17.1",
+   "support_explanation": "消融臂 B；差 2.6 点 ≈ 117 任务中 3 个",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E018",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.2 (1)",
+   "quote": "Both models share the same base weights; the gain stems entirely from ClawGUI-RL’s scalable environment management and reward design.",
+   "support_explanation": "作者因果归因，范围大于所做消融",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E019",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.3",
+   "quote": "replacing GRPO with GiGPO yields a 2.6% improvement in SR",
+   "support_explanation": "提升归因于 GiGPO 的锚状态分组，而非 PRM",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E020",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§3.2.3",
+   "quote": "GRPO assigns a uniform episode-level advantage to every step within a trajectory, which is too coarse for long-horizon GUI interaction.",
+   "support_explanation": "RL 侧具体瓶颈：信用分配粒度",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E021",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.2 (1)",
+   "quote": "surpassing the same-scale MAI-UI-2B baseline by a relative margin of 6.0%",
+   "support_explanation": "措辞：6.0 为绝对点数，结论处另写 54% 相对",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E022",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§3.3",
+   "quote": "ClawGUI-Eval addresses this by pinning all evaluation choices per model and adopting a strict three-stage pipeline",
+   "support_explanation": "Eval 的核心操作",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E023",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.4",
+   "quote": "if the reproduced value meets or exceeds the official number, or the absolute difference is",
+   "support_explanation": "复现判据：达到或超过官方、或差距≤2 点",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E024",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.4",
+   "quote": "ClawGUI-Eval achieves an overall reproduction rate of 95.8% (46/48 cells with official baselines)",
+   "support_explanation": "复现率分母 48 格",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E025",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.4",
+   "quote": "both involve models whose official evaluation configurations have not been publicly disclosed",
+   "support_explanation": "两处失败的作者解释（未验证）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E026",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.4",
+   "quote": "we adopt a Zoom paradigm , a two-stage crop-then-ground strategy that applies 25% crop tiles for Gemini and 50% crop tiles for Seed",
+   "support_explanation": "闭源模型使用与官方不同的两阶段推理流程",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E027",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Fig. 3 caption",
+   "quote": "Reproduced results are compared against official baselines across five benchmarks, achieving a 95.8% overall reproduction rate.",
+   "support_explanation": "实际复现表仅覆盖 5 个基准（AndroidControl 未出现在 Table 3）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E028",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Abstract",
+   "quote": "ClawGUI-RL provides the first open-source GUI agent RL infrastructure with validated support for both parallel virtual environments and real physical devices",
+   "support_explanation": "“真机验证”主张",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E029",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§3.2.1 Real Device Training",
+   "quote": "real-device tasks must be manually authored to ensure they are both executable and verifiable on physical hardware",
+   "support_explanation": "真机任务人工编写；全文无真机训练结果",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E030",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§3.4.2",
+   "quote": "Duplicate memories are detected and merged rather than accumulated, keeping the memory store lean and relevant.",
+   "support_explanation": "ClawGUI-Agent 记忆机制仅描述，无评测",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E031",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "§4.2 (3)",
+   "quote": "Methods that couple proprietary frontier models with dedicated grounding modules achieve higher absolute numbers",
+   "support_explanation": "作者承认 agentic 框架在表中更高",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E032",
+   "material_id": "son55:2509.02544",
+   "material_sha256": "efdf7a26d17ae2f59c1447b256508ca472716208a9f47271984c1cfa62a54c63",
+   "locator": "§1 (UI-TARS-2 contributions)",
+   "quote": "we build a unified sandbox platform capable of orchestrating heterogeneous environments—ranging from cloud VMs for GUI interaction to browser-based sandboxes for games—under a consistent API.",
+   "support_explanation": "最近邻：UI-TARS-2 已有统一沙箱平台（含 Android VM）但未开源——本文 gap1 的参照",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E033",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "full text (no appendix in material)",
+   "quote": null,
+   "support_explanation": "在全文（含参考文献前所有章节）查找：训练任务来源/数量、与 117 评测任务是否不相交、PRM 提示词与分值范围、PRM 对人工标注的一致率、多种子/置信区间——均未报告",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "son55:E034",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Table 3",
+   "quote": "Qwen3-VL-2B | 48.50 | 43.90",
+   "support_explanation": "复现失败格之一（差 4.6 点）",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E035",
+   "material_id": "son55:2604.11784",
+   "material_sha256": "98f8e34b21bb97eb8c2eb80bdaf674c82c24a5967fb33f0fa2539109767dbc37",
+   "locator": "Table 3",
+   "quote": "UI-TARS 1.5-7B | 49.60 | 42.06",
+   "support_explanation": "复现失败格之二（差 7.5 点）",
+   "kind": "author_report"
+  }
+ ],
+ "preliminary_evidence_judgment": "Read before seat scores, then checked against the frozen MAI-UI reference (2512.22047). ClawGUI bundles (i) an online-RL harness on MobileWorld Docker emulators (reset, root-level + MLLM-judge outcome reward, spare-server rotation) with a Qwen3.5-72B PRM step reward and GiGPO, (ii) a three-stage grounding-evaluation harness (46/48 official cells within a one-sided 2-point rule), and (iii) a deployment agent (hybrid CLI/GUI, memory) with no evaluation. ClawGUI-2B (from MAI-UI-2B) reaches 17.1% on 117 MobileWorld GUI-only tasks vs 11.1%; GRPO-binary 14.5 vs GiGPO-dense 17.1 changes estimator and reward together; single runs; training-task source and overlap with the 117 test tasks are not reported; real-device training is called 'validated' with no result. MAI-UI shows the neighbour already has a containerised environment manager with failover and a hybrid rule/MLLM verifier with 83% human agreement, trained only in virtual environments on the same app family as MobileWorld; its own MobileWorld table (116 tasks) lists MAI-UI-8B at 27.5 and no MAI-UI-2B, while ClawGUI's Table 1 copies the other rows verbatim but gives MAI-UI-8B 19.7 and MAI-UI-2B 11.1. Applicable: gui K19, C26, trajectory_level_policy_training; E09, E10, E12, E13, E16, E28.",
+ "agreed_items_review": "Agreed items X=2, E.measurement=2, E.causality=1, E.cost=1, claim_type system_method, evidence_level online, claim_support scoped were re-checked against the text and MAI-UI; all stand, with E.measurement/E.causality reasons extended by the Table 1 provenance finding.",
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "在线 RL 的环境管理（模拟器 Docker 集群 + 物理手机统一接口）",
+   "information": "模拟器：特权 root 级 app 状态/数据库 + 终态截图 MLLM judge；真机：仅终态截图 MLLM judge（无系统级校验）",
+   "operation": "四阶段生命周期（reset/evaluate/spare-server rotation/teardown）；健康检查与备用容器替换；定期重启防状态积累",
+   "output": "可恢复的并行 rollout + 二值结果奖励",
+   "conditions": "依赖 MobileWorld 的 Docker 模拟器；真机任务须人工编写",
+   "feedback": "容器健康状态 / 终态奖励",
+   "selection_rule/data": "not_applicable：无候选选择，仅故障切换",
+   "persistence": "not_applicable",
+   "later_use": "not_applicable",
+   "claimed_effect": "长跑稳定性与可扩展性（无量化指标；仅称“允许任务不中断恢复”）",
+   "failure_boundary": "真机无系统级验证；真机训练结果未报告",
+   "evidence_ids": [
+    "son55:E004",
+    "son55:E005",
+    "son55:E006",
+    "son55:E029",
+    "son55:E033"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "策略优化的奖励/优势：二值结果奖励 + PRM 逐步稠密奖励 + GiGPO 锚状态分组优势",
+   "information": "PRM 看到前后截图+全部历史动作（无未来信息，无特权状态）；GiGPO 对不同 rollout 中相同中间状态聚类",
+   "operation": "R = R_outcome + R_step；GiGPO 两级优势（轨迹级 + 锚状态步级折扣回报归一）",
+   "output": "更新后的 2B 策略（MAI-UI-2B 起点，3 epoch）",
+   "conditions": "训练 64 并行模拟环境、组大小 8、judge=Qwen3.5-72B",
+   "feedback": "MobileWorld 终态检查 + PRM 分",
+   "selection_rule/data": "GiGPO 以相同状态为锚做组内归一（无需价值网络）；训练任务来源未报告",
+   "persistence": "策略权重（ClawGUI-2B）",
+   "later_use": "在 MobileWorld GUI-Only 117 任务上评测",
+   "claimed_effect": "GRPO 14.5 → GiGPO 17.1；对 MAI-UI-2B 的 +6.0 点",
+   "failure_boundary": "PRM 与 GiGPO 的贡献未分离；PRM 准确性/奖励投机未分析；单次运行",
+   "evidence_ids": [
+    "son55:E007",
+    "son55:E008",
+    "son55:E009",
+    "son55:E016",
+    "son55:E017",
+    "son55:E018",
+    "son55:E019",
+    "son55:E020",
+    "son55:E033"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "GUI 基准评测流程（Infer→Judge→Metric 解耦；每模型固定配置；公开预测）",
+   "information": "各基准官方数据与评分器；每模型“钉死”的提示/坐标归一/分辨率/采样配置",
+   "operation": "统一推理后端、基准专属 judge（点入框/多边形+拒答/多动作）、分层指标；对闭源模型用两阶段 Zoom 裁剪",
+   "output": "可复现的精度表与全部推理输出",
+   "conditions": "需官方数值作锚；官方配置未公开的模型无法对齐",
+   "feedback": "与官方数值的差距（≤2 点或不低于官方即判复现）",
+   "selection_rule/data": "每模型配置如何选定/是否对齐官方数值调参：未报告",
+   "persistence": "公开的预测与代码",
+   "later_use": "他人复评/重判",
+   "claimed_effect": "46/48 格复现（95.8%）",
+   "failure_boundary": "容差与“超过官方也算成功”会掩盖偏差；AndroidControl 无复现结果；仅评测式一致性，不是新的因果诊断",
+   "evidence_ids": [
+    "son55:E022",
+    "son55:E023",
+    "son55:E024",
+    "son55:E025",
+    "son55:E026",
+    "son55:E027",
+    "son55:E034",
+    "son55:E035"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "三缺口：开源在线 RL 基础设施缺失、GUI 基准数字不可比、训练出的 agent 难到达真实用户（E001-E003）。",
+  "checked_gap": "缺口1（RL 基础设施闭源）有最近邻佐证：UI-TARS-2 已有统一沙箱/异步 rollout 平台但未释出（E032）；缺口2（评测漂移）的存在性本文并未单独实验量化——仅间接由复现表中 2 处不一致体现（E034/E035）；缺口3（部署）为产品/工程缺口，无度量。",
+  "lineage": {
+   "ancestors": [
+    "UI-TARS-2 (2509.02544, 闭源多轮 RL+统一沙箱)",
+    "MAI-UI / MobileGUI-RL / ComputerRL / UI-Venus-1.5（正文引述，未取得全文）",
+    "verl / verl-agent / GiGPO (算法祖先，外部)"
+   ],
+   "closest_adjacent": "UI-TARS-2 的沙箱+多轮 RL 栈（版本 2509.02544，material_id 同）；本文贡献在“开源+真机+评测/部署打包”，不是新算法。",
+   "source_versions": {
+    "2509.02544": "html fixed sha256 efdf7a26..."
+   }
+  },
+  "residue": "开源可复现的 GUI 在线 RL 管线仍稀缺；真机在线 RL 的可行性与收益仍无公开证据（本文亦未给出结果）。",
+  "stakes": "无法外部复现 → 在线 RL 增益无法独立验证；评测漂移可达“几个点”→ 小幅提升难分辨。",
+  "method_response": "提供环境管理器+PRM/GiGPO+评测流水线+部署代理；对 gap1 给出可运行基础设施（但开源完整性无法由全文核验），对 gap2 给出配置钉死与预测公开，对 gap3 给出系统描述。",
+  "remaining_gap": "真机训练实效、PRM 的有效性与可靠性、训练/评测任务隔离、与其他开源 RL 栈的并列对比、部署层的任何用户侧评测。",
+  "evidence_ids": [
+   "agg:CG-A01",
+   "agg:CG-A02",
+   "agg:CG-A03",
+   "agg:CG-A04",
+   "agg:CG-A14"
+  ],
+  "unresolved": [
+   "“first open-source”“none release infra”仅凭本文引述，无法由固定原文核验（ComputerRL 等未取得全文）。"
+  ],
+  "aggregate_neighbor_check": "MAI-UI (2512.22047), the base model and closest neighbour, already runs online RL in a containerised Android environment with a centralised environment manager, failover sessions and a hybrid rule/MLLM verifier validated at 83% human agreement, trained only on virtual devices and with no stated infrastructure release. ClawGUI's residual is therefore open release + physical-device support + step-level credit assignment, not environment management as such; ClawGUI does not acknowledge the overlap, and the physical-device part has no result.",
+  "closest_adjacent_aggregate": {
+   "name": "MAI-UI",
+   "version": "2512.22047 (fixed reference, sha256 c134dac5...)",
+   "relationship": "base weights and nearest RL-infrastructure neighbour"
+  }
+ },
+ "rs_pattern": {
+  "primary": "self_supervised_signal_engineering",
+  "supporting": [
+   "controlled_diagnostic_design"
+  ],
+  "matches": [
+   {
+    "main_id": "self_supervised_signal_engineering",
+    "sub_id": "rs:C26",
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "1 诊断监督缺失为比较/稠密型": "有（GRPO 回合级优势“过粗”，E020）",
+     "2 非人工信号来源": "Qwen3.5-72B 零样本 PRM（外部 judge，非策略自身）",
+     "3 粒度匹配信用分配失败处": "有：回合级→步级（GiGPO 锚状态 + PRM 步分）",
+     "4 以偏好/对比目标优化": "否：沿用 GRPO/GiGPO 标量奖励，无新的目标重构",
+     "5 归因于信号结构并闭环到终端指标": "缺失：无 PRM on/off 消融，无同算力基线（E019、E033）"
+    },
+    "success/failure_checks": "success：粒度重设（部分）；failure：“single-component swap”——仅换步级粒度/换 judge 来源，且归因不清（命中）",
+    "evidence_ids": [
+     "son55:E007",
+     "son55:E008",
+     "son55:E016",
+     "son55:E017",
+     "son55:E019",
+     "son55:E020",
+     "son55:E033"
+    ],
+    "reason": "实际执行的是“把现成 judge+现成步级优势算法接入 GUI RL 管线”，与 C26 的粒度重设一致，但 C26 的关键成功条件（隔离信号结构的贡献）缺失；匹配度仅为 partial，且不应因此加分。"
+   },
+   {
+    "main_id": "controlled_diagnostic_design",
+    "sub_id": null,
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "命名混杂因素": "提示格式/坐标归一/分辨率/采样（E003），但未逐一隔离",
+     "对照/锚": "以官方数值为外部锚（Table 3）",
+     "操纵仪器作为自变量": "否——只“钉死”不“变化”，无各因素效应量"
+    },
+    "success/failure_checks": "success：外部锚存在；failure：未做受控变化、复现判据宽松（命中）",
+    "evidence_ids": [
+     "son55:E003",
+     "son55:E022",
+     "son55:E023",
+     "son55:E024",
+     "son55:E025"
+    ],
+    "reason": "Eval 部分是评测标准化而非“混杂隔离”；仅作弱 supporting，不选子卡 C02（其“恰好移动一个轴”的构造未执行）。"
+   }
+  ],
+  "outside_taxonomy": false,
+  "reason": "15 主卡中 C26/信号工程最贴近 RL 部分；其余（部署代理、环境稳定性工程）无对应原卡，不强塞。",
+  "executes_pattern": {
+   "self_supervised_signal_engineering/rs:C26": "partial",
+   "controlled_diagnostic_design": "weak"
+  },
+  "resolves_problem": {
+   "sparse-reward credit assignment in GUI RL": "unresolved（仅 +2.6 点≈3 任务，且 PRM 未隔离）",
+   "evaluation drift": "partially_shown（46/48 格在宽松容差内复现；未量化漂移来源）",
+   "real-device deployment": "not_shown"
+  },
+  "aggregate_source_seat": "son55",
+  "aggregate_reason": "self_supervised_signal_engineering / rs:C26 partial (both seats) plus son55's supporting controlled_diagnostic_design/null for the distinct evaluation-harness operation (pin confounding eval choices, anchor to official numbers), recorded as weak because the instrument is never varied."
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "learned_outcome_and_process_judges",
+    "sub": "gui:K19",
+    "version": "cua-agents/v1",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "condition": "Step-level PRM consumed as dense RL reward",
+      "status": "met",
+      "reason": "Before/after+history judge score combined with terminal reward."
+     },
+     {
+      "condition": "Human-labelled in-distribution PRM and held-out reliability",
+      "status": "unmet",
+      "reason": "Qwen3.5-72B judge named but human-label validation not reported."
+     },
+     {
+      "condition": "Reward hacking/OOD audit",
+      "status": "unmet",
+      "reason": "Not found in complete cached paper."
+     }
+    ],
+    "evidence_ids": [
+     "sol:E01",
+     "sol:E02",
+     "sol:E06"
+    ],
+    "namespace": "gui",
+    "aggregate_source_seat": "sol"
+   },
+   {
+    "main": "online_evaluation_methodology",
+    "sub": "gui:C26",
+    "version": "cua-agents-core/v1",
+    "fit": "partial",
+    "condition_checks": [
+     {
+      "condition": "Point-in-box per-sample evaluation",
+      "status": "met",
+      "reason": "Common infer/judge/metric on multiple static datasets."
+     },
+     {
+      "condition": "Static accuracy distinguished from agent success",
+      "status": "partial",
+      "reason": "Separate online MobileWorld result exists; broad full-stack claims remain wider."
+     },
+     {
+      "condition": "Annotation/config and equivalence audit",
+      "status": "partial",
+      "reason": "Config pinning and 48-cell comparison; asymmetric success rule and unisolated drift causes."
+     }
+    ],
+    "evidence_ids": [
+     "sol:E07",
+     "sol:E08",
+     "sol:E10"
+    ],
+    "namespace": "gui",
+    "aggregate_source_seat": "sol"
+   },
+   {
+    "namespace": "gui",
+    "main": "trajectory_level_policy_training",
+    "sub": null,
+    "version": "taxonomy@sha256:430aa36290ec",
+    "fit": "weak",
+    "condition_checks": [
+     {
+      "cond": "S1 SFT/离线初始化",
+      "status": "met",
+      "note": "起点为 MAI-UI-2B",
+      "evidence_ids": [
+       "son55:E009"
+      ]
+     },
+     {
+      "cond": "F3 短任务/子集/少重复",
+      "status": "present",
+      "note": "117 任务、单次",
+      "evidence_ids": [
+       "son55:E011",
+       "son55:E033"
+      ]
+     },
+     {
+      "cond": "F4 跨尺寸增益未示",
+      "status": "present",
+      "note": "仅 2B",
+      "evidence_ids": [
+       "son55:E009"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "son55:E009",
+     "son55:E011"
+    ],
+    "reason": "主类匹配在线 RL 训练；不选 K20 子卡（K20 要求学习型价值基线/过滤回放，本文是无价值网络的组相对优势）。",
+    "aggregate_source_seat": "son55"
+   }
+  ],
+  "unassigned": [
+   "标准化评测流水线（配置钉死+预测公开+复现率）：无对应领域卡；环境管理器稳定性工程：无对应卡"
+  ],
+  "revision_proposals": [
+   {
+    "type": "candidate_case",
+    "title": "配置钉死的可复现 GUI 评测与预测公开",
+    "support": "仅本文（单篇 → 不足以 candidate_pattern）",
+    "evidence_ids": [
+     "son55:E022",
+     "son55:E024"
+    ],
+    "note": "需第二篇独立全文支持才可升格；本批内不改卡。"
+   }
+  ],
+  "aggregate_note": "Union: zero-shot PRM step reward (K19), single-step click-in-box evaluation harness (C26), online RL training of the policy (trajectory_level_policy_training, no sub: K20 needs value baselines/filtered replay)."
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "self_supervised_signal_engineering",
+   "rs_sub": "rs:C26",
+   "domain": {
+    "namespace": "gui",
+    "main": "learned_outcome_and_process_judges",
+    "sub": "gui:K19"
+   },
+   "operation_correspondence": "RS C26 的“把单一终端标量重粒度化为步级信号”↔ K19 的“PRM 步分作稠密奖励”；两者都由外部 judge 提供信号。",
+   "required_conditions_and_differences": "RS 要求隔离信号结构贡献、与同算力基线对比；K19 要求人工标注同分布 PRM。本文两项都缺 → 仅操作对应，条件未满足。",
+   "evidence_ids": [
+    "son55:E007",
+    "son55:E008",
+    "son55:E019",
+    "son55:E033"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report execution-checked success rate on OSWorld (or OSWorld-Verified) for desktop computer-use claims, stating the step budget (15 vs 50 steps) and observation setting",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无桌面 OSWorld 主张；GUI-only 评测限于 MobileWorld（移动）。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report online success on AndroidWorld for mobile-agent claims, not only offline AndroidControl/AITW step metrics",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": true,
+   "status": "partial",
+   "reason": "改用在线交互基准 MobileWorld GUI-Only（117 任务）而非 AndroidWorld；有在线成功率，但无 AndroidWorld 对照，也未报告 AndroidControl 离线数。",
+   "evidence_ids": [
+    "son55:E011",
+    "son55:E012"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E03",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report success on WebArena (self-hosted, functional-correctness checkers) for web-agent training or planning claims; if the 165-task WebArena-Lite or a per-template subset is used, say so and justify it",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无 Web agent 主张。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E04",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Evaluate live-web agents on Online-Mind2Web (human-validated, start URL given, no search engine) or Mind2Web-Live rather than only WebVoyager, where a naive search-and-click agent already solves 51% of sampled tasks",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无实时网页主张。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report GUI grounding on ScreenSpot-Pro (high-resolution professional desktop) and ScreenSpot-v2, not only ScreenSpot v1, which saturates (7B and 72B indistinguishable)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无“提升 grounding 的模型/数据配方”主张——ClawGUI-Eval 复现的是他人模型的 SS-Pro/SS-V2 数值。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare a new grounder against UGround(-V1-7B), Aguvis-7B/72B, OS-Atlas-7B and UI-TARS(-1.5) at matched backbone size",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "未提出新 grounder。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare a native end-to-end GUI policy against UI-TARS(-1.5)-7B (or the same backbone's SFT-only model) and against an agentic framework (GPT-4o/o3 planner + specialised grounder such as UGround, Aria-UI, Jedi, GTA1)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "训练后的端到端 2B 与同基座 MAI-UI-2B 及表内未训练模型比较；未与 UI-TARS-1.5 同规模、同基座 SFT-only 控制对比；表中 Doubao-1.5-UI-TARS(26.3)、MAI-UI-8B(19.7)与 agentic 框架均更高（作者已承认 agentic 属另一机制）。",
+   "evidence_ids": [
+    "son55:E012",
+    "son55:E013",
+    "son55:E014",
+    "son55:E015",
+    "son55:E031"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E08",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For planner-grounder systems, hold the planner fixed and swap grounders (e.g. GPT-4o + UGround vs + Aguvis vs + Jedi), and report the planner alone",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "未做 planner-grounder 拆分主张。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare GUI online-RL methods against DigiRL, WebRL, filtered BC / AWR and an SFT-only model trained on the same data",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": true,
+   "status": "partial",
+   "reason": "仅 GRPO vs GiGPO 的内部对比；无 SFT-only(同数据)、DigiRL/WebRL/Filtered-BC/AWR 对照。",
+   "evidence_ids": [
+    "son55:E016",
+    "son55:E017"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E10",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Validate an LLM/VLM success judge or outcome reward model against human labels on trajectories from agents not used to build it (agreement/accuracy, plus the resulting success-rate gap)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "MLLM-as-judge 同时用于真机奖励与 PRM；全文未报告与人工标签的一致率或在未参与构建的 agent 轨迹上的校验。",
+   "evidence_ids": [
+    "son55:E005",
+    "son55:E008",
+    "son55:E033"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E11",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report judge reliability separately for positive and negative verdicts (precision and NPV, or precision/recall per class), not only overall accuracy",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "无 judge 的正/负判决分别的可靠性（precision/NPV）报告。",
+   "evidence_ids": [
+    "son55:E033"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2509.23738#s1",
+     "note": "PRM-PPO vs ORM-PPO vs ARPO"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2602.00575#s2",
+     "note": "VAGEN reward vs ProRe reward"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2510.18596",
+     "note": "authors: UPE not validated inside RL; abstention may bias kept samples"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2605.06732#s3",
+     "note": "theory: systematic reward bias is not removed by more rollouts"
+    }
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Binary vs dense comparison exists, confounded with GiGPO; reward hacking not audited.",
+   "evidence_ids": [
+    "sol:E06"
+   ],
+   "score_item": [
+    "E.causality",
+    "X"
+   ],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E13",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Measure execution checkers (evaluation scripts) two-sidedly: false negatives on alternative valid solutions as well as false positives",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "奖励来自 MobileWorld 的特权状态检查；本文未度量检查器假阴性/假阳性（沿用基准，且 MLLM judge 叠加）。",
+   "evidence_ids": [
+    "son55:E006",
+    "son55:E033"
+   ],
+   "score_item": "E.measurement",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E14",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For PRMs or step-level verifiers, ablate the label source (human vs GPT-4o-generated step labels)",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "无 PRM 标签来源消融（人工 vs 模型生成）；PRM 为零样本 72B。",
+   "evidence_ids": [
+    "son55:E008",
+    "son55:E033"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E15",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Do not rest an agent capability claim on offline step accuracy (AndroidControl, Multimodal-Mind2Web, GUI Odyssey) alone; add an online benchmark or show the offline metric predicts online success",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": true,
+   "status": "met",
+   "reason": "agent 能力主张以在线基准为证（MobileWorld），离线复现表仅用于“评测可复现性”主张，未被当作能力证据。",
+   "evidence_ids": [
+    "son55:E011",
+    "son55:E024"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E16",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "在线结果为单次运行，无多种子均值/方差/置信区间；2.6 点≈3/117 任务。",
+   "evidence_ids": [
+    "son55:E017",
+    "son55:E033"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "partial",
+   "reason": "声明评测统一 50 步；但表内他人模型的预算与观测设置来源未说明，也无实际使用步数/超预算报告。",
+   "evidence_ids": [
+    "son55:E010"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E18",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For inference-time search or best-of-N (simulated lookahead, verifier reranking), report cost/latency and the number of candidates, and compare against real-execution tree search where reset is possible",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无推理时搜索/best-of-N。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Disclose and validate any modification to an online benchmark harness (re-implemented checkers, changed action implementations, dropped tasks, extra steps)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "applicable": true,
+   "status": "partial",
+   "reason": "披露仅用 MobileWorld GUI-Only 子集；未说明环境管理器（备用服务器、重启）对基准执行是否有任何改动，未做改动验证。",
+   "evidence_ids": [
+    "son55:E010",
+    "son55:E011",
+    "son55:E004"
+   ],
+   "score_item": "E.holdout"
+  },
+  {
+   "id": "E20",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For live-web results, state the evaluation date and handle site drift (replace outdated tasks, report blocked/CAPTCHA tasks)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文对象为移动端 RL 基础设施/评测/部署，未提出该期望所针对的主张类型或设置（详见 applies_when）；按冻结类型解释判不适用，未借此改分母。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "ClawGUI-2B 的观测空间（纯截图 vs 加 a11y）在材料中未明确；表内 agentic 框架与端到端模型混表。",
+   "evidence_ids": [
+    "son55:E014"
+   ],
+   "score_item": "E.measurement",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2509.11543",
+     "note": "relative gain 7B +104% vs 32B +37%"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2501.12326#s3",
+     "note": "2B/7B/72B"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2604.02345#s2",
+     "note": "seven backbones"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2412.04454#s3",
+     "note": "7B and 72B"
+    }
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "Training gain explicitly tested only at2B; support for many models is not a claim that its training gain generalizes across scales.",
+   "evidence_ids": [],
+   "score_item": [],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E23",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Stratify online success by human reference step count (difficulty) and audit failure causes",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "主张针对“长程 GUI 任务奖励稀疏”，但成功率未按参考长度分层、无失败原因审计。",
+   "evidence_ids": [
+    "son55:E020",
+    "son55:E033"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E24",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Test grounding robustness under controlled perturbations (zoom, text size, window position/clutter, relational instructions) with matched pairs",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文对象为移动端 RL 基础设施/评测/部署，未提出该期望所针对的主张类型或设置（详见 applies_when）；按冻结类型解释判不适用，未借此改分母。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2505.13227#s1",
+     "note": "OSWorld-G refusal category"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2404.07972#s1",
+     "note": "infeasible tasks"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2412.04454",
+     "note": "authors: model cannot indicate uncertainty or refuse"
+    }
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": true,
+   "status": "partial",
+   "reason": "OSWorld-G judge is refusal-aware; no dedicated invalid-target behavior analysis for deployed assistant.",
+   "evidence_ids": [
+    "sol:E10"
+   ],
+   "score_item": [
+    "E.measurement"
+   ],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E26",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Compare a synthetic-trajectory recipe against an instruction-first / task-driven synthesis baseline with the same executor and similar data size",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文对象为移动端 RL 基础设施/评测/部署，未提出该期望所针对的主张类型或设置（详见 applies_when）；按冻结类型解释判不适用，未借此改分母。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Show a data-scaling curve (fraction or count of synthetic samples vs downstream score) and say where it saturates",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文对象为移动端 RL 基础设施/评测/部署，未提出该期望所针对的主张类型或设置（详见 applies_when）；按冻结类型解释判不适用，未借此改分母。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "训练在 MobileWorld 环境内、评测亦为 MobileWorld GUI-Only；训练任务来源/数量/与 117 评测任务是否不相交在全文均未报告。",
+   "evidence_ids": [
+    "son55:E009",
+    "son55:E011",
+    "son55:E033"
+   ],
+   "score_item": "E.holdout",
+   "aggregate_source_seat": "son55"
+  },
+  {
+   "id": "E29",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Ablate error-correction/reflection data against filtered behaviour cloning at the same iteration count",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文对象为移动端 RL 基础设施/评测/部署，未提出该期望所针对的主张类型或设置（详见 applies_when）；按冻结类型解释判不适用，未借此改分母。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Evaluate a GUI world model by downstream agent success and closed-loop (multi-step, autoregressive) rollouts, not only teacher-forced one-step fidelity",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文对象为移动端 RL 基础设施/评测/部署，未提出该期望所针对的主张类型或设置（详见 applies_when）；按冻结类型解释判不适用，未借此改分母。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Ablate imagination / lookahead horizon, since world-model errors compound beyond 1 (lookahead) or about 5 (training) steps",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文对象为移动端 RL 基础设施/评测/部署，未提出该期望所针对的主张类型或设置（详见 applies_when）；按冻结类型解释判不适用，未借此改分母。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For training in a world model, include sim-only vs real-anchored vs SFT-only arms",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文对象为移动端 RL 基础设施/评测/部署，未提出该期望所针对的主张类型或设置（详见 applies_when）；按冻结类型解释判不适用，未借此改分母。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "Back world-model or synthetic-environment fidelity scores with a second independent judge, human validation or executable checks, not a VLM judge from the same family as the training reward",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文对象为移动端 RL 基础设施/评测/部署，未提出该期望所针对的主张类型或设置（详见 applies_when）；按冻结类型解释判不适用，未借此改分母。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For a digital twin / simulated app used for training or evaluation, measure its realism and whether it preserves the ranking of agents or checkpoints seen in the real environment",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "本文对象为移动端 RL 基础设施/评测/部署，未提出该期望所针对的主张类型或设置（详见 applies_when）；按冻结类型解释判不适用，未借此改分母。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "expectations@sha256:4663f2b47de5",
+   "text": "For memory/retrieval agents, show gains on environments other than those the memory was built from",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "ClawGUI-Agent 的个性化记忆被宣称“随时间适应用户”，但无任何评测（含跨环境收益）。",
+   "evidence_ids": [
+    "son55:E030",
+    "son55:E033"
+   ],
+   "score_item": "E.holdout"
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "ClawGUI-2B 在 MobileWorld GUI-Only 上 SR 17.1%，高于同规模 MAI-UI-2B 的 11.1%（+6.0 点），并超过 Qwen3-VL-32B(11.9) 与 UI-Venus-72B(16.4)",
+   "setting": "MobileWorld GUI-Only 117 任务，最大 50 步，起点 MAI-UI-2B，64 并行模拟环境，GiGPO+PRM(Qwen3.5-72B)",
+   "baseline/control": "MAI-UI-2B（基座，未重训对照）及表内他人数值（来源未说明）",
+   "selection_vs_test": "训练任务来源与评测任务隔离：未报告（E033）",
+   "result/denominator": "17.1 vs 11.1；117 任务单次（≈20 vs 13 个成功）",
+   "evidence_ids": [
+    "son55:E009",
+    "son55:E011",
+    "son55:E012",
+    "son55:E013",
+    "son55:E033"
+   ],
+   "counterevidence": [
+    "son55:E014",
+    "son55:E015",
+    "son55:E031",
+    "agg:CG-A05",
+    "agg:CG-A07",
+    "agg:CG-A08",
+    "agg:CG-A09",
+    "agg:CG-A10"
+   ],
+   "allowed_conclusion": "作者报告：该 2B 模型在其流水线内训练后在 MobileWorld GUI-Only 上高于其起点模型；不能归因于“基础设施”本身，也不能外推到真机/其他基准。",
+   "aggregate_note": "Comparator 11.1 is an authors' re-run (no official MAI-UI-2B MobileWorld number); their MAI-UI-8B re-run is 19.7 vs official 27.5; other rows copied from a 116-task table; the base model was already RL-trained on the MobileWorld app family."
+  },
+  {
+   "claim_id": "C2",
+   "text": "稠密步级监督（GiGPO）优于回合级 GRPO：14.5 → 17.1",
+   "setting": "同流水线、同基座",
+   "baseline/control": "GRPO（二值回合级）",
+   "selection_vs_test": "同 117 任务；单次",
+   "result/denominator": "+2.6 点 ≈ +3/117 任务",
+   "evidence_ids": [
+    "son55:E016",
+    "son55:E017",
+    "son55:E019",
+    "son55:E020"
+   ],
+   "counterevidence": [
+    "son55:E033"
+   ],
+   "allowed_conclusion": "至多：在该设置下 GiGPO 臂高 3 个任务；不能支持“PRM 稠密奖励有效”（PRM 未被隔离），也无统计显著性。"
+  },
+  {
+   "claim_id": "C3",
+   "text": "ClawGUI-Eval 跨 6 基准 11+ 模型达到 95.8% 复现率",
+   "setting": "5 个基准的表（AndroidControl 无复现数）；复现=不低于官方或差≤2 点",
+   "baseline/control": "各模型官方发布数值",
+   "selection_vs_test": "每模型配置选取过程未披露",
+   "result/denominator": "46/48 格",
+   "evidence_ids": [
+    "son55:E022",
+    "son55:E023",
+    "son55:E024",
+    "son55:E025",
+    "son55:E026",
+    "son55:E027",
+    "son55:E034",
+    "son55:E035"
+   ],
+   "counterevidence": [
+    "son55:E034",
+    "son55:E035"
+   ],
+   "allowed_conclusion": "作者报告：在作者选定配置、2 点容差下，46/48 个有官方数值的格子对上；是否为“标准”（可推广到他人模型）以及漂移的来源未被检验。"
+  },
+  {
+   "claim_id": "C4",
+   "text": "“已验证”支持物理真机训练；ClawGUI-Agent 打通 Android/HarmonyOS/iOS 与 12+ 聊天平台、混合 CLI-GUI、个性化记忆",
+   "setting": "系统描述",
+   "baseline/control": "无",
+   "selection_vs_test": "not_applicable",
+   "result/denominator": "无任何真机训练/部署结果或用户评测",
+   "evidence_ids": [
+    "son55:E028",
+    "son55:E029",
+    "son55:E030",
+    "son55:E033"
+   ],
+   "counterevidence": [
+    "agg:CG-A15",
+    "agg:CG-A04"
+   ],
+   "allowed_conclusion": "仅为“系统被实现/描述”；无实证支持“validated”。",
+   "aggregate_note": "Physical-device training is claimed 'validated' with no experiment; it is the one part of the RL residual absent from MAI-UI."
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_note": "RL claim: MobileWorld interactive benchmark, but training runs in the same MobileWorld environment and the base model was trained on the same app family -> at most online. Eval-harness claim: offline static reproduction. Deployment/real-device: no evidence.",
+  "claim_support": "scoped",
+  "strongest_supported_claim": "Author-reported, single run: after GiGPO+PRM training inside MobileWorld emulators, ClawGUI-2B solves 17.1% of 117 GUI-only tasks vs 11.1% for its MAI-UI-2B starting point as evaluated by the authors (about 20 vs 13 tasks), and the GiGPO-dense arm beats a GRPO-binary arm by 3 tasks; the evaluation harness matches 46/48 official grounding cells under a one-sided 2-point rule.",
+  "not_supported": [
+   "Gain caused by environment management/infrastructure",
+   "PRM effectiveness or reliability",
+   "Validated physical-device training",
+   "Deployment/memory benefit",
+   "Train/test task disjointness",
+   "Like-for-like comparison with copied Table 1 rows (116 vs 117 tasks; MAI-UI-8B 19.7 vs official 27.5)"
+  ],
+  "unresolved": [
+   "Evaluation settings used for the MAI-UI-2B/8B re-runs",
+   "Whether per-model eval configs were tuned toward official numbers"
+  ],
+  "author_report_only": true,
+  "our_run": false
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Concrete bottlenecks (environment instability, sparse reward, eval drift, no open RL stack) with a now-checkable nearest neighbour: MAI-UI already has the container environment manager, failover and a human-validated hybrid verifier but trains only on virtual devices and releases no infrastructure. The residual (open release, physical devices, step-level credit) is real but narrower than claimed and the overlap is not acknowledged; eval-drift existence is shown only indirectly -> 2.",
+   "evidence_ids": [
+    "son55:E001",
+    "son55:E002",
+    "son55:E020",
+    "agg:CG-A01",
+    "agg:CG-A02",
+    "agg:CG-A03",
+    "agg:CG-A04",
+    "agg:CG-A14"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Mechanisms are concrete (unified device interface, spare-server rotation, PRM step score, GiGPO anchor grouping, pinned eval configs), but PRM prompt/scale/combination details are thin, 'dense reward' and the GiGPO estimator are conflated, and real-device reward relies on an unvalidated MLLM judge; no distinguishing prediction against a plain RL-in-MobileWorld baseline.",
+   "evidence_ids": [
+    "son55:E004",
+    "son55:E005",
+    "son55:E007",
+    "son55:E016",
+    "son55:E017",
+    "sol:E02"
+   ],
+   "counterevidence_ids": [
+    "son55:E019"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Environment lifecycle, training hyper-parameters and the eval pipeline are described; PRM I/O and reward combination, training task set (source, size, overlap), real-device task set, CLI/GUI routing and memory write/evict rules are missing.",
+   "evidence_ids": [
+    "son55:E004",
+    "son55:E009",
+    "son55:E022",
+    "sol:E03"
+   ],
+   "counterevidence_ids": [
+    "son55:E033"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "MobileWorld SR uses the benchmark's privileged checks and the grounding judges are explicit, but Table 1 mixes rows copied from MAI-UI's 116-task table with authors' re-runs on 117 tasks (MAI-UI-8B 19.7 vs official 27.5), the reward-side MLLM judge/PRM is unvalidated, and the reproduction rule counts any overshoot as success.",
+   "evidence_ids": [
+    "son55:E006",
+    "son55:E011",
+    "son55:E023",
+    "sol:E08"
+   ],
+   "counterevidence_ids": [
+    "agg:CG-A05",
+    "agg:CG-A06",
+    "agg:CG-A07",
+    "agg:CG-A08",
+    "agg:CG-A09",
+    "son55:E033"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Only GRPO-binary vs GiGPO-dense (+3 tasks), which changes estimator and reward together; no PRM on/off, no environment-manager ablation, no same-base continued-training control, yet the gain is attributed 'entirely' to infrastructure and reward design; the 11.1 comparator was evaluated under unstated settings.",
+   "evidence_ids": [
+    "son55:E016",
+    "son55:E017",
+    "agg:CG-A13",
+    "sol:E06"
+   ],
+   "counterevidence_ids": [
+    "agg:CG-A12",
+    "agg:CG-A08",
+    "son55:E018"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "not_reported",
+   "rating": 0,
+   "reason": "After the full text was checked, training-task source, count and disjointness from the 117 test tasks are not reported; training and evaluation share the MobileWorld environment, and the MAI-UI-2B base was itself RL-trained on the same app family. No cross-benchmark, unseen-app or real-device test.",
+   "evidence_ids": [
+    "agg:CG-A11",
+    "agg:CG-A10"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": [
+    "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2604.11784.txt: entire fixed text (no appendix exists): Sec 3.2.1 Task Reset/Task Source, Sec 4.1 Training/Evaluation, Tables 1-2",
+    "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2512.22047.txt: Sec 2.3.3 and 2.5 (base-model RL environment and MobileWorld)"
+   ]
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Denominators are given (117 tasks; 48 reproduction cells) but online results are single runs without spread; the +2.6 point ablation is about 3 tasks; no failure breakdown.",
+   "evidence_ids": [
+    "son55:E011",
+    "son55:E017",
+    "son55:E024"
+   ],
+   "counterevidence_ids": [
+    "son55:E033"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "Training hardware and hyper-parameters (8xA6000, 64 environments) and a 50-step evaluation cap are given; no wall-clock, GPU-hours, 72B-PRM inference cost or baseline budget alignment.",
+   "evidence_ids": [
+    "son55:E009",
+    "son55:E010",
+    "sol:E04"
+   ],
+   "counterevidence_ids": [
+    "son55:E033"
+   ],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 40.0,
+  "display": 40.0,
+  "lower": 40.0,
+  "upper": 40.0,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(15G+25M+20X+10Emeas+10Ecaus+10Ehold+5Estat+5Ecost)/4; unknown -> L uses 0, U uses 4; raw=null while any unknown"
+ },
+ "status": "reviewed",
+ "status_reason": "Full fixed HTML text available and read; all eight items resolved.",
+ "input_seat_hashes": {
+  "sol": "41b3014d5785165645c24bc1eb1438b9f85d297f92f3f2e5d8414d92b5b9f4bb",
+  "son55": "a175374930b33d6286e8fd761fa3b5aeca5fbaa9b8ba736cbe1d058e6642700d"
+ },
+ "aggregate_model": "fable",
+ "aggregate_actual_model": "claude-opus-5-5[1m]",
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_note": "Configured model type fable (upstream claude-opus-5-5[1m]) per batch manifest model_types.opus55; no session id or invocation receipt is exposed to this agent.",
+ "seat_integrity_check": {
+  "sol": {
+   "file_sha256": "41b3014d5785165645c24bc1eb1438b9f85d297f92f3f2e5d8414d92b5b9f4bb",
+   "status": "needs_evidence",
+   "status_field_shape": "str",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "sonnet",
+   "actual_model": "gpt-6.1-sol"
+  },
+  "son55": {
+   "file_sha256": "a175374930b33d6286e8fd761fa3b5aeca5fbaa9b8ba736cbe1d058e6642700d",
+   "status": "reviewed",
+   "status_field_shape": "dict (contract expects string; value read from .state)",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "haiku",
+   "actual_model": "claude-sonnet-5-5[1m]"
+  }
+ },
+ "resolutions": [
+  {
+   "field_path": "status",
+   "sol_value": "needs_evidence",
+   "son55_value": "reviewed",
+   "decision": "revised",
+   "final_value": "reviewed",
+   "reason": "sol stopped at needs_evidence only because the MAI-UI neighbour was not yet in the frozen reference set. It is now frozen in references.json and was used as a shared fact check (see shared_error_corrections), which resolves G; son55's 'reviewed' had been reached without that neighbour. Final: reviewed, all eight items resolved.",
+   "evidence_ids": [
+    "agg:CG-A01",
+    "agg:CG-A04"
+   ],
+   "score_impact": "enables a score (raw 40.0)"
+  },
+  {
+   "field_path": "rs.supporting",
+   "sol_value": [],
+   "son55_value": [
+    "controlled_diagnostic_design"
+   ],
+   "decision": "son55",
+   "final_value": [
+    "controlled_diagnostic_design"
+   ],
+   "reason": "The evaluation harness is a separate operation from the RL signal and partly matches controlled_diagnostic_design (named confounds pinned, external anchor) while failing its central step (the instrument is never varied); kept as weak supporting, no sub.",
+   "evidence_ids": [
+    "son55:E003",
+    "son55:E022",
+    "son55:E023"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "rs.matches",
+   "sol_value": [
+    "self_supervised_signal_engineering/rs:C26"
+   ],
+   "son55_value": [
+    "controlled_diagnostic_design/None",
+    "self_supervised_signal_engineering/rs:C26"
+   ],
+   "decision": "son55",
+   "final_value": "self_supervised_signal_engineering/rs:C26 (partial) + controlled_diagnostic_design/null (weak)",
+   "reason": "Primary identical in both seats; supporting entry as above.",
+   "evidence_ids": [
+    "son55:E007",
+    "son55:E016"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "domain.matches",
+   "sol_value": [
+    "learned_outcome_and_process_judges/K19",
+    "online_evaluation_methodology/C26"
+   ],
+   "son55_value": [
+    "learned_outcome_and_process_judges/gui:K19",
+    "trajectory_level_policy_training/None"
+   ],
+   "decision": "revised",
+   "final_value": "gui:K19 + gui:C26 + trajectory_level_policy_training/null",
+   "reason": "Three distinct operations: PRM step reward (K19, both), click-in-box evaluation harness (C26, sol), online policy RL (son55; K20 not assigned because GiGPO has no learned value baseline/filtered replay).",
+   "evidence_ids": [
+    "sol:E07",
+    "son55:E009"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "rating.G",
+   "sol_value": {
+    "status": "unknown",
+    "rating": null
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "revised",
+   "final_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "reason": "Not a choice between seats: the G unknown is resolved by the shared MAI-UI reference (see shared_error_corrections[0]). sol's unknown came from the missing neighbour; son55's 2 used UI-TARS-2 as closest neighbour without MAI-UI. With MAI-UI, environment management/failover/hybrid verification are prior art, the residual is open release + physical devices + step credit -> 2 on new grounds.",
+   "evidence_ids": [
+    "agg:CG-A01",
+    "agg:CG-A02",
+    "agg:CG-A03",
+    "agg:CG-A04"
+   ],
+   "score_impact": "unknown -> 2 (G contributes 7.5); score becomes computable"
+  },
+  {
+   "field_path": "rating.M",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "decision": "son55",
+   "final_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "reason": "PRM design detail is thin, dense reward and estimator are conflated in the only ablation, and the real-device reward is an unvalidated MLLM judge; key assumptions are weak (anchor 2). sol's 3 credited plausibility.",
+   "evidence_ids": [
+    "son55:E016",
+    "son55:E017",
+    "son55:E019",
+    "agg:CG-A13"
+   ],
+   "score_impact": "-6.25 vs sol"
+  },
+  {
+   "field_path": "rating.E.holdout",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 1
+   },
+   "son55_value": {
+    "status": "not_reported",
+    "rating": 0
+   },
+   "decision": "son55",
+   "final_value": {
+    "status": "not_reported",
+    "rating": 0,
+    "search_scope": "see ratings.E.holdout"
+   },
+   "reason": "The necessary evidence (training-task provenance and disjointness from the test tasks) is absent after a full-text check, and training/evaluation share the environment; MAI-UI adds that the base model was trained on the same app family. sol's 1 gave credit for merely naming the benchmark.",
+   "evidence_ids": [
+    "agg:CG-A11",
+    "agg:CG-A10"
+   ],
+   "score_impact": "-2.5 vs sol"
+  },
+  {
+   "field_path": "rating.E.statistics",
+   "sol_value": {
+    "status": "not_reported",
+    "rating": 0
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 1
+   },
+   "decision": "son55",
+   "final_value": {
+    "status": "resolved",
+    "rating": 1
+   },
+   "reason": "Denominators (117 tasks, 48 cells) are reported, so the item is not wholly absent; single runs and no intervals keep it at 1. sol's not_reported/0 ignored the reported denominators.",
+   "evidence_ids": [
+    "son55:E011",
+    "son55:E024"
+   ],
+   "score_impact": "+1.25 vs sol"
+  },
+  {
+   "field_path": "expectation.E12",
+   "sol_value": "partial",
+   "son55_value": "unmet",
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "Table 2 does compare against an alternative reward configuration (binary episode reward), but confounded with the estimator change, and reward hacking is not addressed.",
+   "evidence_ids": [
+    "agg:CG-A13"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E13",
+   "sol_value": "not_applicable",
+   "son55_value": "unmet",
+   "decision": "son55",
+   "final_value": "unmet",
+   "reason": "The RL reward partly comes from root-level execution checks plus an MLLM judge; neither side's false positives/negatives are measured, so E13 applies and is unmet. sol's not_applicable overlooked the RL-pipeline clause.",
+   "evidence_ids": [
+    "son55:E006",
+    "son55:E033"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E21",
+   "sol_value": "partial",
+   "son55_value": "unknown",
+   "decision": "son55",
+   "final_value": "unknown",
+   "reason": "Neither ClawGUI-2B's observation space nor the baselines' is stated, so whether observation spaces differ (E21's condition) cannot be determined from the fixed text.",
+   "evidence_ids": [
+    "son55:E011"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E22",
+   "sol_value": "not_applicable",
+   "son55_value": "unmet",
+   "decision": "sol",
+   "final_value": "not_applicable",
+   "reason": "No claim that the training recipe's gain generalises across backbone sizes; supporting several models in the harness is a capability claim, and the 2B-only result is already scoped in claims/assessment.",
+   "evidence_ids": [],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E25",
+   "sol_value": "partial",
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "The evaluation harness covers OSWorld-G, which contains infeasible instructions, with a refusal-aware judge; no refusal analysis of models is reported.",
+   "evidence_ids": [
+    "sol:E10"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  },
+  {
+   "field_path": "expectation.E28",
+   "sol_value": "not_applicable",
+   "son55_value": "unmet",
+   "decision": "son55",
+   "final_value": "unmet",
+   "reason": "Training runs in MobileWorld emulators with tasks that 'can be procedurally generated', evaluation is MobileWorld GUI-only, and separation is never reported; consistent with E.holdout not_reported.",
+   "evidence_ids": [
+    "agg:CG-A11",
+    "son55:E033"
+   ],
+   "score_impact": "none (pattern matches and expectation statuses carry no points)"
+  }
+ ],
+ "shared_error_corrections": [
+  {
+   "field_path": "rating.G / gap.closest_adjacent",
+   "shared_value": "sol: G unknown (MAI-UI absent from frozen references); son55: G 2 with UI-TARS-2 as closest neighbour, MAI-UI unread",
+   "corrected_value": {
+    "status": "resolved",
+    "rating": 2,
+    "closest_adjacent": "MAI-UI 2512.22047"
+   },
+   "reason": "Neither seat could check the base model / nearest neighbour. The now-frozen MAI-UI text shows a containerised environment manager with failover, a hybrid rule/MLLM verifier with 83% human agreement, virtual-only training and no infrastructure release. This resolves G's unknown and shifts the residual to open release + physical devices + step credit.",
+   "evidence_ids": [
+    "agg:CG-A01",
+    "agg:CG-A02",
+    "agg:CG-A03",
+    "agg:CG-A04",
+    "agg:CG-A14"
+   ],
+   "source": "shared reference 2512.22047 (references.json, added after c3 seat dispatch)",
+   "score_impact": "G unknown -> 2 for sol's record; final score computable (40.0)"
+  },
+  {
+   "field_path": "claims.C1.baseline/control",
+   "shared_value": "MAI-UI-2B 11.1 treated as a same-protocol same-scale comparator (sol); provenance flagged unknown (son55)",
+   "corrected_value": "Table 1 non-MAI-UI rows are copied verbatim from MAI-UI's 116-task table; MAI-UI-8B is 19.7 in ClawGUI vs 27.5 official, and MAI-UI-2B has no official row, so 11.1 is an authors' re-run under unstated settings on a stated 117-task set",
+   "reason": "Shared factual check against the frozen MAI-UI table. It strengthens the existing deductions (mixed provenance and denominators; a re-run 7.8 points below official for 8B suggests the authors' harness may depress baselines) but does not move any rating beyond the values already resolved.",
+   "evidence_ids": [
+    "agg:CG-A05",
+    "agg:CG-A06",
+    "agg:CG-A07",
+    "agg:CG-A08",
+    "agg:CG-A09"
+   ],
+   "source": "shared reference 2512.22047",
+   "score_impact": "none (E.measurement 2, E.causality 1 unchanged; reasons updated)"
+  }
+ ],
+ "aggregate_status": "accepted_final",
+ "aggregate_status_reason": "All 14 mechanical conflicts resolved; G's unknown resolved via the frozen MAI-UI shared reference and recorded as a shared-error correction; no scoring unknowns remain.",
+ "final_record_hash": "796c081b901e188cfced6d5b9ae296729c92345d2a8d66335545a110da89f0de"
+}

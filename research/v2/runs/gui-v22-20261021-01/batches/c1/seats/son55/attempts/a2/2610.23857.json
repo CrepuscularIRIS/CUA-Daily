@@ -1,0 +1,1847 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "c1",
+ "attempt_id": "a2",
+ "seat": "son55",
+ "supersedes": {
+  "attempt_id": "a1",
+  "paper_key": "2610.23857",
+  "reason": "材料升级重评:a1 对本篇为 needs_fulltext(batch manifest 记 no_html/fulltext_path=null);a2 使用 PDF 文本 sha256 e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a。本记录独立于 a1 完成,未读取 a1 目录(本篇与整批)、另一席、aggregate、旧判定。",
+  "a1_content_read": false
+ },
+ "paper": {
+  "paper_key": "2610.23857",
+  "paper_id": "arXiv:2610.23857",
+  "title": "Web Agent Agentic Reinforcement Learning Decision Model Under Multi-Cost and Failure Risk Constraints",
+  "title_in_manifest": "Web Agent Agentic Reinforcement Learning Decision Model Under Multi-Cost and Failure Risk",
+  "version": "2610.23857v1",
+  "claim_type": "system_method",
+  "central_claim": "构建多成本(请求数/延迟/失败惩罚)与失败风险约束下的 Web Agent 约束 agentic RL 决策模型,通过拉格朗日对偶满足预算、用 CVaR 项抑制高失败概率路径探索;同等完成率下 C-PS 降 22%-31%、高失败惩罚下失败率降 18%-26%、固定预算下完成率升 10%-16%,并在异构任务/页面模板上泛化稳定(摘要、§1、§4.4、§5)。",
+  "scope_note": "作者主张范围为真实 web 环境部署;GUI 范围上属边界收录:动作为 DOM 操作与 API 触发混合(EV41),观测为 DOM 特征向量(EV40/EV29),无截图/视觉 grounding;按 EVIDENCE 收录范围含 Web 操作面,故按 reviewed 评价而非 out_of_scope。"
+ },
+ "provenance": {
+  "input_hash": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+  "input_hash_note": "a2 论文级输入=M1 文本 sha256;a1 batch input_bundle 对本篇无材料,不适用于本篇",
+  "rubric_version": "radar-v2.2 draft_uncalibrated (SCORE_SPEC.md)",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": {
+   "taxonomy": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+   "conditions": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572"
+  },
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "model_type": "haiku",
+  "actual_model": "Sonnet 5.5 (claude-sonnet-5-5[1m])",
+  "session_id": null,
+  "receipt_ref": null,
+  "session_receipt_reason": "worker 无法获取 session id/receipt;actual_model 取自系统提示自述",
+  "timestamp": "2026-10-21T17:20:00Z",
+  "blind_boundary": "未读取 a1 目录、另一席、aggregate、旧判定/旧分数/Reel/录用状态/引用排名;已读控制文件:run manifest.json、batch c1 manifest.json(输入清单)、check_batch.py/score_calc.py(工具代码)。偶发:为查看 assignments.jsonl 格式时打印了其前 3 行(均为其他论文的旧领域卡指派提示),并 grep 本篇 ID 无命中;未影响本判定。"
+ },
+ "materials": [
+  {
+   "material_id": "M1",
+   "url": "https://arxiv.org/pdf/2610.23857v1",
+   "version": "2610.23857v1",
+   "sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "bytes_on_disk": 33201,
+   "chars": 32872,
+   "format": "PDF via pdftotext -layout (text file prefixed with SOURCE/FETCHED header lines)",
+   "sections_read": [
+    "Abstract",
+    "§1 Introduction",
+    "§2 Related Work (2.1-2.3)",
+    "§3 Overview",
+    "§3 (3.1-3.4) design: Eq.(1)-(7)",
+    "§4 (4.1-4.4) experiments incl. results table",
+    "§5 Conclusions",
+    "References [1]-[16]"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "limitations": "v1 PDF 无附录。Fig.1(架构)、Fig.2、Fig.3、Fig.5 为图像,文本转换中不可见;公式(1)-(7)经转换后版面失真(下标/上标/括号分散),符号可读但上下标与部分括号/范围(如 β∈[0.8,0.95]、replay 长度 10^5、lr 3×10^-4)需按上下文推断。结果表的数值行完整可读。凡依赖图内容的判断一律标 unresolved/不下结论。"
+  },
+  {
+   "material_id": "M2",
+   "url": "https://arxiv.org/html/2509.02544",
+   "version": "pinned local fulltext (html)",
+   "sha256": "efdf7a26d17ae2f59c1447b256508ca472716208a9f47271984c1cfa62a54c63",
+   "sections_read": [
+    "§3.3 interaction-scaling passage only (txt lines ~560-566)"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "rest of paper (comparison reference, not the judged material)"
+   ],
+   "role": "closest_adjacent reference (shared references.json)"
+  },
+  {
+   "material_id": "M3",
+   "url": "https://arxiv.org/html/2307.13854",
+   "version": "pinned local fulltext (html)",
+   "sha256": "896882a2c125ec2595dc2ed78f638950bc0b0a7c04c187bafa82c8174d7ecc62",
+   "sections_read": [
+    "intro passages on functional-correctness validators only (txt lines ~92-114)"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "rest of paper (comparison reference, not the judged material)"
+   ],
+   "role": "benchmark-practice reference (shared references.json)"
+  }
+ ],
+ "material_caveats": [
+  "Fig.1(架构)/2/3/5 为图像,文本转换不可见:涉及图内容的主张(CVaR 失败密度压缩 CL6、20 场景稳定性 CL4)只能按作者文字陈述记录,不下结论。",
+  "公式(1)-(7)转换后失真;Eq.(2) 减号与 Eq.(5) 加号的差异按可读符号记录为 our_inference,不排除作者的符号约定而非实现差异。",
+  "replay buffer '10 5'、lr '3 × 10 −4'、β '0.8,0,95' 为上下标/逗号丢失的转换伪影,按上下文读为 1e5、3e-4、[0.8,0.95]。",
+  "表格版面(列错位、'Cost-per-Succe ss' 断行)为转换伪影;各数值行完整可读。",
+  "文件 33201 字节 / 32872 字符;控制者所称 32872B 为字符数,sha256 一致。"
+ ],
+ "evidence": [
+  {
+   "evidence_id": "EV01",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "Abstract; txt line 35",
+   "quote": "our method reduces C-PS by 22%–31% and",
+   "support_explanation": "headline cost-per-success claim",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV02",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "Abstract; txt line 36",
+   "quote": "lowers failure rates by 18%–26% under high failure penalties. Under fixed budgets, task completion rates",
+   "support_explanation": "headline failure-rate claim and start of fixed-budget claim",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV03",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "Abstract; txt line 32",
+   "quote": "Performance was benchmarked against unconstrained RL, budget-constrained RL, and",
+   "support_explanation": "abstract names three baseline families incl. rule-based/scripted agents (no scripted row appears in the results table)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV04",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§1 contributions; txt line 67",
+   "quote": "Constructing a unified Agentic reinforcement learning model under multi-cost constraints",
+   "support_explanation": "author contribution 1: unified constrained agentic RL model",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV05",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§3.2; txt line 167",
+   "quote": "count upper limit b1 = 12 , the average delay upper limit b2 = 600ms , and the maximum failure cost",
+   "support_explanation": "training-time budgets b=(12 requests, 600 ms, 3.0)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV06",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.1; txt line 269",
+   "quote": "between 5.3% and 19.6%, with cost budgets capped at 35 requests, 600ms average latency, and 7.0 failure",
+   "support_explanation": "evaluation budgets (35 requests, 600 ms, 7.0) differ from §3.2 values (12, 600 ms, 3.0); relation unexplained",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV07",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.1; txt line 262",
+   "quote": "Experiments were conducted across 30 to 70 deployed heterogeneous site templates, covering four typical",
+   "support_explanation": "environment described only as ranges of 'deployed site templates'; no site/benchmark names, no real-vs-simulated statement",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV08",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.1; txt line 264",
+   "quote": "The total number of task samples ranged from 812 to 1,472.Task interaction sequences ranged from 20 to 120",
+   "support_explanation": "task count given as a range, not a fixed set; no train/dev/test split",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV09",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.1; txt line 266",
+   "quote": "calls, and navigation behaviors. Each interaction uniformly collected three metrics: request count, response",
+   "support_explanation": "cost/failure signals are logged per interaction; origin of 'failure label' is not defined in the next line either",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV10",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.2 results table (captioned 'Figure 1'); txt line 290",
+   "quote": "Unconstrained           10–12        500–600         1.0–1.5        72.30%             0.45           18.20%",
+   "support_explanation": "unconstrained RL row: completion 72.30%, CPS 0.45, failure 18.20%",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV11",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.2 results table; txt line 298",
+   "quote": "6–8        550–650         2.0–3.5        80.50%             0.32           12.50%",
+   "support_explanation": "CVaR-constraint row (row label on preceding line): completion 80.50%, CPS 0.32, failure 12.50%; failure-penalty-factor column is 2.0-3.5 vs 1.0-1.5 for unconstrained",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV12",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.2 results table; txt line 292",
+   "quote": "8–10        600–700         1.2–2.0        74.80%             0.43           16.10%",
+   "support_explanation": "budget-constraint-only row: completion 74.80%, CPS 0.43, failure 16.10%",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV13",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.2 results table; txt line 295",
+   "quote": "7–9        500–650         1.5–2.5        77.10%             0.38           14.40%",
+   "support_explanation": "budget+failure-risk row: completion 77.10%, CPS 0.38, failure 14.40%",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV14",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.2 prose; txt line 302",
+   "quote": "increased by 8.2%, while the unit cost per success decreased by 22% to 31% compared to the unconstrained",
+   "support_explanation": "prose restates +8.2 completion and -22..-31% CPS vs unconstrained",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV15",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.2 prose; txt line 304",
+   "quote": "by 18.2% to 26% in the optimal case.",
+   "support_explanation": "failure-rate reduction stated as '18.2% to 26%'; 18.2% equals the unconstrained arm's own failure rate in the table (possible confusion, unresolved)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV16",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.4; txt line 331",
+   "quote": "improved by 10%–16%, indicating that the constrained model enhances task success rates without altering",
+   "support_explanation": "fixed-budget completion gain claim (no table cell for a fixed-budget comparison)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV17",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.4; txt line 332",
+   "quote": "the budget.Furthermore, the model's generalization capability is significantly enhanced. When confronted",
+   "support_explanation": "generalization claim in prose",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV18",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.4; txt line 344",
+   "quote": "Figure 5 demonstrates the stability and generalization capability of the Web Agent strategy across 20 task",
+   "support_explanation": "stability/generalization evidence is a figure over '20 task scenarios'; figure image not readable in the text conversion",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV19",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.4; txt line 345",
+   "quote": "Without constraints, the average task completion rate was 72.3%.",
+   "support_explanation": "Figure-5 text reports averages (72.3 / 74.8 / 80.5) identical to the table; no spread given in prose",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV20",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§3.2 Eq.(2); txt line 162",
+   "quote": "L(θ , λ ) = IE[R (τ )] −",
+   "support_explanation": "Lagrangian: constraint term enters with MINUS sign (text-conversion of formula; sign glyph readable)",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "EV21",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§3.3 Eq.(5); txt line 198",
+   "quote": "J (θ ) = IE[R (τ )] +",
+   "support_explanation": "joint loss: constraint term enters with PLUS sign and the objective is stated as a loss J(θ) while also containing +E[R]; sign convention conflicts with Eq.(2) (formula conversion may distort)",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "EV22",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§3.3; txt line 181",
+   "quote": "Under a given risk confidence level β ∈ 0.8,0,95 , CVaR is defined as",
+   "support_explanation": "β is the CVaR confidence level (extraction garbles '0.8, 0.95')",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV23",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§3.4 Eq.(7) text; txt line 232",
+   "quote": "are the control coefficients for the cost and risk terms, respectively",
+   "support_explanation": "β is reused as risk-term coefficient in the policy objective; same symbol as CVaR level",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV24",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.1; txt line 268",
+   "quote": "experiments set CVaR risk thresholds α=0.1 and α=0.2 for tasks with failure rates",
+   "support_explanation": "experiments name the CVaR level α, not β; notation mismatch with §3.3",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV25",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§3.4; txt line 233",
+   "quote": "range from λc ∈ [0.1,1.5] and β ∈ [0.1,1.0] )",
+   "support_explanation": "cost/risk coefficients are given as hyperparameter ranges, whereas §3.2 describes λ_i as dual multipliers updated by ascent",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV26",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§3.2; txt line 168",
+   "quote": "Bidirectional optimization iteration of the policy is achieved through joint gradient descent",
+   "support_explanation": "dual ascent on λ_i claimed; no step size, schedule or update frequency given",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV27",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§3.4 Eq.(7) text; txt line 231",
+   "quote": "represents its failure risk metric",
+   "support_explanation": "policy objective uses a per-action cost C(a) and risk metric R(a); link from the trajectory-level CVaR term to R(a) is not stated",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV28",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§5; txt line 361",
+   "quote": "should be noted that the model still exhibits slow policy convergence and risk estimation bias when handling",
+   "support_explanation": "authors' own limitation: slow convergence, risk-estimation bias on sparse-reward / ultra-long tasks",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV29",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§3.4; txt line 207",
+   "quote": "The policy network architecture adopts a parameter-sharing dual-channel Actor-Critic framework to enhance",
+   "support_explanation": "policy architecture: DOM features, action embeddings, tool cooldown vector; not an LLM/VLM policy",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV30",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§3.4; txt line 233",
+   "quote": "Empirical replay is employed during training to mitigate",
+   "support_explanation": "replay buffer used (length printed as '10 5' with lost superscript, i.e. ~1e5); batch 64, Adam 3e-4",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV31",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§2.2; txt line 94",
+   "quote": "most existing methods focus on single or scalar cost constraints and short-horizon environments",
+   "support_explanation": "author's claim about prior constrained RL; not checked against pinned sources (Achiam 2017 / Chow 2018 not in local pack)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV32",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§1; txt line 61",
+   "quote": "these approaches generally neglect explicit modeling",
+   "support_explanation": "intro claims ReAct/Toolformer/Mind2Web/medical-agent papers neglect cost; these are prompting/tool-use methods and a benchmark, not cost-aware RL baselines",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV33",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§1; txt line 63",
+   "quote": "Constrained Markov Decision Process (CMDP), providing a theoretical framework for policy generation under",
+   "support_explanation": "formal ancestor: CMDP (Altman 1999, author-cited)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV34",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§3.3; txt line 179",
+   "quote": "composed of the number of failed steps, failure type weights, and recovery costs",
+   "support_explanation": "failure loss Z(tau) composed of failed steps, type weights, recovery costs; no concrete formula/weights",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV35",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.2 table header; txt line 286",
+   "quote": "Cost-per-Succe",
+   "support_explanation": "cost-per-success column has no stated unit/normalisation (values 0.32-0.45)",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "EV36",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§3.2 caption; txt line 172",
+   "quote": "Figure 1: Schematic of Multi-Cost Lagrange Constrained Reinforcement Learning Architecture",
+   "support_explanation": "first 'Figure 1' = architecture diagram",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV37",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§4.2 caption; txt line 284",
+   "quote": "Figure 1: Web Agent strategy performance evaluation data under different constraint settings",
+   "support_explanation": "second 'Figure 1' = results table; figure numbering is duplicated (and there is no Figure 4)",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "EV38",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§3.4 caption; txt line 244",
+   "quote": "Figure 2: CVaR Regulation Effect on Failure Path Density in Policy Learning",
+   "support_explanation": "only mechanism-level evidence for CVaR; figure content is an image, unreadable in text",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV39",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§1; txt line 51",
+   "quote": "high success rates but uncontrolled costs",
+   "support_explanation": "motivating failure pattern asserted without measured existing-agent evidence",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV40",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§3.1; txt line 128",
+   "quote": "The state space s encompasses page structural features, historical interaction trajectories,",
+   "support_explanation": "state = page structure + history + tool cooldown",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV41",
+   "material_id": "M1",
+   "material_sha256": "e7573c83b1ff727eeaba31f174e17f4b5419bdf521494745ae2e6235549a0a2a",
+   "locator": "§3.1; txt line 130",
+   "quote": "DOM operations and API trigger events, totaling between 30 and 200.",
+   "support_explanation": "action space mixes DOM operations and API trigger events (30-200)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV42",
+   "material_id": "M2",
+   "material_sha256": "efdf7a26d17ae2f59c1447b256508ca472716208a9f47271984c1cfa62a54c63",
+   "locator": "UI-TARS-2 §3.3 (txt); txt line 565",
+   "quote": "Such behavior can be mitigated by explicitly incorporating step budgets into the reward design, encouraging agents to balance efficiency with performance.",
+   "support_explanation": "in-pack nearest neighbour: step budget in reward design for GUI agent RL (soft budget, no constraint/CVaR)",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "EV43",
+   "material_id": "M3",
+   "material_sha256": "896882a2c125ec2595dc2ed78f638950bc0b0a7c04c187bafa82c8174d7ecc62",
+   "locator": "WebArena intro (txt); txt line 114",
+   "quote": "We provide validators to programmatically validate the functional correctness of each task.",
+   "support_explanation": "reference practice: executable validators for success",
+   "kind": "author_report"
+  }
+ ],
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "web agent 的 RL 目标:由 E[R] 改为带三维成本向量(请求数 c1、API/页面延迟 c2、失败惩罚 c3)的 CMDP 拉格朗日目标;基线为只最大化 E[R] 的无约束 RL",
+   "information": "策略看 DOM 特征(d1=128)、历史动作嵌入(d2=64)、工具冷却向量(d3=32);成本信号来自每次交互的请求数/延迟/失败标签日志;无截图;无特权/标签来源说明",
+   "operation": "L(θ,λ)=E[R]∓Σλ_i(E[C_i]−b_i),对 θ 梯度下降、对 λ_i 上升;预算 b=(12 请求,600ms,3.0)(训练)/(35,600ms,7.0)(评测上限)",
+   "output": "满足期望预算的策略参数 θ",
+   "conditions": "成本可按步累计;预算上限已知;未说明多目标权重 α_i 的取值",
+   "feedback": "逐步成本 c_i^t 与回报 R;无单独验证器说明",
+   "selection_rule_data": "not_applicable:非自我改进闭环;λ 更新规则/步长未述;超参区间的选择数据未述",
+   "persistence": "not_applicable:静态训练研究,策略参数即产出",
+   "later_use": "not_applicable:无后续任务读取机制",
+   "claimed_effect": "完成率↑、cost-per-success↓(EV01/EV14)",
+   "failure_boundary": "仅结论一句:稀疏奖励/超长路径下收敛慢、风险估计有偏(EV28)",
+   "evidence_ids": [
+    "EV04",
+    "EV05",
+    "EV06",
+    "EV20",
+    "EV25",
+    "EV26",
+    "EV40",
+    "EV41"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "失败轨迹损失 Z(τ) 的尾部分布(由期望成本项不能刻画的低频高损失失败)",
+   "information": "Z 由失败步数、失败类型权重、恢复成本组成,范围约 [0,10](EV34);失败标签来源未述",
+   "operation": "加入 CVaR_β(Z)=min_η η+1/(1−β)E[(Z−η)+](Rockafellar-Uryasev),系数 μ∈[0.1,1.0],置信水平 β∈[0.8,0.95](实验写作 α=0.1/0.2)",
+   "output": "压缩失败损失尾部的策略;Fig.2 失败路径密度(图像)",
+   "conditions": "需要足够的失败样本估计 VaR/CVaR;样本规模未述",
+   "feedback": "轨迹级失败损失",
+   "selection_rule_data": "not_applicable",
+   "persistence": "not_applicable",
+   "later_use": "not_applicable",
+   "claimed_effect": "失败率下降 18-26%(高惩罚设置),抑制高失败概率路径探索(EV02/EV38)",
+   "failure_boundary": "风险估计偏差、稀疏奖励下收敛慢(EV28);β/α 符号冲突(EV22/EV23/EV24)",
+   "evidence_ids": [
+    "EV21",
+    "EV22",
+    "EV23",
+    "EV24",
+    "EV27",
+    "EV34",
+    "EV38"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "策略/价值网络与训练流程:参数共享双通道 Actor-Critic,双 Q 取小,经验回放",
+   "information": "状态向量 s_t=[f_DOM,h_t,τ_t];动作 30-200 个(DOM 操作与 API 触发事件);奖励为含成本惩罚的即时奖励",
+   "operation": "Q 网络 TD 目标取 min(Qφ1,Qφ2),γ=0.98;策略目标含 λ_c·C(a) 与 β·R(a) 的逐动作惩罚;回放缓冲约 1e5、批 64、Adam 3e-4、软更新 0.005、每 1000 步更新",
+   "output": "离散动作分布 π_θ(a|s)",
+   "conditions": "离散动作空间;'每 1000 步更新'的含义与训练总量未述",
+   "feedback": "TD 误差",
+   "selection_rule_data": "not_applicable",
+   "persistence": "not_applicable",
+   "later_use": "not_applicable",
+   "claimed_effect": "'稳定性/泛化'增强(EV17),无独立消融",
+   "failure_boundary": "未述;评测的策略与表中约束臂的对应关系只靠 Fig.2 图注",
+   "evidence_ids": [
+    "EV27",
+    "EV29",
+    "EV30",
+    "EV40",
+    "EV41"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "只优化任务成功率的 web agent 在真实环境中常出现'高成功率但成本失控'或'低风险但过于保守导致失败'两极;主流方法没有把请求配额、延迟累积、失败风险纳入决策(EV32/EV39)。",
+  "checked_gap": "局限真实且有部署价值(预算、延迟、反爬与不可逆失败)。但:两极现象未被实测展示;被引的'忽视成本'对象并非成本感知 RL 的最近邻(EV32);对约束 RL 的论断'多数只有标量成本/短时域'(EV31)未经固定来源核对(CPO 等支持多约束为我们的背景知识,标 our_inference,未被本地来源验证)。",
+  "lineage": [
+   {
+    "role": "formal_ancestor",
+    "name": "CMDP (Altman 1999)",
+    "source": "author-cited book; not pinned locally",
+    "pinned": false,
+    "evidence_ids": [
+     "EV33"
+    ]
+   },
+   {
+    "role": "formal_ancestor",
+    "name": "Constrained Policy Optimization (Achiam et al. 2017); Lagrangian/primal-dual CRL",
+    "source": "author-cited [6]; not pinned locally",
+    "pinned": false,
+    "evidence_ids": [
+     "EV31"
+    ]
+   },
+   {
+    "role": "formal_ancestor",
+    "name": "CVaR / risk-constrained RL (Rockafellar-Uryasev 2000; Tamar 2015; Chow et al. 2018; Greenberg et al. 2022)",
+    "source": "author-cited [9-12]; not pinned locally",
+    "pinned": false,
+    "evidence_ids": [
+     "EV22"
+    ]
+   },
+   {
+    "role": "closest_adjacent_in_pack",
+    "name": "UI-TARS-2 (2509.02544; txt sha efdf7a26...)",
+    "source": "pinned local fulltext 2509.02544v? (html)",
+    "pinned": true,
+    "note": "GUI agent multi-turn RL; observes interaction-scaling and suggests step budgets in reward design; soft shaping only, no constraint/CVaR",
+    "evidence_ids": [
+     "EV42"
+    ]
+   },
+   {
+    "role": "benchmark_practice_in_pack",
+    "name": "WebArena (2307.13854), Mind2Web (2306.06070)",
+    "source": "pinned local fulltexts",
+    "pinned": true,
+    "note": "executable-validator evaluation practice; paper cites Mind2Web only as 'universal benchmark' foil and uses neither",
+    "evidence_ids": [
+     "EV43",
+     "EV32"
+    ]
+   }
+  ],
+  "closest_adjacent": "本地固定包内无成本/风险约束的 GUI/web RL 论文;最近邻为 UI-TARS-2 的 step-budget 奖励塑形(EV42,软预算)和 WebArena 式可执行验证评测(EV43)。真正的最近邻(CPO、Chow 2018 风险约束 RL 及其 agent 应用)未固定,谱系比较 unresolved。",
+  "residue": "异构多成本(请求/延迟/失败)与尾部风险在长时域 web 交互中的联合约束;表中无约束→CVaR 的梯度显示作者环境内可权衡,但相对成熟约束 RL 与 GUI/web RL 谱系的增量未界定。",
+  "stakes": "部署成本(请求配额、延迟、被反爬封禁)与不可逆失败(表单误提交);对 LLM/VLM 驱动的 GUI agent 的外推未经论证(策略为 DOM 特征向量 Actor-Critic,EV29)。",
+  "cost": "论文不报告训练算力/样本量;作者承认收敛慢(EV28)。",
+  "method_response": "把预算与尾部风险写进 CMDP+Lagrangian+CVaR 目标并以 Actor-Critic 训练,回应'只优化成功率'的缺口;表内梯度与 Fig.2 为证据,但实施细节不一致(EV20/EV21/EV25/EV27),与固定逐动作惩罚的区分未做。",
+  "remaining_gap": "无命名基准/真实站点/可执行验证器的在线成功率;无留出站点;无强约束 RL 与 scripted 基线;无多种子统计;无 LLM/VLM 骨干的 GUI agent 验证;训练成本与收敛未报。",
+  "evidence_ids": [
+   "EV31",
+   "EV32",
+   "EV33",
+   "EV39",
+   "EV42",
+   "EV43",
+   "EV28"
+  ],
+  "unresolved": [
+   "与 CPO/PPO-Lagrangian/CVaR-RL 原文的逐项比较(本地未固定;非阻塞,请总控决定是否补材料并给两席同一输入包)",
+   "'多数 CRL 仅标量成本/短时域'论断是否成立"
+  ]
+ },
+ "rs_pattern": {
+  "primary": "reframe_as_solvable_object",
+  "supporting": [],
+  "outside_taxonomy": false,
+  "reason": "弱匹配:论文的实际操作是把 web agent 的成功-成本-风险权衡重述为已有成熟对象(CMDP + 拉格朗日对偶 + CVaR)并用现成机械求解,吻合 reframe_as_solvable_object 的操作签名 identify problem → recast as well-studied object (optimization/constraint program) → solve with that object's existing machinery。其余14张主卡无更贴近的操作(无等价证明、无算子替换、无诊断设计、无监督信号制造、无结构先验编码、无分解委派)。该卡成功条件(对应定理、删除组件、对应性经独立验证)基本未被满足,失败模式中'机械封装/对应关系仅断言/对象未形式化'多项命中,故 fit=weak,且不加分。子卡均不选:C27(多智能体博弈/均衡)无多方;C21(把 RL 重述为监督/生成序列建模、制造缺失监督)本文仍是 RL;C00(对已训练模型的归因/不确定性度量)不是。",
+  "matches": [
+   {
+    "main_id": "reframe_as_solvable_object",
+    "sub_id": null,
+    "role": "primary",
+    "fit": "weak",
+    "tactic_steps_checked": [
+     {
+      "step": "identify an intractable/unsolved problem",
+      "executed": "partial",
+      "note": "成本/风险失控的 web agent 决策;'难解'性未证,更像缺目标项而非不可解(EV39)"
+     },
+     {
+      "step": "recast as a well-studied object",
+      "executed": "yes",
+      "note": "CMDP + Lagrangian + CVaR(EV33/EV20/EV22)"
+     },
+     {
+      "step": "solve with that object's existing machinery",
+      "executed": "partial",
+      "note": "对偶上升 + CVaR 辅助变量 + Actor-Critic;λ 实际是否对偶更新与超参区间冲突(EV25/EV26)"
+     }
+    ],
+    "success_checks": [
+     {
+      "condition": "对应定理:重述对象的解对应原问题的解",
+      "status": "unmet",
+      "note": "无定理;期望成本约束≠每任务硬预算,且 Eq.(7) 逐动作惩罚替代未论证(EV27)"
+     },
+     {
+      "condition": "对象消除具体阻碍并解锁新机械",
+      "status": "partial",
+      "note": "引入预算/尾部风险调节,但相对基线的'解锁'只由未审计的表数值支撑(EV10-EV13)"
+     },
+     {
+      "condition": "删除而非包裹组件",
+      "status": "unmet",
+      "note": "在标准 Actor-Critic 上追加项"
+     },
+     {
+      "condition": "声明使等价成立的结构条件及其边界",
+      "status": "partial",
+      "note": "只有结论一句收敛慢/风险估计偏(EV28)"
+     },
+     {
+      "condition": "对原问题的忠实性独立验证",
+      "status": "unmet",
+      "note": "无独立/留出验证,无可执行验证器说明(EV09)"
+     }
+    ],
+    "failure_checks": [
+     {
+      "failure": "机械封装:把现成求解器套到新域,无新的识别结构",
+      "status": "present",
+      "note": "CMDP+CVaR 直接应用;新增仅为三成本向量组合"
+     },
+     {
+      "failure": "对应关系仅断言",
+      "status": "present",
+      "note": "无证明/动机说明 b_i 与评测预算的关系(EV05/EV06)"
+     },
+     {
+      "failure": "中心对象未形式化",
+      "status": "partial",
+      "note": "Z(τ) 仅描述组成,无公式(EV34)"
+     },
+     {
+      "failure": "承诺的可处理性未兑现",
+      "status": "partial",
+      "note": "作者自承收敛慢(EV28),无训练成本数据"
+     },
+     {
+      "failure": "只产出描述性比较而非可操作对象",
+      "status": "absent",
+      "note": "给出可训练目标"
+     }
+    ],
+    "evidence_ids": [
+     "EV04",
+     "EV20",
+     "EV21",
+     "EV22",
+     "EV25",
+     "EV26",
+     "EV27",
+     "EV28",
+     "EV33",
+     "EV34"
+    ],
+    "reason": "操作签名吻合但执行很弱;不因匹配而加分。"
+   }
+  ],
+  "executes_pattern": {
+   "claim": "partial",
+   "reason": "完成了'重述为 CMDP+CVaR 并用现成机械求解',未提供对应性证明或忠实性验证(见 success_checks)",
+   "evidence_ids": [
+    "EV04",
+    "EV20",
+    "EV22",
+    "EV26"
+   ]
+  },
+  "resolves_problem": {
+   "claim": "not_asserted",
+   "reason": "表数值(作者自建、未命名、未审计环境)不能证明'高成功率高成本/保守失败'两极问题被关闭;未提供实测的已有 agent 两极现象基线(EV39)",
+   "evidence_ids": [
+    "EV10",
+    "EV11",
+    "EV39"
+   ]
+  }
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "trajectory_level_policy_training",
+    "sub": null,
+    "version": "taxonomy.json sha256 430aa362...; conditions.json sha256 a7501743...",
+    "fit": "weak",
+    "fit_reason": "只命中该主卡操作签名末步 'update with constrained RL' 与回放缓冲;前置条件(SFT/离线初始化、终端成功信号来自检查器/judge、失败集中于可识别步骤、KL 约束与成功回放)几乎全部不在论文中。K20 亦不选:K20 需要在终端 judge 奖励上训练步级/指令级 critic、混合 TD/MC 优势、按优势/困惑度过滤数据;本文是 DOM 特征向量的双 Q Actor-Critic,无 judge、无过滤、无 KL。弱匹配不强塞子卡。",
+    "condition_checks": [
+     {
+      "id": "S1",
+      "kind": "success",
+      "status": "unmet",
+      "note": "无 SFT/离线初始化说明",
+      "evidence_ids": [
+       "EV29"
+      ]
+     },
+     {
+      "id": "S2",
+      "kind": "success",
+      "status": "partial",
+      "note": "约束机制是拉格朗日/CVaR 而非 KL+成功回放;有回放缓冲但未按成功/困惑度过滤",
+      "evidence_ids": [
+       "EV26",
+       "EV30"
+      ]
+     },
+     {
+      "id": "S3",
+      "kind": "success",
+      "status": "not_applicable",
+      "note": "无首错修正/恢复数据",
+      "evidence_ids": []
+     },
+     {
+      "id": "S4",
+      "kind": "success",
+      "status": "not_applicable",
+      "note": "无生成推理",
+      "evidence_ids": []
+     },
+     {
+      "id": "S5",
+      "kind": "success",
+      "status": "not_applicable",
+      "note": "无离线代理指标",
+      "evidence_ids": []
+     },
+     {
+      "id": "S6",
+      "kind": "success",
+      "status": "not_applicable",
+      "note": "无推理层次混合",
+      "evidence_ids": []
+     },
+     {
+      "id": "F1",
+      "kind": "failure",
+      "status": "unknown",
+      "note": "未做多阶段更新,不适用/未见;收敛慢见 EV28",
+      "evidence_ids": [
+       "EV28"
+      ]
+     },
+     {
+      "id": "F2",
+      "kind": "failure",
+      "status": "not_applicable",
+      "note": "无精确匹配式离线评测",
+      "evidence_ids": []
+     },
+     {
+      "id": "F3",
+      "kind": "failure",
+      "status": "present",
+      "note": "未命名子集、重复次数未报(任务 812-1,472 区间、无种子)",
+      "evidence_ids": [
+       "EV08",
+       "EV18"
+      ]
+     },
+     {
+      "id": "F4",
+      "kind": "failure",
+      "status": "not_applicable",
+      "note": "无预训练骨干;未主张跨模型规模",
+      "evidence_ids": []
+     },
+     {
+      "id": "F5",
+      "kind": "failure",
+      "status": "unknown",
+      "note": "失败标签/环境假设未验证(失败标签来源未述)",
+      "evidence_ids": [
+       "EV09"
+      ]
+     },
+     {
+      "id": "F6",
+      "kind": "failure",
+      "status": "not_applicable",
+      "note": "无生成推理",
+      "evidence_ids": []
+     }
+    ],
+    "evidence_ids": [
+     "EV26",
+     "EV29",
+     "EV30",
+     "EV08",
+     "EV09"
+    ]
+   }
+  ],
+  "unassigned": [
+   "多成本向量的拉格朗日预算约束(请求/延迟/失败惩罚)",
+   "轨迹级 CVaR 尾部风险项压制失败路径",
+   "DOM 操作与 API 触发混合动作空间下的成本核算(C11 相邻但本文不涉及接口设计主张)"
+  ],
+  "revision_proposals": [
+   {
+    "proposal": "候选:GUI/web agent 的成本/风险约束策略优化(CMDP/CVaR)",
+    "status": "not_checked",
+    "support": "仅本篇(单篇 case 级),且材料证据弱;不满足 candidate_pattern 所需的至少两篇独立全文支持;本席不修改卡片/权重",
+    "evidence_ids": [
+     "EV04",
+     "EV20",
+     "EV22"
+    ]
+   }
+  ]
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "reframe_as_solvable_object",
+   "rs_sub": null,
+   "domain": {
+    "namespace": "gui",
+    "main": "trajectory_level_policy_training",
+    "sub": null
+   },
+   "operation_correspondence": "RS 层:把成本-风险权衡重述为 CMDP+Lagrangian+CVaR 并用现成机械求解;领域层:该重述最终落在'用约束 RL 更新策略'一步(trajectory_level_policy_training 签名末步)。对应的是操作(目标函数设计 → Actor-Critic 更新),不是术语。",
+   "required_conditions_and_differences": "领域卡前置条件(SFT 初始化、终端检查器/judge 信号、KL+成功回放)缺失;本文策略为 DOM 特征向量网络而非 VLM/LLM GUI 策略;动作含 API 触发。差异大,故 fit=weak,不作 resolves 主张。",
+   "evidence_ids": [
+    "EV04",
+    "EV20",
+    "EV26",
+    "EV29",
+    "EV41"
+   ]
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "中心主张是 web agent 的成本/风险约束 RL,不是桌面(Ubuntu/Windows)computer-use 任务成功率;无桌面主张。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无 Android/移动端主张。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "主张是训练方法改善 web agent;评测环境为未命名的'30-70 个部署站点模板'(EV07),无 WebArena 或任何命名自托管基准、无子集说明;自建环境来源、验证器均未述。适用性依据:论文称面向真实 web 部署。",
+   "evidence_ids": [
+    "EV07",
+    "EV08"
+   ],
+   "score_item": [
+    "E.measurement",
+    "E.holdout"
+   ]
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "若'部署站点模板'指真实在线网站则需 Online-Mind2Web/Mind2Web-Live 级评测;论文未说明站点是真实在线还是模拟模板(EV07),无法判定是否触发。无 Online-Mind2Web 结果可见。",
+   "evidence_ids": [
+    "EV07"
+   ],
+   "score_item": [
+    "E.measurement",
+    "E.holdout"
+   ]
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无 grounding 主张。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无 grounding 模型主张。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543#s1",
+    "2506.08012#s2",
+    "2509.23738#s1",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "策略为基于 DOM 特征向量的 Actor-Critic(EV29),不是端到端 GUI(截图)策略模型;未主张超越 UI-TARS 类模型。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无 planner-grounder 拆分或 grounding 组件主张。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "applicable": true,
+   "status": "partial",
+   "reason": "主张 RL 约束算法改善 web agent 的成本/失败。同数据对照只有作者自己的无约束 RL 与仅预算约束臂(EV10-EV13),构成递进消融;未与 DigiRL/WebRL/filtered BC/AWR/SFT-only 比较,也无 CPO/PPO-Lagrangian/步数奖励塑形等约束 RL 基线(EV42);摘要列出的 rule-based/scripted 基线(EV03)无结果行。",
+   "evidence_ids": [
+    "EV03",
+    "EV10",
+    "EV11",
+    "EV12",
+    "EV13",
+    "EV42"
+   ],
+   "score_item": [
+    "E.causality"
+   ]
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "未提及 LLM/VLM judge;成功判据为何物未述,该缺口在 E.measurement 记录,不在本期望下计。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "未使用学习型 judge/PRM/ORM。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "奖励不是学习型 judge/PRM(奖励来源未述,见 E13)。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972",
+    "2602.00575",
+    "2609.07712#s2",
+    "2610.05001#s2"
+   ],
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "R(τ) 被称作'最大化成功率'的期望奖励,但成功信号是否来自执行检查器、检查器是否做过假阴/假阳审计均未述,无法判定;适用性不确定。",
+   "evidence_ids": [
+    "EV09"
+   ],
+   "score_item": [
+    "E.measurement"
+   ]
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无 PRM。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无离线 step-accuracy 指标主张。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "论文声称'策略稳定性'并在带延迟/失败噪声的交互环境中报告成功率;全文未报告运行次数/种子/置信区间(EV18/EV19 仅为 20 场景平均)。",
+   "evidence_ids": [
+    "EV18",
+    "EV19",
+    "EV10"
+   ],
+   "score_item": [
+    "E.statistics"
+   ]
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "applicable": true,
+   "status": "partial",
+   "reason": "§4.1 给出统一预算上限(请求 35、延迟 600ms、失败惩罚 7.0,EV06)并称各策略在该空间内比较,轨迹长度 20-120 步;但与 §3.2 的 b=(12,600ms,3.0)(EV05)不一致,各臂是否同步数上限未述,'固定预算下 +10-16%'(EV16)无对应表项,未报告预算耗尽比例。",
+   "evidence_ids": [
+    "EV05",
+    "EV06",
+    "EV16"
+   ],
+   "score_item": [
+    "E.cost"
+   ]
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无推理时搜索/best-of-N 主张。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "自建未命名环境,不是对命名基准 harness 的改造;harness 披露缺口并入 E03/E.measurement。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "若站点为真实在线网站,需注明评测日期与站点漂移处理;论文未说明站点是否在线(EV07),无法判定。",
+   "evidence_ids": [
+    "EV07"
+   ],
+   "score_item": [
+    "E.holdout"
+   ]
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "全部臂共享 DOM+历史+冷却状态(EV40),未比较观测空间不同的 GUI agent。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无预训练骨干网络,也未主张跨骨干泛化。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "论文强调长时域(20-120 步)决策并在结论承认超长路径任务表现受限(EV28),但未按轨迹长度/难度分层汇报成功率或失败原因。",
+   "evidence_ids": [
+    "EV08",
+    "EV28"
+   ],
+   "score_item": [
+    "E.statistics"
+   ]
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无 grounding/视觉布局鲁棒性主张。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无拒绝/不可行任务评测主张。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "非数据合成方法。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "非合成数据方法,无数据规模曲线主张。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "适用性来自论文的泛化主张(EV17/EV18)与'站点模板'可能为合成环境的不确定性;全文未报告训练/评测模板划分、未见站点或域外迁移(EV07/EV08)。适用性偏弱,按其泛化主张判定。",
+   "evidence_ids": [
+    "EV07",
+    "EV08",
+    "EV17",
+    "EV18"
+   ],
+   "score_item": [
+    "E.holdout"
+   ]
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无反思/错误修正数据主张。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无 GUI world model。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无多步想象/world model。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无世界模型训练。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无世界模型/模拟器保真度评分。",
+   "evidence_ids": [],
+   "score_item": []
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "applicable": true,
+   "status": "unknown",
+   "reason": "若'站点模板'是替代真实站点的合成/模拟环境,则需量化其真实性与对策略排序的保持;论文未述环境来源(EV07),是否触发无法判定。",
+   "evidence_ids": [
+    "EV07"
+   ],
+   "score_item": [
+    "E.holdout"
+   ]
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "无经验记忆/检索。",
+   "evidence_ids": [],
+   "score_item": []
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "CL1",
+   "text": "同等完成率下,本方法使 cost-per-success 降低 22%-31%(相对无约束 RL)。",
+   "setting": "未命名的 30-70 个部署站点模板,812-1,472 个任务,20-120 步,30-200 个工具/动作(EV07/EV08)",
+   "baseline_control": "无约束 RL;仅预算约束 RL;摘要另称 rule-based/scripted(结果表无行,EV03)",
+   "selection_vs_test": "未报告划分;超参区间 λc∈[0.1,1.5]、β∈[0.1,1.0]、μ∈[0.1,1.0] 的选择数据未述(EV25)",
+   "result_denominator": "表 EV10→EV11:CPS 0.45→0.32,相对 -28.9%;完成率 72.3→80.5%(+8.2pp),故'同等完成率'不成立;分母(每臂任务数)未述;无单位",
+   "evidence_ids": [
+    "EV01",
+    "EV10",
+    "EV11",
+    "EV14",
+    "EV35"
+   ],
+   "counterevidence": "完成率并不相等;22% 下界无表行可复现;失败惩罚因子列随臂变化(EV10/EV11)",
+   "allowed_conclusion": "在作者自建、未命名且未审计的环境中,作者报告 CVaR 臂相对无约束臂 CPS 下降约 29%(作者报告,非复现)。不能写成'同等完成率'或 22-31% 的范围。"
+  },
+  {
+   "claim_id": "CL2",
+   "text": "高失败惩罚下失败率降低 18%-26%。",
+   "setting": "同 CL1",
+   "baseline_control": "无约束 RL",
+   "selection_vs_test": "未报告",
+   "result_denominator": "表:18.2%→12.5%(-5.7pp,相对 -31.3%);预算+风险臂相对 -20.9%;'18.2% to 26%'(EV15)与无约束臂失败率 18.2% 同值,疑为表述混淆",
+   "evidence_ids": [
+    "EV02",
+    "EV10",
+    "EV11",
+    "EV13",
+    "EV15"
+   ],
+   "counterevidence": "失败惩罚因子在各臂不同(EV10/EV11);失败标签来源未述(EV09);18-26% 区间无法由所给行复现",
+   "allowed_conclusion": "作者报告 CVaR 臂失败率低于无约束臂(18.2%→12.5%);幅度的定义(绝对/相对、哪种惩罚设置)与可复现性未解决。"
+  },
+  {
+   "claim_id": "CL3",
+   "text": "固定预算下任务完成率提高 10%-16%。",
+   "setting": "同 CL1",
+   "baseline_control": "无约束 RL",
+   "selection_vs_test": "未报告",
+   "result_denominator": "表:72.3→80.5%,相对 +11.3%(+8.2pp);臂间每任务请求数 10-12 vs 6-8,无同预算单元(EV16)",
+   "evidence_ids": [
+    "EV02",
+    "EV16",
+    "EV10",
+    "EV11"
+   ],
+   "counterevidence": "未给出统一预算下的并排数据;10-16% 区间只有一个点(+11.3% 相对)可由表推出",
+   "allowed_conclusion": "作者报告 CVaR 臂完成率更高(+8.2pp);'固定预算'与区间上限 16% 无表内支持。"
+  },
+  {
+   "claim_id": "CL4",
+   "text": "策略在多任务/多页面/动态页面环境下泛化显著增强且稳定(§4.4,Fig.5,结论)。",
+   "setting": "20 个任务场景(Fig.5,图像不可读)",
+   "baseline_control": "三个约束臂 vs 无约束臂",
+   "selection_vs_test": "无划分/无留出站点报告",
+   "result_denominator": "仅给 20 场景平均值 72.3/74.8/80.5(EV19),无方差、无逐场景值",
+   "evidence_ids": [
+    "EV17",
+    "EV18",
+    "EV19"
+   ],
+   "counterevidence": "无;缺失而非反证。作者承认超长路径/稀疏奖励下收敛慢、风险估计有偏(EV28)",
+   "allowed_conclusion": "无法支持'泛化'。至多:作者在其未命名场景集上报告平均值随约束增加而上升。"
+  },
+  {
+   "claim_id": "CL5",
+   "text": "相对 rule-based/scripted web agent 的优势(摘要声称做了基准对比)。",
+   "setting": "摘要",
+   "baseline_control": "scripted agent",
+   "selection_vs_test": "N/A",
+   "result_denominator": "结果表与 §4.2-§4.4 正文均无 scripted/rule-based 行或数值",
+   "evidence_ids": [
+    "EV03"
+   ],
+   "counterevidence": "表仅 4 行(无约束/仅预算/预算+风险/CVaR)",
+   "allowed_conclusion": "未报告;不能写成已击败脚本基线。"
+  },
+  {
+   "claim_id": "CL6",
+   "text": "CVaR 项压制高失败概率路径的过度探索(机制主张,Fig.2)。",
+   "setting": "训练阶段失败路径密度(Fig.2,图像不可读)",
+   "baseline_control": "仅预算 / 预算+失败风险抑制 / 全约束 CVaR 三条曲线(EV38 图注)",
+   "selection_vs_test": "N/A",
+   "result_denominator": "文本只有图注与定性描述;无数值",
+   "evidence_ids": [
+    "EV38",
+    "EV13",
+    "EV11"
+   ],
+   "counterevidence": "Eq.(7) 的逐动作 C(a)/R(a) 惩罚是更简单的替代解释(EV27),论文未分离;λ 是否真的对偶更新未证(EV25/EV26)",
+   "allowed_conclusion": "作者在图中报告尾部压缩;文本材料不能核实,且与固定逐动作惩罚的区分未做。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "offline",
+  "evidence_level_note": "EVIDENCE.md 规则1:按证据判。论文称在交互环境中评测,但环境未命名、成功检查器未述、成本是否实测未述、无留出;不能证明'由执行结果检查判定的 online 成功'。故取最低档 offline 作为下限判定(非'静态单步准确率'意义上的 offline,而是 online 证据缺失)。",
+  "claim_support": "scoped",
+  "author_claim_preserved": "构建多成本与失败风险约束下的 Web Agent 约束 agentic RL 决策模型;同等完成率下 C-PS 降 22%-31%、高惩罚下失败率降 18%-26%、固定预算下完成率升 10%-16%,并具泛化与稳定性。",
+  "strongest_supported_claim": "在作者自建、未命名、未经验证器审计的站点模板环境中,作者报告(非复现)逐步加入预算与 CVaR 约束后,完成率 72.3%→80.5%、cost-per-success 0.45→0.32、失败率 18.2%→12.5%(单点数值,无方差)。",
+  "unresolved": [
+   "摘要的 22-31% / 18-26% / 10-16% 区间与'同等完成率'的措辞与表不一致,无法复核",
+   "成功验证器与失败标签来源",
+   "泛化/稳定性(无划分、无方差)",
+   "scripted 基线",
+   "CVaR 与固定逐动作惩罚/对偶 vs 固定λ 的拆分",
+   "对 LLM/VLM GUI agent 的外推"
+  ],
+  "reproduction_status": "未复现;所有数值为 author_report,我们的比值为表内算术(our_inference)。",
+  "retained_improver_online_transfer": "retained: not_applicable(静态训练研究);improver: not_applicable;online: 未证实;transfer: 未证实",
+  "derived_numbers": {
+   "cps_rel_unc_to_cvar": 0.2889,
+   "completion_pp_unc_to_cvar": 8.2,
+   "completion_rel_unc_to_cvar": 0.1134,
+   "failure_pp_unc_to_cvar": 5.7,
+   "failure_rel_unc_to_cvar": -0.3132,
+   "failure_rel_unc_to_budget_risk": -0.2088,
+   "failure_rel_unc_to_budget_only": -0.1154
+  }
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "真实且重要的部署局限(请求配额/延迟/失败风险被只优化成功率的 agent 忽略),但 (a) 'high success but uncontrolled cost / conservative failure' 的两极现象由作者断言,无已有 web agent 的实测佐证(EV39);(b) 最近邻比较不成立:引言把 ReAct/Toolformer/Mind2Web/医学 agent 当作'忽视成本'的对照(EV32),它们是提示/工具方法或基准,不是成本感知 RL;(c) 对约束 RL 的最近邻(CPO、Chow 2018 风险约束 RL 等)仅被引用,未与之比较,且'多数方法只有标量成本/短时域'(EV31)未经本地固定来源核对;(d) 本地包内最近邻 UI-TARS-2 已把 step budget 放入奖励设计(EV42),作者未涉及。问题位置(DOM+API 决策层的预算/尾部风险)具体,但残余瓶颈相对 GUI/web RL 谱系未界定,故 2。",
+   "evidence_ids": [
+    "EV32",
+    "EV39",
+    "EV31",
+    "EV33"
+   ],
+   "counterevidence_ids": [
+    "EV42"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "机制具体且逻辑可检验:CMDP + 三维成本向量 + 拉格朗日对偶 + CVaR(Rockafellar-Uryasev 形式)压制失败尾部,预测可区分(尾部失败密度压缩、cost-per-success 下降)。但实施版本含内部不一致:Eq.(2) 约束项为减号而 Eq.(5) 为加号(EV20/EV21);λ 在 §3.2 是被上升更新的对偶变量,在 §3.4 却以超参区间给出(EV25/EV26);β 同时是 CVaR 置信水平与风险项系数,实验又写作 α(EV22/EV23/EV24);Eq.(7) 的逐动作 C(a)/R(a) 惩罚与轨迹级 CVaR 的关系未交代(EV27)。因此与'朴素替代(固定逐动作惩罚的奖励塑形)'的区分预测未被实施细节支撑。逻辑可检验性不等于已验证,效果留给 E。",
+   "evidence_ids": [
+    "EV04",
+    "EV20",
+    "EV21",
+    "EV22",
+    "EV23",
+    "EV24",
+    "EV25",
+    "EV26",
+    "EV27",
+    "EV34"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "状态/动作空间、成本向量、预算、超参(γ=0.98、批 64、Adam 3e-4、软更新 0.005、回放缓冲约 1e5)有描述(EV29/EV30/EV40/EV41)。但关键操作/生效条件缺失或互相矛盾:训练期预算 b=(12,600ms,3.0) 与评测上限 (35,600ms,7.0) 关系未交代(EV05/EV06);对偶步长/更新频率/CVaR 采样规模/训练回合数/收敛判据均无;失败标签与失败损失 Z 的构造无具体公式(EV09/EV34);'请求'如何映射到 DOM 操作/API 事件未定义;失败边界仅一句(EV28)。操作链无法由正文重建,介于 0 与 2,取 1。",
+   "evidence_ids": [
+    "EV05",
+    "EV06",
+    "EV09",
+    "EV26",
+    "EV28",
+    "EV29",
+    "EV30",
+    "EV34",
+    "EV40",
+    "EV41"
+   ],
+   "counterevidence_ids": [
+    "EV25"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "有逐臂数值(EV10-EV13),但测量基础不可评价:无命名基准/环境(EV07),成功判据/验证器、失败标签来源均未述(EV09),cost-per-success 无单位(EV35),成本以区间而非点值给出,'失败惩罚因子'一列随臂变化(1.0-1.5 到 2.0-3.5,EV10/EV11)——若为环境参数则臂间环境不同,若为实测量则含义不明。摘要/正文声称的数字不能由表复现:CPS 降 22-31%(表仅支持 28.9%,EV10/EV11),失败率降 18-26%(表为 18.2→12.5,即 -5.7pp/-31.3% 相对;'18.2%' 恰为无约束臂失败率,EV15)。摘要称'同等完成率下'而表中完成率差 8.2pp(EV01/EV14)。表格版面经 pdftotext 转换,但数值行完整可读,不是转换失真。因缺验证器而非无结果,取 1。",
+   "evidence_ids": [
+    "EV10",
+    "EV11",
+    "EV12",
+    "EV13",
+    "EV35",
+    "EV09",
+    "EV07",
+    "EV15",
+    "EV01"
+   ],
+   "counterevidence_ids": [
+    "EV14"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "唯一的因果证据是 4 档递进梯度(无约束→仅预算→预算+失败风险→CVaR,EV10-EV13)及 Fig.2 的失败密度曲线(图像不可读,EV38)。缺口大:没有拆分拉格朗日对偶 vs 固定 λ_c/β 逐动作惩罚(EV25/EV27)、没有 CVaR 水平/μ 的敏感性、没有与成熟约束 RL 基线(CPO/PPO-Lagrangian/步数奖励塑形,EV42)的对照、没有统一训练预算说明;摘要提到的 rule-based/scripted 基线(EV03)在结果表中无行。无约束 RL 与各约束臂是否同步数/同种子未述。有相关梯度但控制严重不足,取 1。",
+   "evidence_ids": [
+    "EV10",
+    "EV11",
+    "EV12",
+    "EV13",
+    "EV38",
+    "EV03"
+   ],
+   "counterevidence_ids": [
+    "EV25",
+    "EV27",
+    "EV42"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "not_reported",
+   "rating": 0,
+   "reason": "§4.4 与 Fig.5 声称'泛化显著增强'(EV17/EV18),但全文(§1-§5,无附录)未报告站点/模板/任务的训练-测试划分、未见站点留出、策略训练所用环境与评测环境的关系(EV07/EV08 仅给范围);环境是否合成/模拟未述;对偶/CVaR 超参是否在评测任务上调过未述。图 1(架构)/2/3/5 为图像,文本转换中不可读,若划分只存在于图内则属本材料盲区——但正文对该主张的论述中无任何划分语句,故按 not_reported 记 0,并在 material_caveats 标注。主张范围('真实 web 环境部署')远超证据范围。",
+   "evidence_ids": [
+    "EV17",
+    "EV18",
+    "EV07",
+    "EV08"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": [
+    "§1 Introduction",
+    "§3.1-§3.4 (training setup)",
+    "§4.1 Experimental Setup",
+    "§4.2-§4.4 incl. Fig.5 text",
+    "§5 Conclusions",
+    "references (no appendix exists in v1 PDF)"
+   ]
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "报告了 20 个场景上的平均(EV18/EV19,'Figure 5'),但正文无种子数、重复次数、置信区间、逐场景方差;表内数值为单点百分比且成本为区间(EV10-EV13);任务数为 812-1,472 区间(EV08),各臂分母不明;'稳定性/策略稳定性'指标在摘要中声称量化却无数值。失败分析仅一个失败率,无失败类型分解,作者仅在结论承认收敛慢与风险估计偏差(EV28)。逐场景分布可能在 Fig.5 图像内(不可读),故不判 not_reported,取 1。",
+   "evidence_ids": [
+    "EV18",
+    "EV19",
+    "EV08",
+    "EV10",
+    "EV28"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "成本是主题,逐臂给了每任务请求数、延迟、失败惩罚、cost-per-success(EV10-EV13),并给了预算上限(EV06),因此预算相关结果相关且有量化。缺口:训练成本/样本量/算力/收敛速度未报(作者承认收敛慢,EV28);训练期预算 (12,600ms,3.0) 与评测上限 (35,600ms,7.0) 不一致(EV05/EV06);'固定预算下完成率 +10-16%'(EV16)无对应的同预算对照单元;成本是否为实测(延迟 200-800 ms)或建模量未述。有相关结果但关键公平性与覆盖缺口,取 2。",
+   "evidence_ids": [
+    "EV10",
+    "EV11",
+    "EV12",
+    "EV13",
+    "EV06",
+    "EV16"
+   ],
+   "counterevidence_ids": [
+    "EV05",
+    "EV28"
+   ],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 33.75,
+  "display": 33.8,
+  "lower": 33.8,
+  "upper": 33.8,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "note": "weights G15 M25 X20 E.measurement10 E.causality10 E.holdout10 E.statistics5 E.cost5; S=(Σw·r)/4; 待 score_calc.py 机械复核"
+ },
+ "status": "reviewed",
+ "status_reason": "完整 PDF 文本(无附录)已读;图像内容不可读已逐项标注;八项评分均有依据,无 unknown,故给出总分。",
+ "summary_zh": "一篇弱证据的 system_method 论文:把 web agent 的成本-风险权衡重述为 CMDP+拉格朗日+CVaR 并用 Actor-Critic 训练。问题真实,但最近邻比较缺失;实施公式与超参存在内部不一致;实验环境未命名、验证器与失败标签未述、无留出/种子/方差、scripted 基线无结果;摘要数字与表不能互相复现。作者报告的梯度(完成率 72.3→80.5%、CPS 0.45→0.32、失败率 18.2→12.5%)仅能作为作者自建环境内的未审计报告。"
+}

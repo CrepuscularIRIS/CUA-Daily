@@ -1,0 +1,2183 @@
+{
+ "schema_version": "radar-review-v2.2",
+ "run_id": "gui-v22-20261021-01",
+ "batch_id": "p2",
+ "attempt_id": "a1",
+ "seat": "aggregate",
+ "paper": {
+  "paper_key": "2202.08137",
+  "paper_id": "arXiv:2202.08137",
+  "title": "A data-driven approach for learning to control computers",
+  "version": "2202.08137v2",
+  "claim_type": "system_method",
+  "claim_type_note": "训练完整 GUI agent（像素+DOM+指令 → 键鼠动作）并在 MiniWoB++ 在线评测；不是单独 grounding 组件或 benchmark。",
+  "scope_note": null,
+  "central_claim": "用 BC 与 RL(V-MPO) 等权重联合训练、以人类同款键鼠接口并使用 ~2.4M 条(≈6300 h)人类演示，单一多任务 agent 在 MiniWoB++ 的 104 个任务上达到 SOTA 和人类水平均值，并显示任务间迁移；主要缺失因素是人类轨迹数据规模。",
+  "central_claim_scope": "MiniWoB++ 104 个模板化合成网页任务；评测任务即训练任务（每回合随机实例）；单 seed；像素(165x220)+DOM+指令输入；字典文本输入为特权接口；作者“方案可推广到一般计算机控制”为展望，非实验主张。"
+ },
+ "provenance": {
+  "input_hash": "fed6b4a2d84803fc93183b9a9669ad578f4b1611b203548221a83913612b045e",
+  "rubric_version": "v2.2 draft_uncalibrated",
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "rs_manifest_hash": "3fc06b621b26f2ea87aa273ee34e2a80308fd09102f1530056428662b0971e32",
+  "domain_cards_hash": "430aa36290ecfb7a45e0c413c663085635dc1451e189d10ab86e8b4480186c21",
+  "domain_conditions_hash": "a7501743e64eacce006fd9ad4388ad5c65684a9eeee355eac76ebaa531ef3572",
+  "expectations_hash": "4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+  "batch_contract_hash": "f0efbb8da9f7d56bb1efc4c9d2cf4d6867c4bd7450703fd816a64daec26fd275",
+  "aggregate_rules": "docs/agents/AGGREGATE_OPUS.md",
+  "aggregate_rules_sha256": "1ad0c4f39af2ceb06924fc015d8660711edcd9a6f891444e902b44f79584f4e0",
+  "conflicts_sha256": "57a5f35169e4eb55da1368cc3dfd609817f4c0f0f2f4a5284db9ff7e1065f2bb",
+  "references_sha256": "ed9d577bd9b2fc25073d44f2506dda757688a30d4528fe3872527a0134fccfbc",
+  "model_type": "fable",
+  "actual_model": "claude-opus-5-5[1m]",
+  "session_id": null,
+  "receipt_ref": null,
+  "timestamp": "2026-10-21T17:40:56+00:00",
+  "independence_note": "Aggregation over two seat inputs; the fixed paper text was read before seat scores, but this is not a third blind review or human gold. All results are author reports; nothing was reproduced."
+ },
+ "materials": [
+  {
+   "material_id": "agg:2202.08137",
+   "url": "https://arxiv.org/html/2202.08137",
+   "sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2202.08137.txt",
+   "role": "paper",
+   "sections_read": [
+    "full text"
+   ],
+   "complete": true,
+   "missing_sections": []
+  },
+  {
+   "material_id": "sol:2202.08137",
+   "version": "2202.08137v2",
+   "url": "https://arxiv.org/html/2202.08137v2",
+   "sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "sections_read": [
+    "Entire fixed extracted text including all supplied methods, results, references and appendices"
+   ],
+   "complete": true,
+   "missing_sections": [],
+   "version_binding": "Manifest binds version; extraction SOURCE header is unversioned. Figures available through supplied captions/prose, not a separate image audit."
+  },
+  {
+   "material_id": "son55:M-2202.08137v2",
+   "url": "https://arxiv.org/html/2202.08137",
+   "version": "2202.08137v2",
+   "sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2202.08137.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Abstract",
+    "1 Introduction",
+    "2 Methods (2.1-2.5)",
+    "3 Results (3.1-3.4)",
+    "4 Discussion/Limitations",
+    "Appendix Tables 1-3 and figure captions"
+   ],
+   "complete": true,
+   "missing_sections": [
+    "Figures 1-14 are images and are not in the text extraction; read via captions and Table 3 only"
+   ],
+   "note": "Figure 3/7/8 numeric bars are not in text; values used only where stated in text or Table 3."
+  },
+  {
+   "material_id": "son55:R-2404.07972",
+   "url": "https://arxiv.org/html/2404.07972",
+   "version": null,
+   "sha256": "5907f5ab2f95d036e676d17d701a77fd30850e3eccb55b014183d318520ff9d1",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2404.07972.txt",
+   "material_status": "html",
+   "sections_read": [
+    "line 382"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; consulted only for the listed lines (fact source for lineage/baseline cross-check, not judgement)"
+   ],
+   "role": "nearest_neighbor_reference",
+   "purpose": "later-benchmark view of CC-Net (current_relevance)"
+  },
+  {
+   "material_id": "son55:R-2405.14573",
+   "url": "https://arxiv.org/html/2405.14573",
+   "version": null,
+   "sha256": "d745a9085e86a2ea357a27f08bb1c0fd1918ff9040ef9885c5db387c456a56cc",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2405.14573.txt",
+   "material_status": "html",
+   "sections_read": [
+    "line 180"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not read in full; consulted only for the listed lines (fact source for lineage/baseline cross-check, not judgement)"
+   ],
+   "role": "nearest_neighbor_reference",
+   "purpose": "later-benchmark view of BC+RL keyboard/mouse agents (current_relevance)"
+  },
+  {
+   "material_id": "son55:M-2303.17491v3",
+   "url": "https://arxiv.org/html/2303.17491",
+   "version": "2303.17491v3",
+   "sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "fulltext_path": "research/fulltext/review-runs/gui-v22-20261021-01/fulltext/2303.17491.txt",
+   "material_status": "html",
+   "sections_read": [
+    "Sec 3.2.2 line 288 only"
+   ],
+   "complete": false,
+   "missing_sections": [
+    "not reviewed here; same-batch material cited only for the dictionary-typing comparability remark"
+   ],
+   "note": "cross-reference; reviewed separately as its own paper"
+  }
+ ],
+ "evidence": [
+  {
+   "evidence_id": "agg:CC-A01",
+   "material_id": "agg:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Appendix Table 3, row moving-items (with full-table recomputation)",
+   "quote": "moving-items | 0.18 | 0.88 | 0.13 | 0.78",
+   "support_explanation": "Aggregator recomputation over all 104 Table 3 rows: Human mean 0.9345, CC-Net 0.9355, BC-only 0.3046; agent>human on 72 tasks, human>agent on 22. Excluding moving-items (human 0.18 attributed by the authors to network latency) gives Human 0.9418 vs CC-Net 0.9360, so the mean-level parity depends on one latency-confounded task.",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "agg:CC-A02",
+   "material_id": "agg:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 3.1",
+   "quote": "The biggest performance gap is for the moving-items task where human participants rarely succeeded at all, most likely due to network-related control latency.",
+   "support_explanation": "Authors attribute the largest agent>human gap to a human-side latency artefact, i.e. a comparator defect rather than agent skill.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:CC-A03",
+   "material_id": "agg:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 4 Performance",
+   "quote": "examining the literature in this space would suggest that conventional approaches are inadequate, and more specialized techniques are needed. We have shown this to not be the case",
+   "support_explanation": "Explicit statement of the audited assumption (generic BC+RL is inadequate) and the pivot (it is not, given enough demonstrations): the assumption_audit_and_pivot operation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:CC-A04",
+   "material_id": "agg:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Abstract",
+   "quote": "These results demonstrate the usefulness of a unified human-agent interface when training machines to use computers.",
+   "support_explanation": "The shared human/agent keyboard-mouse interface is claimed as a separate load-bearing ingredient (supports a supporting unify_into_shared_representation match).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:CC-A05",
+   "material_id": "agg:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 2.1",
+   "quote": "This simplifies the use of human behavioural data, and we further hypothesise that this interface will better transfer to computer control tasks without a compact DOM to interact with",
+   "support_explanation": "Interface choice is justified by data compatibility; the transfer-to-non-DOM benefit is a hypothesis, not tested (pixel-only performance is poor per the 75% DOM-removal drop).",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:CC-A06",
+   "material_id": "agg:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 3.4",
+   "quote": "This means that the agent is unable to solve tasks that involve clicking at a specific location within a canvas, dragging, or highlighting.",
+   "support_explanation": "Element-ID (DOM) action variant cannot express sub-element/drag actions; concrete boundary evidence for the gui K29 action-interface card.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "agg:CC-A07",
+   "material_id": "agg:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 3.3",
+   "quote": "we simply reduced the relative weight of the BC loss (scaled by the square root of the relative size) to slow overfitting",
+   "support_explanation": "The data-scaling arm also changes the BC loss weight, so the scaling curve is not a pure data intervention.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E001",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 68",
+   "quote": "This is a combination that was proposed at MiniWob’s conception",
+   "support_explanation": "Prior BC+RL shortfall and specialized-action/curriculum lineage; this is the paper’s account, not an independent audit of ancestors.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E002",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 69",
+   "quote": "the primary missing factor in achieving high performance is simply the size of the human trajectory dataset used for behavioural cloning",
+   "support_explanation": "Empirical pivot: data quantity, rather than necessary special-purpose algorithms, is proposed as the missing ingredient.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E003",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 79",
+   "quote": "We choose instead to use only mouse and keyboard based actions.",
+   "support_explanation": "Keyboard/mouse action compatibility is an actual interface choice; broad transfer remains a hypothesis.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E004",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 81",
+   "quote": "we give our agent access to an environment-provided dictionary of text strings",
+   "support_explanation": "Environment-provided task-field dictionary is privileged information.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E005",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 103",
+   "quote": "An 8-layer multimodal transformer combines pixel and language embeddings, whose output is concatenated with an embedding of the previous action and passed through 2 LSTMs.",
+   "support_explanation": "Actual multimodal transformer, LSTM, and four policy outputs.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E006",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 124",
+   "quote": "We have not run LSTM ablations in the final configuration",
+   "support_explanation": "Final memory contribution is not causally isolated.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E007",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 142",
+   "quote": "We collected over 2.4 million demonstrations of the 104 104 MiniWob ++ tasks from a total of 77 77 human participants, which amounts to approximately 6300 6300 hours.",
+   "support_explanation": "Human data scale and participant denominator.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E008",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 150",
+   "quote": "In our work we consider the former with equal weighting to the BC and RL losses",
+   "support_explanation": "Equal-weight simultaneous BC and VMPO training.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E009",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 152",
+   "quote": "our human demonstration data was split into train and test sets (2.2 million & 310 thousand episodes respectively)",
+   "support_explanation": "Episode split; not heldout task split.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E010",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 152",
+   "quote": "tasks where the final reward was less than 0.5 0.5 were removed",
+   "support_explanation": "Selection by environment terminal reward, not a learned judge.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E011",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 156",
+   "quote": "We were furthermore only able to run one seed for each of the conditions that we report in this paper.",
+   "support_explanation": "Only one seed per setting.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E012",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 170",
+   "quote": "our agent achieves human-level mean performance across the suite of MiniWob ++ tasks",
+   "support_explanation": "Author-reported mean human parity, not per-task or broader-platform parity.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E013",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 172",
+   "quote": "our agent fails to get any score for two tasks: simon-says , and terminal",
+   "support_explanation": "Explicit zero-performing task boundary.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E014",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 176",
+   "quote": "with a fixed budget of training steps per task, training one agent on all 104 MiniWob ++ tasks leads to a strong boost in performance compared to training separate agents on each task",
+   "support_explanation": "Transfer experiment co-trains all104 tasks; no unseen-task evaluation.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E015",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 183",
+   "quote": "we simply reduced the relative weight of the BC loss (scaled by the square root of the relative size) to slow overfitting",
+   "support_explanation": "Dataset size intervention is accompanied by BC loss reweighting.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E016",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 189",
+   "quote": "a 75% drop in performance if this input is removed",
+   "support_explanation": "Dominant DOM dependence limits generic pixel-only control inference.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E017",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 193",
+   "quote": "there is a significant mismatch between our recorded human trajectories and the actions available to the agent",
+   "support_explanation": "DOM-action control has human-trajectory/action mismatch.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E018",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 203",
+   "quote": "Reward information is thus low-noise, undelayed, and available in large quantities.",
+   "support_explanation": "Low-noise benchmark reward and scripted goal semantics.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E019",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 341",
+   "quote": "Maximum number of steps per episode | 300",
+   "support_explanation": "Episode max-step protocol.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E020",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 379",
+   "quote": "Some scores from these studies were only available in figure format and were therefore estimated as accurately as possible.",
+   "support_explanation": "External scores include digitized figures; cross-paper harness fairness limited.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E021",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 158",
+   "quote": "we filter the 16 out of 104 tasks without external scores",
+   "support_explanation": "Matched external subset and composite best-per-task external baseline disclosed.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E022",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 172",
+   "quote": "most likely due to network-related control latency",
+   "support_explanation": "Human comparator affected by latency.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "sol:E023",
+   "material_id": "sol:2202.08137",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fixed text line 93",
+   "quote": "We instead interface directly with the Chrome DevTools Protocol (CDP)",
+   "support_explanation": "Changed environment interface.",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E001",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Abstract; fulltext line 58",
+   "quote": "We achieve state-of-the-art and human-level mean performance across all tasks within the MiniWob ++ benchmark",
+   "support_explanation": "作者中心主张：MiniWoB++ 全套任务上达到 SOTA 与人类水平均值。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E002",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 1; fulltext line 69",
+   "quote": "we find that the primary missing factor in achieving high performance is simply the size of the human trajectory dataset used for behavioural cloning",
+   "support_explanation": "作者对 gap 的诊断：缺的是人类轨迹数据规模。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E003",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 2.1; fulltext line 79",
+   "quote": "We choose instead to use only mouse and keyboard based actions.",
+   "support_explanation": "放弃 DOM 动作，使用与人类一致的键鼠动作空间。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E004",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 1; fulltext line 68",
+   "quote": "Subsequent work consequently attempted to improve performance by giving agents access to DOM-specific actions",
+   "support_explanation": "作者描述的先前路线：DOM 专用动作、课程、受限探索。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E005",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 2.4; fulltext line 140",
+   "quote": "with pure behavioural cloning policies only solving",
+   "support_explanation": "先前纯 BC 仅比随机策略多解 5% 任务（仅 17 小时数据）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E006",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 2.4; fulltext line 142",
+   "quote": "We collected over 2.4 million demonstrations of the",
+   "support_explanation": "数据规模：2.4M 条人类演示（约 6300 小时，77 名参与者）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E007",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 2.5; fulltext line 152",
+   "quote": "Before being used for BC, our human demonstration data was split into train and test sets",
+   "support_explanation": "演示数据按 train/test 划分（2.2M/310K），test 仅用于 BC 对数概率验证，智能体评测在环境里在线进行。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E008",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 2.5; fulltext line 150",
+   "quote": "though we have early evidence that pre-training with BC may improve the efficiency of learning (data not shown)",
+   "support_explanation": "训练为 BC 与 RL 等权重从头联合训练；先 BC 后 RL 的证据未展示。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E009",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 2.5; fulltext line 156",
+   "quote": "We were furthermore only able to run one seed for each of the conditions that we report in this paper.",
+   "support_explanation": "每个条件仅一个 seed，无方差。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E010",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 2.5; fulltext line 156",
+   "quote": "tuning was done by hand based on a limited number of experiments",
+   "support_explanation": "超参手工调，实验有限。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E011",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 3.1; fulltext line 170",
+   "quote": "In addition, we find that our agent achieves human-level mean performance across the suite of MiniWob ++ tasks.",
+   "support_explanation": "均值与人类持平（含异常任务）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E012",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 3.1; fulltext line 172",
+   "quote": "our agent fails to get any score for two tasks",
+   "support_explanation": "simon-says 与 terminal 得 0，失败任务明示。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E013",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 3.1; fulltext line 172",
+   "quote": "The biggest performance gap is for the moving-items task where human participants rarely succeeded at all, most likely due to network-related control latency.",
+   "support_explanation": "人类基线存在延迟伪差（moving-items 人类 0.18 vs agent 0.88），人类均值被拉低，影响“人类水平”比较。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E014",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 3.3; fulltext line 183",
+   "quote": "Using 1/1000 of the dataset, which roughly corresponds to 6 hours of data, leads to rapid overfitting and no significant gain over RL only performance.",
+   "support_explanation": "数据规模 scaling：1/1000 时过拟合，之后三个数量级持续上升。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E015",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 3.4; fulltext line 189",
+   "quote": "Our current agent configuration is strongly reliant on DOM information, with a 75% drop in performance if this input is removed.",
+   "support_explanation": "输入消融：去掉 DOM 掉 75%，即纯像素远不足；对“像 人一样用屏幕”的主张是边界。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E016",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fig 8 caption; fulltext line 195",
+   "quote": "Using an action space in which the agent interacts with specified DOM elements directly is less effective than our baseline mouse and keyboard actions.",
+   "support_explanation": "输出消融：DOM 元素动作不如键鼠动作。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E017",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 3.4; fulltext line 193",
+   "quote": "augmenting our original action set with DOM-based actions did not lead to a boost in performance over the baseline (data not shown)",
+   "support_explanation": "补充 DOM 动作无提升，但数据未展示。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E018",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 2.1; fulltext line 81",
+   "quote": "we give our agent access to an environment-provided dictionary of text strings",
+   "support_explanation": "训练/评测时环境提供输入文本字典（特权信息）；去掉后仍可用拖拽复制解决（Sec 3.4）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E019",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fig 3 caption; fulltext line 158",
+   "quote": "for these results the performance on non-reported tasks is set to zero",
+   "support_explanation": "外部 SotA 聚合中未报告任务置零，作者另外过滤 16 个无外部分数任务。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E020",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Fig 5 caption; fulltext line 162",
+   "quote": "Co-training on all 104 MiniWob tasks is significantly more data efficient than training on each task individually, providing evidence of transfer between tasks.",
+   "support_explanation": "“跨任务迁移”证据=联合训练比单任务训练更省 frame，且所有任务均为训练任务。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E021",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 4 Data; fulltext line 211",
+   "quote": "the possible permutations of task-presentation vastly exceeds the amount of data we collected for it",
+   "support_explanation": "用排列数论证非记忆，未做去重/留出实证。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E022",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 2.1; fulltext line 83",
+   "quote": "our results demonstrate that the mismatch is not problematic in practice",
+   "support_explanation": "实时环境时序抖动，仅以结果论证。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E023",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Table 1; fulltext line 341",
+   "quote": "Maximum number of steps per episode | 300",
+   "support_explanation": "训练超参：每回合最多 300 步。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E024",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Sec 4 Performance; fulltext line 217",
+   "quote": "While our approach does not lie on the cutting edge of algorithmic novelty",
+   "support_explanation": "作者自述：算法新颖度非前沿，贡献在于规模化直接方案。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E025",
+   "material_id": "son55:M-2202.08137v2",
+   "material_sha256": "d5562f545f1afafa15846ac961e01a14eadfbf58789218d29dc2e81c7bdfaa83",
+   "locator": "Appendix Table 3; fulltext line 381",
+   "quote": "Task | Human | CC-Net | CC-Net BC only",
+   "support_explanation": "104 任务逐项表；本席据此重算：Human 均值 0.9345、CC-Net 0.9355、BC-only 0.3046、外部聚合 SotA(Augmented) 在 88 个有分任务上 0.646 vs CC-Net 同任务 0.924。",
+   "kind": "our_inference"
+  },
+  {
+   "evidence_id": "son55:E026",
+   "material_id": "son55:R-2404.07972",
+   "material_sha256": "5907f5ab2f95d036e676d17d701a77fd30850e3eccb55b014183d318520ff9d1",
+   "locator": "Sec 2 (OSWorld related work); fulltext line 382",
+   "quote": "Previous efforts towards creating domain-specific agents, such as MiniWoB++ [ 44 , 30 ] , CC-Net [ 18 ] , and WebArena [ 66 , 22 ] , have defined action spaces that include clicks and typing",
+   "support_explanation": "后来 benchmark 把 CC-Net 当作键鼠动作空间的 domain-specific 先例（谱系/现实相关性）。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E027",
+   "material_id": "son55:R-2405.14573",
+   "material_sha256": "d745a9085e86a2ea357a27f08bb1c0fd1918ff9040ef9885c5db387c456a56cc",
+   "locator": "Sec 1 related (AndroidWorld); fulltext line 180",
+   "quote": "primarily used reinforcement learning and behavioral cloning to simulate interactions like mouse clicks and keyboard typing",
+   "support_explanation": "后来 benchmark 把 BC+RL 键鼠 agent 归为“基础模型之前”的传统路线。",
+   "kind": "author_report"
+  },
+  {
+   "evidence_id": "son55:E028",
+   "material_id": "son55:M-2303.17491v3",
+   "material_sha256": "e571676d61a66e8d6f8a283b58e25dc4ac26cdaa1a73ab4f13c462de20c534e0",
+   "locator": "Sec 3.2.2 (RCI, same batch); fulltext line 193",
+   "quote": "Thus, CC-Net (without dictionary-based action) in Figure 4(a) serves as our appropriate comparison and we outperform it by 6%.",
+   "support_explanation": "同批 RCI 论文指出 CC-Net 的字典输入动作使其与全生成式方法不可直接比较，侧面印证字典是特权接口。",
+   "kind": "author_report"
+  }
+ ],
+ "preliminary_evidence_judgment": "Read before seat scores. CC-Net is a full keyboard/mouse agent (pixels + DOM + task-field dictionary in, 10 action types out) trained by equal-weight BC + VMPO on ~2.4M success-filtered human demonstrations of all 104 MiniWoB++ tasks, single seed, hand-tuned. Central claim: SOTA and human-level mean on MiniWoB++, with data size as the 'primary missing factor' and 'cross-task transfer'. Evidence is online (programmatic rewards) but every evaluated task family is a training family, so 'transfer' is multi-task sample efficiency, not held-out transfer. Controls are rich (BC-only/RL-only, data scaling over 3 orders, input/output ablations, multi- vs single-task) but values are mostly figure-only in the fixed text, and the scaling arm co-varies the BC loss weight. Table 3 recomputation: human 0.9345 vs CC-Net 0.9355 over 104 tasks, but excluding moving-items (human latency artefact) human leads 0.942 vs 0.936, so 'human-level mean' is fragile. The operation is an audit of the inferred insufficiency of generic BC+RL (pivot by scaling demonstrations), enabled by a unified human/agent action interface. Prelim ranges: G3 M2-3 X3 Em3 Ec2-3 Eh1-2 Es1 Ecost1-2.",
+ "signatures": [
+  {
+   "sig_id": "S1",
+   "object": "训练配方：大规模人类演示 BC + 在线 RL 联合训练的单一多任务 policy（替代课程/DOM 专用动作/受限探索）",
+   "information": "输入：165x220 RGB 像素、DOM 元素列表、任务指令、（可选）环境提供的文本字段字典；动作 = 键鼠宏；人类演示含 2.4M 条/104 任务；训练时 RL 用 MiniWoB++ 程序化奖励。",
+   "operation": "BC 损失与 V-MPO RL 损失等权重从头联合训练；演示按末奖励<0.5 过滤(~5%) 并裁掉连续>10 的 no-op 步。",
+   "output": "单个 policy（4 输出头：动作类型/光标坐标/键位/字段索引）。",
+   "conditions": "每个任务都有大量人类演示；环境实时、30Hz 采集、agent ~2Hz 观察；奖励为 MiniWoB 脚本奖励。",
+   "feedback": "RL：环境脚本奖励；BC：人类动作对数概率。",
+   "selection_rule/data": "演示按成功过滤；无训练期候选-选择-留存循环；BC loss 权重在小数据实验中按 sqrt 缩放。",
+   "persistence": {
+    "status": "not_applicable",
+    "reason": "静态训练研究；RL 更新是训练算法本身，不是评测后留存的改动。"
+   },
+   "later_use": {
+    "status": "not_applicable",
+    "reason": "无跨任务/跨回合留存；评测为同一已训练权重在线运行。"
+   },
+   "claimed_effect": "均值与人类持平且大幅超过聚合外部 SotA；数据量是主因。",
+   "failure_boundary": "simon-says、terminal 得 0；1/1000 数据时过拟合且无增益；强依赖 DOM。",
+   "evidence_ids": [
+    "son55:E002",
+    "son55:E006",
+    "son55:E007",
+    "son55:E008",
+    "son55:E011",
+    "son55:E012",
+    "son55:E014"
+   ]
+  },
+  {
+   "sig_id": "S2",
+   "object": "接口：与人类相同的键鼠动作空间（含宏）+ 像素 + DOM 的多模态输入",
+   "information": "DOM 是特权结构信息；像素也输入；字典为特权文本池，消融后仍可通过高亮拖拽完成表单。",
+   "operation": "动作类型(10类)×光标坐标(两个 51 档离散分布)×键位×字段索引；对照实验替换为 DOM click/emit-text。",
+   "output": "键鼠事件序列。",
+   "conditions": "任务需要点击/拖拽/高亮，DOM 动作无法表达（canvas、drag）。",
+   "feedback": "N/A（接口设计）。",
+   "selection_rule/data": "消融比较：去 DOM、去像素、去字典、DOM 动作。",
+   "persistence": {
+    "status": "not_applicable",
+    "reason": "接口设计无留存。"
+   },
+   "later_use": {
+    "status": "not_applicable",
+    "reason": "同上"
+   },
+   "claimed_effect": "键鼠接口优于 DOM 元素动作，利于利用人类行为数据并更可迁移。",
+   "failure_boundary": "去 DOM 掉 75%（纯像素不足）；DOM 动作变体没有针对性优化（演示与动作集错配）。",
+   "evidence_ids": [
+    "son55:E003",
+    "son55:E015",
+    "son55:E016",
+    "son55:E017",
+    "son55:E018"
+   ]
+  },
+  {
+   "sig_id": "S3",
+   "object": "多任务联合训练（104 任务共享一个 agent）",
+   "information": "所有任务均匀采样混合训练。",
+   "operation": "联合训练 vs 每任务单独训练比较“每任务消耗 frame 数”下的性能。",
+   "output": "单一多任务 agent。",
+   "conditions": "任务共享键鼠接口与视觉/语言结构。",
+   "feedback": "N/A",
+   "selection_rule/data": "无",
+   "persistence": {
+    "status": "not_applicable",
+    "reason": "静态"
+   },
+   "later_use": {
+    "status": "not_applicable",
+    "reason": "静态"
+   },
+   "claimed_effect": "联合训练比单任务更省数据，作为“迁移”证据。",
+   "failure_boundary": "迁移只在训练任务集合内度量，没有留出任务。",
+   "evidence_ids": [
+    "son55:E020",
+    "son55:E021"
+   ]
+  }
+ ],
+ "gap": {
+  "author_gap": "先前 MiniWoB++ 工作靠 DOM 专用动作、课程、受限探索；纯 BC+RL 在 MiniWoB 提出时只用 17 小时数据且不到随机策略 +5%，因此被认为需要专门技巧。",
+  "checked_gap": "作者描述可由正文核对：先前纯 BC 仅略优于随机、DOM 专用路线（c_dom_prior/c_prior_bc）。本席核对了 Table 3 中 External SotA 聚合：88 个有外部分数任务上聚合 SotA(Augmented) 均值 0.646，而 CC-Net 同任务均值 0.924。但 WGE/DOM-Q-NET/World of Bits 的原文不在本批固定包内，其具体数值与实现条件我只能引用作者转述（author_report），未在原文核对。",
+  "lineage": [
+   "World of Bits(Shi 2017, BC+RL 基线，数据 17h) → WGE(Liu 2018, 工作流引导探索) / DOM-Q-NET(Jia 2019) / Gur 2018-2021 课程 → CC-Net(本文)；之后：WebN-T5(Gur 2022) → WebGUM(2305.11854，同批) / RCI(2303.17491，同批)。"
+  ],
+  "closest_adjacent": [
+   {
+    "work": "Workflow-guided exploration / DOM-Q-NET / learning to navigate the web",
+    "source_version": "cited in 2202.08137v2 related text; originals not in pinned bundle",
+    "solved": "MiniWoB 子集任务上的 DOM 专用 RL",
+    "residual": "依赖 DOM 专用动作/课程/受限探索，覆盖任务子集；",
+    "evidence_ids": [
+     "son55:E004",
+     "son55:E019"
+    ]
+   },
+   {
+    "work": "World of Bits (BC+RL)",
+    "source_version": "cited in 2202.08137v2; original not in pinned bundle",
+    "solved": "提出键鼠+BC+RL 配方",
+    "residual": "演示仅约 17 小时，BC 性能接近随机",
+    "evidence_ids": [
+     "son55:E005"
+    ]
+   }
+  ],
+  "residue": "像素-only 性能不足(去 DOM 掉 75%)；所有任务均是训练任务；人类演示成本 ~6300 小时；仅合成 MiniWoB；单 seed。",
+  "stakes": "证明“简单、可扩展的 BC+RL + 人类同款接口”能在整个 benchmark 达到人类均值，是后续大规模键鼠 agent 数据路线的早期证据；但对真实计算机控制的外推只是展望。",
+  "method_response": "把规模化人类演示+RL 联合训练作为主杠杆，并以实验证明数据量是主因（scaling）、BC+RL 缺一不可、DOM 动作不必需。",
+  "remaining_gap": "纯像素泛化、新任务/新站点泛化、自然语言意图复杂度、数据采集成本、跨 seed 方差——均未解决，作者在讨论中部分承认。",
+  "current_relevance": "后续 OSWorld/AndroidWorld 把 CC-Net 与 MiniWoB++ 作为基础模型之前的 domain-specific 先例(见证据)，说明其历史位置而非否定当时 gap 的真实性。",
+  "evidence_ids": [
+   "son55:E002",
+   "son55:E005",
+   "son55:E004",
+   "son55:E019",
+   "son55:E026",
+   "son55:E027",
+   "son55:E025"
+  ],
+  "unresolved": [
+   "WGE/DOM-Q-NET/WoB 原文未在固定包内，对其方法与数值的描述仅为作者转述；建议总控如需更强 G 评价补材料并向两席同步重新固定输入包。"
+  ],
+  "aggregator_check": "Gap confirmed in the fixed text: the original MiniWob BC (17 h) barely beat random and later work moved to DOM actions/curricula/constrained exploration (son55:E004, son55:E005); the residual question (does generic BC+RL with a human-compatible interface work at scale) is explicit, and remaining gaps (human intent, pixel-only, non-DOM tasks) are stated in Sec 4. Nearest-neighbour originals are not in the pinned pack; their per-task numbers come from Table 3, partly figure-estimated (sol:E020)."
+ },
+ "rs_pattern": {
+  "primary": "assumption_audit_and_pivot",
+  "supporting": [
+   "unify_into_shared_representation"
+  ],
+  "outside_taxonomy": false,
+  "reason": "Primary: the paper's stated contribution is to overturn the field's inference that generic BC+RL is inadequate on MiniWoB (agg:CC-A03, son55:E002, son55:E005) by violating its small-data precondition (400x human data) and demonstrating the new behaviour - the assumption_audit_and_pivot signature (identify assumption -> violate -> demonstrate). Fit partial: no tightness/identifiability certificate and the 'binding constraint' is shown only within one architecture (agg:CC-A07). Supporting: a distinct operation maps humans and agents, and all 104 tasks, into one keyboard/mouse action space and one multimodal policy (agg:CC-A04, agg:CC-A05, son55:E020); fit partial because no held-out task shows a capability only the unified substrate yields. Sub-cards null for both: C01/C05/C11/C19/C28/C29 tactics (security locus, identifiability, bounds) are absent; C18 (manufacture a substrate to borrow a mature pretrained recipe) is absent since CC-Net trains from scratch.",
+  "executes_pattern": "partial",
+  "resolves_problem": "scoped: closes 'generic BC+RL cannot do MiniWoB++' for the trained 104 task families (author-reported); does not close generalisation to unseen tasks, pixel-only control or real computers.",
+  "matches": [
+   {
+    "main_id": "assumption_audit_and_pivot",
+    "sub_id": null,
+    "role": "primary",
+    "fit": "partial",
+    "tactic_steps_checked": [
+     {
+      "step": "Name binding assumption",
+      "status": "met",
+      "reason": "Explicitly challenges inference that generic BC+RL requires special action/curriculum machinery."
+     },
+     {
+      "step": "Violate empirical assumption",
+      "status": "met",
+      "reason": "Change demonstration scale and show generic co-training works; actual counterexample to generic-method insufficiency in MiniWoB."
+     },
+     {
+      "step": "Demonstrate new regime and isolate pivot",
+      "status": "partial",
+      "reason": "Data scaling and loss ablations support data importance, but scaling also changes loss weight and multimodal stack; not a proof of unique bottleneck."
+     }
+    ],
+    "success/failure_checks": [
+     {
+      "condition": "Empirically reachable new precondition",
+      "status": "met",
+      "reason": "2.4m real human demonstrations collected."
+     },
+     {
+      "condition": "Prior failure caused precisely by audited condition",
+      "status": "partial",
+      "reason": "Controlled scaling within current architecture, not exact reconstruction of ancestor pipelines."
+     },
+     {
+      "condition": "Tightness/lower bound",
+      "status": "not_applicable",
+      "reason": "Empirical control recipe; no theorem or optimality claim to certify."
+     },
+     {
+      "condition": "Adaptive adversary",
+      "status": "not_applicable",
+      "reason": "No security exploit or defense."
+     },
+     {
+      "condition": "Component stacking without isolation",
+      "status": "partial",
+      "reason": "Several ablations exist but final memory and loss-weight confounds remain."
+     }
+    ],
+    "evidence_ids": [
+     "sol:E001",
+     "sol:E002",
+     "sol:E007",
+     "sol:E008",
+     "sol:E015"
+    ],
+    "reason": "Actual assumption challenge and empirical counterexample, not just keyword scaling. Original C01 security-locus and C05 identifiability tactics do not fit; other sibling overview tactics are also inapplicable, so sub=null.",
+    "aggregate_source_seat": "sol"
+   },
+   {
+    "main_id": "unify_into_shared_representation",
+    "sub_id": null,
+    "role": "supporting",
+    "fit": "partial",
+    "tactic_steps_checked": {
+     "C18_note": "子卡 C18 的操作是为缺少离散词表/序列表示的模态“制造 substrate”(量化器、序列化、投影桥)以便借用成熟配方；CC-Net 从头训练、没有借用预训练配方，也没有制造 interface artifact，因此 sub_id=null。"
+    },
+    "success_checks": {
+     "establish_precondition_first": "unmet(未先验证共享空间)",
+     "uniform_objective_across_inputs": "met(单一多模态 transformer；BC+RL 统一在一个 policy)",
+     "emergent_capability_measured": "partial(联合训练比单任务省 frame；无留出任务)",
+     "generality_across_tasks_and_backbones": "partial(104 任务但仅一个架构/单 seed)"
+    },
+    "failure_checks": {
+     "no_ablation_isolating_unification": "partial(有 frame-matched 多任务 vs 单任务；无算力/参数量/数据对照)",
+     "single_backbone": "present(仅一个架构)",
+     "fails_specialists": "not_present(超过聚合外部 SotA，simon-says/terminal 例外)"
+    },
+    "evidence_ids": [
+     "son55:E003",
+     "son55:E020",
+     "son55:E001",
+     "son55:E011"
+    ],
+    "reason": "单一 policy 在 104 个任务共享键鼠动作空间；匹配的是“统一接口+单模型”，不是“造 substrate”。",
+    "aggregate_source_seat": "son55"
+   }
+  ],
+  "aggregate_source_seat": "revised"
+ },
+ "domain_pattern": {
+  "namespace": "gui",
+  "matches": [
+   {
+    "main": "trajectory_level_policy_training",
+    "sub": null,
+    "version": "taxonomy@430aa362",
+    "fit": "partial",
+    "operation": "“演示 → 过滤(按成功) → 联合 BC+在线 RL 更新”接近该主卡 signature(initialise→roll out→filter→update with RL/SFT)，但没有 SFT 初始化后再 RL、没有 KL/回放；最接近 K20 却不是同一操作。",
+    "condition_checks": [
+     {
+      "id": "S1",
+      "status": "unmet",
+      "note": "从零联合训练，BC 预训练后接 RL 仅“早期证据(未展示)”",
+      "evidence_ids": [
+       "son55:E008"
+      ]
+     },
+     {
+      "id": "S2",
+      "status": "partial",
+      "note": "无 KL；演示按成功过滤、BC 项起到锚定作用",
+      "evidence_ids": [
+       "son55:E007"
+      ]
+     },
+     {
+      "id": "F3",
+      "status": "present",
+      "note": "任务短、单 seed、固定任务集合",
+      "evidence_ids": [
+       "son55:E009"
+      ]
+     },
+     {
+      "id": "F4",
+      "status": "present",
+      "note": "仅一种架构/规模，未显示不同 backbone",
+      "evidence_ids": [
+       "son55:E010"
+      ]
+     }
+    ],
+    "evidence_ids": [
+     "son55:E008",
+     "son55:E007",
+     "son55:E009"
+    ],
+    "aggregate_source_seat": "son55"
+   },
+   {
+    "main": "planner_grounder_interface",
+    "sub": "K29",
+    "version": "taxonomy@430aa362",
+    "fit": "partial",
+    "operation": "K29 重设计动作接口：本文选择键鼠宏+坐标网格(而非 DOM id 动作)并做消融；与 K29 的“元素标签接口”方向相反，但同属“动作抽象选择+消融”。",
+    "condition_checks": [
+     {
+      "id": "S4",
+      "status": "partial",
+      "note": "统一的键鼠动作空间贯穿所有 web 任务，但只在 web 一个平台族",
+      "evidence_ids": [
+       "son55:E003"
+      ]
+     },
+     {
+      "id": "S5",
+      "status": "unmet",
+      "note": "接口与可用结构不匹配：有 DOM 的情况下 raw 接口更好，但 DOM 动作变体未优化",
+      "evidence_ids": [
+       "son55:E016",
+       "son55:E017"
+      ]
+     },
+     {
+      "id": "F5",
+      "status": "not_observed",
+      "note": "未讨论 51 档坐标离散化的粒度上限",
+      "evidence_ids": []
+     }
+    ],
+    "evidence_ids": [
+     "son55:E003",
+     "son55:E016",
+     "son55:E017"
+    ],
+    "aggregate_source_seat": "son55"
+   }
+  ],
+  "unassigned": [
+   "大规模(百万级)人类演示 + BC/RL 联合训练的 scaling 结论（未被任何领域卡覆盖，尤其是 pre-LLM 的 RL+BC）。"
+  ],
+  "revision_proposals": [
+   {
+    "status": "case_candidate_not_checked",
+    "note": "可能新增 trajectory_level_policy_training 子卡：human-demo scaling + BC/RL co-training（单篇，只能算 case，需第二篇独立全文支持才能升 candidate_pattern）。"
+   },
+   {
+    "status": "revision_proposal_not_checked",
+    "card": "gui:K29",
+    "note": "K29 lists 'Counterexamples: none found'. 2202.08137v2 Sec 3.4 / Fig 8b (agg:CC-A06) reports a DOM-element action variant less effective than raw keyboard/mouse on MiniWoB++ and unable to express canvas clicks/drag/highlight; candidate counter-evidence source for K29's 'When it fails'. Single paper, record only; no card edit in-batch."
+   }
+  ],
+  "aggregate_note": "Kept son55's two matches. trajectory_level_policy_training/null: success-filtered demonstrations + joint BC/online RL update; no K20 critic/advantage filtering. planner_grounder_interface/K29 partial: the paper chooses and ablates the action abstraction (raw keyboard/mouse vs DOM-element actions), which is K29's operation, but in the opposite direction to K29's element-tag examples; no planner/grounder split."
+ },
+ "pattern_mapping": [
+  {
+   "rs_main": "assumption_audit_and_pivot",
+   "rs_sub": null,
+   "domain_namespace": "gui",
+   "domain_main": "trajectory_level_policy_training",
+   "domain_sub": null,
+   "operation_correspondence": "Original cognitive move challenges specialized-method necessity; GUI implementation is scaled human-trajectory BC plus online reward optimization.",
+   "necessary_conditions": "Compatible action labels and enough diverse demonstrations; valid reward; ablations distinguishing data scale from other changes.",
+   "differences": "Domain card describes training operation, not necessarily assumption auditing. No rs:C01=gui:C01 equivalence; no K20 by naming RL.",
+   "evidence_ids": [
+    "sol:E002",
+    "sol:E003",
+    "sol:E007",
+    "sol:E008",
+    "sol:E015"
+   ],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "rs_main": "unify_into_shared_representation",
+   "rs_sub": null,
+   "domain": {
+    "namespace": "gui",
+    "main": "planner_grounder_interface",
+    "sub": "K29"
+   },
+   "operation_correspondence": "RS: 把异构任务/输入放入共享表示与单一模型；GUI: 键鼠动作空间 + 多模态 transformer 统一 104 任务。对应的是接口选择(动作抽象)与统一训练，不是 K29 里的 element-tag 或工具库。",
+   "conditions_and_differences": "领域卡 K29 强调接口要匹配可用结构；本文反而用 raw 接口压过 DOM 动作，且 DOM 动作变体非最优，证据偏弱。",
+   "evidence_ids": [
+    "son55:E003",
+    "son55:E016"
+   ],
+   "aggregate_source_seat": "son55"
+  }
+ ],
+ "expectations": [
+  {
+   "id": "E01",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s1",
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2601.04126#s2",
+    "2602.00575#s2",
+    "2410.08164#s1"
+   ],
+   "applies_when": "an empirical claim that a method improves end-to-end task success of a desktop (Ubuntu/Windows) computer-use agent",
+   "text": "Report execution-checked success rate on OSWorld (or OSWorld-Verified) for desktop computer-use claims, stating the step budget (15 vs 50 steps) and observation setting",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「桌面(Ubuntu/Windows)端到端 computer-use 成功率主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E02",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2412.19723#s1",
+    "2501.12326#s3",
+    "2506.08012#s2",
+    "2509.11543#s1",
+    "2509.23738#s1",
+    "2602.09856#s2"
+   ],
+   "applies_when": "an empirical claim that a method improves task success of an Android/mobile GUI agent",
+   "text": "Report online success on AndroidWorld for mobile-agent claims, not only offline AndroidControl/AITW step metrics",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「Android/移动 GUI agent 任务成功率主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E03",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.02337#s3",
+    "2410.02907#s2",
+    "2601.22149#s2",
+    "2602.14721#s2",
+    "2412.19723#s1",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical claim that a training, data-synthesis or planning method improves a web agent on self-hosted sites",
+   "text": "Report success on WebArena (self-hosted, functional-correctness checkers) for web-agent training or planning claims; if the 165-task WebArena-Lite or a per-template subset is used, say so and justify it",
+   "applicable": true,
+   "status": "partial",
+   "reason": "applies_when is met literally: a training method claimed to improve a web agent on locally served sites with programmatic checkers (MiniWoB++, all 104 tasks). WebArena did not exist in 2022 and cannot be required by name; status partial records the realism gap of synthetic widget tasks. Kept consistent with both seats' agreed E03=partial for WebGUM (2305.11854) on the same suite.",
+   "evidence_ids": [
+    "sol:E018",
+    "son55:E025"
+   ],
+   "score_item": [
+    "E.measurement",
+    "E.holdout"
+   ],
+   "aggregate_source_seat": "revised"
+  },
+  {
+   "id": "E04",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382#s2",
+    "2411.06559#s1",
+    "2601.04126#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim about web-agent success on real, live websites",
+   "text": "Evaluate live-web agents on Online-Mind2Web (human-validated, start URL given, no search engine) or Mind2Web-Live rather than only WebVoyager, where a naive search-and-click agent already solves 51% of sampled tasks",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「真实 live-web 站点上的 web agent 成功率主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E05",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2509.11543",
+    "2604.14262#s2",
+    "2501.12326"
+   ],
+   "applies_when": "a claim that a model or data recipe improves screenshot-to-coordinate GUI grounding",
+   "text": "Report GUI grounding on ScreenSpot-Pro (high-resolution professional desktop) and ScreenSpot-v2, not only ScreenSpot v1, which saturates (7B and 72B indistinguishable)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「截图到坐标的 GUI grounding 模型/数据配方主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E06",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2412.04454#s1",
+    "2501.12326#s3",
+    "2505.13227#s1",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that a grounding model or grounding-data recipe beats prior GUI grounders",
+   "text": "Compare a new grounder against UGround(-V1-7B), Aguvis-7B/72B, OS-Atlas-7B and UI-TARS(-1.5) at matched backbone size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「新 grounder 优于已有 GUI grounder 的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E07",
+   "version": "cua-agents/v1; sha256:4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+   "text": "Compare a native end-to-end GUI policy against UI-TARS(-1.5)-7B (or the same backbone's SFT-only model) and against an agentic framework (GPT-4o/o3 planner + specialised grounder such as UGround, Aria-UI, Jedi, GTA1)",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_practice",
+     "ref": "2509.11543#s1",
+     "note": "vs UI-TARS-7B, SFT-only, offline RL"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2506.08012#s2",
+     "note": "vs UI-TARS-7B/72B, GPT-4o+Aria-UI"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2509.23738#s1",
+     "note": "UI-TARS-1.5-7B base"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2510.17790#s1",
+     "note": "UI-TARS-1.5-7B, GTA1-7B+o3"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2601.04126#s2",
+     "note": "UI-TARS-1.5-7B base"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2602.00575#s2",
+     "note": "UI-TARS-1.5-7B base"
+    }
+   ],
+   "source_interpretation": "Paper practice/limitation-derived expectation, not an actual review of this paper.",
+   "applies_when": "a claim that a trained end-to-end GUI agent model improves online task success",
+   "applicable": true,
+   "status": "partial",
+   "reason": "Historically relevant native-policy controls are BC-only and RL-only plus published agents. Not matched-data/harness against all alternatives; future UI-TARS/GPT-4o cannot be required.",
+   "evidence_ids": [
+    "sol:E008",
+    "sol:E012",
+    "sol:E020"
+   ],
+   "score_item": [
+    "E.causality"
+   ],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E08",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s2",
+    "2412.04454#s3",
+    "2505.13227#s2"
+   ],
+   "applies_when": "a claim that a grounding component (or the planner-grounder split itself) improves agent task success",
+   "text": "For planner-grounder systems, hold the planner fixed and swap grounders (e.g. GPT-4o + UGround vs + Aguvis vs + Jedi), and report the planner alone",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「接地组件(或 planner–grounder 拆分)提升 agent 任务成功的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E09",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.02337#s3",
+    "2406.11896#s1",
+    "2509.11543#s1",
+    "2601.22149#s2",
+    "2509.23738#s1"
+   ],
+   "applies_when": "a claim that an RL algorithm (online, offline-to-online, semi-online or model-based) improves a GUI/web agent",
+   "text": "Compare GUI online-RL methods against DigiRL, WebRL, filtered BC / AWR and an SFT-only model trained on the same data",
+   "applicable": true,
+   "status": "partial",
+   "reason": "主张“BC+RL 联合优于单独 BC 或 RL”，同数据 BC-only/RL-only 对照存在(Fig 3/7，Table 3 BC-only)；无与 filtered-BC/AWR 等替代、无先 BC 后 RL 的对照；现代 DigiRL/WebRL 当时不存在。",
+   "evidence_ids": [
+    "son55:E025",
+    "son55:E008",
+    "son55:E014"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E10",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2406.11896#s2",
+    "2411.02337#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2412.19723#s2",
+    "2311.08649#s2",
+    "2510.09038"
+   ],
+   "applies_when": "a method that uses an LLM/VLM judge, ORM or reflector to label trajectory success for evaluation, filtering or reward",
+   "text": "Validate an LLM/VLM success judge or outcome reward model against human labels on trajectories from agents not used to build it (agreement/accuracy, plus the resulting success-rate gap)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「用 LLM/VLM judge、ORM 或 reflector 为评测/过滤/奖励标注轨迹成败」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E11",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2510.18596#s2",
+    "2504.01382#s1",
+    "2602.00575#s1",
+    "2504.01382"
+   ],
+   "applies_when": "a claim that a GUI-agent judge, PRM or ORM is reliable enough to serve as reward or evaluator",
+   "text": "Report judge reliability separately for positive and negative verdicts (precision and NPV, or precision/recall per class), not only overall accuracy",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「GUI agent judge/PRM/ORM 足够可靠可作奖励或评测的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E12",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738#s1",
+    "2602.00575#s2",
+    "2510.18596",
+    "2605.06732#s3"
+   ],
+   "applies_when": "a claim that a learned reward model or verifier improves GUI-agent RL training",
+   "text": "When a learned judge or PRM is the RL reward, show downstream policy gain against an alternative reward (rule/script checker, ORM vs PRM, another judge), and address reward hacking or bias",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「学习型奖励模型/验证器改进 GUI agent RL 训练的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E13",
+   "version": "cua-agents/v1; sha256:4663f2b47de565c2d4d000de3228499b1de3d8a12f73d43664a0297e05452e67",
+   "text": "Measure execution checkers (evaluation scripts) two-sidedly: false negatives on alternative valid solutions as well as false positives",
+   "source_strength": "common_practice",
+   "source_refs": [
+    {
+     "kind": "paper_limitation",
+     "ref": "2404.07972",
+     "note": "authors: more red-teaming could reduce remaining false positives/negatives"
+    },
+    {
+     "kind": "paper_limitation",
+     "ref": "2602.00575",
+     "note": "authors: OSWorld-Verified scripts produce false negatives (multiple solutions)"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2609.07712#s2",
+     "note": "reviewer audit on correct and deliberate-failure trajectories"
+    },
+    {
+     "kind": "paper_practice",
+     "ref": "2610.05001#s2",
+     "note": "detection rate plus non-rejection rate on legal alternatives"
+    }
+   ],
+   "source_interpretation": "Paper practice/limitation-derived expectation, not an actual review of this paper.",
+   "applies_when": "a benchmark, synthetic environment or RL pipeline whose reward comes from per-task execution checkers or evaluator scripts",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "Uses task programmatic rewards without a two-sided false-positive/alternative-solution rejection audit. No evidence of actual checker failure is inferred.",
+   "evidence_ids": [
+    "sol:E018"
+   ],
+   "score_item": [
+    "E.measurement"
+   ],
+   "aggregate_source_seat": "sol"
+  },
+  {
+   "id": "E14",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2509.23738#s2",
+    "2509.23738"
+   ],
+   "applies_when": "a claim that a process reward model for GUI steps improves RL or best-of-N",
+   "text": "For PRMs or step-level verifiers, ablate the label source (human vs GPT-4o-generated step labels)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「GUI 步级 PRM 改进 RL 或 best-of-N 的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E15",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326",
+    "2509.11543#s3",
+    "2602.09856",
+    "2504.01382#s2"
+   ],
+   "applies_when": "a claim of improved agent capability measured with offline, teacher-forced step metrics",
+   "text": "Do not rest an agent capability claim on offline step accuracy (AndroidControl, Multimodal-Mind2Web, GUI Odyssey) alone; add an online benchmark or show the offline metric predicts online success",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「以离线 teacher-forced 步级指标衡量 agent 能力提升的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E16",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2505.13227#s2",
+    "2510.17790#s1",
+    "2504.01382#s1",
+    "2609.10031",
+    "2311.08649",
+    "2411.02337"
+   ],
+   "applies_when": "an empirical comparison on an online/live benchmark (OSWorld, AndroidWorld, WebArena, Online-Mind2Web) where LLM sampling and environment noise vary across runs",
+   "text": "Report mean and spread over at least 3 runs (or confidence intervals) for online benchmark numbers",
+   "applicable": true,
+   "status": "unmet",
+   "reason": "作者明说每条件仅一个 seed，无多次运行均值/散布。",
+   "evidence_ids": [
+    "son55:E009"
+   ],
+   "score_item": "E.statistics"
+  },
+  {
+   "id": "E17",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2501.12326#s1",
+    "2410.13232#s2",
+    "2504.01382#s2",
+    "2609.07712#s3",
+    "2510.17790#s1"
+   ],
+   "applies_when": "a comparison of agent success where methods or baselines may run with different step caps",
+   "text": "Compare agents at an equal, stated max-step budget (e.g. OSWorld 15 vs 50 steps), and report steps used / budget exhaustion",
+   "applicable": true,
+   "status": "partial",
+   "reason": "声明了自己的 300 步上限，但与外部基线的步数/时间上限是否一致未核查，得分不按时间折扣。",
+   "evidence_ids": [
+    "son55:E023"
+   ],
+   "score_item": "E.cost"
+  },
+  {
+   "id": "E18",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.13232#s2",
+    "2411.06559#s1",
+    "2509.23738#s2",
+    "2602.00575#s2"
+   ],
+   "applies_when": "a claim that an inference-time selection method (world-model lookahead, verifier rerank, best-of-N) improves success",
+   "text": "For inference-time search or best-of-N (simulated lookahead, verifier reranking), report cost/latency and the number of candidates, and compare against real-execution tree search where reset is possible",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「推理时选择/搜索(世界模型 lookahead、verifier 重排、best-of-N)提升成功率的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E19",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.23738",
+    "2506.08012#s2",
+    "2412.19723",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a result on AndroidWorld, WebArena, Mind2Web-Live or OSWorld run in a re-engineered or modified harness",
+   "text": "Disclose and validate any modification to an online benchmark harness (re-implemented checkers, changed action implementations, dropped tasks, extra steps)",
+   "applicable": true,
+   "status": "partial",
+   "reason": "披露了自建 X11/CDP 环境栈、agent 2Hz 观察与时序抖动，但对原 Selenium 环境的等价性仅以“结果上看不成问题”论证，未验证。",
+   "evidence_ids": [
+    "son55:E022"
+   ],
+   "score_item": "E.measurement"
+  },
+  {
+   "id": "E20",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2504.01382",
+    "2406.11896",
+    "2510.09038"
+   ],
+   "applies_when": "a claim measured on live websites or live apps",
+   "text": "For live-web results, state the evaluation date and handle site drift (replace outdated tasks, report blocked/CAPTCHA tasks)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在 live 网站或 live 应用上测得的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E21",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2404.07972#s2",
+    "2410.05243#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a comparison of GUI agents whose observation spaces may differ",
+   "text": "Report screenshot-only and accessibility-tree/DOM-augmented settings separately; a11y-tree availability changes results and reverses across models",
+   "applicable": true,
+   "status": "met",
+   "reason": "Sec 3.4 分别做了去 DOM(纯像素)与去像素(DOM-only)的输入消融，并报告 DOM 依赖(−75%)；具体柱高在图中。",
+   "evidence_ids": [
+    "son55:E015"
+   ],
+   "score_item": "E.causality"
+  },
+  {
+   "id": "E22",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2509.11543",
+    "2501.12326#s3",
+    "2604.02345#s2",
+    "2412.04454#s3"
+   ],
+   "applies_when": "a claim that a training recipe generalises across policy backbones",
+   "text": "Report results across backbone sizes (e.g. 7B and 32B/72B), since gains from GUI data/RL recipes shrink with model size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「训练配方可跨策略 backbone 泛化的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E23",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2504.01382#s2",
+    "2609.07712#s3"
+   ],
+   "applies_when": "a new benchmark or a claim about long-horizon GUI task capability",
+   "text": "Stratify online success by human reference step count (difficulty) and audit failure causes",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「新 benchmark 或关于长时程 GUI 任务能力的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E24",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2604.14262#s1",
+    "2404.07972#s2",
+    "2505.13227#s3"
+   ],
+   "applies_when": "a claim that a grounder or agent is robust or generalises across visual layouts",
+   "text": "Test grounding robustness under controlled perturbations (zoom, text size, window position/clutter, relational instructions) with matched pairs",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「grounder/agent 对布局、缩放、杂乱等视觉扰动鲁棒或可泛化的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E25",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2505.13227#s1",
+    "2404.07972#s1",
+    "2412.04454"
+   ],
+   "applies_when": "a grounding or agent benchmark claim where some instructions are ambiguous or infeasible",
+   "text": "Report refusal / infeasible-task behaviour (instructions with no valid target)",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「含歧义或不可行指令的 grounding/agent benchmark 主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E26",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2410.02907#s3",
+    "2412.19723#s1"
+   ],
+   "applies_when": "a claim that an exploration-first, reverse or world-model data-synthesis method yields better GUI training data",
+   "text": "Compare a synthetic-trajectory recipe against an instruction-first / task-driven synthesis baseline with the same executor and similar data size",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「探索优先/反向/世界模型式数据合成产出更好 GUI 训练数据的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E27",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2410.05243#s1",
+    "2505.13227#s1",
+    "2412.19723",
+    "2604.02345#s1",
+    "2510.09038#s1",
+    "2608.05891"
+   ],
+   "applies_when": "a claim that synthetic GUI grounding, transition or trajectory data improves agents",
+   "text": "Show a data-scaling curve (fraction or count of synthetic samples vs downstream score) and say where it saturates",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「合成 GUI grounding/转移/轨迹数据提升 agent 的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E28",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s2",
+    "2412.19723#s1",
+    "2601.04126#s2",
+    "2510.09038#s1"
+   ],
+   "applies_when": "a claim that self-generated tasks, explored transitions, memory or synthesised environments improve benchmark success",
+   "text": "Separate synthesis/exploration environments from evaluation (held-out apps/sites, filtered test queries) and report out-of-distribution transfer",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「自生成任务、探索转移、记忆或合成环境提升 benchmark 成功率的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E29",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2506.08012#s1",
+    "2506.08012#s2",
+    "2506.08012"
+   ],
+   "applies_when": "a claim that reflection, self-correction or first-error recovery data improves GUI agents",
+   "text": "Ablate error-correction/reflection data against filtered behaviour cloning at the same iteration count",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「反思/自纠错/首错恢复数据提升 GUI agent 的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E30",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048#s1",
+    "2411.06559#s2",
+    "2602.09856#s2",
+    "2410.13232#s1",
+    "2601.22149#s2"
+   ],
+   "applies_when": "a claim that a GUI/web world model (text, code or image next-state predictor) is accurate or useful",
+   "text": "Evaluate a GUI world model by downstream agent success and closed-loop (multi-step, autoregressive) rollouts, not only teacher-forced one-step fidelity",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「GUI/web 世界模型(文本、代码或图像下一状态预测器)准确或有用的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E31",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2411.06559#s1",
+    "2601.22149#s2",
+    "2410.13232",
+    "2402.01086"
+   ],
+   "applies_when": "a method that plans or trains with multi-step rollouts inside a learned GUI world model",
+   "text": "Ablate imagination / lookahead horizon, since world-model errors compound beyond 1 (lookahead) or about 5 (training) steps",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在学习得到的 GUI 世界模型内做多步 rollout 规划或训练」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E32",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2601.22149#s2",
+    "2608.05891",
+    "2403.03949#s3"
+   ],
+   "applies_when": "a claim that policy training on world-model or simulated GUI rollouts improves agents",
+   "text": "For training in a world model, include sim-only vs real-anchored vs SFT-only arms",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「在世界模型或模拟 GUI rollout 中训练策略的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E33",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.00048",
+    "2602.14721#s1",
+    "2411.06559#s2"
+   ],
+   "applies_when": "a claim about GUI world-model or simulated-app fidelity measured with LLM/VLM judges",
+   "text": "Back world-model or synthetic-environment fidelity scores with a second independent judge, human validation or executable checks, not a VLM judge from the same family as the training reward",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「用 LLM/VLM judge 度量 GUI 世界模型或模拟应用保真度的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E34",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "common_practice",
+   "source_refs": [
+    "2609.07712#s1",
+    "2504.03597#s1",
+    "2403.03949#s1",
+    "2507.07067"
+   ],
+   "applies_when": "a claim that a simulated app, synthetic site or digital twin substitutes for the real environment",
+   "text": "For a digital twin / simulated app used for training or evaluation, measure its realism and whether it preserves the ranking of agents or checkpoints seen in the real environment",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「模拟应用/合成站点/数字孪生可替代真实环境的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  },
+  {
+   "id": "E35",
+   "version": "cua-agents/v1@4663f2b4",
+   "source_strength": "single_source",
+   "source_refs": [
+    "2510.09038#s1",
+    "2410.08164#s2"
+   ],
+   "applies_when": "a claim that experience memory or retrieved trajectories improve GUI agents",
+   "text": "For memory/retrieval agents, show gains on environments other than those the memory was built from",
+   "applicable": false,
+   "status": "not_applicable",
+   "reason": "适用条件是「经验记忆/检索轨迹改进 GUI agent 的主张」；本文中心主张范围为「MiniWoB++ 104 个训练任务上的 BC+RL 智能体，并展望一般计算机控制」，不构成该主张，故不适用。",
+   "evidence_ids": [],
+   "score_item": null
+  }
+ ],
+ "claims": [
+  {
+   "claim_id": "C1",
+   "text": "CC-Net 在 MiniWoB++ 104 任务上均值达到人类水平并显著超过聚合外部 SotA",
+   "setting": "MiniWoB++ 104 任务；像素+DOM+字典；每回合最多 300 步；agent ~2Hz；得分不按时间折扣",
+   "baseline/control": "人类众包得分(同接口)；外部聚合 SotA = 各论文每任务最佳(部分来自图读数、未报告任务置零后过滤 16 任务)",
+   "selection_vs_test": "训练与评测同一批 104 任务(每回合随机实例)；无留出任务；人类演示 test split 仅用于 BC 对数概率",
+   "result/denominator": "本席由 Table 3 重算：Human 0.9345、CC-Net 0.9355(104 任务)；外部聚合(Augmented) 0.646 vs CC-Net 同 88 任务 0.924；simon-says/terminal 为 0",
+   "evidence_ids": [
+    "son55:E011",
+    "son55:E025",
+    "son55:E012",
+    "son55:E019"
+   ],
+   "counterevidence": [
+    "son55:E013",
+    "son55:E018",
+    "son55:E028"
+   ],
+   "counter_note": "人类基线含网络延迟伪差；外部 SotA 部分由图估计；字典输入为特权接口，使与全生成式方法不可直接比较(同批 RCI 亦指出)。",
+   "allowed_conclusion": "作者报告：在该 benchmark 内，规模化 BC+RL 可达与众包人类持平的均值；不得外推到新任务/真实站点。",
+   "aggregate_note": "[agg] Table 3 recomputation (agg:CC-A01): parity holds only with moving-items included (human 0.18 from network latency, agg:CC-A02); excluding it Human 0.942 > CC-Net 0.936. 'Human-level mean' is a fragile, comparator-sensitive equality, not a robust capability statement."
+  },
+  {
+   "claim_id": "C2",
+   "text": "主要缺失因素是人类轨迹数据规模",
+   "setting": "数据集大小 1/1000…全量，2B frames，BC+RL；小数据时 BC 权重按 sqrt 缩小",
+   "baseline/control": "RL-only(虚线)与 BC-only(上限)",
+   "selection_vs_test": "同 C1",
+   "result/denominator": "1/1000 数据过拟合且不优于 RL-only；其后三个数量级持续上升(数值在 Fig 7，文本无表)",
+   "evidence_ids": [
+    "son55:E014",
+    "son55:E002"
+   ],
+   "counterevidence": [
+    "son55:E009",
+    "son55:E010"
+   ],
+   "counter_note": "单 seed、手工调参；小数据设置未调到最优(作者承认可用 KL)；“主要因素”未与架构因素分离。",
+   "allowed_conclusion": "在该架构/任务集内，演示量是性能的强预测因子；“唯一/主要”仅限作者观察。",
+   "aggregate_note": "[agg] The scaling arm co-varies BC loss weight with data size (agg:CC-A07); the curve is not a pure data intervention."
+  },
+  {
+   "claim_id": "C3",
+   "text": "BC 与 RL 联合训练缺一不可",
+   "setting": "Fig 3 / Fig 7 / Table 3 BC-only 列",
+   "baseline/control": "BC-only(均值 0.305，本席由 Table 3 重算)、RL-only",
+   "selection_vs_test": "同 C1",
+   "result/denominator": "BC-only 0.305 vs BC+RL 0.935；RL-only 仅在 Fig 7 虚线",
+   "evidence_ids": [
+    "son55:E025",
+    "son55:E008"
+   ],
+   "counterevidence": [
+    "son55:E009"
+   ],
+   "counter_note": "无“先 BC 后 RL”对照(数据未展示)，无法排除另一种组合更优/或更省。",
+   "allowed_conclusion": "同数据下 BC-only 远低于联合训练；不能说明联合优于预训练+微调。"
+  },
+  {
+   "claim_id": "C4",
+   "text": "存在强的跨任务迁移证据",
+   "setting": "联合 104 任务 vs 单任务，按“该任务消耗 frame”对比",
+   "baseline/control": "每任务单独训练",
+   "selection_vs_test": "全部为训练任务，无任何留出任务/类别",
+   "result/denominator": "联合训练更省数据(Fig 5，文本无数值)",
+   "evidence_ids": [
+    "son55:E020"
+   ],
+   "counterevidence": [
+    "son55:E021"
+   ],
+   "counter_note": "这是“多任务训练共享更省样本”而非对未见任务的迁移；也没有 contamination/重叠审计。",
+   "allowed_conclusion": "联合训练提高训练任务的样本效率；不是 held-out transfer。"
+  },
+  {
+   "claim_id": "C5",
+   "text": "键鼠接口优于/无需 DOM 动作，且更利于迁移到无 DOM 场景",
+   "setting": "Sec 3.4 输入/输出消融",
+   "baseline/control": "DOM click/emit-text 动作；去字典；去 DOM/去像素",
+   "selection_vs_test": "同 C1",
+   "result/denominator": "去 DOM 掉 75%；DOM 动作变体更差；去字典仍能用拖拽复制完成表单",
+   "evidence_ids": [
+    "son55:E016",
+    "son55:E015",
+    "son55:E017",
+    "son55:E018"
+   ],
+   "counterevidence": [
+    "son55:E015"
+   ],
+   "counter_note": "“无 DOM 场景更可迁移”是假设，实验显示像素-only 性能很差；DOM 动作变体“没有为之优化”。",
+   "allowed_conclusion": "在 MiniWoB 上，键鼠接口≥DOM 动作；无 DOM 场景的迁移未验证。"
+  }
+ ],
+ "assessment": {
+  "evidence_level": "online",
+  "evidence_level_reason": "Live browser episodes scored by MiniWoB++ programmatic rewards. All evaluated task families are training families (new random instances only), so not transfer under EVIDENCE rule 2.",
+  "claim_support": "scoped",
+  "author_claim": "SOTA and human-level mean across MiniWoB++, data size as primary missing factor, strong cross-task transfer, a formula toward general computer control.",
+  "strongest_supported_claim": "Author-reported, single seed: one BC+RL keyboard/mouse agent trained on ~2.4M human demonstrations reaches a 104-task MiniWoB++ mean (0.9355) numerically equal to the crowd-human mean (0.9345) and far above aggregated published results on the 88 comparable tasks; within this architecture, demonstration scale and joint BC+RL are strong drivers, and multi-task co-training is more sample-efficient on the trained tasks.",
+  "cannot_say": [
+   "robustly human-level (parity flips without the latency-confounded moving-items task)",
+   "held-out task/site transfer (all evaluated tasks were trained)",
+   "pixel-only or non-DOM capability (75% drop without DOM)",
+   "data is the unique cause (BC weight co-varies; one architecture; one seed)"
+  ],
+  "unresolved": [
+   "Figure-only values (Fig 3/5/7/8) not visible in the fixed text; directions taken from author prose.",
+   "Evaluation episode count per task not stated.",
+   "No independent reproduction; all numbers author-reported."
+  ],
+  "reproduction_note": "Aggregator recomputed Table 3 means only; nothing was run."
+ },
+ "ratings": {
+  "G": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Specific, sourced bottleneck: original MiniWob BC with 17 h data barely beat random and the field inferred specialised DOM actions/curricula were needed; the paper isolates the residual question (generic BC+RL with a human-compatible interface at scale) and states remaining gaps (human intent, pixel-only, non-DOM). Taskwise comparison to prior work is given. Not 4: neighbour originals are not in the pinned pack and some prior numbers are figure-estimated; 'primary missing factor' is not separated from interface/architecture changes.",
+   "evidence_ids": [
+    "son55:E002",
+    "son55:E004",
+    "son55:E005",
+    "agg:CC-A03",
+    "son55:E019"
+   ],
+   "counterevidence_ids": [
+    "sol:E020"
+   ],
+   "search_scope": []
+  },
+  "M": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Human-compatible action interface makes demonstrations usable; success-filtered BC supplies behavioural priors that solve the exploration problem RL alone cannot (book-flight permutations); joint BC+RL is a concrete, testable mechanism with distinguishable predictions (BC-only, RL-only, small-data regimes). Not 4: no pretrain-then-RL alternative, data and interface effects not separated, mechanism argued empirically.",
+   "evidence_ids": [
+    "sol:E003",
+    "sol:E008",
+    "sol:E010",
+    "son55:E014",
+    "agg:CC-A05"
+   ],
+   "counterevidence_ids": [
+    "son55:E008",
+    "agg:CC-A07"
+   ],
+   "search_scope": []
+  },
+  "X": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Observation/action spaces, architecture, hyperparameters (Table 1), filtering, no-op cleaving, BC:RL weighting, splits and privileged task-field dictionary are reconstructable; failure boundaries (simon-says at ~2 Hz, terminal, DOM reliance) are explicit. Not 4: LSTM not ablated in final config, evaluation episode count and harness equivalence to Selenium unvalidated.",
+   "evidence_ids": [
+    "sol:E005",
+    "sol:E008",
+    "sol:E009",
+    "sol:E019",
+    "sol:E004",
+    "son55:E012"
+   ],
+   "counterevidence_ids": [
+    "sol:E006",
+    "son55:E022"
+   ],
+   "search_scope": []
+  },
+  "E.measurement": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Success is the programmatic MiniWoB++ reward on live episodes with a full per-task table and a same-interface human comparator. Residuals: the human-parity headline hinges on the latency-confounded moving-items task (agg:CC-A01/CC-A02); the external SotA aggregate mixes figure-estimated values and zero-filled tasks; episode counts unstated; no checker audit (E13).",
+   "evidence_ids": [
+    "sol:E018",
+    "son55:E025",
+    "sol:E012",
+    "sol:E021"
+   ],
+   "counterevidence_ids": [
+    "agg:CC-A01",
+    "agg:CC-A02",
+    "sol:E020",
+    "son55:E019"
+   ],
+   "search_scope": []
+  },
+  "E.causality": {
+   "status": "resolved",
+   "rating": 3,
+   "reason": "Controls address each part of the central claim: BC-only (Table 3, mean 0.305) vs RL-only vs joint; data size over three orders with RL-only reference (1/1000 data gives no gain over RL-only); DOM/pixel/task-field input ablations; DOM-action output ablation; frame-matched multi- vs single-task. Not 4: one seed per condition, scaling co-varies BC weight (agg:CC-A07), no pretrain-then-RL alternative, most ablation values figure-only.",
+   "evidence_ids": [
+    "son55:E014",
+    "son55:E015",
+    "son55:E016",
+    "son55:E020",
+    "son55:E025"
+   ],
+   "counterevidence_ids": [
+    "agg:CC-A07",
+    "sol:E011",
+    "son55:E008"
+   ],
+   "search_scope": []
+  },
+  "E.holdout": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Evaluation tasks are the training tasks with new random instances; the human test split is used only for BC log-likelihood; 'cross-task transfer' is co-training sample efficiency, not held-out tasks; memorisation is argued by permutation counts, not audited. Matches the MiniWoB-scoped claim, but the abstract's transfer/generality wording exceeds it.",
+   "evidence_ids": [
+    "son55:E020",
+    "son55:E021",
+    "sol:E009"
+   ],
+   "counterevidence_ids": [
+    "sol:E014",
+    "agg:CC-A05"
+   ],
+   "search_scope": []
+  },
+  "E.statistics": {
+   "status": "resolved",
+   "rating": 1,
+   "reason": "One seed per condition (explicit), no intervals or repeated runs; per-task failures (simon-says, terminal) and the 104/88 denominators are reported, and the mean parity margin (0.001) is far inside the unquantified run-to-run variance.",
+   "evidence_ids": [
+    "sol:E011",
+    "sol:E013",
+    "son55:E025"
+   ],
+   "counterevidence_ids": [
+    "agg:CC-A01"
+   ],
+   "search_scope": []
+  },
+  "E.cost": {
+   "status": "resolved",
+   "rating": 2,
+   "reason": "Data cost disclosed (2.4M demos, ~6300 h, 77 participants), 2B-frame scaling snapshot, 300-step cap and frame-matched multi-task comparison. Missing accelerator time/cost, inference latency, and budget matching against prior work that used ~400x less data.",
+   "evidence_ids": [
+    "sol:E007",
+    "sol:E019",
+    "son55:E006",
+    "sol:E014"
+   ],
+   "counterevidence_ids": [],
+   "search_scope": []
+  }
+ },
+ "score": {
+  "raw": 68.75,
+  "display": 68.8,
+  "lower": 68.75,
+  "upper": 68.75,
+  "coverage": 1.0,
+  "rubric_hash": "8e579efd92dbd5b264ce1c61f86c531cbe4300480f456baa57e47a444d42cba5",
+  "formula": "S=(15G+25M+20X+10Emeas+10Ecaus+10Ehold+5Estat+5Ecost)/4; unknown -> L uses 0, U uses 4; raw=null while any unknown"
+ },
+ "status": "reviewed",
+ "status_reason": "Full fixed HTML text available and read (figures are not rendered in the v1 render; judgements use text, tables and captions); all eight items resolved.",
+ "seat_evidence_not_verifiable": {
+  "son55:E028": "cites a material (2209.08655 or 2303.17491) whose shared file was replaced by the a2 upgrade; the aggregator was instructed not to read the upgraded file, so this quote could not be verified against the a1 sha and is not used in any final decision"
+ },
+ "input_seat_hashes": {
+  "sol": "508b24567210c5a59f3af190c74dd77df438d15ddd52f12040b3bc84c3d409fb",
+  "son55": "a000cfd57ed98085b2ad2ffc1dc47243c4b093031fc2e110c5e56e3755802a26"
+ },
+ "aggregate_model": "fable",
+ "aggregate_actual_model": "claude-opus-5-5[1m]",
+ "aggregate_session": null,
+ "aggregate_receipt_ref": null,
+ "aggregate_session_note": "Configured model type fable (upstream claude-opus-5-5[1m]) per batch manifest model_types.opus55; no session id or invocation receipt is exposed to this agent.",
+ "seat_integrity_check": {
+  "sol": {
+   "file_sha256": "508b24567210c5a59f3af190c74dd77df438d15ddd52f12040b3bc84c3d409fb",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "material_complete": true,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "sonnet",
+   "actual_model": "gpt-6.1-sol"
+  },
+  "son55": {
+   "file_sha256": "a000cfd57ed98085b2ad2ffc1dc47243c4b093031fc2e110c5e56e3755802a26",
+   "version_matches_manifest": true,
+   "input_hash_matches_manifest": true,
+   "material_sha_matches_manifest": true,
+   "material_complete": true,
+   "rs_and_domain_parent_errors": [],
+   "model_type": "haiku",
+   "actual_model": "claude-sonnet-5-5[1m] (self-reported from system prompt: Sonnet 5.5)"
+  }
+ },
+ "resolutions": [
+  {
+   "field_path": "rs.primary",
+   "sol_value": "assumption_audit_and_pivot",
+   "son55_value": "unify_into_shared_representation",
+   "decision": "sol",
+   "final_value": "assumption_audit_and_pivot",
+   "reason": "The authors frame and test the paper as overturning an inferred necessity (agg:CC-A03, son55:E002): that is the assumption-audit signature. Unification of the interface is real but instrumental to that pivot, so it is retained as supporting, not primary (see rs.matches).",
+   "evidence_ids": [
+    "agg:CC-A03",
+    "son55:E002",
+    "son55:E005"
+   ],
+   "score_impact": "none on score (pattern matches are not scored)"
+  },
+  {
+   "field_path": "rs.matches",
+   "sol_value": [
+    "assumption_audit_and_pivot/None"
+   ],
+   "son55_value": [
+    "unify_into_shared_representation/None"
+   ],
+   "decision": "revised",
+   "final_value": [
+    "assumption_audit_and_pivot/None",
+    "unify_into_shared_representation/None"
+   ],
+   "reason": "Both seats identified a real operation; each missed the other's. The unified human/agent keyboard-mouse interface and single 104-task policy is a distinct operation (agg:CC-A04, son55:E020) and qualifies as the one supporting card; sub-cards null for both (see rs reason).",
+   "evidence_ids": [
+    "agg:CC-A04",
+    "agg:CC-A03",
+    "son55:E020"
+   ],
+   "score_impact": "none on score"
+  },
+  {
+   "field_path": "domain.matches",
+   "sol_value": [
+    "trajectory_level_policy_training/None"
+   ],
+   "son55_value": [
+    "planner_grounder_interface/K29",
+    "trajectory_level_policy_training/None"
+   ],
+   "decision": "son55",
+   "final_value": [
+    "trajectory_level_policy_training/None",
+    "planner_grounder_interface/K29"
+   ],
+   "reason": "K29's operation (change the action abstraction the agent emits and train it to use it) is executed and ablated in Sec 3.4 (son55:E016, agg:CC-A06); parent explicitly covers 'change the action abstraction itself'. Fit partial; recorded a K29 counter-evidence proposal, no card edit.",
+   "evidence_ids": [
+    "son55:E016",
+    "son55:E017",
+    "agg:CC-A06"
+   ],
+   "score_impact": "none on score"
+  },
+  {
+   "field_path": "rating.G",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "decision": "son55",
+   "final_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "reason": "Sol's deduction rests mainly on originals being absent from the pinned pack, which bounds verification, not the paper's gap quality. The fixed text gives a specific sourced bottleneck, taskwise neighbour comparison (Table 3) and explicit remaining gaps, i.e. above anchor 2; not 4 because the data-vs-interface framing is not separated.",
+   "evidence_ids": [
+    "son55:E002",
+    "son55:E004",
+    "son55:E005",
+    "agg:CC-A03"
+   ],
+   "score_impact": "+3.75 vs sol (15*1/4)"
+  },
+  {
+   "field_path": "rating.E.causality",
+   "sol_value": {
+    "status": "resolved",
+    "rating": 2
+   },
+   "son55_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "decision": "son55",
+   "final_value": {
+    "status": "resolved",
+    "rating": 3
+   },
+   "reason": "Sol's confounds (BC-weight coupling, LSTM parameters, external interface mismatch) are real but secondary: the central attributions (data scale, joint BC+RL, DOM vs pixels, action space, multi-task) each have an in-architecture control, and the small-data arm was given a tuning advantage rather than a handicap. Residuals keep it below 4.",
+   "evidence_ids": [
+    "son55:E014",
+    "son55:E025",
+    "son55:E015",
+    "son55:E016",
+    "son55:E020",
+    "agg:CC-A07"
+   ],
+   "score_impact": "+2.5 vs sol (10*1/4)"
+  },
+  {
+   "field_path": "expectation.E03",
+   "sol_value": "partial",
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "applies_when literally met (training method, locally served web tasks with programmatic checkers); son55's not_applicable conflicts with both seats' agreed partial for WebGUM on the same suite. No score effect beyond the ratings above.",
+   "evidence_ids": [
+    "sol:E018"
+   ],
+   "score_impact": "none (expectation statuses inform, ratings are set separately)"
+  },
+  {
+   "field_path": "expectation.E07",
+   "sol_value": "partial",
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": "partial",
+   "reason": "applies_when is 'a trained end-to-end GUI agent model improves online task success', which CC-Net is; son55's not_applicable misreads the trigger. Same-backbone BC-only analog exists; later UI-TARS/agentic baselines cannot be required.",
+   "evidence_ids": [
+    "son55:E025",
+    "sol:E008"
+   ],
+   "score_impact": "none"
+  },
+  {
+   "field_path": "expectation.E13",
+   "sol_value": "unmet",
+   "son55_value": "not_applicable",
+   "decision": "sol",
+   "final_value": "unmet",
+   "reason": "The RL pipeline's reward comes from per-task MiniWoB checkers, so applies_when holds; no two-sided checker audit is reported. No checker failure is inferred; weight on E.measurement is light because tasks are templated.",
+   "evidence_ids": [
+    "sol:E018"
+   ],
+   "score_impact": "none (E.measurement stays 3)"
+  }
+ ],
+ "shared_error_corrections": [],
+ "aggregate_status": "accepted_final",
+ "aggregate_status_reason": "All 8 mechanical conflicts resolved with fixed-text evidence; no unresolved scoring or core-claim dispute; full fixed HTML read (figures not rendered, limitation recorded).",
+ "final_record_hash": "fbe5d4acfe9cebc0be3413c9b4cf8153fe9ff2af7992f3f6c7ca5d29133672eb"
+}
