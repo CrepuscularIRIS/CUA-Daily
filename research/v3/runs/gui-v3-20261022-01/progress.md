@@ -21,3 +21,5 @@ done || b011–b016 | — | — | — | — | 在跑 |
 - 完成:97/97 批,1328/1328 篇,scored 1174 / needs_material 92 / out_of_scope 62;check_batch 全通过
 - top15 候选见 candidates.tsv + candidates-records.jsonl;25 篇 contradicted/unresolved 入问题清单
 - 下一阶段:Opus 5.5 候选原文核对(verify/)→ ≤9 篇 Reel
+- Reel 完成:9/9 篇 ready(reel/<id>/),版式各不相同;索引 reel/README.md;poster.html 受旧 ignore 规则留本地
+- run 结束:1331 篇覆盖,b098 已并入批次;两席核对 15/15,14 verify_ok / 1 needs_material
