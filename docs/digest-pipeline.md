@@ -95,7 +95,7 @@ The daily pipeline pays an LLM API to score papers because it runs unattended. W
 
 Ask your agent something like *"fetch today's arXiv papers"* or *"any new papers on LLM persuasion?"* and it will:
 
-1. **Resolve subjects and topics.** Anything explicit in your request wins; otherwise defaults come from your config (see below). If you name a topic but no subject, the agent picks likely feeds from the bundled [category taxonomy](skills/arxiv-fetch/references/arxiv-categories.md). With neither config nor a specific request, a short first-time setup asks for your interests and saves them.
+1. **Resolve subjects and topics.** Anything explicit in your request wins; otherwise defaults come from your config (see below). If you name a topic but no subject, the agent picks likely feeds from the bundled [category taxonomy](../skills/arxiv-fetch/references/arxiv-categories.md). With neither config nor a specific request, a short first-time setup asks for your interests and saves them.
 2. **Fetch.** The agent runs `scripts/fetch_arxiv.py` (stdlib-only), which pulls the feeds concurrently with retries, dedupes papers announced in several feeds, and reports failed feeds explicitly — so an empty result genuinely means "no announcements today" (weekend/holiday), never a swallowed network error.
 3. **Judge.** The agent reads titles and abstracts and selects against your topics — instructed to be selective: papers a researcher on that topic would actually open.
 4. **Digest.** You get a digest grouped by topic — linked title, authors, and a TL;DR focused on why the paper matches — plus fetched-vs-selected counts. Saved to a file only if you ask.
@@ -108,7 +108,7 @@ Defaults live in a small `config.json` (`arxiv_subjects` + `topics`), searched i
 2. `config.json` inside the skill folder — install-local
 3. `~/.config/arxiv-fetch/config.json` — user-global; survives plugin updates
 
-Explicit subjects/topics in a request always override the config without modifying it. You never need to hand-edit the file: ask the agent to *show*, *change*, *move*, or *reset* your arxiv config, or to set up project-specific topics ("use different topics for this project"). Details: [schema](skills/arxiv-fetch/references/config/schema.md), [first-time setup](skills/arxiv-fetch/references/config/first-time-setup.md).
+Explicit subjects/topics in a request always override the config without modifying it. You never need to hand-edit the file: ask the agent to *show*, *change*, *move*, or *reset* your arxiv config, or to set up project-specific topics ("use different topics for this project"). Details: [schema](../skills/arxiv-fetch/references/config/schema.md), [first-time setup](../skills/arxiv-fetch/references/config/first-time-setup.md).
 
 ## Installation
 

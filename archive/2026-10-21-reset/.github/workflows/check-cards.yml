@@ -1,0 +1,16 @@
+name: check-cards
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 test_check_cards.py && python3 check_cards.py
+      - run: python3 -m py_compile research/*.py
+      - run: pip install beautifulsoup4 && python3 test_net.py
