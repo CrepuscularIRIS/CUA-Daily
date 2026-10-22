@@ -6,7 +6,7 @@
 Core question: *which link of perception → planning → action → feedback does the work change, is the online task actually completed, and where does the gain come from?* Scope and evidence levels: [EVIDENCE](docs/EVIDENCE.md).
 （核心问题：改变了感知—规划—动作—反馈中的哪一环，在线任务是否真的完成，提升来自哪里？）
 
-> Current run: `gui-pc11-20261022-01` · rules `problem-core-v1.1` · 1331 papers screened at L1, 1279 checked at L2 (96%), 584 P3-confirmed candidates, 17 posters across 2 issues (9 + 8). The ratings rank reading priority. They are not peer review and do not endorse any venue.
+> Current run: `gui-pc11-20261022-01` · rules `problem-core-v1.1` · 1331 papers screened at L1, 1279 checked at L2 (96%), 584 P3-confirmed candidates, 17 posters in Reel. The ratings rank reading priority. They are not peer review and do not endorse any venue.
 > （档位是“值不值得读”的判断，不是审稿结论。）
 
 **What this project adds.** （本项目的三点贡献）
@@ -15,10 +15,10 @@ Core question: *which link of perception → planning → action → feedback do
 2. **Two-layer evaluation over the entire in-scope corpus**: L1 abstract + introduction screening → L2 full-text confirmation with sub-card condition checks. （两层评估覆盖全部在范围论文：L1 摘要＋引言初筛 → L2 全文核对＋子卡条件检查。）
 3. **17 Reel posters**, each with a distinct layout skeleton, all verified against the source paper by Opus 5.5. （17 张 Reel 海报，版式骨架互不相同，均经 Opus 5.5 对照原文核对。）
 
-## Featured Reel — Issue 1（第一期）
+## Featured Reel（精选画报）
 
-Nine papers, **9 distinct layouts**. Each poster was checked against the paper's full text by Opus 5.5 and passed visual QA; numbers are mapped to sections and tables in `reel/<id>/SOURCE.md`. Poster checking produced 5 correction records (`batches/l19–l23-correction.jsonl`); 2307.13854 was moved down to P2 and kept on editorial grounds (P2*). Selection log: [selection](research/scoring/runs/gui-pc11-20261022-01/selection.md) · [Reel index](reel/README.md).
-（九篇九种版式；画报核对产生 5 条修订，WebArena 降为 P2 后按编辑理由保留。）
+Seventeen papers, **17 distinct layouts**. Each poster was checked against the paper's full text by Opus 5.5 and passed visual QA; numbers are mapped to sections and tables in `reel/<id>/SOURCE.md`. Poster checking produced 9 correction records (`batches/l19–l23-correction.jsonl` + selection2 errata); 2307.13854 was moved down to P2 and kept on editorial grounds (P2*). Selection logs: [selection](research/scoring/runs/gui-pc11-20261022-01/selection.md) · [selection2](research/scoring/runs/gui-pc11-20261022-01/selection2.md) · [Reel index](reel/README.md).
+（十七篇十七种版式；画报核对产生修订记录，WebArena 降为 P2 后按编辑理由保留。）
 
 <table>
 <tr>
@@ -81,14 +81,6 @@ Across 12 prompting configurations, the precision of asking the user is only 0.0
 负结果：12 种 prompting 配置下问人的 precision 仅 0.08–0.19。
 </td>
 </tr>
-</table>
-
-## Featured Reel — Issue 2（第二期）
-
-Eight papers, **8 further layouts**, none repeating Issue 1. Selected from the full-L2 pool of 584 candidates; this issue strengthens F0 / F3 / F4 / F5 and adds no F2-led paper (Issue 1 already holds five). Post-poster errata (SteP, CATTS, ViMo, CogAgent) are logged at the end of the selection file. Selection log: [selection2](research/scoring/runs/gui-pc11-20261022-01/selection2.md) · [Reel index](reel/README.md).
-（八篇八种新版式，与首期互不重复；画报核对后的勘误记在 selection2 末尾。）
-
-<table>
 <tr>
 <td width="33%" align="center" valign="top">
 <a href="reel/2606.12666/poster.png"><img src="reel/2606.12666/poster.png" width="260" alt="2606.12666 poster"></a><br>
