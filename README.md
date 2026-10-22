@@ -6,7 +6,7 @@
 Core question: *which link of perception → planning → action → feedback does the work change, is the online task actually completed, and where does the gain come from?* Scope and evidence levels: [EVIDENCE](docs/EVIDENCE.md).
 （核心问题：改变了感知—规划—动作—反馈中的哪一环，在线任务是否真的完成，提升来自哪里？）
 
-> Current run: `gui-pc11-20261022-01` · rules `problem-core-v1.1` · 1331 papers screened at L1, 1279 checked at L2 (96%), 584 P3-confirmed candidates, 19 posters in Reel. The ratings rank reading priority. They are not peer review and do not endorse any venue.
+> Current run: `gui-pc11-20261022-01` · rules `problem-core-v1.1` · 1331 papers screened at L1, 1311 checked at L2 (98%), 591 L3 candidates (563 P3 / 28 P2), 19 posters in Reel. The ratings rank reading priority. They are not peer review and do not endorse any venue.
 > （档位是“值不值得读”的判断，不是审稿结论。）
 
 **What this project adds.** （本项目的三点贡献）
@@ -17,28 +17,48 @@ Core question: *which link of perception → planning → action → feedback do
 
 ## Featured Reel（精选画报）
 
-Nineteen papers, **19 distinct layouts**. Each poster was checked against the paper's full text by Opus 5.5 and passed visual QA; numbers are mapped to sections and tables in `reel/<id>/SOURCE.md`. Poster checking produced 9 correction records (`batches/l19–l23-correction.jsonl` + selection2 errata); 2307.13854 was moved down to P2 and kept on editorial grounds (P2*). Selection logs: [selection](research/scoring/runs/gui-pc11-20261022-01/selection.md) · [selection2](research/scoring/runs/gui-pc11-20261022-01/selection2.md) · [Reel index](reel/README.md).
-（十九篇十九种版式；画报核对产生修订记录，WebArena 降为 P2 后按编辑理由保留。）
+Nineteen papers, **19 distinct layouts**, shown as one wall. Order: papers from the last three months (Aug–Oct 2026) first, then everything else from newest to oldest. Each poster was checked against the paper's full text by Opus 5.5 and passed visual QA; numbers are mapped to sections and tables in `reel/<id>/SOURCE.md`. Poster checking produced 9 correction records (`batches/l19–l23-correction.jsonl` + selection2 errata); 2307.13854 was moved down to P2 and kept on editorial grounds (P2*). Selection logs: [selection](research/scoring/runs/gui-pc11-20261022-01/selection.md) · [selection2](research/scoring/runs/gui-pc11-20261022-01/selection2.md) · [selection3](research/scoring/runs/gui-pc11-20261022-01/selection3.md) · [Reel index](reel/README.md).
+（十九篇十九种版式，统一一面墙：近三个月（2026 年 8–10 月）的论文在前，其余按时间倒序。画报核对产生修订记录，WebArena 降为 P2 后按编辑理由保留。）
 
 <table>
 <tr>
 <td width="33%" align="center" valign="top">
-<a href="reel/2412.10840/poster.png"><img src="reel/2412.10840/poster.png" width="260" alt="2412.10840 poster"></a><br>
-<b><a href="https://arxiv.org/abs/2412.10840">2412.10840</a> · Grounding attribution</b><br>
-Attention over patches vs coordinate generation: separate "cannot see the target" from "cannot output it".<br>
-注意力定位与坐标生成对照，把“看不见”与“输出差”分开。
+<a href="reel/2609.02154/poster.png"><img src="reel/2609.02154/poster.png" width="260" alt="2609.02154 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2609.02154">2609.02154</a> · MFA automation (WiP)</b><br>
+On an unlocked phone, an agent chains legitimate factors through MFA for up to 10/10 services.<br>
+MFA 完成不再能证明人在场。
 </td>
 <td width="33%" align="center" valign="top">
-<a href="reel/2505.15810/poster.png"><img src="reel/2505.15810/poster.png" width="260" alt="2505.15810 poster"></a><br>
-<b><a href="https://arxiv.org/abs/2505.15810">2505.15810</a> · Reward hacking</b><br>
-A box-size reward gets gamed by the policy; longer reasoning grounds worse (text targets only).<br>
-框尺寸奖励被投机；推理越长定位越差（仅文字目标）。
+<a href="reel/2606.12666/poster.png"><img src="reel/2606.12666/poster.png" width="260" alt="2606.12666 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2606.12666">2606.12666</a> · Privacy masking (CAPED)</b><br>
+Mask task-irrelevant private content before a screenshot is uploaded: leakage .766 → .268, utility .893 → .929.<br>
+截图上传前遮蔽无关隐私，泄漏率降、效用不降。
 </td>
 <td width="33%" align="center" valign="top">
-<a href="reel/2307.13854/poster.png"><img src="reel/2307.13854/poster.png" width="260" alt="2307.13854 poster"></a><br>
-<b><a href="https://arxiv.org/abs/2307.13854">2307.13854</a> · Executable benchmark (P2*)</b><br>
-WebArena: resettable sites judged by final-state checks instead of action-sequence matching.<br>
-可重置环境＋终态检查替代动作序列匹配；误判率未实测，故 P2。
+<a href="reel/2604.04918/poster.png"><img src="reel/2604.04918/poster.png" width="260" alt="2604.04918 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2604.04918">2604.04918</a> · Human oversight funnel</b><br>
+138 risky actions enter execution; only 29 are caught by human approval.<br>
+有审批不等于能拦住危险动作。
+</td>
+</tr>
+<tr>
+<td width="33%" align="center" valign="top">
+<a href="reel/2604.00073/poster.png"><img src="reel/2604.00073/poster.png" width="260" alt="2604.00073 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2604.00073">2604.00073</a> · Interface cost–effect</b><br>
+Same backbone, 729 tasks: GUI and terminal interfaces differ by ~1 point in success but 2–8× in cost.<br>
+同骨干下接口成本差数倍、效果几乎相同。
+</td>
+<td width="33%" align="center" valign="top">
+<a href="reel/2602.12276/poster.png"><img src="reel/2602.12276/poster.png" width="260" alt="2602.12276 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2602.12276">2602.12276</a> · Test-time scaling (CATTS)</b><br>
+More candidates per step is not reliably better: Online-Mind2Web majority vote 22.6 → 15.1% from N=1 to 20.<br>
+每步统一加候选采样不保证更好。
+</td>
+<td width="33%" align="center" valign="top">
+<a href="reel/2601.22781/poster.png"><img src="reel/2601.22781/poster.png" width="260" alt="2601.22781 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2601.22781">2601.22781</a> · Data difficulty</b><br>
+Harder synthetic data is not better: challenge coefficient α = 0.5 is best (+4.3 pp).<br>
+合成数据不是越难越好。
 </td>
 </tr>
 <tr>
@@ -49,10 +69,30 @@ Refusing in chat is not the same as not doing it on the computer: measure the ex
 聊天里拒绝 ≠ 电脑上不做，执行通道要分开测。
 </td>
 <td width="33%" align="center" valign="top">
-<a href="reel/2404.06474/poster.png"><img src="reel/2404.06474/poster.png" width="260" alt="2404.06474 poster"></a><br>
-<b><a href="https://arxiv.org/abs/2404.06474">2404.06474</a> · Evaluator calibration</b><br>
-An automatic evaluator calibrated against both execution checks and humans, then used downstream.<br>
-评估器经执行与人工双重校准后再用于下游。
+<a href="reel/2505.15810/poster.png"><img src="reel/2505.15810/poster.png" width="260" alt="2505.15810 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2505.15810">2505.15810</a> · Reward hacking</b><br>
+A box-size reward gets gamed by the policy; longer reasoning grounds worse (text targets only).<br>
+框尺寸奖励被投机；推理越长定位越差（仅文字目标）。
+</td>
+<td width="33%" align="center" valign="top">
+<a href="reel/2504.13936/poster.png"><img src="reel/2504.13936/poster.png" width="260" alt="2504.13936 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2504.13936">2504.13936</a> · Generated future screens (ViMo)</b><br>
+Generated next screens are good enough to choose actions with: +7.76 pp online on AndroidWorld.<br>
+生成的未来屏幕能实际用于选动作。
+</td>
+</tr>
+<tr>
+<td width="33%" align="center" valign="top">
+<a href="reel/2503.19537/poster.png"><img src="reel/2503.19537/poster.png" width="260" alt="2503.19537 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2503.19537">2503.19537</a> · When to ask (negative result)</b><br>
+Across 12 prompting configurations, the precision of asking the user is only 0.08–0.19.<br>
+负结果：12 种 prompting 配置下问人的 precision 仅 0.08–0.19。
+</td>
+<td width="33%" align="center" valign="top">
+<a href="reel/2412.10840/poster.png"><img src="reel/2412.10840/poster.png" width="260" alt="2412.10840 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2412.10840">2412.10840</a> · Grounding attribution</b><br>
+Attention over patches vs coordinate generation: separate "cannot see the target" from "cannot output it".<br>
+注意力定位与坐标生成对照，把“看不见”与“输出差”分开。
 </td>
 <td width="33%" align="center" valign="top">
 <a href="reel/2409.07429/poster.png"><img src="reel/2409.07429/poster.png" width="260" alt="2409.07429 poster"></a><br>
@@ -63,62 +103,22 @@ Workflows are induced only from already-completed queries, so the information bo
 </tr>
 <tr>
 <td width="33%" align="center" valign="top">
-<a href="reel/2406.11896/poster.png"><img src="reel/2406.11896/poster.png" width="260" alt="2406.11896 poster"></a><br>
-<b><a href="https://arxiv.org/abs/2406.11896">2406.11896</a> · Online RL (DigiRL)</b><br>
-With the same backbone, online RL steps past imitation, on an Android emulator and on live sites.<br>
-同骨干下在线 RL 逐级超过模仿（模拟器＋实时网站）。
-</td>
-<td width="33%" align="center" valign="top">
 <a href="reel/2407.01476/poster.png"><img src="reel/2407.01476/poster.png" width="260" alt="2407.01476 poster"></a><br>
 <b><a href="https://arxiv.org/abs/2407.01476">2407.01476</a> · Tree search</b><br>
 Search still helps once compute is matched, provided the environment can be reset.<br>
 算力配平后搜索仍有效，前提是环境可重置。
 </td>
 <td width="33%" align="center" valign="top">
-<a href="reel/2503.19537/poster.png"><img src="reel/2503.19537/poster.png" width="260" alt="2503.19537 poster"></a><br>
-<b><a href="https://arxiv.org/abs/2503.19537">2503.19537</a> · When to ask (negative result)</b><br>
-Across 12 prompting configurations, the precision of asking the user is only 0.08–0.19.<br>
-负结果：12 种 prompting 配置下问人的 precision 仅 0.08–0.19。
-</td>
-</tr>
-<tr>
-<td width="33%" align="center" valign="top">
-<a href="reel/2606.12666/poster.png"><img src="reel/2606.12666/poster.png" width="260" alt="2606.12666 poster"></a><br>
-<b><a href="https://arxiv.org/abs/2606.12666">2606.12666</a> · Privacy masking (CAPED)</b><br>
-Mask task-irrelevant private content before a screenshot is uploaded: leakage .766 → .268, utility .893 → .929.<br>
-截图上传前遮蔽无关隐私，泄漏率降、效用不降。
+<a href="reel/2406.11896/poster.png"><img src="reel/2406.11896/poster.png" width="260" alt="2406.11896 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2406.11896">2406.11896</a> · Online RL (DigiRL)</b><br>
+With the same backbone, online RL steps past imitation, on an Android emulator and on live sites.<br>
+同骨干下在线 RL 逐级超过模仿（模拟器＋实时网站）。
 </td>
 <td width="33%" align="center" valign="top">
-<a href="reel/2504.13936/poster.png"><img src="reel/2504.13936/poster.png" width="260" alt="2504.13936 poster"></a><br>
-<b><a href="https://arxiv.org/abs/2504.13936">2504.13936</a> · Generated future screens (ViMo)</b><br>
-Generated next screens are good enough to choose actions with: +7.76 pp online on AndroidWorld.<br>
-生成的未来屏幕能实际用于选动作。
-</td>
-<td width="33%" align="center" valign="top">
-<a href="reel/2602.12276/poster.png"><img src="reel/2602.12276/poster.png" width="260" alt="2602.12276 poster"></a><br>
-<b><a href="https://arxiv.org/abs/2602.12276">2602.12276</a> · Test-time scaling (CATTS)</b><br>
-More candidates per step is not reliably better: Online-Mind2Web majority vote 22.6 → 15.1% from N=1 to 20.<br>
-每步统一加候选采样不保证更好。
-</td>
-</tr>
-<tr>
-<td width="33%" align="center" valign="top">
-<a href="reel/2310.03720/poster.png"><img src="reel/2310.03720/poster.png" width="260" alt="2310.03720 poster"></a><br>
-<b><a href="https://arxiv.org/abs/2310.03720">2310.03720</a> · Stacked policies (SteP)</b><br>
-On WebArena, a policy stack reaches 0.33 vs 0.20 / 0.23 for flat 4K / 8K prompts; the equal-example comparison is on MiniWoB++.<br>
-控制结构而非更长上下文；同示例数对照见 MiniWoB++。
-</td>
-<td width="33%" align="center" valign="top">
-<a href="reel/2601.22781/poster.png"><img src="reel/2601.22781/poster.png" width="260" alt="2601.22781 poster"></a><br>
-<b><a href="https://arxiv.org/abs/2601.22781">2601.22781</a> · Data difficulty</b><br>
-Harder synthetic data is not better: challenge coefficient α = 0.5 is best (+4.3 pp).<br>
-合成数据不是越难越好。
-</td>
-<td width="33%" align="center" valign="top">
-<a href="reel/2311.18751/poster.png"><img src="reel/2311.18751/poster.png" width="260" alt="2311.18751 poster"></a><br>
-<b><a href="https://arxiv.org/abs/2311.18751">2311.18751</a> · Task composition</b><br>
-Base-task success does not compose; reordering the instruction alone drops a transfer agent 54.8 → 31%.<br>
-基本任务成功 ≠ 组合任务完成。
+<a href="reel/2404.06474/poster.png"><img src="reel/2404.06474/poster.png" width="260" alt="2404.06474 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2404.06474">2404.06474</a> · Evaluator calibration</b><br>
+An automatic evaluator calibrated against both execution checks and humans, then used downstream.<br>
+评估器经执行与人工双重校准后再用于下游。
 </td>
 </tr>
 <tr>
@@ -129,66 +129,98 @@ Walking Table 6 step by step, the high-resolution architecture accounts for ≈4
 架构与数据的归因拆分。
 </td>
 <td width="33%" align="center" valign="top">
-<a href="reel/2609.02154/poster.png"><img src="reel/2609.02154/poster.png" width="260" alt="2609.02154 poster"></a><br>
-<b><a href="https://arxiv.org/abs/2609.02154">2609.02154</a> · MFA automation (WiP)</b><br>
-On an unlocked phone, an agent chains legitimate factors through MFA for up to 10/10 services.<br>
-MFA 完成不再能证明人在场。
+<a href="reel/2311.18751/poster.png"><img src="reel/2311.18751/poster.png" width="260" alt="2311.18751 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2311.18751">2311.18751</a> · Task composition</b><br>
+Base-task success does not compose; reordering the instruction alone drops a transfer agent 54.8 → 31%.<br>
+基本任务成功 ≠ 组合任务完成。
 </td>
 <td width="33%" align="center" valign="top">
-<a href="reel/2604.00073/poster.png"><img src="reel/2604.00073/poster.png" width="260" alt="2604.00073 poster"></a><br>
-<b><a href="https://arxiv.org/abs/2604.00073">2604.00073</a> · Interface cost–effect</b><br>
-Same backbone, 729 tasks: GUI and terminal interfaces differ by ~1 point in success but 2–8× in cost.<br>
-同骨干下接口成本差数倍、效果几乎相同。<br>
+<a href="reel/2310.03720/poster.png"><img src="reel/2310.03720/poster.png" width="260" alt="2310.03720 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2310.03720">2310.03720</a> · Stacked policies (SteP)</b><br>
+On WebArena, a policy stack reaches 0.33 vs 0.20 / 0.23 for flat 4K / 8K prompts; the equal-example comparison is on MiniWoB++.<br>
+控制结构而非更长上下文；同示例数对照见 MiniWoB++。
 </td>
 </tr>
 <tr>
 <td width="33%" align="center" valign="top">
-<a href="reel/2604.04918/poster.png"><img src="reel/2604.04918/poster.png" width="260" alt="2604.04918 poster"></a><br>
-<b><a href="https://arxiv.org/abs/2604.04918">2604.04918</a> · Human oversight funnel</b><br>
-138 risky actions enter execution; only 29 are caught by human approval.<br>
-有审批不等于能拦住危险动作。<br>
+<a href="reel/2307.13854/poster.png"><img src="reel/2307.13854/poster.png" width="260" alt="2307.13854 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2307.13854">2307.13854</a> · Executable benchmark (P2*)</b><br>
+WebArena: resettable sites judged by final-state checks instead of action-sequence matching.<br>
+可重置环境＋终态检查替代动作序列匹配；误判率未实测，故 P2。
 </td>
 <td width="33%" valign="top"></td>
 <td width="33%" valign="top"></td>
 </tr>
 </table>
 
-## High-Score Papers (2026)
+## High-Score Papers (2026)（2026 高分论文）
 
-The table lists 22 papers from 2026. **6 are Reel posters** (the 2026 papers among the 17); **the other 16** were picked from the 2026 P3-confirmed L3 candidates so that every one of the 18 main cards appears at least once. Papers with a correction record are excluded. Every row passed L2: the full-text check confirmed both the problem and the method fit. Rows are not ranked. The question column keeps Sol's original `problem_statement`, in Chinese.
-（共 22 篇 2026 年论文：6 篇来自 Reel，其余 16 篇从 2026 年 P3 已确认候选中挑选，使 18 张主卡每张至少出现一次；排除有 correction 的论文。全部经 L2 全文核对确认，同分不排名。）
+Two tables, split by date. **Recent (Aug–Oct 2026)** shows where the field is right now; **Earlier 2026 (Jan–Jul)** is what the year has built up so far. Each table was picked from the P3 candidates confirmed at L2 (`next_action = to_l3`, `evidence_status = confirmed`) so that **every one of the 18 main cards appears at least once in each table**. The 2026 Reel papers are included and link to their posters. Papers before 2026 do not enter these tables; they are represented on the Reel wall above. Papers with a correction record are excluded. Rows are sorted by arXiv id, not ranked. The question column keeps Sol's original `problem_statement`, in Chinese.
+（按时间分成两表：近三个月代表当前前沿，上半年代表年度积累。两表均从 L2 确认的 P3 候选中挑选，**每张表各自覆盖全部 18 张主卡**；2026 年的 Reel 论文一并列入并附画报链接。2026 年之前的论文不进高分表，已在上方画报墙体现。排除有 correction 的论文；按 arXiv 号排列，不排名。）
 
-**How to read the score.** The number is a *display view of the tier*, not a separate rating: **95/92** = P3 confirmed at L2 (full-text check; 92 when the change is a research `judgment` rather than a new `capability`), **85/82** = P3 from the L1 first screen only (abstract + introduction; not yet L2-confirmed). Higher = more worth reading. Every row in this table is 95 or 92.
-（**分数只是档位的数字视图，不是另一套评分**：95/92 = P3 且经 L2 全文核对确认（judgment 为 92）；85/82 = 仅 L1 初筛判 P3、尚未核对。本表全部为 95 或 92。）
+**How to read the score.** The number is a *display view of the tier*, not a separate rating: **95/92** = P3 confirmed at L2 (full-text check; 95 when the change is a new `capability`, 92 when it is a research `judgment`), **85/82** = P3 from the L1 first screen only (abstract + introduction; not yet L2-confirmed). Higher = more worth reading. Every row in both tables is 95 or 92.
+（**分数只是档位的数字视图，不是另一套评分**：95/92 = P3 且经 L2 全文核对确认（capability 为 95，judgment 为 92）；85/82 = 仅 L1 初筛判 P3、尚未核对。两表全部为 95 或 92。）
 
-**What is an Idea Card?** An *idea card* (pattern card) is a recurring research operation reverse-engineered from this corpus — each records the operational signature, the field belief it runs into, and its failure conditions (see [Card-Based Research](#card-based-research抽卡式科研) below). The table shows which card(s) a paper actually executes, with a short gloss. Two Reel papers sit outside every main card (`unassigned`).
+**What is an Idea Card?** An *idea card* (pattern card) is a recurring research operation reverse-engineered from this corpus — each records the operational signature, the field belief it runs into, and its failure conditions (see [Card-Based Research](#card-based-research抽卡式科研) below). The tables show which card(s) a paper actually executes, with a short gloss. Two Reel papers sit outside every main card (`unassigned`).
 （Idea Card＝从本语料逆向归纳的 pattern 卡：操作签名＋认知障碍＋失败条件。表中列出该论文实际执行的卡，卡名下附中文一句话；两篇 Reel 论文不属于任何主卡。）
+
+### Recent (Aug–Oct 2026)（近三个月：2026 年 8–10 月）
+
+19 papers · 18 / 18 main cards · 8 capability, 11 judgment.
+（19 篇，覆盖全部 18 张主卡。）
 
 | Paper | Score · Tier | Idea Cards（pattern 卡） | The Good Question | Links |
 |---|---|---|---|---|
-| [ProSoftArena: Benchmarking Hierarchical…](https://arxiv.org/abs/2601.02399) `2601.02399` | **92** · P3 ✓ | [`online_evaluation_methodology`](patterns/main/online_evaluation_methodology.md)<br><sub>在线评测方法</sub><br>[`agent_initiated_user_interaction`](patterns/main/agent_initiated_user_interaction.md)<br><sub>何时求助用户</sub> | 通用桌面基准不能揭示需要领域知识、复杂GUI及跨专业软件协作的能力边界，也缺少分层与人机协作评价。 | [arXiv](https://arxiv.org/abs/2601.02399) · code — |
-| [FocusUI: Efficient UI Grounding via…](https://arxiv.org/abs/2601.03928) `2601.03928` | **92** · P3 ✓ | [`high_resolution_target_localisation`](patterns/main/high_resolution_target_localisation.md)<br><sub>高分辨率小目标定位</sub> | 高分辨率GUI定位视觉token昂贵，直接套用通用token裁剪又会破坏位置连续性并显著损害坐标定位。 | [arXiv](https://arxiv.org/abs/2601.03928) · code — |
-| [From Off-Policy to On-Policy: Enhancing…](https://arxiv.org/abs/2601.05787) `2601.05787` | **95** · P3 ✓ | [`trajectory_level_policy_training`](patterns/main/trajectory_level_policy_training.md)<br><sub>轨迹级策略训练</sub><br>[`planner_grounder_interface`](patterns/main/planner_grounder_interface.md)<br><sub>规划—定位解耦与动作接口</sub> | 少量框架专家GUI轨迹在动作接口和分布上偏离端到端学生，直接混入在线RL可能比纯GRPO更差。 | [arXiv](https://arxiv.org/abs/2601.05787) · code — |
-| [CaMeLs Can Use Computers Too:…](https://arxiv.org/abs/2601.09923) `2601.09923` | **95** · P3 ✓ | [`injection_defense_isolation`](patterns/main/injection_defense_isolation.md)<br><sub>注入防御与隔离</sub> | 当 GUI 动作依赖不断变化的屏幕状态时，能否保持可信规划与不可信观察隔离，同时完成实际桌面任务。 | [arXiv](https://arxiv.org/abs/2601.09923) · code — |
-| [Mind the Gap: Action Rebinding Attacks…](https://arxiv.org/abs/2601.12349) `2601.12349` | **92** · P3 ✓ | [`environmental_injection_attacks`](patterns/main/environmental_injection_attacks.md)<br><sub>环境注入攻击</sub><br>[`agent_loop_context_control`](patterns/main/agent_loop_context_control.md)<br><sub>agent 循环与上下文控制</sub> | Android GUI agent 的观察到动作之间窗口可被恶意无权限应用切换前台，如何避免跨应用动作重绑定和越权执行。 | [arXiv](https://arxiv.org/abs/2601.12349) · code — |
-| [Learning with Challenges: Adaptive…](https://arxiv.org/abs/2601.22781) `2601.22781` | **92** · P3 ✓ | [`exploration_driven_task_synthesis`](patterns/main/exploration_driven_task_synthesis.md)<br><sub>探索驱动任务合成</sub> | 移动 GUI 轨迹合成不能显式匹配结构和语义难度与当前代理能力，过易或过难的数据限制后续训练效果。 | [arXiv](https://arxiv.org/abs/2601.22781) · code — · [poster](reel/2601.22781/poster.png) |
-| [AmbiBench: Benchmarking Mobile GUI…](https://arxiv.org/abs/2602.11750) `2602.11750` | **92** · P3 ✓ | [`agent_initiated_user_interaction`](patterns/main/agent_initiated_user_interaction.md)<br><sub>何时求助用户</sub><br>[`learned_outcome_and_process_judges`](patterns/main/learned_outcome_and_process_judges.md)<br><sub>学习式结果/过程评判</sub> | 当移动GUI用户指令不完整或含糊时，如何评价代理通过多轮主动澄清对齐真实意图，而不是仅评单轮执行。 | [arXiv](https://arxiv.org/abs/2602.11750) · code — |
-| [Agentic Test-Time Scaling for WebAgents](https://arxiv.org/abs/2602.12276) `2602.12276` | **92** · P3 ✓ | [`simulated_lookahead_selection`](patterns/main/simulated_lookahead_selection.md)<br><sub>模拟/验证前瞻选动作</sub> | 长程Web代理逐步均匀增加候选采样是否真的持续提高可靠性，能否仅在分歧步骤分配计算而避免仲裁推翻正确共识。 | [arXiv](https://arxiv.org/abs/2602.12276) · code — · [poster](reel/2602.12276/poster.png) |
-| [Read More, Think More: Revisiting…](https://arxiv.org/abs/2604.01535) `2604.01535` | **92** · P3 ✓ | [`structured_screen_observation`](patterns/main/structured_screen_observation.md)<br><sub>结构化屏幕观测</sub><br>[`agent_loop_context_control`](patterns/main/agent_loop_context_control.md)<br><sub>agent 循环与上下文控制</sub> | 在同一 ID 动作接口的 WorkArena 短程任务上，HTML/a11y 与观测历史的收益是否随骨干及 thinking 配置改变，而非观测越短越好。 | [arXiv](https://arxiv.org/abs/2604.01535) · code — |
-| [FedGUI: Benchmarking Federated GUI…](https://arxiv.org/abs/2604.14956) `2604.14956` | **92** · P3 ✓ | [`high_resolution_target_localisation`](patterns/main/high_resolution_target_localisation.md)<br><sub>高分辨率小目标定位</sub><br>[`online_evaluation_methodology`](patterns/main/online_evaluation_methodology.md)<br><sub>在线评测方法</sub> | 跨移动、Web、桌面的联邦 GUI 学习中，平台、设备、操作系统和数据来源异质性如何改变协作训练效果？ | [arXiv](https://arxiv.org/abs/2604.14956) · code — |
-| [OpenComputer: Verifiable Software…](https://arxiv.org/abs/2605.19769) `2605.19769` | **92** · P3 ✓ | [`verifiable_execution_reward`](patterns/main/verifiable_execution_reward.md)<br><sub>可执行检查器奖励</sub><br>[`learned_outcome_and_process_judges`](patterns/main/learned_outcome_and_process_judges.md)<br><sub>学习式结果/过程评判</sub> | 桌面任务成功依赖截图不可见的应用细粒度状态时，如何构建可扩展且经人类裁定校验的执行验证与可审计奖励？ | [arXiv](https://arxiv.org/abs/2605.19769) · code — |
-| [PhoneWorld: From Real-App Trajectories…](https://arxiv.org/abs/2605.29486) `2605.29486` | **95** · P3 ✓ | [`calibrate_simulator_to_real`](patterns/main/calibrate_simulator_to_real.md)<br><sub>模拟器/数字孪生对齐真实</sub><br>[`verifiable_execution_reward`](patterns/main/verifiable_execution_reward.md)<br><sub>可执行检查器奖励</sub> | 真实手机应用最贴近部署却难以重置、并行和程序化核验，如何把真实轨迹抽象成可控可验证的可运行应用，同时让其训练收益补充真实应用学习。 | [arXiv](https://arxiv.org/abs/2605.29486) · code — |
-| [AsyncWebRL: Efficient Asynchronous…](https://arxiv.org/abs/2606.05597) `2606.05597` | **92** · P3 ✓ | [`rule_reward_single_step_rl`](patterns/main/rule_reward_single_step_rl.md)<br><sub>规则奖励单步 RL</sub><br>[`trajectory_level_policy_training`](patterns/main/trajectory_level_policy_training.md)<br><sub>轨迹级策略训练</sub> | 多步视觉 Web RL 中，轨迹长度归一化是否削弱长失败轨迹的负梯度，导致冗长策略，并与同步执行的 GPU 空闲共同限制训练效率？ | [arXiv](https://arxiv.org/abs/2606.05597) · code — |
-| [CAPED: Context-Aware Privacy Exposure…](https://arxiv.org/abs/2606.12666) `2606.12666` | **95** · P3 ✓ | `unassigned`<br><sub>无主卡</sub> | 移动 GUI 截图上传远端模型之前，能否遮蔽任务无关私人内容而不移除完成任务所需的证据和控件？ | [arXiv](https://arxiv.org/abs/2606.12666) · code — · [poster](reel/2606.12666/poster.png) |
-| [Do GUI Agents Believe Their Eyes?…](https://arxiv.org/abs/2607.04334) `2607.04334` | **92** · P3 ✓ | [`structured_screen_observation`](patterns/main/structured_screen_observation.md)<br><sub>结构化屏幕观测</sub> | 截图与DOM/可访问性树冲突时，GUI agent的可见状态信念究竟来自已感知的像素还是错误结构，且会否传播成在线失败？ | [arXiv](https://arxiv.org/abs/2607.04334) · code — |
-| [WiP: Characterizing and Defending…](https://arxiv.org/abs/2609.02154) `2609.02154` | **92** · P3 ✓ | `unassigned`<br><sub>无主卡</sub> | 当移动 GUI agent 能跨应用读取并组合认证因素时，口令式 MFA 假定的人类介入隔离是否仍然成立？ | [arXiv](https://arxiv.org/abs/2609.02154) · code — · [poster](reel/2609.02154/poster.png) |
-| [Right Screen, Wrong Transition: World…](https://arxiv.org/abs/2610.11942) `2610.11942` | **92** · P3 ✓ | [`learn_and_train_in_gui_world_model`](patterns/main/learn_and_train_in_gui_world_model.md)<br><sub>学习 GUI 动力学并在其中训练</sub><br>[`learned_outcome_and_process_judges`](patterns/main/learned_outcome_and_process_judges.md)<br><sub>学习式结果/过程评判</sub> | 像素相同的合法登录页分别接在正常动作和被替换动作后时，转移条件化信号能否区分异常，并进一步区分有害与良性意外？ | [arXiv](https://arxiv.org/abs/2610.11942) · code — |
-| [Work2Skill: Capturing Human GUI…](https://arxiv.org/abs/2610.12984) `2610.12984` | **95** · P3 ✓ | [`mine_human_screen_videos`](patterns/main/mine_human_screen_videos.md)<br><sub>挖掘人类录屏</sub><br>[`experience_memory_retrieval`](patterns/main/experience_memory_retrieval.md)<br><sub>经验记忆检索</sub> | 从同步人类录屏、键鼠与可用 AX 证据归纳的文本技能，能否在同一应用内改变实体、参数和约束后复用，而不只是复述所示任务？ | [arXiv](https://arxiv.org/abs/2610.12984) · code — |
-| [Web\$hell: A Unified Interface for…](https://arxiv.org/abs/2610.13416) `2610.13416` | **95** · P3 ✓ | [`structured_screen_observation`](patterns/main/structured_screen_observation.md)<br><sub>结构化屏幕观测</sub><br>[`planner_grounder_interface`](patterns/main/planner_grounder_interface.md)<br><sub>规划—定位解耦与动作接口</sub> | 确定性编译的可寻址 Web 信息与控件契约，加上持久页面缓存，能否同时支撑检索和实际浏览器操作，减少反复解析及信息—动作引用丢失？ | [arXiv](https://arxiv.org/abs/2610.13416) · code — |
-| [Beyond Next-Screen Prediction: The…](https://arxiv.org/abs/2610.24372) `2610.24372` | **92** · P3 ✓ | [`simulated_lookahead_selection`](patterns/main/simulated_lookahead_selection.md)<br><sub>模拟/验证前瞻选动作</sub><br>[`online_evaluation_methodology`](patterns/main/online_evaluation_methodology.md)<br><sub>在线评测方法</sub> | 在固定候选、骨干与监督的单步GUI动作选择中，预测下一屏是否在直接评估器之上提供可检出的增量，而不是把评估器收益错归于预测？ | [arXiv](https://arxiv.org/abs/2610.24372) · code — |
+| [Invisible Ink Threats: Adversarial Goals…](https://arxiv.org/abs/2608.02018) `2608.02018` | **92** · P3 ✓ · judgment | [`injection_defense_isolation`](patterns/main/injection_defense_isolation.md)<br><sub>注入防御与隔离</sub><br>[`agent_initiated_user_interaction`](patterns/main/agent_initiated_user_interaction.md)<br><sub>何时求助用户</sub> | 低显性危害的环境注入是否绕过策略敏感性判断，并使代理或确认用户同意越权尝试？本记录不把尝试当成攻击完成。 | [arXiv](https://arxiv.org/abs/2608.02018) |
+| [MissClick: Execution-Aware Adversarial…](https://arxiv.org/abs/2608.03740) `2608.03740` | **92** · P3 ✓ · judgment | [`environmental_injection_attacks`](patterns/main/environmental_injection_attacks.md)<br><sub>环境注入攻击</sub><br>[`high_resolution_target_localisation`](patterns/main/high_resolution_target_localisation.md)<br><sub>高分辨率小目标定位</sub> | GUI grounding 的数字 token 损失不等于解析后的点击位移或命中，如何在白盒攻击下识别并利用这一执行接口风险？ | [arXiv](https://arxiv.org/abs/2608.03740) |
+| [The Next Screenshot Knows: Gated…](https://arxiv.org/abs/2608.06065) `2608.06065` | **95** · P3 ✓ · capability | [`trajectory_level_policy_training`](patterns/main/trajectory_level_policy_training.md)<br><sub>轨迹级策略训练</sub><br>[`rule_reward_single_step_rl`](patterns/main/rule_reward_single_step_rl.md)<br><sub>规则奖励单步 RL</sub> | 离线成功轨迹训练丢弃下一屏的动作后果证据时，如何只在训练中利用 hindsight 为部署时仅见前缀的学生提供有效推理监督？ | [arXiv](https://arxiv.org/abs/2608.06065) |
+| [ComponentBench: Diagnosing…](https://arxiv.org/abs/2608.18307) `2608.18307` | **92** · P3 ✓ · judgment | [`online_evaluation_methodology`](patterns/main/online_evaluation_methodology.md)<br><sub>在线评测方法</sub><br>[`structured_screen_observation`](patterns/main/structured_screen_observation.md)<br><sub>结构化屏幕观测</sub><br>[`planner_grounder_interface`](patterns/main/planner_grounder_interface.md)<br><sub>规划—定位解耦与动作接口</sub> | 在同一harness下，如何隔离现代Web组件交互中的观测/动作空间影响，避免把接口特权或低效执行误归于模型能力？ | [arXiv](https://arxiv.org/abs/2608.18307) |
+| [Training Needs Trustworthy Worlds…](https://arxiv.org/abs/2608.21898) `2608.21898` | **95** · P3 ✓ · capability | [`verifiable_execution_reward`](patterns/main/verifiable_execution_reward.md)<br><sub>可执行检查器奖励</sub><br>[`learn_and_train_in_gui_world_model`](patterns/main/learn_and_train_in_gui_world_model.md)<br><sub>学习 GUI 动力学并在其中训练</sub> | 用于Web策略学习的合成网站如何从外观可信变为结构、后台状态与任务可行性均可执行验证的训练环境？ | [arXiv](https://arxiv.org/abs/2608.21898) |
+| [GSAR: Goal-State-Anchor Rewards for…](https://arxiv.org/abs/2608.22847) `2608.22847` | **95** · P3 ✓ · capability | [`learned_outcome_and_process_judges`](patterns/main/learned_outcome_and_process_judges.md)<br><sub>学习式结果/过程评判</sub><br>[`verifiable_execution_reward`](patterns/main/verifiable_execution_reward.md)<br><sub>可执行检查器奖励</sub><br>[`exploration_driven_task_synthesis`](patterns/main/exploration_driven_task_synthesis.md)<br><sub>探索驱动任务合成</sub> | 在自动生成多样移动GUI任务和初始环境时，如何得到可扩展且准确的结果奖励，避免手工脚本和不可靠视觉judge之间的两难？ | [arXiv](https://arxiv.org/abs/2608.22847) |
+| [Are We There Yet? Assessing Computer-Use…](https://arxiv.org/abs/2609.00524) `2609.00524` | **92** · P3 ✓ · judgment | [`agent_loop_context_control`](patterns/main/agent_loop_context_control.md)<br><sub>agent 循环与上下文控制</sub><br>[`agent_initiated_user_interaction`](patterns/main/agent_initiated_user_interaction.md)<br><sub>何时求助用户</sub> | 盲人屏幕阅读器用户的真实桌面任务中，CUA能否持续跟踪约束并正确终止，而不只提供自动化动作？ | [arXiv](https://arxiv.org/abs/2609.00524) |
+| [WiP: Characterizing and Defending Against…](https://arxiv.org/abs/2609.02154) `2609.02154` | **92** · P3 ✓ · judgment | `unassigned`<br><sub>无主卡</sub> | 当移动 GUI agent 能跨应用读取并组合认证因素时，口令式 MFA 假定的人类介入隔离是否仍然成立？ | [arXiv](https://arxiv.org/abs/2609.02154) · [poster](reel/2609.02154/poster.png) |
+| [ScreenHaystack: Finding Blind Zones in…](https://arxiv.org/abs/2609.32036) `2609.32036` | **92** · P3 ✓ · judgment | [`online_evaluation_methodology`](patterns/main/online_evaluation_methodology.md)<br><sub>在线评测方法</sub><br>[`high_resolution_target_localisation`](patterns/main/high_resolution_target_localisation.md)<br><sub>高分辨率小目标定位</sub> | 固定目标外观与指令时，GUI grounding 是否存在可迁移的位置盲区，且受控训练空间缺口是否足以诱发类似失败？ | [arXiv](https://arxiv.org/abs/2609.32036) |
+| [The GUI Is Not the State: Diagnosing…](https://arxiv.org/abs/2609.32679) `2609.32679` | **92** · P3 ✓ · judgment | [`learn_and_train_in_gui_world_model`](patterns/main/learn_and_train_in_gui_world_model.md)<br><sub>学习 GUI 动力学并在其中训练</sub> | 相同当前截图和动作可能对应不同隐藏状态与有效后继，如何诊断并从历史恢复 GUI 世界模型所需的预测状态？ | [arXiv](https://arxiv.org/abs/2609.32679) |
+| [Relevance Does Not Imply Applicability…](https://arxiv.org/abs/2609.33304) `2609.33304` | **92** · P3 ✓ · judgment | [`experience_memory_retrieval`](patterns/main/experience_memory_retrieval.md)<br><sub>经验记忆检索</sub><br>[`agent_loop_context_control`](patterns/main/agent_loop_context_control.md)<br><sub>agent 循环与上下文控制</sub> | 个性化 GUI 历史检索只给出任务相关记录时，如何避免其仅改善开场而无法判定后续屏幕动作和此刻例行意图是否适用？ | [arXiv](https://arxiv.org/abs/2609.33304) |
+| [Auditing Web Agent Evaluation on…](https://arxiv.org/abs/2610.01491) `2610.01491` | **92** · P3 ✓ · judgment | [`verifiable_execution_reward`](patterns/main/verifiable_execution_reward.md)<br><sub>可执行检查器奖励</sub><br>[`online_evaluation_methodology`](patterns/main/online_evaluation_methodology.md)<br><sub>在线评测方法</sub> | 在可重置的 WebArena-Lite 上，自动 FAIL 中有多少由环境状态和轨迹可核实的合法成功，以及终局失败掩盖了哪些中途进展？ | [arXiv](https://arxiv.org/abs/2610.01491) |
+| [Right Screen, Wrong Transition: World…](https://arxiv.org/abs/2610.11942) `2610.11942` | **92** · P3 ✓ · judgment | [`learn_and_train_in_gui_world_model`](patterns/main/learn_and_train_in_gui_world_model.md)<br><sub>学习 GUI 动力学并在其中训练</sub><br>[`learned_outcome_and_process_judges`](patterns/main/learned_outcome_and_process_judges.md)<br><sub>学习式结果/过程评判</sub> | 像素相同的合法登录页分别接在正常动作和被替换动作后时，转移条件化信号能否区分异常，并进一步区分有害与良性意外？ | [arXiv](https://arxiv.org/abs/2610.11942) |
+| [Work2Skill: Capturing Human GUI…](https://arxiv.org/abs/2610.12984) `2610.12984` | **95** · P3 ✓ · capability | [`mine_human_screen_videos`](patterns/main/mine_human_screen_videos.md)<br><sub>挖掘人类录屏</sub><br>[`experience_memory_retrieval`](patterns/main/experience_memory_retrieval.md)<br><sub>经验记忆检索</sub> | 从同步人类录屏、键鼠与可用 AX 证据归纳的文本技能，能否在同一应用内改变实体、参数和约束后复用，而不只是复述所示任务？ | [arXiv](https://arxiv.org/abs/2610.12984) |
+| [Web\$hell: A Unified Interface for…](https://arxiv.org/abs/2610.13416) `2610.13416` | **95** · P3 ✓ · capability | [`structured_screen_observation`](patterns/main/structured_screen_observation.md)<br><sub>结构化屏幕观测</sub><br>[`planner_grounder_interface`](patterns/main/planner_grounder_interface.md)<br><sub>规划—定位解耦与动作接口</sub> | 确定性编译的可寻址 Web 信息与控件契约，加上持久页面缓存，能否同时支撑检索和实际浏览器操作，减少反复解析及信息—动作引用丢失？ | [arXiv](https://arxiv.org/abs/2610.13416) |
+| [The Agent Clicks Approve: Injected Page…](https://arxiv.org/abs/2610.15138) `2610.15138` | **95** · P3 ✓ · capability | [`environmental_injection_attacks`](patterns/main/environmental_injection_attacks.md)<br><sub>环境注入攻击</sub><br>[`injection_defense_isolation`](patterns/main/injection_defense_isolation.md)<br><sub>注入防御与隔离</sub> | 在代理持有用户会话而网页只提供内容的浏览器任务中，页面文本能否诱导超出任务 tuple 的授权完成，且服务端预固定 envelope 能否阻止完成而非仅改变意图？ | [arXiv](https://arxiv.org/abs/2610.15138) |
+| [MAI-Gym: An Open All-in-One Platform for…](https://arxiv.org/abs/2610.20939) `2610.20939` | **95** · P3 ✓ · capability | [`calibrate_simulator_to_real`](patterns/main/calibrate_simulator_to_real.md)<br><sub>模拟器/数字孪生对齐真实</sub><br>[`verifiable_execution_reward`](patterns/main/verifiable_execution_reward.md)<br><sub>可执行检查器奖励</sub> | GUI 在线 RL 受昂贵交互环境和现实可验证任务不足限制，mock 应用训练能否转移到真实应用需要实测。 | [arXiv](https://arxiv.org/abs/2610.20939) |
+| [SPIDES: Information-Flow Control for…](https://arxiv.org/abs/2610.24277) `2610.24277` | **95** · P3 ✓ · capability | [`injection_defense_isolation`](patterns/main/injection_defense_isolation.md)<br><sub>注入防御与隔离</sub> | 在可信站点运营者提供准确元素标签的条件下，浏览器代理如何以细粒度完整性和按origin读者集合的保密策略，允许授权跨源任务并限制不可信内容影响？ | [arXiv](https://arxiv.org/abs/2610.24277) |
+| [Beyond Next-Screen Prediction: The…](https://arxiv.org/abs/2610.24372) `2610.24372` | **92** · P3 ✓ · judgment | [`simulated_lookahead_selection`](patterns/main/simulated_lookahead_selection.md)<br><sub>模拟/验证前瞻选动作</sub><br>[`online_evaluation_methodology`](patterns/main/online_evaluation_methodology.md)<br><sub>在线评测方法</sub> | 在固定候选、骨干与监督的单步GUI动作选择中，预测下一屏是否在直接评估器之上提供可检出的增量，而不是把评估器收益错归于预测？ | [arXiv](https://arxiv.org/abs/2610.24372) |
 
-| [Terminal Agents Suffice:…](https://arxiv.org/abs/2604.00073) `2604.00073` | **92** · P3 ✓ | [`planner_grounder_interface`](patterns/main/planner_grounder_interface.md)<br><sub>规划—定位解耦与动作接口</sub> | 同一骨干在 729 个桌面任务上比较 GUI、工具、终端和混合四种接口,按系统终态判定;GUI 与终端成功率差约 1 点,成本差 2–8 倍。 | [arXiv](https://arxiv.org/abs/2604.00073) · code — · [poster](reel/2604.00073/poster.png) |
-| [Human Oversight Strategies…](https://arxiv.org/abs/2604.04918) `2604.04918` | **92** · P3 ✓ | [`agent_initiated_user_interaction`](patterns/main/agent_initiated_user_interaction.md)<br><sub>何时求助用户</sub><br>[`injection_defense_isolation`](patterns/main/injection_defense_isolation.md)<br><sub>注入防御与隔离</sub> | 48 人 192 场会话中,进入执行的 138 次问题动作只被人工拦住 29 次:有审批不等于能拦住危险动作。 | [arXiv](https://arxiv.org/abs/2604.04918) · code — · [poster](reel/2604.04918/poster.png) |
+> The recent three months show the current frontier; the first seven months show what the year has accumulated. Read the first table for where things are heading, the second for what is already established.
+> （近三个月代表当前前沿；上半年代表年度积累。）
+
+### Earlier 2026 (Jan–Jul)（2026 年 1–7 月）
+
+20 papers · 18 / 18 main cards · 6 capability, 14 judgment.
+（20 篇，覆盖全部 18 张主卡。）
+
+| Paper | Score · Tier | Idea Cards（pattern 卡） | The Good Question | Links |
+|---|---|---|---|---|
+| [ProSoftArena: Benchmarking Hierarchical…](https://arxiv.org/abs/2601.02399) `2601.02399` | **92** · P3 ✓ · judgment | [`online_evaluation_methodology`](patterns/main/online_evaluation_methodology.md)<br><sub>在线评测方法</sub><br>[`agent_initiated_user_interaction`](patterns/main/agent_initiated_user_interaction.md)<br><sub>何时求助用户</sub> | 通用桌面基准不能揭示需要领域知识、复杂GUI及跨专业软件协作的能力边界，也缺少分层与人机协作评价。 | [arXiv](https://arxiv.org/abs/2601.02399) |
+| [FocusUI: Efficient UI Grounding via…](https://arxiv.org/abs/2601.03928) `2601.03928` | **92** · P3 ✓ · judgment | [`high_resolution_target_localisation`](patterns/main/high_resolution_target_localisation.md)<br><sub>高分辨率小目标定位</sub> | 高分辨率GUI定位视觉token昂贵，直接套用通用token裁剪又会破坏位置连续性并显著损害坐标定位。 | [arXiv](https://arxiv.org/abs/2601.03928) |
+| [From Off-Policy to On-Policy: Enhancing…](https://arxiv.org/abs/2601.05787) `2601.05787` | **95** · P3 ✓ · capability | [`trajectory_level_policy_training`](patterns/main/trajectory_level_policy_training.md)<br><sub>轨迹级策略训练</sub><br>[`planner_grounder_interface`](patterns/main/planner_grounder_interface.md)<br><sub>规划—定位解耦与动作接口</sub> | 少量框架专家GUI轨迹在动作接口和分布上偏离端到端学生，直接混入在线RL可能比纯GRPO更差。 | [arXiv](https://arxiv.org/abs/2601.05787) |
+| [CaMeLs Can Use Computers Too…](https://arxiv.org/abs/2601.09923) `2601.09923` | **95** · P3 ✓ · capability | [`injection_defense_isolation`](patterns/main/injection_defense_isolation.md)<br><sub>注入防御与隔离</sub> | 当 GUI 动作依赖不断变化的屏幕状态时，能否保持可信规划与不可信观察隔离，同时完成实际桌面任务。 | [arXiv](https://arxiv.org/abs/2601.09923) |
+| [Mind the Gap: Action Rebinding Attacks…](https://arxiv.org/abs/2601.12349) `2601.12349` | **92** · P3 ✓ · judgment | [`environmental_injection_attacks`](patterns/main/environmental_injection_attacks.md)<br><sub>环境注入攻击</sub><br>[`agent_loop_context_control`](patterns/main/agent_loop_context_control.md)<br><sub>agent 循环与上下文控制</sub> | Android GUI agent 的观察到动作之间窗口可被恶意无权限应用切换前台，如何避免跨应用动作重绑定和越权执行。 | [arXiv](https://arxiv.org/abs/2601.12349) |
+| [DynaWeb: Model-Based Reinforcement…](https://arxiv.org/abs/2601.22149) `2601.22149` | **95** · P3 ✓ · capability | [`learn_and_train_in_gui_world_model`](patterns/main/learn_and_train_in_gui_world_model.md)<br><sub>学习 GUI 动力学并在其中训练</sub><br>[`trajectory_level_policy_training`](patterns/main/trajectory_level_policy_training.md)<br><sub>轨迹级策略训练</sub> | 不新增真实在线交互训练Web策略时，如何让短视界世界模型rollout在真实演示锚定下带来有效学习，避免纯想象与长视界误差使策略退化。 | [arXiv](https://arxiv.org/abs/2601.22149) |
+| [Learning with Challenges: Adaptive…](https://arxiv.org/abs/2601.22781) `2601.22781` | **92** · P3 ✓ · judgment | [`exploration_driven_task_synthesis`](patterns/main/exploration_driven_task_synthesis.md)<br><sub>探索驱动任务合成</sub> | 移动 GUI 轨迹合成不能显式匹配结构和语义难度与当前代理能力，过易或过难的数据限制后续训练效果。 | [arXiv](https://arxiv.org/abs/2601.22781) · [poster](reel/2601.22781/poster.png) |
+| [AmbiBench: Benchmarking Mobile GUI Agents…](https://arxiv.org/abs/2602.11750) `2602.11750` | **92** · P3 ✓ · judgment | [`agent_initiated_user_interaction`](patterns/main/agent_initiated_user_interaction.md)<br><sub>何时求助用户</sub><br>[`learned_outcome_and_process_judges`](patterns/main/learned_outcome_and_process_judges.md)<br><sub>学习式结果/过程评判</sub> | 当移动GUI用户指令不完整或含糊时，如何评价代理通过多轮主动澄清对齐真实意图，而不是仅评单轮执行。 | [arXiv](https://arxiv.org/abs/2602.11750) |
+| [Agentic Test-Time Scaling for WebAgents](https://arxiv.org/abs/2602.12276) `2602.12276` | **92** · P3 ✓ · judgment | [`simulated_lookahead_selection`](patterns/main/simulated_lookahead_selection.md)<br><sub>模拟/验证前瞻选动作</sub> | 长程Web代理逐步均匀增加候选采样是否真的持续提高可靠性，能否仅在分歧步骤分配计算而避免仲裁推翻正确共识。 | [arXiv](https://arxiv.org/abs/2602.12276) · [poster](reel/2602.12276/poster.png) |
+| [Terminal Agents Suffice for Enterprise…](https://arxiv.org/abs/2604.00073) `2604.00073` | **92** · P3 ✓ · judgment | [`planner_grounder_interface`](patterns/main/planner_grounder_interface.md)<br><sub>规划—定位解耦与动作接口</sub> | 在具备API的企业平台上，GUI浏览器、固定工具目录、直接终端API及混合接口各自带来什么成功率和成本，复杂接口栈是否必要？ | [arXiv](https://arxiv.org/abs/2604.00073) · [poster](reel/2604.00073/poster.png) |
+| [Read More, Think More: Revisiting…](https://arxiv.org/abs/2604.01535) `2604.01535` | **92** · P3 ✓ · judgment | [`structured_screen_observation`](patterns/main/structured_screen_observation.md)<br><sub>结构化屏幕观测</sub><br>[`agent_loop_context_control`](patterns/main/agent_loop_context_control.md)<br><sub>agent 循环与上下文控制</sub> | 在同一 ID 动作接口的 WorkArena 短程任务上，HTML/a11y 与观测历史的收益是否随骨干及 thinking 配置改变，而非观测越短越好。 | [arXiv](https://arxiv.org/abs/2604.01535) |
+| [Comparing Human Oversight Strategies for…](https://arxiv.org/abs/2604.04918) `2604.04918` | **92** · P3 ✓ · judgment | [`agent_initiated_user_interaction`](patterns/main/agent_initiated_user_interaction.md)<br><sub>何时求助用户</sub><br>[`injection_defense_isolation`](patterns/main/injection_defense_isolation.md)<br><sub>注入防御与隔离</sub> | 在真实用户参与的可执行Web任务中，四种监督策略组合能否在危险动作执行前提供有效而及时的控制权，而非有审批便算有监督。 | [arXiv](https://arxiv.org/abs/2604.04918) · [poster](reel/2604.04918/poster.png) |
+| [FedGUI: Benchmarking Federated GUI Agents…](https://arxiv.org/abs/2604.14956) `2604.14956` | **92** · P3 ✓ · judgment | [`high_resolution_target_localisation`](patterns/main/high_resolution_target_localisation.md)<br><sub>高分辨率小目标定位</sub><br>[`online_evaluation_methodology`](patterns/main/online_evaluation_methodology.md)<br><sub>在线评测方法</sub> | 跨移动、Web、桌面的联邦 GUI 学习中，平台、设备、操作系统和数据来源异质性如何改变协作训练效果？ | [arXiv](https://arxiv.org/abs/2604.14956) |
+| [Video2GUI: Synthesizing Large-Scale…](https://arxiv.org/abs/2605.14747) `2605.14747` | **95** · P3 ✓ · capability | [`mine_human_screen_videos`](patterns/main/mine_human_screen_videos.md)<br><sub>挖掘人类录屏</sub> | 如何从未标注互联网视频获得跨应用的大规模 GUI 交互轨迹，以缓解手工标注覆盖窄和预训练数据不足？ | [arXiv](https://arxiv.org/abs/2605.14747) |
+| [OpenComputer: Verifiable Software Worlds…](https://arxiv.org/abs/2605.19769) `2605.19769` | **92** · P3 ✓ · judgment | [`verifiable_execution_reward`](patterns/main/verifiable_execution_reward.md)<br><sub>可执行检查器奖励</sub><br>[`learned_outcome_and_process_judges`](patterns/main/learned_outcome_and_process_judges.md)<br><sub>学习式结果/过程评判</sub> | 桌面任务成功依赖截图不可见的应用细粒度状态时，如何构建可扩展且经人类裁定校验的执行验证与可审计奖励？ | [arXiv](https://arxiv.org/abs/2605.19769) |
+| [PhoneWorld: From Real-App Trajectories to…](https://arxiv.org/abs/2605.29486) `2605.29486` | **95** · P3 ✓ · capability | [`calibrate_simulator_to_real`](patterns/main/calibrate_simulator_to_real.md)<br><sub>模拟器/数字孪生对齐真实</sub><br>[`verifiable_execution_reward`](patterns/main/verifiable_execution_reward.md)<br><sub>可执行检查器奖励</sub> | 真实手机应用最贴近部署却难以重置、并行和程序化核验，如何把真实轨迹抽象成可控可验证的可运行应用，同时让其训练收益补充真实应用学习。 | [arXiv](https://arxiv.org/abs/2605.29486) |
+| [AsyncWebRL: Efficient Asynchronous…](https://arxiv.org/abs/2606.05597) `2606.05597` | **92** · P3 ✓ · judgment | [`rule_reward_single_step_rl`](patterns/main/rule_reward_single_step_rl.md)<br><sub>规则奖励单步 RL</sub><br>[`trajectory_level_policy_training`](patterns/main/trajectory_level_policy_training.md)<br><sub>轨迹级策略训练</sub> | 多步视觉 Web RL 中，轨迹长度归一化是否削弱长失败轨迹的负梯度，导致冗长策略，并与同步执行的 GPU 空闲共同限制训练效率？ | [arXiv](https://arxiv.org/abs/2606.05597) |
+| [CAPED: Context-Aware Privacy Exposure…](https://arxiv.org/abs/2606.12666) `2606.12666` | **95** · P3 ✓ · capability | `unassigned`<br><sub>无主卡</sub> | 移动 GUI 截图上传远端模型之前，能否遮蔽任务无关私人内容而不移除完成任务所需的证据和控件？ | [arXiv](https://arxiv.org/abs/2606.12666) · [poster](reel/2606.12666/poster.png) |
+| [Are Online Skill and Memory Modules…](https://arxiv.org/abs/2606.15017) `2606.15017` | **92** · P3 ✓ · judgment | [`agent_loop_context_control`](patterns/main/agent_loop_context_control.md)<br><sub>agent 循环与上下文控制</sub><br>[`experience_memory_retrieval`](patterns/main/experience_memory_retrieval.md)<br><sub>经验记忆检索</sub><br>[`online_evaluation_methodology`](patterns/main/online_evaluation_methodology.md)<br><sub>在线评测方法</sub> | 在线Web agent把推理token用于记忆、workflow或skill时，在显式总调用记账和近似预算可比条件下，是否仍优于把资源用于更多基础actor步骤？ | [arXiv](https://arxiv.org/abs/2606.15017) |
+| [Do GUI Agents Believe Their Eyes?…](https://arxiv.org/abs/2607.04334) `2607.04334` | **92** · P3 ✓ · judgment | [`structured_screen_observation`](patterns/main/structured_screen_observation.md)<br><sub>结构化屏幕观测</sub> | 截图与DOM/可访问性树冲突时，GUI agent的可见状态信念究竟来自已感知的像素还是错误结构，且会否传播成在线失败？ | [arXiv](https://arxiv.org/abs/2607.04334) |
 
 ## Card-Based Research（抽卡式科研）
 
@@ -384,10 +416,10 @@ flowchart LR
 | Stage | Papers |
 |---|---|
 | L1 screened (abstract + introduction) | 1331 |
-| L2 checked (full text) | 1279 |
-| P3 | 901 (confirmed 558 + unconfirmed 343) |
-| to_l3 candidates | 584 |
-| Reel posters | 17 (9 + 8) |
+| L2 checked (full text) | 1311 |
+| P3 (latest record per paper) | 902 (confirmed 566 + unconfirmed 336) |
+| to_l3 candidates ([candidates.tsv](research/scoring/runs/gui-pc11-20261022-01/candidates.tsv)) | 591 (P3 563 / P2 28) |
+| Reel posters | 19 |
 
 Missed-paper audit: 31 sampled, 12 revised (includes the first round's 26 with 5 revised, plus partial second-round data).
 （漏检抽查：抽 31 篇，改判 12 篇；含首轮 26 篇中 5 篇改判及第二轮部分数据。）
@@ -411,7 +443,7 @@ Run record: [run.md](research/scoring/runs/gui-pc11-20261022-01/run.md) · [prog
 |---|---|
 | Rules | [PROBLEM_CORE](research/scoring/PROBLEM_CORE.md) · [PROBLEM_MAP](research/scoring/PROBLEM_MAP.md) · [scoring index](research/scoring/README.md) · [EVIDENCE](docs/EVIDENCE.md) |
 | Pattern cards | [overview](patterns/overview.md) · [main/](patterns/main/) · [sub/](patterns/sub/) · [anti-patterns](patterns/anti-patterns.md) · [PATTERN_INDEX](research/scoring/PATTERN_INDEX.md) |
-| This run | [run.md](research/scoring/runs/gui-pc11-20261022-01/run.md) · [progress](research/scoring/runs/gui-pc11-20261022-01/progress.md) · [selection](research/scoring/runs/gui-pc11-20261022-01/selection.md) · [selection2](research/scoring/runs/gui-pc11-20261022-01/selection2.md) |
+| This run | [run.md](research/scoring/runs/gui-pc11-20261022-01/run.md) · [progress](research/scoring/runs/gui-pc11-20261022-01/progress.md) · [selection](research/scoring/runs/gui-pc11-20261022-01/selection.md) · [selection2](research/scoring/runs/gui-pc11-20261022-01/selection2.md) · [selection3](research/scoring/runs/gui-pc11-20261022-01/selection3.md) |
 | Reel | [reel/README](reel/README.md) · [SELECTION](research/scoring/SELECTION.md) · [OPUS_REEL_PROMPT](research/scoring/OPUS_REEL_PROMPT.md) |
 | Agents | [Grok prompt](docs/agents/GROK_PROMPT.md) · [Sol batch prompt](research/scoring/SOL_BATCH_PROMPT.md) · [CC start](docs/agents/START_CC.md) |
 | Candidates | [inbox](inbox/README.md) |

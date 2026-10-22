@@ -33,7 +33,7 @@ CLASSES = [
     ("lim", re.compile(r"limitation|discussion|conclusion|broader|future", re.I), 3000),
     ("method", re.compile(r""), 11000),
 ]
-TOTAL_CAP = 40000  # ≈10k tokens; result tables are kept (baselines, budgets and variance live there)
+TOTAL_CAP = 100000  # ≈10k tokens; result tables are kept (baselines, budgets and variance live there)
 
 
 def sections(html: str) -> list[tuple[str, str]]:
