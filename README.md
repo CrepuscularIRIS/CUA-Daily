@@ -6,19 +6,19 @@
 Core question: *which link of perception → planning → action → feedback does the work change, is the online task actually completed, and where does the gain come from?* Scope and evidence levels: [EVIDENCE](docs/EVIDENCE.md).
 （核心问题：改变了感知—规划—动作—反馈中的哪一环，在线任务是否真的完成，提升来自哪里？）
 
-> Current run: `gui-pc11-20261022-01` · rules `problem-core-v1.1` · 1331 papers screened at L1, 1279 checked at L2 (96%), 584 P3-confirmed candidates, 17 posters in Reel. The ratings rank reading priority. They are not peer review and do not endorse any venue.
+> Current run: `gui-pc11-20261022-01` · rules `problem-core-v1.1` · 1331 papers screened at L1, 1279 checked at L2 (96%), 584 P3-confirmed candidates, 19 posters in Reel. The ratings rank reading priority. They are not peer review and do not endorse any venue.
 > （档位是“值不值得读”的判断，不是审稿结论。）
 
 **What this project adds.** （本项目的三点贡献）
 
 1. **18 main / 75 sub pattern cards** reverse-engineered from this corpus, not taken from a preset taxonomy. （18 张主卡、75 张子卡，全部从本语料逆向归纳。）
 2. **Two-layer evaluation over the entire in-scope corpus**: L1 abstract + introduction screening → L2 full-text confirmation with sub-card condition checks. （两层评估覆盖全部在范围论文：L1 摘要＋引言初筛 → L2 全文核对＋子卡条件检查。）
-3. **17 Reel posters**, each with a distinct layout skeleton, all verified against the source paper by Opus 5.5. （17 张 Reel 海报，版式骨架互不相同，均经 Opus 5.5 对照原文核对。）
+3. **19 Reel posters**, each with a distinct layout skeleton, all verified against the source paper by Opus 5.5. （19 张 Reel 海报，版式骨架互不相同，均经 Opus 5.5 对照原文核对。）
 
 ## Featured Reel（精选画报）
 
-Seventeen papers, **17 distinct layouts**. Each poster was checked against the paper's full text by Opus 5.5 and passed visual QA; numbers are mapped to sections and tables in `reel/<id>/SOURCE.md`. Poster checking produced 9 correction records (`batches/l19–l23-correction.jsonl` + selection2 errata); 2307.13854 was moved down to P2 and kept on editorial grounds (P2*). Selection logs: [selection](research/scoring/runs/gui-pc11-20261022-01/selection.md) · [selection2](research/scoring/runs/gui-pc11-20261022-01/selection2.md) · [Reel index](reel/README.md).
-（十七篇十七种版式；画报核对产生修订记录，WebArena 降为 P2 后按编辑理由保留。）
+Nineteen papers, **19 distinct layouts**. Each poster was checked against the paper's full text by Opus 5.5 and passed visual QA; numbers are mapped to sections and tables in `reel/<id>/SOURCE.md`. Poster checking produced 9 correction records (`batches/l19–l23-correction.jsonl` + selection2 errata); 2307.13854 was moved down to P2 and kept on editorial grounds (P2*). Selection logs: [selection](research/scoring/runs/gui-pc11-20261022-01/selection.md) · [selection2](research/scoring/runs/gui-pc11-20261022-01/selection2.md) · [Reel index](reel/README.md).
+（十九篇十九种版式；画报核对产生修订记录，WebArena 降为 P2 后按编辑理由保留。）
 
 <table>
 <tr>
@@ -134,14 +134,29 @@ Walking Table 6 step by step, the high-resolution architecture accounts for ≈4
 On an unlocked phone, an agent chains legitimate factors through MFA for up to 10/10 services.<br>
 MFA 完成不再能证明人在场。
 </td>
+<td width="33%" align="center" valign="top">
+<a href="reel/2604.00073/poster.png"><img src="reel/2604.00073/poster.png" width="260" alt="2604.00073 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2604.00073">2604.00073</a> · Interface cost–effect</b><br>
+Same backbone, 729 tasks: GUI and terminal interfaces differ by ~1 point in success but 2–8× in cost.<br>
+同骨干下接口成本差数倍、效果几乎相同。<br>
+</td>
+</tr>
+<tr>
+<td width="33%" align="center" valign="top">
+<a href="reel/2604.04918/poster.png"><img src="reel/2604.04918/poster.png" width="260" alt="2604.04918 poster"></a><br>
+<b><a href="https://arxiv.org/abs/2604.04918">2604.04918</a> · Human oversight funnel</b><br>
+138 risky actions enter execution; only 29 are caught by human approval.<br>
+有审批不等于能拦住危险动作。<br>
+</td>
+<td width="33%" valign="top"></td>
 <td width="33%" valign="top"></td>
 </tr>
 </table>
 
 ## High-Score Papers (2026)
 
-The table lists 20 papers from 2026. **4 are Reel posters** (the 2026 papers among the 17); **the other 16** were picked from the 2026 P3-confirmed L3 candidates so that every one of the 18 main cards appears at least once. Papers with a correction record are excluded. Every row passed L2: the full-text check confirmed both the problem and the method fit. Rows are not ranked. The question column keeps Sol's original `problem_statement`, in Chinese.
-（共 20 篇 2026 年论文：4 篇来自 Reel，其余 16 篇从 2026 年 P3 已确认候选中挑选，使 18 张主卡每张至少出现一次；排除有 correction 的论文。全部经 L2 全文核对确认，同分不排名。）
+The table lists 22 papers from 2026. **6 are Reel posters** (the 2026 papers among the 17); **the other 16** were picked from the 2026 P3-confirmed L3 candidates so that every one of the 18 main cards appears at least once. Papers with a correction record are excluded. Every row passed L2: the full-text check confirmed both the problem and the method fit. Rows are not ranked. The question column keeps Sol's original `problem_statement`, in Chinese.
+（共 22 篇 2026 年论文：6 篇来自 Reel，其余 16 篇从 2026 年 P3 已确认候选中挑选，使 18 张主卡每张至少出现一次；排除有 correction 的论文。全部经 L2 全文核对确认，同分不排名。）
 
 **How to read the score.** The number is a *display view of the tier*, not a separate rating: **95/92** = P3 confirmed at L2 (full-text check; 92 when the change is a research `judgment` rather than a new `capability`), **85/82** = P3 from the L1 first screen only (abstract + introduction; not yet L2-confirmed). Higher = more worth reading. Every row in this table is 95 or 92.
 （**分数只是档位的数字视图，不是另一套评分**：95/92 = P3 且经 L2 全文核对确认（judgment 为 92）；85/82 = 仅 L1 初筛判 P3、尚未核对。本表全部为 95 或 92。）
@@ -171,6 +186,9 @@ The table lists 20 papers from 2026. **4 are Reel posters** (the 2026 papers amo
 | [Work2Skill: Capturing Human GUI…](https://arxiv.org/abs/2610.12984) `2610.12984` | **95** · P3 ✓ | [`mine_human_screen_videos`](patterns/main/mine_human_screen_videos.md)<br><sub>挖掘人类录屏</sub><br>[`experience_memory_retrieval`](patterns/main/experience_memory_retrieval.md)<br><sub>经验记忆检索</sub> | 从同步人类录屏、键鼠与可用 AX 证据归纳的文本技能，能否在同一应用内改变实体、参数和约束后复用，而不只是复述所示任务？ | [arXiv](https://arxiv.org/abs/2610.12984) · code — |
 | [Web\$hell: A Unified Interface for…](https://arxiv.org/abs/2610.13416) `2610.13416` | **95** · P3 ✓ | [`structured_screen_observation`](patterns/main/structured_screen_observation.md)<br><sub>结构化屏幕观测</sub><br>[`planner_grounder_interface`](patterns/main/planner_grounder_interface.md)<br><sub>规划—定位解耦与动作接口</sub> | 确定性编译的可寻址 Web 信息与控件契约，加上持久页面缓存，能否同时支撑检索和实际浏览器操作，减少反复解析及信息—动作引用丢失？ | [arXiv](https://arxiv.org/abs/2610.13416) · code — |
 | [Beyond Next-Screen Prediction: The…](https://arxiv.org/abs/2610.24372) `2610.24372` | **92** · P3 ✓ | [`simulated_lookahead_selection`](patterns/main/simulated_lookahead_selection.md)<br><sub>模拟/验证前瞻选动作</sub><br>[`online_evaluation_methodology`](patterns/main/online_evaluation_methodology.md)<br><sub>在线评测方法</sub> | 在固定候选、骨干与监督的单步GUI动作选择中，预测下一屏是否在直接评估器之上提供可检出的增量，而不是把评估器收益错归于预测？ | [arXiv](https://arxiv.org/abs/2610.24372) · code — |
+
+| [Terminal Agents Suffice:…](https://arxiv.org/abs/2604.00073) `2604.00073` | **92** · P3 ✓ | [`planner_grounder_interface`](patterns/main/planner_grounder_interface.md)<br><sub>规划—定位解耦与动作接口</sub> | 同一骨干在 729 个桌面任务上比较 GUI、工具、终端和混合四种接口,按系统终态判定;GUI 与终端成功率差约 1 点,成本差 2–8 倍。 | [arXiv](https://arxiv.org/abs/2604.00073) · code — · [poster](reel/2604.00073/poster.png) |
+| [Human Oversight Strategies…](https://arxiv.org/abs/2604.04918) `2604.04918` | **92** · P3 ✓ | [`agent_initiated_user_interaction`](patterns/main/agent_initiated_user_interaction.md)<br><sub>何时求助用户</sub><br>[`injection_defense_isolation`](patterns/main/injection_defense_isolation.md)<br><sub>注入防御与隔离</sub> | 48 人 192 场会话中,进入执行的 138 次问题动作只被人工拦住 29 次:有审批不等于能拦住危险动作。 | [arXiv](https://arxiv.org/abs/2604.04918) · code — · [poster](reel/2604.04918/poster.png) |
 
 ## Card-Based Research（抽卡式科研）
 
