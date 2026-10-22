@@ -1,0 +1,6 @@
+arxiv: 2503.02950 (2503.02950v2)
+title: LiteWebAgent: The Open-Source Suite for VLM-Based Web-Agent Applications
+source: https://arxiv.org/abs/2503.02950
+
+§Abstract
+We introduce LiteWebAgent, an open-source suite for VLM-based web agent applications. Our framework addresses a critical gap in the web agent ecosystem with a production-ready solution that combines minimal serverless backend configuration, intuitive user and browser interfaces, and extensible research capabilities in agent planning, memory, and tree search. For the core LiteWebAgent agent framework, we implemented a simple yet effective baseline using recursive function calling, providing with decoupled action generation and action grounding. In addition, we integrate advanced research components such as agent planning, agent workflow memory, and tree search in a modular and extensible manner. We then integrate the LiteWebAgent agent framework with frontend and backend as deployed systems in two formats: (1) a production Vercel-based web application, which provides users with an agent-controlled remote browser, (2) a Chrome extension leveraging LiteWebAgent's API to control an existing Chrome browser via CDP (Chrome DevTools Protocol). The LiteWebAgent framework is available at https://github.com/PathOnAI/LiteWebAgent, with deployed frontend at https://lite-web-agent.vercel.app/.

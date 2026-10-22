@@ -1,0 +1,30 @@
+paper_id	tier	q3	families	card	title
+2404.02475	P3	capability	F3,F4	main/agent_initiated_user_interaction	Prompt2Task: Automating UI Tasks on Smartphones from Textual Prompts
+2503.19537	P3	capability	F2,F4	main/agent_initiated_user_interaction	Agent-Initiated Interaction in Phone UI Automation
+2405.11120	P3	capability	F0,F2	main/agent_loop_context_control	Latent State Estimation Helps UI Agents to Reason
+2406.08451	P3	capability	F3,F5	main/agent_loop_context_control	GUIOdyssey: A Comprehensive Dataset for Cross-App GUI Navigation on Mobile Devices
+2407.09295	P3	capability	F4,F0	main/environmental_injection_attacks	Systematic Categorization, Construction and Evaluation of New Attacks against Multi-modal Mobile GUI Agents
+2410.17401	P3	capability	F4	main/environmental_injection_attacks	AdvAgent: Controllable Blackbox Red-teaming on Web Agents
+2306.07863	P3	capability	F3,F5	main/experience_memory_retrieval	Synapse: Trajectory-as-Exemplar Prompting with Memory for Computer Control
+2409.07429	P3	capability	F3,F4	main/experience_memory_retrieval	Agent Workflow Memory
+2409.14337	P3	capability	F0	main/exploration_driven_task_synthesis	MobileViews: A Million-scale and Diverse Mobile GUI Dataset
+2409.15637	P3	capability	F0,F4	main/exploration_driven_task_synthesis	Synatra: Turning Indirect Knowledge into Direct Demonstrations for Digital Agents at Scale
+2401.10935	P3	capability	F4,F0	main/high_resolution_target_localisation	SeeClick: Harnessing GUI Grounding for Advanced Visual GUI Agents
+2501.13896	P3	capability	F3,F4	main/high_resolution_target_localisation	GUI-Bee: Align GUI Action Grounding to Novel Environments via Autonomous Exploration
+2503.09241	P3	capability	F4	main/injection_defense_isolation	In-Context Defense in Computer Agents: An Empirical Study
+2507.14293	P3	capability	F2,F3	main/injection_defense_isolation	WebGuard: Building a Generalizable Guardrail for Web Agents
+2404.06474	P3	capability	F2,F4	main/learned_outcome_and_process_judges	Autonomous Evaluation and Refinement of Digital Agents
+2509.21823	P3	capability	F2,F4	main/learned_outcome_and_process_judges	ProRe: A Proactive Reward System for GUI Agents via Reasoner-Actor Collaboration
+2406.13719	P3	capability	F0	main/mine_human_screen_videos	GUI Action Narrator: Where and When Did That Action Take Place?
+2306.06070	P3	capability	F3	main/online_evaluation_methodology	Mind2Web: Towards a Generalist Agent for the Web
+2312.13108	P3	capability	F0	main/online_evaluation_methodology	ASSISTGUI: Task-Oriented Desktop Graphical User Interface Automation
+1808.09132	P3	capability	F0	main/planner_grounder_interface	Mapping Natural Language Commands to Web Elements
+2103.16057	P3	capability	F0	main/planner_grounder_interface	Grounding Open-Domain Instructions to Automate Web Support Tasks
+2508.05615	P3	capability	F2,F4	main/rule_reward_single_step_rl	Test-Time Reinforcement Learning for GUI Grounding via Region Consistency
+2407.01476	P3	capability	F0,F5	main/simulated_lookahead_selection	Tree Search for Language Model Agents
+2010.04295	P3	capability	F0	main/structured_screen_observation	Widget Captioning: Generating Natural Language Description for Mobile User Interface Elements
+2101.04893	P3	capability	F4,F0	main/structured_screen_observation	Screen Recognition: Creating Accessibility Metadata for Mobile Applications from Pixels
+1802.08802	P3	capability	F0,F3	main/trajectory_level_policy_training	Reinforcement Learning on Web Interfaces Using Workflow-Guided Exploration
+2406.11896	P3	capability	F3	main/trajectory_level_policy_training	DigiRL: Training In-The-Wild Device-Control Agents with Autonomous Reinforcement Learning
+2207.01206	P3	capability	F0,F2	main/verifiable_execution_reward	WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents
+2501.01149	P3	capability	F4,F2	main/verifiable_execution_reward	A3: Android Agent Arena for Mobile GUI Agents with Essential-State Procedural Evaluation

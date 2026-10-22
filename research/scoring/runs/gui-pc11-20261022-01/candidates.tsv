@@ -1,0 +1,163 @@
+paper_id	tier	q3	families	cards	evidence	audit	title
+1802.08802	P3	capability	F0,F3	main/trajectory_level_policy_training	confirmed	-	Reinforcement Learning on Web Interfaces Using Workflow-Guided Exploration
+1808.09132	P3	capability	F0	main/planner_grounder_interface,main/structured_screen_observation	confirmed	-	Mapping Natural Language Commands to Web Elements
+2010.04295	P3	capability	F0	main/structured_screen_observation	confirmed	-	Widget Captioning: Generating Natural Language Description for Mobile User Interface Elements
+2101.04893	P3	capability	F4,F0	main/structured_screen_observation	confirmed	-	Screen Recognition: Creating Accessibility Metadata for Mobile Applications from Pixels
+2103.16057	P3	capability	F0	main/planner_grounder_interface,main/agent_initiated_user_interaction	confirmed	Y	Grounding Open-Domain Instructions to Automate Web Support Tasks
+2201.04100	P3	judgment	F2	main/structured_screen_observation	confirmed	-	Learning to Denoise Raw Mobile UI Layouts for Improving Datasets at Scale
+2202.02312	P3	judgment	F2,F3	main/planner_grounder_interface,main/online_evaluation_methodology	confirmed	-	A Dataset for Interactive Vision-Language Navigation with Unknown Command Feasibility
+2207.01206	P3	capability	F0,F2	main/verifiable_execution_reward,main/online_evaluation_methodology	confirmed	-	WebShop: Towards Scalable Real-World Web Interaction with Grounded Language Agents
+2209.15099	P3	capability	F0	main/planner_grounder_interface,main/agent_initiated_user_interaction	confirmed	-	MUG: Interactive Multimodal Grounding on User Interfaces
+2211.07615	P3	capability	F3,F0	main/planner_grounder_interface,main/online_evaluation_methodology	confirmed	-	UGIF: UI Grounded Instruction Following
+2306.06070	P3	capability	F3	main/online_evaluation_methodology,main/structured_screen_observation	confirmed	-	Mind2Web: Towards a Generalist Agent for the Web
+2306.07863	P3	capability	F3,F5	main/experience_memory_retrieval,main/structured_screen_observation	confirmed	-	Synapse: Trajectory-as-Exemplar Prompting with Memory for Computer Control
+2307.12856	P3	capability	F0	main/structured_screen_observation,main/planner_grounder_interface	confirmed	-	A Real-World WebAgent with Planning, Long Context Understanding, and Program Synthesis
+2307.13854	P3	judgment	F2,F3	main/online_evaluation_methodology,main/verifiable_execution_reward	confirmed	-	WebArena: A Realistic Web Environment for Building Autonomous Agents
+2310.08740	P3	capability	F4,F0	main/structured_screen_observation,main/agent_loop_context_control	confirmed	-	A Zero-Shot Language Agent for Computer Control with Structured Reflection
+2311.18751	P3	judgment	F3	main/online_evaluation_methodology,main/agent_loop_context_control	confirmed	-	Exposing Limitations of Language Model Agents in Sequential-Task Compositions on the Web
+2312.13108	P3	capability	F0	main/online_evaluation_methodology,main/mine_human_screen_videos	confirmed	-	ASSISTGUI: Task-Oriented Desktop Graphical User Interface Automation
+2401.01614	P3	capability	F1,F4	main/planner_grounder_interface,main/structured_screen_observation,main/online_evaluation_methodology	confirmed	-	GPT-4V(ision) is a Generalist Web Agent, if Grounded
+2401.10935	P3	capability	F4,F0	main/high_resolution_target_localisation,main/planner_grounder_interface,main/online_evaluation_methodology	confirmed	-	SeeClick: Harnessing GUI Grounding for Advanced Visual GUI Agents
+2401.13649	P3	capability	F0,F2	main/online_evaluation_methodology,main/verifiable_execution_reward	confirmed	-	VisualWebArena: Evaluating Multimodal Agents on Realistic Visual Web Tasks
+2401.13919	P3	capability	F0,F2	main/structured_screen_observation,main/learned_outcome_and_process_judges,main/online_evaluation_methodology	confirmed	-	WebVoyager: Building an End-to-End Web Agent with Large Multimodal Models
+2402.05930	P3	judgment	F3	main/online_evaluation_methodology,main/structured_screen_observation	confirmed	-	WebLINX: Real-World Website Navigation with Multi-Turn Dialogue
+2402.06596	P3	judgment	F2,F5	main/online_evaluation_methodology,main/agent_loop_context_control,main/learned_outcome_and_process_judges	confirmed	-	Understanding the Weakness of Large Language Model Agents within a Complex Android Environment
+2404.02475	P3	capability	F3,F4	main/agent_initiated_user_interaction,main/experience_memory_retrieval	confirmed	-	Prompt2Task: Automating UI Tasks on Smartphones from Textual Prompts
+2404.05955	P3	judgment	F2,F3	main/online_evaluation_methodology,main/high_resolution_target_localisation	confirmed	-	VisualWebBench: How Far Have Multimodal LLMs Evolved in Web Page Understanding and Grounding?
+2404.06474	P3	capability	F2,F4	main/learned_outcome_and_process_judges	confirmed	-	Autonomous Evaluation and Refinement of Digital Agents
+2404.07972	P3	judgment	F2,F4	main/online_evaluation_methodology,main/verifiable_execution_reward	confirmed	-	OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments
+2404.16054	P3	judgment	F2	main/online_evaluation_methodology,main/verifiable_execution_reward	confirmed	-	LlamaTouch: A Faithful and Scalable Testbed for Mobile UI Task Automation
+2404.16660	P3	judgment	F3,F2	main/online_evaluation_methodology	confirmed	-	Benchmarking Mobile Device Control Agents across Diverse Configurations
+2405.00516	P3	judgment	F3,F1	main/structured_screen_observation,main/online_evaluation_methodology	confirmed	-	Navigating WebAI: Training Agents to Complete Web Tasks with Large Language Models and Reinforcement Learning
+2405.11120	P3	capability	F0,F2	main/agent_loop_context_control	confirmed	-	Latent State Estimation Helps UI Agents to Reason
+2405.14573	P3	judgment	F2,F3	main/online_evaluation_methodology,main/verifiable_execution_reward	confirmed	-	AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents
+2406.03679	P3	judgment	F5,F3	main/trajectory_level_policy_training,main/online_evaluation_methodology	confirmed	-	On the Effects of Data Scale on UI Control Agents
+2406.08451	P3	capability	F3,F5	main/agent_loop_context_control,main/trajectory_level_policy_training,main/online_evaluation_methodology	confirmed	-	GUIOdyssey: A Comprehensive Dataset for Cross-App GUI Navigation on Mobile Devices
+2406.11896	P3	capability	F3	main/trajectory_level_policy_training,main/learned_outcome_and_process_judges	confirmed	-	DigiRL: Training In-The-Wild Device-Control Agents with Autonomous Reinforcement Learning
+2406.13264	P3	judgment	F2	main/learned_outcome_and_process_judges,main/mine_human_screen_videos	confirmed	-	WONDERBREAD: A Benchmark for Evaluating Multimodal Foundation Models on Business Process Management Tasks
+2406.13719	P3	capability	F0	main/mine_human_screen_videos	confirmed	-	GUI Action Narrator: Where and When Did That Action Take Place?
+2406.19263	P3	capability	F0	main/structured_screen_observation	confirmed	-	Read Anywhere Pointed: Layout-aware GUI Screen Reading with Tree-of-Lens Grounding
+2407.01476	P3	capability	F0,F5	main/simulated_lookahead_selection	confirmed	-	Tree Search for Language Model Agents
+2407.01511	P3	capability	F3,F2	main/online_evaluation_methodology,main/verifiable_execution_reward	confirmed	-	CRAB: Cross-environment Agent Benchmark for Multimodal Language Model Agents
+2407.05291	P3	capability	F0	main/online_evaluation_methodology,main/planner_grounder_interface,main/verifiable_execution_reward	confirmed	-	WorkArena++: Towards Compositional Planning and Reasoning-based Common Knowledge Work Tasks
+2407.09295	P3	capability	F4,F0	main/environmental_injection_attacks	confirmed	-	Systematic Categorization, Construction and Evaluation of New Attacks against Multi-modal Mobile GUI Agents
+2407.10956	P3	judgment	F0,F1	main/online_evaluation_methodology	confirmed	-	Spider2-V: How Far Are Multimodal Agents From Automating Data Science and Engineering Workflows?
+2407.15711	P3	judgment	F0,F3	main/online_evaluation_methodology,main/agent_loop_context_control	confirmed	-	AssistantBench: Can Web Agents Solve Realistic and Time-Consuming Tasks?
+2408.00203	P3	capability	F4,F0	main/structured_screen_observation	confirmed	-	OmniParser for Pure Vision Based GUI Agent
+2408.02544	P3	judgment	F4,F0	main/environmental_injection_attacks,main/structured_screen_observation	confirmed	-	Caution for the Environment: Multimodal LLM Agents are Susceptible to Environmental Distractions
+2409.07429	P3	capability	F3,F4	main/experience_memory_retrieval	confirmed	-	Agent Workflow Memory
+2409.11295	P3	judgment	F4	main/environmental_injection_attacks	confirmed	-	EIA: Environmental Injection Attack on Generalist Web Agents for Privacy Leakage
+2409.12089	P3	judgment	F1,F4	main/structured_screen_observation	confirmed	-	The Impact of Element Ordering on LM Agent Performance
+2409.14337	P3	capability	F0	main/exploration_driven_task_synthesis,main/structured_screen_observation	confirmed	-	MobileViews: A Million-scale and Diverse Mobile GUI Dataset
+2409.15637	P3	capability	F0,F4	main/exploration_driven_task_synthesis	confirmed	-	Synatra: Turning Indirect Knowledge into Direct Demonstrations for Digital Agents at Scale
+2410.00467	P3	judgment	F5	main/agent_loop_context_control	confirmed	-	Dynamic Planning for LLM-based Graphical User Interface Automation
+2410.02907	P3	capability	F0,F3	main/exploration_driven_task_synthesis	confirmed	-	NNetNav: Unsupervised Learning of Browser Agents Through Environment Interaction in the Wild
+2410.05243	P3	capability	F4,F3	main/planner_grounder_interface,main/structured_screen_observation,main/high_resolution_target_localisation	confirmed	-	Navigating the Digital World as Humans Do: Universal Visual Grounding for GUI Agents
+2410.08164	P3	capability	F0,F3	main/experience_memory_retrieval,main/agent_loop_context_control,main/planner_grounder_interface	confirmed	-	Agent S: An Open Agentic Framework that Uses Computers Like a Human
+2410.09006	P3	judgment	F2	main/injection_defense_isolation,main/learned_outcome_and_process_judges	confirmed	-	From Interaction to Impact: Towards Safer AI Agents Through Understanding and Evaluating Mobile UI Operation Impacts
+2410.13825	P3	judgment	F1	main/structured_screen_observation,main/planner_grounder_interface,main/agent_loop_context_control	confirmed	-	AgentOccam: A Simple Yet Strong Baseline for LLM-Based Web Agents
+2410.13886	P3	judgment	F3,F2	main/online_evaluation_methodology,main/environmental_injection_attacks	confirmed	-	Refusal-Trained LLMs Are Easily Jailbroken As Browser Agents
+2410.15164	P3	judgment	F2	main/online_evaluation_methodology,main/learned_outcome_and_process_judges	confirmed	-	SPA-Bench: A Comprehensive Benchmark for SmartPhone Agent Evaluation
+2410.16464	P3	judgment	F0,F4	main/planner_grounder_interface	confirmed	-	Beyond Browsing: API-Based Web Agents
+2410.17401	P3	capability	F4	main/environmental_injection_attacks	confirmed	-	AdvAgent: Controllable Blackbox Red-teaming on Web Agents
+2410.17520	P3	judgment	F2,F4	main/online_evaluation_methodology,main/environmental_injection_attacks,main/injection_defense_isolation	confirmed	-	MobileSafetyBench: Evaluating Safety of Autonomous Agents in Mobile Device Control
+2410.18603	P3	capability	F0,F1	main/agent_loop_context_control,main/planner_grounder_interface	confirmed	-	AgentStore: Scalable Integration of Heterogeneous Agents As Specialized Generalist Computer Assistant
+2410.23218	P3	capability	F3,F2	main/planner_grounder_interface,main/online_evaluation_methodology	confirmed	-	OS-ATLAS: A Foundation Action Model for Generalist GUI Agents
+2411.02391	P3	judgment	F4	main/environmental_injection_attacks	confirmed	-	Attacking Vision-Language Computer Agents via Pop-ups
+2412.10840	P3	judgment	F1	main/high_resolution_target_localisation	confirmed	-	Attention-driven GUI Grounding: Leveraging Pretrained Multimodal Large Language Models without Fine-Tuning
+2412.13194	P3	capability	F3,F2	main/exploration_driven_task_synthesis,main/learned_outcome_and_process_judges	confirmed	-	Proposer-Agent-Evaluator(PAE): Autonomous Skill Discovery For Foundation Model Internet Agents
+2412.14161	P3	judgment	F0	main/online_evaluation_methodology,main/verifiable_execution_reward	confirmed	-	TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks
+2412.18116	P3	capability	F0,F4	main/planner_grounder_interface,main/exploration_driven_task_synthesis	confirmed	-	AutoDroid-V2: Boosting SLM-based GUI Agents via Code Generation
+2412.19723	P3	capability	F0,F3	main/exploration_driven_task_synthesis,main/learned_outcome_and_process_judges	confirmed	-	OS-Genesis: Automating GUI Agent Trajectory Construction via Reverse Task Synthesis
+2501.01149	P3	capability	F4,F2	main/verifiable_execution_reward,main/learned_outcome_and_process_judges,main/online_evaluation_methodology	confirmed	-	A3: Android Agent Arena for Mobile GUI Agents with Essential-State Procedural Evaluation
+2501.10893	P3	capability	F0,F3	main/exploration_driven_task_synthesis,main/experience_memory_retrieval	confirmed	-	Learn-by-interact: A Data-Centric Framework for Self-Adaptive Agents in Realistic Environments
+2501.13896	P3	capability	F3,F4	main/high_resolution_target_localisation,main/exploration_driven_task_synthesis	confirmed	-	GUI-Bee: Align GUI Action Grounding to Novel Environments via Autonomous Exploration
+2502.01977	P3	capability	F0,F2	main/exploration_driven_task_synthesis,main/structured_screen_observation	confirmed	-	AutoGUI: Scaling GUI Grounding with Automatic Functionality Annotations from LLMs
+2502.02982	P3	capability	F0	main/trajectory_level_policy_training,main/mine_human_screen_videos	confirmed	-	MobileA3gent: Training Mobile GUI Agents Using Decentralized Self-Sourced Data from Diverse Users
+2502.08047	P3	judgment	F3	main/online_evaluation_methodology,main/agent_loop_context_control	confirmed	-	WorldGUI: An Interactive Benchmark for Desktop GUI Automation from Any Starting Point
+2502.14282	P3	capability	F0	main/agent_loop_context_control,main/structured_screen_observation	confirmed	-	PC-Agent: A Hierarchical Multi-Agent Collaboration Framework for Complex Task Automation on PC
+2502.18356	P3	judgment	F0	main/online_evaluation_methodology	confirmed	-	WebGames: Challenging General-Purpose Web-Browsing AI Agents
+2502.20383	P3	judgment	F1,F4	main/environmental_injection_attacks,main/agent_loop_context_control	confirmed	-	Why Are Web AI Agents More Vulnerable Than Standalone LLMs? A Security Analysis
+2503.04957	P3	judgment	F3,F0	main/online_evaluation_methodology	confirmed	-	SafeArena: Evaluating the Safety of Autonomous Web Agents
+2503.05143	P3	judgment	F3,F0	main/trajectory_level_policy_training,main/online_evaluation_methodology	confirmed	-	FedMABench: Benchmarking Mobile Agents on Decentralized Heterogeneous User Data
+2503.09241	P3	capability	F4	main/injection_defense_isolation,main/environmental_injection_attacks	confirmed	-	In-Context Defense in Computer Agents: An Empirical Study
+2503.09780	P3	judgment	F4,F3	main/online_evaluation_methodology,main/learned_outcome_and_process_judges	confirmed	-	AgentDAM: Privacy Leakage Evaluation for Autonomous Web Agents
+2503.10809	P3	capability	F4,F3	main/environmental_injection_attacks	confirmed	-	MIP against Agent: Malicious Image Patches Hijacking Multimodal OS Agents
+2503.12532	P3	capability	F2,F0	main/trajectory_level_policy_training,main/learned_outcome_and_process_judges	confirmed	-	STEVE: A Step Verification Pipeline for Computer-use Agent Training
+2503.15661	P3	judgment	F2,F0	main/online_evaluation_methodology,main/planner_grounder_interface	confirmed	-	UI-Vision: A Desktop-centric GUI Benchmark for Visual Perception and Interaction
+2503.16788	P3	judgment	F5,F1	main/agent_loop_context_control,main/online_evaluation_methodology	confirmed	-	Does Chain-of-Thought Reasoning Help Mobile GUI Agent? An Empirical Study
+2503.19537	P3	capability	F2,F4	main/agent_initiated_user_interaction	confirmed	-	Agent-Initiated Interaction in Phone UI Automation
+2503.24180	P3	capability	F4,F2	main/agent_initiated_user_interaction	confirmed	-	Navi-plus: Managing Ambiguous GUI Navigation Tasks with Follow-up Questions
+2504.00906	P3	capability	F1,F3	main/planner_grounder_interface,main/agent_loop_context_control	confirmed	-	Agent S2: A Compositional Generalist-Specialist Framework for Computer Use Agents
+2504.01382	P3	judgment	F2,F3	main/online_evaluation_methodology,main/learned_outcome_and_process_judges	confirmed	-	An Illusion of Progress? Assessing the Current State of Web Agents
+2504.01495	P3	judgment	F2,F0	main/online_evaluation_methodology,main/verifiable_execution_reward	confirmed	-	Are Autonomous Web Agents Good Testers?
+2504.04716	P3	judgment	F3,F2	main/high_resolution_target_localisation,main/online_evaluation_methodology	confirmed	-	On the Robustness of GUI Grounding Models Against Image Attacks
+2504.07079	P3	capability	F3,F0	main/experience_memory_retrieval,main/exploration_driven_task_synthesis	confirmed	-	SkillWeaver: Web Agents can Self-Improve by Discovering and Honing Skills
+2504.07981	P3	capability	F3,F0	main/high_resolution_target_localisation,main/planner_grounder_interface	confirmed	-	ScreenSpot-Pro: GUI Grounding for Professional High-Resolution Computer Use
+2504.08942	P3	judgment	F2	main/learned_outcome_and_process_judges,main/verifiable_execution_reward	confirmed	-	AgentRewardBench: Evaluating Automatic Evaluations of Web Agent Trajectories
+2504.10445	P3	capability	F0,F3	main/agent_loop_context_control,main/online_evaluation_methodology	confirmed	-	RealWebAssist: A Benchmark for Long-Horizon Web Assistance with Real-World Users
+2504.18575	P3	judgment	F4,F2	main/environmental_injection_attacks	confirmed	-	WASP: Benchmarking Web Agent Security Against Prompt Injection Attacks
+2505.00684	P3	capability	F0	main/high_resolution_target_localisation	confirmed	-	Visual Test-time Scaling for GUI Agent Grounding
+2505.09875	P3	judgment	F0	main/agent_loop_context_control,main/agent_initiated_user_interaction	confirmed	-	Characterizing Unintended Consequences in Human-GUI Agent Collaboration for Web Browsing
+2505.11717	P3	capability	F4	main/environmental_injection_attacks	confirmed	-	WebInject: Prompt Injection Attack to Web Agents
+2505.13227	P3	capability	F2,F0	main/planner_grounder_interface,main/online_evaluation_methodology	confirmed	-	Scaling Computer-Use Grounding via User Interface Decomposition and Synthesis
+2505.15810	P3	judgment	F2,F5	main/rule_reward_single_step_rl,main/agent_loop_context_control	confirmed	-	GUI-G1: Understanding R1-Zero-Like Training for Visual Grounding in GUI Agents
+2505.19897	P3	judgment	F0	main/online_evaluation_methodology,main/planner_grounder_interface	confirmed	-	ScienceBoard: Evaluating Multimodal Autonomous Agents in Realistic Scientific Workflows
+2505.21499	P3	judgment	F4	main/environmental_injection_attacks	confirmed	-	AdInject: Real-World Black-Box Attacks on Web Agents via Advertising Delivery
+2505.21936	P3	judgment	F2,F4	main/environmental_injection_attacks,main/online_evaluation_methodology	confirmed	-	RedTeamCUA: Realistic Adversarial Testing of Computer-Use Agents in Hybrid Web-OS Environments
+2505.24838	P3	capability	F0	main/planner_grounder_interface	confirmed	-	VideoCAD: A Dataset and Model for Learning Long-Horizon 3D CAD UI Interactions from Video
+2505.24878	P3	capability	F0	main/online_evaluation_methodology	confirmed	-	Open CaptchaWorld: A Comprehensive Web-based Platform for Testing and Benchmarking Multimodal LLM Agents
+2506.00618	P3	judgment	F3,F2	main/environmental_injection_attacks,main/online_evaluation_methodology	confirmed	-	RiOSWorld: Benchmarking the Risk of Multimodal Computer-Use Agents
+2506.02456	P3	judgment	F4,F3	main/environmental_injection_attacks,main/injection_defense_isolation	confirmed	-	VPI-Bench: Visual Prompt Injection Attacks for Computer-Use Agents
+2506.02839	P3	judgment	F0,F2	main/online_evaluation_methodology	confirmed	-	DeepShop: A Benchmark for Deep Research Shopping Agents
+2506.03143	P3	judgment	F1,F0	main/high_resolution_target_localisation	confirmed	-	GUI-Actor: Coordinate-Free Visual Grounding for GUI Agents
+2506.04135	P3	judgment	F3	main/online_evaluation_methodology	confirmed	-	macOSWorld: A Multilingual Interactive Benchmark for GUI Agents
+2506.07217	P3	capability	F0	main/agent_loop_context_control,main/planner_grounder_interface	confirmed	-	BIMgent: Towards Autonomous Building Modeling via Computer-use Agents
+2506.07672	P3	judgment	F2,F0	main/online_evaluation_methodology,main/verifiable_execution_reward	confirmed	Y	MCPWorld: A Unified Benchmarking Testbed for API, GUI, and Hybrid Computer Use Agents
+2506.07976	P3	judgment	F5,F0	main/agent_loop_context_control,main/trajectory_level_policy_training	confirmed	-	Thinking vs. Doing: Agents that Reason by Scaling Test-Time Interaction
+2506.08972	P3	capability	F3	main/agent_loop_context_control,main/online_evaluation_methodology	confirmed	-	Atomic-to-Compositional Generalization for Mobile Agents with A New Benchmark and Scheduling System
+2506.13205	P3	judgment	F4	main/environmental_injection_attacks,main/injection_defense_isolation	confirmed	-	Poison Once, Control Anywhere: Clean-Text Visual Backdoors in VLM-based Mobile Agents
+2506.14205	P3	capability	F0,F4	main/exploration_driven_task_synthesis,main/online_evaluation_methodology	confirmed	-	AgentSynth: Scalable Task Generation for Generalist Computer-Use Agents
+2506.14866	P3	judgment	F2,F4	main/environmental_injection_attacks,main/learned_outcome_and_process_judges,main/online_evaluation_methodology	confirmed	-	OS-Harm: A Benchmark for Measuring Safety of Computer Use Agents
+2506.15677	P3	capability	F0,F3	main/agent_loop_context_control,main/online_evaluation_methodology	confirmed	-	Embodied Web Agents: Bridging Physical-Digital Realms for Integrated Agent Intelligence
+2506.17318	P3	judgment	F4	main/environmental_injection_attacks,main/injection_defense_isolation,main/agent_loop_context_control	confirmed	-	Context manipulation attacks : Web agents are susceptible to corrupted memory
+2506.21252	P3	judgment	F2	main/learned_outcome_and_process_judges	confirmed	-	Agent-RewardBench: Towards a Unified Benchmark for Reward Modeling across Perception, Planning, and Safety in Real-World Multimodal Agents
+2507.04227	P3	judgment	F4,F3	main/environmental_injection_attacks,main/online_evaluation_methodology	confirmed	-	Mobile GUI Agents under Real-world Threats: Are We There Yet?
+2507.06134	P3	judgment	F2,F4	main/online_evaluation_methodology,main/environmental_injection_attacks	confirmed	-	OpenAgentSafety: A Comprehensive Framework for Evaluating Real-World AI Agent Safety
+2507.06899	P3	judgment	F4,F3	main/planner_grounder_interface,main/environmental_injection_attacks	confirmed	-	VisualTrap: A Stealthy Backdoor Attack on GUI Agents via Visual Grounding Manipulation
+2507.14293	P3	capability	F2,F3	main/injection_defense_isolation,main/learned_outcome_and_process_judges	confirmed	-	WebGuard: Building a Generalizable Guardrail for Web Agents
+2507.14799	P3	capability	F4	main/environmental_injection_attacks,main/structured_screen_observation	confirmed	-	Manipulating LLM Web Agents with Indirect Prompt Injection Attack via HTML Accessibility Tree
+2507.16704	P3	capability	F4	main/structured_screen_observation	confirmed	-	Screen2AX: Vision-Based Approach for Automatic macOS Accessibility Generation
+2507.19132	P3	judgment	F2,F3	main/online_evaluation_methodology	confirmed	-	OS-MAP: How Far Can Computer-Using Agents Go in Breadth and Depth?
+2508.00935	P3	judgment	F2,F0	main/verifiable_execution_reward,main/online_evaluation_methodology	confirmed	-	Measuring Harmfulness of Computer-Using Agents
+2508.04412	P3	capability	F0	main/structured_screen_observation	confirmed	-	Beyond Pixels: Exploring DOM Downsampling for LLM-Based Web Agents
+2508.05615	P3	capability	F2,F4	main/rule_reward_single_step_rl,main/high_resolution_target_localisation	confirmed	-	Test-Time Reinforcement Learning for GUI Grounding via Region Consistency
+2508.05731	P3	capability	F2	main/rule_reward_single_step_rl	confirmed	-	InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization
+2508.09123	P3	judgment	F1,F5	main/trajectory_level_policy_training,main/agent_loop_context_control	confirmed	-	OpenCUA: Open Foundations for Computer-Use Agents
+2508.13024	P3	judgment	F0,F2	main/online_evaluation_methodology,main/agent_loop_context_control	confirmed	-	WebMall -- A Multi-Shop Benchmark for Evaluating Web Agents
+2508.14040	P3	judgment	F5,F1	main/trajectory_level_policy_training,main/planner_grounder_interface	confirmed	-	ComputerRL: Scaling End-to-End Online Reinforcement Learning for Computer Use Agents
+2508.15832	P3	judgment	F2	main/online_evaluation_methodology,main/learned_outcome_and_process_judges	confirmed	-	A Functionality-Grounded Benchmark for Evaluating Web Agents in E-commerce Domains
+2508.17398	P3	capability	F0	main/online_evaluation_methodology	confirmed	-	DashboardQA: Benchmarking Multimodal Agents for Question Answering on Interactive Dashboards
+2508.19493	P3	judgment	F4,F2	main/online_evaluation_methodology	confirmed	-	Mind the Third Eye! Benchmarking Privacy Awareness in MLLM-powered Smartphone Agents
+2508.21456	P3	capability	F4,F0	main/agent_initiated_user_interaction	confirmed	-	Morae: Proactively Pausing UI Agents for User Choices
+2509.01052	P3	capability	F0	main/agent_loop_context_control,main/online_evaluation_methodology	confirmed	-	FlashAdventure: A Benchmark for GUI Agents Solving Full Story Arcs in Diverse Adventure Games
+2509.02322	P3	judgment	F3,F5	main/trajectory_level_policy_training,main/planner_grounder_interface	confirmed	-	OmniActor: A Generalist GUI and Embodied Agent for 2D&3D Worlds
+2509.06477	P3	judgment	F0,F2	main/planner_grounder_interface,main/online_evaluation_methodology	confirmed	-	MAS-Bench: A Unified Benchmark for Shortcut-Augmented Hybrid Mobile GUI Agents
+2509.07098	P3	capability	F0,F4	main/mine_human_screen_videos,main/agent_loop_context_control	confirmed	-	Instruction Agent: Enhancing Agent with Expert Demonstration
+2509.07764	P3	capability	F4,F2	main/injection_defense_isolation,main/environmental_injection_attacks	confirmed	-	AgentSentinel: An End-to-End and Real-Time Security Defense Framework for Computer-Use Agents
+2509.11250	P3	judgment	F3,F4	main/environmental_injection_attacks	confirmed	-	Environmental Injection Attacks against GUI Agents in Realistic Dynamic Environments
+2509.13615	P3	capability	F0,F2	main/agent_loop_context_control,main/structured_screen_observation	confirmed	-	See, Think, Act: Teaching Multimodal Agents to Effectively Interact with GUI by Identifying Toggles
+2509.14382	P3	judgment	F1,F2	main/planner_grounder_interface,main/online_evaluation_methodology	confirmed	-	Detecting Pipeline Failures through Fine-Grained Analysis of Web Agents
+2509.21552	P3	capability	F0	main/high_resolution_target_localisation,main/rule_reward_single_step_rl	confirmed	-	Learning GUI Grounding with Spatial Reasoning from Visual Feedback
+2509.21823	P3	capability	F2,F4	main/learned_outcome_and_process_judges	confirmed	-	ProRe: A Proactive Reward System for GUI Agents via Reasoner-Actor Collaboration
+2509.22256	P3	capability	F4	main/injection_defense_isolation	confirmed	-	Secure and Efficient Access Control for Computer-Use Agents via Context Space
+2509.23738	P3	capability	F2	main/learned_outcome_and_process_judges,main/trajectory_level_policy_training	confirmed	-	GUI-Shepherd: Reliable Process Reward and Verification for Long-Sequence GUI Tasks
+2509.23866	P3	capability	F0,F2	main/trajectory_level_policy_training	confirmed	Y	Efficient Multi-turn RL for GUI Agents via Decoupled Training and Adaptive Data Curation
+2512.07725	P3	judgment	F4,F0	main/injection_defense_isolation	confirmed	Y	Privacy Practices of Browser Agents
+2602.11724	P3	capability	F2,F0	main/verifiable_execution_reward,main/learned_outcome_and_process_judges	confirmed	Y	WebTestPilot: Agentic End-to-End Web Testing against Natural Language Specification by Inferring Oracles with Symbolized GUI Elements
+2604.14956	P3	judgment	F3	main/high_resolution_target_localisation,main/online_evaluation_methodology	confirmed	Y	FedGUI: Benchmarking Federated GUI Agents across Heterogeneous Platforms, Devices, and Operating Systems
+2604.27776	P3	judgment	F0	main/online_evaluation_methodology,main/planner_grounder_interface	confirmed	Y	WindowsWorld: A Process-Centric Benchmark of Autonomous GUI Agents in Professional Cross-Application Environments
+2605.16024	P3	judgment	F2,F0	main/exploration_driven_task_synthesis	confirmed	Y	ScreenSearch: Uncertainty-Aware OS Exploration
+2609.16251	P3	capability	F2,F0	main/online_evaluation_methodology,main/verifiable_execution_reward	confirmed	Y	CADWorld: Computer-Use Benchmark for Long-Horizon Computer-Aided Design
+2610.14157	P3	capability	F0,F3	main/verifiable_execution_reward,main/planner_grounder_interface	confirmed	Y	OpenMobile-2: Building Versatile Mobile Agents with Scalable Environments and App-Native Tools
+2510.01524	P2	incremental	F0	main/planner_grounder_interface	confirmed	Y	WALT: Web Agents that Learn Tools
