@@ -1,0 +1,16 @@
+rank	paper_id	screen_score	G	M	X	E	claim_support	claim_type	title?	batch
+1	2608.21794	100.0	4	4	4	4	supported_in_material	theory_analysis		b082
+2	2609.32036	100.0	4	4	4	4	supported_in_material	evaluation_resource		b072
+3	2610.15138	100.0	4	4	4	4	scoped	evaluation_resource		b047
+4	2610.26469	100.0	4	4	4	4	supported_in_material	component_training		b015
+5	2610.26503	100.0	4	4	4	4	supported_in_material	component_training		b038
+6	2608.06065	96.25	3	4	4	4	supported_in_material	component_training		b034
+7	2609.05511	96.25	3	4	4	4	supported_in_material	component_training		b004
+8	2610.05185	96.25	3	4	4	4	supported_in_material	component_training		b017
+9	2504.01382	95.0	4	4	3	4	supported_in_material	evaluation_resource		b088
+10	2605.07630	95.0	4	4	3	4	supported_in_material	evaluation_resource		b026
+11	2609.27273	95.0	4	4	3	4	scoped	evaluation_resource		b065
+12	2610.07444	95.0	4	4	3	4	supported_in_material	theory_analysis		b036
+13	2610.12823	95.0	4	4	3	4	supported_in_material	evaluation_resource		b066
+14	1802.08802	90.0	4	4	4	3	scoped	component_training		b045
+15	2112.09332	90.0	4	4	4	3	scoped	system_method		b047

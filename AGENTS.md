@@ -8,7 +8,7 @@
 - 旧评分、双席判定、Reel、校准参考与榜单均已退役，已于 2026-10-22 移出仓库（git 历史 / 本地 `~/GUI/moved-out-2026-10-22/`）。禁止从旧记录恢复当前分数，禁止续跑旧批次。
 - 已完成的 `patterns/` 模式卡、`cards/`、领域构建和原始论文材料保留。不得为了配合新分数重写卡片。
 - Grok 仅收集候选，写 `inbox/`；本地 Claude Code 负责来源核对、阅读、判定和 Reel。
-- 新评分规则见 `research/SCORE_SPEC.md`，状态为 draft_uncalibrated。先做 gap/谱系、模式条件与审稿期望分析，校准冻结后评审；评分后动态阈值选题，默认最多 9 篇交 Reel。当前无新版得分。
+- 现行评分：v3 `sol-batch-v3`（`research/v3/SCORE_SPEC.md`，单模型 6.1 Sol 批量、四轴 G/M/X/E，gui-v3 权重 15/25/20/40）。2026-10-22 已全量执行 run `research/v3/runs/gui-v3-20261022-01/`：1328 篇（A/B 档全部），1174 scored / 92 needs_material / 62 out_of_scope。之后 top15 候选交 Opus 5.5 原文核对并做 ≤9 篇 Reel。旧 `research/SCORE_SPEC.md`（v2.2 双席草稿）与 `research/v2/` run 只读留存，不再续跑。
 - 用户此次明确授权了清理及评分重设计；后续日常评审不得自行修改权重、rubric、卡片或校准门槛。
 
 ## 常用入口
@@ -25,8 +25,7 @@
 不覆盖用户未提交工作，不强推，不改写已推送历史；没有明确提交/推送授权时保留本地可审阅差异。
 结构校验通过不等于引用语义正确、科学结论成立或实际复现。
 
-## v2.2 批量执行约定
+## v3 批量执行约定
 
-严格按 research/PATTERN_PROTOCOL.md 使用原 ResearchStudio 15+31，再做领域模式识别。
-总控使用 claude-kimi，model type 已配置，无需重配或探测。入口 docs/agents/LOCAL_SCORING_PROMPT.md：6.1 Sol 与 Sonnet 5.5 独立初评，Opus 5.5 聚合，分批分轮可恢复；GLM 5.3 仅做入选 Reel。
-worker 只拥有分配的 attempt/论文目录，不是唯一写入者，不能撤销他人编辑或操作 git；最终提交由总控按用户授权完成。
+总控使用 claude-kimi，model type 已配置。入口 `research/v3/SOL_BATCH_PROMPT.md`：CC 内置 Subagent、6.1 Sol 单模型、默认 4 路并行滚动补位（可升 6–8）、每批 10–20 篇；无第二初评席、无 Opus 全量聚合、无校准冻结。Reel 用 `research/v3/OPUS_REEL_PROMPT.md`（Opus 5.5 只核对候选与制作，GLM 不再默认参与）。
+worker 只拥有分配的 `batches/<batch_id>.jsonl`，不是唯一写入者，不写共享 progress/selection，不操作 git；最终提交由总控按用户授权完成。
