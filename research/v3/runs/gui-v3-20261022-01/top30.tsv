@@ -7,25 +7,25 @@ paper_id	score	G	M	X	E	claim_support	reel	title
 2608.06065	96.25	3	4	4	4	supported_in_material	Y	The Next Screenshot Knows: Gated Hindsight Distillation for Mobile GUI Agents
 2609.05511	96.25	3	4	4	4	supported_in_material	-	SCAFFOLD: Self-Improving Web Agents via Recursive Parametric Skill Abstraction
 2610.05185	96.25	3	4	4	4	supported_in_material	Y	Recurrent Latent Visual Search for GUI Grounding
-2504.01382	95.0	4	4	3	4	supported_in_material	Y	An Illusion of Progress? Assessing the Current State of Web Agents
 2605.07630	95.0	4	4	3	4	supported_in_material	Y	Safe, or Simply Incapable? Rethinking Safety Evaluation for Phone-Use Agents
 2609.27273	95.0	4	4	3	4	scoped	-	CAVEAT: Towards Robust Computer-Use Agents in Incentive-Misaligned Environments
 2610.07444	95.0	4	4	3	4	supported_in_material	-	Decoupling What from Where: How Should a Small GUI Grounding Model Receive the Action Type?
 2610.12823	95.0	4	4	3	4	supported_in_material	-	When Charts Deceive Web Agents: A Paired Benchmark for Misleading Visualization-Grounded Tasks
-1802.08802	90.0	4	4	4	3	scoped	-	Reinforcement Learning on Web Interfaces Using Workflow-Guided Exploration
-2112.09332	90.0	4	4	4	3	scoped	-	WebGPT: Browser-assisted question-answering with human feedback
-2210.03347	90.0	4	4	4	3	supported_in_material	-	Pix2Struct: Screenshot Parsing as Pretraining for Visual Language Understanding
-2306.00245	90.0	4	4	4	3	scoped	-	From Pixels to UI Actions: Learning to Follow Instructions via Graphical User Interfaces
-2307.13854	90.0	4	4	4	3	scoped	-	WebArena: A Realistic Web Environment for Building Autonomous Agents
-2310.03720	90.0	4	4	4	3	scoped	-	SteP: Stacked LLM Policies for Web Actions
-2402.04476	90.0	4	4	4	3	supported_in_material	-	Dual-View Visual Contextualization for Web Navigation
-2404.07972	90.0	4	4	4	3	supported_in_material	-	OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments
-2404.16660	90.0	4	4	4	3	supported_in_material	-	Benchmarking Mobile Device Control Agents across Diverse Configurations
-2405.14573	90.0	4	4	4	3	supported_in_material	-	AndroidWorld: A Dynamic Benchmarking Environment for Autonomous Agents
-2406.07822	90.0	4	4	4	3	scoped	-	Tell Me What's Next: Textual Foresight for Generic UI Representations
-2407.01511	90.0	4	4	4	3	scoped	-	CRAB: Cross-environment Agent Benchmark for Multimodal Language Model Agents
-2407.05291	90.0	4	4	4	3	scoped	-	WorkArena++: Towards Compositional Planning and Reasoning-based Common Knowledge Work Tasks
-2407.10956	90.0	4	4	4	3	supported_in_material	-	Spider2-V: How Far Are Multimodal Agents From Automating Data Science and Engineering Workflows?
-2410.05243	90.0	4	4	4	3	scoped	-	Navigating the Digital World as Humans Do: Universal Visual Grounding for GUI Agents
-2411.02391	90.0	4	4	4	3	scoped	-	Attacking Vision-Language Computer Agents via Pop-ups
-2503.15661	90.0	4	4	4	3	scoped	-	UI-Vision: A Desktop-centric GUI Benchmark for Visual Perception and Interaction
+2604.00073	90.0	4	4	4	3	scoped	-	Terminal Agents Suffice for Enterprise Automation
+2604.10577	90.0	4	4	4	3	supported_in_material	-	The Blind Spot of Agent Safety: How Benign User Instructions Expose Critical Vulnerabilities in Computer-Use Agents
+2604.17849	90.0	4	4	4	3	supported_in_material	-	On the Reliability of Computer Use Agents
+2605.02630	90	4	4	4	3	supported_in_material	-	AutoFocus: Uncertainty-Aware Active Visual Search for GUI Grounding
+2605.08261	90.0	4	4	4	3	scoped	-	Computer Use at the Edge of the Statistical Precipice
+2605.11212	90.0	4	4	4	3	scoped	-	ReVision: Scaling Computer-Use Agents via Temporal Visual Redundancy Reduction
+2605.29486	90.0	4	4	4	3	scoped	-	PhoneWorld: From Real-App Trajectories to Dynamic and Verifiable Environments for Phone-Use Agents
+2606.00341	90.0	4	4	4	3	scoped	-	ROGUE: Evaluating Corrigibility Failures in Frontier Computer-Use Agents
+2606.14579	90.0	4	4	4	3	scoped	-	VISTA: View-Consistent Self-Verified Training for GUI Grounding
+2606.15017	90.0	4	4	4	3	supported_in_material	-	Are Online Skill and Memory Modules Always Worth Their Tokens? A Budget-Constrained Study of Web Agents
+2606.15034	90.0	4	4	4	3	supported_in_material	-	OSGuard: A Benchmark for Safety in Computer-Use Agents
+2606.15673	90.0	4	4	4	3	scoped	-	Where Did It Go Wrong? Process-Level Evaluation of Web Agents with Semantic State Tracking
+2606.21654	90.0	4	4	4	3	scoped	-	ChainWorld: Composing Long-Horizon Desktop Workloads from Atomic OSWorld Tasks
+2606.22864	90.0	4	4	4	3	supported_in_material	-	When AUC 0.998 Is Not Enough: A Candidate Evaluation Protocol for Hidden-State Probes of Indirect Prompt Injection in Multimodal Computer-Use Agents
+2606.23189	90.0	4	4	4	3	scoped	-	Capable but Careless: Do Computer-Use Agents Follow Contextual Integrity?
+2606.31154	90.0	4	4	4	3	scoped	-	PPT-Eval: A Benchmark for Computer-Use Agents on PowerPoint Tasks
+2607.08147	90.0	4	4	4	3	scoped	-	Prismata: Confining Cross-Site Prompt Injection in Web Agents
+2607.12640	90.0	4	4	4	3	scoped	-	A Learning-Rate-Gated Failure of GRPO in a Small Language and Vision-Language Model Web Agent: A Controlled Null and Its Mechanism
