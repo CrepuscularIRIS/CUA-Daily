@@ -1,5 +1,7 @@
 # gui-v3.1 — CUA-Daily / GUI Agents
 
+> 自 `problem-core-v1.1` 起，下文的四轴权重与轴表停用。本文件仍提供：收录范围（`out_of_scope` 判断）、领域核心问题、证据等级和优先查阅的卡片。
+
 权重：G=15、M=25、X=20、E=40。正式范围以仓库 `docs/EVIDENCE.md` 为准。
 
 
