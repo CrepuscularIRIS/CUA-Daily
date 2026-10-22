@@ -1,3 +1,5 @@
+> 历史领域构建/范围筛查资料，保留用于理解已有语料；不是当前评分提示词。当前唯一入口为 [research/scoring](scoring/README.md)，不要求重新抽取全部签名。
+
 # Abstract screening rubric (stage 1) — Computer-Use / GUI / Browser agents
 
 Judge each paper from its **title + abstract only**. `sources` (which awesome list filed it, and under which section)

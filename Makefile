@@ -6,9 +6,9 @@ check:
 	python3 -m py_compile research/*.py
 	python3 research/check_patterns.py
 help:
-	@echo "make check: offline checks; make run: inherited relevance digest; scoring/Reel reset: docs/PIPELINE.md"
+	@echo "make check: offline checks; current scoring contract: research/scoring/README.md; old results withdrawn"
 score board:
-	@echo "Legacy scoring/board retired. v2 is draft_uncalibrated; read research/SCORE_SPEC.md." >&2
+	@echo "Legacy scoring/board retired. read research/scoring/README.md; old results withdrawn." >&2
 	@exit 2
 run:
 	uv run python main.py
