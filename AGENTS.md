@@ -8,7 +8,7 @@
 - 旧评分、双席判定、Reel、校准参考与榜单均已退役，已于 2026-10-22 移出仓库（git 历史 / 本地 `~/GUI/moved-out-2026-10-22/`）。禁止从旧记录恢复当前分数，禁止续跑旧批次。
 - 已完成的 `patterns/` 模式卡、`cards/`、领域构建和原始论文材料保留。不得为了配合新分数重写卡片。
 - Grok 仅收集候选，写 `inbox/`；本地 Claude Code 负责来源核对、阅读、判定和 Reel。
-- 现行评分：v3 `sol-batch-v3`（`research/v3/SCORE_SPEC.md`，单模型 6.1 Sol 批量、四轴 G/M/X/E，gui-v3 权重 15/25/20/40）。2026-10-22 已全量执行 run `research/v3/runs/gui-v3-20261022-01/`：1328 篇（A/B 档全部），1174 scored / 92 needs_material / 62 out_of_scope。之后 top15 候选交 Opus 5.5 原文核对并做 ≤9 篇 Reel。旧 `research/SCORE_SPEC.md`（v2.2 双席草稿）与 `research/v2/` run 只读留存，不再续跑。
+- 现行评分：v3 `sol-batch-v3`（`research/v3/SCORE_SPEC.md`，单模型 6.1 Sol 批量、四轴 G/M/X/E，gui-v3 权重 15/25/20/40）。2026-10-22 已全量执行 run `research/v3/runs/gui-v3-20261022-01/`：1331 篇（A/B 档全部 1328 + 当日新入库 3），1176 scored / 93 needs_material / 62 out_of_scope。之后 top15 候选交 Opus 5.5 原文核对并做 ≤9 篇 Reel。旧 `research/SCORE_SPEC.md`（v2.2 双席草稿）与 `research/v2/` run 只读留存，不再续跑。
 - 用户此次明确授权了清理及评分重设计；后续日常评审不得自行修改权重、rubric、卡片或校准门槛。
 
 ## 常用入口
