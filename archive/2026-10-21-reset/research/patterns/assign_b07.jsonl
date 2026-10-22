@@ -1,9 +1,0 @@
-{"arxiv": "2505.16827", "sub_pattern": "C19", "fit": "good", "fit_note": "Explores apps, mines transition-aware element knowledge into a vector store, retrieves it as guidance."}
-{"arxiv": "2505.18121", "sub_pattern": "K19", "fit": "good", "fit_note": "Per-step progress reward model with LCS self-annotated labels gives dense rewards for multi-turn GUI RL."}
-{"arxiv": "2505.18829", "sub_pattern": "K29", "fit": "weak", "fit_note": "Platform exposing the computer as an MCP server with structured context; interface redesign, mostly system description."}
-{"arxiv": "2505.19095", "sub_pattern": "K20", "fit": "weak", "fit_note": "Online GRPO in a live desktop with curiosity/world-model exploration rewards; optimises diversity, not task success."}
-{"arxiv": "2505.20013", "sub_pattern": "K25", "fit": "good", "fit_note": "Rewrites trajectory CoT into reflection/lookahead, branching and rollback rationales, then SFTs the backbone."}
-{"arxiv": "2505.20660", "sub_pattern": "C18", "fit": "good", "fit_note": "Verifier and trained judger check each action's before/after pages; reflector rewrites the action on failure."}
-{"arxiv": "2505.21496", "sub_pattern": "K19", "fit": "good", "fit_note": "Unified step/outcome reward model guides beam-search exploration and verifies outcomes in agent-RM self-improvement."}
-{"arxiv": "2505.21964", "sub_pattern": "C19", "fit": "good", "fit_note": "Retraces executed actions from screenshots and critiques web knowledge to evolve a reusable task knowledge base."}
-{"arxiv": "2505.23596", "sub_pattern": "C18", "fit": "good", "fit_note": "FSM with pre/post-conditions lets a reflection agent check each transition and revert to a verified stable state."}

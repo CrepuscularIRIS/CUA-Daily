@@ -1,4 +1,4 @@
-"""Retired entry point; original is in archive/2026-10-21-reset/."""
+"""Retired entry point; original removed from the tree 2026-10-22 (git history, or local ~/GUI/moved-out-2026-10-22/)."""
 import sys
 
 def main():

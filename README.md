@@ -18,7 +18,7 @@
 | Grok 收集 | [GROK_PROMPT](docs/agents/GROK_PROMPT.md)：只收有一手证据的候选 |
 | 新流程 | [PIPELINE](docs/PIPELINE.md)；[维护规则](docs/MAINTAINING.md)；[收录范围](docs/EVIDENCE.md) |
 | Reel 重做 | [REEL_PROMPT](docs/agents/REEL_PROMPT.md)：先做单篇机制叙述，再设计图解 |
-| 整理记录 | [RESET](docs/RESET_2026-10-21.md)；[旧产物归档](archive/2026-10-21-reset/README.md) |
+| 整理记录 | [RESET](docs/RESET_2026-10-21.md)；旧产物已移出仓库（git 历史与本地 `~/GUI/moved-out-2026-10-22/`） |
 
 ## 新评分：先 gap / 模式 / 期望，再核主张证据
 

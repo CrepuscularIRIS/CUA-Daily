@@ -1,1 +1,0 @@
-{"arxiv": "2502.07942", "sub_pattern": "K14", "fit": "weak", "fit_note": "Core is an iterative loop of exploration, LLM-debate relabelling and filtering into instructions/summaries, then distillation; retrieval is only one half.", "batch": "b59", "seat": "son55"}

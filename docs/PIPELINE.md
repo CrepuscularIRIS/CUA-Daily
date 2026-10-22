@@ -35,7 +35,7 @@
 | 既有逆向模式卡 | patterns/、research/patterns/；保持原件 |
 | 历史线索 | research/screen.jsonl、research/patterns/assignments.jsonl；不能直接当新判断 |
 | 新版阅读、校准、判断、选题 | research/v2/；当前只有说明，拟分开 readings/calibration/judgments/selections |
-| 旧分数/Reel/运行记录 | archive/2026-10-21-reset/；不进入新评分输入 |
+| 旧分数/Reel/运行记录 | 已移出仓库（git 历史）；不进入新评分输入 |
 | 对外画报 | reel/；只容纳选中且完成 QA 的新成品 |
 
 旧 scorer、board、merge/batch、monitor 与 Reel 批量入口继续返回退役错误。

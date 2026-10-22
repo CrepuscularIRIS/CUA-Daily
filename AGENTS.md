@@ -5,7 +5,7 @@
 ## 当前状态（2026-10-21 用户重置）
 
 - 本项目：CUA Radar — GUI Agents。在桌面、移动端或 Web 界面感知并执行动作的 agent，以及相关架构、grounding、训练、环境模型、benchmark 与 verifier。纯 API agent、只生成 UI 代码和具身机器人分流到其他项目。
-- 旧评分、双席判定、Reel、校准参考与榜单均已退役，位于 `archive/2026-10-21-reset/`。禁止从旧记录恢复当前分数，禁止续跑旧批次。
+- 旧评分、双席判定、Reel、校准参考与榜单均已退役，已于 2026-10-22 移出仓库（git 历史 / 本地 `~/GUI/moved-out-2026-10-22/`）。禁止从旧记录恢复当前分数，禁止续跑旧批次。
 - 已完成的 `patterns/` 模式卡、`cards/`、领域构建和原始论文材料保留。不得为了配合新分数重写卡片。
 - Grok 仅收集候选，写 `inbox/`；本地 Claude Code 负责来源核对、阅读、判定和 Reel。
 - 新评分规则见 `research/SCORE_SPEC.md`，状态为 draft_uncalibrated。先做 gap/谱系、模式条件与审稿期望分析，校准冻结后评审；评分后动态阈值选题，默认最多 9 篇交 Reel。当前无新版得分。

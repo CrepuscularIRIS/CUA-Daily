@@ -89,5 +89,5 @@ Open Scientist 版本 0.3.0；源码随本地插件安装。原始全文、profi
 | Open Scientist 0.3.0: domain/cards | `2aa39adc49b4ee546809de7ed7587896fc320718013f32b4ddd569b49c9c8081` |
 | Open Scientist 0.3.0: domain/profile | `c43f1e5ee3af8368d73be3064996671b41122ebb34012a28a42deaf0326aef38` |
 
-仓库内历史依据：`archive/2026-10-21-reset/research/PIPELINE.md` 与原有 `patterns/`。
+历史依据：v1 构建日志已移出仓库（git 历史），原有 `patterns/` 仍在。
 归档里的旧运行统计属于历史记录，不被此设计重新认证为有效评分或科学结论。

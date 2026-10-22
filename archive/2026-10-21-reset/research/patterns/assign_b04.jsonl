@@ -1,9 +1,0 @@
-{"arxiv": "2504.00906", "sub_pattern": "C10", "fit": "good", "fit_note": "Generalist manager/worker routes target descriptions to visual, OCR and structural grounding experts."}
-{"arxiv": "2504.06821", "sub_pattern": "C19", "fit": "good", "fit_note": "Induces verified executable program skills from the agent's own episodes and adds them to the action space."}
-{"arxiv": "2504.07079", "sub_pattern": "C19", "fit": "good", "fit_note": "Self-proposed exploration distils practised trajectories into tested Playwright APIs reused by later agents."}
-{"arxiv": "2504.10127", "sub_pattern": "C21", "fit": "weak", "fit_note": "Mid-trains the planner on non-GUI reasoning data before trajectory SFT; no reasoning-annotation synthesis."}
-{"arxiv": "2504.11788", "sub_pattern": "C18", "fit": "good", "fit_note": "Critique module judges each new state and triggers a multi-step rollback to a chosen earlier state."}
-{"arxiv": "2504.12679", "sub_pattern": "C21", "fit": "good", "fit_note": "Converts web tutorials into steps and has UI-TARS write thought plus action for each, then SFTs."}
-{"arxiv": "2504.13805", "sub_pattern": "K27", "fit": "good", "fit_note": "Parses human demonstrations into knowledge, retrieves the most relevant ones into the executor's context."}
-{"arxiv": "2504.13936", "sub_pattern": "K01", "fit": "good", "fit_note": "Visual diffusion world model predicts each candidate's next screen; an LLM selects the best action."}
-{"arxiv": "2504.14239", "sub_pattern": "K25", "fit": "good", "fit_note": "Teacher-generated spatial reasoning kept only if action correct, then RL with sub-goal and error-recovery rewards."}
