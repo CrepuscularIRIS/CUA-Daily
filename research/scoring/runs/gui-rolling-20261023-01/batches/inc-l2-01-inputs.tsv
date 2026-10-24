@@ -1,0 +1,3 @@
+paper_id	priority	tier	families	cards	material	fulltext_path	audit_sample	l1_batch
+2610.30181v1	high	P3	F0,F2	main/online_evaluation_methodology,main/agent_loop_context_control	abstract_intro	research/fulltext/2610.30181v1.txt	false	inc-l1-01
+2610.30573v1	high	P3	F0,F2	main/online_evaluation_methodology,main/experience_memory_retrieval	abstract_intro	research/fulltext/2610.30573v1.txt	false	inc-l1-01
