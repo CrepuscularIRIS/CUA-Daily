@@ -24,3 +24,7 @@
 ## 2026-10-25 08:43 每日 Opus 判断
 
 - 新增 confirmed P3：0 篇（2 篇 P3 维持 pending_material，10-25 06:17 重抓 v1 全文无变化）→ 跳过。
+
+## 2026-10-25 18:17 巡检班
+
+- 无 arXiv 新候选。Grok 恢复收集：新增 2 个 GitHub-only 候选（2026-10-24-2155 Occlusion-Aware Observations、2026-10-25-0356 Dynamic web-agent reliability），arXiv 标题检索均无命中 → 留 inbox 待关联。待关联累计 5 个。
