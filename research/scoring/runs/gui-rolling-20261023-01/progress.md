@@ -28,3 +28,7 @@
 ## 2026-10-25 18:17 巡检班
 
 - 无 arXiv 新候选。Grok 恢复收集：新增 2 个 GitHub-only 候选（2026-10-24-2155 Occlusion-Aware Observations、2026-10-25-0356 Dynamic web-agent reliability），arXiv 标题检索均无命中 → 留 inbox 待关联。待关联累计 5 个。
+
+## 2026-10-26 08:43 每日 Opus 判断 + 漏网补评
+
+- 新增 confirmed P3：0 篇 → 跳过。夜间巡检漏了 inbox/2026-10-25-0952 的 1 篇 arXiv 候选（2610.22155），本班补入库并入 inc-l1-02 评 L1；L2 预算已用满（2/2），结果为 to_l2 则排队。
