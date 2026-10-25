@@ -16,3 +16,11 @@
 - 漏检抽查：2×10%=0.2→0，无名额（audit 池已记录待后续班次）。
 - L2 缺口（写入记录）：两篇全文缓存尾部截断（2610.30573 §4.5 截断、缺 Table 3(a)；2610.30181 缺 judge 校准/访问隔离对照材料）→ pending_material，进补材料队列，不隐性淘汰。
 - 注：本 run 的 paper_id 带 v1 后缀（worker 沿用 inbox 版本写法），corpus 键为裸 ID；后续班次统一用裸 ID，L1/L2 记录内已自洽。
+
+## 2026-10-24 08:43 每日 Opus 判断
+
+- 新增 confirmed P3：0 篇（2 篇 P3 均 pending_material，全文截断待补）→ 本轮跳过 Reel。补材料后 Sol 重核，确认后再进选题。
+
+## 2026-10-25 08:43 每日 Opus 判断
+
+- 新增 confirmed P3：0 篇（2 篇 P3 维持 pending_material，10-25 06:17 重抓 v1 全文无变化）→ 跳过。
