@@ -47,3 +47,17 @@
 | 2604.04918 | P3 | judgment / F0,F2 | 138 次问题动作只拦住 29 次:有审批≠能拦住 | 人机审批漏斗 | ready |
 
 选择过程见 [selection3.md](../research/scoring/runs/gui-pc11-20261022-01/selection3.md)。三期合计 19 篇,版式 19 种互不相同。
+
+---
+
+# 第四期 — gui-rolling-20261023-01 增量轮（2026-10-26 · 3 篇）
+
+增量轮候选池 6 篇（全部 P3 confirmed）。Opus 5.5 读完三篇的完整原文与附录后制作；另 3 篇排除（同卡去重 1、编辑排除 1、证据形态 1），理由见 selection-004。本期无 correction 退回。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| 2610.30792 Trace2World | P3 | judgment / F2,F3 | calibrate_simulator_to_real（**新覆盖**） | 只把验收证据换成源轨迹回放，模拟收益留到真机 94.0% vs 54.7%（训练 app） | 双边界管线 + 哑铃图 + 保留率柱 | ready |
+| 2610.31698 Malva | P3 | judgment / F1,F2 | structured_screen_observation（**新覆盖**）/ agent_loop_context_control | 工具层不核对就交状态：335 例失败、11 种模式、119 例错而不报 | 四相位环形缺陷地图 | ready |
+| 2610.32536 IGG | P3 | judgment / F1 | high_resolution_target_localisation / online_evaluation_methodology | 替模型做掉显露动作，Qwen3-VL 30.8%→81.9%；只告诉动作类别仅 +3.1 | 阶段分解 + 逐级干预剥离 | ready |
+
+选择过程见 [selection-004.md](../research/scoring/runs/gui-rolling-20261023-01/selection-004.md)。四期合计 22 篇，版式 22 种互不相同。
