@@ -1,0 +1,9 @@
+paper_id	priority	tier	families	material	fulltext_path	audit_sample	l1_batch
+2610.31698	high	P3	F1,F2	abstract_intro	research/fulltext/2610.31698.txt	false	inc
+2610.32223	high	P3	F0	abstract_intro	research/fulltext/2610.32223.txt	false	inc
+2610.32536	high	P3	F1	abstract_intro	research/fulltext/2610.32536.txt	false	inc
+2610.31712	medium	P2	F3	abstract_intro	research/fulltext/2610.31712.txt	false	inc
+2610.22155	high	P3	F5,F1	abstract_intro	research/fulltext/2610.22155.txt	false	inc
+2610.30792v1	high	P3	F2,F3	abstract_intro	research/fulltext/2610.30792.txt	false	inc
+2610.31274v1	high	P3	F0	abstract_intro	research/fulltext/2610.31274.txt	false	inc
+2610.31307v1	medium	P2	F3,F1	abstract_intro	research/fulltext/2610.31307.txt	false	inc
