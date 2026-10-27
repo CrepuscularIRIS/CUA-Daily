@@ -57,3 +57,9 @@
 - L2：inc-l2-04 6/6 完成（本班 to_l2 全部）。**4 篇 P3/confirmed/to_l3**（33528/33907/34384/33636）；34959 P2/confirmed/park；34634 L2 判 out_of_scope/exclude（纯业务 API actor，无 GUI/浏览器操作面——L1 遗留核对项落定，非误排除）。子卡 33 项：holds 10 / partial 13 / fails 2 / unknown 2 / NA 6。
 - 漏检抽查：0.6→0 名额，欠账累计 ~0.8。
 - to_l3 池：Realtime-Bench（上期备选）+ 本班 4 = 5 篇 ≥3 → 明早 Opus 班选题（第五期）。
+
+## 2026-10-28 08:43 每日 Opus 判断（第五期选题 + correction 落档）
+
+- 新增 confirmed P3：5 篇 ≥3 → 第五期选题。终选 3 篇（34384 AndroidFlux 失败恢复重排 / 33636 Build-or-Adopt 循环对照 / 33907 OS-Wizard 合成训练数据），3 张全过 QA（2–3 轮渲染修复，历史在 QA.md）；22155 第三次列备选（v3 仍未解除单 run 顾虑，但 Paused vs Token 36–40 点差远超 Wall Clock 三次极差，范围收窄后站得住）。见 selection-005.md。累计 25 张。
+- Correction（33528 SkillShift-Bench：Q1"测到技能可执行性问题"超出证据）已退回 Sol 修订：inc-l2-04-rev1-33528.jsonl → **P2/pending_experiment/park**（q1_basis=asserted、q4=partial；四点接受+一点部分接受并纠正 SD 表述——Tgt 增益 1.46pp 实际略大于两组 SD；补 q2_prior=Kara et al. 2026 WAREX；q2_open 维持 open_failure）。原记录保留。
+- to_l3 池：22155（第三期连续备选）。
