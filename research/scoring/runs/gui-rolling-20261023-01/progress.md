@@ -71,3 +71,7 @@
 - L2：inc-l2-05 3/3 完成（本班 to_l2 全部）。**2 篇 P3/confirmed/to_l3**（35237 探索依赖任务规划诊断、34735 persona 个性化——限单 persona/mock iOS）；34724 P3/pending_experiment（WebShop 指标为部分匹配 reward 非成功率；model-only 消融同时移除记忆与 replay 缺隔离证据）。子卡 23 项：holds 4 / partial 12 / fails 1 / unknown 4 / NA 2。
 - 漏检抽查：0.3→0 名额，欠账累计 ~1.1。
 - to_l3 池：22155（三连备选）+ 本班 2 = 3 篇 ≥3 → 明早第六期选题。
+
+## 2026-10-28 18:17 巡检班
+
+- 无 arXiv 新候选。Grok 新收 2 个 GitHub-only 候选（Doppelganger Screens、Stale Screens/Now），arXiv 标题检索无命中 → 留 inbox 待关联。待关联累计 7 个。
