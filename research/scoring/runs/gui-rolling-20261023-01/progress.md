@@ -49,3 +49,11 @@
 - L1：inc-l1-04 1/1 完成（P3/pending_method/to_l2）。
 - L2：inc-l2-03 1/1 完成（本班预算 = 新 to_l2 全部；high 遗留 0）：2610.35823 P3/pending_experiment/to_l2（q4=partial；K13/K34/K16/C17/K30 共 13 项：holds 5 / partial 7 / unknown 1）。阻塞：跨站数据隔离、合法替代轨迹、等预算对照、§3.2 与 §4.4 数据生成模型文述不一致。暂不送 L3。
 - 31307v1 维持 pending_experiment 待 v2 对照材料。漏检抽查欠账：0.1×1=0.1，累计至 0.2。
+
+## 2026-10-27 18:17 巡检班
+
+- 新增：6 篇（inbox/2026-10-27-0954 → queue/2026-10-27-1048，corpus 1343→1349）。入库一次路径拼接失误（queue 文件名重复前缀），cut_l1 重跑成功，inbox 移动仍挂在成功之后。
+- L1：inc-l1-05 6/6 完成（P3×5 / P2×1，全 assessed）。
+- L2：inc-l2-04 6/6 完成（本班 to_l2 全部）。**4 篇 P3/confirmed/to_l3**（33528/33907/34384/33636）；34959 P2/confirmed/park；34634 L2 判 out_of_scope/exclude（纯业务 API actor，无 GUI/浏览器操作面——L1 遗留核对项落定，非误排除）。子卡 33 项：holds 10 / partial 13 / fails 2 / unknown 2 / NA 6。
+- 漏检抽查：0.6→0 名额，欠账累计 ~0.8。
+- to_l3 池：Realtime-Bench（上期备选）+ 本班 4 = 5 篇 ≥3 → 明早 Opus 班选题（第五期）。
