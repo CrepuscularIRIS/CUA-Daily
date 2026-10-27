@@ -63,3 +63,11 @@
 - 新增 confirmed P3：5 篇 ≥3 → 第五期选题。终选 3 篇（34384 AndroidFlux 失败恢复重排 / 33636 Build-or-Adopt 循环对照 / 33907 OS-Wizard 合成训练数据），3 张全过 QA（2–3 轮渲染修复，历史在 QA.md）；22155 第三次列备选（v3 仍未解除单 run 顾虑，但 Paused vs Token 36–40 点差远超 Wall Clock 三次极差，范围收窄后站得住）。见 selection-005.md。累计 25 张。
 - Correction（33528 SkillShift-Bench：Q1"测到技能可执行性问题"超出证据）已退回 Sol 修订：inc-l2-04-rev1-33528.jsonl → **P2/pending_experiment/park**（q1_basis=asserted、q4=partial；四点接受+一点部分接受并纠正 SD 表述——Tgt 增益 1.46pp 实际略大于两组 SD；补 q2_prior=Kara et al. 2026 WAREX；q2_open 维持 open_failure）。原记录保留。
 - to_l3 池：22155（第三期连续备选）。
+
+## 2026-10-28 12:17 巡检班
+
+- 新增：4 篇（inbox/2026-10-27-1550 → queue/2026-10-27-1648，corpus 1349→1353）。
+- L1：inc-l1-06 4/4 完成（assessed 3 / oos 1——2610.35215 无 GUI/浏览器操作面证据；P3×2 / P2×1）。
+- L2：inc-l2-05 3/3 完成（本班 to_l2 全部）。**2 篇 P3/confirmed/to_l3**（35237 探索依赖任务规划诊断、34735 persona 个性化——限单 persona/mock iOS）；34724 P3/pending_experiment（WebShop 指标为部分匹配 reward 非成功率；model-only 消融同时移除记忆与 replay 缺隔离证据）。子卡 23 项：holds 4 / partial 12 / fails 1 / unknown 4 / NA 2。
+- 漏检抽查：0.3→0 名额，欠账累计 ~1.1。
+- to_l3 池：22155（三连备选）+ 本班 2 = 3 篇 ≥3 → 明早第六期选题。
