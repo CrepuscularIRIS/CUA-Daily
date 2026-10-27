@@ -42,3 +42,10 @@
 - L2：inc-l2-02 8/8 完成（本班 4 + 遗留 4）。**6 篇 P3/confirmed/to_l3**（31698/32223/32536/22155/30792v1/31274v1）；31712 P2/confirmed/park；31307v1 P3/pending_experiment（记忆隔离/等预算/标签可靠性阻塞）。子卡 44 项：holds 14 / partial 20 / unknown 7 / fails 2（Malva 被诊断系统违反条件，非诊断失败）/ challenged 1。
 - 漏检抽查：欠账未清（本班预算 8×10%=0.8→0）。
 - 下一步：明早每日 Opus 班 CUA 新增 confirmed P3=6 ≥3 → 首次选题。
+
+## 2026-10-27 12:17 巡检班
+
+- 新增：1 篇（inbox/2026-10-27-0356 → queue/2026-10-27-0516，corpus 1342→1343）。入库前遇 arXiv API 429/超时，15 分钟退避后成功；教训：inbox mv 只挂入库成功之后（本轮已两度误挪并恢复）。
+- L1：inc-l1-04 1/1 完成（P3/pending_method/to_l2）。
+- L2：inc-l2-03 1/1 完成（本班预算 = 新 to_l2 全部；high 遗留 0）：2610.35823 P3/pending_experiment/to_l2（q4=partial；K13/K34/K16/C17/K30 共 13 项：holds 5 / partial 7 / unknown 1）。阻塞：跨站数据隔离、合法替代轨迹、等预算对照、§3.2 与 §4.4 数据生成模型文述不一致。暂不送 L3。
+- 31307v1 维持 pending_experiment 待 v2 对照材料。漏检抽查欠账：0.1×1=0.1，累计至 0.2。
