@@ -6,7 +6,7 @@
 Core question: *which link of perception → planning → action → feedback does the work change, is the online task actually completed, and where does the gain come from?* Scope and evidence levels: [EVIDENCE](docs/EVIDENCE.md).
 （核心问题：改变了感知—规划—动作—反馈中的哪一环，在线任务是否真的完成，提升来自哪里？）
 
-> Current run: `gui-pc11-20261022-01` · rules `problem-core-v1.1` · 1331 papers screened at L1, 1311 checked at L2 (98%), 591 L3 candidates (563 P3 / 28 P2), 22 posters in Reel (3 from rolling run `gui-rolling-20261023-01`). The ratings rank reading priority. They are not peer review and do not endorse any venue.
+> Current run: `gui-pc11-20261022-01` · rules `problem-core-v1.1` · 1331 papers screened at L1, 1311 checked at L2 (98%), 591 L3 candidates (563 P3 / 28 P2), 25 posters in Reel (6 from rolling run `gui-rolling-20261023-01`). The ratings rank reading priority. They are not peer review and do not endorse any venue.
 > （档位是“值不值得读”的判断，不是审稿结论。）
 
 **What this project adds.** （本项目的三点贡献）

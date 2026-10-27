@@ -61,3 +61,17 @@
 | 2610.32536 IGG | P3 | judgment / F1 | high_resolution_target_localisation / online_evaluation_methodology | 替模型做掉显露动作，Qwen3-VL 30.8%→81.9%；只告诉动作类别仅 +3.1 | 阶段分解 + 逐级干预剥离 | ready |
 
 选择过程见 [selection-004.md](../research/scoring/runs/gui-rolling-20261023-01/selection-004.md)。四期合计 22 篇，版式 22 种互不相同。
+
+---
+
+# 第五期 — gui-rolling-20261023-01 增量轮（2026-10-27 · 3 篇）
+
+候选池 5 篇（全部 P3 confirmed）。Opus 5.5 读完 5 篇的完整原文与附录后选题：入选 3 篇；SkillShift-Bench（2610.33528）因 L2 判断超出证据写 correction 退回 Sol，本期暂停；Realtime-Bench（2610.22155）上期的单次运行顾虑未解除，再列备选。33907 与 33636 经同题判断不重复。理由见 selection-005。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| 2610.34384 AndroidFlux | P3 | judgment / F2,F5 | online_evaluation_methodology / learned_outcome_and_process_judges | 接手同一出错状态，代理排名重排（GUI-Owl-32B 53.75→26.25）；通用偏好 RM 在恢复对上 0.49–0.52 | 检查点时间轴 + 斜率重排 + 倒带/注入交叉线 + 哑铃 | ready |
+| 2610.33636 Build or Adopt? | P3 | judgment / F1,F0 | agent_loop_context_control | 同工具同模型只换循环：逐步车机用例打平，开放任务上通用循环 +9~28 点，靠的是出错后补救；推理费 2.6–10.7× | 建筑剖面 + 三栏分户账 + 正确率–恢复散点 | ready |
+| 2610.33907 OS-Wizard | P3 | capability / F0,F1 | exploration_driven_task_synthesis | 教程＋原生命令＋枢纽快照的采集器，同 10K 样本 36.5 vs 13.0/18.9，27B 5.9→64.1（消融混入应用构成） | 竖向采集树 + 同骨干阶梯 + 混杂标注消融 | ready |
+
+选择过程见 [selection-005.md](../research/scoring/runs/gui-rolling-20261023-01/selection-005.md)。五期合计 25 篇，版式 25 种互不相同。
