@@ -75,3 +75,17 @@
 | 2610.33907 OS-Wizard | P3 | capability / F0,F1 | exploration_driven_task_synthesis | 教程＋原生命令＋枢纽快照的采集器，同 10K 样本 36.5 vs 13.0/18.9，27B 5.9→64.1（消融混入应用构成） | 竖向采集树 + 同骨干阶梯 + 混杂标注消融 | ready |
 
 选择过程见 [selection-005.md](../research/scoring/runs/gui-rolling-20261023-01/selection-005.md)。五期合计 25 篇，版式 25 种互不相同。
+
+---
+
+# 第六期 — gui-rolling-20261023-01 增量轮（2026-10-28 · 3 篇）
+
+候选池 7 篇（全部 P3 confirmed）。Opus 5.5 读完 7 篇的完整原文与附录后选题：入选 3 篇；TAM（2610.37482）因 L2 的能力判断超出同协议证据写 correction 退回 Sol，本期暂停；Realtime-Bench（2610.22155）原文证据三期未变，不转正并移出滚动备选；36471 与 36877 编辑排除。35237/37482、36831/36471 经同题判断不重复；34735 与首期 2503.19537 同卡不同题。理由见 selection-006。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| 2610.36831 Right Click, Wrong Box | P3 | judgment / F2 | online_evaluation_methodology | 按点击结果执行判卷：被框规则拒掉的点击 17.6–38.1% 达成目标；ScreenSpot-v2 校正 0.2–1.8 点，与同尺寸模型差距同量级 | 像素结果地图 + 救回条 + 误差预算标尺 | ready |
+| 2610.35237 Chart the Invisible | P3 | capability / F0 | structured_screen_observation | 目标在视口外时代理去点可见错目标（失败的 83.73%）；标出可滑动区域后 18 个滑动任务 64.8→82.7%，每题多 33–71 秒 | 手机视口剖面 + V/H/G 点阵 + 收益/耗时对账 | ready |
+| 2610.34735 iPrefBench | P3 | judgment / F4,F2 | agent_initiated_user_interaction | 动作完成 91.6 而整题成功 47.7%；只能问的信息最多问到 44.2%，多问换来 precision 下降 | 来源分拣图 + 四刻度梯 + P–R 迁移箭头 + 2×2 失败象限 | ready |
+
+选择过程见 [selection-006.md](../research/scoring/runs/gui-rolling-20261023-01/selection-006.md)。六期合计 28 篇，版式 28 种互不相同。
