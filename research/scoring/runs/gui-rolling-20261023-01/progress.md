@@ -83,3 +83,9 @@
 - L2：inc-l2-06 6/6 完成（本班 to_l2 全部）。**4 篇 P3/confirmed/to_l3**（36471/36831/36877/37482，各带收窄边界）；37093 P3/pending_experiment（LLM judge 无独立校验、等预算/种子证据缺）；36874 P2/park。子卡 34 项：holds 4 / partial 18 / fails 2 / unknown 3 / challenged 2 / NA 2。
 - 漏检抽查：0.6→0 名额，欠账累计 ~1.7。
 - to_l3 池：22155（三连备选）+ 35237 + 34735 + 本班 4 = 7 篇 ≥3 → 今晨 Opus 班第六期选题。
+
+## 2026-10-29 08:43 每日 Opus 判断（第六期选题 + correction 落档）
+
+- 新增 confirmed P3：7 篇 ≥3 → 第六期选题。终选 3 篇（36831 点击结果评分偏差 / 35237 离屏滑动诊断 / 34735 iPrefBench），3 张均三审通过（渲染历史在 QA.md）；**22155 三期未满足转正条件（重复运行/web 子集），从备选名单除名**。见 selection-006.md。累计 28 张。
+- Correction（37482："capability, confirmed" 超出同协议证据）已退回 Sol 修订：inc-l2-06-rev1-37482.jsonl → **P3/pending_experiment/to_l2**（q4=partial；四点接受：12.0 出处不可追溯、同协议 State-only 不及 ConAct、领先依赖跨任务 Graph 且终局判定可回流、主比较单次无区间——SPA-Bench 段有两序列，措辞已限定）。原记录保留。
+- to_l3 池：0（备选已清）。
