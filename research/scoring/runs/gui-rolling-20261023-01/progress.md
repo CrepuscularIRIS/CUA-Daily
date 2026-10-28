@@ -89,3 +89,11 @@
 - 新增 confirmed P3：7 篇 ≥3 → 第六期选题。终选 3 篇（36831 点击结果评分偏差 / 35237 离屏滑动诊断 / 34735 iPrefBench），3 张均三审通过（渲染历史在 QA.md）；**22155 三期未满足转正条件（重复运行/web 子集），从备选名单除名**。见 selection-006.md。累计 28 张。
 - Correction（37482："capability, confirmed" 超出同协议证据）已退回 Sol 修订：inc-l2-06-rev1-37482.jsonl → **P3/pending_experiment/to_l2**（q4=partial；四点接受：12.0 出处不可追溯、同协议 State-only 不及 ConAct、领先依赖跨任务 Graph 且终局判定可回流、主比较单次无区间——SPA-Bench 段有两序列，措辞已限定）。原记录保留。
 - to_l3 池：0（备选已清）。
+
+## 2026-10-28 12:17 巡检班
+
+- 新增：1 篇（2610.37255，RSI 仓今晨已评价的同文跨库收集；MiniWoB++ 浏览器实验判在 CUA 收录范围内，corpus 1359→1360）。
+- L1：inc-l1-08 1/1 完成（P3/pending_method/to_l2）。
+- L2：inc-l2-07 1/1 完成：37255 P3/pending_material/to_l2（q1=measured_own、q4=partial；钉定缓存截断缺 §5–6 与附录——上限求解条件、批量点击成本、等预算适配主实验、先前工作比较均无法核实）。子卡 K24/K29 共 10 项。跨库同文不共享结论，本仓独立判断。
+- 漏检抽查：0.1→0 名额，欠账累计 ~1.8。
+- to_l3 池：0（备选已清）。
