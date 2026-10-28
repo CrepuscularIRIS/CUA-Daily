@@ -75,3 +75,11 @@
 ## 2026-10-28 18:17 巡检班
 
 - 无 arXiv 新候选。Grok 新收 2 个 GitHub-only 候选（Doppelganger Screens、Stale Screens/Now），arXiv 标题检索无命中 → 留 inbox 待关联。待关联累计 7 个。
+
+## 2026-10-28 06:17 巡检班
+
+- 新增：6 篇（inbox/2026-10-28-1002 → queue/2026-10-28-1050，corpus 1353→1359）。
+- L1：inc-l1-07 6/6 完成（P3×5 / P2×1，全 assessed）。
+- L2：inc-l2-06 6/6 完成（本班 to_l2 全部）。**4 篇 P3/confirmed/to_l3**（36471/36831/36877/37482，各带收窄边界）；37093 P3/pending_experiment（LLM judge 无独立校验、等预算/种子证据缺）；36874 P2/park。子卡 34 项：holds 4 / partial 18 / fails 2 / unknown 3 / challenged 2 / NA 2。
+- 漏检抽查：0.6→0 名额，欠账累计 ~1.7。
+- to_l3 池：22155（三连备选）+ 35237 + 34735 + 本班 4 = 7 篇 ≥3 → 今晨 Opus 班第六期选题。
