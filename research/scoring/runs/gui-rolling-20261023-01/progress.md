@@ -125,3 +125,9 @@
 - L2：inc-l2-10 10/10（本班 to_l2 全部；遗留 high 0）。**8 篇 P3/confirmed/to_l3**（37786/39234/39282/39488/40133/40246/40578/2605.29532）；39251 P2/park；39264 P2/pending_experiment/park（Q1→measured_own、Q3 收窄 incremental）。层级改判 0。
 - 漏检抽查：名额 1（预算 10×10%）+ 欠账 2.1 补抽 2，但抽查池 0（遗留 park/needs_material 篇均无缓存全文，不自动下载）→ 欠账滚存 ~3.1。seed=20261031。
 - to_l3 池：1（32482）+ 本班 8 = 9 篇 ≥3 → 明晨 Opus 班可做 selection。
+
+## 2026-10-31 08:43 每日 Opus 判断（第七期选题 + C-007-1 落档）
+
+- selection-006 后新增 confirmed P3：9 篇 ≥3 → 第七期选题。终选 3 篇（39282 陈旧截图点击错位 / 39234 AgentHeal 资源恢复 / 2605.29532 GUITestScape 开放集探索测试），各经多轮修复后过视觉 QA；32482（与 39282 同题证据更弱）/40578（弃权计失败）/39488/37786/40246 落选。见 selection-007.md。累计 31 张。
+- Correction C-007-1（40133 DynaRev 未验证裁判循环）已退回 Sol 修订：inc-l2-10-rev1-40133.jsonl → P3→P2、pending_experiment、q3→incremental、q4→partial、park。原记录保留。
+- 隔夜收集 +1 未评（06:17 巡检班丢失），12:17 班补。
