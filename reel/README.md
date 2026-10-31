@@ -89,3 +89,17 @@
 | 2610.34735 iPrefBench | P3 | judgment / F4,F2 | agent_initiated_user_interaction | 动作完成 91.6 而整题成功 47.7%；只能问的信息最多问到 44.2%，多问换来 precision 下降 | 来源分拣图 + 四刻度梯 + P–R 迁移箭头 + 2×2 失败象限 | ready |
 
 选择过程见 [selection-006.md](../research/scoring/runs/gui-rolling-20261023-01/selection-006.md)。六期合计 28 篇，版式 28 种互不相同。
+
+---
+
+# 第七期 — gui-rolling-20261023-01 增量轮（2026-10-31 · 3 篇）
+
+候选池 9 篇（全部 P3 confirmed）。Opus 5.5 读完 9 篇的完整原文与附录后选题：入选 3 篇；DynaRev（2610.40133）的全部结果指标来自未经校验、且同为被测代理的 DeepSeek 评审，写 correction 退回 Sol，本期暂停；WaitLens（2610.32482）与 39282 同题去重；VeriCUA、InterA11y、WebAnything、EnvOS 编辑排除（证据形态或偏离核心）。理由见 selection-007。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| 2610.39282 Stale Screenshots | P3 | judgment / F1,F3 | agent_loop_context_control | 点击过期主要来自页面加载而非规划耗时：31 个公开页面上已加载 0.4%、刚打开第一秒 17%；8/10 代理的等待规则超过 1%；“在哪”用像素检查、“发生了什么”用小模型 | 对数时间轴 + 等待条形梯 + 误报×召回平面 + 回本公式 | ready |
+| 2610.39234 AgentHeal | P3 | capability / F3,F2 | online_evaluation_methodology / agent_loop_context_control | 主资源被持续阻断时找合法替代、声明版本、找不到就停：13 个模型 89.4→43.7%，激进型用冒牌页交差、谨慎型不会找；真实回放中越权更多 | 三份反事实环境 + 能力/可靠性散点 + 家族斜率 + 四道判定流程 | ready |
+| 2605.29532 GUITestScape | P3 | judgment / F2,F1 | online_evaluation_methodology / learned_outcome_and_process_judges | 探索性 GUI 测试拆成 Reach/Trigger/Detect：编码代理 93.7→51.4%，GUI 专用代理 Detect 4.2%；评审器先经双标校验（Detect 97.1/94.0） | 缺陷分类树 + 评审校验条 + 三步阶梯 + 系统×故障热力图 | ready |
+
+选择过程见 [selection-007.md](../research/scoring/runs/gui-rolling-20261023-01/selection-007.md)。七期合计 31 篇，版式 31 种互不相同。三份 poster.html 受 `.gitignore` 忽略，仅存本地。
