@@ -117,3 +117,11 @@
 ## 2026-10-29 08:43 每日 Opus 判断
 
 - selection-006 后新增 confirmed P3：1 篇（32482）<3 → 跳过（22155 已除名）。37255/33702 均阻塞于材料。
+
+## 2026-10-31 12:17 巡检班
+
+- 新增：10 篇（inbox/2026-10-30-1223，ingest.py 入库 corpus→queue/2026-10-31-1052，材料 10/10 abstract_intro）。
+- L1：inc-l1-11 10/10（全 assessed，to_l2 10 = high 8 / medium 2）。
+- L2：inc-l2-10 10/10（本班 to_l2 全部；遗留 high 0）。**8 篇 P3/confirmed/to_l3**（37786/39234/39282/39488/40133/40246/40578/2605.29532）；39251 P2/park；39264 P2/pending_experiment/park（Q1→measured_own、Q3 收窄 incremental）。层级改判 0。
+- 漏检抽查：名额 1（预算 10×10%）+ 欠账 2.1 补抽 2，但抽查池 0（遗留 park/needs_material 篇均无缓存全文，不自动下载）→ 欠账滚存 ~3.1。seed=20261031。
+- to_l3 池：1（32482）+ 本班 8 = 9 篇 ≥3 → 明晨 Opus 班可做 selection。
