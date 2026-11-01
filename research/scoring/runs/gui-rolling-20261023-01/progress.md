@@ -131,3 +131,7 @@
 - selection-006 后新增 confirmed P3：9 篇 ≥3 → 第七期选题。终选 3 篇（39282 陈旧截图点击错位 / 39234 AgentHeal 资源恢复 / 2605.29532 GUITestScape 开放集探索测试），各经多轮修复后过视觉 QA；32482（与 39282 同题证据更弱）/40578（弃权计失败）/39488/37786/40246 落选。见 selection-007.md。累计 31 张。
 - Correction C-007-1（40133 DynaRev 未验证裁判循环）已退回 Sol 修订：inc-l2-10-rev1-40133.jsonl → P3→P2、pending_experiment、q3→incremental、q4→partial、park。原记录保留。
 - 隔夜收集 +1 未评（06:17 巡检班丢失），12:17 班补。
+
+## 2026-11-01 08:43 每日 Opus 判断
+
+- selection-007 后新增 confirmed P3：0 篇 <3 → 跳过（40133 已经 correction 降档）。周末 arXiv 停更无新增。
