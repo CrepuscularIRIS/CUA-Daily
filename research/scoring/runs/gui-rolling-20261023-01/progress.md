@@ -135,3 +135,7 @@
 ## 2026-11-01 08:43 每日 Opus 判断
 
 - selection-007 后新增 confirmed P3：0 篇 <3 → 跳过（40133 已经 correction 降档）。周末 arXiv 停更无新增。
+
+## 2026-11-02 08:43 每日 Opus 判断
+
+- selection-007 后新增 confirmed P3：0 篇 <3 → 跳过。隔夜收集 +5 待 12:17 巡检班入库评分。
