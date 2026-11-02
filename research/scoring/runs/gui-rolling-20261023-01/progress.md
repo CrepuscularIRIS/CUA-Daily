@@ -139,3 +139,11 @@
 ## 2026-11-02 08:43 每日 Opus 判断
 
 - selection-007 后新增 confirmed P3：0 篇 <3 → 跳过。隔夜收集 +5 待 12:17 巡检班入库评分。
+
+## 2026-11-02 12:17 巡检班
+
+- 新增：5 篇（inbox/2026-11-02-1324，ingest.py 入库→queue/2026-11-02-1749，材料 5/5 abstract_intro）。
+- L1：inc-l1-12 5/5（全 assessed，to_l2 5 = high 4 / medium 1）。
+- L2：inc-l2-11 5/5（本班 to_l2 全部；遗留 high 0）。**3 篇 P3/confirmed/to_l3**（41397/40798/41272）；40747 P3/pending_experiment/park（缺等数据量归因对照）；41432 P2/park。改判 0。
+- 漏检抽查：名额 1（预算 5×10%）但池 0 → 欠账 ~3.1+1→~4.1 滚存。seed=20261102。
+- to_l3 池：0 + 本班 3 = 3 篇 ≥3 → 明晨 Opus 班可做 selection。

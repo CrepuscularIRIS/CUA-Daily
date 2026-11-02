@@ -1,11 +1,6 @@
 paper_id	priority	tier	families	cards	material	fulltext_path	audit_sample	l1_batch
-2610.37786	high	P3	F3,F4	main/calibrate_simulator_to_real	abstract_intro	research/fulltext/2610.37786.txt	False	inc
-2610.39234	high	P3	F3,F2	main/online_evaluation_methodology,main/agent_loop_context_control	abstract_intro	research/fulltext/2610.39234.txt	False	inc
-2610.39251	medium	P2	F0	main/trajectory_level_policy_training	abstract_intro	research/fulltext/2610.39251.txt	False	inc
-2610.39264	medium	P2	F3,F2	main/trajectory_level_policy_training,main/learned_outcome_and_process_judges	abstract_intro	research/fulltext/2610.39264.txt	False	inc
-2610.39282	high	P3	F1,F3	main/agent_loop_context_control,main/online_evaluation_methodology	abstract_intro	research/fulltext/2610.39282.txt	False	inc
-2610.39488	high	P3	F2,F4	main/learned_outcome_and_process_judges,main/online_evaluation_methodology	abstract_intro	research/fulltext/2610.39488.txt	False	inc
-2610.40133	high	P3	F3,F2	main/agent_loop_context_control,main/online_evaluation_methodology	abstract_intro	research/fulltext/2610.40133.txt	False	inc
-2610.40246	high	P3	F1,F2	main/verifiable_execution_reward,main/online_evaluation_methodology	abstract_intro	research/fulltext/2610.40246.txt	False	inc
-2610.40578	high	P3	F2,F4	main/learned_outcome_and_process_judges,main/verifiable_execution_reward	abstract_intro	research/fulltext/2610.40578.txt	False	inc
-2605.29532	high	P3	F2,F1	main/online_evaluation_methodology,main/learned_outcome_and_process_judges	abstract_intro	research/fulltext/2605.29532.txt	False	inc
+2610.41397	high	P3	F4,F0	main/injection_defense_isolation	abstract_intro	research/fulltext/2610.41397.txt	False	inc
+2610.41432	medium	P2	F4,F0	main/structured_screen_observation	abstract_intro	research/fulltext/2610.41432.txt	False	inc
+2610.40798	high	P3	F2,F1	main/learn_and_train_in_gui_world_model,main/learned_outcome_and_process_judges	abstract_intro	research/fulltext/2610.40798.txt	False	inc
+2610.41272	high	P3	F2,F4	main/environmental_injection_attacks	abstract_intro	research/fulltext/2610.41272.txt	False	inc
+2610.40747	high	P3	F1,F0	main/structured_screen_observation,main/exploration_driven_task_synthesis	abstract_intro	research/fulltext/2610.40747.txt	False	inc
