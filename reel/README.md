@@ -103,3 +103,15 @@
 | 2605.29532 GUITestScape | P3 | judgment / F2,F1 | online_evaluation_methodology / learned_outcome_and_process_judges | 探索性 GUI 测试拆成 Reach/Trigger/Detect：编码代理 93.7→51.4%，GUI 专用代理 Detect 4.2%；评审器先经双标校验（Detect 97.1/94.0） | 缺陷分类树 + 评审校验条 + 三步阶梯 + 系统×故障热力图 | ready |
 
 选择过程见 [selection-007.md](../research/scoring/runs/gui-rolling-20261023-01/selection-007.md)。七期合计 31 篇，版式 31 种互不相同。三份 poster.html 受 `.gitignore` 忽略，仅存本地。
+
+---
+
+# 第八期 — gui-rolling-20261023-01 增量轮（2026-11-03 · 1 篇）
+
+候选池 3 篇（全部 P3 confirmed）。Opus 5.5 读完 3 篇的完整原文与附录后选题：入选 1 篇；跨接口授权协议（2610.41397）没有在任何实际 CUA 栈中测出问题、实验均为私有参考实现的自洽检查，SafeWebWorld（2610.40798）的决策金标单人审核、证据度量是词元重合、主实验未隔离预测接口，两篇各写 correction 退回 Sol，本期暂停。理由见 selection-008。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| 2610.41272 REEF / ANGLER | P3 | judgment / F2,F4 | environmental_injection_attacks | 攻击以“网站状态终止时仍被改”计分；同任务、每站 100 次 rollout 下自适应攻击把 8 骨干平均 ASR 15.24→20.36%（GPT-4o 占增益约四成）；弹窗被点 52.4% 而做成 17.1%；前沿骨干不点网页诱饵却仍被追加指令攻破 | 六步攻击闭环 + 增益贡献瀑布 + 72 格差值点阵 + CTA→ASR 漏斗 + 重复运行噪声条 | ready |
+
+选择过程见 [selection-008.md](../research/scoring/runs/gui-rolling-20261023-01/selection-008.md)。八期合计 32 篇，版式 32 种互不相同。poster.html 受 `.gitignore` 忽略，仅存本地。
