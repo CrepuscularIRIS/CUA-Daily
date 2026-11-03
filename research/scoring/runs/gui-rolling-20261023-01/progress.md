@@ -153,3 +153,7 @@
 - selection-007 后新增 confirmed P3：3 篇 ≥3 → 第八期选题。终选 1 篇（41272 ANGLER，主卡 environmental_injection_attacks 首张），第 3 次渲染过视觉 QA；累计 32 张。41397、40798 因 correction 暂停未制作。
 - Correction C-008-1（41397 问题未在真实栈观察、自洽检查）已退回 Sol 修订：P3→P2、q1→measured_cited_unchecked、q3→incremental、q4→partial、pending_experiment/park。
 - Correction C-008-2（40798 单人金标、词重叠指标、基率头条）已退回 Sol 修订：保留 P3/high，q4→partial、pending_experiment/park，q3 收窄为"预测式门控需隔离预测接口与族内对照"。
+
+## 2026-11-04 08:43 每日 Opus 判断
+
+- selection-008 后新增 confirmed P3：0 篇 <3 → 跳过。收集端自 11-02 晨无新产出；40747 归因对照与 40798 Llama 两表对账仍待补。
