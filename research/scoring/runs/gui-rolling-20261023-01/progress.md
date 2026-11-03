@@ -147,3 +147,9 @@
 - L2：inc-l2-11 5/5（本班 to_l2 全部；遗留 high 0）。**3 篇 P3/confirmed/to_l3**（41397/40798/41272）；40747 P3/pending_experiment/park（缺等数据量归因对照）；41432 P2/park。改判 0。
 - 漏检抽查：名额 1（预算 5×10%）但池 0 → 欠账 ~3.1+1→~4.1 滚存。seed=20261102。
 - to_l3 池：0 + 本班 3 = 3 篇 ≥3 → 明晨 Opus 班可做 selection。
+
+## 2026-11-03 08:43 每日 Opus 判断（第八期选题 + C-008-1/2 落档，补跑）
+
+- selection-007 后新增 confirmed P3：3 篇 ≥3 → 第八期选题。终选 1 篇（41272 ANGLER，主卡 environmental_injection_attacks 首张），第 3 次渲染过视觉 QA；累计 32 张。41397、40798 因 correction 暂停未制作。
+- Correction C-008-1（41397 问题未在真实栈观察、自洽检查）已退回 Sol 修订：P3→P2、q1→measured_cited_unchecked、q3→incremental、q4→partial、pending_experiment/park。
+- Correction C-008-2（40798 单人金标、词重叠指标、基率头条）已退回 Sol 修订：保留 P3/high，q4→partial、pending_experiment/park，q3 收窄为"预测式门控需隔离预测接口与族内对照"。
