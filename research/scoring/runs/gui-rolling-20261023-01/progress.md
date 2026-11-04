@@ -165,3 +165,11 @@
 - L2：inc-l2-12 11/11（to_l2 7 + 排除抽查 4，欠账 4.1 清偿）。改判 1 篇 P2→P3（2611.03126）。**1 篇 P3/confirmed/to_l3**（2610.41181）；2605.28629、2611.03126 P3/pending_experiment/park；41998/3178/3634 pending_material（范围/章节待补）。抽查 4 篇排除全部维持（漏检改判 0）。
 - 漏检抽查：seed=20261104，名额 1（预算 7×10%）+欠账 4.1 补抽 4，池 4 全抽；改判 0/4。
 - to_l3 池：0 + 1 = 1 篇 <3 → 明晨 Opus 班暂不达标。
+
+## 2026-11-05 06:17 巡检班（GitHub 查新·Awesome-CUA 回填大批）
+
+- 查新来源：Awesome-CUA 11-03 public-source scan 目录扩充 → 129 篇回填候选（queue/2026-11-04-0601，材料 123 abstract_intro + 6 abstract）。工具事故与修复：批输入 TSV 因 l1_manifest 换行 bug 折行，全部重写后已核对（在跑 agent 均确认按修复版处理）。
+- L1：inc-l1-14..20 七批 129/129（exclude 74 / to_l2 55 = high 43 + medium 12，needs_material 若干）。
+- L2：inc-l2-13..16 四批 61/61（to_l2 55 全部 + 漏检抽查 6）。**17 篇 P3/confirmed/to_l3**（含 2611.02472/2611.02644/2611.03238 等）；16 篇 pending_experiment/park；14 篇 pending_material/park（范围/章节待补）；2 篇 P2/confirmed/park；12 篇排除（其中抽查样）。抽查 6 篇漏检改判 0。
+- 漏检抽查：seed=20261105，名额 6（预算 55×10% 取整），池 26 抽 6。
+- to_l3 池：1 + 17 = 18 篇 ≥3 → 今晨 Opus 班达标可做 selection。
