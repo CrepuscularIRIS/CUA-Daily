@@ -1,6 +1,12 @@
 paper_id	priority	tier	families	cards	material	fulltext_path	audit_sample	l1_batch
-2610.41397	high	P3	F4,F0	main/injection_defense_isolation	abstract_intro	research/fulltext/2610.41397.txt	False	inc
-2610.41432	medium	P2	F4,F0	main/structured_screen_observation	abstract_intro	research/fulltext/2610.41432.txt	False	inc
-2610.40798	high	P3	F2,F1	main/learn_and_train_in_gui_world_model,main/learned_outcome_and_process_judges	abstract_intro	research/fulltext/2610.40798.txt	False	inc
-2610.41272	high	P3	F2,F4	main/environmental_injection_attacks	abstract_intro	research/fulltext/2610.41272.txt	False	inc
-2610.40747	high	P3	F1,F0	main/structured_screen_observation,main/exploration_driven_task_synthesis	abstract_intro	research/fulltext/2610.40747.txt	False	inc
+2605.28629	high	P3	F2,F0	main/agent_initiated_user_interaction	abstract_intro	research/fulltext/2605.28629.txt	False	inc
+2610.41181	high	P3	F4,F0	main/environmental_injection_attacks,main/online_evaluation_methodology	abstract_intro	research/fulltext/2610.41181.txt	False	inc
+2610.41998	high		F1,F4	main/injection_defense_isolation,main/environmental_injection_attacks	abstract_intro	research/fulltext/2610.41998.txt	False	inc
+2611.02102	medium	P2	F0,F3	main/exploration_driven_task_synthesis,main/trajectory_level_policy_training,main/experience_memory_retrieval	abstract_intro	research/fulltext/2611.02102.txt	False	inc
+2611.03126	medium	P2	F3,F5	main/exploration_driven_task_synthesis,main/mine_human_screen_videos,main/trajectory_level_policy_training	abstract_intro	research/fulltext/2611.03126.txt	False	inc
+2611.03178	medium		F0,F1	main/agent_loop_context_control,main/experience_memory_retrieval	abstract_intro	research/fulltext/2611.03178.txt	False	inc
+2611.03634	medium	P2	F3,F0	main/calibrate_simulator_to_real,main/online_evaluation_methodology,main/exploration_driven_task_synthesis	abstract	research/fulltext/2611.03634.txt	False	inc
+2610.38174	none		F0		abstract_intro	research/fulltext/2610.38174.txt	True	inc
+2611.01860	none		F0		abstract_intro	research/fulltext/2611.01860.txt	True	inc
+2610.40754	none		F0		abstract_intro	research/fulltext/2610.40754.txt	True	inc
+2610.32441	none		F0		abstract_intro	research/fulltext/2610.32441.txt	True	inc

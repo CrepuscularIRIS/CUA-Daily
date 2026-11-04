@@ -157,3 +157,11 @@
 ## 2026-11-04 08:43 每日 Opus 判断
 
 - selection-008 后新增 confirmed P3：0 篇 <3 → 跳过。收集端自 11-02 晨无新产出；40747 归因对照与 40798 Llama 两表对账仍待补。
+
+## 2026-11-04 18:17 巡检班（GitHub 查新首班）
+
+- 查新来源：refs/lists 拉齐（Awesome-CUA→11-03、Awesome-GUI-Agents→11-01、GUI-Agents-Paper-List→10-29）→ 11 篇新候选（queue/2026-11-04-0033，材料 10 abstract_intro + 1 abstract）。
+- L1：inc-l1-13 11/11（assessed 7，out_of_scope 4：32441/38174/40754/01860；to_l2 7 = high 3 / medium 4，含 needs_material 2）。
+- L2：inc-l2-12 11/11（to_l2 7 + 排除抽查 4，欠账 4.1 清偿）。改判 1 篇 P2→P3（2611.03126）。**1 篇 P3/confirmed/to_l3**（2610.41181）；2605.28629、2611.03126 P3/pending_experiment/park；41998/3178/3634 pending_material（范围/章节待补）。抽查 4 篇排除全部维持（漏检改判 0）。
+- 漏检抽查：seed=20261104，名额 1（预算 7×10%）+欠账 4.1 补抽 4，池 4 全抽；改判 0/4。
+- to_l3 池：0 + 1 = 1 篇 <3 → 明晨 Opus 班暂不达标。
