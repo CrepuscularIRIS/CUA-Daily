@@ -173,3 +173,9 @@
 - L2：inc-l2-13..16 四批 61/61（to_l2 55 全部 + 漏检抽查 6）。**17 篇 P3/confirmed/to_l3**（含 2611.02472/2611.02644/2611.03238 等）；16 篇 pending_experiment/park；14 篇 pending_material/park（范围/章节待补）；2 篇 P2/confirmed/park；12 篇排除（其中抽查样）。抽查 6 篇漏检改判 0。
 - 漏检抽查：seed=20261105，名额 6（预算 55×10% 取整），池 26 抽 6。
 - to_l3 池：1 + 17 = 18 篇 ≥3 → 今晨 Opus 班达标可做 selection。
+
+## 2026-11-05 12:17 巡检班（GitHub 查新）
+
+- 查新来源：Awesome-CUA 再更新 → 3 篇新候选（queue/2026-11-04-1148，材料 3/3 abstract_intro）；RSI EvoMap 更新无新 id；Embodied lists 无更新；三仓 inbox 均空。
+- L1：inc-l1-21 3/3，**均 out_of_scope/exclude**（2606.30296/2610.06514/2611.05036 不属 CUA 收录口径，理由见批次记录）。无 to_l2，无 L2。
+- to_l3 池：维持 18 篇 ≥3 → 今晨 Opus 班可做 selection-009。
