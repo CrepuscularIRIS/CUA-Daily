@@ -179,3 +179,11 @@
 - 查新来源：Awesome-CUA 再更新 → 3 篇新候选（queue/2026-11-04-1148，材料 3/3 abstract_intro）；RSI EvoMap 更新无新 id；Embodied lists 无更新；三仓 inbox 均空。
 - L1：inc-l1-21 3/3，**均 out_of_scope/exclude**（2606.30296/2610.06514/2611.05036 不属 CUA 收录口径，理由见批次记录）。无 to_l2，无 L2。
 - to_l3 池：维持 18 篇 ≥3 → 今晨 Opus 班可做 selection-009。
+
+## 2026-11-06 08:17 巡检班（收集端恢复）
+
+- 新增：6 篇（inbox/2026-11-04-1321 5 篇 + GitHub 查新 2611.04785；queue 1750/1751，材料 6/6 abstract_intro）。
+- L1：inc-l1-22 6/6（to_l2 4，exclude 2：04579、04785——理由见批次）。
+- L2：inc-l2-17 4/4（to_l2 全部；遗留 high 0）。**3 篇 P3/confirmed/to_l3**（2611.04879/05263/04073）；2611.04142 P3/pending_experiment/park（前缀长度/阈值/早停待核）。改判 0。
+- 漏检抽查：名额 0（预算 4×10%），欠账 ~0.4 滚存（池 49 可用）。seed=20261106。
+- to_l3 池：18 + 3 = 21 篇 ≥3 → 今日 Opus 班达标。
