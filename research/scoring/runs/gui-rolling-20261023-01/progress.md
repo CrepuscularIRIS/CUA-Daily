@@ -211,3 +211,7 @@
 - 查新来源：Awesome-CUA 更新 → 1 篇 2605.26079（queue/2026-11-05-1751，材料 1/1 abstract_intro）；inbox 空。
 - L1：inc-l1-25 1/1（P3/high/to_l2，needs_material）。L2：inc-l2-20 1/1 → P3/q4=partial/**pending_material/park**（缓存缺 App. B/C/D 与完整 §5，GUI/browser 基准覆盖与两侧审计未确认）。
 - to_l3 池：维持（备选 31274/06898/02644 + 04393）。
+
+## 2026-11-07 每日 Opus 判断（第十期选题）
+
+- selection-009 后新增 confirmed P3：4 篇 ≥3 → 第十期选题。终选 2 篇（04393 Voluntary Servitude 假评论操纵 / 31274 PointerBench 指针格式塌缩，上期备选），分别 6/7 轮渲染后过视觉 QA；无 correction（04393 L2 三项待核全部核清：60.4% 为四模型均值、附录样例无命令、防御真实代价未测）。06898 与 04393 同题去重、02644 消融不配对维持落选。见 selection-010.md。累计 36 张。
