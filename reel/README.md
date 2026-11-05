@@ -128,3 +128,16 @@
 | 2611.04879 ScamWorld | P3 | capability / F4,F2 | environmental_injection_attacks / online_evaluation_methodology | 按用户请求在重建诈骗站上办事：6 骨干受骗 11%–35%（日志判定），合法站完成 94%–100%；受骗里 45% 事先点名了风险，付款 28% vs 凭据类 2%；单独问时认出 88%–100% | 四段结账路径 + 停法分布条 + 知道/做到点图 + 钱/秘密对比 + 收据式样例 + 干预表 | ready |
 
 选择过程见 [selection-009.md](../research/scoring/runs/gui-rolling-20261023-01/selection-009.md)。九期合计 34 篇，版式 34 种互不相同。poster.html 受 `.gitignore` 忽略，仅存本地。
+
+---
+
+# 第十期 — gui-rolling-20261023-01 增量轮（2026-11-05 · 2 篇）
+
+候选池 4 篇（全部 P3 confirmed：selection-009 的三篇备选 + 18:17 巡检班新进池的 2611.04393），Opus 5.5 全部按 v1 补读全文与附录。入选 2 篇；DIBench（2610.06898）与 04393 同题（页面内容操纵候选选择），且最强探针本身是命令式注入、防御比较非配对，同题去重；Coati（2611.02644）的 VerifyLoop 消融仍是单次对三次均值，维持编辑排除。无 correction。理由见 selection-010。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| 2611.04393 Voluntary Servitude | P3 | judgment / F4,F2 | environmental_injection_attacks / injection_defense_isolation | 一条不含命令的“出过安全事故”假评论，4 个模型上选中攻击者 60.4%（指令注入 66.0%），注入检测器放行 100% / 78%；同槽位的道德失当指控只有 8.2%；“安全指控须有独立佐证”一条提示使 68.4→3.6%（非自适应）；4 个 AI 浏览器各 20 次迁移检查 | 深色页眉 + 警示斜纹 + 评论页示意 + 检测器关卡条 + 同槽位对照柱 + 排除占比条阵 + 浏览器小条 + 检索把关表 + 消融数字条 + 水平哑铃防御 | ready |
+| 2610.31274 PointerBench | P3 | capability / F0 | high_resolution_target_localisation / online_evaluation_methodology | 同模型同判分下目标越细越点不中：Fable 5 单词 90.2 → 字符 70.4 → 插入点 64.7 → 区域 56.0，顶尖专用模型字符 11–19、插入点 23–34；Gemini 3.7 Flash 输出 0–1000 坐标，换算后 3.1→78.1（合成截图、单步静态） | 刻度尺页眉 + 三联目标示意 + 粒度阶梯折线 + 插入位置热力表 + 坐标换算哑铃 + 大数字格 + 全榜竖线带 | ready |
+
+选择过程见 [selection-010.md](../research/scoring/runs/gui-rolling-20261023-01/selection-010.md)。十期合计 36 篇，版式 36 种互不相同。poster.html 受 `.gitignore` 忽略，仅存本地。
