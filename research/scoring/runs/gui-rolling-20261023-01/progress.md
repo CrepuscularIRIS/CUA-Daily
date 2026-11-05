@@ -187,3 +187,8 @@
 - L2：inc-l2-17 4/4（to_l2 全部；遗留 high 0）。**3 篇 P3/confirmed/to_l3**（2611.04879/05263/04073）；2611.04142 P3/pending_experiment/park（前缀长度/阈值/早停待核）。改判 0。
 - 漏检抽查：名额 0（预算 4×10%），欠账 ~0.4 滚存（池 49 可用）。seed=20261106。
 - to_l3 池：18 + 3 = 21 篇 ≥3 → 今日 Opus 班达标。
+
+## 2026-11-06 每日 Opus 判断（第九期选题 + C-009-1 落档）
+
+- selection-008 后新增 confirmed P3：20 篇 ≥3 → 第九期选题。终选 2 篇（04073 教程 vs 世界模型瓶颈 / 04879 ScamWorld 代理受骗暴露），各第 3 次渲染过 QA；第 3 席空缺（其余候选均有去重/范围/证据/主卡重叠理由，不为凑数入选）；41181 主卡已覆盖+缓存截断落选；03238 与 04073 同题落选。备选：31274、DIBench 06898、Coati 02644。见 selection-009.md。累计 34 张。
+- Correction C-009-1（05263 JHiMA-WebRL 无方差/头条差距归因错误）已退回 Sol 修订：P3→P2、q3→incremental、q4→partial、pending_experiment/park。原记录保留。
