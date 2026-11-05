@@ -198,3 +198,10 @@
 - 查新来源：Awesome-CUA 再更新 → 1 篇新候选 2611.04393（queue/2026-11-05-0548，材料 1/1 abstract_intro）；RSI/Embodied lists 与三仓 inbox 均无新增。
 - L1：inc-l1-23 1/1（P3/high/to_l2）。L2：inc-l2-18 1/1 → **P3/confirmed/to_l3**（附录与 60.4% 汇总口径、防御真实危险效用留 L3 核）。
 - to_l3 池：21 - 02079 用后余量 + 1 ≈ 视 selection-009 消耗而定（selection-009 用 2 席，31274/06898/02644 仍为备选）。
+
+## 2026-11-05 20:17 巡检班（GitHub 查新）
+
+- 查新来源：Awesome-CUA + GUI-Agents-Paper-List 更新 → 4 篇新候选（queue/2026-11-05-1148，材料 4/4 abstract_intro）；三仓 inbox 空。
+- L1：inc-l1-24 4/4（全 to_l2）。L2：inc-l2-19 4/4：**0 篇 to_l3**——05873 P3/pending_experiment/park（缺实现审计与 RQ5/Table X 原段）、06039 P3/pending_method/park（缺安全修复与诊断反馈实现段）、06544 与 06854 P2/confirmed/park（06854 由 P3 降档）。改判 1 篇 P3→P2。
+- 漏检抽查：名额 0（预算 4×10%），欠账 ~0.4+0.8→~1.2 滚存（池 49）。seed=20261107。
+- to_l3 池：维持（selection-009 后备选 31274/06898/02644 + 04393）。
