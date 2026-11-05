@@ -192,3 +192,9 @@
 
 - selection-008 后新增 confirmed P3：20 篇 ≥3 → 第九期选题。终选 2 篇（04073 教程 vs 世界模型瓶颈 / 04879 ScamWorld 代理受骗暴露），各第 3 次渲染过 QA；第 3 席空缺（其余候选均有去重/范围/证据/主卡重叠理由，不为凑数入选）；41181 主卡已覆盖+缓存截断落选；03238 与 04073 同题落选。备选：31274、DIBench 06898、Coati 02644。见 selection-009.md。累计 34 张。
 - Correction C-009-1（05263 JHiMA-WebRL 无方差/头条差距归因错误）已退回 Sol 修订：P3→P2、q3→incremental、q4→partial、pending_experiment/park。原记录保留。
+
+## 2026-11-05 18:17 巡检班（GitHub 查新）
+
+- 查新来源：Awesome-CUA 再更新 → 1 篇新候选 2611.04393（queue/2026-11-05-0548，材料 1/1 abstract_intro）；RSI/Embodied lists 与三仓 inbox 均无新增。
+- L1：inc-l1-23 1/1（P3/high/to_l2）。L2：inc-l2-18 1/1 → **P3/confirmed/to_l3**（附录与 60.4% 汇总口径、防御真实危险效用留 L3 核）。
+- to_l3 池：21 - 02079 用后余量 + 1 ≈ 视 selection-009 消耗而定（selection-009 用 2 席，31274/06898/02644 仍为备选）。
