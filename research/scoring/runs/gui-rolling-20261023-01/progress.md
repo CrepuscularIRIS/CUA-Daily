@@ -205,3 +205,9 @@
 - L1：inc-l1-24 4/4（全 to_l2）。L2：inc-l2-19 4/4：**0 篇 to_l3**——05873 P3/pending_experiment/park（缺实现审计与 RQ5/Table X 原段）、06039 P3/pending_method/park（缺安全修复与诊断反馈实现段）、06544 与 06854 P2/confirmed/park（06854 由 P3 降档）。改判 1 篇 P3→P2。
 - 漏检抽查：名额 0（预算 4×10%），欠账 ~0.4+0.8→~1.2 滚存（池 49）。seed=20261107。
 - to_l3 池：维持（selection-009 后备选 31274/06898/02644 + 04393）。
+
+## 2026-11-06 06:17 巡检班（GitHub 查新补）
+
+- 查新来源：Awesome-CUA 更新 → 1 篇 2605.26079（queue/2026-11-05-1751，材料 1/1 abstract_intro）；inbox 空。
+- L1：inc-l1-25 1/1（P3/high/to_l2，needs_material）。L2：inc-l2-20 1/1 → P3/q4=partial/**pending_material/park**（缓存缺 App. B/C/D 与完整 §5，GUI/browser 基准覆盖与两侧审计未确认）。
+- to_l3 池：维持（备选 31274/06898/02644 + 04393）。
