@@ -115,3 +115,16 @@
 | 2610.41272 REEF / ANGLER | P3 | judgment / F2,F4 | environmental_injection_attacks | 攻击以“网站状态终止时仍被改”计分；同任务、每站 100 次 rollout 下自适应攻击把 8 骨干平均 ASR 15.24→20.36%（GPT-4o 占增益约四成）；弹窗被点 52.4% 而做成 17.1%；前沿骨干不点网页诱饵却仍被追加指令攻破 | 六步攻击闭环 + 增益贡献瀑布 + 72 格差值点阵 + CTA→ASR 漏斗 + 重复运行噪声条 | ready |
 
 选择过程见 [selection-008.md](../research/scoring/runs/gui-rolling-20261023-01/selection-008.md)。八期合计 32 篇，版式 32 种互不相同。poster.html 受 `.gitignore` 忽略，仅存本地。
+
+---
+
+# 第九期 — gui-rolling-20261023-01 增量轮（2026-11-04 · 2 篇）
+
+候选池 21 篇（全部 P3 confirmed：上期之后巡检进池的 2610.41181、Awesome-CUA 回填 17 篇、inc-l2-17 新增 3 篇）。Opus 5.5 按问题族分组去重，读了 6 篇的完整原文与附录，其余 15 篇按 L2 与裁剪 core 编辑排除（未声称读过全文）。入选 2 篇；JHiMA-WebRL（2611.05263）的核心比较差距 1.7–3.8 点、无方差与多种子，主表 37.2 vs 24.0 大部分来自 SFT 数据差异，写 correction 退回 Sol，本期暂停；DIBench、Coati 列为下期备选；ScienceCUA 与 04073 同题去重。理由见 selection-009。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| 2611.04073 Tutorials vs world model | P3 | judgment / F1,F2 | simulated_lookahead_selection / learned_outcome_and_process_judges | 同一 policy–judge–grounder 只换判官看到的未来：无教程时真实截图前瞻 43.8→48.0，给了教程 51.7→51.6（OSWorld 360 题，Qwen3-VL-32B）；收益大头是教程，瓶颈是判官读不懂“做完没有” | 因子开关机制图 + 有/无教程分带点图 + 三组收益阶梯 + 三分支案例 + 双栏失败类型 | ready |
+| 2611.04879 ScamWorld | P3 | capability / F4,F2 | environmental_injection_attacks / online_evaluation_methodology | 按用户请求在重建诈骗站上办事：6 骨干受骗 11%–35%（日志判定），合法站完成 94%–100%；受骗里 45% 事先点名了风险，付款 28% vs 凭据类 2%；单独问时认出 88%–100% | 四段结账路径 + 停法分布条 + 知道/做到点图 + 钱/秘密对比 + 收据式样例 + 干预表 | ready |
+
+选择过程见 [selection-009.md](../research/scoring/runs/gui-rolling-20261023-01/selection-009.md)。九期合计 34 篇，版式 34 种互不相同。poster.html 受 `.gitignore` 忽略，仅存本地。
