@@ -1,0 +1,21 @@
+paper_id	priority	tier	families	cards	material	fulltext_path	audit_sample	l1_batch
+2501.12485	high	P3	F3,F0	main/experience_memory_retrieval,main/agent_loop_context_control	abstract_intro	research/fulltext/2501.12485.txt	False	backfill2
+2611.00926	medium	P2	F0,F1	main/structured_screen_observation,main/rule_reward_single_step_rl	abstract_intro	research/fulltext/2611.00926.txt	False	backfill2
+2308.05898	high	P3	F0		abstract_intro	research/fulltext/2308.05898.txt	False	backfill2
+2606.00756	high	P3	F3,F1	main/experience_memory_retrieval,main/agent_loop_context_control,main/learned_outcome_and_process_judges	abstract_intro	research/fulltext/2606.00756.txt	False	backfill2
+2603.07915	medium	P2	F5,F2	main/agent_loop_context_control,main/trajectory_level_policy_training	abstract_intro	research/fulltext/2603.07915.txt	False	backfill2
+2507.04370	medium	P2	F1,F3	main/learn_and_train_in_gui_world_model,main/simulated_lookahead_selection	abstract_intro	research/fulltext/2507.04370.txt	False	backfill2
+2501.02863	high	P3	F1,F2	main/online_evaluation_methodology,main/planner_grounder_interface	abstract_intro	research/fulltext/2501.02863.txt	False	backfill2
+2606.16295	medium	P2	F3,F5	main/experience_memory_retrieval,main/agent_loop_context_control	abstract_intro	research/fulltext/2606.16295.txt	False	backfill2
+2602.10863	medium	P2	F2,F1	main/trajectory_level_policy_training,main/structured_screen_observation	abstract_intro	research/fulltext/2602.10863.txt	False	backfill2
+2411.17933	high	P3	F3,F4	main/experience_memory_retrieval,main/online_evaluation_methodology	abstract_intro	research/fulltext/2411.17933.txt	False	backfill2
+2601.09668	high		F1,F0	main/high_resolution_target_localisation,main/planner_grounder_interface	abstract_intro	research/fulltext/2601.09668.txt	False	backfill2
+2505.10978	high	P3	F2,F1	main/trajectory_level_policy_training,main/verifiable_execution_reward	abstract_intro	research/fulltext/2505.10978.txt	False	backfill2
+2411.01747	high	P3	F0,F3	main/planner_grounder_interface,main/experience_memory_retrieval	abstract_intro	research/fulltext/2411.01747.txt	False	backfill2
+1812.11470	medium	P2	F2	main/online_evaluation_methodology	abstract_intro	research/fulltext/1812.11470.txt	False	backfill2
+2510.00078	medium		F0	main/agent_loop_context_control,main/high_resolution_target_localisation	abstract_intro	research/fulltext/2510.00078.txt	False	backfill2
+2510.16720	medium		F1	main/agent_loop_context_control,main/trajectory_level_policy_training	abstract_intro	research/fulltext/2510.16720.txt	False	backfill2
+2407.19354	medium		F4	main/environmental_injection_attacks,main/injection_defense_isolation	abstract_intro	research/fulltext/2407.19354.txt	False	backfill2
+2604.12666	medium	P2	F3,F1	main/structured_screen_observation,main/exploration_driven_task_synthesis,main/trajectory_level_policy_training	abstract_intro	research/fulltext/2604.12666.txt	False	backfill2
+2508.16763	medium	P2	F2,F3	main/online_evaluation_methodology,main/structured_screen_observation	abstract_intro	research/fulltext/2508.16763.txt	False	backfill2
+2505.23678	high	P3	F1,F0	main/high_resolution_target_localisation,main/trajectory_level_policy_training	abstract_intro	research/fulltext/2505.23678.txt	False	backfill2

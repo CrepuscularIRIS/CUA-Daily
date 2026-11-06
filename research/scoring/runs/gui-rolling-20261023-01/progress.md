@@ -215,3 +215,11 @@
 ## 2026-11-07 每日 Opus 判断（第十期选题）
 
 - selection-009 后新增 confirmed P3：4 篇 ≥3 → 第十期选题。终选 2 篇（04393 Voluntary Servitude 假评论操纵 / 31274 PointerBench 指针格式塌缩，上期备选），分别 6/7 轮渲染后过视觉 QA；无 correction（04393 L2 三项待核全部核清：60.4% 为四模型均值、附录样例无命令、防御真实代价未测）。06898 与 04393 同题去重、02644 消融不配对维持落选。见 selection-010.md。累计 36 张。
+
+## 2026-11-07 巡检班（GitHub 查新·Awesome-CUA 回填第二波）
+
+- 查新来源：Awesome-CUA 目录再扩充 → 271 篇回填候选（queue/2026-11-06-0014，材料 261 abstract_intro + 10 abstract）。
+- L1：inc-l1-26..39 十四批 271/271（exclude 122 / to_l2 147 = high 96 + medium 71；needs_material 若干）。上游书目疑点：2208.02685 实为 ICLP 2022 论文集（疑似错配，已排除处理）；2604.14872 原文成功率 1000%/100% 矛盾（L2 已记）。
+- L2：inc-l2-21..29 九批 166/166（to_l2 147 全部 + 漏检抽查 19，欠账 4.3 清偿）。**46 篇 P3/confirmed/to_l3**；49 篇 pending_material/park（老论文缓存缺章为主）；17 篇 pending_experiment；17 篇 P2/confirmed/park；37 篇排除（含抽查样）。抽查 19 篇范围漏检改判 0。
+- 漏检抽查：seed=20261108，名额 15（预算 147×10%）+欠账 4 补抽，池 137 抽 19。
+- to_l3 池：+46 篇 → 明晨 Opus 班大幅达标（候选众多，选题余地大）。

@@ -1,0 +1,7 @@
+paper_id	priority	tier	families	cards	material	fulltext_path	audit_sample	l1_batch
+2606.18195	none		F0		abstract_intro	research/fulltext/2606.18195.txt	True	backlog
+2304.11277	none		F0		abstract_intro	research/fulltext/2304.11277.txt	True	backfill2
+2401.04088	none		F0		abstract_intro	research/fulltext/2401.04088.txt	True	backfill2
+1701.01216	none		F0		abstract	research/fulltext/1701.01216.txt	True	backfill2
+2411.05755	none		F0		abstract_intro	research/fulltext/2411.05755.txt	True	backfill2
+2406.09455	none		F0,F3	main/learn_and_train_in_gui_world_model	abstract_intro	research/fulltext/2406.09455.txt	True	backfill2

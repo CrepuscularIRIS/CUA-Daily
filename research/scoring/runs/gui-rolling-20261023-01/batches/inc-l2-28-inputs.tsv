@@ -1,0 +1,21 @@
+paper_id	priority	tier	families	cards	material	fulltext_path	audit_sample	l1_batch
+2512.09458	medium		F0	main/agent_loop_context_control,main/planner_grounder_interface	abstract	research/fulltext/2512.09458.txt	False	backfill2
+2310.12823	high	P3	F3,F5	main/trajectory_level_policy_training	abstract_intro	research/fulltext/2310.12823.txt	False	backfill2
+2503.20036	high	P3	F0,F4	main/planner_grounder_interface,main/verifiable_execution_reward	abstract_intro	research/fulltext/2503.20036.txt	False	backfill2
+2604.15376	medium	P2	F2	main/high_resolution_target_localisation	abstract_intro	research/fulltext/2604.15376.txt	False	backfill2
+2605.17170	medium	P2	F1,F0	main/agent_loop_context_control,main/high_resolution_target_localisation	abstract_intro	research/fulltext/2605.17170.txt	False	backfill2
+2608.06704	high	P3	F2,F0	main/online_evaluation_methodology,main/agent_loop_context_control	abstract_intro	research/fulltext/2608.06704.txt	False	backfill2
+1812.09195	high	P3	F0,F4	main/exploration_driven_task_synthesis,main/trajectory_level_policy_training	abstract_intro	research/fulltext/1812.09195.txt	False	backfill2
+2401.03428	none		F0		abstract_intro	research/fulltext/2401.03428.txt	True	backfill2
+2502.17419	none		F0		abstract_intro	research/fulltext/2502.17419.txt	True	backfill2
+2009.09158	none		F0		abstract	research/fulltext/2009.09158.txt	True	backfill2
+2309.06180	none		F0		abstract_intro	research/fulltext/2309.06180.txt	True	backfill2
+2405.16256	none		F0		abstract_intro	research/fulltext/2405.16256.txt	True	backfill2
+2203.13474	none		F0		abstract_intro	research/fulltext/2203.13474.txt	True	backlog
+2409.19256	none		F0		abstract_intro	research/fulltext/2409.19256.txt	True	backfill2
+2606.11700	none		F0		abstract_intro	research/fulltext/2606.11700.txt	True	backlog
+2607.21635	none		F0		abstract_intro	research/fulltext/2607.21635.txt	True	backlog
+2001.00127	none		F0		abstract_intro	research/fulltext/2001.00127.txt	True	backlog
+2405.11106	none		F0		abstract_intro	research/fulltext/2405.11106.txt	True	backfill2
+2406.16937	none		F0		abstract_intro	research/fulltext/2406.16937.txt	True	backfill2
+2506.19998	none		F0		abstract_intro	research/fulltext/2506.19998.txt	True	backfill2
