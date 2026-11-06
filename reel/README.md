@@ -141,3 +141,16 @@
 | 2610.31274 PointerBench | P3 | capability / F0 | high_resolution_target_localisation / online_evaluation_methodology | 同模型同判分下目标越细越点不中：Fable 5 单词 90.2 → 字符 70.4 → 插入点 64.7 → 区域 56.0，顶尖专用模型字符 11–19、插入点 23–34；Gemini 3.7 Flash 输出 0–1000 坐标，换算后 3.1→78.1（合成截图、单步静态） | 刻度尺页眉 + 三联目标示意 + 粒度阶梯折线 + 插入位置热力表 + 坐标换算哑铃 + 大数字格 + 全榜竖线带 | ready |
 
 选择过程见 [selection-010.md](../research/scoring/runs/gui-rolling-20261023-01/selection-010.md)。十期合计 36 篇，版式 36 种互不相同。poster.html 受 `.gitignore` 忽略，仅存本地。
+
+---
+
+# 第十一期 — gui-rolling-20261023-01 增量轮（2026-11-06 · 2 篇）
+
+候选池 48 篇（Awesome-CUA 回填第二波 46 篇 + 近期查新 2 篇，2018–2026 年；P3 47 / P2 1）。Opus 5.5 按“主卡 × 问题”分组去重，短名单 12 篇（另补看 1 篇替补）逐篇从 arxiv.org/html 补读，两篇入选者读完全文与附录，其余按 L2 与裁剪 core 编辑处理（未声称读过全文）。入选 2 篇；2604.25235 的 CUA 相关内容只有 VQA 式判分基准中的 Mind2Web 子集，L2 的“CUA 评价组件”范围判断超出原文，写 correction C-011-1 退回 Sol；Teach it to stop、QWeb、SkillLens 等因证据形态或偏离核心编辑排除。理由见 selection-011。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| 2507.11662 SGV | P3 | judgment / F2,F5 | learned_outcome_and_process_judges | MLLM 轨迹验证器“太爱点头”：14 个模型失败轨迹判对率 34–78%，加思考、投票、细则都压不住；先不看轨迹写出“该怎么做”再判，Gemini 2.5 Flash 55→76；放进回路 VWA 45.0→54.0（常规验证器 46.1，token 2.2× vs 1.5×） | 深色竖栏 + 两泳道调用对比 + 14 行哑铃 + 加算力条形 + 下游柱与介入结果条 + 验证器×代理矩阵 | ready |
+| 2505.10978 GiGPO | P3 | capability / F2,F1 | trajectory_level_policy_training | 同一批 rollout 里“回到同一页”就是现成对照组：不加价值网络、不加采样的逐步信用；WebShop 同超参 3 seeds，7B 66.1→75.2、1.5B 56.8→67.4，每轮多约 0.5 秒（HTML 文本观测模拟站） | 线路图机制（锚点站 + 回环箭头）+ 条件标签行 + 误差线分组柱 / 消融表 / ω 折线 + 计时与组大小条 | ready |
+
+选择过程见 [selection-011.md](../research/scoring/runs/gui-rolling-20261023-01/selection-011.md)。十一期合计 38 篇，版式 38 种互不相同。poster.html 受 `.gitignore` 忽略，仅存本地。
