@@ -231,3 +231,9 @@
 - L2：inc-l2-30 3/3：**2 篇 P3/confirmed/to_l3**（05620/07765，Q1 改判 1 篇）；06075 park。
 - 漏检抽查：名额 0（预算 3×10%），欠账 ~0.3 滚存（池 118 可用）。seed=20261109。
 - to_l3 池：46 + 2 = 48 篇（回填池待明晨 Opus 班选题）。
+
+## 2026-11-07 02:17 巡检班（GitHub 查新）
+
+- 查新来源：Awesome-CUA 更新 → 1 篇 2610.14488（queue/2026-11-06-1148，材料 1/1 abstract_intro）；三仓 inbox 空。
+- L1（单篇快通道 L1+L2）：inc-l1-41 1/1 → **out_of_scope/exclude**（验证 coding-agent 权限约束，无 GUI/browser 操作面，未构成 CUA 集成验证）；L2 按条件未执行。
+- to_l3 池：维持 48。
