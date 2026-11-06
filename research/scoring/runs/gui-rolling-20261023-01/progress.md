@@ -237,3 +237,9 @@
 - 查新来源：Awesome-CUA 更新 → 1 篇 2610.14488（queue/2026-11-06-1148，材料 1/1 abstract_intro）；三仓 inbox 空。
 - L1（单篇快通道 L1+L2）：inc-l1-41 1/1 → **out_of_scope/exclude**（验证 coding-agent 权限约束，无 GUI/browser 操作面，未构成 CUA 集成验证）；L2 按条件未执行。
 - to_l3 池：维持 48。
+
+## 2026-11-08 每日 Opus 判断（第十一期选题 + C-011-1 落档）
+
+- selection-010 后新增 confirmed P3：48 篇（回填第二波为主）→ 第十一期选题。粗筛短名单 12 → 终选 2 篇（2507.11662 SGV 期望锚定轨迹核验 / 2505.10978 GiGPO 同页动作对比步级信用），各 4/6 轮渲染后过视觉 QA；第 3 席按证据不足空缺。见 selection-011.md。累计 38 张。
+- Correction C-011-1（2604.25235 CUA 相关性）已退回 Sol 修订：**out_of_scope/exclude（P1）**——Mind2Web 398 条为 VQA 式答案评分，不涉轨迹/动作；C25/K16 六项检查改 NA。原记录保留。
+- 备注未退回：GiGPO "<0.002%" 计算开销实为 ~0.15%（结论不变）；SGV 表 3A 与正文数字矛盾。
