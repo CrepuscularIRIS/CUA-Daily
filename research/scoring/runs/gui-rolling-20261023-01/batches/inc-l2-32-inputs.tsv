@@ -1,0 +1,5 @@
+paper_id	priority	tier	families	cards	material	fulltext_path	audit_sample	l1_batch
+2401.03568	none		F0		abstract_intro	research/fulltext/2401.03568.txt	True	backlog
+2506.23719	high		F0,F2	main/online_evaluation_methodology	abstract_intro	research/fulltext/2506.23719.txt	True	backfill3
+2610.19368	none		F0		abstract_intro	research/fulltext/2610.19368.txt	True	backlog
+2512.20237	medium	P2	F0,F5	main/experience_memory_retrieval	abstract_intro	research/fulltext/2512.20237.txt	True	backlog
