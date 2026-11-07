@@ -258,3 +258,7 @@
 - L1（小批快通道 L1+L2）：inc-l1-48 3/3——2602.05156（机器人手接触结构）、2611.02752（HPC 代码优化）均 out_of_scope；2611.06939 P2/to_l2。
 - L2：inc-l2-33 1/1——2611.06939 P2/pending_experiment/park（物理 GUI 机制对题但运行时 XML 来源不明，缺端到端自主测试；§4 缺章已从 arXiv 原站补读）。
 - to_l3 池：维持（~53）。
+
+## 2026-11-09 每日 Opus 判断（第十二期选题）
+
+- selection-011 后新增候选 13 篇 ≥3 → 第十二期选题。终选 2 篇（2601.13142 TVWorld 方向键导航训练 / 2609.35143 Timeline-Bench 质量门盲区），各 6/3 轮渲染后过视觉 QA；第 3 席按证据标准空缺。读文排除 3 篇（Automotive-ENV 分母不明、Remote Labor 2-vs-4 项目混杂、Game-TARS 暂停时钟）；5 篇近期候选维持早前处理。无 correction（备注：TVWorld 消融单次运行、Timeline-Bench 的 Astra 兼任判官与 4 个被测 agent）。见 selection-012.md。累计 40 张。
