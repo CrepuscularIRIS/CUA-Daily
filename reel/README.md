@@ -154,3 +154,16 @@
 | 2505.10978 GiGPO | P3 | capability / F2,F1 | trajectory_level_policy_training | 同一批 rollout 里“回到同一页”就是现成对照组：不加价值网络、不加采样的逐步信用；WebShop 同超参 3 seeds，7B 66.1→75.2、1.5B 56.8→67.4，每轮多约 0.5 秒（HTML 文本观测模拟站） | 线路图机制（锚点站 + 回环箭头）+ 条件标签行 + 误差线分组柱 / 消融表 / ω 折线 + 计时与组大小条 | ready |
 
 选择过程见 [selection-011.md](../research/scoring/runs/gui-rolling-20261023-01/selection-011.md)。十一期合计 38 篇，版式 38 种互不相同。poster.html 受 `.gitignore` 忽略，仅存本地。
+
+---
+
+# 第十二期 — gui-rolling-20261023-01 增量轮（2026-11-07 · 2 篇）
+
+候选池 13 篇（Awesome-CUA 回填第三波 8 篇 + 近期候选 5 篇）。近期 5 篇无新记录：2611.04393 已在第十期入选，DIBench、Coati、ViBench 2.0、BiGrounder 维持前期处理。回填 8 篇中 Opus 5.5 补读 5 篇原文（两篇入选者读完全文与附录），入选 2 篇；Automotive-ENV（成功率分母口径不清、安全验证器匹配推理文本）、Remote Labor Index（CUA vs CLI 只有约 2 vs 4 个项目、scaffold 不配平）、Game-TARS（无同数据接口对照、未见游戏为暂停时钟）编辑排除，lmgame-Bench / Orak / BrowseComp 依 L2 判为偏离核心。无 correction。理由见 selection-012。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| 2601.13142 TVWorld | P3 | capability / F3,F0 | planner_grounder_interface | 电视遥控只能移动焦点：点击式 GUI 模型在 5 张留出 Google TV 图、500 题上 1.6–15.4%；同骨干 Qwen3-VL-8B 经三类轨迹 SFT + 图命中时间奖励 RL 从 20.0 到 68.3（3 次 65.6–71.4），静态截图图回放、非真机 | 电视边框页眉 + 遥控器图 + 两屏交互对照 + 图上三类轨迹 + 分段奖励表 + 分组条形 + 两阶段表 + 变体对运行跨度点图 | ready |
+| 2609.35143 Timeline-Bench | P3 | judgment / F2,F0 | online_evaluation_methodology / learned_outcome_and_process_judges | 剪辑成片“测试全过仍输”：771 个未解决运行中 562 个只差按人校准的质量门；质量门代理级 ρ=0.93、单片 κ=0.15；同一 GPT-6 Astra 改用屏幕 + 键鼠在 Resolve 里剪，解决 2/56 vs 代码 12/56（OS、工具、听觉通道同时不同） | 时间线装饰条 + 四道门漏斗 + 层级一致性条 + 16 代理散点 + 配对森林图 + 计算机使用对比表 + 行为数字卡 + 能力读数格 | ready |
+
+选择过程见 [selection-012.md](../research/scoring/runs/gui-rolling-20261023-01/selection-012.md)。十二期合计 40 篇，版式 40 种互不相同。poster.html 受 `.gitignore` 忽略，仅存本地。
