@@ -262,3 +262,7 @@
 ## 2026-11-09 每日 Opus 判断（第十二期选题）
 
 - selection-011 后新增候选 13 篇 ≥3 → 第十二期选题。终选 2 篇（2601.13142 TVWorld 方向键导航训练 / 2609.35143 Timeline-Bench 质量门盲区），各 6/3 轮渲染后过视觉 QA；第 3 席按证据标准空缺。读文排除 3 篇（Automotive-ENV 分母不明、Remote Labor 2-vs-4 项目混杂、Game-TARS 暂停时钟）；5 篇近期候选维持早前处理。无 correction（备注：TVWorld 消融单次运行、Timeline-Bench 的 Astra 兼任判官与 4 个被测 agent）。见 selection-012.md。累计 40 张。
+
+## 2026-11-10 08:43 每日 Opus 判断
+
+- selection-012 后新增 confirmed P3：0 篇 <3 → 跳过（wave-3 余量均已在 selection-012 读文落选）。
