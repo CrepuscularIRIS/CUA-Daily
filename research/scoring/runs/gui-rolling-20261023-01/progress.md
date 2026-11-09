@@ -274,3 +274,8 @@
 - L2：inc-l2-34..37 四批 71/71（to_l2 64 全部 + 漏检抽查 7）。**14 篇 P3/confirmed/to_l3**（2311.05657…2611.09847，逐篇见批次）；19 篇 pending_experiment；12 篇 pending_material；5 篇 P2/confirmed/park；19 篇 exclude。抽查 7 篇漏检 0（1 篇范围改判 + 1 篇优先级纠偏）。
 - 漏检抽查：seed=20261111，名额 6（预算 64×10%）+欠账 1.0 补抽，池 418 抽 7。
 - to_l3 池：+14 篇 → 今日 Opus 班达标。
+
+## 2026-11-11 每日 Opus 判断（第十三期选题 + C-013-1 落档）
+
+- selection-012 后新增 confirmed P3：14 篇 ≥3 → 第十三期选题。终选 2 篇（2610.37567 Gym-Anything-RT 实时时钟塌缩 / 2611.08496 MobiInfer 分阶段解码不降成功率），各第 3 次渲染过视觉 QA；第 3 席空缺。SWEeper/PPTArena/AndroidGen 同题去重等 12 篇落选。见 selection-013.md。累计 42 张。
+- Correction C-013-1（2602.03798 FullStack-Agent P3 依据为 API 判列、GUI 判列仅降 0.9–5.4）已退回 Sol 修订：**P3→P2、q3→incremental、q4→partial、pending_experiment/park**（保留 B 类 GUI 交互验证组件收录；K12→NA、K16→partial）。原记录保留。
