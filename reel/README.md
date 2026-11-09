@@ -167,3 +167,16 @@
 | 2609.35143 Timeline-Bench | P3 | judgment / F2,F0 | online_evaluation_methodology / learned_outcome_and_process_judges | 剪辑成片“测试全过仍输”：771 个未解决运行中 562 个只差按人校准的质量门；质量门代理级 ρ=0.93、单片 κ=0.15；同一 GPT-6 Astra 改用屏幕 + 键鼠在 Resolve 里剪，解决 2/56 vs 代码 12/56（OS、工具、听觉通道同时不同） | 时间线装饰条 + 四道门漏斗 + 层级一致性条 + 16 代理散点 + 配对森林图 + 计算机使用对比表 + 行为数字卡 + 能力读数格 | ready |
 
 选择过程见 [selection-012.md](../research/scoring/runs/gui-rolling-20261023-01/selection-012.md)。十二期合计 40 篇，版式 40 种互不相同。poster.html 受 `.gitignore` 忽略，仅存本地。
+
+---
+
+# 第十三期 — gui-rolling-20261023-01 增量轮（2026-11-09 · 2 篇）
+
+候选池 14 篇（Awesome-CUA 回填第四波 `inc-l2-34..37` 的全部 P3 confirmed）。Opus 5.5 按问题族分组、与前十二期同题去重，补读 7 篇原文（两篇入选者读完全文与可得附录），入选 2 篇；FullStack-Agent（2602.03798）的升档依据其实来自 API 判官列，GUI 判官加数据库日志要求后只降 0.9–5.4 点，且“日志有效”由同一判官 LLM 判定，写 correction C-013-1 退回 Sol；SWEeper-Bench、PPTArena、AndroidGen 与已入选论文同题去重；IChart2Code、VISTA、CUA-as-embodied 等因偏离核心或证据形态编辑排除。理由见 selection-013。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| 2610.37567 Gym-Anything-RT | P3 | judgment / F1,F2 | online_evaluation_methodology | 暂停式评测替模型等待：100 个截图 + 键鼠的网页小游戏，同游戏同种子只改时钟，GPT-6 Astra xHigh 暂停 75%、放慢 64× 57%、实时 9%（非实时对照 66%）；写脚本 9→31；每配置一次，暂停另给 3–6 帧 | 时钟表盘页眉 + 双时间线示意 + 一程序四时钟分叉 + 放慢倍数折线 + 六模型哑铃 + 写代码对照表 + 暂停分组条与难度表 | ready |
+| 2611.08496 MobiInfer | P3 | capability / F0 | agent_loop_context_control | 手机端 GUI 代理每步重算同一段提示：按寿命复用前缀 KV、按输出阶段裁词表、只对格式与推理投机，同模型同手机推理时间快 2.11–2.78×，四设置成功 58.1→57.7%；“端到端”为推理时间合计，约 1.9% 输出与原模型不同 | 竖长手机机制图 + 步数倍数折线 + 12 组叠加条形 + 消融阶梯 + 投机方法表 + 同截图比对表与数字卡 + 难度 / 类别摘录 | ready |
+
+选择过程见 [selection-013.md](../research/scoring/runs/gui-rolling-20261023-01/selection-013.md)。十三期合计 42 篇，版式 42 种互不相同。poster.html 受 `.gitignore` 忽略，仅存本地。
