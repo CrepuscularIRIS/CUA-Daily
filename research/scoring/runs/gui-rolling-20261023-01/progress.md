@@ -301,3 +301,7 @@
 - L2：inc-l2-40/41 两批 36/36（to_l2 33 全部 + 漏检抽查 3）。**11 篇 P3/confirmed/to_l3**（2110.08653…2611.11971，逐篇见批次）；10 篇 pending_experiment；4 篇 pending_material；3 篇 P2/confirmed/park；8 篇 exclude。抽查 3 篇误排纠正 0。改判合计 13 篇。
 - 漏检抽查：seed=20261114，名额 3（预算 33×10%）+欠账 0.7 补抽 0，池 630 抽 3。
 - to_l3 池：+11 篇。2611.11971 发布时间/版本来源待核（L2 备注）。
+
+## 2026-11-12 每日 Opus 判断（第十四期选题）
+
+- selection-013 后新增 confirmed P3：12 篇 ≥3 → 第十四期选题。终选 3 篇（2611.11971 harness/后端防御差异 / 2206.11795 VPT——mine_human_screen_videos 主卡首张，18 张主卡全覆盖 / 2403.08140 BAGEL 自标注探索），各 4–5 轮渲染后过视觉 QA；2611.11971 身份核验为真实 v1（2026-11-09）。无 correction（三篇 L2 备注收窄已记 selection-014.md）。见 selection-014.md。累计 45 张。
