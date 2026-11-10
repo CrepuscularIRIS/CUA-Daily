@@ -285,3 +285,11 @@
 - 查新来源：Awesome-CUA 更新 → 2 篇（queue/2026-11-09-1751，材料 2/2 abstract_intro）；inbox 空（收集端 11-09 仅覆盖 RSI/Embodied）。
 - L1（小批快通道）：inc-l1-71 2/2——2609.35889（第三方代码审计）、2611.06866（GH/CI 日志数据集）均 out_of_scope；无 to_l2，无 L2。
 - to_l3 池：维持（selection-013 后余量 + 备选）。
+
+## 2026-11-10 14:17 巡检班（GitHub 查新 + arXiv 限流处置）
+
+- 查新来源：Awesome-CUA 更新 → 21 篇（queue/2026-11-10-0648，材料 21/21 abstract_intro；入库经 6 次退避重试成功）；inbox 空。
+- L1：inc-l1-72 21/21（to_l2 4，out_of_scope 17）。
+- L2：inc-l2-39 4/4：**1 篇 P3/confirmed/to_l3**（2601.15808）；3 篇 pending_experiment/park（层级/成本归因、探索信息隔离、GUI 等精度效率待补）。改判 2 篇。
+- 漏检抽查：名额 0（预算 4×10%），欠账 ~0.3+0.4→~0.7 滚存（池可用）。seed=20261113。
+- to_l3 池：+1。

@@ -1,0 +1,5 @@
+paper_id	priority	tier	families	cards	material	fulltext_path	audit_sample	l1_batch
+2508.00414	high		F0,F1	main/agent_loop_context_control	abstract_intro	research/fulltext/2508.00414.txt	False	inc
+2601.15808	high		F2,F5	main/learned_outcome_and_process_judges,main/agent_loop_context_control	abstract_intro	research/fulltext/2601.15808.txt	False	inc
+2604.18131	high	P3	F3,F4	main/experience_memory_retrieval,main/exploration_driven_task_synthesis	abstract_intro	research/fulltext/2604.18131.txt	False	inc
+2604.24954	medium	P2	F0,F1	main/high_resolution_target_localisation	abstract_intro	research/fulltext/2604.24954.txt	False	inc
