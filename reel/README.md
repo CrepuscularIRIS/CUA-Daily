@@ -180,3 +180,17 @@
 | 2611.08496 MobiInfer | P3 | capability / F0 | agent_loop_context_control | 手机端 GUI 代理每步重算同一段提示：按寿命复用前缀 KV、按输出阶段裁词表、只对格式与推理投机，同模型同手机推理时间快 2.11–2.78×，四设置成功 58.1→57.7%；“端到端”为推理时间合计，约 1.9% 输出与原模型不同 | 竖长手机机制图 + 步数倍数折线 + 12 组叠加条形 + 消融阶梯 + 投机方法表 + 同截图比对表与数字卡 + 难度 / 类别摘录 | ready |
 
 选择过程见 [selection-013.md](../research/scoring/runs/gui-rolling-20261023-01/selection-013.md)。十三期合计 42 篇，版式 42 种互不相同。poster.html 受 `.gitignore` 忽略，仅存本地。
+
+---
+
+# 第十四期 — gui-rolling-20261023-01 增量轮（2026-11-10 · 3 篇）
+
+候选池 12 篇（Awesome-CUA 回填第五波 11 篇 + 2601.15808，全部 P3 confirmed）。Opus 5.5 按问题族分组、与前十三期同题去重，补读 5 篇原文（三篇入选者读完全文与附录），入选 3 篇；2611.11971 的发布时间经 export.arxiv.org 核对为真实 v1（2026-11-09）。ChatShop（2404.09911）的 WebShop 捷径审计只有一个检索覆盖率和一个不含选项选择的排序器，编辑排除；DeepVerifier 与第十一期 SGV 近同题；其余 7 篇因证据形态或偏离核心编辑排除。无 correction。理由见 selection-014。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| 2611.11971 Harness Matters | P3 | judgment / F1,F2 | environmental_injection_attacks / injection_defense_isolation | 配对可用性任务剔除“做不到”后，同一 GPT-4o 装进 Agent-E 防住 83.8%、装进 Skyvern 2.0 只防住 42.9%；外壳、模型、交互都显著（模型 χ² 更大）；完成率最高的外壳防御率倒数第二；受控页、单次运行，DSR = 1 − ASR | 判卷决策条 + 外壳 × 模型热力表 + χ² 条 + TCR–DSR 散点 + 朴素攻击哑铃 + 阶段格 + 消融前后点 | ready |
+| 2206.11795 VPT | P3 | capability / F0,F4 | mine_human_screen_videos（**新覆盖**） | 1,962 h 带键鼠录像训练看前后帧的 IDM，给约 7 万小时网络视频补标签，训练 20 Hz 原生键鼠策略（含合成界面拖放）；IDM 约 100 h 即平台；RL 后钻石镐 2.5%；Minecraft、各训练一次 | 通高科技树阶梯 + 四段流程 + IDM 刻度尺 + 界面示意 + 倍数对数条 + 成本账 | ready |
+| 2403.08140 BAGEL | P3 | capability / F3,F2 | exploration_driven_task_synthesis | 无示范、无考题：先乱点再让模型给轨迹起名、照名重做，自举示范供检索；MiniWoB++ 最难 10 任务 46.8→61.0（图 3 为 60.5）；人工按执行结果剔错还能再涨 7 点，自打分漏放错误示范 | 循环改写图 + 例子动作胶囊 + 一次 / 多轮配对条 + 逐任务棒棒糖 + 报错配对条 + 参照表 | ready |
+
+选择过程见 [selection-014.md](../research/scoring/runs/gui-rolling-20261023-01/selection-014.md)。十四期合计 45 篇，版式 45 种互不相同；18 张主卡至此均有 Reel。poster.html 受 `.gitignore` 忽略，仅存本地。
