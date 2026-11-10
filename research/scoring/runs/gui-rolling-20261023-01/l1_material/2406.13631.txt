@@ -1,0 +1,6 @@
+arxiv: 2406.13631 (2406.13631v2)
+title: On AI-Inspired UI-Design
+source: https://arxiv.org/abs/2406.13631
+
+§Abstract
+Graphical User Interface (or simply UI) is a primary mean of interaction between users and their devices. In this paper, we discuss three complementary Artificial Intelligence (AI) approaches for triggering the creativity of app designers and inspiring them create better and more diverse UI designs. First, designers can prompt a Large Language Model (LLM) to directly generate and adjust UIs. Second, a Vision-Language Model (VLM) enables designers to effectively search a large screenshot dataset, e.g. from apps published in app stores. Third, a Diffusion Model (DM) can be trained to specifically generate UIs as inspirational images. We present an AI-inspired design process and discuss the implications and limitations of the approaches.

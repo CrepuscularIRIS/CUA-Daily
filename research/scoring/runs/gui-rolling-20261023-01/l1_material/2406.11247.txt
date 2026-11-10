@@ -1,0 +1,12 @@
+arxiv: 2406.11247 (2406.11247v1)
+title: STEVE Series: Step-by-Step Construction of Agent Systems in Minecraft
+source: https://arxiv.org/abs/2406.11247
+
+§Abstract
+Building an embodied agent system with a large language model (LLM) as its core is a promising direction. Due to the significant costs and uncontrollable factors associated with deploying and training such agents in the real world, we have decided to begin our exploration within the Minecraft environment. Our STEVE Series agents can complete basic tasks in a virtual environment and more challenging tasks such as navigation and even creative tasks, with an efficiency far exceeding previous state-of-the-art methods by a factor of $2.5\times$ to $7.3\times$. We begin our exploration with a vanilla large language model, augmenting it with a vision encoder and an action codebase trained on our collected high-quality dataset STEVE-21K. Subsequently, we enhanced it with a Critic and memory to transform it into a complex system. Finally, we constructed a hierarchical multi-agent system. Our recent work explored how to prune the agent system through knowledge distillation. In the future, we will explore more potential applications of STEVE agents in the real world.
+
+§Introduction (from cached fulltext; cut at ~9000 chars)
+Recent advancements in artificial intelligence have seen the successful deployment of intelligent agents in the open-world game Minecraft, serving as a versatile platform for exploring complex agent behaviors and interactions [ 3 , 2 ] . These agents, powered by large language models (LLMs) [ 1 , 12 , 10 , 11 ] , demonstrate capabilities ranging from basic navigation to executing intricate tasks, embodying a significant leap in AI’s potential for open-world understanding and interaction [ 14 , wang2023voyager，zhao2023survey ] . Despite this progress, challenges remain in achieving seamless integration of multi-modal inputs and dynamic, autonomous decision-making that mirrors human-like intelligence and adaptability within such a variable and rich environment.
+
+## 2 Data and Environment
+The STEVE-21K dataset is integral for training the multi-modal Large Language Models (LLMs) in the STEVE Series , containing 600 Vision-Environment pairs, 20,000 Question-Answering pairs, and 210 Skill-Code pairs to enhance agents’ interaction and task execution in Minecraft. Our simulation environment utilizes MineDojo [ 2 ] and Mineflayer [ 7 ] APIs, providing a realistic setting for high-fidelity agent performance.

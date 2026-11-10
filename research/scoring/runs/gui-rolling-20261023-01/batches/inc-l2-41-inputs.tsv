@@ -1,0 +1,17 @@
+paper_id	priority	tier	families	cards	material	fulltext_path	audit_sample	l1_batch
+2403.03346	medium	P2	F0,F1	main/structured_screen_observation	abstract_intro	research/fulltext/2403.03346.txt	False	backfill5
+2404.09911	high	P3	F2,F4	main/online_evaluation_methodology,main/agent_initiated_user_interaction	abstract_intro	research/fulltext/2404.09911.txt	False	backfill5
+2305.06849	high		F0,F3	main/agent_loop_context_control	abstract_intro	research/fulltext/2305.06849.txt	False	backfill5
+2208.09116	medium	P2	F3,F4	main/structured_screen_observation	abstract_intro	research/fulltext/2208.09116.txt	False	backfill5
+2308.02151	high	P3	F0,F2	main/agent_loop_context_control,main/trajectory_level_policy_training	abstract_intro	research/fulltext/2308.02151.txt	False	backfill5
+2310.02046	medium	P2	F0	main/structured_screen_observation	abstract_intro	research/fulltext/2310.02046.txt	False	backfill5
+2203.07828	high	P3	F3,F0	main/structured_screen_observation,main/planner_grounder_interface	abstract_intro	research/fulltext/2203.07828.txt	False	backfill5
+2305.09434	high	P3	F0,F3	main/structured_screen_observation,main/planner_grounder_interface,main/agent_loop_context_control	abstract_intro	research/fulltext/2305.09434.txt	False	backfill5
+2402.05935	medium	P2	F1,F0	main/high_resolution_target_localisation,main/structured_screen_observation	abstract_intro	research/fulltext/2402.05935.txt	False	backfill5
+2305.14218	medium	P2	F0,F3	main/structured_screen_observation,main/planner_grounder_interface	abstract_intro	research/fulltext/2305.14218.txt	False	backfill5
+2307.08962	high		F0,F5	main/agent_loop_context_control	abstract_intro	research/fulltext/2307.08962.txt	False	backfill5
+2403.12895	medium		F0,F1	main/structured_screen_observation,main/high_resolution_target_localisation	abstract_intro	research/fulltext/2403.12895.txt	False	backfill5
+2412.10302	medium	P2	F0,F1	main/high_resolution_target_localisation	abstract_intro	research/fulltext/2412.10302.txt	False	backfill5
+2309.07864	none		F0		abstract_intro	research/fulltext/2309.07864.txt	True	backlog
+2506.16136	high		F0,F2		abstract_intro	research/fulltext/2506.16136.txt	True	backlog
+2403.20213	high		F0,F3		abstract_intro	research/fulltext/2403.20213.txt	True	backfill5
