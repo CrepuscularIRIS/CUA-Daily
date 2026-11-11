@@ -311,3 +311,7 @@
 - 查新来源：Awesome-CUA 更新 → 1 篇 2611.02430（queue/2026-11-11-1149，材料 1/1 abstract_intro）；三仓 inbox 空。
 - L1（单篇快通道）：inc-l1-88 1/1 → **out_of_scope/exclude**（实时语音 groundedness=对话事实一致性，非 GUI grounding，无 CUA 操作面）；L2 按条件未执行。
 - to_l3 池：维持。
+
+## 2026-11-13 08:43 每日 Opus 判断
+
+- selection-014 后新增 confirmed P3：0 篇 <3 → 跳过（sel-014 已读文处理全部候选；隔夜收集 +18 待 12:17 巡检班）。
