@@ -305,3 +305,9 @@
 ## 2026-11-12 每日 Opus 判断（第十四期选题）
 
 - selection-013 后新增 confirmed P3：12 篇 ≥3 → 第十四期选题。终选 3 篇（2611.11971 harness/后端防御差异 / 2206.11795 VPT——mine_human_screen_videos 主卡首张，18 张主卡全覆盖 / 2403.08140 BAGEL 自标注探索），各 4–5 轮渲染后过视觉 QA；2611.11971 身份核验为真实 v1（2026-11-09）。无 correction（三篇 L2 备注收窄已记 selection-014.md）。见 selection-014.md。累计 45 张。
+
+## 2026-11-11 14:17 巡检班（GitHub 查新）
+
+- 查新来源：Awesome-CUA 更新 → 1 篇 2611.02430（queue/2026-11-11-1149，材料 1/1 abstract_intro）；三仓 inbox 空。
+- L1（单篇快通道）：inc-l1-88 1/1 → **out_of_scope/exclude**（实时语音 groundedness=对话事实一致性，非 GUI grounding，无 CUA 操作面）；L2 按条件未执行。
+- to_l3 池：维持。
