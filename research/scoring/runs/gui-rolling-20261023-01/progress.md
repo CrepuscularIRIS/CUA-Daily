@@ -322,3 +322,7 @@
 - L1：inc-l1-89 5/5（全 to_l2）。L2：inc-l2-43 5/5。**1 篇 P3/confirmed/to_l3**（逐篇见批次）；14326 pending_material（缺关键附录，probe/测试隔离待核）；13457、14256 pending_experiment。
 - 漏检抽查：名额 1（预算 5×10%）但池可用 0 → 欠账 ~0.7+0.5→~1.2 滚存。seed=20261116。
 - to_l3 池：+1。
+
+## 2026-11-14 08:43 每日 Opus 判断
+
+- selection-014 后新增 confirmed P3：1 篇（2611.12918）<3 → 跳过。
