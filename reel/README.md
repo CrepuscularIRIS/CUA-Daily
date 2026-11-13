@@ -194,3 +194,16 @@
 | 2403.08140 BAGEL | P3 | capability / F3,F2 | exploration_driven_task_synthesis | 无示范、无考题：先乱点再让模型给轨迹起名、照名重做，自举示范供检索；MiniWoB++ 最难 10 任务 46.8→61.0（图 3 为 60.5）；人工按执行结果剔错还能再涨 7 点，自打分漏放错误示范 | 循环改写图 + 例子动作胶囊 + 一次 / 多轮配对条 + 逐任务棒棒糖 + 报错配对条 + 参照表 | ready |
 
 选择过程见 [selection-014.md](../research/scoring/runs/gui-rolling-20261023-01/selection-014.md)。十四期合计 45 篇，版式 45 种互不相同；18 张主卡至此均有 Reel。poster.html 受 `.gitignore` 忽略，仅存本地。
+
+---
+
+# 第十五期 — gui-rolling-20261023-01 增量轮（2026-11-13 · 2 篇）
+
+候选池 3 篇（selection-014 之后新进池的 P3 confirmed：2611.12918、2611.16107、2611.16693）。Opus 5.5 三篇均按 v1 补读全文与附录，入选 2 篇；IntentTwin（2611.12918）的“候选 support 泄露”只在作者自建的 16 选 1 构造上成立（SIR = 1 为构造必然），Mind2Web 表 5 无方法且与附录“未运行候选元素排序”冲突，写 correction C-015-1 退回 Sol，本期暂停。MobileProbe 按 L2 收窄口径呈现：标题只用覆盖率，ASR 的搜索预算、可用性判据混入基线失败等写进画报。理由见 selection-015。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| 2611.16107 Accessibility Debt | P3 | judgment / F2,F4 | structured_screen_observation / online_evaluation_methodology | 代理语料用的是读屏器那棵树：需描述元素的 content-desc 覆盖 Rico 17.74%、AndroidControl 57.27%（两数据集之差，非时间趋势），输入框最低；同屏比较中被示范点中的 icon-like 多 8.99 点有描述（屏内选择 3.52）；只测 content-desc、无代理 rollout | 自绘手机界面 + 覆盖率进度条 + 分角色哑铃 + 五规则条 + 屏内 / 屏间堆叠条 + 率比森林图 | ready |
+| 2611.16693 MobileProbe | P3 | judgment / F2,F4 | environmental_injection_attacks / online_evaluation_methodology | 固定注入点把“没走到”记成“防住了”：83 个移动端攻击任务，专家固定点载荷漏测 12.0–22.9%，按本代理轨迹选点 3.6–6.0%；85% ASR 是 ≤15 次实测搜索下的找到率，可用性判据混入原任务基线失败 | 路线分叉示意 + PMR 点阶梯 + 流水线权限带 + 分组横条 + 判据卡 + 基线失败分段条 | ready |
+
+选择过程见 [selection-015.md](../research/scoring/runs/gui-rolling-20261023-01/selection-015.md)。十五期合计 47 篇，版式 47 种互不相同。poster.html 受 `.gitignore` 忽略，仅存本地。
