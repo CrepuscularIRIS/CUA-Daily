@@ -326,3 +326,9 @@
 ## 2026-11-14 08:43 每日 Opus 判断
 
 - selection-014 后新增 confirmed P3：1 篇（2611.12918）<3 → 跳过。
+
+## 2026-11-13 20:17 巡检班（GitHub 查新）
+
+- 查新来源：Awesome-CUA 更新 → 7 篇（queue/2026-11-13-1151，材料 6 abstract_intro + 1 abstract）；三仓 inbox 空。
+- L1：inc-l1-90 7/7（to_l2 5，exclude 2）。L2：inc-l2-44 6/6（含补抽 2507.11527，欠账 1.2 清偿 1，余 ~0.2）。改判 1 篇 P3→P2（15097 待材料）。**2 篇 P3/confirmed/to_l3**（16107/16693）；15097 pending_material、16744 pending_material（缺 judge 与 Web 动作评分协议）、14766 pending_experiment。抽查 2507.11527 漏检改判 0。
+- 漏检抽查：seed=20261117。to_l3 池：+2。
