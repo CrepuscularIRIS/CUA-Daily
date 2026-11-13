@@ -332,3 +332,8 @@
 - 查新来源：Awesome-CUA 更新 → 7 篇（queue/2026-11-13-1151，材料 6 abstract_intro + 1 abstract）；三仓 inbox 空。
 - L1：inc-l1-90 7/7（to_l2 5，exclude 2）。L2：inc-l2-44 6/6（含补抽 2507.11527，欠账 1.2 清偿 1，余 ~0.2）。改判 1 篇 P3→P2（15097 待材料）。**2 篇 P3/confirmed/to_l3**（16107/16693）；15097 pending_material、16744 pending_material（缺 judge 与 Web 动作评分协议）、14766 pending_experiment。抽查 2507.11527 漏检改判 0。
 - 漏检抽查：seed=20261117。to_l3 池：+2。
+
+## 2026-11-15 每日 Opus 判断（第十五期选题 + C-015-1 落档）
+
+- selection-014 后新增 confirmed P3：3 篇 ≥3 → 第十五期选题。终选 2 篇（16107 无障碍树标注债语料审计 / 16693 MobileProbe 注入漏测率，4 处口径收窄记入 SOURCE.md），各 3/4 轮渲染后过视觉 QA。见 selection-015.md。累计 47 张。
+- Correction C-015-1（12918 IntentTwin 泄露主张仅自建构造成立、表 5 方法缺失）落档：**P3→P2、q1→asserted、q2→unknown、q4→partial、pending_material/to_l2 留队**。原记录保留。
