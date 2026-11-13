@@ -337,3 +337,10 @@
 
 - selection-014 后新增 confirmed P3：3 篇 ≥3 → 第十五期选题。终选 2 篇（16107 无障碍树标注债语料审计 / 16693 MobileProbe 注入漏测率，4 处口径收窄记入 SOURCE.md），各 3/4 轮渲染后过视觉 QA。见 selection-015.md。累计 47 张。
 - Correction C-015-1（12918 IntentTwin 泄露主张仅自建构造成立、表 5 方法缺失）落档：**P3→P2、q1→asserted、q2→unknown、q4→partial、pending_material/to_l2 留队**。原记录保留。
+
+## 2026-11-15 12:17 巡检班
+
+- 新增：5 篇（inbox/2026-11-13-1322，queue/2026-11-13-1750，材料 5/5 abstract_intro）。
+- L1：inc-l1-91 5/5（全 to_l2）。L2：inc-l2-45 5/5。**2 篇 P3/confirmed/to_l3**（15600/16816）；3 篇 park（16961 缺同预算路由对照、17007 缺个性化独立实验、17167 缺 §3.3 与附录）。
+- 漏检抽查：名额 1（预算 5×10%）池可用 0 → 欠账 ~0.2+0.5→~0.7 滚存。seed=20261118。
+- to_l3 池：+2。
