@@ -356,3 +356,7 @@
 - 查新来源：Awesome-CUA 更新 → 1 篇 2608.18050（queue/2026-11-14-1148，材料 1/1 abstract_intro）；三仓 inbox 空。
 - L1（单篇快通道）：inc-l1-93 1/1 → **out_of_scope/exclude**（混合格式文件工作区评测，无 GUI/浏览器操作面）；L2 按条件未执行。
 - to_l3 池：维持。
+
+## 2026-11-16 08:43 每日 Opus 判断
+
+- selection-015 后新增 confirmed P3：2 篇（15600/16816）<3 → 跳过。
