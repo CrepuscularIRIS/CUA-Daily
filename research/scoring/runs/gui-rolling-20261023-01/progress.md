@@ -360,3 +360,9 @@
 ## 2026-11-16 08:43 每日 Opus 判断
 
 - selection-015 后新增 confirmed P3：2 篇（15600/16816）<3 → 跳过。
+
+## 2026-11-15 14:17 巡检班（GitHub 查新）
+
+- 查新来源：Awesome-CUA 更新 → 1 篇 2509.12159（queue/2026-11-15-0549，材料 1/1 abstract_intro）；三仓 inbox 空。
+- L1（单篇快通道）：inc-l1-94 1/1 → **out_of_scope/exclude**（EfficientUICoder 截图→HTML/CSS 代码生成，无 GUI 操作闭环）；L2 按条件未执行。
+- to_l3 池：维持 2。
