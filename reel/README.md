@@ -207,3 +207,16 @@
 | 2611.16693 MobileProbe | P3 | judgment / F2,F4 | environmental_injection_attacks / online_evaluation_methodology | 固定注入点把“没走到”记成“防住了”：83 个移动端攻击任务，专家固定点载荷漏测 12.0–22.9%，按本代理轨迹选点 3.6–6.0%；85% ASR 是 ≤15 次实测搜索下的找到率，可用性判据混入原任务基线失败 | 路线分叉示意 + PMR 点阶梯 + 流水线权限带 + 分组横条 + 判据卡 + 基线失败分段条 | ready |
 
 选择过程见 [selection-015.md](../research/scoring/runs/gui-rolling-20261023-01/selection-015.md)。十五期合计 47 篇，版式 47 种互不相同。poster.html 受 `.gitignore` 忽略，仅存本地。
+
+---
+
+# 第十六期 — gui-rolling-20261023-01 增量轮（2026-11-16 · 2 篇）
+
+指定候选3篇均补读v1全文与附录。单席串行执行模型为 **gpt-6-astra（fable槽，2026-11-16配置）**，不冒称旧提示词中的Opus 5.5。入选OMA和StreamEmbed；MemCredit因WebShop协议与不确定性证据不足作编辑排除，不修改其L2。无新correction。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| [2611.16816 OMA](2611.16816/poster.png) | P3 | judgment / F1,F0 | trajectory_level_policy_training | 轨迹展开后的外层统计与loss归约决定长轨迹影响力；普通WebShop3B成功64.8→57.0%，SOL64.8→73.4%，等轨迹质量不是普适最优，150updates非等计算预算 | 米色计票账本 + 三种份额条 + 深蓝双层归约带 + 正负结果对照 | ready（一次重做） |
+| [2611.18516 StreamEmbed](2611.18516/poster.png) | P3 | capability / F0,F1 | experience_memory_retrieval | M2 Pro空闲机、5秒源采样：GPU平均编码2.33–2.34→.63–.84秒，R@10损失.6–1.3点；总加速含线性patch优化，不是持续1Hz保证或agent任务收益 | 非对称机制侧栏 + 像素块示意 + 实现耗时阶梯 + 精度损失表 + 硬件角标/尾延迟警示 | ready（一次重做） |
+
+选择过程见 [selection-016.md](../research/scoring/runs/gui-rolling-20261023-01/selection-016.md)。十六期合计 **49篇**（rolling run 30篇）。两张本期中文画报版式不同，PNG为1400×2400，PDF单页；实际打开PNG及PDF栅格预览完成QA。poster.html为本地可编辑源，受既有`.gitignore`忽略。
