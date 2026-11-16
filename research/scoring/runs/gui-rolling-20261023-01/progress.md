@@ -376,3 +376,10 @@
 - 查新来源：Awesome-CUA 更新 → 2 篇（queue/2026-11-16-0549，材料 2/2 abstract_intro）；三仓 inbox 空。
 - L1（小批快通道）：inc-l1-95 2/2——2602.20196（工具网关/API 授权治理）、2610.04975（结构化工具域动态子目标授权）均 out_of_scope；无 to_l2，无 L2。
 - to_l3 池：维持 2。
+
+## 2026-11-16 20:17 巡检班（GitHub 查新）
+
+- 查新来源：Awesome-CUA 更新 → 4 篇（queue/2026-11-16-1149，材料 4/4 abstract_intro）；三仓 inbox 空。
+- L1（小批快通道）：inc-l1-96 4/4——17955/18514/18516 to_l2（P3/pending_method），18562 out_of_scope（真机操作）。
+- L2：inc-l2-50 3/3——**1 篇 P3/confirmed/to_l3**（18516 StreamEmbed，范围收窄为指定硬件视觉索引吞吐瓶颈）；17955 pending_material（judge 校验附录缺）、18514 pending_material（缓存截断缺 probe/主实验）。
+- to_l3 池：2 + 1 = 3 篇 ≥3 → 明晨 Opus 班达标。
