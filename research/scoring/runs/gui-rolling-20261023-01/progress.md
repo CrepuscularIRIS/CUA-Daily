@@ -383,3 +383,8 @@
 - L1（小批快通道）：inc-l1-96 4/4——17955/18514/18516 to_l2（P3/pending_method），18562 out_of_scope（真机操作）。
 - L2：inc-l2-50 3/3——**1 篇 P3/confirmed/to_l3**（18516 StreamEmbed，范围收窄为指定硬件视觉索引吞吐瓶颈）；17955 pending_material（judge 校验附录缺）、18514 pending_material（缓存截断缺 probe/主实验）。
 - to_l3 池：2 + 1 = 3 篇 ≥3 → 明晨 Opus 班达标。
+
+## 2026-11-18 每日 Opus 判断（第十六期选题）
+
+- selection-015 后新增 confirmed P3：3 篇 ≥3 → 第十六期选题。终选 2 篇（16816 OMA 长度控制负结果 / 18516 StreamEmbed 吞吐瓶颈，口径严格收窄），各重做一次后过视觉 QA；MemCredit 编辑排除（WebShop 复核细节/不确定性不足），不改 L2。无 correction。见 selection-016.md。累计 49 张。
+- 执行模型记录：本起为 gpt-6-astra（fable 槽，2026-11-16 配置替代 claude-opus-5-5），已如实记入 selection-016.md。
