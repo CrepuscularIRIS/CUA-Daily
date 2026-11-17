@@ -388,3 +388,9 @@
 
 - selection-015 后新增 confirmed P3：3 篇 ≥3 → 第十六期选题。终选 2 篇（16816 OMA 长度控制负结果 / 18516 StreamEmbed 吞吐瓶颈，口径严格收窄），各重做一次后过视觉 QA；MemCredit 编辑排除（WebShop 复核细节/不确定性不足），不改 L2。无 correction。见 selection-016.md。累计 49 张。
 - 执行模型记录：本起为 gpt-6-astra（fable 槽，2026-11-16 配置替代 claude-opus-5-5），已如实记入 selection-016.md。
+
+## 2026-11-17 14:17 巡检班（GitHub 查新）
+
+- 查新来源：Awesome-CUA 更新 → 1 篇 2607.27294（queue/2026-11-17-0549，材料 1/1 abstract_intro）；三仓 inbox 空。
+- L1（单篇快通道）：inc-l1-97 1/1 → P3/high/to_l2。L2：inc-l2-51 1/1 → P3/q4=partial/pending_material/park（缺浏览器执行证据与危害分项统计，68% unsafe≠实际危害完成率）。
+- to_l3 池：维持 0（上次 selection 后）。
