@@ -220,3 +220,17 @@
 | [2611.18516 StreamEmbed](2611.18516/poster.png) | P3 | capability / F0,F1 | experience_memory_retrieval | M2 Pro空闲机、5秒源采样：GPU平均编码2.33–2.34→.63–.84秒，R@10损失.6–1.3点；总加速含线性patch优化，不是持续1Hz保证或agent任务收益 | 非对称机制侧栏 + 像素块示意 + 实现耗时阶梯 + 精度损失表 + 硬件角标/尾延迟警示 | ready（一次重做） |
 
 选择过程见 [selection-016.md](../research/scoring/runs/gui-rolling-20261023-01/selection-016.md)。十六期合计 **49篇**（rolling run 30篇）。两张本期中文画报版式不同，PNG为1400×2400，PDF单页；实际打开PNG及PDF栅格预览完成QA。poster.html为本地可编辑源，受既有`.gitignore`忽略。
+
+---
+
+# 第十七期 — gui-rolling-20261023-01 增量轮（2026-11-17 · 3 篇）
+
+指定三篇均按v1补读全文与必要附录，终选3篇。实际执行模型 **gpt-6-astra（fable槽）**，单席串行，不冒称旧提示词中的Opus 5.5。无实质判断退回；DroidPrefill的L2表号定位勘误C-017-E1交回Sol/总控，数字与已收窄判断不变，原L1/L2保留。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| [2611.18747 VEX](2611.18747/poster.png) | P3 | capability / F1,F4 | mine_human_screen_videos / learned_outcome_and_process_judges | 相关教程、可重置、至多3次条件下，OSWorld同重试预算45.65→49.99%；音轨消融46.42→49.99%，不外推无教程迁移 | 暖米色三步重试流＋预算/音轨双证据栏＋训练解释带 | ready（一次重做） |
+| [2611.20488 EVIDENT](2611.20488/poster.png) | P3 | judgment / F2,F4 | online_evaluation_methodology / learned_outcome_and_process_judges | 英语Gemini表面成功87.14%、加必要证据70.00%、再加答案有据55.71%；以metadata与人工轨迹审查支撑诊断，不把指标嵌套当发现 | 紫灰纵向三层审计账单＋双人工验证卡＋证据审查链 | ready（一次重做） |
+| [2611.20772 DroidPrefill](2611.20772/poster.png) | P3 | capability / F0,F5 | agent_loop_context_control / structured_screen_observation | 指定手机NPU/A11y下重塑候选与上下文；llama.cpp推理关键路径34.8→5.2秒/步，SPAD 5.6→4.4秒另属回放投影，非独立在线复跑 | 蓝色硬件双栏板＋主系统表/时延条＋橙色虚线回放框 | ready（一次重做） |
+
+选择与勘误见 [selection-017.md](../research/scoring/runs/gui-rolling-20261023-01/selection-017.md)。十七期合计 **52篇**（rolling run **33篇**）。本期三种不同版式，分别1600×2300、1400×2700、1800×2200；三份PDF均单页。已实际打开最终PNG与PDF栅格图完成QA。各目录包含PNG/PDF、SOURCE.md、QA.md及本地可编辑poster.html；HTML/assets沿用既有忽略规则。
