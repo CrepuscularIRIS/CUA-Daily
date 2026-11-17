@@ -400,3 +400,7 @@
 - 查新来源：Awesome-CUA + GUI-Agents-Paper-List 更新 → 5 篇（queue/2026-11-17-1149，材料 5/5 abstract_intro）；三仓 inbox 空。
 - L1（小批快通道）：inc-l1-98 5/5（全 to_l2）。L2：inc-l2-52 5/5。**3 篇 P3/confirmed/to_l3**（18747 VEX / 20488 EVIDENT / 20772 DroidPrefill，口径均严格收窄）；20753 P3/pending_material（控制器与权限消融缺失）；18715 P2/pending_experiment。改判 1 篇 P2→P3（18747）。
 - to_l3 池：0 + 3 = 3 篇 ≥3 → 明晨 Opus 班达标。
+
+## 2026-11-19 每日 Opus 判断（第十七期选题）
+
+- selection-016 后新增 confirmed P3：3 篇 ≥3 → 第十七期选题。终选 3/3（18747 VEX / 20488 EVIDENT / 20772 DroidPrefill，口径均按 L2 收窄呈现），各重做一次后过视觉 QA；无实质 correction；定位勘误 C-017-E1（DroidPrefill 全系统比较应引 Table 1）记录待下轮复核。见 selection-017.md。累计 52 张。执行模型 gpt-6-astra（fable 槽）。
