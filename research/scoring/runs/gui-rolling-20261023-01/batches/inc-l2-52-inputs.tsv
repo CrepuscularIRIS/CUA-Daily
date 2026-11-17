@@ -1,0 +1,6 @@
+paper_id	priority	tier	families	cards	material	fulltext_path	audit_sample	l1_batch
+2611.18715	medium	P2	F2,F4	main/mine_human_screen_videos	abstract_intro	research/fulltext/2611.18715.txt	false	inc-l1-98
+2611.18747	medium	P2	F1,F4	main/mine_human_screen_videos,main/learned_outcome_and_process_judges	abstract_intro	research/fulltext/2611.18747.txt	false	inc-l1-98
+2611.20488	high	P3	F2,F4	main/online_evaluation_methodology,main/learned_outcome_and_process_judges	abstract_intro	research/fulltext/2611.20488.txt	false	inc-l1-98
+2611.20753	high	P3	F1,F4	main/structured_screen_observation,main/agent_loop_context_control	abstract_intro	research/fulltext/2611.20753.txt	false	inc-l1-98
+2611.20772	high	P3	F0,F5	main/agent_loop_context_control,main/structured_screen_observation	abstract_intro	research/fulltext/2611.20772.txt	false	inc-l1-98

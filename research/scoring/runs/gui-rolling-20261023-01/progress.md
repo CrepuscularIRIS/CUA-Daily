@@ -394,3 +394,9 @@
 - 查新来源：Awesome-CUA 更新 → 1 篇 2607.27294（queue/2026-11-17-0549，材料 1/1 abstract_intro）；三仓 inbox 空。
 - L1（单篇快通道）：inc-l1-97 1/1 → P3/high/to_l2。L2：inc-l2-51 1/1 → P3/q4=partial/pending_material/park（缺浏览器执行证据与危害分项统计，68% unsafe≠实际危害完成率）。
 - to_l3 池：维持 0（上次 selection 后）。
+
+## 2026-11-17 20:17 巡检班（GitHub 查新）
+
+- 查新来源：Awesome-CUA + GUI-Agents-Paper-List 更新 → 5 篇（queue/2026-11-17-1149，材料 5/5 abstract_intro）；三仓 inbox 空。
+- L1（小批快通道）：inc-l1-98 5/5（全 to_l2）。L2：inc-l2-52 5/5。**3 篇 P3/confirmed/to_l3**（18747 VEX / 20488 EVIDENT / 20772 DroidPrefill，口径均严格收窄）；20753 P3/pending_material（控制器与权限消融缺失）；18715 P2/pending_experiment。改判 1 篇 P2→P3（18747）。
+- to_l3 池：0 + 3 = 3 篇 ≥3 → 明晨 Opus 班达标。
