@@ -404,3 +404,9 @@
 ## 2026-11-19 每日 Opus 判断（第十七期选题）
 
 - selection-016 后新增 confirmed P3：3 篇 ≥3 → 第十七期选题。终选 3/3（18747 VEX / 20488 EVIDENT / 20772 DroidPrefill，口径均按 L2 收窄呈现），各重做一次后过视觉 QA；无实质 correction；定位勘误 C-017-E1（DroidPrefill 全系统比较应引 Table 1）记录待下轮复核。见 selection-017.md。累计 52 张。执行模型 gpt-6-astra（fable 槽）。
+
+## 2026-11-20 00:17 巡检班
+
+- 新增：7 篇（inbox/2026-11-17-1311 3 篇 + GitHub 查新 4 篇；queue 1750/1810 合并为 inc-l1-99，材料 7/7 abstract_intro）。staging 期间合并 TSV 首版混入 tail 多文件头标记，已用 python 清理重写（7 行干净数据，agent 收到更正通知后按 7 篇处理）。
+- L1：inc-l1-99 7/7（to_l2 3，out_of_scope 4）。L2：inc-l2-53 3/3——3 篇均 park（20145 缺同信息归因对照、18655 缺 Web 校准与风险-覆盖实验、21072 pending_material 版本冲突+GUI 机制不足）。改判 0。
+- to_l3 池：维持（selection-017 后为 0）。
