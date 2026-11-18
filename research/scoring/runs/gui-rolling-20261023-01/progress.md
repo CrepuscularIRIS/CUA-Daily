@@ -416,3 +416,9 @@
 - 新增：112 篇（GitHub 查新，queue/2026-11-18-0819，材料 95 abstract_intro + 17 abstract）。ingest 前置发现一处 id 笔误（2603.101165）已当坏行忽略；l1_check 检出 2611.10843 q1_basis 非法枚举 measured_cited，已改为 measured_cited_unchecked 后复验通过。
 - L1：inc-l1-100 112/112（assessed 9 全 to_l2，out_of_scope 103——100 篇旧文系 Awesome-CUA 维护者倾倒噪音 + 3 篇 CUA 邻近无 GUI 操作面）。L2：inc-l2-54 10/10（9 新 + 1 抽查 2406.09246 维持 exclude）。**2 篇 to_l3**：2611.11306 ScrapeBench（P3/confirmed）、2510.11977 HAL（P3/confirmed）；6 park（5 pending_experiment + 2603.12266 pending_material 缓存截断）；1 改判 q2（2611.06254 new_bottleneck→open_failure，q2_prior=HAL）。
 - to_l3 池：+2。
+
+## 2026-11-18 12:17 巡检班
+
+- 新增：5 篇（GitHub 查新，queue/2026-11-18-1120，材料 5 abstract_intro）。
+- L1：inc-l1-101 5/5（assessed 4 全 to_l2，1 OOS——2610.06964 SAGA 仅文本环境）。L2：inc-l2-55 4/4——**4 篇全部 to_l3**（GapLeak 2611.22223、PACT 2611.22591、text-pixels 2611.22722、SEAM 2611.22971，均 P3/confirmed，q4 由 partial 修正为 fits）。
+- to_l3 池：+4（累计 6）。

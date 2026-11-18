@@ -1,11 +1,5 @@
 paper_id	priority	tier	families	cards	material	fulltext_path	audit_sample	l1_batch
-2611.12112	medium	P2	F1,F4	main/structured_screen_observation	abstract_intro	research/fulltext/2611.12112.txt	False	inc-l1-100
-2611.11306	high	P3	F2,F4	main/online_evaluation_methodology,main/agent_initiated_user_interaction	abstract_intro	research/fulltext/2611.11306.txt	False	inc-l1-100
-2611.10843	medium	P2	F4,F5	main/environmental_injection_attacks,main/injection_defense_isolation	abstract_intro	research/fulltext/2611.10843.txt	False	inc-l1-100
-2611.10475	medium	P2	F2,F4	main/verifiable_execution_reward	abstract_intro	research/fulltext/2611.10475.txt	False	inc-l1-100
-2611.06254	medium	P2	F1,F5	main/agent_loop_context_control	abstract_intro	research/fulltext/2611.06254.txt	False	inc-l1-100
-2603.12266	medium	P2	F2	main/online_evaluation_methodology	abstract_intro	research/fulltext/2603.12266.txt	False	inc-l1-100
-2510.11977	high	P3	F2,F3	main/online_evaluation_methodology	abstract_intro	research/fulltext/2510.11977.txt	False	inc-l1-100
-2508.14704	medium	P2	F2,F3	main/online_evaluation_methodology	abstract_intro	research/fulltext/2508.14704.txt	False	inc-l1-100
-2504.09407	medium	P2	F2,F3	main/online_evaluation_methodology,main/calibrate_simulator_to_real	abstract_intro	research/fulltext/2504.09407.txt	False	inc-l1-100
-2406.09246	high		F3,F0		abstract_intro	research/fulltext/2406.09246.txt	True	backlog
+2611.22223	high	P3	F4	main/injection_defense_isolation,main/environmental_injection_attacks	abstract_intro	research/fulltext/2611.22223.txt	False	inc-l1-101
+2611.22591	high	P3	F1	main/trajectory_level_policy_training,main/rule_reward_single_step_rl	abstract_intro	research/fulltext/2611.22591.txt	False	inc-l1-101
+2611.22722	high	P3	F3,F1	main/calibrate_simulator_to_real,main/structured_screen_observation	abstract_intro	research/fulltext/2611.22722.txt	False	inc-l1-101
+2611.22971	high	P3	F2,F4	main/online_evaluation_methodology,main/environmental_injection_attacks	abstract_intro	research/fulltext/2611.22971.txt	False	inc-l1-101
