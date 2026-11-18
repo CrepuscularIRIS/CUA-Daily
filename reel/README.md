@@ -234,3 +234,17 @@
 | [2611.20772 DroidPrefill](2611.20772/poster.png) | P3 | capability / F0,F5 | agent_loop_context_control / structured_screen_observation | 指定手机NPU/A11y下重塑候选与上下文；llama.cpp推理关键路径34.8→5.2秒/步，SPAD 5.6→4.4秒另属回放投影，非独立在线复跑 | 蓝色硬件双栏板＋主系统表/时延条＋橙色虚线回放框 | ready（一次重做） |
 
 选择与勘误见 [selection-017.md](../research/scoring/runs/gui-rolling-20261023-01/selection-017.md)。十七期合计 **52篇**（rolling run **33篇**）。本期三种不同版式，分别1600×2300、1400×2700、1800×2200；三份PDF均单页。已实际打开最终PNG与PDF栅格图完成QA。各目录包含PNG/PDF、SOURCE.md、QA.md及本地可编辑poster.html；HTML/assets沿用既有忽略规则。
+
+---
+
+# 第十八期 — gui-rolling-20261023-01 增量轮（2026-11-18 · 3 篇）
+
+指定六篇均按 v1 核对全文缓存（L2 记录在 inc-l2-54/55，L1 在 inc-l1-100/101），核对全部一致，无 correction。实际执行模型 **glm-5.3**，单席串行，不冒称旧提示词中的 Opus 5.5。终选 3 篇：SEAM（跨屏组合危害全库首例）、PACT（训练侧计划/动作信用分配）、GapLeak（授权-可达缺口的升级访问）。HAL、ScrapeBench、text-pixels 编辑排除（评测方法论族连续压力/表面合规轴同构/中文模拟生态弱），不改其 L2。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| [2611.22971 SEAM](2611.22971/poster.png) | P3 | capability / F2,F4 | environmental_injection_attacks / online_evaluation_methodology | 指令与每一页单独都无害、只有组合才有害：R 危害执行 17.5–91.6% vs 同句写进用户指令 1.1–22.0%；决定性页面打开 ≥99.3%——不是没看见，是识别不驱动动作 | 深青蓝双屏最小对证据卡＋三屏组合危害示意＋五变体差异卡＋R/Eu 双哑铃 | ready |
+| [2611.22591 PACT](2611.22591/poster.png) | P3 | capability / F1 | trajectory_level_policy_training | 计划对但动作错时，outcome RL 负优势连对计划一起罚；计划 span 钳位＋DPO 式动作修复：AndroidWorld 60.34→68.97，OA 无选择修复 C_rule 反降至 80.04、ΔE +129（OAR） | 浅纸色训练账本＋计划/动作双卡对照＋四配置阶梯＋恢复/回归天平 | ready |
+| [2611.22223 GapLeak](2611.22223/poster.png) | P3 | capability / F4 | environmental_injection_attacks / injection_defense_isolation | 最小授权约束"授权用什么"不约束"还够得着什么"：网站只要一个缺口字段，代理升级访问＋上下文累积＋引导放大，三框架×六模型 ≈37% 未授权披露；指令级防御只挡提交不挡升级 | 白底红黑泄压图＋授权/可达双层卡＋三阶段攻击链＋防御条件矩阵 | ready |
+
+选择过程见 [selection-018.md](../research/scoring/runs/gui-rolling-20261023-01/selection-018.md)。十八期合计 **55篇**（rolling run **36篇**）。本期三种不同版式，分别1400×3100、1700×2650、1500×2880；三份PDF均单页。已实际打开最终PNG与PDF栅格图完成QA。各目录包含PNG/PDF、SOURCE.md、QA.md及本地可编辑poster.html；HTML/assets沿用既有忽略规则。
