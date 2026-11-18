@@ -1,0 +1,6 @@
+arxiv: 2507.15955 (2507.15955v1)
+title: Impact of finite squeezing on near-term quantum computations using GKP qubits
+source: https://arxiv.org/abs/2507.15955
+
+§Abstract
+We present the first detailed simulation of a measurement based quantum computation based on Gottesman-Kitaev-Preskill (GKP) qubits within a quad-rail lattice (QRL) cluster state involving over 100 GKP modes. This was enabled by the recently developed functional matrix product states (FMPS) framework, with which we simulate continuous-variable (CV) quantum circuits while explicitly modelling intrinsic coherent error sources due to finite squeezing. We perform simulated randomised benchmarking across squeezing levels between 5 and 15 dB and find strong agreement with analytical estimates for high quality GKP qubits. As a demonstration of practical computation, we simulate a three-qubit Grover's algorithm within the QRL and identify a fundamental squeezing threshold -- approximately 10 dB -- beyond which the algorithm outperforms classical probability bounds.

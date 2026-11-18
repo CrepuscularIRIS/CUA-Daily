@@ -1,0 +1,6 @@
+arxiv: 2502.03797 (2502.03797v1)
+title: Superior probabilistic computing using operationally stable probabilistic-bit constructed by manganite nanowire
+source: https://arxiv.org/abs/2502.03797
+
+§Abstract
+Probabilistic computing has emerged as a viable approach to treat optimization problems. To achieve superior computing performance, the key aspect during computation is massive sampling and tuning on the probability states of each probabilistic bit (p-bit), demanding its high stability under extensive operations. Here, we demonstrate a p-bit constructed by manganite nanowire that shows exceptionally high stability. The p-bit contains an electronic domain that fluctuates between metallic (low resistance) and insulating (high resistance) states near its transition temperature. The probability for the two states can be directly controlled by nano-ampere electrical current. Under extensive operations, the standard error of its probability values is less than 1.3%. Simulations show that our operationally stable p-bit plays the key role to achieve correct inference in Bayesian network by strongly suppressing the relative error, displaying the potential for superior computing performance. Our p-bit also serves as high quality random number generator without extra data-processing, beneficial for cryptographic applications.

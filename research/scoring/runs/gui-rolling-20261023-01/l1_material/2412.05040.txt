@@ -1,0 +1,6 @@
+arxiv: 2412.05040 (2412.05040v1)
+title: Synchronization and desynchronization in ensembles of mobile agents
+source: https://arxiv.org/abs/2412.05040
+
+§Abstract
+Mechanisms of emergence and destruction are analyzed, as well as characteristics of synchronous and asynchronous modes of behavior of ensembles (swarms) of interacting mobile agents moving according to chaotic phase trajectories of Rossler and Lorenz systems. The possibility of organizing sequential and parallel motion of agents based on the effect of chaotic phase synchronization is demonstrated.

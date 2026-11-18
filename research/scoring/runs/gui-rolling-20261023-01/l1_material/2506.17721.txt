@@ -1,0 +1,6 @@
+arxiv: 2506.17721 (2506.17721v1)
+title: Distributed Butterfly Analysis using Mobile Agents
+source: https://arxiv.org/abs/2506.17721
+
+§Abstract
+Butterflies, or 4-cycles in bipartite graphs, are crucial for identifying cohesive structures and dense subgraphs. While agent-based data mining is gaining prominence, its application to bipartite networks remains relatively unexplored. We propose distributed, agent-based algorithms for \emph{Butterfly Counting} in a bipartite graph $G((A,B),E)$. Agents first determine their respective partitions and collaboratively construct a spanning tree, electing a leader within $O(n \log λ)$ rounds using only $O(\log λ)$ bits per agent. A novel meeting mechanism between adjacent agents improves efficiency and eliminates the need for prior knowledge of the graph, requiring only the highest agent ID $λ$ among the $n$ agents. Notably, our techniques naturally extend to general graphs, where leader election and spanning tree construction maintain the same round and memory complexities. Building on these foundations, agents count butterflies per node in $O(Δ)$ rounds and compute the total butterfly count of $G$ in $O(Δ+\min\{|A|,|B|\})$ rounds.
