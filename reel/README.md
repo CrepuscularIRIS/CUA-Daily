@@ -248,3 +248,17 @@
 | [2611.22223 GapLeak](2611.22223/poster.png) | P3 | capability / F4 | environmental_injection_attacks / injection_defense_isolation | 最小授权约束"授权用什么"不约束"还够得着什么"：网站只要一个缺口字段，代理升级访问＋上下文累积＋引导放大，三框架×六模型 ≈37% 未授权披露；指令级防御只挡提交不挡升级 | 白底红黑泄压图＋授权/可达双层卡＋三阶段攻击链＋防御条件矩阵 | ready |
 
 选择过程见 [selection-018.md](../research/scoring/runs/gui-rolling-20261023-01/selection-018.md)。十八期合计 **55篇**（rolling run **36篇**）。本期三种不同版式，分别1400×3100、1700×2650、1500×2880；三份PDF均单页。已实际打开最终PNG与PDF栅格图完成QA。各目录包含PNG/PDF、SOURCE.md、QA.md及本地可编辑poster.html；HTML/assets沿用既有忽略规则。
+
+---
+
+# 第十九期 — gui-rolling-20261023-01 增量轮（2026-11-19 · 3 篇）
+
+指定四篇均按 v1 核对全文缓存（L2 记录在 inc-l2-45/54/55），核对全部一致，无 correction。实际执行模型 **glm-5.3**，单席串行，不冒称旧提示词中的 Opus 5.5。终选 3 篇：MemCredit（记忆检索的效用归因，池内唯一 new_bottleneck，selection-016 的"证据完整度"排除在本缓存补齐 Table 2 与 §3 全协议后解除）、ScrapeBench（法律合规的动作通道：压力阶梯×检查/合规背离×违规理由拆解×人类基线，与 2508.00935 同"声明 vs 动作"轴但对象/数据源不同）、text-pixels（29.5 点落差跨五训练法稳定＋读屏器对齐预算对照 80.9 vs 55.6，上期排除理由以部署边界卡如实保留）。HAL 编辑排除：评测方法论族连续第四期压力（014 Harness Matters、017 EVIDENT、018 让位），核心呈现轴与 2611.11971 外壳×模型矩阵重叠，机制无增量，不改其 L2。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| [2611.15600 MemCredit](2611.15600/poster.png) | P3 | judgment / F2,F5 | experience_memory_retrieval / agent_loop_context_control | 相关性会召回、效用才仲裁：配对环境重放给每条原子记忆记 signed credit，500-token 预算 ALFWorld SR@50 86.57 vs BM25 65.67，WebShop 0.612 分只用 152.1 记忆 token（MemArbiter 0.586/427.6）；86.9% 干预零效用、相关性-效用合并 Spearman −0.011 | 暖沙色账本＋五步机制梯＋配对重放双分支＋六柱 SR@50 阶梯＋WebShop 对账表＋效用可预测双卡＋消融表 | ready |
+| [2611.11306 ScrapeBench](2611.11306/poster.png) | P3 | judgment / F2,F4 | online_evaluation_methodology / agent_initiated_user_interaction | 1895 真实站点的抓取合规：P1 中性提问六大模型合规 <5%；GPT 检查率 robots 100%/ToS 82.8% 而合规仅 14.2%；违规里 69.7% 是 robots 允许但无视 ToS；P8 对抗下只有 Claude 99.7% 抵抗但属一刀切（NEP 98.5% 过拒）；人类基线 48.9% 且行动跟随所读（读了 67.1% vs 没读 55.7%） | 冷灰蓝合规检核单＋压力阶梯（peak/adv/人类三色边）＋检查-合规背离翻牌＋违规理由横杆＋P7 六模型网格＋人类基线双卡 | ready |
+| [2611.22722 text-pixels](2611.22722/poster.png) | P3 | capability / F3,F1 | calibrate_simulator_to_real / structured_screen_observation | 文本里 87.5% 截图上 43.0%（−44.5）：五种训练法（含三种已花截图的）落差全部 ≥29.5 点；误读是系统性的（同元素换回合再错 73.2% vs 独立错误 30.9%，同错字 98.9%），注噪抓不住结构；同一笔 2000 张截图花在读屏器对齐 80.9% vs 直接训策略 55.6%，且救回三个纯文本策略 +24.0 以上 | 深墨绿文本⇄像素双世界（双栏元素列表＋中缝落差大数字）＋五组哑铃＋系统性误读卡＋预算去向横杆＋三策略救回＋部署边界卡 | ready |
+
+选择过程见 [selection-019.md](../research/scoring/runs/gui-rolling-20261023-01/selection-019.md)。十九期合计 **58篇**（rolling run **39篇**）。本期三种不同版式，分别1500×2660、1500×2780、1500×2820；三份PDF均单页。已实际打开最终PNG三段裁图完成QA（每张画布预检一次，均不消耗重做额度；0 重做 0 fail）。各目录包含PNG/PDF、SOURCE.md、QA.md及本地可编辑poster.html；HTML/assets沿用既有忽略规则。
