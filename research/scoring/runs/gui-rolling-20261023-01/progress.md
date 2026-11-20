@@ -425,3 +425,9 @@
 
 ## 2026-11-20 day shift (glm-5.3)
 - Pool <3 (only 2510.11977 HAL remaining in 7d window); skipped per SOP.
+
+## 2026-11-20 12:17 patrol (glm-5.3)
+- Digest e9200c7 (+2 candidates): ingest 2 → L1 inc-l1-102 (2 to_l2: 24977 CANDID, 25387 TuringSpace)
+- L2 inc-l2-56: 2/2 P3/confirmed/to_l3 (both cache-truncated sections noted in biggest_gap)
+- 抽查 0 篇（2×10% 取整 0，欠账滚存）
+- 池 to_l3 (7d) = 1 + 2 = 3
