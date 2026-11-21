@@ -262,3 +262,16 @@
 | [2611.22722 text-pixels](2611.22722/poster.png) | P3 | capability / F3,F1 | calibrate_simulator_to_real / structured_screen_observation | 文本里 87.5% 截图上 43.0%（−44.5）：五种训练法（含三种已花截图的）落差全部 ≥29.5 点；误读是系统性的（同元素换回合再错 73.2% vs 独立错误 30.9%，同错字 98.9%），注噪抓不住结构；同一笔 2000 张截图花在读屏器对齐 80.9% vs 直接训策略 55.6%，且救回三个纯文本策略 +24.0 以上 | 深墨绿文本⇄像素双世界（双栏元素列表＋中缝落差大数字）＋五组哑铃＋系统性误读卡＋预算去向横杆＋三策略救回＋部署边界卡 | ready |
 
 选择过程见 [selection-019.md](../research/scoring/runs/gui-rolling-20261023-01/selection-019.md)。十九期合计 **58篇**（rolling run **39篇**）。本期三种不同版式，分别1500×2660、1500×2780、1500×2820；三份PDF均单页。已实际打开最终PNG三段裁图完成QA（每张画布预检一次，均不消耗重做额度；0 重做 0 fail）。各目录包含PNG/PDF、SOURCE.md、QA.md及本地可编辑poster.html；HTML/assets沿用既有忽略规则。
+
+---
+
+# 第二十期 — gui-rolling-20261023-01 增量轮（2026-11-21 · 2 篇）
+
+候选池 3 篇（P3/confirmed/to_l3，7 天窗口）均按缓存全文核对（L2 记录在 inc-l2-54/56），核对全部一致，无 correction。实际执行模型 **glm-5.3**，单席串行。终选 2 篇：CANDID（F5 执行控制新机制证据：候选分歧做执行信号，文本反馈无效 35.31→33.30、逐点采样崩到 23.48% vs 稀疏 38.80%，与 GTA-1 计划采样不同轴）、TuringSpace（池内唯一 q2 new_bottleneck：MCQ 可猜/DOM 暴露使正确答案不构成理解证据→程序化无限实例＋终态 checker，9B 微调 1.6→33.1 超 Kimi K3 且 7/7 OOD 上涨）。HAL 编辑排除（第五期出现同族压力，与 selection-019 理由一致：核心轴与 2611.11971 外壳×模型矩阵重叠、机制无增量、gap 属评测工艺），不改其 L2。
+
+| paper | 档位 | q3 / 族 | 主卡 | 问题一句话 | 版式骨架 | QA |
+|---|---|---|---|---|---|---|
+| [2611.24977 CANDID](2611.24977/poster.png) | P3 | capability / F5 | agent_loop_context_control / simulated_lookahead_selection | 环与假成功同源于采样塌缩：环恢复＋DONE 全票双闸门，OSWorld 35.31→38.80 全配置为正；文本反馈反而降（33.30）、per-step 逐点采样崩到 23.48%（假成功 44.0 vs 105.2）——稀疏分歧信号优于密集干预；全票门只是保守过滤器（precision 56.7%）非语义验证器 | 深紫夜色执行舱＋失败双盒（32.12% 环率 vs 40.8% 全票率）＋双闸门候选芯片行（cut/keep）＋六行哑铃＋基线对照横杆＋全票 vs 多数表＋逐点采样对照＋开销 KPI | ready |
+| [2611.25387 TuringSpace](2611.25387/poster.png) | P3 | capability / F2,F5 | simulated_environment_fidelity / spatial_action_grounding | 空间 CAPTCHA 可猜或漏 DOM：125 个程序化任务每种子生成新实例＋终态 checker，人类 94.1 vs GPT-6 Astra 74.1、GUI agents 全军 ≤3.5；5.5 万 oracle 轨迹训 9B 达 33.1 超 Kimi K3，7/7 OOD 上涨而 ReCAP 反向 ≤1.6%——学空间能带会常规，练常规教不会空间 | 浅纸色验证馆＋五类空间能力卡（时空最难 52.0）＋九行榜（人类→UI-TARS 0.5）＋训练馆与三重防泄漏＋方向性迁移双段条＋评测口径 KPI＋边界卡 | ready |
+
+选择过程见 [selection-020.md](../research/scoring/runs/gui-rolling-20261023-01/selection-020.md)。二十期合计 **61篇**（rolling run **42篇**）。本期两种不同版式，分别1500×2880、1500×2820；两份PDF均单页。已实际打开最终PNG分段裁图完成QA（每张画布预检一次达标，不消耗重做额度；0 重做 0 fail）。各目录包含PNG/PDF、SOURCE.md、QA.md及本地可编辑poster.html；HTML/assets沿用既有忽略规则。
